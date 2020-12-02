@@ -1,6 +1,6 @@
 # fanaro.io
 
-This is the revamp with pure HTML, CSS and TypeScript of the [fanaro.com.br][fanaro.com.br] old WordPress website.
+This is the revamp with pure HTML, CSS and TypeScript of the [fanaro.com.br][fanaro.com.br] old WordPress website. It's meant to be a single-page website, Angular style, but with no framework at all.
 
 
 [fanaro.com.br]: https://fanaro.com.br
