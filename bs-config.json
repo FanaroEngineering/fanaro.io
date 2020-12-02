@@ -1,0 +1,6 @@
+{
+  "files": ["./dist/dev/index.html"],
+  "server": {
+      "baseDir": "./lib/dist/dev/"
+  }
+}
