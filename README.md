@@ -12,6 +12,7 @@ This is the revamp with pure HTML, CSS and TypeScript of the [fanaro.com.br][fan
 - [1. For the developer](#1-for-the-developer)
     - [1.1. Compiling with TypeScript](#11-compiling-with-typescript)
     - [1.2. Testing with NPM](#12-testing-with-npm)
+    - [1.3. Formatting](#13-formatting)
 
 <!-- /TOC -->
 
@@ -37,3 +38,10 @@ To test it with Jest:
 ```cmd
 npm t -- --watch
 ```
+
+### 1.3. Formatting
+
+This project currently uses [Prettier][prettier] as its code and Markdown formatter.
+
+
+[prettier]: https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode
