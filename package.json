@@ -1,0 +1,40 @@
+{
+  "name": "fanaro.io",
+  "version": "0.0.1",
+  "description": "The new home for fanaro.com.br",
+  "keywords": [
+    "blog",
+    "programming",
+    "design",
+    "philosophy",
+    "productivity",
+    "go",
+    "baduk",
+    "weiqi",
+    "囲碁",
+    "바둑",
+    "围棋"
+  ],
+  "main": "index.js",
+  "scripts": {
+    "test": "jest ./dist/dev",
+    "testwatch": "jest --watchAll ./dist/dev"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FanaroEngineering/fanaro.io.git"
+  },
+  "author": "Philippe Fanaro",
+  "license": "BSD-3-Clause",
+  "bugs": {
+    "url": "https://github.com/FanaroEngineering/fanaro.io/issues"
+  },
+  "homepage": "https://github.com/FanaroEngineering/fanaro.io",
+  "devDependencies": {
+    "@types/jest": "^26.0.16",
+    "jest": "^26.6.3",
+    "ts-jest": "^26.4.4",
+    "ts-loader": "^8.0.11",
+    "typescript": "^4.1.2"
+  }
+}
