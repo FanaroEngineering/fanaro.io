@@ -1,4 +1,4 @@
-name: TS
+name: TS Tests
 
 on:
   push:
@@ -15,9 +15,9 @@ jobs:
     steps:
       - name: Checking out the Project's Code
         uses: actions/checkout@v2
-      - name: Installing TypeScript
+      - name: Installing TypeScript and Other Dependencies
         run: npm ci
-      - name: Compiling TypeScript Code
+      - name: Compiling the TypeScript Code
         run: tsc
       - name: Running Tests
         run: npm t
