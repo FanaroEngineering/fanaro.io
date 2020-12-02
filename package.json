@@ -1,7 +1,7 @@
 {
   "name": "fanaro.io",
   "version": "0.0.1",
-  "description": "The new home for fanaro.com.br",
+  "description": "Philippe Fanaro's Blog | The new home for fanaro.com.br",
   "keywords": [
     "blog",
     "programming",
@@ -18,6 +18,7 @@
   ],
   "main": "index.js",
   "scripts": {
+    "build": "webpack",
     "start": "lite-server -c bs-config.json",
     "test": "jest ./dist/dev",
     "testwatch": "jest --watchAll ./dist/dev"
@@ -38,6 +39,8 @@
     "lite-server": "^2.6.1",
     "ts-jest": "^26.4.4",
     "ts-loader": "^8.0.11",
-    "typescript": "^4.1.2"
+    "typescript": "^4.1.2",
+    "webpack": "^5.9.0",
+    "webpack-cli": "^4.2.0"
   }
 }

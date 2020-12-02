@@ -1,6 +1,10 @@
 {
-  "files": ["./dist/dev/index.html"],
-  "server": {
-      "baseDir": "./lib/dist/dev/"
-  }
+    "files": [
+        "./dist/prod/index.html",
+        "./dist/prod/index.css",
+        "./dist/prod/bundle.js"
+    ],
+    "server": {
+        "baseDir": "./lib/dist/prod/"
+    }
 }
