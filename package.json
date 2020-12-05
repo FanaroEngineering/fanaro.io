@@ -18,8 +18,8 @@
   ],
   "main": "index.js",
   "scripts": {
-    "test": "jest ./docs/test",
-    "testwatch": "jest --watchAll ./docs/test"
+    "test": "jest ./dist/test",
+    "testwatch": "jest --watchAll ./dist/test"
   },
   "repository": {
     "type": "git",
