@@ -33,6 +33,10 @@ nav li {
 
 .collapsible-menu label {
   cursor: pointer;
+  display: block;
+  padding: 10px 0 10px 70px;
+  font-size: 28px;
+  background: url(assets/favicon.svg) no-repeat left center;
 }
 
 h1 {
