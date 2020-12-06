@@ -1,5 +1,5 @@
 function appendArticle(): void {
-  fetch("https://fanaroengineering.github.io/fanaro.io/articles/test.html")
+  fetch("/articles/test.html")
     .then((response: Response) => response.text())
     .then((htmlAsString: string) => {
       const parser: DOMParser = new DOMParser();
