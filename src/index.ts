@@ -1,25 +1,22 @@
-function appendArticle(): void {
-  fetch("/articles/test.html")
-    .then((response: Response) => response.text())
-    .then((htmlAsString: string) => {
-      const parser: DOMParser = new DOMParser();
+export class Events {
+  constructor() {
+    document.onclick = this.onclick;
+  }
 
-      const articleDocument: Document = parser.parseFromString(htmlAsString, "text/html");
-
-      console.log("inside append");
-
-      const article: HTMLElement = articleDocument.querySelector("article")!;
-
-      document.body.append(article);
-    });
+  private onclick = (ev: MouseEvent) => {
+    if (ev.target instanceof HTMLAnchorElement) {
+      ev.preventDefault();
+      const anchor: HTMLAnchorElement = ev.target;
+      if (anchor.getAttribute("localLink")?.length! > 0) {
+        const localLink: string = anchor.getAttribute("localLink")!;
+        console.log(localLink);
+      } else {
+        console.log("Not a local link.");
+      }
+    } else {
+      console.log("Not a link");
+    }
+  };
 }
 
-
-document.onclick = ((_: MouseEvent) => {
-  // const anchor: HTMLAnchorElement = document.querySelector("a")!;
-  console.log("before append");
-  appendArticle();
-  console.log("after append");
-});
-
-// appendArticle();
+new Events();
