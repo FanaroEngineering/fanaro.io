@@ -1,7 +1,13 @@
 {
   "name": "fanaro.io",
-  "version": "0.0.1",
+  "author": "Philippe Fanaro",
   "description": "Philippe Fanaro's Blog | The new home for fanaro.com.br",
+  "homepage": "https://github.com/FanaroEngineering/fanaro.io",
+  "version": "0.0.1",
+  "license": "BSD-3-Clause",
+  "bugs": {
+    "url": "https://github.com/FanaroEngineering/fanaro.io/issues"
+  },
   "keywords": [
     "blog",
     "programming",
@@ -18,19 +24,13 @@
   ],
   "main": "index.js",
   "scripts": {
-    "test": "jest ./dist/test",
-    "testwatch": "jest --watchAll ./dist/test"
+    "test": "jest ./dev/test",
+    "testwatch": "jest --watchAll ./dev/test"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/FanaroEngineering/fanaro.io.git"
   },
-  "author": "Philippe Fanaro",
-  "license": "BSD-3-Clause",
-  "bugs": {
-    "url": "https://github.com/FanaroEngineering/fanaro.io/issues"
-  },
-  "homepage": "https://github.com/FanaroEngineering/fanaro.io",
   "devDependencies": {
     "@types/jest": "^26.0.16",
     "jest": "^26.6.3",
