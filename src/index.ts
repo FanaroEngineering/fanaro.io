@@ -1,3 +1,3 @@
-import { Events } from "./articles/article_stuff";
+import { GlobalEvents } from "./articles/article_stuff";
 
-new Events();
+new GlobalEvents();

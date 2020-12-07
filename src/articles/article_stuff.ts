@@ -3,11 +3,11 @@ export enum PageType {
   article,
 }
 
-export default class State {
+export default class GlobalState {
   constructor(readonly pageType: PageType) {}
 }
 
-export class Events {
+export class GlobalEvents {
   constructor() {
     document.onclick = this.onclick;
   }
