@@ -1,3 +1,3 @@
-import { GlobalEvents } from "./articles/article_stuff";
+import { GlobalEvents } from "./components/global_events";
 
 new GlobalEvents();
