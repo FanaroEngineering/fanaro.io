@@ -25,8 +25,8 @@
   ],
   "main": "index.js",
   "scripts": {
-    "test": "jest ./dev/test",
-    "testwatch": "jest --watchAll ./dev/test"
+    "test": "jest ./dev/",
+    "testwatch": "jest --watchAll ./dev/"
   },
   "repository": {
     "type": "git",
