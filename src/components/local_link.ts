@@ -1,28 +1,27 @@
 export default class LocalLinkElement extends HTMLElement {
   static readonly tag: string = "local-link";
 
+  private static readonly template: string = `
+    <style>
+      a {
+        color: #E67D40;
+        text-decoration: none;
+      }
+    </style>
+    <a href=""></a>
+  `;
+
   private link: string | null = null;
   private text: string | null = null;
-  article: HTMLElement | null = null;
-
-  private template: HTMLTemplateElement;
 
   constructor() {
     super();
 
-    this.template = document.createElement("template");
-    this.template.innerHTML = `
-      <style>
-        a {
-          color: #E67D40;
-          text-decoration: none;
-        }
-      </style>
-      <a href=""></a>
-    `;
+    const template: HTMLTemplateElement = document.createElement("template");
+    template.innerHTML = LocalLinkElement.template;
 
     this.attachShadow({ mode: "open" });
-    this.shadowRoot!.appendChild(this.template.content.cloneNode(true));
+    this.shadowRoot!.appendChild(template.content.cloneNode(true));
   }
 
   connectedCallback() {
@@ -34,7 +33,7 @@ export default class LocalLinkElement extends HTMLElement {
     innerAnchor.innerText = this.text;
   }
 
-  fetchArticle = (): void => {
+  private fetchAppendArticle = (): void => {
     if (this.link != null)
       fetch(this.link)
         .then((response: Response) => response.text())
@@ -46,7 +45,15 @@ export default class LocalLinkElement extends HTMLElement {
             "text/html"
           );
 
-          this.article = articleDocument.querySelector("article")!;
+          const article: HTMLElement = articleDocument.querySelector("article")!;
+
+          document.body.append(article);
         });
+  };
+
+  onclick = (ev: MouseEvent): void => {
+    ev.preventDefault();
+    this.fetchAppendArticle();
+    this.remove();
   };
 }
