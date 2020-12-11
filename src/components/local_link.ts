@@ -45,7 +45,9 @@ export default class LocalLinkElement extends HTMLElement {
             "text/html"
           );
 
-          const article: HTMLElement = articleDocument.querySelector("article")!;
+          const article: HTMLElement = articleDocument.querySelector(
+            "article"
+          )!;
 
           document.body.append(article);
         });
@@ -54,6 +56,11 @@ export default class LocalLinkElement extends HTMLElement {
   onclick = (ev: MouseEvent): void => {
     ev.preventDefault();
     this.fetchAppendArticle();
+    history.pushState(
+      { page: this.link, url: this.link },
+      this.text!,
+      this.link
+    );
     this.remove();
   };
 }
