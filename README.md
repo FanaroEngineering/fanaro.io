@@ -1,9 +1,10 @@
 # fanaro.io
 
-This is the revamp with pure HTML, CSS and TypeScript of the [fanaro.com.br][fanaro.com.br] old WordPress website. It's meant to be a single-page website, Angular style, but with no framework at all.
+This is the revamp with pure HTML, CSS and TypeScript of the [fanaro.com.br][fanaro.com.br] old WordPress website. It's meant to be a [single-page application (SPA)][spa] &mdash; Angular style &mdash; but with no framework at all.
 
 
 [fanaro.com.br]: https://fanaro.com.br
+[spa]: https://developer.mozilla.org/en-US/docs/Glossary/SPA
 
 <br>
 
@@ -23,7 +24,7 @@ This is the revamp with pure HTML, CSS and TypeScript of the [fanaro.com.br][fan
 
 ### 1.1. A Note on Local Links
 
-Since this is supposed to be a single-page application (SPA), local links should be dealt internally and not necessarily force a whole load on the browser. That means they are a special case, and for that I've been adding the `localLink` attribute to anchor elements (`<a>`). If the link is local, I also use an empty `href` &mdash; `href=""` &mdash; so the link isn't perceived as disabled.
+Since this is supposed to be a [single-page application (SPA)][spa], local links should be dealt internally and not necessarily force a whole load on the browser. That means they are a special case, and for that I've been adding the `localLink` attribute to anchor elements (`<a>`). If the link is local, I also use an empty `href` &mdash; `href=""` &mdash; so the link isn't perceived as disabled.
 
 ### 1.2. The Full Development Workflow
 
