@@ -33,3 +33,7 @@ iframe {
   max-width: 600px;
   max-height: 315px;
 }
+
+img {
+  max-width: 560px;
+}
