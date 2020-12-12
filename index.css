@@ -1,8 +1,8 @@
 :root {
   --text-color: #abb2bf;
-  --max-content-width-mobile: 100vw;
+  --max-content-width-mobile: 90vw;
   --max-content-width-desktop: 560px;
-  --margin: 1.5rem;
+  --margin: 1rem;
 }
 
 body {
@@ -10,9 +10,9 @@ body {
   color: var(--text-color);
   font-family: "Segoe UI";
   max-width: var(--max-content-width-mobile);
-  width: var(--max-content-width-mobile);
-  margin-left: var(--margin);
-  margin-right: var(--margin);
+  padding-bottom: 30px;
+  padding-left: var(--margin);
+  padding-right: var(--margin);
 }
 
 a {
@@ -34,7 +34,8 @@ nav > a > svg {
 hr {
   margin-left: 0px;
   border: none;
-  max-width: 35vw;
+  max-width: 150px;
+  width: 35vw;
   height: 0.75px;
   color: var(--text-color);
   background-color: var(--text-color);
@@ -42,16 +43,27 @@ hr {
 
 iframe {
   max-width: var(--max-content-width-mobile);
-  max-height: 315px;
-  margin-right: var(--margin);
+  max-height: 51vw;
+  width: 560px;
+  height: 315px;
 }
 
 img {
   max-width: var(--max-content-width-mobile);
-  margin-right: var(--margin);
 }
 
 blockquote {
-  border-left: 3px solid var(--text-color);;
+  border-left: 3px solid var(--text-color);
   padding-left: 10px;
+}
+
+@media (min-width: 580px) {
+  body {
+    max-width: var(--max-content-width-desktop);
+    width: var(--max-content-width-desktop);
+  }
+
+  img, iframe {
+    max-width: var(--max-content-width-desktop);
+  }
 }
