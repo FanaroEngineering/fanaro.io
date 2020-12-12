@@ -11,8 +11,8 @@ export default class LocalLinkElement extends HTMLElement {
     <a href=""></a>
   `;
 
-  private link: string | null = null;
-  private text: string | null = null;
+  private link: string = "";
+  private text: string = "";
 
   constructor() {
     super();
@@ -34,23 +34,20 @@ export default class LocalLinkElement extends HTMLElement {
   }
 
   private fetchAppendArticle = (): void => {
-    if (this.link != null)
-      fetch(this.link)
-        .then((response: Response) => response.text())
-        .then((htmlAsString: string) => {
-          const parser: DOMParser = new DOMParser();
+    fetch(this.link)
+      .then((response: Response) => response.text())
+      .then((htmlAsString: string) => {
+        const parser: DOMParser = new DOMParser();
 
-          const articleDocument: Document = parser.parseFromString(
-            htmlAsString,
-            "text/html"
-          );
+        const articleDocument: Document = parser.parseFromString(
+          htmlAsString,
+          "text/html"
+        );
 
-          const article: HTMLElement = articleDocument.querySelector(
-            "article"
-          )!;
+        const article: HTMLElement = articleDocument.querySelector("article")!;
 
-          document.body.append(article);
-        });
+        document.body.append(article);
+      });
   };
 
   onclick = (ev: MouseEvent): void => {
@@ -58,7 +55,7 @@ export default class LocalLinkElement extends HTMLElement {
     this.fetchAppendArticle();
     history.pushState(
       { page: this.link, url: this.link },
-      this.text!,
+      this.text,
       this.link
     );
     this.remove();
