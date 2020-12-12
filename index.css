@@ -12,7 +12,10 @@ body {
   max-width: var(--max-content-width-mobile);
   padding-bottom: 30px;
   padding-left: var(--margin);
-  padding-right: var(--margin);
+}
+
+p {
+  text-align: justify;
 }
 
 a {
@@ -46,10 +49,13 @@ iframe {
   max-height: 51vw;
   width: 560px;
   height: 315px;
+  padding-right: var(--margin);
+
 }
 
 img {
   max-width: var(--max-content-width-mobile);
+  padding-right: var(--margin);
 }
 
 blockquote {
