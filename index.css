@@ -1,9 +1,18 @@
+:root {
+  --text-color: #abb2bf;
+  --max-content-width-mobile: 100vw;
+  --max-content-width-desktop: 560px;
+  --margin: 1.5rem;
+}
+
 body {
   background-color: #282a36;
-  color: #abb2bf;
+  color: var(--text-color);
   font-family: "Segoe UI";
-  width: 600px;
-  margin-left: 50px;
+  max-width: var(--max-content-width-mobile);
+  width: var(--max-content-width-mobile);
+  margin-left: var(--margin);
+  margin-right: var(--margin);
 }
 
 a {
@@ -14,8 +23,8 @@ a {
 nav > a {
   display: inline-flex;
   align-items: center;
-  font-size: 22.5px;
-  color: #abb2bf;
+  font-size: 1.5rem;
+  color: var(--text-color);
 }
 
 nav > a > svg {
@@ -25,22 +34,24 @@ nav > a > svg {
 hr {
   margin-left: 0px;
   border: none;
-  width: 560px;
-  height: .75px;
-  color: #abb2bf;
-  background-color: #abb2bf;
+  max-width: 35vw;
+  height: 0.75px;
+  color: var(--text-color);
+  background-color: var(--text-color);
 }
 
 iframe {
-  max-width: 600px;
+  max-width: var(--max-content-width-mobile);
   max-height: 315px;
+  margin-right: var(--margin);
 }
 
 img {
-  max-width: 560px;
+  max-width: var(--max-content-width-mobile);
+  margin-right: var(--margin);
 }
 
 blockquote {
-  border-left: 3px solid #abb2bf;
+  border-left: 3px solid var(--text-color);;
   padding-left: 10px;
 }
