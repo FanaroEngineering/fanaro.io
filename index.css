@@ -23,7 +23,9 @@ nav > a > svg {
 }
 
 hr {
+  margin-left: 0px;
   border: none;
+  width: 560px;
   height: .75px;
   color: #abb2bf;
   background-color: #abb2bf;
@@ -36,4 +38,9 @@ iframe {
 
 img {
   max-width: 560px;
+}
+
+blockquote {
+  border-left: 3px solid #abb2bf;
+  padding-left: 10px;
 }
