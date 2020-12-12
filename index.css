@@ -50,7 +50,6 @@ iframe {
   width: 560px;
   height: 315px;
   padding-right: var(--margin);
-
 }
 
 img {
@@ -63,13 +62,46 @@ blockquote {
   padding-left: 10px;
 }
 
+figcaption {
+  font-size: 0.85em;
+}
+
+table {
+  background-color: #131516;
+  margin-left: 15px;
+}
+
+td,
+th {
+  padding-top: 7.5px;
+  padding-left: 7.5px;
+  padding-right: 7.5px;
+  padding-bottom: 7.5px;
+}
+
+tr:nth-child(odd) {
+  background-color: #1f2223;
+}
+
+kbd {
+  color: rgb(189, 183, 174);
+  border-color: rgb(101, 93, 83);
+  background-color: rgb(10, 14, 18);
+  box-shadow: rgb(90, 97, 101) 0px -1px 0px inset;
+  border-radius: 6px;
+  font: .85rem monospace;
+  padding: 3px 5px;
+  vertical-align: middle;
+}
+
 @media (min-width: 580px) {
   body {
     max-width: var(--max-content-width-desktop);
     width: var(--max-content-width-desktop);
   }
 
-  img, iframe {
+  img,
+  iframe {
     max-width: var(--max-content-width-desktop);
   }
 }

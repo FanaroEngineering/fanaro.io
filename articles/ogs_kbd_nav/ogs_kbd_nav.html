@@ -1,0 +1,276 @@
+<article>
+  <h1>OGS Kbd Nav: Play Go on OGS With Only Your Keyboard</h1>
+
+  <blockquote>
+    PT-BR: Para falantes de língua portuguesa: assista ao tutorial
+    <a href="https://youtu.be/Tx_2N-KPNXc">aqui</a>.
+  </blockquote>
+
+  <h2>1. Why</h2>
+
+  <p>
+    Mostly, because I wanted to. But I also do believe other players will
+    benefit greatly from this, because:
+  </p>
+
+  <ul>
+    <li>
+      Using the keyboard, where there are specialized keys for different
+      actions, will diminish the likelihood of missclicks.
+    </li>
+    <li>
+      Even though it can be annoying to have to move the marker across the whole
+      board when there are drastic changes in plays' locations, on average, your
+      playing speed will increase because most plays occur near each other
+      actually. And that means you're gonna have less friction between the
+      interface and your brain, which will let you focus better on the game.
+    </li>
+  </ul>
+
+  <p>
+    At first I didn't believe any of the benefits above, but, after trying it
+    out for about 2 weeks, I can confidently say it did help, it did improve the
+    UI/UX.
+  </p>
+
+  <h2>2. The OGS Kbd Nav Browser Extension</h2>
+
+  <blockquote>
+     If you want to chat with me about the product, you can do so by
+    <a
+      href="https://gitter.im/OGS-Kbd-Nav/community?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge"
+      >joining its community</a
+    >.
+  </blockquote>
+
+  <p>
+    In the same spirit of
+    <a href="https://fanaro.com.br/youtube-kbd-nav/"
+      >my previous browser extension for keyboard navigation on YouTube</a
+    >, I decided to add a new way and yet old way of interacting with the game
+    of Go. Now anyone can play Go on OGS through only the keyboard.
+  </p>
+
+  <figure>
+    <img src="/articles/ogs_kbd_nav/demo.gif" alt="Demo GIF." />
+    <figcaption>
+      An example of a sequence of plays using only arrow keys to move the stone
+      marker into the play's position.
+    </figcaption>
+  </figure>
+
+  <blockquote>
+    You can check out the open source code for this project
+    <a href="https://github.com/FanaroEngineering/ogs_kbd_nav">here</a>.
+  </blockquote>
+
+  <h3>2.1. Installing the Extension</h3>
+
+  <p>
+    If you wish to install the most up-to-date version, you will have to
+    activate your browser's developer mode and the upload the most recent
+    version found on Github. You can check out more specific instructions about
+    it here.
+  </p>
+
+  <p>
+    Otherwise, simply install the &mdash; hopefully &mdash; stable version from
+    one of the browser extension stores:
+  </p>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Browser Extension Store</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+          <a
+            href="https://chrome.google.com/webstore/detail/ogs-kbd-nav/blcjnnogmdhggfgdpploigilegjdopmp?hl=en&amp;authuser=0"
+            >Chrome</a
+          >
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a
+            href="https://addons.mozilla.org/en-US/firefox/addon/ogs-kbd-nav/?utm_source=addons.mozilla.org&amp;utm_medium=referral&amp;utm_content=search"
+            >Firefox</a
+          ><sup><a href="#footnote-1">1</a></sup>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a
+            href="https://microsoftedge.microsoft.com/addons/detail/ogs-kbd-nav/hghfjmadiodnkelleppombenchlcbjol"
+            >Edge</a
+          ><sup><a href="#footnote-2">2</a></sup>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h2>3. The Current Table of Shortcuts</h2>
+
+  <blockquote>
+    Warning: the shortcuts below might change overtime, so do check the
+    <a
+      href="https://github.com/FanaroEngineering/ogs_kbd_nav#3-table-of-shortcuts"
+      >project's main page</a
+    >
+    to really be in touch with the latest table of shortcuts.
+  </blockquote>
+
+  <blockquote>
+    This extension currently only works if you have all the coordinates turned
+    on.
+  </blockquote>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Shortcut</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><kbd>Ctrl</kbd> + <kbd>\</kbd></td>
+        <td>Global switch: enables or disables the whole extension</td>
+      </tr>
+      <tr>
+        <td><kbd>Ctrl</kbd> + <kbd>m</kbd></td>
+        <td>Toggle the chat input box on a game page</td>
+      </tr>
+      <tr>
+        <td><kbd>Ctrl</kbd> + <kbd>b</kbd></td>
+        <td>Toggle the canvas overlay with the stone marker</td>
+      </tr>
+      <tr>
+        <td><kbd>Ctrl</kbd> + <kbd>]</kbd></td>
+        <td>Toggle the arrow keys</td>
+      </tr>
+      <tr>
+        <td><kbd>Enter</kbd> or <kbd>f</kbd></td>
+        <td>Click on the stone marker's location</td>
+      </tr>
+      <tr>
+        <td><kbd>w</kbd> or <kbd>↑</kbd></td>
+        <td>Move the stone marker up</td>
+      </tr>
+      <tr>
+        <td><kbd>a</kbd> or <kbd>←</kbd></td>
+        <td>
+          Move the stone marker left<sup><a href="#footnote-3">3</a></sup>
+        </td>
+      </tr>
+      <tr>
+        <td><kbd>s</kbd> or <kbd>↓</kbd></td>
+        <td>Move the stone marker down</td>
+      </tr>
+      <tr>
+        <td><kbd>d</kbd> or <kbd>→</kbd></td>
+        <td>Move the stone marker right</td>
+      </tr>
+      <tr>
+        <td><kbd>Enter</kbd> or <kbd>f</kbd></td>
+        <td>Click on the stone marker's location</td>
+      </tr>
+      <tr>
+        <td><kbd>Ctrl</kbd> + <kbd>[</kbd></td>
+        <td>Pass</td>
+      </tr>
+      <tr>
+        <td><kbd>Ctrl</kbd> + <kbd>;</kbd></td>
+        <td>Toggle AI Analysis</td>
+      </tr>
+      <tr>
+        <td><kbd>Ctrl</kbd> + <kbd>,</kbd></td>
+        <td>
+          Cycle through the different board sizes<sup
+            ><a href="#footnote-4">4</a></sup
+          >
+        </td>
+      </tr>
+      <tr>
+        <td><kbd>Ctrl</kbd> + <kbd>.</kbd></td>
+        <td>
+          Toggle the coordinates input field<sup
+            ><a href="#footnote-5">5</a></sup
+          >
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h2>3. Bonus Stuff</h2>
+
+  <p>
+    Since we are talking about improving our lives with shortcuts, I'll leave
+    you with 3 programs which might go well and beyond in this area:
+  </p>
+
+  <ul>
+    <li>
+      <a href="https://vimium.github.io/">Vimium</a> a browser extension which
+      adds enough shortcuts to make navigating the web with only the keyboard
+      possible.
+    </li>
+    <li>
+      <a href="https://github.com/tridactyl/tridactyl">Tridactyl</a>: a
+      follow-up to Vimium, with even more shortcuts, and tailored for Firefox.
+    </li>
+    <li>
+      <a href="https://qutebrowser.org/">qutebrowser</a
+      ><sup><a href="#footnote-6">6</a></sup
+      >: an entire browser made for navigating the web with only your keyboard.
+    </li>
+  </ul>
+
+  <iframe
+    src="https://www.youtube.com/embed/Tx_2N-KPNXc"
+    frameborder="0"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+    allowfullscreen
+  ></iframe>
+
+  <br />
+  <br />
+  <br />
+  <hr />
+
+  <sub>1: I won't guarantee it works perfectly with Firefox.</sub>
+  <br />
+  <sub
+    >2: Microsoft Edge uses Chromium, the same core of Chrome. So, if you have
+    problems with the Edge store, simply install the Chrome Store version.</sub
+  >
+  <br />
+  <sub
+    >3: Using the left arrow also may activate analysis during the game, so I'm
+    currently programmatically pressing the <kbd>Back to game</kbd> button in
+    the background.</sub
+  >
+  <br />
+  <sub
+    >4: The extension has no way of identifying that you're on a smaller Goban
+    size &mdash; only 19x19, 13x13 and 9x9 sizes are currently supported &mdash;
+    so you will have to use this shortcut in order to manually achieve what
+    you're looking for. And toggling to the right size is also necessary for the
+    coordinates input field to work properly.</sub
+  >
+  <br />
+  <sub
+    >5: The coordinates should be of the form letter &mdash; lower or uppercase
+    &mdash; and a number from 1 to 19. For example,
+    both <code>c11</code> and <code>C11</code> are valid.</sub
+  >
+  <br />
+  <sub
+    >6: This one was provided by
+    <a href="https://github.com/apetresc">Adrian Petrescu</a> on
+    <a href="https://github.com/apetresc">Gitter</a>.</sub
+  >
+</article>
