@@ -14,7 +14,7 @@ body {
   padding-left: var(--margin);
 }
 
-p {
+p, ul, ol {
   text-align: justify;
 }
 
