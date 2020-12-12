@@ -21,3 +21,15 @@ nav > a {
 nav > a > svg {
   padding-right: 10px;
 }
+
+hr {
+  border: none;
+  height: .75px;
+  color: #abb2bf;
+  background-color: #abb2bf;
+}
+
+iframe {
+  max-width: 600px;
+  max-height: 315px;
+}

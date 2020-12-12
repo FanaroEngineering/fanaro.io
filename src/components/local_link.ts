@@ -53,10 +53,11 @@ export default class LocalLinkElement extends HTMLElement {
   onclick = (ev: MouseEvent): void => {
     ev.preventDefault();
     this.fetchAppendArticle();
+    const link: string = "articles/" + this.link.split("/")[2];
     history.pushState(
-      { page: this.link, url: this.link },
+      { page: link, url: link },
       this.text,
-      this.link
+      link
     );
     this.remove();
   };

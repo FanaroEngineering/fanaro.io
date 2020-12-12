@@ -3,20 +3,25 @@ import LocalLinkElement from "./local_link";
 
 export class GlobalEvents {
   private _globalState: GlobalState = new GlobalState();
-  // private ev: Event = new Event("none");
 
   constructor() {
     window.onpopstate = this.onpopstate;
+    window.onclick = this.onclick;
   }
 
   get globalState(): GlobalState {
     return this._globalState;
   }
 
-  private onpopstate = (ev: PopStateEvent): void => {
+  private onclick = (ev: MouseEvent): void => {
     if (ev.target instanceof LocalLinkElement)
       this._globalState = new GlobalState(PageType.article);
+  };
 
-    console.log(this._globalState.toString());
+  private onpopstate = (_: PopStateEvent): void => {
+    if (window.location.pathname.endsWith("/")) {
+      document.body.removeChild(document.querySelector("article")!);
+      this._globalState = new GlobalState(PageType.home);
+    }
   };
 }
