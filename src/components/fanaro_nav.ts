@@ -33,8 +33,4 @@ export default class FanaroNavElement extends HTMLElement {
     this.attachShadow({ mode: "open" });
     this.shadowRoot!.appendChild(template.content.cloneNode(true));
   }
-
-  connectedCallback() {
-    document.body.prepend(this);
-  }
 }

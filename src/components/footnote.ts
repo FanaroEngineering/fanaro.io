@@ -42,14 +42,14 @@ export default class FootnoteElement extends HTMLElement {
     this.editSub();
   }
 
-  private calculateNextIndex(): void {
+  private calculateNextIndex = (): void => {
     const article: HTMLElement = document.querySelector("article")!;
     const currentFootnotes = article.querySelectorAll("foot-note")!;
     const numberOfFootnotes: number = currentFootnotes.length;
     this.nextIndex = numberOfFootnotes;
   }
 
-  private editSup(): void {
+  private editSup = (): void => {
     const supAnchor: HTMLAnchorElement = this.shadowRoot!.querySelector("a")!;
     supAnchor.innerHTML = this.nextIndex.toString();
     supAnchor.href = "#footnote-" + this.nextIndex.toString();
@@ -57,7 +57,7 @@ export default class FootnoteElement extends HTMLElement {
     sup.id = "footnote-base-" + this.nextIndex.toString();
   }
 
-  private editSub(): void {
+  private editSub = (): void => {
     const subAnchor: HTMLAnchorElement = document.createElement("a");
     subAnchor.innerHTML = this.nextIndex.toString();
     subAnchor.href = "#footnote-base-" + this.nextIndex.toString();
