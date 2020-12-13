@@ -26,8 +26,13 @@
 
     <article>
       <blockquote>
-         PT-BR: É possível visualizar a versão em português deste post no meu
-        canal <a href="https://youtu.be/METdo2UWmos">aqui</a>.
+        <strong>PT-BR</strong>: É possível visualizar a versão em português
+        deste post no meu canal <a href="https://youtu.be/METdo2UWmos">aqui</a>.
+      </blockquote>
+
+      <blockquote>
+        Since I'm using a mobile-unfriendly version of LaTeX, you might want to
+        read this article from a computer instead of a smaller device.
       </blockquote>
 
       <h2>1. Introduction and Context</h2>
@@ -135,7 +140,7 @@
         Summarizing, Black plays 2 moves initially, White captures, Black plays
         2 more moves. But Black's first move after the transition overlaps the
         last one before the transition, being used in the next stage of the
-        recursion, so the final count of liberties is \[ 2 + 2 - 1 = 3 \].
+        recursion, so the final count of liberties is \( 2 + 2 - 1 = 3 \).
         Another way to look at the transition is that Black's last move before
         the transition forces White's capture, so, each player having used their
         turn to play a local move, Black and White's last moves cancel each
@@ -157,8 +162,9 @@
         previous case in the recursion. So, we will have:
       </p>
       <p>
-        \[ stones \ played \ initially - 1 \ transition + previous \ case \ in \
-        the \ recursion = 3 - 1 + 3 = 5 \ liberties \]
+        \[ \begin{align} &stones \ played \ initially - 1 \ transition \\ &+
+        previous \ case \ in \ the \ recursion \\ &=3 - 1 + 3 = 5 \ liberties
+        \end{align} \]
       </p>
       If you go through the end of the sequence, counting the overlapping
       transitions as only 1 move, you will end up with the same value of 5
@@ -171,8 +177,9 @@
         Again, we have the formula:
       </p>
       <p>
-        \[ stones \ played \ initially - 1 \ transition + previous \ case \ in \
-        the \ recursion = 4 - 1 + 5 = 8 \ liberties \].
+        \[ \begin{align} &stones \ played \ initially - 1 \ transition \\ &+
+        previous \ case \ in \ the \ recursion \\ &= 4 - 1 + 5 = 8 \ liberties
+        \end{align} \]
       </p>
 
       <p>
@@ -201,8 +208,9 @@
         formula:
       </p>
       <p>
-        \[ stones \ played \ initially - 1 \ transition + previous \ case \ in \
-        the \ recursion = 5 - 1 + 8 = 12 \]
+        \[ \begin{align} &stones \ played \ initially - 1 \\ &transition +
+        previous \ case \ in \ the \ recursion \\ &= 5 - 1 + 8 = 12 \end{align}
+        \]
       </p>
       <p>
         You can follow the step-by-step counting through the transitions in the
@@ -210,20 +218,21 @@
       </p>
 
       <h2>3. Generalizing</h2>
+
       <p>
         So, sadly, the capture-recapture with Nakades doesn't follow the
         Fibonacci sequence to the T, otherwise the Rabitty Six would have 13
         liberties. In fact, if you had been paying extra attention, you would
-        have been very suspicious due to the presence of the \[ -1 \] in the
+        have been very suspicious due to the presence of the \( -1 \) in the
         formula applied previously. Besides, we are not even summing two
         previous terms, but the previous terms and a new one.
       </p>
       <p>The general formulas are:</p>
       <p>
-        \[ \begin{align} &amp;\# \ of \ liberties = initial \ clump \ of \
-        stones \ to \ atari - 1 \ transition \\ &amp; + previous \ case \ in \
-        the \ recursion \\ &amp;\# \ of \ liberties = total \ stones \ played \
-        to \ capture - \# \ of \ forced \ transitions \end{align} \]
+        \[ \begin{align} \# \ of \ liberties = \ &initial \ clump \ of \ stones
+        \ to \ atari - 1 \ transition \\ &+ previous \ case \ in \ the \
+        recursion \\ \# \ of \ liberties = \ &total \ stones \ played \ to \
+        capture \\ &- \# \ of \ forced \ transitions \end{align} \]
       </p>
       <p>
         The second formula I will call the <em>Absolute Formula</em> because it
@@ -236,9 +245,9 @@
         - FT \end{align} \]
       </p>
       <p>
-        where \[ n_L \] is the number of liberties, \[ csa \] is the initial
-        clump of stones up to to the first atari, \[ TS \] is the total stones
-        played to capture and \[ FT \] is the forced transitions number.
+        where \( n_L \) is the number of liberties, \( csa \) is the initial
+        clump of stones up to to the first atari, \( TS \) is the total stones
+        played to capture and \( FT \) is the forced transitions number.
       </p>
       <p>
         What I call forced transitions are the resets the player trying to save
@@ -251,10 +260,10 @@
         cases end up having to be treated differently.
       </p>
       <p>
-        With respect to the absolute formula, it's important to note that \[ FT
-        \] could be defined in many different ways, depending on what you call a
+        With respect to the absolute formula, it's important to note that \( FT
+        \) could be defined in many different ways, depending on what you call a
         transition. But that wouldn't really matter much in the end, we would
-        just have to adjust a correcting factor, like a \[ +1 \] or \[ -1 \] at
+        just have to adjust a correcting factor, like a \( +1 \) or \( -1 \) at
         the end.
       </p>
       <p>
@@ -264,9 +273,11 @@
       <table>
         <thead>
           <tr>
-            <th>\[ \# \ of \ empty \ intersections \]</th>
-            <th>\[ Recursive \ Formula \]</th>
-            <th>\[ Absolute \ Formula \]</th>
+            <th>
+              \[ \begin{align} &\# \ of \ empty \\ &intersections \end{align} \]
+            </th>
+            <th>\[ \begin{align} &Recursive \\ &Formula \end{align} \]</th>
+            <th>\[ \begin{align} &Absolute \\ &Formula \end{align} \]</th>
           </tr>
         </thead>
         <tbody>
@@ -307,8 +318,8 @@
         recursive formula &mdash;:
       </p>
       <p>
-        \[ \# \ of \ liberties = empty \ intersections - 2 + previous \ case \
-        in \ the \ recursion \]
+        \[ \begin{align} \# \ of \ liberties = \ &empty \ intersections \\ &- 2
+        + previous \ case \ in \ the \ recursion \end{align} \]
       </p>
       <p>
         Why subtract 2? Because you're gonna play, up to the atari, all of the
@@ -332,23 +343,24 @@
         the new -5 with the first 5:
       </p>
       <p>
-        \[ n_L(6) = (5 + 4 + 3 + 2 + 1) + 2 - 3 - 2 = (5 + 4 + 3 + 2 + 1) + 2 -
-        5 = (4 + 3 + 2 + 1) + 2 = S_{AP}(4) + 2 = S_{AP}(ei - 2) + 2 = \frac{(6
-        - 2) (6 - 2 + 1)}{2} + 2 = 12 \]
+        \[ \begin{align} n_L(6) &= (5 + 4 + 3 + 2 + 1) + 2 - 3 - 2 \\ &= (5 + 4
+        + 3 + 2 + 1) + 2 - 5 \\ &= (4 + 3 + 2 + 1) + 2 \\ &= S_{AP}(4) + 2 \\ &=
+        S_{AP}(ei - 2) + 2 \\ &= \frac{(6 - 2) (6 - 2 + 1)}{2} + 2 = 12
+        \end{align} \]
       </p>
       <p>So, another way to look at the whole is:</p>
       <p>\[ n_L(ei) = \frac{(ei - 2) (ei - 1)}{2} + 2 \]</p>
       <p>
-        where \[ ei \] is the total number of empty intersections internally.
+        where \( ei \) is the total number of empty intersections internally.
       </p>
       <p>
-        Where does the \[ +2 \] come from? Essentially from the Nakade #2 base
+        Where does the \( +2 \) come from? Essentially from the Nakade #2 base
         case, I would say. And I can see many other formulas popping out from
         that point of view.
       </p>
       <p>
-        The last, AP-based, formula can even account for values as low as \[ 2 \
-        ei \] apparently:
+        The last, AP-based, formula can even account for values as low as \( 2 \
+        ei \) apparently:
       </p>
       <table>
         <thead>
@@ -393,40 +405,64 @@
         <thead>
           <tr>
             <th>\[ ei \]</th>
-            <th>\[ Recursive \ Formula \ \#1 \]</th>
-            <th>\[ Recursive \ Formula \ \#2 \]</th>
-            <th>\[ Absolute \ Formula \]</th>
-            <th>\[ AP-based \ Formula \]</th>
+            <th>
+              \[ \begin{align} &Recursive \\ &Formula \ \#1 \end{align} \]
+            </th>
+            <th>
+              \[ \begin{align} &Recursive \\ &Formula \ \#2 \end{align} \]
+            </th>
+            <th>\[ \begin{align} &Absolute \\ &Formula \end{align} \]</th>
+            <th>\[ \begin{align} &AP \\ &Formula \end{align} \]</th>
           </tr>
         </thead>
         <tbody>
           <tr>
             <td>7</td>
-            <td>\[ 6 - 1 + 12 = 17 \]</td>
-            <td>\[ 7 - 2 + 12 = 17 \]</td>
-            <td>\[ 6 + 5 + 4 + 3 + 2 + 1 - 4 = 17 \]</td>
-            <td>\[ (5 \cdot 6) / 2 + 2 = 17 \]</td>
+            <td>\[ \begin{align} &6 - 1 + \\ &12 = 17 \end{align} \]</td>
+            <td>\[ \begin{align} &7 - 2 + \\ &12 = 17 \end{align} \]</td>
+            <td>
+              \[ \begin{align} &6 + 5 + 4 \\ &+ 3 + 2 + 1 \\ &- 4 = 17
+              \end{align} \]
+            </td>
+            <td>
+              \[ \begin{align} &(5 \cdot 6) / 2 \\ &+ 2 = 17 \end{align} \]
+            </td>
           </tr>
           <tr>
             <td>8</td>
-            <td>\[ 7 - 1 + 17 = 23 \]</td>
-            <td>\[ 8 - 2 + 17 = 23 \]</td>
-            <td>\[ 7 + 6 + 5 + 4 + 3 + 2 + 1 - 5 = 23 \]</td>
-            <td>\[ (6 \cdot 7) / 2 + 2 = 23 \]</td>
+            <td>\[ \begin{align} &7 - 1 + \\ &17 = 23 \end{align} \]</td>
+            <td>\[ \begin{align} &8 - 2 + \\ &17 = 23 \end{align} \]</td>
+            <td>
+              \[ \begin{align} &7 + 6 + 5 \\ &+ 4 + 3 + 2 \\ &+ 1 - 5 = 23
+              \end{align} \]
+            </td>
+            <td>
+              \[ \begin{align} &(6 \cdot 7) / 2 \\ &+ 2 = 23 \end{align} \]
+            </td>
           </tr>
           <tr>
             <td>9</td>
-            <td>\[ 8 - 1 + 23 = 30 \]</td>
-            <td>\[ 9 - 2 + 23 = 30 \]</td>
-            <td>\[ 8 + 7 + 6 + 5 + 4 + 3 + 2 + 1 - 6 = 30 \]</td>
-            <td>\[ (7 \cdot 8) / 2 + 2 = 30 \]</td>
+            <td>\[ \begin{align} &8 - 1 + \\ &23 = 30 \end{align} \]</td>
+            <td>\[ \begin{align} &9 - 2 + \\ &23 = 30 \end{align} \]</td>
+            <td>
+              \[ \begin{align} &8 + 7 + 6 + \\ &5 + 4 + 3 \\ &+ 2 + 1 - 6 = 30
+              \end{align} \]
+            </td>
+            <td>
+              \[ \begin{align} &(7 \cdot 8) / 2 \\ &+ 2 = 30 \end{align} \]
+            </td>
           </tr>
           <tr>
             <td>10</td>
-            <td>\[ 9 - 1 + 30 = 38 \]</td>
-            <td>\[ 10 - 2 + 30 = 38 \]</td>
-            <td>\[ 9 + 8 + 7 + 6 + 5 + 4 + 3 + 2 + 1 - 7 = 38 \]</td>
-            <td>\[ (8 \cdot 9) / 2 + 2 = 38 \]</td>
+            <td>\[ \begin{align} &9 - 1 + \\ &30 = 38 \end{align} \]</td>
+            <td>\[ \begin{align} &10 - 2 + \\ &30 = 38 \end{align} \]</td>
+            <td>
+              \[ \begin{align} &9 + 8 + 7 + 6 \\ &+ 5 + 4 + 3 + 2 \\ &+ 1 - 7 =
+              38 \end{align} \]
+            </td>
+            <td>
+              \[ \begin{align} &(8 \cdot 9) / 2 \\ &+ 2 = 38 \end{align} \]
+            </td>
           </tr>
         </tbody>
       </table>
@@ -482,11 +518,8 @@
         collection.
       </p>
 
-      <a
-        href="https://www.goodreads.com/book/show/31125845-1000-cases-for-tsume-go?ac=1&amp;from_search=true&amp;qid=bfzCwPEhib&amp;rank=2"
-        >Wang Zhi et al.'s 1000 Cases of Tsume-Go</a
-      >. Black to play, as usual in tsumego books.[/caption]
       <h2>6. Conclusion</h2>
+
       <p>
         In true fairness, do you really need all of that complicated reasoning?
         Not really, you could just remember the 6 use-cases above, the end. But
@@ -529,8 +562,8 @@
         Another topic I forgot to mention was the complexity of the growth of
         the sequence. The AP-based formula &mdash; a formula where each item
         will be the sum of an AP &mdash; shows that the liberties grow
-        quadratically with respect to the internal empty intersections, i.e., \[
-        O(ei^2) \]. That means it grows faster than most people would have
+        quadratically with respect to the internal empty intersections, i.e., \(
+        O(ei^2) \). That means it grows faster than most people would have
         expected, which is probably something close to linear behavior. That's
         why, when you hear someone scream in pain something like "why does it
         take forever for this to die?", you should have nothing but compassion.
