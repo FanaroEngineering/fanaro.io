@@ -21,6 +21,10 @@ blockquote {
   text-align: justify;
 }
 
+ul, li {
+  margin-bottom: 1rem;
+}
+
 a {
   color: #95c379;
   text-decoration: none;
