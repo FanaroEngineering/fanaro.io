@@ -30,17 +30,6 @@ a {
   text-decoration: none;
 }
 
-nav > a {
-  display: inline-flex;
-  align-items: center;
-  font-size: 1.5rem;
-  color: var(--text-color);
-}
-
-nav > a > svg {
-  padding-right: 10px;
-}
-
 iframe {
   max-width: var(--max-content-width-mobile);
   max-height: 51vw;
