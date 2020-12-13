@@ -22,7 +22,6 @@
     </nav>
 
     <article>
-
       <img src="/articles/ogs_kbd_nav/thumbnail.png" />
 
       <h1>OGS Kbd Nav: Play Go on OGS With Only Your Keyboard</h1>
@@ -125,7 +124,9 @@
               <a
                 href="https://addons.mozilla.org/en-US/firefox/addon/ogs-kbd-nav/?utm_source=addons.mozilla.org&amp;utm_medium=referral&amp;utm_content=search"
                 >Firefox</a
-              ><sup><a href="#footnote-1">1</a></sup>
+              ><foot-note
+                text="I won't guarantee it works perfectly with Firefox."
+              ></foot-note>
             </td>
           </tr>
           <tr>
@@ -133,7 +134,11 @@
               <a
                 href="https://microsoftedge.microsoft.com/addons/detail/ogs-kbd-nav/hghfjmadiodnkelleppombenchlcbjol"
                 >Edge</a
-              ><sup><a href="#footnote-2">2</a></sup>
+              ><foot-note
+                text="Microsoft Edge uses Chromium, the same core of Chrome. So, if you
+              have problems with the Edge store, simply install the Chrome Store
+              version."
+              ></foot-note>
             </td>
           </tr>
         </tbody>
@@ -190,7 +195,11 @@
           <tr>
             <td><kbd>a</kbd> or <kbd>←</kbd></td>
             <td>
-              Move the stone marker left<sup><a href="#footnote-3">3</a></sup>
+              Move the stone marker left<foot-note
+                text="Using the left arrow also may activate analysis during the game, so
+              I'm currently programmatically pressing the &lt;kbd&gt;Back to game&lt;/kbd&gt;
+              button in the background."
+              ></foot-note>
             </td>
           </tr>
           <tr>
@@ -216,17 +225,23 @@
           <tr>
             <td><kbd>Ctrl</kbd> + <kbd>,</kbd></td>
             <td>
-              Cycle through the different board sizes<sup
-                ><a href="#footnote-4">4</a></sup
-              >
+              Cycle through the different board sizes<foot-note
+                text="The extension has no way of identifying that you're on a smaller
+              Goban size &mdash; only 19x19, 13x13 and 9x9 sizes are currently
+              supported &mdash; so you will have to use this shortcut in order to
+              manually achieve what you're looking for. And toggling to the right size
+              is also necessary for the coordinates input field to work properly."
+              ></foot-note>
             </td>
           </tr>
           <tr>
             <td><kbd>Ctrl</kbd> + <kbd>.</kbd></td>
             <td>
-              Toggle the coordinates input field<sup
-                ><a href="#footnote-5">5</a></sup
-              >
+              Toggle the coordinates input field<foot-note
+                text="The coordinates should be of the form letter &mdash; lower or
+              uppercase &mdash; and a number from 1 to 19. For example,
+              both <code>c11</code> and <code>C11</code> are valid."
+              ></foot-note>
             </td>
           </tr>
         </tbody>
@@ -252,7 +267,11 @@
         </li>
         <li>
           <a href="https://qutebrowser.org/">qutebrowser</a
-          ><sup><a href="#footnote-6">6</a></sup
+          ><foot-note
+            text='This one was provided by
+          &lt;a href="https://github.com/apetresc">Adrian Petrescu&lt;/a&gt; on
+          &lt;a href="https://github.com/apetresc">Gitter&lt;/a&gt;.'
+          ></foot-note
           >: an entire browser made for navigating the web with only your
           keyboard.
         </li>
@@ -265,44 +284,7 @@
         allowfullscreen
       ></iframe>
 
-      <br />
-      <br />
-      <br />
-      <hr />
-
-      <sub>1: I won't guarantee it works perfectly with Firefox.</sub>
-      <br />
-      <sub
-        >2: Microsoft Edge uses Chromium, the same core of Chrome. So, if you
-        have problems with the Edge store, simply install the Chrome Store
-        version.</sub
-      >
-      <br />
-      <sub
-        >3: Using the left arrow also may activate analysis during the game, so
-        I'm currently programmatically pressing the <kbd>Back to game</kbd>
-        button in the background.</sub
-      >
-      <br />
-      <sub
-        >4: The extension has no way of identifying that you're on a smaller
-        Goban size &mdash; only 19x19, 13x13 and 9x9 sizes are currently
-        supported &mdash; so you will have to use this shortcut in order to
-        manually achieve what you're looking for. And toggling to the right size
-        is also necessary for the coordinates input field to work properly.</sub
-      >
-      <br />
-      <sub
-        >5: The coordinates should be of the form letter &mdash; lower or
-        uppercase &mdash; and a number from 1 to 19. For example,
-        both <code>c11</code> and <code>C11</code> are valid.</sub
-      >
-      <br />
-      <sub
-        >6: This one was provided by
-        <a href="https://github.com/apetresc">Adrian Petrescu</a> on
-        <a href="https://github.com/apetresc">Gitter</a>.</sub
-      >
+      <article-footer></article-footer>
     </article>
   </body>
 </html>

@@ -14,7 +14,7 @@ body {
   padding-left: var(--margin);
 }
 
-p, ul, ol {
+p, ul, ol, blockquote {
   text-align: justify;
 }
 
@@ -34,15 +34,7 @@ nav > a > svg {
   padding-right: 10px;
 }
 
-hr {
-  margin-left: 0px;
-  border: none;
-  max-width: 150px;
-  width: 35vw;
-  height: 0.75px;
-  color: var(--text-color);
-  background-color: var(--text-color);
-}
+
 
 iframe {
   max-width: var(--max-content-width-mobile);
