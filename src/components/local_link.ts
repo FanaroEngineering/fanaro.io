@@ -11,8 +11,8 @@ export default class LocalLinkElement extends HTMLElement {
     <a href=""></a>
   `;
 
-  private _link: string;
-  private _text: string;
+  private _link: string = "";
+  private _text: string = "";
 
   get link(): string {
     return this._link;

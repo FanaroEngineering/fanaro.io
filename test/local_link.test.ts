@@ -1,8 +1,15 @@
-import LocalLinkElement from "./components/local_link";
+import LocalLinkElement from "../src/components/local_link";
 
 test("Local Link Initialization", () => {
-  const localLink: LocalLinkElement = new LocalLinkElement();
+  customElements.define(LocalLinkElement.tag, LocalLinkElement);
 
-  expect(localLink.link).toBe("");
-  expect(localLink.text).toBe("");
+  const localLinkEmpty: LocalLinkElement = new LocalLinkElement();
+
+  expect(localLinkEmpty.link).toBe("");
+  expect(localLinkEmpty.text).toBe("");
+
+  const localLink: LocalLinkElement = new LocalLinkElement("/new/path", "title");
+
+  expect(localLink.link).toBe("/new/path");
+  expect(localLink.text).toBe("title");
 });
