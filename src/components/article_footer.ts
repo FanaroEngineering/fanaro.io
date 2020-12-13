@@ -39,9 +39,7 @@ export default class ArticleFooterElement extends HTMLElement {
       "sub"
     )!;
     const footer: HTMLElement = this.shadowRoot!.querySelector("footer")!;
-
     const footnotesLength: number = footnotes.length;
-
     for (let i = 0; i < footnotesLength; i++) {
       footer.appendChild(footnotes[i]);
       footer.append(document.createElement("br"));
