@@ -8,11 +8,11 @@ export default class LocalLinkElement extends HTMLElement {
         text-decoration: none;
       }
     </style>
-    <a href=""></a>
+    <a></a>
   `;
 
-  private _link: string = "";
-  private _text: string = "";
+  private _link: string;
+  private _text: string;
 
   get link(): string {
     return this._link;
