@@ -21,8 +21,8 @@ blockquote {
   text-align: justify;
 }
 
-ul, li {
-  margin-bottom: 1rem;
+li {
+  margin-bottom: .5rem;
 }
 
 a {
