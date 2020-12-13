@@ -11,11 +11,21 @@ export default class LocalLinkElement extends HTMLElement {
     <a href=""></a>
   `;
 
-  private link: string = "";
-  private text: string = "";
+  private _link: string;
+  private _text: string;
 
-  constructor() {
+  get link(): string {
+    return this._link;
+  }
+
+  get text(): string {
+    return this._text;
+  }
+
+  constructor(link: string = "", text: string = "") {
     super();
+    this._link = link;
+    this._text = text;
 
     const template: HTMLTemplateElement = document.createElement("template");
     template.innerHTML = LocalLinkElement.template;
@@ -25,40 +35,16 @@ export default class LocalLinkElement extends HTMLElement {
   }
 
   connectedCallback() {
-    this.link = this.getAttribute("link")!;
-    this.text = this.getAttribute("text")!;
+    if (this._link == "" || this._text == "") {
+      this._link = this.getAttribute("link")!;
+      this._text = this.getAttribute("text")!;
 
-    const innerAnchor: HTMLAnchorElement = this.shadowRoot!.querySelector("a")!;
-    innerAnchor.href = this.link;
-    innerAnchor.innerText = this.text;
+      const innerAnchor: HTMLAnchorElement = this.shadowRoot!.querySelector(
+        "a"
+      )!;
+
+      innerAnchor.href = this._link;
+      innerAnchor.text = this._text;
+    }
   }
-
-  private fetchAppendArticle = (): void => {
-    fetch(this.link)
-      .then((response: Response) => response.text())
-      .then((htmlAsString: string) => {
-        const parser: DOMParser = new DOMParser();
-
-        const articleDocument: Document = parser.parseFromString(
-          htmlAsString,
-          "text/html"
-        );
-
-        const article: HTMLElement = articleDocument.querySelector("article")!;
-
-        document.body.append(article);
-      });
-  };
-
-  onclick = (ev: MouseEvent): void => {
-    ev.preventDefault();
-    this.fetchAppendArticle();
-    const link: string = "articles/" + this.link.split("/")[2];
-    history.pushState(
-      { page: link, url: link },
-      this.text,
-      link
-    );
-    this.remove();
-  };
 }
