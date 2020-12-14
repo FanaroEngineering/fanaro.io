@@ -1,12 +1,13 @@
 export enum Language {
   english = "English",
-  portuguese = "Portuguese",
-  french = "French",
+  portuguese = "Português",
+  french = "Français",
 }
 
 export enum Topic {
   go = "Go",
   tsumego = "Tsumego",
+  joseki = "Joseki",
   review = "Review",
   productivity = "Productivity",
   psychology = "Psychology",
@@ -14,6 +15,8 @@ export enum Topic {
   browserExtension = "Browser Extension",
   programming = "Programming",
   language = "Language",
+  books = "Books",
+  myYouTubeChannel = "My YouTube Channel"
 }
 
 export default interface Article {
@@ -89,5 +92,14 @@ export const articlesMetadata: Article[] = [
     language: Language.portuguese,
     mainTopic: Topic.language,
     otherTopics: [],
+  },
+  {
+    index: 100,
+    title: "Os Grandes Debates de Joseki: Aula com Thiago Sinji Ramos",
+    link: "/articles/joseki_debates_sinji/joseki_debates_sinji.html",
+    date: Date.UTC(2020, 7, 7),
+    language: Language.portuguese,
+    mainTopic: Topic.go,
+    otherTopics: [Topic.books, Topic.joseki, Topic.myYouTubeChannel],
   },
 ];

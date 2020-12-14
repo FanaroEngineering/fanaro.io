@@ -10,6 +10,8 @@ export default class Setup {
     this.prependAppend();
   }
 
+  private article: HTMLElement | null = null;
+
   private define = (): void => {
     customElements.define(LocalLink.tag, LocalLink);
     customElements.define(Footnote.tag, Footnote);
@@ -28,8 +30,15 @@ export default class Setup {
     document.body.prepend(document.createElement("fanaro-nav"));
 
   private appendFooter = (): void => {
-    const article: HTMLElement | null = document.querySelector("article");
-    if (article != null)
-      article!.append(document.createElement("article-footer"));
+    this.article = document.querySelector("article");
+    if (this.articleContainsFootnotes)
+      this.article!.append(document.createElement("article-footer"));
   };
+
+  private get articleContainsFootnotes(): boolean {
+    return (
+      this.article != null &&
+      this.article.querySelectorAll("foot-note").length > 0
+    );
+  }
 }
