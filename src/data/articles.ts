@@ -102,4 +102,13 @@ export const articlesMetadata: Article[] = [
     mainTopic: Topic.go,
     otherTopics: [Topic.books, Topic.joseki, Topic.myYouTubeChannel],
   },
+  {
+    index: 99,
+    title: "Quote #3 - Martin Fowler on Good Code",
+    link: "/articles/quote_3_fowler/quote_3_fowler.html",
+    date: Date.UTC(2020, 5, 28),
+    language: Language.english,
+    mainTopic: Topic.programming,
+    otherTopics: [Topic.productivity],
+  },
 ];

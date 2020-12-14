@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>
+      Quote #3 - Martin Fowler on Good Code (and engineering in general)
+    </title>
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+
+    <script src="../../index.js"></script>
+    <script
+      src="https://polyfill.io/v3/polyfill.min.js?features=es6"
+      defer
+    ></script>
+    <script
+      id="MathJax-script"
+      async
+      defer
+      src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
+    ></script>
+
+    <link rel="stylesheet" href="../../index.css" />
+    <link rel="icon" type="image/svg+xml" href="../../assets/favicon.svg" />
+  </head>
+  <body>
+    <article>
+      <img src="thumbnail.png" alt="Martin Fowler on Good Code" />
+
+      <h1>
+        Quote #3 - Martin Fowler on Good Code (and engineering in general)
+      </h1>
+
+      <blockquote>
+        <p>
+          Any fool can write code that a computer can understand. Good
+          programmers write code that humans can understand.
+        </p>
+        <p style="text-align: right; padding-left: 200px">
+          Martin Fowler,
+          <a href="https://en.wikiquote.org/wiki/Martin_Fowler"
+            >Refactoring: Improving the Design of Existing Code, 1999</a
+          >.
+        </p>
+      </blockquote>
+
+      <p>
+        Even though you might admire the elegance of code which uses the
+        extremely succinct \(i, j, k, \mathrm{fft}(x)\)... notations for
+        variables and assignments, the truth is they are incredibly difficult to
+        manage in a larger-than-one-file codebase. And that's not because that
+        math is complicated but rather because you're fooling yourself for
+        thinking that making an abstraction visually succinct will make its
+        complexity disappear.
+      </p>
+      <p>
+        Just because the letter \(i\) is smaller than the words "row" or
+        "column" doesn't mean your brain will automatically attach meaning to
+        it. In reality, every time you try to understand code with this sort of
+        scientific notation, in your head, you will try to associate the symbols
+        to their meanings, which creates a ton of mental friction when trying to
+        understand the whole. So why not simply write "row" instead of this
+        dreaded \(i\) and eliminate the friction altogether?<foot-note
+          text='I
+        know, I know... there are times when a row becomes a column later on,
+        and, so, writing "row" might be confusing. In those cases, sure, choose
+        another name &mdash; please still try to avoid the letter extremely
+        succinct names like &lt;em&gt;i&lt;/em&gt;. But, until then, stick to the
+        simpler "row".'
+        ></foot-note>
+      </p>
+      <p>
+        I would add to Fowler's quote that we should not only write code that
+        humans can understand but rather understand it easily. Developing with a
+        team in a codebase where every line contains a bit of mental friction is
+        not only unpleasant but unsustainable. Mad looks, wtfs, anger and
+        resentment will quickly get even bigger than the code itself.
+      </p>
+      <p>
+        The quote above can also be further generalized into the importance of
+        not only taking care of the what &mdash; the product itself &mdash; but
+        the how &mdash; the means. If, for example, you want to develop a wheel,
+        ideally, you wouldn't have to also develop a vehicle, like a car, in
+        order to test it. You would simply create a rod you could spin and
+        attach it to the wheel. This equipment would be you taking care of the
+        most optimal way of how to develop the wheel, which, arguably, is a
+        product in and of itself, a metaproduct.
+      </p>
+      <p>
+        Developing a vehicle to test the wheel may <em>seem</em> like good
+        enough. It tests the product in the end anyway, doesn't it? But it's
+        much worse than you would initially believe it to be. One big reason is
+        that it creates a multivariate issue, i.e., you're not testing the wheel
+        in isolation anymore, you're testing the whole system; so, if something
+        isn't playing out as expected, how would you unambiguously say it's due
+        to the wheel and not any other part of the vehicle?
+      </p>
+      <p>
+        The other reason &mdash; and the one that is much closer to Fowler's
+        quote &mdash; is that it adds a lot of noise, inconvenience and useless
+        stuff to what you want to test. Imagine the routine of someone who wants
+        to test the vehicle-wheel setup: every day the person would have to make
+        the whole thing work in order to test even the smallest of the parts. If
+        the setup were simpler, the management cost would be that of only a
+        simple rod.
+      </p>
+      <p>
+        And all this discussion is, to me, (at) the heart of engineering. After
+        bashing my head against many walls throughout the past years, I've come
+        to firmly disagree with blunt definitions like the one propagated by the
+        <a href="https://en.wikipedia.org/wiki/Engineering"
+          >American Engineers' Council for Professional Development</a
+        ><foot-note text="On Wikipedia at least..."></foot-note>, where the
+        product is the centerpiece, the objective. Developing the quick and
+        dirty version of a product is much easier than you would think and you
+        will be appalled by how demotivated you will feel about it. Instead,
+        engineering is actually about the means of production &mdash; seems
+        oddly familiar, doesn't it? Try imagining modern capitalism without
+        engineering...<foot-note
+          text="I'm not a
+        defender of capitalism, I'm just throwing facts where they are due."
+        ></foot-note>
+        &mdash;: watch your quick and dirty innovative product be surpassed in
+        the long run by "copycats" who did the same thing as you but with better
+        <em>means</em>.
+      </p>
+    </article>
+  </body>
+</html>
