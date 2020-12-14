@@ -1,4 +1,4 @@
-export default class FanaroNavElement extends HTMLElement {
+export default class FanaroNav extends HTMLElement {
   static readonly tag: string = "fanaro-nav";
 
   private static readonly template: string = `
@@ -28,7 +28,7 @@ export default class FanaroNavElement extends HTMLElement {
     super();
 
     const template: HTMLTemplateElement = document.createElement("template");
-    template.innerHTML = FanaroNavElement.template;
+    template.innerHTML = FanaroNav.template;
 
     this.attachShadow({ mode: "open" });
     this.shadowRoot!.appendChild(template.content.cloneNode(true));

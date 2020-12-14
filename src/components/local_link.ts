@@ -1,4 +1,4 @@
-export default class LocalLinkElement extends HTMLElement {
+export default class LocalLink extends HTMLElement {
   static readonly tag: string = "local-link";
 
   private static readonly template: string = `
@@ -28,7 +28,7 @@ export default class LocalLinkElement extends HTMLElement {
     this._text = text;
 
     const template: HTMLTemplateElement = document.createElement("template");
-    template.innerHTML = LocalLinkElement.template;
+    template.innerHTML = LocalLink.template;
 
     this.attachShadow({ mode: "open" });
     this.shadowRoot!.appendChild(template.content.cloneNode(true));

@@ -1,4 +1,4 @@
-export default class ArticleFooterElement extends HTMLElement {
+export default class ArticleFooter extends HTMLElement {
   static readonly tag: string = "article-footer";
 
   private static readonly template: string = `
@@ -28,7 +28,7 @@ export default class ArticleFooterElement extends HTMLElement {
     super();
 
     const template: HTMLTemplateElement = document.createElement("template");
-    template.innerHTML = ArticleFooterElement.template;
+    template.innerHTML = ArticleFooter.template;
 
     this.attachShadow({ mode: "open" });
     this.shadowRoot!.appendChild(template.content.cloneNode(true));

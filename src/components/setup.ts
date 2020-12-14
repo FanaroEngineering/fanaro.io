@@ -1,7 +1,7 @@
-import ArticleFooterElement from "./article_footer";
-import FanaroNavElement from "./fanaro_nav";
-import FootnoteElement from "./footnote";
-import LocalLinkElement from "./local_link";
+import ArticleFooter from "./article_footer";
+import FanaroNav from "./fanaro_nav";
+import Footnote from "./footnote";
+import LocalLink from "./local_link";
 
 export default class Setup {
   constructor() {
@@ -10,10 +10,10 @@ export default class Setup {
   }
 
   private define = (): void => {
-    customElements.define(LocalLinkElement.tag, LocalLinkElement);
-    customElements.define(FootnoteElement.tag, FootnoteElement);
-    customElements.define(ArticleFooterElement.tag, ArticleFooterElement);
-    customElements.define(FanaroNavElement.tag, FanaroNavElement);
+    customElements.define(LocalLink.tag, LocalLink);
+    customElements.define(Footnote.tag, Footnote);
+    customElements.define(ArticleFooter.tag, ArticleFooter);
+    customElements.define(FanaroNav.tag, FanaroNav);
   };
 
   private prependAppend = (): void =>

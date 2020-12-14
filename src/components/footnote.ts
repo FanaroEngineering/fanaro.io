@@ -1,4 +1,4 @@
-export default class FootnoteElement extends HTMLElement {
+export default class Footnote extends HTMLElement {
   static readonly tag: string = "foot-note";
 
   private static readonly anchorColor: string = "#D9C07B";
@@ -6,11 +6,11 @@ export default class FootnoteElement extends HTMLElement {
   private static readonly template: string = `
     <style>
       a {
-        color: ${FootnoteElement.anchorColor};
+        color: ${Footnote.anchorColor};
         text-decoration: none;
       }
       sup {
-        color: ${FootnoteElement.anchorColor};
+        color: ${Footnote.anchorColor};
       }
     </style>
     <sup><a></a></sup>
@@ -29,7 +29,7 @@ export default class FootnoteElement extends HTMLElement {
     this._text = text;
 
     const template: HTMLTemplateElement = document.createElement("template");
-    template.innerHTML = FootnoteElement.template;
+    template.innerHTML = Footnote.template;
 
     this.attachShadow({ mode: "open" });
     this.shadowRoot!.appendChild(template.content.cloneNode(true));
@@ -61,7 +61,7 @@ export default class FootnoteElement extends HTMLElement {
     const subAnchor: HTMLAnchorElement = document.createElement("a");
     subAnchor.innerHTML = this.nextIndex.toString();
     subAnchor.href = "#footnote-base-" + this.nextIndex.toString();
-    subAnchor.style.color = FootnoteElement.anchorColor;
+    subAnchor.style.color = Footnote.anchorColor;
     const sub: HTMLElement = document.createElement("sub");
     sub.id = "footnote-" + this.nextIndex.toString();
     sub.innerHTML = ": " + this._text;
