@@ -13,6 +13,7 @@ export enum Topic {
   math = "Math",
   browserExtension = "Browser Extension",
   programming = "Programming",
+  language = "Language",
 }
 
 export default interface Article {
@@ -76,8 +77,17 @@ export const articlesMetadata: Article[] = [
     title: "Tradução de um Vídeo da BIBA Baduk",
     link: "/articles/traducao_biba/traducao_biba.html",
     date: Date.UTC(2020, 7, 16),
-    language: Language.english,
+    language: Language.portuguese,
     mainTopic: Topic.go,
     otherTopics: [Topic.review],
+  },
+  {
+    index: 101,
+    title: "Etimologia da Palavra Carro",
+    link: "/articles/etimologia_carro/etimologia_carro.html",
+    date: Date.UTC(2020, 7, 11),
+    language: Language.portuguese,
+    mainTopic: Topic.language,
+    otherTopics: [],
   },
 ];

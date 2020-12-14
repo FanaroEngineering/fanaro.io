@@ -1,7 +1,9 @@
 :root {
   --text-color: #abb2bf;
   --max-content-width-mobile: 90vw;
-  --max-content-width-desktop: 560px;
+  --max-img-iframe-width-mobile: 75vw;
+  --max-content-width-desktop: 580px;
+  --max-img-iframe-width-desktop: 500px;
   --margin: 1rem;
 }
 
@@ -31,7 +33,7 @@ a {
 }
 
 iframe {
-  max-width: var(--max-content-width-mobile);
+  max-width: var(--max-img-iframe-width-mobile);
   max-height: 51vw;
   width: 560px;
   height: 315px;
@@ -39,7 +41,7 @@ iframe {
 }
 
 img {
-  max-width: var(--max-content-width-mobile);
+  max-width: var(--max-img-iframe-width-mobile);;
   padding-right: var(--margin);
 }
 
@@ -80,7 +82,7 @@ kbd {
   vertical-align: middle;
 }
 
-@media (min-width: 580px) {
+@media (min-width: 600px) {
   body {
     max-width: var(--max-content-width-desktop);
     width: var(--max-content-width-desktop);
@@ -88,6 +90,6 @@ kbd {
 
   img,
   iframe {
-    max-width: var(--max-content-width-desktop);
+    max-width: var(--max-img-iframe-width-desktop);
   }
 }
