@@ -1,9 +1,12 @@
 # fanaro.io
 
-This is the revamp with pure HTML, CSS and TypeScript of the [fanaro.com.br][fanaro.com.br] old WordPress website. It's meant to be a [single-page application (SPA)][spa] &mdash; Angular style &mdash; but with no framework at all.
+This is the revamp with pure HTML, CSS and TypeScript of the [fanaro.com.br][fanaro.com.br] old WordPress website. 
+
+It was meant to be a [single-page application (SPA)][spa] &mdash; Angular style &mdash; but with no framework at all, however this demands too much work without a server and with only [Gihub Pages][gh_pages], which I don't want to do since it's too much of a workload for me anyway.
 
 
 [fanaro.com.br]: https://fanaro.com.br
+[gh_pages]: https://pages.github.com/
 [spa]: https://developer.mozilla.org/en-US/docs/Glossary/SPA
 
 <br>
@@ -11,7 +14,6 @@ This is the revamp with pure HTML, CSS and TypeScript of the [fanaro.com.br][fan
 <!-- TOC depthFrom:2 -->
 
 - [1. For the developer](#1-for-the-developer)
-    - [1.1. A Note on Local Links](#11-a-note-on-local-links)
     - [1.2. The Full Development Workflow](#12-the-full-development-workflow)
         - [1.2.1. Compiling with TypeScript](#121-compiling-with-typescript)
         - [1.2.2. Testing with NPM](#122-testing-with-npm)
@@ -21,10 +23,6 @@ This is the revamp with pure HTML, CSS and TypeScript of the [fanaro.com.br][fan
 <!-- /TOC -->
 
 ## 1. For the developer
-
-### 1.1. A Note on Local Links
-
-Since this is supposed to be a [single-page application (SPA)][spa], local links should be dealt internally and not necessarily force a whole load on the browser. That means they are a special case, and for that I've been adding the `localLink` attribute to anchor elements (`<a>`). If the link is local, I also use an empty `href` &mdash; `href=""` &mdash; so the link isn't perceived as disabled.
 
 ### 1.2. The Full Development Workflow
 
