@@ -25,6 +25,8 @@
     <fanaro-nav></fanaro-nav>
 
     <article>
+      <img src="thumbnail.png" />
+
       <blockquote>
         <strong>PT-BR</strong>: É possível visualizar a versão em português
         deste post no meu canal <a href="https://youtu.be/METdo2UWmos">aqui</a>.
@@ -69,6 +71,18 @@
         liberties<foot-note text="Effective liberties."></foot-note>; and the
         5-stone clump has 8".
       </p>
+
+      <div style="display: inline-flex">
+        <figure>
+          <img src="4_stone_clump.PNG" />
+          <figcaption>4-stone dead clump or Nakade #4.</figcaption>
+        </figure>
+        <figure>
+          <img src="5_stone_clump.PNG" />
+          <figcaption>5-stone dead clump or Nakade #5.</figcaption>
+        </figure>
+      </div>
+
       <p>
         Anything bigger than
         <a href="https://senseis.xmp.net/?Nakade">Nakade</a> #5 will 95% of the
@@ -101,6 +115,7 @@
         2. The Search for the Logic behind Counting the Never-Ending Recapture
         of Stones
       </h2>
+
       <p>
         With recursion, the easiest way to start &mdash; and something math
         teachers should prioritize &mdash; is in fact not by how to get to the
@@ -109,6 +124,11 @@
         evolves. So, in our instance of recursion, we start with the 1-stone
         clump. This one is simple: 1 liberty.
       </p>
+
+      <figure>
+        <img src="1_stone_clump.PNG" />
+        <figcaption>1-stone dead clump or Nakade #1.</figcaption>
+      </figure>
 
       <p>
         In the second base case, White has two options for following the
@@ -125,6 +145,11 @@
         Up to now, these two base cases are very straightforward and don't
         really show recursion when played correctly.
       </p>
+
+      <figure>
+        <img src="2_stone_clump_marked.PNG" />
+        <figcaption>2-stone dead clump or Nakade #2.</figcaption>
+      </figure>
 
       <p>
         In the third use case, we have the first and, probably, most important
@@ -155,6 +180,11 @@
         move and does effectively grant more liberties to White.
       </p>
 
+      <figure>
+        <img src="3_stone_clump_marked.PNG" />
+        <figcaption>3-stone dead clump or Nakade #3.</figcaption>
+      </figure>
+
       <p>
         Maybe this formulation will become clearer when we examine the next use
         case, the 4-stone dead clump. Black plays <code>B</code>,
@@ -166,9 +196,17 @@
         previous \ case \ in \ the \ recursion \\ &=3 - 1 + 3 = 5 \ liberties
         \end{align} \]
       </p>
-      If you go through the end of the sequence, counting the overlapping
-      transitions as only 1 move, you will end up with the same value of 5
-      &mdash; and that reasoning is described in the SGF as well.
+      <p>
+        If you go through the end of the sequence, counting the overlapping
+        transitions as only 1 move, you will end up with the same value of 5
+        &mdash; and that reasoning is described in the SGF as well.
+      </p>
+
+      <figure>
+        <img src="4_stone_clump_marked.PNG" />
+        <figcaption>4-stone dead clump or Nakade #4.</figcaption>
+      </figure>
+
       <p>
         I hope the recursion has become clearer by now. But let's take a look at
         the next important case, the 5-stone dead clump. Black plays
@@ -181,6 +219,11 @@
         previous \ case \ in \ the \ recursion \\ &= 4 - 1 + 5 = 8 \ liberties
         \end{align} \]
       </p>
+
+      <figure>
+        <img src="5_stone_clump_marked.PNG" />
+        <figcaption>5-stone dead clump or Nakade #5.</figcaption>
+      </figure>
 
       <p>
         So far, from what we've seen, we have the sequence \[ 1, 2, 3, 5, 8 \],
@@ -200,6 +243,11 @@
           reviewed the whole article, something I'm even more thankful for.
         </p>
       </blockquote>
+
+      <figure>
+        <img src="rabbitty_six.PNG" />
+        <figcaption>Rabbitty Six.</figcaption>
+      </figure>
 
       <p>
         Black plays <code>A</code>, <code>B</code>, <code>D</code>,
@@ -483,6 +531,7 @@
       </p>
 
       <h2>4. Butterfly Seven</h2>
+
       <p>
         As an appendix, we have the
         <a href="https://senseis.xmp.net/?ButterflySeven">Butterfly Seven</a>,
@@ -494,6 +543,11 @@
         cases are covered by stopping our analysis of liberties at the Butterfly
         Seven.
       </p>
+
+      <figure>
+        <img src="butterfly_seven_marked.PNG" />
+        <figcaption>Butterfly Seven.</figcaption>
+      </figure>
 
       <h2>5. An Application of What You've Learned</h2>
       <p>
@@ -517,6 +571,17 @@
         ><foot-note text="ISBN 7810514296"></foot-note>, my favorite tsumego
         collection.
       </p>
+
+      <figure>
+        <img src="193.PNG" />
+        <figcaption>
+          Problem #193 of
+          <a
+            href="https://www.goodreads.com/book/show/31125845-1000-cases-for-tsume-go?ac=1&from_search=true&qid=bfzCwPEhib&rank=2"
+            >Wang Zhi et al.’s 1000 Cases of Tsume-Go</a
+          >. Black to play, as usual in tsumego books.
+        </figcaption>
+      </figure>
 
       <h2>6. Conclusion</h2>
 
