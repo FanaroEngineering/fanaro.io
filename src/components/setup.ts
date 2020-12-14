@@ -16,12 +16,11 @@ export default class Setup {
     customElements.define(FanaroNavElement.tag, FanaroNavElement);
   };
 
-  private prependAppend = (): void => {
+  private prependAppend = (): void =>
     window.addEventListener("DOMContentLoaded", (_: Event) => {
       this.prependNav();
       this.appendFooter();
     });
-  };
 
   private prependNav = (): void =>
     document.body.prepend(document.createElement("fanaro-nav"));
