@@ -8,6 +8,7 @@ export default class LocalLink extends HTMLElement {
         text-decoration: none;
       }
     </style>
+    
     <a></a>
   `;
 
@@ -38,13 +39,11 @@ export default class LocalLink extends HTMLElement {
     if (this._link == "" || this._text == "") {
       this._link = this.getAttribute("link")!;
       this._text = this.getAttribute("text")!;
-
-      const innerAnchor: HTMLAnchorElement = this.shadowRoot!.querySelector(
-        "a"
-      )!;
-
-      innerAnchor.href = this._link;
-      innerAnchor.text = this._text;
     }
+
+    const innerAnchor: HTMLAnchorElement = this.shadowRoot!.querySelector("a")!;
+
+    innerAnchor.href = this._link;
+    innerAnchor.text = this._text;
   }
 }

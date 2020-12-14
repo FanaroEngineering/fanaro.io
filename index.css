@@ -65,7 +65,7 @@ th {
   padding-bottom: 7.5px;
 }
 
-tr:nth-child(odd) {
+tr:nth-child(even), th {
   background-color: #1f2223;
 }
 

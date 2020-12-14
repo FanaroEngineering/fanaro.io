@@ -14,6 +14,7 @@ export default class FanaroNav extends HTMLElement {
         padding-right: 10px;
       }
     </style>
+    
     <nav>
       <a href="/">
         <svg width="50" height="50">

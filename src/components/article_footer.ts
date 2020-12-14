@@ -17,6 +17,7 @@ export default class ArticleFooter extends HTMLElement {
         text-decoration: none;
       }
     </style>
+    
     <br />
     <br />
     <br />

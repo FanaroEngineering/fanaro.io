@@ -1,3 +1,4 @@
+import ArticlesTable from "./articles_table";
 import ArticleFooter from "./article_footer";
 import FanaroNav from "./fanaro_nav";
 import Footnote from "./footnote";
@@ -14,6 +15,7 @@ export default class Setup {
     customElements.define(Footnote.tag, Footnote);
     customElements.define(ArticleFooter.tag, ArticleFooter);
     customElements.define(FanaroNav.tag, FanaroNav);
+    customElements.define(ArticlesTable.tag, ArticlesTable);
   };
 
   private prependAppend = (): void =>
