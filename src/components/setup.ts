@@ -28,7 +28,7 @@ export default class Setup {
 
   private appendFooter = (): void => {
     const article: HTMLElement | null = document.querySelector("article");
-    if (document.querySelector("article") != null)
+    if (article != null)
       article!.append(document.createElement("article-footer"));
   };
 }
