@@ -71,4 +71,13 @@ export const articlesMetadata: Article[] = [
     mainTopic: Topic.go,
     otherTopics: [Topic.tsumego, Topic.math],
   },
+  {
+    index: 102,
+    title: "Tradução de um Vídeo da BIBA Baduk",
+    link: "/articles/traducao_biba/traducao_biba.html",
+    date: Date.UTC(2020, 7, 16),
+    language: Language.english,
+    mainTopic: Topic.go,
+    otherTopics: [Topic.review],
+  },
 ];
