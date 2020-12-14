@@ -90,18 +90,25 @@ export default class ArticlesTable extends HTMLElement {
     const languageCell: HTMLTableDataCellElement = document.createElement("td");
     languageCell.append(this.article.language.toString());
     this.tr.append(languageCell);
-  }
-  
+  };
+
   private rowMainTopic = (): void => {
-    const mainTopicCell: HTMLTableDataCellElement = document.createElement("td");
+    const mainTopicCell: HTMLTableDataCellElement = document.createElement(
+      "td"
+    );
     mainTopicCell.append(this.article.mainTopic.toString());
     this.tr.append(mainTopicCell);
-  }
-  
+  };
+
   private rowOtherTopics = (): void => {
-    const otherTopicsCell: HTMLTableDataCellElement = document.createElement("td");
-    const otherTopics: string = this.article.otherTopics.join(", ");
+    const otherTopicsCell: HTMLTableDataCellElement = document.createElement(
+      "td"
+    );
+    const otherTopics: string =
+      this.article.otherTopics.length == 0
+        ? String.fromCharCode(8212)
+        : this.article.otherTopics.join(", ");
     otherTopicsCell.append(otherTopics);
     this.tr.append(otherTopicsCell);
-  }
+  };
 }
