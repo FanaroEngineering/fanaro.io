@@ -14,6 +14,7 @@ export enum Topic {
   math = "Math",
   browserExtension = "Browser Extension",
   programming = "Programming",
+  dart = "Dart",
   design = "Design",
   language = "Language",
   books = "Books",
@@ -123,7 +124,7 @@ export const articlesMetadata: Article[] = [
   },
   {
     index: 97,
-    title: "\"Less Code\" Print Design",
+    title: '"Less Code" Print Design',
     link: "/articles/less_code/less_code.html",
     date: Date.UTC(2020, 3, 19),
     language: Language.english,
@@ -138,5 +139,14 @@ export const articlesMetadata: Article[] = [
     language: Language.english,
     mainTopic: Topic.design,
     otherTopics: [],
+  },
+  {
+    index: 95,
+    title: "(My) Dart Katas",
+    link: "/articles/dart_katas/dart_katas.html",
+    date: Date.UTC(2020, 3, 11),
+    language: Language.english,
+    mainTopic: Topic.programming,
+    otherTopics: [Topic.dart],
   },
 ];
