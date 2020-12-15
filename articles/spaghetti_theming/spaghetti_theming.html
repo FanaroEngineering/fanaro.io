@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Avoiding Spaghetti Theming | With an Example in Flutter</title>
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+
+    <script src="../../index.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="../../index.css" />
+    <link rel="icon" type="image/svg+xml" href="../../assets/favicon.svg" />
+  </head>
+  <body>
+    <article>
+      <img src="thumbnail.jpg" />
+
+      <h1>Avoiding Spaghetti Theming | With an Example in Flutter</h1>
+
+      <h2>1. What is Spaghetti Theming?</h2>
+
+      <p>
+        <em>Spaghetti Code</em> is when you have references and dependencies all
+        over the place, in multiple "threads", making it difficult for the
+        reader to know where things start or end. They were notorious when
+        people overused
+        <a href="https://en.wikipedia.org/wiki/Goto"><code>GOTO</code></a>
+        statements &mdash; and the biggest cause for the extinction of that
+        statement.
+      </p>
+      <p>
+        Similarly, what I'm calling <em>Spaghetti Theming</em> is the
+        counterpart in UI, that is, when UI elements are jumbled throughout the
+        code in multiple different files, with no clear end nor beginning.
+      </p>
+      <p>
+        It's very easy, if you're not disciplined and methodical, to have theme
+        dependencies go awry in that fashion. For example, by having:
+      </p>
+
+      <ul>
+        <li>
+          The same colors being repeated and referenced independently in
+          separate files and classes, i.e., creating spaghetti threads.
+        </li>
+        <li>
+          Themes in a module being partially tied to another one, i.e., tangling
+          the spaghetti threads with no clear or systematic formula for creating
+          the ties, and that's where things get messy.
+        </li>
+      </ul>
+      <p>
+        Coming to think about it, this problem seems pretty common, doesn't it?
+        And it's not that easy to think of a trivial solution... so how do we
+        avoid this mess? The short answer is <em>centralizing</em> all of the
+        references, but the longer answer would take into account all of the
+        different programming techniques we can use to achieve this
+        centralization:
+      </p>
+
+      <ol>
+        <li>Using Classes and OOP to Organize your Theme Code</li>
+        <li>DO: Avoid Hungarian Notation (HN)</li>
+        <li>Centralizing your Theme with <code>ThemeData</code> in Flutter</li>
+        <li>
+          Going Further: Managing Web and Mobile Themes with Media Queries
+        </li>
+        <li>On the Designer's Responsibility</li>
+      </ol>
+      <h2>2. Using Classes and OOP to Organize your Theme Code</h2>
+      <p>
+        One of the most basic ways of avoiding this cross-referencing hell is to
+        better organize your code and, if you're using Object-Oriented
+        Programming (OOP), you can do so by putting the different elements of
+        your theme in different classes. You will need to, then:
+      </p>
+
+      <ol>
+        <li>
+          Extract all of the colors, shapes and sizes you use throughout the
+          app.
+        </li>
+        <li>
+          Create classes for each of these thematic abstractions. For example,
+          you could create a class named <code>Colors</code>, which would,
+          evidently, hold all of the apps colors &mdash; that's basically
+          creating your app's color palette.
+          <ul>
+            <li>
+              Depending on the language you're using, you could even use
+              interfaces or abstract classes since most of these theme classes
+              will be simple static constants repositories.
+            </li>
+          </ul>
+        </li>
+      </ol>
+      <p>
+        With respect specially to the colors, I have to add that you might have
+        to be even more disciplined than usual. If you're not careful, it's even
+        easier than normal to get them to appear all over the place.
+      </p>
+      <p>
+        Take, as an example, the color white. Say you're using it as a
+        background for many different types of containers and, every time,
+        you're specifying something like <code>Colors.white</code
+        ><foot-note
+          text="&lt;code&gt;Colors&lt;/code&gt; is a built-in class in Flutter."
+        ></foot-note
+        >. Now, imagine you have to change this standard container background to
+        dark blue, how would you do that easily?
+      </p>
+      <p>
+        In that case, you should create a color class, probably for each widget,
+        with a specific variable for that background. But I will go even
+        further: what if &mdash; and this is not that uncommon &mdash; you want
+        to change your global, standard white to, say, a white-grey after you
+        have created color classes for many different widgets?
+      </p>
+      <p>
+        Since you're always referencing the vanilla code for white in your
+        separate widget color classes, you will have to change your white
+        manually again for all of these different classes, etc. In this case,
+        what you could do is create a variable that shields, abstracts the
+        vanilla white, creating your own white in your own, custom color
+        palette.
+      </p>
+      I think it's going to be clearer with the code example below:
+      <pre>
+abstract class AppPalette {
+  static const Color white = Colors.white;
+}
+
+abstract class Container {
+  static final Color background = AppPalette.white;
+}
+</pre
+      >
+      <p>
+        This technique is very common in graphic design where we create custom
+        palettes for our current design and reference every subsequent color to
+        this palette and not the base, vanilla colors, and I can only see
+        benefits if we use it programmatically in code.
+      </p>
+      <p>
+        For more details on this topic, do check section 4 of this article for
+        more concrete details on how to achieve what I suggested above.
+      </p>
+
+      <h2>3. DO: Avoid Hungarian Notation (HN)</h2>
+      <p>
+        The
+        <a href="https://en.wikipedia.org/wiki/Hungarian_notation"
+          >Hungarian Notation (HN)</a
+        >
+        occurs when you prefix or suffix a variable's name with information
+        about its characteristics or type. For example, if you have a set of
+        variables you would like the reader to know are constants, it was usual
+        &mdash; many people still use this technique, since it's quite intuitive
+        &mdash; to prefix them with the letter <code>k</code>. For example,
+        <code>kLength</code> could be a length constant in your program.
+      </p>
+      That sounds like a great idea for encoding more semantics into the
+      variables' names, right? Well...
+      <p>
+        HN was very useful in the past when types and classes didn't exist
+        because it was basically the <em>only</em> way of encoding semantic
+        information for the reader. One of its weaknesses, though, is that it
+        isn't programmatically used, meaning that someone could just as well
+        create a non-constant variable prefixed by <code>k</code> and nobody
+        could easily, programmatically know if that would indeed be a constant
+        or not.
+      </p>
+      <p>
+        On the other hand, if you put, say <code>kLength</code> into a class
+        whose job is to store constants, everyone will know what you're talking
+        about &mdash; indented text is also easier to read than text stitched
+        together &mdash; and, if you put non-constants inside it, your
+        language's analyzer or compiler itself can programmatically give you
+        feedback, warning you that something is off.
+      </p>
+      <p>
+        It follows, then, that, if you put <code>kLength</code> inside, say, a
+        class named <code>Constants</code>, you will be redundant and make the
+        code harder, more time-consuming to read. In the end, the most
+        programmatic and easier-to-read way of accessing this constant would be
+        &mdash; assuming it's a static constant &mdash;
+        <code>Constants.length</code>.
+      </p>
+
+      <blockquote>
+        <p>
+          Encoding the type of a function into the name (so-called Hungarian
+          notation) is brain damaged &mdash; the compiler knows the types anyway
+          and can check those, and it only confuses the programmer.<foot-note
+            text="There
+          are big names in software engineering who still are advocates of this
+          notation in certain contexts."
+          ></foot-note>
+        </p>
+        <p class="quote-author">
+          <a href="https://en.wikipedia.org/wiki/Linus_Torvalds"
+            >Linus Torvalds</a
+          ><foot-note
+            text="Also known as the creator of the Linux Operating System."
+          ></foot-note
+          >,
+          <a
+            href="https://www.kernel.org/doc/Documentation/process/coding-style.rst"
+            ><em>Linux Kernel Coding Style</em></a
+          >, Linux Kernel Documentation.
+        </p>
+      </blockquote>
+      <h2>4. Centralizing your Theme with <code>ThemeData</code> in Flutter</h2>
+      <p>
+        Besides what I discussed in the second section of this article about
+        placing different aspects of UI in different classes, in Flutter, you
+        can leverage the power of an overarching theme for your app which will
+        serve as the default styling for your widgets.
+      </p>
+      Some additional resources for this topic if you would like to know more:
+      <ul>
+        <li>
+          A very nice tutorial &mdash; whose code I'm gonna be partially using
+          below &mdash; can be found in the Flutter official documentation:
+          <a href="https://flutter.dev/docs/cookbook/design/themes"
+            >Use themes to share colors and font styles</a
+          >
+        </li>
+        <li>
+          <a href="https://youtu.be/stoJpMeS5aY"
+            >Material Theming with Flutter</a
+          >
+          from Flutter Interact '19
+          <ul>
+            <li>
+              There are also plenty of online <em>material</em> theming tools
+              which can spit out design dimensions an palettes for you.
+            </li>
+          </ul>
+        </li>
+      </ul>
+      <p>
+        In Flutter, when configuring your <code>MaterialApp</code>, you can
+        simply pass your custom theme through the <code>theme</code> property:
+      </p>
+
+      <pre>
+MaterialApp(
+  title: title,
+  theme: ThemeData(
+    brightness: Brightness.dark,
+    fontFamily: 'Georgia',
+  ),
+)
+</pre
+      >
+      <p>
+        As I discussed in section 2, you can also manage this
+        <code>ThemeData</code> separately, in a <code>Theming</code> class for
+        example:
+      </p>
+
+      <pre>
+abstract class Theming {
+  static final ThemeData app = ThemeData(
+    iconTheme: defaultIcon,
+  );
+
+  static const IconThemeData icon = IconThemeData(
+    color: BasicColors.grey,
+  );
+}
+</pre
+      >
+      <p>
+        Note that I'm not using a suffix for <code>icon</code>, which might seem
+        weird at first, but, if you remember that everything in this class is of
+        type <code>ThemeData</code>, it feels more intuitive. These properties
+        will all be accessed as <code>Theming.someTheme</code> later on, so yet
+        another reason for why this <em>will</em> be manageable.
+      </p>
+      <p>
+        If you wish to override the theme for an individual widget, you can wrap
+        it with the <code>Theme</code> widget and pass to this new widget your
+        new custom <code>ThemeData</code>:
+      </p>
+
+      <pre>
+Theme(
+  data: ThemeData(
+    accentColor: Colors.yellow,
+  ),
+  child: FloatingActionButton(
+    onPressed: () {},
+    child: Icon(Icons.add),
+  ),
+)
+</pre
+      >
+      <p>
+        You can also override specific characteristics of the
+        <code>context</code>'s or app's theme by using the
+        <code>copyWith</code> method:
+      </p>
+
+      <pre>
+Theme(
+  // Could also be `Theming.someTheme.copyWith(...)`:
+  data: Theme.of(context).copyWith(accentColor: Colors.yellow),
+  child: FloatingActionButton(
+    onPressed: null,
+    child: Icon(Icons.add),
+  ),
+);
+</pre
+      >
+      <p>
+        Theming shouldn't be much harder than that, i.e., having an overarching
+        custom theme with some overrides here and there. Hence, if you're having
+        trouble trying to manage your theme, you're probably doing something
+        wrong.
+      </p>
+
+      <h2>
+        5. Going Further: Managing Web and Mobile Themes with Media Queries
+      </h2>
+      <p>
+        Managing multiple screen sizes can be time consuming and a maintenance
+        nightmare, even with good practices. There is no panacea for this
+        problem yet. However, Flutter uses a similar mechanism to the
+        well-established practice of
+        <a
+          href="https://developer.mozilla.org/en-US/docs/Web/CSS/Media_Queries/Using_media_queries#Targeting_media_features"
+          >CSS Media Queries</a
+        >.
+      </p>
+      <p>
+        Inevitably, you're gonna have to change the layout of your screen
+        depending on the width and height of your screen. And, for that, use the
+        <code>switch</code> or <code>if-else</code> statements to return
+        different sets of widgets to your screen. In order to extract the
+        dimension over which you're basing the switch, you can use the
+        <a href="https://api.flutter.dev/flutter/widgets/MediaQuery-class.html"
+          ><code>MediaQuery</code></a
+        >
+        built-in class in conjunction with the <code>context</code>. For
+        example, you can access the height, width and accessibility factor of
+        the user's device through:
+      </p>
+
+      <ul>
+        <li><code>MediaQuery.of(context).size.height</code></li>
+        <li><code>MediaQuery.of(context).size.width</code></li>
+        <li><code>MediaQuery.of(context).textScaleFactor</code></li>
+      </ul>
+      <blockquote>
+        <p>
+          If you wish to use <code>MediaQuery</code>(ies) optimally in Flutter
+          for responsive designs, do try to use it in conjunction with the
+          <code>LayoutBuilder</code> and <code>SafeArea</code> widgets. For more
+          info, take a look at
+          <a href="https://youtu.be/FQlZQGWJC58">this tutorial</a>, by Reso
+          Coder.
+        </p>
+      </blockquote>
+      <p>
+        As an extra, if you feel too annoyed by the accessibility factor because
+        it's really tough to create a design that's bullet-proof against any
+        font-size, you can simply disable it by harding coding a factor
+        yourself. For example:
+      </p>
+
+      <div>
+        <pre>
+MaterialApp(
+  builder: (BuildContext context, Widget child){
+    final MediaQueryData data = MediaQuery.of(context);
+    return MediaQuery(
+      data: data.copyWith(
+        textScaleFactor: 1.0, // hard-coding the accessibility factor
+      ),
+      child: child,
+    );
+  },
+)
+</pre
+        >
+      </div>
+      <p>
+        Hard-coding the accessibility factor isn't a UI/UX good practice, but
+        it's understandable, at least during development.
+      </p>
+
+      <blockquote>
+        <p>
+          For more on responsive design, do check the
+          <a href="https://flutter.dev/docs/development/ui/layout/responsive"
+            >Flutter official documentation</a
+          >
+          on the useful widgets for the task.
+        </p>
+      </blockquote>
+      <h2>5. On the Designer's Responsibility</h2>
+      <p>
+        One of the sources of <em>Spaghetti Theming</em> has virtually nothing
+        to do with code: design purely as art. Designers usually treat
+        themselves as artists and that can burden the practicality of the
+        project quite considerably if treated bluntly.
+      </p>
+      <p>
+        This artist mentality originates from putting the design itself as the
+        end product of the whole project, which is the brainwashing you
+        inevitably get from schools. However, the project's end product is the
+        the app, not only the design, which, thus, puts the design in a position
+        of serving the rest of the project and not the other way around.
+      </p>
+      <p>What do I mean by all that?</p>
+      <p>
+        The designer should produce a design that is art &mdash; no, we are not
+        ditching that &mdash; constrained by the practicality of the real world.
+      </p>
+      <p>
+        For example, it's very easy to want a confimation button on a screen to
+        be blue and, on another screen, to be blue-grey, because you, as a
+        designer, thought it prettier. The difference is minor but you, as an
+        artist, will notice and cherish it. The difference is minor but the
+        programmers, as implementers, will also notice it and, yet, hate it.
+        Why? It's another variable for them to manage, another dependency with
+        constant maintenance cost and very low benefit.
+      </p>
+      <p>
+        If you keep making these minor tweaks, do you see how the app won't have
+        a scalable, manageable theme and design? It's your responsibility, as a
+        pragmatic designer, to keep the design beautiful and, yet, as simple as
+        possible to maintain: it's art, but it's not a painting you can hang on
+        the wall, with virtually zero maintenance.
+      </p>
+    </article>
+  </body>
+</html>
