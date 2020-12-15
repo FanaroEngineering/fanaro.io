@@ -229,4 +229,13 @@ export const articlesMetadata: Article[] = [
     mainTopic: Topic.social,
     otherTopics: [Topic.meta],
   },
+  {
+    index: 86,
+    title: "KG-LBS Converter",
+    link: "/articles/kg_lbs_converter/kg_lbs_converter.html",
+    date: Date.UTC(2020, 11, 30),
+    language: Language.english,
+    mainTopic: Topic.math,
+    otherTopics: [Topic.sports, Topic.design],
+  },
 ];

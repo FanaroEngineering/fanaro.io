@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>3-Step Easy KG &#8644; LBS Converter</title>
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+
+    <script src="../../index.js"></script>
+    <script
+      src="https://polyfill.io/v3/polyfill.min.js?features=es6"
+      defer
+    ></script>
+    <script
+      id="MathJax-script"
+      async
+      defer
+      src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
+    ></script>
+
+    <link rel="stylesheet" type="text/css" href="../../index.css" />
+    <link rel="icon" type="image/svg+xml" href="../../assets/favicon.svg" />
+  </head>
+  <body>
+    <article>
+      <img src="KG LBS Converter Thumbnail.png" alt="KG-LBS Converter" />
+
+      <h1>3-Step Easy KG &#8644; LBS Converter</h1>
+
+      <h2>1. Introduction</h2>
+      <p>
+        Everyone that had to talk to people from the US knows how annoying it is
+        to have to convert their units to the <em>rest</em> of the world's. And,
+        now, with the rapid growth of Crossfit, this issue will only get worse.
+      </p>
+      <p>
+        I'll leave aside my urge to yell "grow up and use the same, better units
+        as everyone else"<foot-note
+          text="The pound is nowadays actually defined using
+        kilograms, and not any physical object anymore, which basically means
+        that even the experts believe the kilogram to be a better measure. In
+        sum, it is recognized as dumb mostly because it's not scalable at all."
+        ></foot-note>
+        at them and only focus at giving us an easier way of dealing with this
+        problem. I'll also try my best to show a short algorithm or recipe for
+        anyone to be able to convert their weights back and forth in their
+        heads, without a calculator or a sheet of paper.
+      </p>
+
+      <figure>
+        <img src="tucker_kylo_grams.jpg" />
+        <figcaption>
+          Tucker Carlson, from Bigot News, proving that flat-out transparent
+          idiocy does exist.
+        </figcaption>
+      </figure>
+
+      <h2>2. The Recipes</h2>
+      <p>
+        The main requisite here, which is going to make the transformation
+        accessible, is simple operations &mdash; for example, sums and
+        subtractions are allowed, while multiplications and divisions are only
+        permitted if they are done with easy enough numbers, i.e., those most
+        people can handle, like doubling, tripling, halving, etc. &mdash;, and
+        what's going to make things really easy is to focus on successive
+        approximations, with these same simple operations. These successive
+        approximations are very important for engineers, specially decades ago,
+        enabling on the fly complex project estimates.
+      </p>
+
+      <blockquote>
+        <p>
+          Believe it or not, but these successive approximations are what's
+          actually used in human calculator competitions. So, if you practice
+          them enough, you will be much faster than resorting to calculators or
+          your smartphone. They are also a huge topic in mathematics, one big
+          example being the
+          <a href="https://en.wikipedia.org/wiki/Taylor_series">Taylor Series</a
+          >.
+        </p>
+      </blockquote>
+
+      <blockquote>
+        If you want a quick approximation, use only the first 2 steps of the
+        algorithms below.
+      </blockquote>
+      <h3>2.1 KG → LBS</h3>
+      <p>
+        Let's start with the rough conversion to have an idea of our final
+        goal<foot-note
+          text="Take the equal signs with a pinch of salt. The international
+        standards vary from year to year sometimes, and it's a bit pointless to
+        worry about being 100% precise, since we are not doing rocket science
+        here."
+        ></foot-note
+        >:
+      </p>
+      <p>\[ 1 \ kg = 2.20462262185 \ lbs \approx 2.205 \ lbs \]</p>
+      <p>
+        For simplicity's sake, I'm gonna stick to using 2.205 as the conversion
+        rate. Only if you're a strength freak and can lift weights of up to 500
+        kg will the difference be relevant, and, even then, it would only amount
+        to 0.0004 [latex] \cdot [/latex] 500 = 0.2 kg. If you're in that
+        category and want precision, use the extra decimal places with the same
+        flow shown in the following algorithm, but it might be better to just
+        use a calculator anyway.
+      </p>
+      <p>
+        In order to convert a weight measurement from <em>kg </em>to
+        <em>lbs, </em>say 56 kg, we simply multiply the weight by the conversion
+        rate:
+      </p>
+      <p>\[ 56 \ kg \cdot 2.205 = 123.48 \ lbs \]</p>
+      <p>
+        Which is probably not how a human would comfortably approach this
+        problem. It's much easier to, for example, multiply the weight by 2 and
+        then add 20% for an easy approximation. And it's in that spirit that you
+        can derive something like:
+      </p>
+
+      <ol>
+        <li>
+          Multiply the original weight by 2, and memorize it.
+          <ul>
+            <li>\( 56 \cdot 2 = 112 \ lbs \)</li>
+          </ul>
+        </li>
+        <li>
+          Divide the previous calculation by 10 and add to it.
+          <ul>
+            <li>
+              \( 112 + 112 \cdot \frac{1}{10} = 112 + 11.2 = 123.2 \ lbs \)
+            </li>
+          </ul>
+        </li>
+        <li>
+          It's up to you if you wish more precision from now on. Usually, the
+          steps above are enough to get a good idea of what the weight is. But,
+          in any case, next, you could half the original weight, divide the
+          result by 100 and, finally, add it to the previous calculation.
+          <ul>
+            <li>
+              \( 123.2 + 56 \cdot \frac{1}{2} \cdot \frac{1}{100} = 123.2 + 28
+              \cdot \frac{1}{100} = 123.2 + 0.28 = 123.48 \ lbs \)
+            </li>
+          </ul>
+        </li>
+      </ol>
+      <p>
+        To summarize our algorithm, let's use \( x_{kg} \) as our original
+        weight in kilograms before conversion, \( x_{lbs} \) as our weight in
+        pounds after the conversion and \( y \) as the intermediate values. The
+        right arrow means that we should overwrite our previous value &mdash;
+        of, say, \( y \) &mdash; with the calculation on the right.
+      </p>
+
+      <ol>
+        <li>\( y \leftarrow 2 \cdot x_{kg} \)</li>
+        <li>\( y \leftarrow y + y \cdot \frac{1}{10} \)</li>
+        <li>
+          \( x_{lbs} \leftarrow y + x_{kg} \cdot \frac{1}{2} \cdot \frac{1}{100}
+          \)
+        </li>
+      </ol>
+      <h3>2.2 KG ← LBS</h3>
+      <p>
+        The counter part conversion can be found by simply "reversing" the
+        previous one<foot-note text="&lt;em&gt;sup.&lt;/em&gt;"></foot-note>:
+      </p>
+      <p>
+        \[ 1 \ lb = \frac{1 \ kg}{2.20462262185} = 0.4535923699997481 \ kg
+        \approx 0.454 \ kg \]
+      </p>
+      <p>
+        Again, I will not bother to use more than 3 decimal digits of precision.
+        For huge weights of more than 200 kg, our imprecision will be around 200
+        \( \cdot \) 0.00041 = 0.082 kg, not even 100 g. There's also the fact
+        that, since we are multiplying by something smaller than 1, any mistakes
+        or imprecisions we end up making will be seemingly minimized.
+      </p>
+      <p>
+        Let's take the example of 225 lbs, which is the common substitute for
+        100 kg:
+      </p>
+      <p>\[ 225 \ lb \cdot 0.454 = 102.15 \ kg \]</p>
+      If we try to come up with the same answer but via approximations:
+      <ol>
+        <li>
+          Halve the original weight.
+          <ul>
+            <li>\( 225 \cdot \frac{1}{2} = 112.5 \ kg \)</li>
+          </ul>
+        </li>
+        <li>
+          Subtract 0.05 from the previous result, i.e., 10% of it:
+          <ul>
+            <li>
+              \( 112.5 \ - \ 112.5 \cdot \frac{1}{10} = 112.5 \ - \ 11.25 =
+              101.25 \ kg \)
+            </li>
+          </ul>
+        </li>
+        <li>
+          This should be precise enough for most use cases, but you could keep
+          going. I would suggest adding a 0.005 factor instead of 0.004 (from
+          the original 0.454), since it seems close enough and much easier
+          (we're going to miss by 225 g), which means we should take 1% of step
+          1's result and add it to step 2's. We will miss our mark by 0.1%, so,
+          if you wish, add a step 4 where you subtract 1/1000 from the original
+          weight in pounds.
+          <ul>
+            <li>
+              \( 101.25 + 112.5 \cdot \frac{1}{100} = 101.25 + 1.125 = 102.375 \
+              kg \)
+            </li>
+          </ul>
+        </li>
+      </ol>
+      <p>
+        To summarize this other algorithm, we take a similar notation to the
+        previous converter with \( x_{lbs} \) as our original weight in pounds,
+        \( x_{kg} \) as the result of the conversion in kilograms and \( y \)
+        for intermediate results. Again, the right arrow means that we should
+        overwrite our previous value &mdash; of, say, \( y \) &mdash; with the
+        calculation on the right.
+      </p>
+
+      <ol>
+        <li>\( y \leftarrow x_{lbs} \cdot \frac{1}{2} \)</li>
+        <li>\( y \leftarrow y \ - \ y \cdot \frac{1}{10} \)</li>
+        <li>\( x_{kg} \leftarrow y + y \cdot \frac{1}{100} \)</li>
+      </ol>
+      <h2>Last Words</h2>
+      <p>
+        Will you use these algorithms? I think it depends more on you opening
+        your own mindset and making a (small) effort of memorizing these recipes
+        than whatever amazing magical methods I could come up with.
+      </p>
+      <p>
+        In the end, though, practically speaking, the biggest difficulty most
+        people will have is probably trying to manage the numbers in their
+        memory while having perform calculations in parallel. But it's not that
+        much, I assure you. With a little bit of training and persistence, you
+        can surely do it.
+      </p>
+
+      <ul>
+        <li>
+          For both conversions, you will have to manage 3 numbers, the
+          (intermediate) result, the original weight, and, sometimes, one of the
+          results of a multiplication or division.
+        </li>
+        <li>
+          For converting kg to lbs, you will have to perform 2 sums, 1
+          multiplication and 3 divisions.
+        </li>
+        <li>
+          For converting lbs to kg, you will have to perform 1 sum, 1
+          subtraction and 3 divisions.
+        </li>
+      </ul>
+    </article>
+  </body>
+</html>
