@@ -8,7 +8,7 @@ export default class ArticlesTable extends HTMLElement {
     <link rel="stylesheet" href="index.css" />
 
     <table>
-      <caption>Articles Table</caption>
+      <caption>Articles</caption>
       <thead>
         <th>#</th>
         <th>Article</th>
