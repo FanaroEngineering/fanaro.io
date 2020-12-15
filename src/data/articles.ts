@@ -170,4 +170,13 @@ export const articlesMetadata: Article[] = [
     mainTopic: Topic.philosophy,
     otherTopics: [Topic.programming, Topic.design, Topic.go],
   },
+  {
+    index: 92,
+    title: "My Dad's Logo",
+    link: "/articles/dad_logo/dad_logo.html",
+    date: Date.UTC(2020, 3, 1),
+    language: Language.english,
+    mainTopic: Topic.design,
+    otherTopics: [],
+  },
 ];

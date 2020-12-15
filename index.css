@@ -51,6 +51,7 @@ iframe {
 
 figure {
   display: table;
+  margin-bottom: 40px;
 }
 
 img {
