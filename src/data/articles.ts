@@ -14,6 +14,7 @@ export enum Topic {
   math = "Math",
   browserExtension = "Browser Extension",
   programming = "Programming",
+  design = "Design",
   language = "Language",
   books = "Books",
   myYouTubeChannel = "My YouTube Channel",
@@ -119,5 +120,14 @@ export const articlesMetadata: Article[] = [
     language: Language.portuguese,
     mainTopic: Topic.language,
     otherTopics: [],
+  },
+  {
+    index: 97,
+    title: "\"Less Code\" Print Design",
+    link: "/articles/less_code/less_code.html",
+    date: Date.UTC(2020, 3, 19),
+    language: Language.english,
+    mainTopic: Topic.programming,
+    otherTopics: [Topic.design],
   },
 ];
