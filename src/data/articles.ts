@@ -16,7 +16,7 @@ export enum Topic {
   programming = "Programming",
   language = "Language",
   books = "Books",
-  myYouTubeChannel = "My YouTube Channel"
+  myYouTubeChannel = "My YouTube Channel",
 }
 
 export default interface Article {
@@ -110,5 +110,14 @@ export const articlesMetadata: Article[] = [
     language: Language.english,
     mainTopic: Topic.programming,
     otherTopics: [Topic.productivity],
+  },
+  {
+    index: 98,
+    title: "DeepL: Traduza Meus Artigos",
+    link: "/articles/deepl/deepl.html",
+    date: Date.UTC(2020, 4, 20),
+    language: Language.portuguese,
+    mainTopic: Topic.language,
+    otherTopics: [],
   },
 ];

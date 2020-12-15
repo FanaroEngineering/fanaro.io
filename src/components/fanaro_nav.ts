@@ -2,8 +2,6 @@ export default class FanaroNav extends HTMLElement {
   static readonly tag: string = "fanaro-nav";
 
   private static readonly template: string = `
-    <link rel="stylesheet" href="index.css" />
-
     <style>
       a {
         display: inline-flex;

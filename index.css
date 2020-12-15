@@ -23,6 +23,15 @@ blockquote {
   text-align: justify;
 }
 
+.indented-paragraph {
+  margin-left: 2rem;
+}
+
+.quote-author {
+  text-align: right;
+  padding-left: 30vw;
+}
+
 li {
   margin-bottom: 0.5rem;
 }
@@ -41,7 +50,7 @@ iframe {
 }
 
 img {
-  max-width: var(--max-img-iframe-width-mobile);;
+  max-width: var(--max-img-iframe-width-mobile);
   padding-right: var(--margin);
 }
 
@@ -68,7 +77,8 @@ th {
   padding-bottom: 7.5px;
 }
 
-tr:nth-child(even), th {
+tr:nth-child(even),
+th {
   background-color: #1f2223;
 }
 
@@ -92,5 +102,9 @@ kbd {
   img,
   iframe {
     max-width: var(--max-img-iframe-width-desktop);
+  }
+
+  .quote-author {
+    padding-left: 200px;
   }
 }
