@@ -9,6 +9,7 @@ export enum Topic {
   tsumego = "Tsumego",
   joseki = "Joseki",
   review = "Review",
+  philosophy = "Philosophy",
   productivity = "Productivity",
   psychology = "Psychology",
   math = "Math",
@@ -159,5 +160,14 @@ export const articlesMetadata: Article[] = [
     language: Language.english,
     mainTopic: Topic.uiUx,
     otherTopics: [Topic.programming, Topic.design, Topic.dart, Topic.flutter],
+  },
+  {
+    index: 93,
+    title: "Musashi, Craftsmanship and The Critical Moment",
+    link: "/articles/musashi/musashi.html",
+    date: Date.UTC(2020, 3, 1),
+    language: Language.english,
+    mainTopic: Topic.philosophy,
+    otherTopics: [Topic.programming, Topic.design, Topic.go],
   },
 ];

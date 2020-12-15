@@ -49,9 +49,19 @@ iframe {
   padding-right: var(--margin);
 }
 
+figure {
+  display: table;
+}
+
 img {
   max-width: var(--max-img-iframe-width-mobile);
   padding-right: var(--margin);
+}
+
+figcaption {
+  font-size: 0.85em;
+  display: table-caption;
+  caption-side: bottom;
 }
 
 .design-fragments {
@@ -61,10 +71,6 @@ img {
 blockquote {
   border-left: 3px solid var(--text-color);
   padding-left: 10px;
-}
-
-figcaption {
-  font-size: 0.85em;
 }
 
 table {
