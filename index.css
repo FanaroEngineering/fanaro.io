@@ -54,6 +54,10 @@ img {
   padding-right: var(--margin);
 }
 
+.design-fragments {
+  max-width: 300px;
+}
+
 blockquote {
   border-left: 3px solid var(--text-color);
   padding-left: 10px;
