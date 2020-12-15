@@ -22,6 +22,7 @@ export enum Topic {
   language = "Language",
   books = "Books",
   myYouTubeChannel = "My YouTube Channel",
+  sports = "Sports"
 }
 
 export default interface Article {
@@ -168,7 +169,7 @@ export const articlesMetadata: Article[] = [
     date: Date.UTC(2020, 3, 1),
     language: Language.english,
     mainTopic: Topic.philosophy,
-    otherTopics: [Topic.programming, Topic.design, Topic.go],
+    otherTopics: [Topic.programming, Topic.design, Topic.go, Topic.sports],
   },
   {
     index: 92,
@@ -178,5 +179,14 @@ export const articlesMetadata: Article[] = [
     language: Language.english,
     mainTopic: Topic.design,
     otherTopics: [],
+  },
+  {
+    index: 91,
+    title: "A Weightlifting Logo",
+    link: "/articles/weightlifting_logo/weightlifting_logo.html",
+    date: Date.UTC(2020, 3, 1),
+    language: Language.english,
+    mainTopic: Topic.design,
+    otherTopics: [Topic.sports],
   },
 ];
