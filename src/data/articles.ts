@@ -233,9 +233,19 @@ export const articlesMetadata: Article[] = [
     index: 86,
     title: "KG-LBS Converter",
     link: "/articles/kg_lbs_converter/kg_lbs_converter.html",
-    date: Date.UTC(2020, 11, 30),
+    date: Date.UTC(2019, 11, 30),
     language: Language.english,
     mainTopic: Topic.math,
     otherTopics: [Topic.sports, Topic.design],
+  },
+  {
+    index: 85,
+    title: "Universal Principles of Design",
+    link:
+      "/articles/universal_principles_design/universal_principles_design.html",
+    date: Date.UTC(2019, 11, 1),
+    language: Language.english,
+    mainTopic: Topic.design,
+    otherTopics: [Topic.uiUx],
   },
 ];
