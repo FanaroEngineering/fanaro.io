@@ -22,7 +22,8 @@ export enum Topic {
   language = "Language",
   books = "Books",
   myYouTubeChannel = "My YouTube Channel",
-  sports = "Sports"
+  sports = "Sports",
+  comedy = "Comedy"
 }
 
 export default interface Article {
@@ -188,5 +189,14 @@ export const articlesMetadata: Article[] = [
     language: Language.english,
     mainTopic: Topic.design,
     otherTopics: [Topic.sports],
+  },
+  {
+    index: 90,
+    title: "Anti Bullshit Bullshit Club",
+    link: "/articles/anti_bullshit_logo/anti_bullshit_logo.html",
+    date: Date.UTC(2020, 2, 17),
+    language: Language.english,
+    mainTopic: Topic.design,
+    otherTopics: [Topic.comedy],
   },
 ];
