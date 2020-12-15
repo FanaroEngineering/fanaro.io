@@ -10,6 +10,7 @@ export enum Topic {
   joseki = "Joseki",
   review = "Review",
   philosophy = "Philosophy",
+  logic = "Logic",
   productivity = "Productivity",
   psychology = "Psychology",
   math = "Math",
@@ -207,5 +208,14 @@ export const articlesMetadata: Article[] = [
     language: Language.english,
     mainTopic: Topic.design,
     otherTopics: [Topic.comedy],
+  },
+  {
+    index: 88,
+    title: "Please Stop this Fallacy",
+    link: "/articles/fallacy_against_communism/fallacy_against_communism.html",
+    date: Date.UTC(2020, 2, 17),
+    language: Language.english,
+    mainTopic: Topic.philosophy,
+    otherTopics: [Topic.logic],
   },
 ];
