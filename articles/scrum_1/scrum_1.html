@@ -1,0 +1,711 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>
+      Scrum, by Jeff Sutherland : The Book EVERYONE Should Read (Part 1)
+    </title>
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+
+    <script src="../../index.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="../../index.css" />
+    <link rel="icon" type="image/svg+xml" href="../../assets/favicon.svg" />
+  </head>
+  <body>
+    <article>
+      <img src="cover.png" alt="Book Cover" />
+
+      <h1>
+        Scrum, by Jeff Sutherland : The Book EVERYONE Should Read (Part 1)
+      </h1>
+
+      <h1>Introduction</h1>
+      <strong
+        >If there is one book I would like to give to my past self, this is
+        it</strong
+      >. Don't miss it.
+      <p>
+        <strong
+          >Most people think this book &mdash;
+          <a
+            href="https://www.amazon.com/gp/product/B00JI54HCU/ref=ppx_yo_dt_b_d_asin_title_o04?ie=UTF8&amp;psc=1"
+            >Scrum: The Art of Doing Twice the Work in Half the Time</a
+          >
+          &mdash; is specific to software development. However</strong
+        >, that's a
+        <em><strong>very unfortunate misconception</strong>.</em> Scrum is about
+        being productive, it mostly doesn't matter the task. It's actually an
+        algorithm of <strong>iterative planning </strong>&mdash; i.e., instead
+        of making long-term plans, we adjust the course periodically &mdash;,
+        encompassing not really only teams but also individuals &mdash; in fact,
+        I've been using it for a while to organize myself and it works
+        wonderfully.
+      </p>
+
+      <blockquote>
+        Scrum, by Jeff Sutherland, is also incredible even if you're very
+        experienced with Scrum. It discusses <strong><em>why</em></strong> Scrum
+        is like it is.
+      </blockquote>
+      <p>
+        If you need real world examples of successful projects that used Scrum,
+        there is no shortage: from complex software to hardware, cars, changing
+        the whole structure of FBI investigations, managing news teams,
+        improving (revolutionizing) traditional classrooms, changing how
+        governmental projects are developed, etc.
+      </p>
+      <p>
+        In this post(s) &mdash; this will probably be a series of posts actually
+        &mdash;, I'll be <strong>spoiling</strong> the book completely: I'll
+        summarize the major concepts and solutions Jeff Sutherland, the
+        (co-)creator of Scrum, exposes in it. But that
+        <strong
+          ><em>should not</em> deter you from reading the book actually</strong
+        >, the stories he tells us are amazing by themselves, and they do
+        reinforce the arguments he wants to prove by a lot. As he mentions in
+        the book: <strong>the stories provide the <em>why</em></strong> of the
+        methods,
+        <strong>while the methods themselves are extremely simple</strong> and
+        can be learned in
+        <a href="https://youtu.be/XU0llRltyFM">10-minute videos on Youtube</a>.
+      </p>
+      <p>
+        If you're interested in practicing Scrum right away,
+        <strong>besides the traditional physical board and sticky notes</strong
+        >, you could use some quite neat <strong>software solutions</strong>.
+        The one I would really recommend is from Atlassian: the famous
+        <a href="https://trello.com/en-US">Trello</a>. Another option, if you're
+        building software, is to use the
+        <a href="https://about.gitlab.com/product/issueboard/"
+          >Issue Boards from Gitlab</a
+        >
+        or the
+        <a href="https://help.github.com/en/articles/about-project-boards"
+          >Projects Boards from Github</a
+        >.
+      </p>
+      <p>
+        I would also like to remark that
+        <strong>Scrum is not another management fad</strong> to make directors
+        and managers look cool. In fact,
+        <strong>Scrum is a way of getting bullshit out of the way</strong>. As
+        an iterative method, if the team thinks that the introduced
+        "improvement" is not helping at all, they discard it in the next
+        iteration: and that's the quick end of the dreaded fad. Scrum is also
+        partially based on the Toyota Production System (Lean Production
+        Systems), a more than half-century old system idolized by top executives
+        around the globe, and which, curiously, is in turn based on US
+        industrial best practices from the early 20th century. And, if that
+        isn't enough to convince you of its value, one of its founders,
+        <a href="https://www.linkedin.com/in/jeffsutherland/">Jeff Sutherland</a
+        >, is a Korean War Veteran Pilot, a West Point Engineer, a Stanford
+        Statistician and a PhD in Biometrics by the University of Colorado of
+        Medicine<foot-note
+          text='You can also watch a
+        &lt;a href="https://youtu.be/s4thQcgLCqk"&gt;TED Talk&lt;/a&gt; from Jeff if you&apos;re
+        curious.'
+        ></foot-note
+        >. So, in short, Scrum is
+        <strong>based on empirical and scientific methods</strong>,
+        <em>there will not be any esoteric bullshit.</em>
+      </p>
+      <p>
+        Before continuing on to the bulk of this post, I would like to reiterate
+        that the biggest value of the book is within its stories. It is through
+        them that we humans (perhaps unfortunately) really learn. Make no
+        mistake, though, by assuming that this book is not serious.
+      </p>
+      This article is divided in the sections below &mdash; the sections are
+      similarly named to the ones in the book, but not quite the same &mdash;:
+      <ol>
+        <li>
+          The Way the World Works is Broken
+          <ol>
+            <li>Planning is Useful, Blindly Following Plans is Stupid</li>
+            <li>Empirical Basis</li>
+          </ol>
+        </li>
+        <li>
+          The Origins of Scrum
+          <ol>
+            <li>Learning to Think Like a Robot</li>
+            <li>Looking for Something Better than Waterfalls</li>
+            <li>Inspect and Adapt</li>
+            <li>Change or Die</li>
+            <li><em>Shu Ha Ri</em></li>
+          </ol>
+        </li>
+      </ol>
+      <h1>1. The Way the World Works is Broken</h1>
+      <p>
+        As the name indicates, this chapter is about
+        <strong>convincing the reader that a change is necessary</strong>
+        &mdash; the second one also serves this purpose. And, boy, is it
+        necessary.
+      </p>
+      <p>
+        Back in the 1990's, when Jeff Sutherland was first transitioning from
+        his academic career, people were overwhelmingly using the
+        <a href="https://en.wikipedia.org/wiki/Waterfall_model"
+          >Waterfall Method</a
+        >
+        to design software. This method was invented in the 1950's and would
+        prescribe directives to planning software projects:
+        <strong>static directives</strong>. Managers and directors would
+        carefully lay out almost immutable planning that should be carried out
+        for months and years without knowing what their customer
+        <em>really</em> wanted or what would happen in the meantime. Eventually,
+        the Waterfall Syndrome would be characterized by giant
+        <a href="https://en.wikipedia.org/wiki/Gantt_chart">Gantt charts</a>
+        &mdash; a sort of sequence diagram from the 1910's &mdash; displaying
+        <strong><em>documentation for the sake of documentation</em></strong
+        >, a product that was different from what the customer expected or
+        wanted, and a titanic hole in the company's budget.
+      </p>
+      <p>
+        <em>The genre of static planning is not dumb intrinsically though</em>.
+        It appeared in an era where, probably due to no feedback to the product
+        developers, engineers would have to use their intuition to guess what
+        the customer wanted. However, it becomes evident that, once feedback
+        exists, static planning is only a very small set of iterative planning,
+        or, in other words, <em>simply inferior</em>. And that inferiority
+        became blindingly clear in one of the biggest flops of the Waterfall
+        series of disasters: updating the FBI Database System.
+      </p>
+      <p>
+        It was 2010 and the FBI still used physical documents to proceed with
+        investigations. <em>Physical documents with 3 copies </em> &mdash;
+        <em>!!!</em>. Any procedure would first have to be approved by some
+        mysterious boss up the hierarchical chain with a mystical red pen in
+        order to get things started. Those were not the 1950's, they were the
+        2010's.
+      </p>
+      <p>
+        When
+        <a href="https://en.wikipedia.org/wiki/September_11_attacks">9/11</a>
+        happened, the biggest criticism of the entities externally auditing the
+        FBI was the sluggish communications inside the institution, making
+        things painfully slow and easily exploitable by terrorists. Following
+        severe Senate scrutiny, the FBI was virtually forced to modernize its
+        system: an initial bill of US$ 170 million. Three years later and
+        nothing had been accomplished. <em>Nothing</em>.
+        <strong
+          >People were <em>literally</em> dying because of planning for the sake
+          of planning</strong
+        >, beautiful Gantt charts everywhere and no product, no update anywhere
+        to be found.
+      </p>
+      <p>
+        But don't worry, let's try again. This time we are going to privatize
+        the renewing process, that will surely solve the problem. Let's take a
+        great, big company like <em>Lockheed Martin </em>and everything should
+        be fine. It was 2010 and Lockheed had spent US$ 405 million with
+        <em>only half of the specifications</em>, estimating another 8 years of
+        work and an extra US$ 350 million to get the software completely done. A
+        database update was turning out to become an almost billion dollar,
+        decades lost, gigantic flop: the way the world works is broken.
+      </p>
+
+      <h3>1.1 Planning is Useful, Blindly Following Plans is Stupid</h3>
+      <blockquote>
+        <p>
+          In preparing for battle I have always found that plans are useless,
+          but planning is indispensable.
+        </p>
+        <p class="quote-author">Dwight D. Eisenhower</p>
+      </blockquote>
+
+      <p>
+        The FBI case illustrates the main recurrent theme of the book and the
+        <strong>cause for Scrum's creation</strong>:
+        <strong>human misinterpretation</strong>.
+      </p>
+      <p>
+        Whenever we plan, we are creating an interpretation of the world that
+        may be either not true or only true for a brief period of time. We must
+        take that into account. The problem is that Waterfall methods or Gantt
+        charts create plans that are not meant to change, they do not
+        incorporate change in their logic. Through iterative methods such as
+        Scrum, we adjust our interpretations with periodic tests, trying to
+        steadily reach the customer's mind.
+      </p>
+      <p>
+        If you still question Scrum's value, take the extensive research made by
+        (dead serious) companies such as Gartner, Forrester Research and the
+        Standish Group: "companies that still cling to tried but-not-true ideas
+        of command and control and that attempt to impose rigid predictability
+        are simply doomed to fail if their competitors use Scrum". Companies,
+        thus, have two choices: change or die<foot-note
+          text="I would rephrase it into
+        &lt;em&gt;Evolve or Die&lt;/em&gt;, after all, change could mean something that's
+        only different and not necessarily better, which &lt;em&gt;is&lt;/em&gt; the
+        case."
+        ></foot-note
+        >.
+      </p>
+      <p>
+        In the case of the aforementioned FBI database update, after using
+        Scrum, with 5% of Lockheed's budget, less than 25% of the employees, and
+        less than a 18 months (25% of Lockheed's estimate), the FBI in-house
+        developers delivered a functional product with 90% of the original
+        specifications. If that's not a slap to the face of traditional methods,
+        nothing will be.
+      </p>
+
+      <h3>1.2 Empirical Basis</h3>
+      <p>
+        One of the other reasons for the downfall of traditional planning is
+        related to the
+        <a href="https://en.wikipedia.org/wiki/Pareto_principle">Pareto Rule</a
+        >. It states that, in most endeavors,
+        <strong
+          >20% of the invested time or effort accomplishes 80% of the final
+          value</strong
+        >. However, to really nail that 20% gold nugget, you have to really know
+        where the value lies, which is something you will almost never do at the
+        first iterations. If you're spending 5 years to get <em>only </em>50% of
+        value, like Lockheed Martin did, you have to become aware that you're
+        doing something wrong.
+      </p>
+      The Pareto Rule and other practical, empirical methods led software
+      development leaders, in 2001, to write what would be later known as the
+      <a href="https://en.wikipedia.org/wiki/Agile_software_development"
+        ><em>Agile Manifesto</em></a
+      >
+      &mdash; guidelines that can only be appreciated after you've felt the pain
+      of dealing with traditional planning &mdash;, leading a wave of new, more
+      pragmatic management methods:
+      <ol>
+        <li>People over Processes;</li>
+        <li>
+          Products that actually work over documenting what that product is
+          supposed to do;
+        </li>
+        <li>Collaborating with customers over negotiating with them;</li>
+        <li>Responding to change over following a plan.</li>
+      </ol>
+      <p>
+        Another empirical basis for Scrum's methods is the
+        <strong>Toyota Production System</strong> (TPS), especially
+        <a href="https://en.wikipedia.org/wiki/Taiichi_Ohno"
+          >Taiichi Ohno's <em>8 Wastes</em></a
+        >. Essentially, TPS is flipping traditional management upside down.
+        <strong
+          >Instead of having managers carefully correcting and micromanaging
+          their workers</strong
+        >
+        all day everyday,
+        <strong>managers will actually be <em>master-servants</em></strong
+        >, whose only function is to get things out of the way of their teams,
+        i.e., <strong>eliminate impediments</strong>. An example of this occurs
+        at the end of every production cycle or <em>sprint</em>:
+        <strong
+          >the manager will always ask the team what can be done to improve
+          <em>how </em>they work</strong
+        >, what impediments should be eliminated. By constantly improving
+        <em>how</em> they work, for example, the in-house FBI team initially
+        increased their productivity by a factor of 3 &mdash; and that's not
+        really that impressive, great teams can sometimes get up to an 8 times
+        increase. In later chapters, we will delve into a more in-depth
+        discussion about the correlation between TPS and Scrum, dating back to
+        <a href="https://en.wikipedia.org/wiki/W._Edwards_Deming"
+          >W. Edwards Deming</a
+        >
+        and the revolution the American engineer and statistician caused in the
+        Japanese industry, which later <em>rerevolutionized</em> the world's
+        software industry.
+      </p>
+
+      <h1>2. The Origins of Scrum</h1>
+      <p>
+        It is not possible to dissociate Scrum's origins from Jeff Sutherland's
+        formation. And, at the core of it is his career as a
+        <em>Korean War Pilot</em>. There, he learned one of the most important
+        methods of his life: the
+        <em>OODA Loop, Observe, Orient, Decide and Act.</em>
+      </p>
+
+      <figure>
+        <img src="ooda.png" alt="OODA Loop" />
+        <figcaption>
+          The OODA Loop, created by John "Mad Major" Boyd.
+        </figcaption>
+      </figure>
+
+      <p>
+        The OODA Loop served as an inspiration to the
+        <em>iterative nature</em> of Scrum. It was invented by the legendary
+        <em>Mad Major, </em>John Boyd, as a way of understanding
+        <em>why </em>American pilots were overwhelming Russian bigger, faster,
+        stronger fighter jets.
+      </p>
+      <p>
+        In the end, after long research, Boyd found that the most important part
+        was guaranteeing constant feedback to the pilot, which would make him
+        able to change his orientations, decisions and actions constantly and
+        accordingly. The feedbacks inside the OODA loops would make quite the
+        mark on Jeff, being essential to the later development of Scrum.
+      </p>
+      <p>
+        After his career in the military, and having obtained a bachelor's
+        degree in engineering, and earning a master's degree in statistics,
+        Sutherland spent years in a PhD program, and as a researcher in the
+        University of Colorado trying to understand what happens in a cell to
+        turn it cancerous. Years later, when a sudden change in politics would
+        drastically diminish investments at his institution<foot-note
+          text="Reagonomics..."
+        ></foot-note
+        >, he realized that he could perhaps apply what he had learned about
+        complex systems to organizations and teams in the corporate world: "how
+        can we figure out simple rules that will guide teams to settle into a
+        more productive, happier, supportive, fun, and ecstatic state?"
+      </p>
+      <p>
+        In 1983, <em>MidContinent Computer Services</em> contacted him about
+        their hottest new product: the <em>Automatic Teller</em>
+        <em>Machine, </em>later known as the <em>ATM</em
+        ><foot-note
+          text="You can thank him someday for that product if you cross him on the streets."
+        ></foot-note
+        >. As was expected at the time, development was carried out using the
+        dreaded Waterfall method, leading to much more than a budget disaster
+        &mdash; costs were 30% higher than revenue. Screaming, micromanaging,
+        passive-aggressive behavior and demands for harder work and overtime
+        were common practice. Change or die: "the first thing we need to do is
+        to stop doing stuff that is killing us (...) we've got to figure out a
+        better way of working", Jeff told his superior.
+      </p>
+      <p>
+        The ATM project would be the practical birthground of Scrum. Ten years
+        later and the best practices developed in that project would be refined
+        into the concepts of the
+        <em>Product Owner, the Product Backlog, Sprints,</em> etc.
+      </p>
+
+      <h3>2.1 Learning to Think Like a Robot</h3>
+      <p>
+        A little bit later in his corporate career, Sutherland happened to share
+        the building with some MIT robotics professors and PhD students. MIT
+        didn't have enough space for all of their mechatronics researchers so
+        they outsourced the space. It just so happens that from time to time
+        some of their robots would go into Sutherland's office and chase him
+        non-stop. Fascinated about those machines, he would later ask Professor
+        Rodney Brooks about <em>how they worked</em>. Prof. Brooks's answer
+        would spark some of the key ideas behind the essence of Scrum.
+      </p>
+      <p>
+        At first, scientists spent billions of dollars and many, many years of
+        hard work trying to build and code the
+        <strong>biggest computers and databases</strong>. But, at the
+        end,<strong>
+          all they got was a computer that could beat humans in chess</strong
+        >. There <strong>needed to be another approach</strong> to building
+        these supermachines. So his team started to experiment with a whole new
+        paradigm. The idea was, instead of building a brain that would control
+        everything, to build modular parts that could think for themselves and,
+        most importantly, interact with the other parts. The key was to make
+        <strong>each module's main concern simply </strong
+        ><strong>not to impede the other ones</strong><em>. </em>And that's how
+        Scrum converged with the Toyota Production System in a way that was both
+        empirical and logical. Another key takeaway from the robot's behavior
+        was it being completely <strong>autonomous</strong>; there was no master
+        server or hardcoded recipe: it learned to interact with the outside
+        world from scratch and it optimized for its own modules' behaviors.
+      </p>
+      As it happens, Prof. Brooks later became world-famous for one of his
+      little cleaning robots: the
+      <a href="https://www.irobot.com/roomba">iRobot's Roomba</a>.
+      <h3>2.2 Looking for Something Better than Waterfalls</h3>
+      <p>
+        After his departure from his job near MIT in 1993, Sutherland became the
+        VP of Object Technology &mdash; whatever that means &mdash; at Easel.
+        The executives at Easel wanted him to develop a completely new product
+        in 6 months for one of their biggest customers: Ford. After a little bit
+        of experience within the company he sat down with his team and told them
+        the bitter truth:
+        <em
+          >they wouldn't be delivering anything if they stuck to Gantt charts
+          and Waterfall bullshit</em
+        >. His later <strong>dialogue trying to convince the CEO</strong> is
+        quite remarkable:
+      </p>
+      <p class="indented-paragraph">
+        “How many Gantt charts have you seen in your career?”, I asked.
+      </p>
+      <p class="indented-paragraph">“Hundreds,” he replied.</p>
+      <p class="indented-paragraph">“How many of them were right?”</p>
+      <p class="indented-paragraph">He paused. “None.”</p>
+      <p>
+        His team spent a few weeks researching about new, better management
+        methods and eventually stumbled upon the most crucial seed of Scrum:
+        <a href="https://www.scruminc.com/scrum-godfathers-takeuchi-and-nonaka/"
+          ><em>The New New Product Development Game</em></a
+        >, by Hirotaka Takeuchi and Ikujiro Nonaka, published on the
+        <em>Harvard Business Review</em>, in 1986. Directly from Jeff's book
+        &mdash; bold characters are <em>my</em> editing:
+      </p>
+      <p class="indented-paragraph">
+        Takeuchi and Nonaka had looked at teams from some of the world’s most
+        productive and innovative companies: Honda, Fuji-Xerox, 3M,
+        Hewlett-Packard, and others. They argued that the old way of doing
+        product development,
+        <em>typified by NASA’s Phased Program Planning system</em
+        ><foot-note
+          text="In the
+        article, it is mentioned that the Japanese tried to implement NASA's
+        planning methods in their plants. However, it was a huge disaster.
+        Mistakes and deliveries were rampant and they went back to their usual
+        planning methods. Guess what was the reason for it..."
+        ></foot-note>
+        &mdash; a Waterfall system &mdash; was fundamentally flawed. Instead,
+        the best companies used an overlapping development process that was
+        faster and more flexible. The <strong>teams</strong> were
+        <strong>cross-functional</strong>. The teams had
+        <strong>autonomy</strong>. They were empowered to make their own
+        decisions. And they had a <strong>transcendent purpose</strong>. They
+        were reaching for something bigger than themselves.
+        <strong>Management didn’t dictate</strong>. Instead,
+        <strong>executives were servant-leaders</strong> and facilitators
+        focused on
+        <strong>getting obstacles out of their teams’ way</strong> rather than
+        telling them what and how to do product development. The Japanese
+        professors compared the teams’ work to that of a rugby team and said the
+        best teams acted as though they were in a <strong>scrum</strong>: “(...)
+        the ball gets passed within the team as it moves as a unit up the
+        field.”
+      </p>
+      <p>
+        At Easel, they had nothing to lose when compared to the mediocrity of
+        Waterfall-type of methods. After six months, and after having spent
+        almost one innovating about <em>how to work</em>, they had managed to
+        successfully deliver the product. Less than two years later, in 1995,
+        Jeff Sutherland and Ken Schwaber would publish the paper
+        <em>SCRUM Development Process</em>, at the Association for Computing
+        Machinery Research Conference, giving formal birth to the method.
+      </p>
+      <p>
+        As a "minor" anecdote to end this (sub)section, I would like to mention
+        a story told later in the book about a joint venture between General
+        Motors and Toyota.
+      </p>
+      <p>
+        In 1982, GM closed the New United Motor Manufacturing Inc. (NUMMI) plant
+        in Freemont, California:
+      </p>
+      <p class="indented-paragraph">
+        Management considered the workforce the worst in America. People drank
+        on the job, didn’t show up for work, and subtly sabotaged the cars (by,
+        for example, putting a Coke bottle inside a door, where it would rattle
+        and annoy customers). Toyota reopened the plant in 1984.
+        <strong
+          >GM told them about how awful the workers were but that the managers
+          were great</strong
+        >
+        and they should rehire them. Instead,
+        <strong
+          >Toyota declined to rehire the managers and rehired most of the
+          original workforce</strong
+        >
+        &mdash; even sent some of them to Japan to learn the Toyota Production
+        System.
+        <strong
+          >Almost immediately the NUMMI plant was producing cars with the same
+          precision and as few defects as cars that were produced in
+          Japan</strong
+        >. Same people, different system. GM never reached those levels of
+        quality at any of its other American plants. It pulled out of the joint
+        operating agreement the same year it went bankrupt.
+      </p>
+      <p>
+        This comes from a discussion farther in the book. Summarizing, the moral
+        of the story is that people are usually not the problem,<strong>
+          the system is the biggest source of issues in fact</strong
+        >
+        &mdash; "look for flawed systems, not flawed workers".
+      </p>
+
+      <h3>2.3 Inspect and Adapt</h3>
+      <p>
+        As previously stated, Scrum teams commonly achieve
+        <em>hyperproductivity</em>. This can go from 300-400%, to 800% on very
+        good teams. In order to reach for these impressive numbers you have to
+        guarantee that your team has:
+      </p>
+
+      <ul>
+        <li><strong>Autonomy</strong></li>
+        <li><strong>Cross-functionality</strong></li>
+        <li><strong>Transcendent Purpose</strong></li>
+      </ul>
+      <p>
+        But how do you <em>actually </em>achieve that? Well, I &mdash; and Jeff
+        as well &mdash; won't be explaining that so briefly here. That's
+        basically the next 200 pages of the book. However, we can at least (very
+        briefly) discuss the seeds of the thinking process.
+      </p>
+      <p>
+        Scrum comes from techniques used in Japanese manufacturing, but where
+        those come from might surprise you:
+      </p>
+      <p class="indented-paragraph">
+        Ironically, they learned many from an American:
+        <strong>W. Edwards Deming</strong>. Deming worked for General Douglas
+        MacArthur during the American occupation of Japan after World War II.
+        MacArthur’s approach to rebuilding the economy was to fire most of the
+        senior management in Japanese companies, promote line managers from the
+        ranks, and bring in business operations experts like Deming from the
+        United States. Deming’s influence on Japanese manufacturing was
+        dramatic. He trained hundreds of engineers in what is called “<strong
+          >statistical process control</strong
+        >.” The basic idea is to measure exactly what is being done, and how
+        well, and to strive for “<strong>continuous improvement.</strong>”
+        <strong>Don’t just get better once; get better constantly</strong>.
+        Always be looking for something to improve. Never, ever settle for where
+        you are. How you get there is to be constantly creating experiments to
+        see if you can achieve improvement.
+      </p>
+      <p>
+        Deming created, in parallel, a similar reinforcing loop to John Boyd's
+        OODA loops called the <strong>PDCA Cycle</strong> (Plan, Do, Check, Act)
+        which was and still is taught in management courses around the globe.
+      </p>
+
+      <h3>2.4 Change or Die</h3>
+      <p>
+        Again, I would rather say "Evolve or Die",
+        <strong
+          >Scrum is better than rudimentary management techniques, it is not
+          <em>only</em> different</strong
+        >. To illustrate that it <em>is </em>really better
+        <strong
+          >no matter the circumstances, no matter how good the team is</strong
+        >, Sutherland mentions a consulting experience he had at a company
+        called <em>BellSouth</em>:
+      </p>
+      <p class="indented-paragraph">
+        I learned this firsthand at BellSouth, when I visited them as a
+        consultant years ago. They had top-notch engineers, many from the famous
+        Bell Labs. They executed Waterfall perfectly. They’d bid on huge $ 10-
+        to $ 20-million projects. They’d gather all the requirements from the
+        customer, then go away for eighteen months and deliver on time and on
+        budget exactly what the customer had asked for. They were one of the
+        very, very few companies in the entire world that could pull that off.
+        <strong
+          >The problem was, at that point the customer no longer wanted what
+          they’d said they wanted</strong
+        >.
+        <strong
+          ><em
+            >Circumstances had changed. Business cycles were getting shorter,
+            and customers were demanding more responsive services.</em
+          ></strong
+        >
+      </p>
+      <p class="indented-paragraph">
+        I was brought in to see if I could help BellSouth figure out what they
+        were doing wrong. I soon realized it was the entire way they were
+        working. This can be tough to hear when it seems as if you’re doing
+        everything right. So one day I stood before a roomful of 150 BellSouth
+        engineers and told them that unless they changed to a different, more
+        customer-responsive model, they wouldn’t last as a going concern. The
+        crowd was tough. They were all really smart men and women, but they
+        believed my ideas were just another management fad. I couldn’t get
+        through to them, so I just shrugged and left them with a final warning:
+        “<strong>Change or die</strong>.”
+        <em>As you may have noticed, BellSouth isn’t around anymore.</em>
+      </p>
+      <p>
+        What happened is a reflex of the shocking efficiency numbers he
+        mentioned before. If your competition is using Scrum to achieve 300-800%
+        higher efficiency than traditional methods, how beyond mind-boggling
+        spectacular does your team have to be to compensate for that? You just
+        won't find many people like that. And, if you do, you might as well use
+        iterative methods like Scrum.
+      </p>
+
+      <h3>2.5 <em>Shu Ha Ri</em></h3>
+      <p>
+        This is something I've experienced quite a lot in
+        <a href="https://en.wikipedia.org/wiki/Go_(game)">Go (Baduk or Weiqi)</a
+        >. It is present in almost all Asian martial arts also, not only
+        <em>Aikido</em>, which is the example Sutherland uses.
+      </p>
+      <p>
+        Personally, I think that Aikido's teaching methods are incredibly
+        inefficient and the major reason for its unpopular status, not really
+        because it's a bit esoteric and too specific. In this martial art,
+        <strong
+          >the master will not <em>teach</em> the technique; at most, he will
+          <em>show</em> you how it's done</strong
+        >. The purpose of this is to show the student that
+        <strong
+          >learning by doing is the only way to <em>real</em> mastery</strong
+        >. The problem here is that, if the master taught the student about the
+        student's specific weaknesses, the pupil might need to practice less on
+        unnecessary content, being able to focus on more interesting or valuable
+        concepts and, perhaps, even innovating on some. In sum, there's a huge
+        waste of expertise in this sport,
+        <em
+          >it feels as if the master were hiding precious knowledge only due to
+          blind tradition and pride.</em
+        >
+      </p>
+      <p>
+        Anyway, the three <em>Shu Ha Ri</em> states can be found in all crafts,
+        not only martial arts. In my only visit to China, in 2017, in Hangzhou,
+        I received as a gift from some Monks a fan that had a similar
+        inscription on it. I don't quite recall what the ideograms really meant,
+        but it was something like: "first, you see; then you don't; and,
+        finally, you don't need to". Sounds really mysterious, huh? It is
+        supposed to mean that, first <em>(<strong>Shu</strong>),</em> you think
+        that you know what you're doing, you will follow the master and think
+        that's all there is to it, you're apparently on the direct and correct
+        track. Then (<em><strong>Ha</strong>)</em> you start to grasp a little
+        bit of the overarching concepts behind what you were first learning and
+        realize that it was all just the tip of the iceberg: you can't see
+        anymore, it is all overwhelming. Finally (<strong><em>Ri</em></strong
+        >), you incorporate the essence of whatever it is that you're learning,
+        to the point where <em>you are the living manifestation of it</em>, you
+        don't need to see it, <em>you simply are it.</em> From my experience in
+        Go and other crafts, the tougher the art you're trying to learn, the
+        more cyclical <em>Shu Ha Ri </em>becomes, i.e., the more times you will
+        sequentially loop through the three states.
+      </p>
+      In the book, <em>Shu Ha Ri </em>is formulated as:
+      <p class="indented-paragraph">
+        [In the]<em><strong> Shu</strong></em> state you know all the rules and
+        the forms. You repeat them, like the steps in a dance, so your body
+        absorbs them. You don’t deviate at all.
+      </p>
+      <p class="indented-paragraph">
+        In the <em><strong>Ha</strong></em> state, once you’ve mastered the
+        forms, you can make innovations. Put an extra swing in your step down
+        the dance floor.
+      </p>
+      <p class="indented-paragraph">
+        In the <em><strong>Ri</strong></em> state you’re able to discard the
+        forms, you’ve truly mastered the practice, and you’re able to be
+        creative in an unhindered way, because the knowledge of the meaning of
+        aikido or the tango is so deeply embedded in you, your every step
+        expresses its essence.
+      </p>
+      <p>
+        The lesson Sutherland tries to convey with the discussion about
+        <em>Shu Ha Ri </em>is that, although learning the Scrum's "rules" and
+        "recipes" is quick and easy. It will take you a lot of time and, most
+        importantly, <strong>practice</strong> to reach its
+        <em>Ri, mastery </em>state.
+      </p>
+
+      <h1>Next Posts in this Series</h1>
+      <p>
+        This is supposed to be a series of posts actually. However, that doesn't
+        mean that everything has to be as in-depth and as long as this first
+        post. In the next ones I'll be only focusing on some shorter crucial
+        findings Sutherland exposes in his book. Stay tuned.
+      </p>
+    </article>
+  </body>
+</html>

@@ -305,4 +305,13 @@ export const articlesMetadata: Article[] = [
     mainTopic: Topic.go,
     otherTopics: [Topic.review],
   },
+  {
+    index: 79,
+    title: "Scrum (Part 1)",
+    link: "/articles/scrum_1/scrum_1.html",
+    date: Date.UTC(2019, 7, 21),
+    language: Language.english,
+    mainTopic: Topic.productivity,
+    otherTopics: [Topic.psychology, Topic.programming],
+  },
 ];
