@@ -295,4 +295,14 @@ export const articlesMetadata: Article[] = [
     mainTopic: Topic.productivity,
     otherTopics: [Topic.psychology, Topic.programming],
   },
+  {
+    index: 80,
+    title: "Simão Gonçalves [4-5d EGF] vs Philippe Fanaro [2k-2d KGS]",
+    link:
+      "/articles/simao_goncalves_vs_philippe_fanaro/simao_goncalves_vs_philippe_fanaro.html",
+    date: Date.UTC(2019, 8, 1),
+    language: Language.portuguese,
+    mainTopic: Topic.go,
+    otherTopics: [Topic.review],
+  },
 ];
