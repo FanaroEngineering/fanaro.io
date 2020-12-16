@@ -3,10 +3,7 @@
     "target": "esnext",
     "module": "commonjs",
     "inlineSourceMap": true,
-    "rootDirs": [
-      "./src/",
-      "./test/"
-    ],
+    "rootDirs": ["./src/", "./test/"],
     "outDir": "dev/",
     "removeComments": true,
     "strict": true,

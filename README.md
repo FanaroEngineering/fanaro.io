@@ -1,6 +1,6 @@
 # fanaro.io
 
-This is the revamp with pure HTML, CSS and TypeScript of the [fanaro.com.br][fanaro.com.br] old WordPress website. 
+This is the revamp with pure HTML, CSS and TypeScript of the [fanaro.com.br][fanaro.com.br] old WordPress website.
 
 It was meant to be a [single-page application (SPA)][spa] &mdash; Angular style &mdash; but with no framework at all. However this demands too much work without a server and with only [Gihub Pages][gh_pages], which I don't want to meet right now.
 
@@ -79,6 +79,12 @@ npx webpack --watch
 This project currently uses [Prettier][prettier] as its code and Markdown formatter.
 
 For more specifics on this, check out the [`.prettierrc`][prettierrc] file.
+
+If you wish to format the whole project, you can then:
+
+```cmd
+npx prettier -w .
+```
 
 
 [prettier]: https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode
