@@ -26,6 +26,7 @@ export enum Topic {
   design = "Design",
   uiUx = "UI/UX",
   language = "Language",
+  literature = "Literature",
   writing = "Writing",
   quotes = "Quotes",
   books = "Books",
@@ -341,5 +342,14 @@ export const articlesMetadata: Article[] = [
     language: Language.english,
     mainTopic: Topic.language,
     otherTopics: [Topic.productivity, Topic.psychology],
+  },
+  {
+    index: 75,
+    title: "Macunaíma",
+    link: "/articles/macunaima/macunaima.html",
+    date: Date.UTC(2019, 5, 21),
+    language: Language.portuguese,
+    mainTopic: Topic.literature,
+    otherTopics: [Topic.language],
   },
 ];
