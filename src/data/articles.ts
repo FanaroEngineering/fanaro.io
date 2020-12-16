@@ -324,4 +324,13 @@ export const articlesMetadata: Article[] = [
     mainTopic: Topic.health,
     otherTopics: [Topic.productivity, Topic.programming],
   },
+  {
+    index: 77,
+    title: "My VS Code Setting",
+    link: "/articles/my_vs_code_settings/my_vs_code_settings.html",
+    date: Date.UTC(2019, 6, 28),
+    language: Language.english,
+    mainTopic: Topic.programming,
+    otherTopics: [Topic.productivity],
+  },
 ];
