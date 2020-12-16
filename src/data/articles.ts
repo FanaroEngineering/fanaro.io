@@ -8,6 +8,7 @@ export enum Topic {
   go = "Go",
   tsumego = "Tsumego",
   joseki = "Joseki",
+  goVariants = "Go Variants",
   review = "Review",
   philosophy = "Philosophy",
   meta = "Meta",
@@ -275,5 +276,14 @@ export const articlesMetadata: Article[] = [
     language: Language.english,
     mainTopic: Topic.writing,
     otherTopics: [Topic.productivity, Topic.language, Topic.meta],
+  },
+  {
+    index: 82,
+    title: "Tetris Go",
+    link: "/articles/tetris_go/tetris_go.html",
+    date: Date.UTC(2019, 8, 7),
+    language: Language.portuguese,
+    mainTopic: Topic.go,
+    otherTopics: [Topic.goVariants],
   },
 ];
