@@ -11,7 +11,6 @@ body {
   background-color: #282a36;
   color: var(--text-color);
   font-family: "Segoe UI";
-  font-weight: 500;
   max-width: var(--max-content-width-mobile);
   padding-bottom: 30px;
   padding-left: var(--margin);

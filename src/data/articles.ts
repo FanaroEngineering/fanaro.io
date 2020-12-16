@@ -32,6 +32,7 @@ export enum Topic {
   myYouTubeChannel = "My YouTube Channel",
   sports = "Sports",
   comedy = "Comedy",
+  health = "Health",
 }
 
 export default interface Article {
@@ -52,7 +53,7 @@ export const articlesMetadata: Article[] = [
     date: Date.UTC(2020, 11, 5),
     language: Language.portuguese,
     mainTopic: Topic.go,
-    otherTopics: [Topic.review],
+    otherTopics: [Topic.review, Topic.myYouTubeChannel],
   },
   {
     index: 106,
@@ -61,7 +62,7 @@ export const articlesMetadata: Article[] = [
     date: Date.UTC(2020, 10, 28),
     language: Language.english,
     mainTopic: Topic.productivity,
-    otherTopics: [Topic.go, Topic.browserExtension],
+    otherTopics: [Topic.go, Topic.browserExtension, Topic.myYouTubeChannel],
   },
   {
     index: 105,
@@ -70,7 +71,7 @@ export const articlesMetadata: Article[] = [
     date: Date.UTC(2020, 10, 22),
     language: Language.english,
     mainTopic: Topic.go,
-    otherTopics: [Topic.psychology],
+    otherTopics: [Topic.psychology, Topic.myYouTubeChannel],
   },
   {
     index: 104,
@@ -79,7 +80,7 @@ export const articlesMetadata: Article[] = [
     date: Date.UTC(2020, 8, 29),
     language: Language.english,
     mainTopic: Topic.productivity,
-    otherTopics: [Topic.browserExtension],
+    otherTopics: [Topic.browserExtension, Topic.myYouTubeChannel],
   },
   {
     index: 103,
@@ -88,7 +89,7 @@ export const articlesMetadata: Article[] = [
     date: Date.UTC(2020, 7, 17),
     language: Language.english,
     mainTopic: Topic.go,
-    otherTopics: [Topic.tsumego, Topic.math],
+    otherTopics: [Topic.tsumego, Topic.math, Topic.myYouTubeChannel],
   },
   {
     index: 102,
@@ -97,7 +98,7 @@ export const articlesMetadata: Article[] = [
     date: Date.UTC(2020, 7, 16),
     language: Language.portuguese,
     mainTopic: Topic.go,
-    otherTopics: [Topic.review],
+    otherTopics: [Topic.review, Topic.myYouTubeChannel],
   },
   {
     index: 101,
@@ -196,7 +197,7 @@ export const articlesMetadata: Article[] = [
     date: Date.UTC(2020, 3, 1),
     language: Language.english,
     mainTopic: Topic.design,
-    otherTopics: [Topic.sports],
+    otherTopics: [Topic.sports, Topic.myYouTubeChannel],
   },
   {
     index: 90,
@@ -284,7 +285,7 @@ export const articlesMetadata: Article[] = [
     date: Date.UTC(2019, 8, 7),
     language: Language.portuguese,
     mainTopic: Topic.go,
-    otherTopics: [Topic.goVariants],
+    otherTopics: [Topic.goVariants, Topic.myYouTubeChannel],
   },
   {
     index: 81,
@@ -303,7 +304,7 @@ export const articlesMetadata: Article[] = [
     date: Date.UTC(2019, 8, 1),
     language: Language.portuguese,
     mainTopic: Topic.go,
-    otherTopics: [Topic.review],
+    otherTopics: [Topic.review, Topic.myYouTubeChannel],
   },
   {
     index: 79,
@@ -313,5 +314,14 @@ export const articlesMetadata: Article[] = [
     language: Language.english,
     mainTopic: Topic.productivity,
     otherTopics: [Topic.psychology, Topic.programming],
+  },
+  {
+    index: 78,
+    title: "Less Pain in the Office",
+    link: "/articles/less_pain_office/less_pain_office.html",
+    date: Date.UTC(2019, 7, 3),
+    language: Language.english,
+    mainTopic: Topic.health,
+    otherTopics: [Topic.productivity, Topic.programming],
   },
 ];
