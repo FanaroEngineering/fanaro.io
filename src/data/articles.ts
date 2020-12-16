@@ -326,11 +326,20 @@ export const articlesMetadata: Article[] = [
   },
   {
     index: 77,
-    title: "My VS Code Setting",
+    title: "My VS Code Settings",
     link: "/articles/my_vs_code_settings/my_vs_code_settings.html",
     date: Date.UTC(2019, 6, 28),
     language: Language.english,
     mainTopic: Topic.programming,
     otherTopics: [Topic.productivity],
+  },
+  {
+    index: 76,
+    title: "Fluent Forever",
+    link: "/articles/fluent_forever/fluent_forever.html",
+    date: Date.UTC(2019, 6, 4),
+    language: Language.english,
+    mainTopic: Topic.language,
+    otherTopics: [Topic.productivity, Topic.psychology],
   },
 ];
