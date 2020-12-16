@@ -25,6 +25,7 @@ export enum Topic {
   design = "Design",
   uiUx = "UI/UX",
   language = "Language",
+  writing = "Writing",
   quotes = "Quotes",
   books = "Books",
   myYouTubeChannel = "My YouTube Channel",
@@ -265,5 +266,14 @@ export const articlesMetadata: Article[] = [
       Topic.history,
       Topic.meta,
     ],
+  },
+  {
+    index: 83,
+    title: "Quote #1 - Dorothy Parker on What Writing Is",
+    link: "/articles/quote_1_parker/quote_1_parker.html",
+    date: Date.UTC(2019, 11, 2),
+    language: Language.english,
+    mainTopic: Topic.writing,
+    otherTopics: [Topic.productivity, Topic.language, Topic.meta],
   },
 ];
