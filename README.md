@@ -24,7 +24,9 @@ It was meant to be a [single-page application (SPA)][spa] &mdash; Angular style 
 [gh_pages]: https://pages.github.com/
 [spa]: https://developer.mozilla.org/en-US/docs/Glossary/SPA
 
-<br>
+---
+
+**Table of Contents**
 
 <!-- TOC depthFrom:2 -->
 
