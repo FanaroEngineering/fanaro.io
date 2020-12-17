@@ -1,6 +1,7 @@
-# [<img alt="YouTube Kbd Nav" height="24px" src="assets/favicon.svg"/> fanaro.io][fanaro.io]
+# [<img alt="YouTube Kbd Nav" height="30px" src="assets/favicon.svg"/> fanaro.io][fanaro.io]
 
 [![TS][github_ci_badge]][github_actions]
+[![Gitter][gitter_svg]][gitter_badge]
 [![Buy Me A Coffee][buy_me_a_coffee_badge]][buy_me_a_coffee_donation]
 
 
@@ -8,6 +9,8 @@
 [buy_me_a_coffee_donation]: https://www.buymeacoffee.com/psygo
 [github_actions]: https://github.com/FanaroEngineering/fanaro.io/actions
 [github_ci_badge]: https://github.com/FanaroEngineering/fanaro.io/workflows/TS%20Tests/badge.svg
+[gitter_svg]: https://badges.gitter.im/fanaroio/community.svg
+[gitter_badge]: https://gitter.im/fanaroio/community?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge
 
 > **Access the website here: [fanaro.io][fanaro.io]**
 
