@@ -1,4 +1,15 @@
-# fanaro.io
+# [<img alt="YouTube Kbd Nav" height="24px" src="assets/favicon.svg"/> fanaro.io][fanaro.io]
+
+[![TS][github_ci_badge]][github_actions]
+[![Buy Me A Coffee][buy_me_a_coffee_badge]][buy_me_a_coffee_donation]
+
+
+[buy_me_a_coffee_badge]: assets/buy_me_a_coffee_shield.svg
+[buy_me_a_coffee_donation]: https://www.buymeacoffee.com/psygo
+[github_actions]: https://github.com/FanaroEngineering/fanaro.io/actions
+[github_ci_badge]: https://github.com/FanaroEngineering/fanaro.io/workflows/TS%20Tests/badge.svg
+
+> **Access the website here: [fanaro.io][fanaro.io]**
 
 This is the revamp with pure HTML, CSS and TypeScript of the [fanaro.com.br][fanaro.com.br] old WordPress website.
 
@@ -6,6 +17,7 @@ It was meant to be a [single-page application (SPA)][spa] &mdash; Angular style 
 
 
 [fanaro.com.br]: https://fanaro.com.br
+[fanaro.io]: https://fanaro.io
 [gh_pages]: https://pages.github.com/
 [spa]: https://developer.mozilla.org/en-US/docs/Glossary/SPA
 
