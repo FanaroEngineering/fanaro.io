@@ -1,5 +1,6 @@
 :root {
   --text-color: #abb2bf;
+  --background-color: #282a36;
   --max-content-width-mobile: 90vw;
   --max-img-iframe-width-mobile: 75vw;
   --max-content-width-desktop: 580px;
@@ -8,12 +9,13 @@
 }
 
 body {
-  background-color: #282a36;
+  background-color: var(--background-color);
   color: var(--text-color);
   font-family: "Segoe UI";
   max-width: var(--max-content-width-mobile);
   padding-bottom: 30px;
   padding-left: var(--margin);
+  padding-right: var(--margin);
 }
 
 p,
@@ -21,6 +23,15 @@ ul,
 ol,
 blockquote {
   text-align: justify;
+}
+
+blockquote {
+  margin-block-start: 10px;
+  margin-block-end: 10px;
+}
+
+.home-quote {
+  margin-left: 25px;
 }
 
 .indented-paragraph {
@@ -76,15 +87,13 @@ blockquote {
 }
 
 table {
-  background-color: #131516;
-  margin-left: 15px;
-  margin-right: 15px;
+  padding-right: 24px;
 }
 
 table > caption {
   text-align: left;
   margin-bottom: 10px;
-  margin-left: 10px;
+  margin-left: 20px;
   font-size: 1.5rem;
   font-weight: bold;
 }
@@ -95,6 +104,11 @@ th {
   padding-left: 7.5px;
   padding-right: 7.5px;
   padding-bottom: 7.5px;
+}
+
+tr:nth-child(odd),
+th {
+  background-color: #131516;
 }
 
 tr:nth-child(even),
