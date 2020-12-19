@@ -12,6 +12,7 @@ export default class ArticleFooter extends HTMLElement {
         color: var(--text-color);
         background-color: var(--text-color);
       }
+      
       a {
         color: #95c379;
         text-decoration: none;

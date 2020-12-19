@@ -9,6 +9,7 @@ export default class Footnote extends HTMLElement {
         color: ${Footnote.anchorColor};
         text-decoration: none;
       }
+
       sup {
         color: ${Footnote.anchorColor};
       }

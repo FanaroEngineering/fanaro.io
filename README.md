@@ -1,16 +1,16 @@
-# [<img alt="YouTube Kbd Nav" height="30px" src="assets/favicon.svg"/> fanaro.io][fanaro.io]
+<p align="center">
+  <a href="https://fanaro.io"><img src="assets/favicon.svg" height="100px" alt="Logo" /></a>
+</p>
 
-[![TS][github_ci_badge]][github_actions]
-[![Gitter][gitter_svg]][gitter_badge]
-[![Buy Me A Coffee][buy_me_a_coffee_badge]][buy_me_a_coffee_donation]
+<p align="center">
+  <a href="https://github.com/FanaroEngineering/fanaro.io/actions"><img src="https://github.com/FanaroEngineering/fanaro.io/workflows/TS%20Tests/badge.svg" alt="Github CI" /></a>
+  <a href="https://gitter.im/fanaroio/community?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge"><img src="https://badges.gitter.im/fanaroio/community.svg" alt="Gitter" /></a>
+  <a href="https://www.buymeacoffee.com/psygo"><img src="assets/buy_me_a_coffee_shield.svg" alt="Buy Me A Coffee" /></a>
+</p>
 
+---
 
-[buy_me_a_coffee_badge]: assets/buy_me_a_coffee_shield.svg
-[buy_me_a_coffee_donation]: https://www.buymeacoffee.com/psygo
-[github_actions]: https://github.com/FanaroEngineering/fanaro.io/actions
-[github_ci_badge]: https://github.com/FanaroEngineering/fanaro.io/workflows/TS%20Tests/badge.svg
-[gitter_svg]: https://badges.gitter.im/fanaroio/community.svg
-[gitter_badge]: https://gitter.im/fanaroio/community?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge
+# fanaro.io
 
 > **Access the website here: [fanaro.io][fanaro.io]**
 
