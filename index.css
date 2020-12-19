@@ -90,7 +90,7 @@ table {
   padding-right: 32px;
   border-spacing: 0;
   border-collapse: separate;
-  border: 1px #1f2223;
+  border: 1px #090705;
 }
 
 table > caption {
@@ -103,6 +103,11 @@ table > caption {
 
 td,
 th {
+  border: solid 0.25px #1b1c1f;
+}
+
+td,
+th {
   padding-top: 7.5px;
   padding-left: 7.5px;
   padding-right: 7.5px;
@@ -111,12 +116,12 @@ th {
 
 tr:nth-child(odd),
 th {
-  background-color: #131516;
+  background-color: #222222;
 }
 
 tr:nth-child(even),
 th {
-  background-color: #1f2223;
+  background-color: #090705;
 }
 
 kbd {
