@@ -2,9 +2,7 @@
   --text-color: #abb2bf;
   --background-color: #282a36;
   --max-content-width-mobile: 90vw;
-  --max-img-iframe-width-mobile: 75vw;
   --max-content-width-desktop: 580px;
-  --max-img-iframe-width-desktop: 500px;
   --margin: 1rem;
 }
 
@@ -53,7 +51,7 @@ a {
 }
 
 iframe {
-  max-width: var(--max-img-iframe-width-mobile);
+  max-width: var(--max-content-width-mobile);
   max-height: 51vw;
   width: 560px;
   height: 315px;
@@ -66,8 +64,8 @@ figure {
 }
 
 img {
-  max-width: var(--max-img-iframe-width-mobile);
-  padding-right: var(--margin);
+  max-width: var(--max-content-width-mobile);
+  /* padding-right: var(--margin); */
 }
 
 figcaption {
@@ -151,7 +149,7 @@ pre {
 
   img,
   iframe {
-    max-width: var(--max-img-iframe-width-desktop);
+    max-width: var(--max-content-width-desktop);
   }
 
   .quote-author {
