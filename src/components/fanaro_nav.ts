@@ -10,16 +10,14 @@ export default class FanaroNav extends HTMLElement {
         color: var(--text-color);
         text-decoration: none;
       }
-      svg {
+      img {
         padding-right: 10px;
       }
     </style>
     
     <nav>
       <a href="/">
-        <svg width="50" height="50">
-          <image width="50" height="50" href="/assets/logo_400.png" />
-        </svg>
+        <img height="50" src="/assets/logo_400.png" />
         <h1>fanaro.io</h1>
       </a>
     </nav>

@@ -10,29 +10,84 @@
 
     <link rel="stylesheet" href="index.css" />
     <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+
+    <style>
+      #home-top {
+        display: flex;
+        padding-right: 24px;
+      }
+
+      #right {
+        vertical-align: middle;
+      }
+
+      svg,
+      image {
+        height: 27.5px;
+        width: 27.5px;
+      }
+
+      svg {
+        margin-bottom: 10px;
+      }
+    </style>
   </head>
   <body>
-    <blockquote class="home-quote">
-      This website is open source and entirely made with
-      <a href="https://pages.github.com/">Github Pages</a> and bare-bones HTML,
-      CSS and TS. If you feel like contributing with code or discussions, or if
-      you want to look for stuff you can't find through the current UI/UX, do
-      visit its
-      <local-link
-        text="homepage on Github"
-        link="https://github.com/FanaroEngineering/fanaro.io"
-      ></local-link
-      >.
-    </blockquote>
+    <br />
 
-    <blockquote class="home-quote">
-      Slowly, this will become the new home to the older
-      <local-link
-        link="https://fanaro.com.br"
-        text="fanaro.com.br"
-      ></local-link>
-      website.
-    </blockquote>
+    <div id="home-top">
+      <div>
+        <blockquote class="home-quote">
+          This website is open source and entirely made with
+          <a href="https://pages.github.com/">Github Pages</a> and bare-bones
+          HTML, CSS and TS. If you feel like contributing with code or
+          discussions, or if you want to look for stuff you can't find through
+          the current UI/UX, do visit its
+          <local-link
+            text="homepage on Github"
+            link="https://github.com/FanaroEngineering/fanaro.io"
+          ></local-link
+          >.
+        </blockquote>
+
+        <blockquote class="home-quote">
+          Slowly, this will become the new home to the older
+          <local-link
+            link="https://fanaro.com.br"
+            text="fanaro.com.br"
+          ></local-link>
+          website.
+        </blockquote>
+      </div>
+
+      <div id="right">
+        <a href="https://www.instagram.com/fanaro009/">
+          <svg>
+            <image href="/assets/instagram.svg"></image>
+          </svg>
+        </a>
+        <a href="https://twitter.com/PFanaro">
+          <svg>
+            <image href="/assets/twitter.svg"></image>
+          </svg>
+        </a>
+        <a href="https://stackoverflow.com/users/4756173/philippe-fanaro">
+          <svg>
+            <image href="/assets/stackoverflow.svg"></image>
+          </svg>
+        </a>
+        <a href="https://www.youtube.com/channel/UCuUK6AAtvo8cTFOJ3OOg9Mw">
+          <svg>
+            <image href="/assets/youtube.svg"></image>
+          </svg>
+        </a>
+        <a href="https://github.com/psygo">
+          <svg>
+            <image href="/assets/github.svg"></image>
+          </svg>
+        </a>
+      </div>
+    </div>
 
     <br />
 

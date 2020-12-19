@@ -31,7 +31,7 @@ blockquote {
 }
 
 .home-quote {
-  margin-left: 25px;
+  margin-left: 22px;
 }
 
 .indented-paragraph {
@@ -67,7 +67,6 @@ figure {
 
 img {
   max-width: var(--max-content-width-mobile);
-  /* padding-right: var(--margin); */
 }
 
 figcaption {
@@ -96,7 +95,7 @@ table {
 table > caption {
   text-align: left;
   margin-bottom: 10px;
-  margin-left: 20px;
+  margin-left: 17px;
   font-size: 1.5rem;
   font-weight: bold;
 }
