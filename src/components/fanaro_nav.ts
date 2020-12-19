@@ -18,7 +18,7 @@ export default class FanaroNav extends HTMLElement {
     <nav>
       <a href="/">
         <svg width="50" height="50">
-          <image width="50" height="50" href="../../assets/favicon.svg" />
+          <image width="50" height="50" href="/assets/logo_400.png" />
         </svg>
         <h1>fanaro.io</h1>
       </a>

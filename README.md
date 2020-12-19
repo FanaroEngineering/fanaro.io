@@ -1,5 +1,5 @@
 <p align="center">
-  <a href="https://fanaro.io"><img src="assets/favicon.svg" height="100px" alt="Logo" /></a>
+  <a href="https://fanaro.io"><img src="assets/logo_400.png" height="100px" alt="Logo" /></a>
 </p>
 
 <p align="center">
