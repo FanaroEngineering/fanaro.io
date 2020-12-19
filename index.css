@@ -62,7 +62,8 @@ iframe {
 
 figure {
   display: table;
-  margin-bottom: 40px;
+  margin-bottom: 20px;
+  margin-left: 0px;
 }
 
 img {
