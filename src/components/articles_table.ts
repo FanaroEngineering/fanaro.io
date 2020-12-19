@@ -11,9 +11,9 @@ export default class ArticlesTable extends HTMLElement {
       <caption>Articles</caption>
       <thead>
         <th>#</th>
-        <th>Article</th>
         <th>Date</th>
         <th>Language</th>
+        <th>Article</th>
         <th>Main Topic</th>
         <th>Other Topics</th>
       </thead>
@@ -51,9 +51,9 @@ export default class ArticlesTable extends HTMLElement {
       this.tr = document.createElement("tr");
 
       this.rowIndex();
-      this.rowArticle();
       this.rowDate();
       this.rowLanguage();
+      this.rowArticle();
       this.rowMainTopic();
       this.rowOtherTopics();
 
