@@ -11,7 +11,7 @@
 body {
   background-color: var(--background-color);
   color: var(--text-color);
-  font-family: "Segoe UI";
+  font-family: -apple-system, "Segoe UI";
   max-width: var(--max-content-width-mobile);
   padding-bottom: 30px;
   padding-left: var(--margin);
