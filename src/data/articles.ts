@@ -370,4 +370,13 @@ export const articlesMetadata: Article[] = [
     mainTopic: Topic.literature,
     otherTopics: [Topic.language],
   },
+  {
+    index: 74,
+    title: "Say Hello to My AI Friend",
+    link: "/articles/say_hello_to_my_ai_friend/say_hello_to_my_ai_friend.html",
+    date: Date.UTC(2019, 4, 11),
+    languages: [Language.portuguese, Language.english],
+    mainTopic: Topic.go,
+    otherTopics: [Topic.comedy, Topic.meta],
+  },
 ];
