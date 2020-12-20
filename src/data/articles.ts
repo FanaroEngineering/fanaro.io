@@ -48,6 +48,15 @@ export default interface Article {
 
 export const articlesMetadata: Article[] = [
   {
+    index: 109,
+    title: "Murugandi's Fighting Spirit Design",
+    link: "/articles/murugandi/murugandi.html",
+    date: Date.UTC(2020, 11, 21),
+    languages: [Language.english, Language.portuguese],
+    mainTopic: Topic.go,
+    otherTopics: [Topic.design, Topic.design],
+  },
+  {
     index: 108,
     title: "My New Website | Meu Novo Site",
     link: "/articles/new_site/new_site.html",
