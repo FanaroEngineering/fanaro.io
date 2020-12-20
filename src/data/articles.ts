@@ -25,7 +25,7 @@ export enum Topic {
   flutter = "Flutter",
   design = "Design",
   uiUx = "UI/UX",
-  language = "[Language",
+  language = "Language",
   literature = "Literature",
   writing = "Writing",
   quotes = "Quotes",
