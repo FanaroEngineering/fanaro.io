@@ -12,7 +12,7 @@ export default class ArticlesTable extends HTMLElement {
       <thead>
         <th>#</th>
         <th>Date</th>
-        <th>Language</th>
+        <th>Languages</th>
         <th>Article</th>
         <th>Main Topic</th>
         <th>Other Topics</th>
@@ -26,7 +26,7 @@ export default class ArticlesTable extends HTMLElement {
     title: "",
     link: "",
     date: 0,
-    language: Language.english,
+    languages: [Language.english],
     mainTopic: Topic.go,
     otherTopics: [Topic.go],
   };
@@ -52,7 +52,7 @@ export default class ArticlesTable extends HTMLElement {
 
       this.rowIndex();
       this.rowDate();
-      this.rowLanguage();
+      this.rowLanguages();
       this.rowArticle();
       this.rowMainTopic();
       this.rowOtherTopics();
@@ -86,9 +86,10 @@ export default class ArticlesTable extends HTMLElement {
     this.tr.append(dateCell);
   };
 
-  private rowLanguage = (): void => {
+  private rowLanguages = (): void => {
     const languageCell: HTMLTableDataCellElement = document.createElement("td");
-    languageCell.append(this.article.language.toString());
+    const languages: string = this.concatenator(this.article.languages);
+    languageCell.append(languages);
     this.tr.append(languageCell);
   };
 
@@ -100,14 +101,15 @@ export default class ArticlesTable extends HTMLElement {
     this.tr.append(mainTopicCell);
   };
 
+  private concatenator = (array: (Language | Topic)[]): string => {
+    return array.length == 0 ? String.fromCharCode(8212) : array.join(", ");
+  };
+
   private rowOtherTopics = (): void => {
     const otherTopicsCell: HTMLTableDataCellElement = document.createElement(
       "td"
     );
-    const otherTopics: string =
-      this.article.otherTopics.length == 0
-        ? String.fromCharCode(8212)
-        : this.article.otherTopics.join(", ");
+    const otherTopics: string = this.concatenator(this.article.otherTopics);
     otherTopicsCell.append(otherTopics);
     this.tr.append(otherTopicsCell);
   };
