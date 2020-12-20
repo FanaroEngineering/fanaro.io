@@ -48,6 +48,15 @@ export default interface Article {
 
 export const articlesMetadata: Article[] = [
   {
+    index: 108,
+    title: "My New Website | Meu Novo Site",
+    link: "/articles/new_site/new_site.html",
+    date: Date.UTC(2020, 11, 20),
+    language: Language.english,
+    mainTopic: Topic.meta,
+    otherTopics: [Topic.design],
+  },
+  {
     index: 107,
     title: "Revisão com Amir Fragman",
     link: "/articles/revisao_amir/revisao_amir.html",
