@@ -10,6 +10,15 @@
 
     <link rel="stylesheet" type="text/css" href="../../index.css" />
     <link rel="icon" type="image/svg+xml" href="../../assets/favicon.svg" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.4.1/styles/atom-one-dark.min.css"
+    />
+    <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.5.0/build/highlight.min.js"></script>
+    <script defer>
+      hljs.initHighlightingOnLoad();
+    </script>
   </head>
   <body>
     <article>
@@ -419,7 +428,7 @@
       since there was a need for the concatenation of shortcuts. In order to
       create it: add this to your <code>settings.json</code> file:
       <pre>
-multiCommand.commands: [
+        <code class="json">multiCommand.commands: [
     {
         "command" : "multiCommand.copyPasteTerminalAndFocus",
         "sequence": [
@@ -431,17 +440,20 @@ multiCommand.commands: [
             "workbench.action.terminal.focus"
         ]
     }
-]</pre
-      >
-      And then create the shortcut in the
-      <code>keybindings.json</code>
-      file by adding:
+]</code>
+      </pre>
+
+      <p>
+        And then create the shortcut in the <code>keybindings.json</code> file
+        by adding:
+      </p>
+
       <pre>
-{   // Copy Paste to the Integrated Terminal and Focus on it 
+        <code class="json">{   // Copy Paste to the Integrated Terminal and Focus on it 
     "key" : "alt+t",
     "command" : "multiCommand.copyPasteTerminalAndFocus"
-}</pre
-      >
+}</code>
+      </pre>
     </article>
   </body>
 </html>
