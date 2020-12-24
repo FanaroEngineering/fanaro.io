@@ -10,6 +10,15 @@
 
     <link rel="stylesheet" type="text/css" href="../../index.css" />
     <link rel="icon" type="image/svg+xml" href="../../assets/favicon.svg" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.4.1/styles/atom-one-dark.min.css"
+    />
+    <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.5.0/build/highlight.min.js"></script>
+    <script defer>
+      hljs.initHighlightingOnLoad();
+    </script>
   </head>
   <body>
     <article>
@@ -124,17 +133,18 @@
         vanilla white, creating your own white in your own, custom color
         palette.
       </p>
-      I think it's going to be clearer with the code example below:
+      <p>I think it's going to be clearer with the code example below:</p>
+
       <pre>
-abstract class AppPalette {
+        <code class="dart">abstract class AppPalette {
   static const Color white = Colors.white;
 }
 
 abstract class Container {
   static final Color background = AppPalette.white;
-}
-</pre
-      >
+}</code>
+      </pre>
+
       <p>
         This technique is very common in graphic design where we create custom
         palettes for our current design and reference every subsequent color to
@@ -245,15 +255,15 @@ abstract class Container {
       </p>
 
       <pre>
-MaterialApp(
+        <code class="dart">MaterialApp(
   title: title,
   theme: ThemeData(
     brightness: Brightness.dark,
     fontFamily: 'Georgia',
   ),
-)
-</pre
-      >
+)</code>
+      </pre>
+
       <p>
         As I discussed in section 2, you can also manage this
         <code>ThemeData</code> separately, in a <code>Theming</code> class for
@@ -261,7 +271,7 @@ MaterialApp(
       </p>
 
       <pre>
-abstract class Theming {
+        <code class="dart">abstract class Theming {
   static final ThemeData app = ThemeData(
     iconTheme: defaultIcon,
   );
@@ -269,9 +279,9 @@ abstract class Theming {
   static const IconThemeData icon = IconThemeData(
     color: BasicColors.grey,
   );
-}
-</pre
-      >
+}</code>
+      </pre>
+
       <p>
         Note that I'm not using a suffix for <code>icon</code>, which might seem
         weird at first, but, if you remember that everything in this class is of
@@ -286,7 +296,7 @@ abstract class Theming {
       </p>
 
       <pre>
-Theme(
+        <code class="dart">Theme(
   data: ThemeData(
     accentColor: Colors.yellow,
   ),
@@ -294,9 +304,9 @@ Theme(
     onPressed: () {},
     child: Icon(Icons.add),
   ),
-)
-</pre
-      >
+)</code>
+      </pre>
+
       <p>
         You can also override specific characteristics of the
         <code>context</code>'s or app's theme by using the
@@ -304,16 +314,16 @@ Theme(
       </p>
 
       <pre>
-Theme(
+        <code class="dart">Theme(
   // Could also be `Theming.someTheme.copyWith(...)`:
   data: Theme.of(context).copyWith(accentColor: Colors.yellow),
   child: FloatingActionButton(
     onPressed: null,
     child: Icon(Icons.add),
   ),
-);
-</pre
-      >
+);</code>
+      </pre>
+
       <p>
         Theming shouldn't be much harder than that, i.e., having an overarching
         custom theme with some overrides here and there. Hence, if you're having
@@ -370,10 +380,9 @@ Theme(
         yourself. For example:
       </p>
 
-      <div>
-        <pre>
-MaterialApp(
-  builder: (BuildContext context, Widget child){
+      <pre>
+          <code class="dart">MaterialApp(
+  builder: (BuildContext context, Widget child) {
     final MediaQueryData data = MediaQuery.of(context);
     return MediaQuery(
       data: data.copyWith(
@@ -382,10 +391,9 @@ MaterialApp(
       child: child,
     );
   },
-)
-</pre
-        >
-      </div>
+);</code>
+      </pre>
+
       <p>
         Hard-coding the accessibility factor isn't a UI/UX good practice, but
         it's understandable, at least during development.
