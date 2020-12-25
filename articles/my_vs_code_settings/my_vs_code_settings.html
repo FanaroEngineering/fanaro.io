@@ -6,6 +6,15 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
 
+    <meta name="author" content="Philippe Fanaro" />
+    <meta name="description" content="My VS Code Settings" />
+
+    <meta property="og:image" content="vs_code_icon.png" />
+    <meta property="og:description" content="My VS Code Settings" />
+    <meta property="og:title" content="My VS Code Settings" />
+    <meta property="og:site_name" content="fanaro.io" />
+    <meta property="og:type" content="blog" />
+
     <script src="../../index.js"></script>
 
     <link rel="stylesheet" type="text/css" href="../../index.css" />
@@ -26,408 +35,422 @@
 
       <h1>My VS Code Settings</h1>
 
-      <blockquote>
-        A lot of the information here is fairly outdated, my setup has changed
-        quite a lot. Check out the
-        <local-link
-          link="https://github.com/psygo/vs_code"
-          text="repo"
-        ></local-link>
-        for a more up-to-date source.
-      </blockquote>
+      <section>
+        <blockquote>
+          A lot of the information here is fairly outdated, my setup has changed
+          quite a lot. Check out the
+          <local-link
+            link="https://github.com/psygo/vs_code"
+            text="repo"
+          ></local-link>
+          for a more up-to-date source.
+        </blockquote>
 
-      <p>
-        I've been working with VS Code for more than 6 months now and I've tuned
-        it to look quite attractive and practical. I would like for others to
-        feel the same way about their VS Code versions, and that's why I'm
-        sharing my settings here. If you see something that can be improved,
-        please do let me know, try using the <code>Github Issues</code> feature
-        &mdash; let's get this editor to utter perfection. Otherwise, enjoy :).
-      </p>
-      <p>
-        If you wish to skip the article below, you can go directly to my
-        <local-link
-          link="https://github.com/psygo/vs_code"
-          text="VS Settings Github Repo"
-        ></local-link
-        >.
-      </p>
+        <p>
+          I've been working with VS Code for more than 6 months now and I've
+          tuned it to look quite attractive and practical. I would like for
+          others to feel the same way about their VS Code versions, and that's
+          why I'm sharing my settings here. If you see something that can be
+          improved, please do let me know, try using the
+          <code>Github Issues</code> feature &mdash; let's get this editor to
+          utter perfection. Otherwise, enjoy :).
+        </p>
+        <p>
+          If you wish to skip the article below, you can go directly to my
+          <local-link
+            link="https://github.com/psygo/vs_code"
+            text="VS Settings Github Repo"
+          ></local-link
+          >.
+        </p>
+      </section>
 
-      <h2>Why VS Code</h2>
-      <p>
-        VS Code has taken the programming world by storm. Corey Schafer, a much
-        more experienced programmer than I mentions in
-        <a href="https://youtu.be/-nh9rCzPJ20">one of his videos</a> that, in a
-        coding event he goes to regularly, where he used to see a myriad of
-        editors, VS Code is now almost unanimous.
-      </p>
-      <p>I believe there are 2 major factors for its success:</p>
+      <section>
+        <h2>Why VS Code</h2>
+        <p>
+          VS Code has taken the programming world by storm. Corey Schafer, a
+          much more experienced programmer than I mentions in
+          <a href="https://youtu.be/-nh9rCzPJ20">one of his videos</a> that, in
+          a coding event he goes to regularly, where he used to see a myriad of
+          editors, VS Code is now almost unanimous.
+        </p>
+        <p>I believe there are 2 major factors for its success:</p>
 
-      <ol>
-        <li>
-          <strong>Lightweight</strong>: whereas previous good editors would take
-          a lot processing and RAM, which would make some people even stick to
-          very old school or bare bones editors like Emacs.
-        </li>
-        <li>
-          <strong>Beautiful and with no clutter</strong>: its minimalist design
-          focuses on having no needless features and the overall design feels
-          sharp and modern.
-        </li>
-        <li>
-          <strong>OS Independent</strong><foot-note text="Almost."></foot-note>:
-          VS Code was programmed using
-          <a href="https://electronjs.org/">ElectronJS</a>, a JavaScript layer
-          on top of the programming languages used for developing software for
-          different operating systems. This allows for almost<foot-note
-            text="Still a lot of work actually."
-          ></foot-note>
-          no OS incompatibility and grants the software a cleaner look.
-        </li>
-        <li>
-          <strong>More importantly: it's open source</strong> (you can simply go
-          to
-          <a href="https://github.com/microsoft/vscode"
-            >its Github repository</a
-          >
-          and see how they coded it). Open Source code makes the code available
-          for users to customize<foot-note
-            text="It isn't free. You can look at the code,
+        <ol>
+          <li>
+            <strong>Lightweight</strong>: whereas previous good editors would
+            take a lot processing and RAM, which would make some people even
+            stick to very old school or bare bones editors like Emacs.
+          </li>
+          <li>
+            <strong>Beautiful and with no clutter</strong>: its minimalist
+            design focuses on having no needless features and the overall design
+            feels sharp and modern.
+          </li>
+          <li>
+            <strong>OS Independent</strong
+            ><foot-note text="Almost."></foot-note>: VS Code was programmed
+            using <a href="https://electronjs.org/">ElectronJS</a>, a JavaScript
+            layer on top of the programming languages used for developing
+            software for different operating systems. This allows for
+            almost<foot-note text="Still a lot of work actually."></foot-note>
+            no OS incompatibility and grants the software a cleaner look.
+          </li>
+          <li>
+            <strong>More importantly: it's open source</strong> (you can simply
+            go to
+            <a href="https://github.com/microsoft/vscode"
+              >its Github repository</a
+            >
+            and see how they coded it). Open Source code makes the code
+            available for users to customize<foot-note
+              text="It isn't free. You can look at the code,
           but not use it commercially or indiscriminately."
-          ></foot-note>
-          and point out bugs. In practice, in general, software companies have
-          experienced great boosts in development and user satisfaction by open
-          sourcing their codes. This is a lesson taken from the previous and
-          fairly recent editor that planted the seeds for VS Code:
-          <a href="https://atom.io/">Atom</a
-          ><foot-note
-            text="Atom was created by Github,
+            ></foot-note>
+            and point out bugs. In practice, in general, software companies have
+            experienced great boosts in development and user satisfaction by
+            open sourcing their codes. This is a lesson taken from the previous
+            and fairly recent editor that planted the seeds for VS Code:
+            <a href="https://atom.io/">Atom</a
+            ><foot-note
+              text="Atom was created by Github,
           which was in turn created by Linus Torvalds, the Linux creator and a
           big advocate of Open Source code."
-          ></foot-note
-          >.
-        </li>
-      </ol>
-      <h2>My Settings</h2>
-      <p>
-        VS Code adopts JSON for its settings, something seen nowadays as a best
-        practice, as it is very simple, lightweight and, more importantly,
-        conventional &mdash; which makes people's management much easier.
-      </p>
-      <p>
-        However, the standard configuration is to open an UI to deal with
-        configuration. This can thankfully be changed by placing
-        <code>"workbench.settings.editor" : "json"</code>
-        in the user's configuration, which you can access by typing
-        <code>Ctrl + Shift + P</code>, looking for <em>settings</em> and then
-        choosing <code>Open User Settings (JSON)</code>. The
-        <em>default settings</em> are only so you can take a look at what's
-        available; if you see something you want to change, override it when
-        placing it in the <em>user settings</em>. For example, you can use my
-        configurations by simply copying my
-        <code>settings.json</code>
-        file content into <em>your</em> user's configuration. If this looks all
-        too complicated, there are several tutorials on Youtube (including
-        <a href="https://youtu.be/-nh9rCzPJ20">one from Corey Schafer</a> that's
-        very nice) and there's also the
-        <a href="https://code.visualstudio.com/docs/getstarted/settings"
-          >official documentation</a
-        >, which is <em>not</em> as unfriendly as your regular software docs.
-      </p>
-      I've added comments to all of my customization, but the ones I feel
-      aggregate the most value are:
-      <ul>
-        <li>
-          <code>editor.acceptSuggestionOnEnter</code>: by setting this to
-          <code>"off"</code>, you avoid pressing enter and accidentally
-          inserting one of the suggestions. Now suggestions will only happen
-          when pressing <code>Tab</code>.
-        </li>
-        <li>
-          <code>window.titleBarStyle</code>: this ditches your OS title bar when
-          set to <code>"custom"</code>; overall a cleaner visual.
-        </li>
-        <li>
-          <code>workbench.editor.enablePreview</code> : by default, VS Code
-          opens <em>previews</em> of the files; only when you edit them do they
-          become actual <em>editor windows</em>. If you wish to open multiple
-          files then, VS Code will keep overriding the same tab, which is not
-          typically what you want.
-        </li>
-        <li>
-          <code>editor.minimap.renderCharacters</code> : the characters in the
-          <em>Mini Map</em> are... mini. So what's the point in rendering them?
-          You just want an outline, the sky's view, and not rendering the
-          characters does exactly that.
-        </li>
-        <li>
-          <code>editor.fontLigature</code>
-          : only some fonts enable this feature, and one of them is the
-          <a href="https://github.com/tonsky/FiraCode">Fira Code</a> font.
-          <em>Font Ligatures</em> create more visually pleasing and concise
-          symbols for coding syntax &mdash; for example, the usual
-          <code>!=</code> different symbol becomes the actual mathematical
-          different symbol: <code>≠</code>. Under the hood, these symbols stay
-          the same, it's just a visual feature.
-        </li>
-        <li>
-          <code>explorer.autoReveal</code>
-          : VS Code autofocuses the file explorer to the current file you're
-          editing. This can be very annoying at (most) times, so you can disable
-          it with this configuration.
-        </li>
-        <li>
-          <code>workbench.settings.editor</code>
-          : by choosing
-          <code>"json"</code>
-          here, you force VS Code to open the JSON version of the configurations
-          whenever you press
-          <code>Ctrl + ,</code>
-          or open the settings through the command palette.
-        </li>
-        <li>
-          <code>explorer.confirmDragAndDrop</code>
-          : you don't have to confirm every file manipulation you make in the
-          file explorer tab.
-        </li>
-        <li>
-          <code>extensions.ignoreRecommendations</code> : ignore all of the
-          software recommendations VS Code gives you. They can be useful at
-          times, but they are annoying more often than not.
-        </li>
-        <li>
-          <code>editor.multiCursorModifier</code>
-          : this cool little feature lets you
-          <code>Ctrl + Click</code>
-          on multiple lines and then make changes to them at the same time. Very
-          practical sometimes, and, more importantly, awesome.
-        </li>
-      </ul>
+            ></foot-note
+            >.
+          </li>
+        </ol>
+      </section>
 
-      <h2>My Extensions</h2>
+      <section>
+        <h2>My Settings</h2>
+        <p>
+          VS Code adopts JSON for its settings, something seen nowadays as a
+          best practice, as it is very simple, lightweight and, more
+          importantly, conventional &mdash; which makes people's management much
+          easier.
+        </p>
+        <p>
+          However, the standard configuration is to open an UI to deal with
+          configuration. This can thankfully be changed by placing
+          <code>"workbench.settings.editor" : "json"</code>
+          in the user's configuration, which you can access by typing
+          <code>Ctrl + Shift + P</code>, looking for <em>settings</em> and then
+          choosing <code>Open User Settings (JSON)</code>. The
+          <em>default settings</em> are only so you can take a look at what's
+          available; if you see something you want to change, override it when
+          placing it in the <em>user settings</em>. For example, you can use my
+          configurations by simply copying my
+          <code>settings.json</code>
+          file content into <em>your</em> user's configuration. If this looks
+          all too complicated, there are several tutorials on Youtube (including
+          <a href="https://youtu.be/-nh9rCzPJ20">one from Corey Schafer</a>
+          that's very nice) and there's also the
+          <a href="https://code.visualstudio.com/docs/getstarted/settings"
+            >official documentation</a
+          >, which is <em>not</em> as unfriendly as your regular software docs.
+        </p>
+        I've added comments to all of my customization, but the ones I feel
+        aggregate the most value are:
+        <ul>
+          <li>
+            <code>editor.acceptSuggestionOnEnter</code>: by setting this to
+            <code>"off"</code>, you avoid pressing enter and accidentally
+            inserting one of the suggestions. Now suggestions will only happen
+            when pressing <code>Tab</code>.
+          </li>
+          <li>
+            <code>window.titleBarStyle</code>: this ditches your OS title bar
+            when set to <code>"custom"</code>; overall a cleaner visual.
+          </li>
+          <li>
+            <code>workbench.editor.enablePreview</code> : by default, VS Code
+            opens <em>previews</em> of the files; only when you edit them do
+            they become actual <em>editor windows</em>. If you wish to open
+            multiple files then, VS Code will keep overriding the same tab,
+            which is not typically what you want.
+          </li>
+          <li>
+            <code>editor.minimap.renderCharacters</code> : the characters in the
+            <em>Mini Map</em> are... mini. So what's the point in rendering
+            them? You just want an outline, the sky's view, and not rendering
+            the characters does exactly that.
+          </li>
+          <li>
+            <code>editor.fontLigature</code>
+            : only some fonts enable this feature, and one of them is the
+            <a href="https://github.com/tonsky/FiraCode">Fira Code</a> font.
+            <em>Font Ligatures</em> create more visually pleasing and concise
+            symbols for coding syntax &mdash; for example, the usual
+            <code>!=</code> different symbol becomes the actual mathematical
+            different symbol: <code>≠</code>. Under the hood, these symbols stay
+            the same, it's just a visual feature.
+          </li>
+          <li>
+            <code>explorer.autoReveal</code>
+            : VS Code autofocuses the file explorer to the current file you're
+            editing. This can be very annoying at (most) times, so you can
+            disable it with this configuration.
+          </li>
+          <li>
+            <code>workbench.settings.editor</code>
+            : by choosing
+            <code>"json"</code>
+            here, you force VS Code to open the JSON version of the
+            configurations whenever you press
+            <code>Ctrl + ,</code>
+            or open the settings through the command palette.
+          </li>
+          <li>
+            <code>explorer.confirmDragAndDrop</code>
+            : you don't have to confirm every file manipulation you make in the
+            file explorer tab.
+          </li>
+          <li>
+            <code>extensions.ignoreRecommendations</code> : ignore all of the
+            software recommendations VS Code gives you. They can be useful at
+            times, but they are annoying more often than not.
+          </li>
+          <li>
+            <code>editor.multiCursorModifier</code>
+            : this cool little feature lets you
+            <code>Ctrl + Click</code>
+            on multiple lines and then make changes to them at the same time.
+            Very practical sometimes, and, more importantly, awesome.
+          </li>
+        </ul>
+      </section>
 
-      <ul>
-        <li>
-          <a
-            href="https://marketplace.visualstudio.com/items?itemName=VisualStudioExptTeam.vscodeintellicode"
-            >Intellicode</a
-          >
-          <ul>
-            <li>
-              This extension uses the power of AI to learn how people code on
-              Github and then give you back suggestions of how to fill yours.
-            </li>
-          </ul>
-        </li>
-        <li>
-          <a
-            href="https://marketplace.visualstudio.com/items?itemName=formulahendry.code-runner"
-            >Code Runner</a
-          >
-          <ul>
-            <li>
-              Run various languages' files through one engine and usually one
-              shortcut. Very cool if you're using a not so customized
-              environment.
-            </li>
-            <li>
-              Doesn't have that great support for changing environment
-              variables.
-            </li>
-          </ul>
-        </li>
-        <li>
-          <a
-            href="https://marketplace.visualstudio.com/items?itemName=zhuangtongfa.Material-theme"
-            >One Dark Pro</a
-          >
-          <ul>
-            <li>
-              In my humble opinion, the best theme ever for coding. It's dark,
-              and doesn't have that big a contrast, which makes it easy on the
-              eyes.
-            </li>
-            <li>
-              It became incredibly popular with the rise of the
-              <a href="https://atom.io/">Atom Editor</a> (which was debunked by
-              VS Code).
-            </li>
-          </ul>
-        </li>
-        <li>
-          <a
-            href="https://marketplace.visualstudio.com/items?itemName=ryuta46.multi-command"
-            >multi-command</a
-          >
-          <ul>
-            <li>
-              As is pointed out in
-              <a
-                href="https://stackoverflow.com/questions/57209750/create-new-macro-shortcut-to-copy-paste-and-execute-code-in-the-integrated-ter"
-                >this StackOverflow post</a
-              >, don't use the
-              <a
-                href="https://marketplace.visualstudio.com/items?itemName=geddski.macros"
-                >Macros</a
-              >
-              extension, it is quite outdated.
-            </li>
-            <li>
-              This amazing extension lets you concatenate shortcut commands, a
-              desperately needed feature to the
-              <code>keybindings.json</code>
-              file.
-            </li>
-            <li>
-              I have one example on my settings that uses
-              <code>alt+t</code>
-              to copy-paste code and execute it on the Integrated Terminal,
-              while also focusing on it.
-            </li>
-          </ul>
-        </li>
-        <li>
-          <a
-            href="https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-docker"
-            >Docker</a
-          >
-          <ul>
-            <li>
-              For those of you who need to create virtual environments and
-              packages that work independently of the user's configurations,
-              Docker is a must. And this extension offers much more than simply
-              a linter, while also being maintained by Microsoft itself.
-            </li>
-          </ul>
-        </li>
-        <li>
-          <a
-            href="https://marketplace.visualstudio.com/items?itemName=PKief.material-icon-theme"
-            >Material Icon Theme</a
-          >
-          <ul>
-            <li>
-              A cool alternative is
-              <a
-                href="https://marketplace.visualstudio.com/items?itemName=vscode-icons-team.vscode-icons"
-                >vscode-icons</a
-              >, it goes very well with VS Code's standard dark theme.
-            </li>
-          </ul>
-        </li>
-        <li>
-          <a
-            href="https://marketplace.visualstudio.com/items?itemName=ms-mssql.mssql"
-            >SQL Server</a
-          >
-          <ul>
-            <li>
-              An extension created by Microsoft themselves to manage MSSQL
-              databases directly through the editor.
-            </li>
-            <li>
-              There is also a specific editor that apparently uses VS Code's
-              design that was also created by Microsoft:
-              <a
-                href="https://docs.microsoft.com/en-us/sql/azure-data-studio/download?view=sql-server-2017"
-                >Azure Data Studio</a
-              >.
-            </li>
-          </ul>
-        </li>
-        <li>
-          <a
-            href="https://marketplace.visualstudio.com/items?itemName=mtxr.sqltools"
-            >SQLTools</a
-          >
-          <ul>
-            <li>
-              This very cool extension lets you manage
-              <em>all of them</em> database types through in one go. Simply
-              amazing.
-            </li>
-          </ul>
-        </li>
-        <li>
-          <a
-            href="https://marketplace.visualstudio.com/items?itemName=mohsen1.prettify-json"
-            >Prettify JSON</a
-          >
-          <ul>
-            <li>Easily format JSON files.</li>
-          </ul>
-        </li>
-        <li>
-          <a
-            href="https://marketplace.visualstudio.com/items?itemName=ms-python.python"
-            >Python</a
-          >
-          <ul>
-            <li>Microsoft's Official Python Extension.</li>
-            <li>
-              Special support for Python debugging, linting, etc. There is also
-              support for
-              <code>Jupyter Notebooks</code>
-              inside VS Code itself.
-            </li>
-          </ul>
-        </li>
-        <li>
-          <a
-            href="https://marketplace.visualstudio.com/items?itemName=mechatroner.rainbow-csv"
-            >Rainbow CSV</a
-          >
-          <ul>
-            <li>
-              Incredibly useful if you have to work with CSVs with tons of
-              columns. It also gives you the name of the column if you point
-              your mouse on top of a specific item.
-            </li>
-          </ul>
-        </li>
-        <li>
-          <a
-            href="https://marketplace.visualstudio.com/items?itemName=lextudio.restructuredtext"
-            >reStructuredText</a
-          >
-          <ul>
-            <li>
-              <code>reStructuredText</code>
-              is similar to
-              <code>Markdown</code>. But it's very common in Python
-              documentation extensions, such as Sphinx. So it's very useful to
-              have syntax and linting support for it &mdash; though, admittedly,
-              this extension could be better.
-            </li>
-          </ul>
-        </li>
-      </ul>
-      <h2>My Shortcuts</h2>
-      <p>
-        Customizing shortcuts is something I haven't put that much effort in.
-        Besides the fact that VS Code has already many useful ones, it's very
-        difficult to come up with a good key combination without overriding an
-        existing (and probably useful) one. Nonetheless, I have been able to add
-        2 that are very useful &mdash; I really don't understand why they don't
-        come out of the box &mdash;: <em>switching through terminals</em> (there
-        is already one for focusing on the terminal tab itself though:
-        <code>Ctrl + `</code
-        ><foot-note
-          text="Note that you can also switch editor groups
+      <section>
+        <h2>My Extensions</h2>
+
+        <ul>
+          <li>
+            <a
+              href="https://marketplace.visualstudio.com/items?itemName=VisualStudioExptTeam.vscodeintellicode"
+              >Intellicode</a
+            >
+            <ul>
+              <li>
+                This extension uses the power of AI to learn how people code on
+                Github and then give you back suggestions of how to fill yours.
+              </li>
+            </ul>
+          </li>
+          <li>
+            <a
+              href="https://marketplace.visualstudio.com/items?itemName=formulahendry.code-runner"
+              >Code Runner</a
+            >
+            <ul>
+              <li>
+                Run various languages' files through one engine and usually one
+                shortcut. Very cool if you're using a not so customized
+                environment.
+              </li>
+              <li>
+                Doesn't have that great support for changing environment
+                variables.
+              </li>
+            </ul>
+          </li>
+          <li>
+            <a
+              href="https://marketplace.visualstudio.com/items?itemName=zhuangtongfa.Material-theme"
+              >One Dark Pro</a
+            >
+            <ul>
+              <li>
+                In my humble opinion, the best theme ever for coding. It's dark,
+                and doesn't have that big a contrast, which makes it easy on the
+                eyes.
+              </li>
+              <li>
+                It became incredibly popular with the rise of the
+                <a href="https://atom.io/">Atom Editor</a> (which was debunked
+                by VS Code).
+              </li>
+            </ul>
+          </li>
+          <li>
+            <a
+              href="https://marketplace.visualstudio.com/items?itemName=ryuta46.multi-command"
+              >multi-command</a
+            >
+            <ul>
+              <li>
+                As is pointed out in
+                <a
+                  href="https://stackoverflow.com/questions/57209750/create-new-macro-shortcut-to-copy-paste-and-execute-code-in-the-integrated-ter"
+                  >this StackOverflow post</a
+                >, don't use the
+                <a
+                  href="https://marketplace.visualstudio.com/items?itemName=geddski.macros"
+                  >Macros</a
+                >
+                extension, it is quite outdated.
+              </li>
+              <li>
+                This amazing extension lets you concatenate shortcut commands, a
+                desperately needed feature to the
+                <code>keybindings.json</code>
+                file.
+              </li>
+              <li>
+                I have one example on my settings that uses
+                <code>alt+t</code>
+                to copy-paste code and execute it on the Integrated Terminal,
+                while also focusing on it.
+              </li>
+            </ul>
+          </li>
+          <li>
+            <a
+              href="https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-docker"
+              >Docker</a
+            >
+            <ul>
+              <li>
+                For those of you who need to create virtual environments and
+                packages that work independently of the user's configurations,
+                Docker is a must. And this extension offers much more than
+                simply a linter, while also being maintained by Microsoft
+                itself.
+              </li>
+            </ul>
+          </li>
+          <li>
+            <a
+              href="https://marketplace.visualstudio.com/items?itemName=PKief.material-icon-theme"
+              >Material Icon Theme</a
+            >
+            <ul>
+              <li>
+                A cool alternative is
+                <a
+                  href="https://marketplace.visualstudio.com/items?itemName=vscode-icons-team.vscode-icons"
+                  >vscode-icons</a
+                >, it goes very well with VS Code's standard dark theme.
+              </li>
+            </ul>
+          </li>
+          <li>
+            <a
+              href="https://marketplace.visualstudio.com/items?itemName=ms-mssql.mssql"
+              >SQL Server</a
+            >
+            <ul>
+              <li>
+                An extension created by Microsoft themselves to manage MSSQL
+                databases directly through the editor.
+              </li>
+              <li>
+                There is also a specific editor that apparently uses VS Code's
+                design that was also created by Microsoft:
+                <a
+                  href="https://docs.microsoft.com/en-us/sql/azure-data-studio/download?view=sql-server-2017"
+                  >Azure Data Studio</a
+                >.
+              </li>
+            </ul>
+          </li>
+          <li>
+            <a
+              href="https://marketplace.visualstudio.com/items?itemName=mtxr.sqltools"
+              >SQLTools</a
+            >
+            <ul>
+              <li>
+                This very cool extension lets you manage
+                <em>all of them</em> database types through in one go. Simply
+                amazing.
+              </li>
+            </ul>
+          </li>
+          <li>
+            <a
+              href="https://marketplace.visualstudio.com/items?itemName=mohsen1.prettify-json"
+              >Prettify JSON</a
+            >
+            <ul>
+              <li>Easily format JSON files.</li>
+            </ul>
+          </li>
+          <li>
+            <a
+              href="https://marketplace.visualstudio.com/items?itemName=ms-python.python"
+              >Python</a
+            >
+            <ul>
+              <li>Microsoft's Official Python Extension.</li>
+              <li>
+                Special support for Python debugging, linting, etc. There is
+                also support for
+                <code>Jupyter Notebooks</code>
+                inside VS Code itself.
+              </li>
+            </ul>
+          </li>
+          <li>
+            <a
+              href="https://marketplace.visualstudio.com/items?itemName=mechatroner.rainbow-csv"
+              >Rainbow CSV</a
+            >
+            <ul>
+              <li>
+                Incredibly useful if you have to work with CSVs with tons of
+                columns. It also gives you the name of the column if you point
+                your mouse on top of a specific item.
+              </li>
+            </ul>
+          </li>
+          <li>
+            <a
+              href="https://marketplace.visualstudio.com/items?itemName=lextudio.restructuredtext"
+              >reStructuredText</a
+            >
+            <ul>
+              <li>
+                <code>reStructuredText</code>
+                is similar to
+                <code>Markdown</code>. But it's very common in Python
+                documentation extensions, such as Sphinx. So it's very useful to
+                have syntax and linting support for it &mdash; though,
+                admittedly, this extension could be better.
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>My Shortcuts</h2>
+        <p>
+          Customizing shortcuts is something I haven't put that much effort in.
+          Besides the fact that VS Code has already many useful ones, it's very
+          difficult to come up with a good key combination without overriding an
+          existing (and probably useful) one. Nonetheless, I have been able to
+          add 2 that are very useful &mdash; I really don't understand why they
+          don't come out of the box &mdash;:
+          <em>switching through terminals</em> (there is already one for
+          focusing on the terminal tab itself though: <code>Ctrl + `</code
+          ><foot-note
+            text="Note that you can also switch editor groups
         with &lt;code&gt;Ctrl + &lt;group_number&gt;&lt;/code&gt;; and tabs inside the
         editor group with &lt;code&gt;Ctrl + Tab&lt;/code&gt;"
-        ></foot-note
-        >).
-      </p>
-      And I've also managed to add shortcuts for:
-      <em>copy-pasting code to the integrated terminal and executing it</em>;
-      <em
-        >copy-pasting code to the terminal and executing it while also focusing
-        on the integrated terminal</em
-      >. For the last one, it was necessary to use a <em>macros</em> extension,
-      since there was a need for the concatenation of shortcuts. In order to
-      create it: add this to your <code>settings.json</code> file:
-      <pre>
+          ></foot-note
+          >).
+        </p>
+        And I've also managed to add shortcuts for:
+        <em>copy-pasting code to the integrated terminal and executing it</em>;
+        <em
+          >copy-pasting code to the terminal and executing it while also
+          focusing on the integrated terminal</em
+        >. For the last one, it was necessary to use a
+        <em>macros</em> extension, since there was a need for the concatenation
+        of shortcuts. In order to create it: add this to your
+        <code>settings.json</code> file:
+        <pre>
         <code class="json">multiCommand.commands: [
     {
         "command" : "multiCommand.copyPasteTerminalAndFocus",
@@ -443,17 +466,18 @@
 ]</code>
       </pre>
 
-      <p>
-        And then create the shortcut in the <code>keybindings.json</code> file
-        by adding:
-      </p>
+        <p>
+          And then create the shortcut in the <code>keybindings.json</code> file
+          by adding:
+        </p>
 
-      <pre>
+        <pre>
         <code class="json">{   // Copy Paste to the Integrated Terminal and Focus on it 
     "key" : "alt+t",
     "command" : "multiCommand.copyPasteTerminalAndFocus"
 }</code>
       </pre>
+      </section>
     </article>
   </body>
 </html>
