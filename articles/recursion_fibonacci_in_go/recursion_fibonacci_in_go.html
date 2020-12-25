@@ -6,6 +6,15 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
 
+    <meta name="author" content="Philippe Fanaro" />
+    <meta name="description" content="Recursion: Fibonacci in Go?" />
+
+    <meta property="og:image" content="thumbnail.png" />
+    <meta property="og:description" content="Recursion: Fibonacci in Go?" />
+    <meta property="og:title" content="Recursion: Fibonacci in Go?" />
+    <meta property="og:site_name" content="fanaro.io" />
+    <meta property="og:type" content="blog" />
+
     <script src="../../index.js"></script>
     <script
       src="https://polyfill.io/v3/polyfill.min.js?features=es6"
@@ -25,6 +34,8 @@
     <article>
       <img src="thumbnail.png" />
 
+      <h1>Recursion: Fibonacci in Go?</h1>
+
       <blockquote>
         <strong>PT-BR</strong>: É possível visualizar a versão em português
         deste post no meu canal <a href="https://youtu.be/METdo2UWmos">aqui</a>.
@@ -35,602 +46,621 @@
         read this article from a computer instead of a smaller device.
       </blockquote>
 
-      <h2>1. Introduction and Context</h2>
+      <section>
+        <h2>1. Introduction and Context</h2>
 
-      <p>
-        The Fibonacci numbers are a sequence in which the next number is the sum
-        of the two previous ones. The two base cases are \[F_0 = 0\] and \[F_1 =
-        1\], and the overall formula is:
-      </p>
+        <p>
+          The Fibonacci numbers are a sequence in which the next number is the
+          sum of the two previous ones. The two base cases are \[F_0 = 0\] and
+          \[F_1 = 1\], and the overall formula is:
+        </p>
 
-      <p>\[F_n = F_{n - 1} + F_{n - 2}\]</p>
+        <p>\[F_n = F_{n - 1} + F_{n - 2}\]</p>
 
-      <p>So, in the end, we would have a sequence like this:</p>
+        <p>So, in the end, we would have a sequence like this:</p>
 
-      <p>\[0, 1, 1, 2, 3, 5, 8, 13, 21, 34,...\]</p>
+        <p>\[0, 1, 1, 2, 3, 5, 8, 13, 21, 34,...\]</p>
 
-      <p>
-        <a href="https://en.wikipedia.org/wiki/Fibonacci_number#Applications"
-          >The Fibonacci sequence has many applications</a
-        >
-        in science and math, but I was very surprised to see it once again in
-        another topic, the game of Go<foot-note
-          text="Or, at least, the beginning of it."
-        ></foot-note
-        >.
-      </p>
-      <p>
-        More specifically, I've stumbled upon it when facing capturing races
-        with "big eyes", with recaptures that remind you a lot of recursion,
-        i.e., a clump of 5 stones becomes a clump 4, then a 3, and so forth.
-        Usually, fully reading these capturing races is so difficult when also
-        trying to juggle the whole board in your head that more experienced
-        players simply say "just remember the 4-stone dead clump has 5
-        liberties<foot-note text="Effective liberties."></foot-note>; and the
-        5-stone clump has 8".
-      </p>
+        <p>
+          <a href="https://en.wikipedia.org/wiki/Fibonacci_number#Applications"
+            >The Fibonacci sequence has many applications</a
+          >
+          in science and math, but I was very surprised to see it once again in
+          another topic, the game of Go<foot-note
+            text="Or, at least, the beginning of it."
+          ></foot-note
+          >.
+        </p>
+        <p>
+          More specifically, I've stumbled upon it when facing capturing races
+          with "big eyes", with recaptures that remind you a lot of recursion,
+          i.e., a clump of 5 stones becomes a clump 4, then a 3, and so forth.
+          Usually, fully reading these capturing races is so difficult when also
+          trying to juggle the whole board in your head that more experienced
+          players simply say "just remember the 4-stone dead clump has 5
+          liberties<foot-note text="Effective liberties."></foot-note>; and the
+          5-stone clump has 8".
+        </p>
 
-      <div style="display: inline-flex;">
+        <div style="display: inline-flex">
+          <figure>
+            <img src="4_stone_clump.PNG" />
+            <figcaption>4-stone dead clump or Nakade #4.</figcaption>
+          </figure>
+          <figure>
+            <img src="5_stone_clump.PNG" />
+            <figcaption>5-stone dead clump or Nakade #5.</figcaption>
+          </figure>
+        </div>
+
+        <p>
+          Anything bigger than
+          <a href="https://senseis.xmp.net/?Nakade">Nakade</a> #5 will 95% of
+          the time yield either life or seki. And clumps smaller than 4 are much
+          easier to read, and actually have a linear relationship with the
+          number of liberties. So, we are golden, right? Just know 2 shapes by
+          heart and that's it, right? And they follow Fibonacci anyway so just
+          memorize Fibonacci, right? But, wait, do they all really follow
+          Fibonacci? Well, shut up and sit down, s'il vous plaît...
+        </p>
+        <p>
+          I would say that knowing how to count these weird capture-recapture
+          sequences is necessary if you want to get better at the game. And,
+          perhaps, it will enlighten us with a better system than simply knowing
+          2 of the most important instances by heart. Besides all that, you will
+          have the extra benefit of being fully confident about what you're
+          doing. At any rate, discussing things has a much higher retention rate
+          than blunt memorization.
+        </p>
+        <p>
+          Studying the examples below would be much easier with supplemental
+          material in the form of SGFs, which you can download
+          <local-link link="fibonacci.zip" text="here"></local-link>. I've
+          created those diagrams using
+          <a href="https://sabaki.yichuanshen.de/">Sabaki</a>, so, if you wish
+          to see all the mark-ups, you're going to inevitably have to use it.
+        </p>
+      </section>
+
+      <section>
+        <h2>
+          2. The Search for the Logic behind Counting the Never-Ending Recapture
+          of Stones
+        </h2>
+
+        <p>
+          With recursion, the easiest way to start &mdash; and something math
+          teachers should prioritize &mdash; is in fact not by how to get to the
+          base cases, but by only studying the base cases. Once you have them
+          worked out to the bone, then go for how a more complicated use case
+          evolves. So, in our instance of recursion, we start with the 1-stone
+          clump. This one is simple: 1 liberty.
+        </p>
+
         <figure>
-          <img src="4_stone_clump.PNG" />
+          <img src="1_stone_clump.PNG" />
+          <figcaption>1-stone dead clump or Nakade #1.</figcaption>
+        </figure>
+
+        <p>
+          In the second base case, White has two options for following the
+          throw-in. If she stays passive, Black captures in a total of two
+          moves. If she captures the initial throw-in at <code>A</code> or
+          <code>B</code>, Black will next be able to capture the whole thing,
+          since it only has 1 liberty anyway &mdash; and is basically the
+          previous, 1-stone base case actually. When White captures Black’s
+          throw-in stone, nothing changes in terms of liberties, but it now
+          becomes Black's turn instead of White's, meaning the capture
+          constitutes a mistake because White effectively loses one liberty.
+        </p>
+        <p>
+          Up to now, these two base cases are very straightforward and don't
+          really show recursion when played correctly.
+        </p>
+
+        <figure>
+          <img src="2_stone_clump_marked.PNG" />
+          <figcaption>2-stone dead clump or Nakade #2.</figcaption>
+        </figure>
+
+        <p>
+          In the third use case, we have the first and, probably, most important
+          of the dynamics. Black playing <code>A</code> and <code>B</code> can
+          be followed up by a capture from White; however what's important to
+          remember is that White's recapture doesn't count as a liberty, as it
+          doesn't affect the status of anything else. It follows, then, that
+          <code>B</code> and the subsequent black move in the race should count
+          as only one liberty, because White has simply reset the position
+          essentially, making Black simply repeat its efforts.
+        </p>
+        <p>
+          Summarizing, Black plays 2 moves initially, White captures, Black
+          plays 2 more moves. But Black's first move after the transition
+          overlaps the last one before the transition, being used in the next
+          stage of the recursion, so the final count of liberties is \( 2 + 2 -
+          1 = 3 \). Another way to look at the transition is that Black's last
+          move before the transition forces White's capture, so, each player
+          having used their turn to play a local move, Black and White's last
+          moves cancel each other out.
+        </p>
+        <p>
+          It's important to note that capturing at <code>C</code> for White
+          after Black <code>A</code> and <code>B</code> won't change the number
+          of liberties of the group, unlike what happens in the Nakade #2, where
+          the capture effectively loses liberties. This won't happen for the
+          higher order cases, where capturing on the initial atari is the only
+          correct move and does effectively grant more liberties to White.
+        </p>
+
+        <figure>
+          <img src="3_stone_clump_marked.PNG" />
+          <figcaption>3-stone dead clump or Nakade #3.</figcaption>
+        </figure>
+
+        <p>
+          Maybe this formulation will become clearer when we examine the next
+          use case, the 4-stone dead clump. Black plays <code>B</code>,
+          <code>A</code> and <code>C</code> and then enters the transition to
+          the previous case in the recursion. So, we will have:
+        </p>
+        <p>
+          \[ \begin{align} &stones \ played \ initially - 1 \ transition \\ &+
+          previous \ case \ in \ the \ recursion \\ &=3 - 1 + 3 = 5 \ liberties
+          \end{align} \]
+        </p>
+        <p>
+          If you go through the end of the sequence, counting the overlapping
+          transitions as only 1 move, you will end up with the same value of 5
+          &mdash; and that reasoning is described in the SGF as well.
+        </p>
+
+        <figure>
+          <img src="4_stone_clump_marked.PNG" />
           <figcaption>4-stone dead clump or Nakade #4.</figcaption>
         </figure>
+
+        <p>
+          I hope the recursion has become clearer by now. But let's take a look
+          at the next important case, the 5-stone dead clump. Black plays
+          <code>B</code>, <code>C</code>, <code>A</code> and <code>D</code>, and
+          then White resets the position to the previous case in the recursion.
+          Again, we have the formula:
+        </p>
+        <p>
+          \[ \begin{align} &stones \ played \ initially - 1 \ transition \\ &+
+          previous \ case \ in \ the \ recursion \\ &= 4 - 1 + 5 = 8 \ liberties
+          \end{align} \]
+        </p>
+
         <figure>
-          <img src="5_stone_clump.PNG" />
+          <img src="5_stone_clump_marked.PNG" />
           <figcaption>5-stone dead clump or Nakade #5.</figcaption>
         </figure>
-      </div>
 
-      <p>
-        Anything bigger than
-        <a href="https://senseis.xmp.net/?Nakade">Nakade</a> #5 will 95% of the
-        time yield either life or seki. And clumps smaller than 4 are much
-        easier to read, and actually have a linear relationship with the number
-        of liberties. So, we are golden, right? Just know 2 shapes by heart and
-        that's it, right? And they follow Fibonacci anyway so just memorize
-        Fibonacci, right? But, wait, do they all really follow Fibonacci? Well,
-        shut up and sit down, s'il vous plaît...
-      </p>
-      <p>
-        I would say that knowing how to count these weird capture-recapture
-        sequences is necessary if you want to get better at the game. And,
-        perhaps, it will enlighten us with a better system than simply knowing 2
-        of the most important instances by heart. Besides all that, you will
-        have the extra benefit of being fully confident about what you're doing.
-        At any rate, discussing things has a much higher retention rate than
-        blunt memorization.
-      </p>
-      <p>
-        Studying the examples below would be much easier with supplemental
-        material in the form of SGFs, which you can download
-        <local-link link="fibonacci.zip" text="here"></local-link>. I've created
-        those diagrams using
-        <a href="https://sabaki.yichuanshen.de/">Sabaki</a>, so, if you wish to
-        see all the mark-ups, you're going to inevitably have to use it.
-      </p>
-
-      <h2>
-        2. The Search for the Logic behind Counting the Never-Ending Recapture
-        of Stones
-      </h2>
-
-      <p>
-        With recursion, the easiest way to start &mdash; and something math
-        teachers should prioritize &mdash; is in fact not by how to get to the
-        base cases, but by only studying the base cases. Once you have them
-        worked out to the bone, then go for how a more complicated use case
-        evolves. So, in our instance of recursion, we start with the 1-stone
-        clump. This one is simple: 1 liberty.
-      </p>
-
-      <figure>
-        <img src="1_stone_clump.PNG" />
-        <figcaption>1-stone dead clump or Nakade #1.</figcaption>
-      </figure>
-
-      <p>
-        In the second base case, White has two options for following the
-        throw-in. If she stays passive, Black captures in a total of two moves.
-        If she captures the initial throw-in at <code>A</code> or
-        <code>B</code>, Black will next be able to capture the whole thing,
-        since it only has 1 liberty anyway &mdash; and is basically the
-        previous, 1-stone base case actually. When White captures Black’s
-        throw-in stone, nothing changes in terms of liberties, but it now
-        becomes Black's turn instead of White's, meaning the capture constitutes
-        a mistake because White effectively loses one liberty.
-      </p>
-      <p>
-        Up to now, these two base cases are very straightforward and don't
-        really show recursion when played correctly.
-      </p>
-
-      <figure>
-        <img src="2_stone_clump_marked.PNG" />
-        <figcaption>2-stone dead clump or Nakade #2.</figcaption>
-      </figure>
-
-      <p>
-        In the third use case, we have the first and, probably, most important
-        of the dynamics. Black playing <code>A</code> and <code>B</code> can be
-        followed up by a capture from White; however what's important to
-        remember is that White's recapture doesn't count as a liberty, as it
-        doesn't affect the status of anything else. It follows, then, that
-        <code>B</code> and the subsequent black move in the race should count as
-        only one liberty, because White has simply reset the position
-        essentially, making Black simply repeat its efforts.
-      </p>
-      <p>
-        Summarizing, Black plays 2 moves initially, White captures, Black plays
-        2 more moves. But Black's first move after the transition overlaps the
-        last one before the transition, being used in the next stage of the
-        recursion, so the final count of liberties is \( 2 + 2 - 1 = 3 \).
-        Another way to look at the transition is that Black's last move before
-        the transition forces White's capture, so, each player having used their
-        turn to play a local move, Black and White's last moves cancel each
-        other out.
-      </p>
-      <p>
-        It's important to note that capturing at <code>C</code> for White after
-        Black <code>A</code> and <code>B</code> won't change the number of
-        liberties of the group, unlike what happens in the Nakade #2, where the
-        capture effectively loses liberties. This won't happen for the higher
-        order cases, where capturing on the initial atari is the only correct
-        move and does effectively grant more liberties to White.
-      </p>
-
-      <figure>
-        <img src="3_stone_clump_marked.PNG" />
-        <figcaption>3-stone dead clump or Nakade #3.</figcaption>
-      </figure>
-
-      <p>
-        Maybe this formulation will become clearer when we examine the next use
-        case, the 4-stone dead clump. Black plays <code>B</code>,
-        <code>A</code> and <code>C</code> and then enters the transition to the
-        previous case in the recursion. So, we will have:
-      </p>
-      <p>
-        \[ \begin{align} &stones \ played \ initially - 1 \ transition \\ &+
-        previous \ case \ in \ the \ recursion \\ &=3 - 1 + 3 = 5 \ liberties
-        \end{align} \]
-      </p>
-      <p>
-        If you go through the end of the sequence, counting the overlapping
-        transitions as only 1 move, you will end up with the same value of 5
-        &mdash; and that reasoning is described in the SGF as well.
-      </p>
-
-      <figure>
-        <img src="4_stone_clump_marked.PNG" />
-        <figcaption>4-stone dead clump or Nakade #4.</figcaption>
-      </figure>
-
-      <p>
-        I hope the recursion has become clearer by now. But let's take a look at
-        the next important case, the 5-stone dead clump. Black plays
-        <code>B</code>, <code>C</code>, <code>A</code> and <code>D</code>, and
-        then White resets the position to the previous case in the recursion.
-        Again, we have the formula:
-      </p>
-      <p>
-        \[ \begin{align} &stones \ played \ initially - 1 \ transition \\ &+
-        previous \ case \ in \ the \ recursion \\ &= 4 - 1 + 5 = 8 \ liberties
-        \end{align} \]
-      </p>
-
-      <figure>
-        <img src="5_stone_clump_marked.PNG" />
-        <figcaption>5-stone dead clump or Nakade #5.</figcaption>
-      </figure>
-
-      <p>
-        So far, from what we've seen, we have the sequence \[ 1, 2, 3, 5, 8 \],
-        which coincides with the Fibonacci sequence quite neatly and naturally,
-        but can we really say that for all cases? The examples shown above are
-        pretty much 95% of all you will encounter in games. But there's still
-        one important use case missing, the
-        <a href="https://senseis.xmp.net/?RabbittySix">Rabbitty Six</a>, let's
-        take a look at it.
-      </p>
-
-      <blockquote>
         <p>
-          I have to thank Simão Gonçalves for pointing out the exception to the
-          Fibonacci reasoning that is the Rabbitty Six, otherwise my conclusion
-          would have simply been an oversimplification. He has also thoroughly
-          reviewed the whole article, something I'm even more thankful for.
+          So far, from what we've seen, we have the sequence \[ 1, 2, 3, 5, 8
+          \], which coincides with the Fibonacci sequence quite neatly and
+          naturally, but can we really say that for all cases? The examples
+          shown above are pretty much 95% of all you will encounter in games.
+          But there's still one important use case missing, the
+          <a href="https://senseis.xmp.net/?RabbittySix">Rabbitty Six</a>, let's
+          take a look at it.
         </p>
-      </blockquote>
 
-      <figure>
-        <img src="rabbitty_six.PNG" />
-        <figcaption>Rabbitty Six.</figcaption>
-      </figure>
+        <blockquote>
+          <p>
+            I have to thank Simão Gonçalves for pointing out the exception to
+            the Fibonacci reasoning that is the Rabbitty Six, otherwise my
+            conclusion would have simply been an oversimplification. He has also
+            thoroughly reviewed the whole article, something I'm even more
+            thankful for.
+          </p>
+        </blockquote>
 
-      <p>
-        Black plays <code>A</code>, <code>B</code>, <code>D</code>,
-        <code>E</code> and <code>F</code> before White resets the position and
-        we get the previous case in the recursion. So, again, we can apply the
-        formula:
-      </p>
-      <p>
-        \[ \begin{align} &stones \ played \ initially - 1 \\ &transition +
-        previous \ case \ in \ the \ recursion \\ &= 5 - 1 + 8 = 12 \end{align}
-        \]
-      </p>
-      <p>
-        You can follow the step-by-step counting through the transitions in the
-        SGF file if you're not convinced.
-      </p>
+        <figure>
+          <img src="rabbitty_six.PNG" />
+          <figcaption>Rabbitty Six.</figcaption>
+        </figure>
 
-      <h2>3. Generalizing</h2>
+        <p>
+          Black plays <code>A</code>, <code>B</code>, <code>D</code>,
+          <code>E</code> and <code>F</code> before White resets the position and
+          we get the previous case in the recursion. So, again, we can apply the
+          formula:
+        </p>
+        <p>
+          \[ \begin{align} &stones \ played \ initially - 1 \\ &transition +
+          previous \ case \ in \ the \ recursion \\ &= 5 - 1 + 8 = 12
+          \end{align} \]
+        </p>
+        <p>
+          You can follow the step-by-step counting through the transitions in
+          the SGF file if you're not convinced.
+        </p>
+      </section>
 
-      <p>
-        So, sadly, the capture-recapture with Nakades doesn't follow the
-        Fibonacci sequence to the T, otherwise the Rabitty Six would have 13
-        liberties. In fact, if you had been paying extra attention, you would
-        have been very suspicious due to the presence of the \( -1 \) in the
-        formula applied previously. Besides, we are not even summing two
-        previous terms, but the previous terms and a new one.
-      </p>
-      <p>The general formulas are:</p>
-      <p>
-        \[ \begin{align} \# \ of \ liberties = \ &initial \ clump \ of \ stones
-        \ to \ atari - 1 \ transition \\ &+ previous \ case \ in \ the \
-        recursion \\ \# \ of \ liberties = \ &total \ stones \ played \ to \
-        capture \\ &- \# \ of \ forced \ transitions \end{align} \]
-      </p>
-      <p>
-        The second formula I will call the <em>Absolute Formula</em> because it
-        counts the whole sequence; and the former will be called the
-        <em>Recursive Fomula #1</em>. Alternatively, a more succinct form for
-        them:
-      </p>
-      <p>
-        \[ \begin{align} &amp;n_L(csa) = csa - 1 + n_L(csa - 1) \\ &amp;n_L = TS
-        - FT \end{align} \]
-      </p>
-      <p>
-        where \( n_L \) is the number of liberties, \( csa \) is the initial
-        clump of stones up to to the first atari, \( TS \) is the total stones
-        played to capture and \( FT \) is the forced transitions number.
-      </p>
-      <p>
-        What I call forced transitions are the resets the player trying to save
-        himself has to make in order to gain more liberties and not die
-        immediately, they are basically the <em>only</em> correct move. So, for
-        example, for the 3-stone clump, there are no forced transitions, because
-        we still have only 3 liberties, whether White captures the initial 2
-        stones or not. The Nakade #2 and the Nakade #1 are also special, base
-        cases and, as usual in almost all cases of recursive dynamics, base
-        cases end up having to be treated differently.
-      </p>
-      <p>
-        With respect to the absolute formula, it's important to note that \( FT
-        \) could be defined in many different ways, depending on what you call a
-        transition. But that wouldn't really matter much in the end, we would
-        just have to adjust a correcting factor, like a \( +1 \) or \( -1 \) at
-        the end.
-      </p>
-      <p>
-        Take a look at the table below for a breakdown of the formulas, as
-        applied to each use case:
-      </p>
-      <table>
-        <thead>
-          <tr>
-            <th>
-              \[ \begin{align} &\# \ of \ empty \\ &intersections \end{align} \]
-            </th>
-            <th>\[ \begin{align} &Recursive \\ &Formula \end{align} \]</th>
-            <th>\[ \begin{align} &Absolute \\ &Formula \end{align} \]</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>\[ 1 \]</td>
-            <td>\[ 1 \]</td>
-            <td>\[ 1 \]</td>
-          </tr>
-          <tr>
-            <td>\[ 2 \]</td>
-            <td>\[ 2 \]</td>
-            <td>\[ 2 \]</td>
-          </tr>
-          <tr>
-            <td>\[ 3 \]</td>
-            <td>\[ 2 - 1 + 2 = 3 \]</td>
-            <td>\[ 3 = 2 + 1 \]</td>
-          </tr>
-          <tr>
-            <td>\[ 4 \]</td>
-            <td>\[ 3 - 1 + 3 = 5 \]</td>
-            <td>\[ 3 + 2 + 1 - 1 = 5 \]</td>
-          </tr>
-          <tr>
-            <td>\[ 5 \]</td>
-            <td>\[ 4 - 1 + 5 = 8 \]</td>
-            <td>\[ 4 + 3 + 2 + 1 - 2 = 8 \]</td>
-          </tr>
-          <tr>
-            <td>\[ 6 \]</td>
-            <td>\[ 5 - 1 + 8 = 12 \]</td>
-            <td>\[ 5 + 4 + 3 + 2 + 1 - 3 = 12 \]</td>
-          </tr>
-        </tbody>
-      </table>
-      <p>
-        From the 3-stone clump on, you could also think it as &mdash; for the
-        recursive formula &mdash;:
-      </p>
-      <p>
-        \[ \begin{align} \# \ of \ liberties = \ &empty \ intersections \\ &- 2
-        + previous \ case \ in \ the \ recursion \end{align} \]
-      </p>
-      <p>
-        Why subtract 2? Because you're gonna play, up to the atari, all of the
-        intersections except for 1, and you have to account for the overlapping
-        transition. Let's call this last version of the formula
-        <em>Recursive Formula #2</em
-        ><foot-note
-          text="After I mentioned something like the
+      <section>
+        <h2>3. Generalizing</h2>
+
+        <p>
+          So, sadly, the capture-recapture with Nakades doesn't follow the
+          Fibonacci sequence to the T, otherwise the Rabitty Six would have 13
+          liberties. In fact, if you had been paying extra attention, you would
+          have been very suspicious due to the presence of the \( -1 \) in the
+          formula applied previously. Besides, we are not even summing two
+          previous terms, but the previous terms and a new one.
+        </p>
+        <p>The general formulas are:</p>
+        <p>
+          \[ \begin{align} \# \ of \ liberties = \ &initial \ clump \ of \
+          stones \ to \ atari - 1 \ transition \\ &+ previous \ case \ in \ the
+          \ recursion \\ \# \ of \ liberties = \ &total \ stones \ played \ to \
+          capture \\ &- \# \ of \ forced \ transitions \end{align} \]
+        </p>
+        <p>
+          The second formula I will call the <em>Absolute Formula</em> because
+          it counts the whole sequence; and the former will be called the
+          <em>Recursive Fomula #1</em>. Alternatively, a more succinct form for
+          them:
+        </p>
+        <p>
+          \[ \begin{align} &amp;n_L(csa) = csa - 1 + n_L(csa - 1) \\ &amp;n_L =
+          TS - FT \end{align} \]
+        </p>
+        <p>
+          where \( n_L \) is the number of liberties, \( csa \) is the initial
+          clump of stones up to to the first atari, \( TS \) is the total stones
+          played to capture and \( FT \) is the forced transitions number.
+        </p>
+        <p>
+          What I call forced transitions are the resets the player trying to
+          save himself has to make in order to gain more liberties and not die
+          immediately, they are basically the <em>only</em> correct move. So,
+          for example, for the 3-stone clump, there are no forced transitions,
+          because we still have only 3 liberties, whether White captures the
+          initial 2 stones or not. The Nakade #2 and the Nakade #1 are also
+          special, base cases and, as usual in almost all cases of recursive
+          dynamics, base cases end up having to be treated differently.
+        </p>
+        <p>
+          With respect to the absolute formula, it's important to note that \(
+          FT \) could be defined in many different ways, depending on what you
+          call a transition. But that wouldn't really matter much in the end, we
+          would just have to adjust a correcting factor, like a \( +1 \) or \(
+          -1 \) at the end.
+        </p>
+        <p>
+          Take a look at the table below for a breakdown of the formulas, as
+          applied to each use case:
+        </p>
+        <table>
+          <thead>
+            <tr>
+              <th>
+                \[ \begin{align} &\# \ of \ empty \\ &intersections \end{align}
+                \]
+              </th>
+              <th>\[ \begin{align} &Recursive \\ &Formula \end{align} \]</th>
+              <th>\[ \begin{align} &Absolute \\ &Formula \end{align} \]</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>\[ 1 \]</td>
+              <td>\[ 1 \]</td>
+              <td>\[ 1 \]</td>
+            </tr>
+            <tr>
+              <td>\[ 2 \]</td>
+              <td>\[ 2 \]</td>
+              <td>\[ 2 \]</td>
+            </tr>
+            <tr>
+              <td>\[ 3 \]</td>
+              <td>\[ 2 - 1 + 2 = 3 \]</td>
+              <td>\[ 3 = 2 + 1 \]</td>
+            </tr>
+            <tr>
+              <td>\[ 4 \]</td>
+              <td>\[ 3 - 1 + 3 = 5 \]</td>
+              <td>\[ 3 + 2 + 1 - 1 = 5 \]</td>
+            </tr>
+            <tr>
+              <td>\[ 5 \]</td>
+              <td>\[ 4 - 1 + 5 = 8 \]</td>
+              <td>\[ 4 + 3 + 2 + 1 - 2 = 8 \]</td>
+            </tr>
+            <tr>
+              <td>\[ 6 \]</td>
+              <td>\[ 5 - 1 + 8 = 12 \]</td>
+              <td>\[ 5 + 4 + 3 + 2 + 1 - 3 = 12 \]</td>
+            </tr>
+          </tbody>
+        </table>
+        <p>
+          From the 3-stone clump on, you could also think it as &mdash; for the
+          recursive formula &mdash;:
+        </p>
+        <p>
+          \[ \begin{align} \# \ of \ liberties = \ &empty \ intersections \\ &-
+          2 + previous \ case \ in \ the \ recursion \end{align} \]
+        </p>
+        <p>
+          Why subtract 2? Because you're gonna play, up to the atari, all of the
+          intersections except for 1, and you have to account for the
+          overlapping transition. Let's call this last version of the formula
+          <em>Recursive Formula #2</em
+          ><foot-note
+            text="After I mentioned something like the
         &lt;em&gt;Recursive Formula #1&lt;/em&gt; to Simão &mdash; it wasn't correct then &mdash;, he
         basically immediately came up with this one."
-        ></foot-note
-        >.
-      </p>
-      <p>
-        If you look closely, you're going to spot, from the absolute formula, an
-        <a href="https://en.wikipedia.org/wiki/Arithmetic_progression"
-          >Arithmetic Progression</a
-        >
-        (AP) starting from 1, with common difference of 1. For example, add 2 to
-        the calculation of the Nakade #6 and subtract 2 from the -3, then cancel
-        the new -5 with the first 5:
-      </p>
-      <p>
-        \[ \begin{align} n_L(6) &= (5 + 4 + 3 + 2 + 1) + 2 - 3 - 2 \\ &= (5 + 4
-        + 3 + 2 + 1) + 2 - 5 \\ &= (4 + 3 + 2 + 1) + 2 \\ &= S_{AP}(4) + 2 \\ &=
-        S_{AP}(ei - 2) + 2 \\ &= \frac{(6 - 2) (6 - 2 + 1)}{2} + 2 = 12
-        \end{align} \]
-      </p>
-      <p>So, another way to look at the whole is:</p>
-      <p>\[ n_L(ei) = \frac{(ei - 2) (ei - 1)}{2} + 2 \]</p>
-      <p>
-        where \( ei \) is the total number of empty intersections internally.
-      </p>
-      <p>
-        Where does the \( +2 \) come from? Essentially from the Nakade #2 base
-        case, I would say. And I can see many other formulas popping out from
-        that point of view.
-      </p>
-      <p>
-        The last, AP-based, formula can even account for values as low as \( 2 \
-        ei \) apparently:
-      </p>
-      <table>
-        <thead>
-          <tr>
-            <th>\[ ei \]</th>
-            <th>\[ AP-based \ formula \]</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>1</td>
-            <td>\[ 1 \]</td>
-          </tr>
-          <tr>
-            <td>2</td>
-            <td>\[ (0 \cdot 1) / 2 + 2 = 0 + 2 = 2 \]</td>
-          </tr>
-          <tr>
-            <td>3</td>
-            <td>\[ (1 \cdot 2) / 2 + 2 = 1 + 2 = 3 \]</td>
-          </tr>
-          <tr>
-            <td>4</td>
-            <td>\[ (2 \cdot 3) / 2 + 2 = 3 + 2 = 5 \]</td>
-          </tr>
-          <tr>
-            <td>5</td>
-            <td>\[ (3 \cdot 4) / 2 + 2 = 6 + 2 = 8 \]</td>
-          </tr>
-          <tr>
-            <td>6</td>
-            <td>\[ (4 \cdot 5) / 2 + 2 = 10 + 2 = 12 \]</td>
-          </tr>
-        </tbody>
-      </table>
-      <p>
-        Hypothetically, if there were bigger dead clumps, we could use these
-        formulas to calculate their liberties, and their results should all
-        coincide:
-      </p>
-      <table>
-        <thead>
-          <tr>
-            <th>\[ ei \]</th>
-            <th>
-              \[ \begin{align} &Recursive \\ &Formula \ \#1 \end{align} \]
-            </th>
-            <th>
-              \[ \begin{align} &Recursive \\ &Formula \ \#2 \end{align} \]
-            </th>
-            <th>\[ \begin{align} &Absolute \\ &Formula \end{align} \]</th>
-            <th>\[ \begin{align} &AP \\ &Formula \end{align} \]</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>7</td>
-            <td>\[ \begin{align} &6 - 1 + \\ &12 = 17 \end{align} \]</td>
-            <td>\[ \begin{align} &7 - 2 + \\ &12 = 17 \end{align} \]</td>
-            <td>
-              \[ \begin{align} &6 + 5 + 4 \\ &+ 3 + 2 + 1 \\ &- 4 = 17
-              \end{align} \]
-            </td>
-            <td>
-              \[ \begin{align} &(5 \cdot 6) / 2 \\ &+ 2 = 17 \end{align} \]
-            </td>
-          </tr>
-          <tr>
-            <td>8</td>
-            <td>\[ \begin{align} &7 - 1 + \\ &17 = 23 \end{align} \]</td>
-            <td>\[ \begin{align} &8 - 2 + \\ &17 = 23 \end{align} \]</td>
-            <td>
-              \[ \begin{align} &7 + 6 + 5 \\ &+ 4 + 3 + 2 \\ &+ 1 - 5 = 23
-              \end{align} \]
-            </td>
-            <td>
-              \[ \begin{align} &(6 \cdot 7) / 2 \\ &+ 2 = 23 \end{align} \]
-            </td>
-          </tr>
-          <tr>
-            <td>9</td>
-            <td>\[ \begin{align} &8 - 1 + \\ &23 = 30 \end{align} \]</td>
-            <td>\[ \begin{align} &9 - 2 + \\ &23 = 30 \end{align} \]</td>
-            <td>
-              \[ \begin{align} &8 + 7 + 6 + \\ &5 + 4 + 3 \\ &+ 2 + 1 - 6 = 30
-              \end{align} \]
-            </td>
-            <td>
-              \[ \begin{align} &(7 \cdot 8) / 2 \\ &+ 2 = 30 \end{align} \]
-            </td>
-          </tr>
-          <tr>
-            <td>10</td>
-            <td>\[ \begin{align} &9 - 1 + \\ &30 = 38 \end{align} \]</td>
-            <td>\[ \begin{align} &10 - 2 + \\ &30 = 38 \end{align} \]</td>
-            <td>
-              \[ \begin{align} &9 + 8 + 7 + 6 \\ &+ 5 + 4 + 3 + 2 \\ &+ 1 - 7 =
-              38 \end{align} \]
-            </td>
-            <td>
-              \[ \begin{align} &(8 \cdot 9) / 2 \\ &+ 2 = 38 \end{align} \]
-            </td>
-          </tr>
-        </tbody>
-      </table>
-      <p>
-        Pragmatically, I think that any player would rather use the recursive
-        formulation<foot-note
-          text='This ended up being, albeit fun for me,
+          ></foot-note
+          >.
+        </p>
+        <p>
+          If you look closely, you're going to spot, from the absolute formula,
+          an
+          <a href="https://en.wikipedia.org/wiki/Arithmetic_progression"
+            >Arithmetic Progression</a
+          >
+          (AP) starting from 1, with common difference of 1. For example, add 2
+          to the calculation of the Nakade #6 and subtract 2 from the -3, then
+          cancel the new -5 with the first 5:
+        </p>
+        <p>
+          \[ \begin{align} n_L(6) &= (5 + 4 + 3 + 2 + 1) + 2 - 3 - 2 \\ &= (5 +
+          4 + 3 + 2 + 1) + 2 - 5 \\ &= (4 + 3 + 2 + 1) + 2 \\ &= S_{AP}(4) + 2
+          \\ &= S_{AP}(ei - 2) + 2 \\ &= \frac{(6 - 2) (6 - 2 + 1)}{2} + 2 = 12
+          \end{align} \]
+        </p>
+        <p>So, another way to look at the whole is:</p>
+        <p>\[ n_L(ei) = \frac{(ei - 2) (ei - 1)}{2} + 2 \]</p>
+        <p>
+          where \( ei \) is the total number of empty intersections internally.
+        </p>
+        <p>
+          Where does the \( +2 \) come from? Essentially from the Nakade #2 base
+          case, I would say. And I can see many other formulas popping out from
+          that point of view.
+        </p>
+        <p>
+          The last, AP-based, formula can even account for values as low as \( 2
+          \ ei \) apparently:
+        </p>
+        <table>
+          <thead>
+            <tr>
+              <th>\[ ei \]</th>
+              <th>\[ AP-based \ formula \]</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1</td>
+              <td>\[ 1 \]</td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td>\[ (0 \cdot 1) / 2 + 2 = 0 + 2 = 2 \]</td>
+            </tr>
+            <tr>
+              <td>3</td>
+              <td>\[ (1 \cdot 2) / 2 + 2 = 1 + 2 = 3 \]</td>
+            </tr>
+            <tr>
+              <td>4</td>
+              <td>\[ (2 \cdot 3) / 2 + 2 = 3 + 2 = 5 \]</td>
+            </tr>
+            <tr>
+              <td>5</td>
+              <td>\[ (3 \cdot 4) / 2 + 2 = 6 + 2 = 8 \]</td>
+            </tr>
+            <tr>
+              <td>6</td>
+              <td>\[ (4 \cdot 5) / 2 + 2 = 10 + 2 = 12 \]</td>
+            </tr>
+          </tbody>
+        </table>
+        <p>
+          Hypothetically, if there were bigger dead clumps, we could use these
+          formulas to calculate their liberties, and their results should all
+          coincide:
+        </p>
+        <table>
+          <thead>
+            <tr>
+              <th>\[ ei \]</th>
+              <th>
+                \[ \begin{align} &Recursive \\ &Formula \ \#1 \end{align} \]
+              </th>
+              <th>
+                \[ \begin{align} &Recursive \\ &Formula \ \#2 \end{align} \]
+              </th>
+              <th>\[ \begin{align} &Absolute \\ &Formula \end{align} \]</th>
+              <th>\[ \begin{align} &AP \\ &Formula \end{align} \]</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>7</td>
+              <td>\[ \begin{align} &6 - 1 + \\ &12 = 17 \end{align} \]</td>
+              <td>\[ \begin{align} &7 - 2 + \\ &12 = 17 \end{align} \]</td>
+              <td>
+                \[ \begin{align} &6 + 5 + 4 \\ &+ 3 + 2 + 1 \\ &- 4 = 17
+                \end{align} \]
+              </td>
+              <td>
+                \[ \begin{align} &(5 \cdot 6) / 2 \\ &+ 2 = 17 \end{align} \]
+              </td>
+            </tr>
+            <tr>
+              <td>8</td>
+              <td>\[ \begin{align} &7 - 1 + \\ &17 = 23 \end{align} \]</td>
+              <td>\[ \begin{align} &8 - 2 + \\ &17 = 23 \end{align} \]</td>
+              <td>
+                \[ \begin{align} &7 + 6 + 5 \\ &+ 4 + 3 + 2 \\ &+ 1 - 5 = 23
+                \end{align} \]
+              </td>
+              <td>
+                \[ \begin{align} &(6 \cdot 7) / 2 \\ &+ 2 = 23 \end{align} \]
+              </td>
+            </tr>
+            <tr>
+              <td>9</td>
+              <td>\[ \begin{align} &8 - 1 + \\ &23 = 30 \end{align} \]</td>
+              <td>\[ \begin{align} &9 - 2 + \\ &23 = 30 \end{align} \]</td>
+              <td>
+                \[ \begin{align} &8 + 7 + 6 + \\ &5 + 4 + 3 \\ &+ 2 + 1 - 6 = 30
+                \end{align} \]
+              </td>
+              <td>
+                \[ \begin{align} &(7 \cdot 8) / 2 \\ &+ 2 = 30 \end{align} \]
+              </td>
+            </tr>
+            <tr>
+              <td>10</td>
+              <td>\[ \begin{align} &9 - 1 + \\ &30 = 38 \end{align} \]</td>
+              <td>\[ \begin{align} &10 - 2 + \\ &30 = 38 \end{align} \]</td>
+              <td>
+                \[ \begin{align} &9 + 8 + 7 + 6 \\ &+ 5 + 4 + 3 + 2 \\ &+ 1 - 7
+                = 38 \end{align} \]
+              </td>
+              <td>
+                \[ \begin{align} &(8 \cdot 9) / 2 \\ &+ 2 = 38 \end{align} \]
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <p>
+          Pragmatically, I think that any player would rather use the recursive
+          formulation<foot-note
+            text='This ended up being, albeit fun for me,
         overcomplicated for sure. It kind of reminds me of the ode to precision
         but overcomplication that is the book
         &lt;a
           href="https://www.goodreads.com/book/show/3678880-mathematical-go?ac=1&amp;from_search=true&amp;qid=CWVObm28U1&amp;rank=1"
           &gt;Mathematical Go: Chilling Gets the Last Point&lt;/a
         &gt;, by Elwyn Berlekamp.'
-        ></foot-note
-        >. It's way less accounting and much more intuitive when it comes to the
-        shapes in Go, but it's interesting to see that there are so many ways of
-        coming to a solution to this problem.
-      </p>
+          ></foot-note
+          >. It's way less accounting and much more intuitive when it comes to
+          the shapes in Go, but it's interesting to see that there are so many
+          ways of coming to a solution to this problem.
+        </p>
+      </section>
 
-      <h2>4. Butterfly Seven</h2>
+      <section>
+        <h2>4. Butterfly Seven</h2>
 
-      <p>
-        As an appendix, we have the
-        <a href="https://senseis.xmp.net/?ButterflySeven">Butterfly Seven</a>,
-        which is the first shape where we can finally find life, more
-        specifically, a seki. Black <code>A</code> is followed by White
-        <code>G</code>, then Black <code>E</code> and White <code>D</code> or
-        <code>B</code>. I can't guarantee weird shapes with even weirder dead
-        black stones inside would be all alive, but I think that 99.99% of the
-        cases are covered by stopping our analysis of liberties at the Butterfly
-        Seven.
-      </p>
+        <p>
+          As an appendix, we have the
+          <a href="https://senseis.xmp.net/?ButterflySeven">Butterfly Seven</a>,
+          which is the first shape where we can finally find life, more
+          specifically, a seki. Black <code>A</code> is followed by White
+          <code>G</code>, then Black <code>E</code> and White <code>D</code> or
+          <code>B</code>. I can't guarantee weird shapes with even weirder dead
+          black stones inside would be all alive, but I think that 99.99% of the
+          cases are covered by stopping our analysis of liberties at the
+          Butterfly Seven.
+        </p>
 
-      <figure>
-        <img src="butterfly_seven_marked.PNG" />
-        <figcaption>Butterfly Seven.</figcaption>
-      </figure>
+        <figure>
+          <img src="butterfly_seven_marked.PNG" />
+          <figcaption>Butterfly Seven.</figcaption>
+        </figure>
+      </section>
 
-      <h2>5. An Application of What You've Learned</h2>
-      <p>
-        Congratulations on reading up to here. I bet most have quit after I
-        mentioned counting liberties. As a prize, you get the coveted honor of
-        solving a tsumego. I know, I know, and I agree: there aren't enough of
-        those in this world, am I right?
-      </p>
-      <p>
-        Anyway, I really doubt a 1 or 2 dan can solve this easily and with
-        certainty. Finding the correct answer is not that hard, but proving it
-        correct is a whole other level. And that level will open the door to
-        easily solving even more complicated capturing races.
-      </p>
-      <p>
-        The SGF with the answer and a complete discussion is in the zip file
-        provided in the introduction. This tsumego is problem #193 of
-        <a
-          href="https://www.goodreads.com/book/show/31125845-1000-cases-for-tsume-go?ac=1&amp;from_search=true&amp;qid=bfzCwPEhib&amp;rank=2"
-          >Wang Zhi et al.'s 1000 Cases of Tsume-Go</a
-        ><foot-note text="ISBN 7810514296"></foot-note>, my favorite tsumego
-        collection.
-      </p>
-
-      <figure>
-        <img src="193.PNG" />
-        <figcaption>
-          Problem #193 of
+      <section>
+        <h2>5. An Application of What You've Learned</h2>
+        <p>
+          Congratulations on reading up to here. I bet most have quit after I
+          mentioned counting liberties. As a prize, you get the coveted honor of
+          solving a tsumego. I know, I know, and I agree: there aren't enough of
+          those in this world, am I right?
+        </p>
+        <p>
+          Anyway, I really doubt a 1 or 2 dan can solve this easily and with
+          certainty. Finding the correct answer is not that hard, but proving it
+          correct is a whole other level. And that level will open the door to
+          easily solving even more complicated capturing races.
+        </p>
+        <p>
+          The SGF with the answer and a complete discussion is in the zip file
+          provided in the introduction. This tsumego is problem #193 of
           <a
-            href="https://www.goodreads.com/book/show/31125845-1000-cases-for-tsume-go?ac=1&from_search=true&qid=bfzCwPEhib&rank=2"
-            >Wang Zhi et al.’s 1000 Cases of Tsume-Go</a
-          >. Black to play, as usual in tsumego books.
-        </figcaption>
-      </figure>
+            href="https://www.goodreads.com/book/show/31125845-1000-cases-for-tsume-go?ac=1&amp;from_search=true&amp;qid=bfzCwPEhib&amp;rank=2"
+            >Wang Zhi et al.'s 1000 Cases of Tsume-Go</a
+          ><foot-note text="ISBN 7810514296"></foot-note>, my favorite tsumego
+          collection.
+        </p>
 
-      <h2>6. Conclusion</h2>
+        <figure>
+          <img src="193.PNG" />
+          <figcaption>
+            Problem #193 of
+            <a
+              href="https://www.goodreads.com/book/show/31125845-1000-cases-for-tsume-go?ac=1&from_search=true&qid=bfzCwPEhib&rank=2"
+              >Wang Zhi et al.’s 1000 Cases of Tsume-Go</a
+            >. Black to play, as usual in tsumego books.
+          </figcaption>
+        </figure>
+      </section>
 
-      <p>
-        In true fairness, do you really need all of that complicated reasoning?
-        Not really, you could just remember the 6 use-cases above, the end. But
-        dabbling in this will help you memorize the numbers, and this type of
-        reasoning is useful for capturing races in general also. At any rate,
-        demonstrating this to your fellow players will be quite a pleasant
-        flex<foot-note text="Bodybuilding Go."></foot-note>.
-      </p>
+      <section>
+        <h2>6. Conclusion</h2>
 
-      <h2>
-        7. Updates: Others who came up with the same stuff; and a note on growth
-      </h2>
-      <p>
-        <a
-          href="https://www.reddit.com/r/baduk/comments/ibecx2/recursion_fibonacci_in_go/"
-          >After posting about this on Reddit</a
-        >, some kind and more experienced players pointed me to 2 other
-        resources:
-      </p>
+        <p>
+          In true fairness, do you really need all of that complicated
+          reasoning? Not really, you could just remember the 6 use-cases above,
+          the end. But dabbling in this will help you memorize the numbers, and
+          this type of reasoning is useful for capturing races in general also.
+          At any rate, demonstrating this to your fellow players will be quite a
+          pleasant flex<foot-note text="Bodybuilding Go."></foot-note>.
+        </p>
+      </section>
 
-      <ul>
-        <li>
+      <section>
+        <h2>
+          7. Updates: Others who came up with the same stuff; and a note on
+          growth
+        </h2>
+        <p>
           <a
-            href="https://senseis.xmp.net/?FourIsFiveAndFiveIsEightAndSixIsTwelve#toc5"
-            >In the summary section of the Big Eye page of Sensei's Library</a
-          >, other users had already discussed about the AP-based formula I came
-          up with here.
-        </li>
-        <li>
-          The Online Encyclopedia of Integer Sequences has the
-          <a href="http://oeis.org/A089071">A089071</a> sequence pointing to the
-          exact recursive reasoning I describe here, though I think mine is more
-          complete &#x1f61b;. Interestingly and unexpectedly, the registration
-          of the sequence isn't that old: December 2003. Given that Go is 2000+
-          years old, I would have been very surprised if nobody had ever found
-          about this before me.
-        </li>
-      </ul>
-      <p>
-        Another topic I forgot to mention was the complexity of the growth of
-        the sequence. The AP-based formula &mdash; a formula where each item
-        will be the sum of an AP &mdash; shows that the liberties grow
-        quadratically with respect to the internal empty intersections, i.e., \(
-        O(ei^2) \). That means it grows faster than most people would have
-        expected, which is probably something close to linear behavior. That's
-        why, when you hear someone scream in pain something like "why does it
-        take forever for this to die?", you should have nothing but compassion.
-      </p>
+            href="https://www.reddit.com/r/baduk/comments/ibecx2/recursion_fibonacci_in_go/"
+            >After posting about this on Reddit</a
+          >, some kind and more experienced players pointed me to 2 other
+          resources:
+        </p>
+
+        <ul>
+          <li>
+            <a
+              href="https://senseis.xmp.net/?FourIsFiveAndFiveIsEightAndSixIsTwelve#toc5"
+              >In the summary section of the Big Eye page of Sensei's Library</a
+            >, other users had already discussed about the AP-based formula I
+            came up with here.
+          </li>
+          <li>
+            The Online Encyclopedia of Integer Sequences has the
+            <a href="http://oeis.org/A089071">A089071</a> sequence pointing to
+            the exact recursive reasoning I describe here, though I think mine
+            is more complete &#x1f61b;. Interestingly and unexpectedly, the
+            registration of the sequence isn't that old: December 2003. Given
+            that Go is 2000+ years old, I would have been very surprised if
+            nobody had ever found about this before me.
+          </li>
+        </ul>
+        <p>
+          Another topic I forgot to mention was the complexity of the growth of
+          the sequence. The AP-based formula &mdash; a formula where each item
+          will be the sum of an AP &mdash; shows that the liberties grow
+          quadratically with respect to the internal empty intersections, i.e.,
+          \( O(ei^2) \). That means it grows faster than most people would have
+          expected, which is probably something close to linear behavior. That's
+          why, when you hear someone scream in pain something like "why does it
+          take forever for this to die?", you should have nothing but
+          compassion.
+        </p>
+      </section>
     </article>
   </body>
 </html>
