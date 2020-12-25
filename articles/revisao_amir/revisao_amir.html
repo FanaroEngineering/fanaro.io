@@ -31,6 +31,7 @@
     <meta property="og:type" content="blog" />
 
     <script src="../../index.js"></script>
+    <script src="../../assets/glift_1_1_2.min.js"></script>
 
     <link rel="stylesheet" type="text/css" href="../../index.css" />
     <link rel="icon" type="image/svg+xml" href="../../assets/favicon.svg" />
@@ -127,6 +128,21 @@
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowfullscreen
       ></iframe>
+
+      <div id="SGF" style="height: 500px; width: 100%"></div>
+      <script>
+        glift.create({
+          divId: "SGF",
+          sgf: "Wade vs Raku.sgf",
+        });
+      </script>
+
+      <br />
+
+      <blockquote>
+        Você também pode fazer o download do jogo
+        <local-link text="aqui" link="Wade vs Raku.sgf"></local-link>
+      </blockquote>
     </article>
   </body>
 </html>

@@ -1,0 +1,30 @@
+(;GM[1]FF[4]CA[UTF-8]AP[Sabaki:0.51.1]KM[6.5]SZ[19]DT[2020-07-20]AB[sr][ss][or][nr][mq][mo][mm][nm][ol][pl][ql][rl][sm][pm][pn][po][pp][qo][ro][so]AW[sq][rq][qq][qr][qs][pq][oq][op][oo][on][om][nl][nk][pk][ok][qk][rk][sk][rn]C[Este é um problema bastante traiçoeiro envolvendo a recaptura de pedras. Tentaremos racionalizar como pensar sobre esta recaptura recursiva. Vá diretamente para a resposta correta primeiro se você quiser entender melhor como pensar sobre este tópico.
+
+***
+
+Este problema vem do livro [Wang Zhi et al.'s *1000 Cases for Tsume-Go* (ISBN 7810514296)\][wang_zhi_link\], mas os comentários e diagramas foram completamente criados por mim, Philippe Fanaro.
+
+
+[wang_zhi_link\]: https://www.goodreads.com/book/show/31125845-1000-cases-for-tsume-go?ac=1&from_search=true&qid=bfzCwPEhib&rank=2]HO[1]N[Problema #193](;B[sl]TE[1]C[O grupo `A` com a forma morta interna que leve a eternidade para morrer possui 7 liberdades internas &mdash; sem contar as 3 "externas" (▲).
+
+Este tipo de corrida de captura é um exemplo de recursão. Sem `B`, demoraria 8 liberdades para capturar `A`, e, internamente, as capturas terão 5 e 3 liberdades, respectivamente.
+
+***
+
+Liberdades Internas do Preto: (pedras até atari - 1) + caso anterior da recursão - pedra `B` = (4 - 1) + 5 - 1 = 7.
+
+Liberdades do Branco (depois de preencher ▲, e com sente): 3 externas + Nakade \\#4 - 2 = 3 + 5 - 2 = 3 + 3 = 6.
+
+Portanto, Preto vence a corrida por 1 liberdade &mdash; não é possível tenukar.]LB[po:A][rn:B]TR[qp][rp][sp];W[qp];B[nq];W[rp];B[no];W[sp]C[Levará 9 movimentos ou 7 liberdades &mdash; esta é a fórmula para o grande olho com a forma morta em `C` (8 - 1) &mdash; para capturar `A`, e o mesmo para Branco. Mas é turno preto depois que Branco preencheu as liberdades ▲.]LB[po:A][rn:C][sr:B]TR[qp][rp][sp]HO[1];B[nn];W[rm];B[pr];W[sn];B[np];W[qn]C[O importante é reconhecer que, já que `A` é sente contra Preto, não deveria contar como liberdade. Então `A` e o próximo movimento são contados somente como 1 liberdade.]LB[qn:A];B[qm];W[rn]C[Até aqui, com este movimento, Branco jogou um total efetivo de 3 movimentos.];B[ps];W[sn]C[Já que `A` é sente, ele não conta, então Branco possui somente 3 liberdades. O mesmo vale para Preto, mas é turno preto.]LB[rr:A];B[rr];W[rs];B[sr];W[rm]C[Novamente, Branco joga um movimento sente, então isso não deveria contar pois somente afeta o grupo local e não a corrida de liberdades como um todo.];B[qn];W[rn]C[Até aqui, este é o 5o movimento branco para tentar capturar Preto. Se, depois de `A` ou `B`, Preto escolhe capturar as 2 pedras, nada mudará em relação ao total de liberdades, pois, depois de aplicar a mesma lógica do "sente não conta", Preto possui somente 2 liberdades a mais.]LB[rm:B][sn:A];B[rr];W[ss];B[rr])(;B[rm]BM[1]TR[qp][rp][sp]LB[rn:C][sl:B][sr:A];W[qn]C[`A` está preenchendo uma liberdade, enquanto `B` tê-la-ia preservado. Alternativamente, isso também cria um menor olho interno do que com `B`.
+
+***
+
+- Liberdades pretas: Nakade \\#4 - 2 (`C`) + 1 (`B`) = 5 - 2 + 1 = 4
+- Liberdades brancas: Nakade \\#4 - 2 (`D`) + 3 = 5 - 2 + 2 = 5
+
+Note que Branco utilizou seu sente inicial na corrida para jogar `C`, então Preto poderá preencher uma liberdade extra externamente quando comparado com a variação da resposta correta.]LB[qn:C][rm:A][sl:B][sr:D]TR[qp][rp][sp];B[nq]C[Seguindo a mesma linha das explicações na variação principal, temos que, depois que Branco preenche as liberdades ▲:
+
+- Branco: 2 liberdades externas + 3 liberdades internas = 5
+- Preto: 1 (`B`) + 3 internas (`C`) = 4
+
+É turno branco, e ele possui 1 liberdade extra na corrida, sendo assim é possível tenukar.]LB[qn:C][sl:B][sr:A]TR[qp][rp][sp]HO[1];W[aa];B[no];W[sl];B[pr];W[qp];B[ps];W[rp];B[nn];W[sp];B[np];W[qm];B[sn];W[qn];B[rr];W[rs];B[sr];W[qm];B[rn];W[qm]))

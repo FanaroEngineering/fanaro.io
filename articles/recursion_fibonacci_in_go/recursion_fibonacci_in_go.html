@@ -26,6 +26,7 @@
       defer
       src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
     ></script>
+    <script src="../../assets/glift_1_1_2.min.js"></script>
 
     <link rel="stylesheet" href="../../index.css" />
     <link rel="icon" type="image/svg+xml" href="../../assets/favicon.svg" />
@@ -603,6 +604,14 @@
             >. Black to play, as usual in tsumego books.
           </figcaption>
         </figure>
+
+        <div id="SGF" style="height: 500px; width: 100%"></div>
+        <script>
+          glift.create({
+            divId: "SGF",
+            sgf: "193_en.sgf",
+          });
+        </script>
       </section>
 
       <section>

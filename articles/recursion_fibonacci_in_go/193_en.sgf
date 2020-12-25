@@ -1,0 +1,31 @@
+(;GM[1]FF[4]CA[UTF-8]AP[Sabaki:0.51.1]KM[6.5]SZ[19]DT[2020-07-20]AB[sr][ss][or][nr][mq][mo][mm][nm][ol][pl][ql][rl][sm][pm][pn][po][pp][qo][ro][so]AW[sq][rq][qq][qr][qs][pq][oq][op][oo][on][om][nl][nk][pk][ok][qk][rk][sk][rn]C[This is a very tricky problem involving the recapture of stones. We will try to rationalize how to think about the recursive recapturing of stones. Go through the correct answer first if you want to understand how to better think about this topic.
+
+***
+
+This problem comes from [Wang Zhi et al.'s *1000 Cases for Tsume-Go* (ISBN 7810514296)\][wang_zhi_link\], but the comments and diagrams have been completely created by me, Philippe Fanaro.
+
+
+[wang_zhi_link\]: https://www.goodreads.com/book/show/31125845-1000-cases-for-tsume-go?ac=1&from_search=true&qid=bfzCwPEhib&rank=2]HO[1]N[Problem #193](;B[sl]TE[1]C[The `A` group with the dead shape inside that takes forever to kill has 7 internal liberties &mdash; not counting the 3 "external" ones (▲).
+
+This type of liberty race is an example of the recursion. Without `B`, it would take 8 liberties to capture `A`, and, internally, the recaptures will have 5 and 3 liberties respectively.
+
+***
+
+Black's Internal Liberties: (stones up to atari - 1) + previous case of the recursion - `B` stone = (4 - 1) + 5 - 1 = 7.
+
+White's Liberties (after filling up ▲, and with sente): 3 external + Nakade \\#4 - 2 = 3 + 5 - 2 = 3 + 3 = 6
+
+So Black wins the race by 1 liberty &mdash; can't tenuki.]LB[po:A][rn:B]TR[qp][rp][sp];W[qp];B[nq];W[rp];B[no];W[sp]C[It will take 9 moves or 7 liberties &mdash; that's a "formula" for the big eye dead shape at `C` &mdash; to capture `A`, and the same for White. But it's Black's turn after White has filled all of the ▲ liberties.]LB[po:A][rn:C][sr:B]TR[qp][rp][sp]HO[1];B[nn];W[rm];B[pr];W[sn];B[np];W[qn]C[The important part is to recognize that, since `A` is sente against Black, it kind of shouldn't count as a liberty. So `A` and the next move are only counted as 1 liberty.]LB[qn:A];B[qm];W[rn]C[So far, then, with this move, White has played only a corrected amount of 3 moves.];B[ps];W[sn]C[Since `A` is sente, it won't count, so White only has 3 liberties. The same goes for Black, but it's Black's turn.]LB[rr:A];B[rr];W[rs];B[sr];W[rm]C[Again, White plays a sente move, so it should not be counted because it only affects the local group and not the liberty race as a whole.];B[qn];W[rn]C[So far, this is the 5th move White has played to try to capture Black. If, after `A` or `B`, Black chooses to capture the 2 stones, nothing will change with respect to its total of liberties, because, after applying the same "sente-doesn't-count" logic, Black has only 2 more liberties anyway.]LB[rm:B][sn:A];B[rr];W[ss];B[rr])(;B[rm]BM[1]TR[qp][rp][sp]LB[rn:C][sl:B][sr:A];W[qn]C[`A` is filling in a liberty, while `B` would have preserved it. Alternatively, it also creates a smaller internal eye than with `B`.
+
+***
+
+- Black's Liberties: Nakade \\#4 - 2 (`C`) + 1 (`B`) = 5 - 2 + 1 = 4
+
+- White's Liberties (after filling up ▲ and with sente): Nakade \\#4 - 2 (`D`) + 3 = 5 - 2 + 2 = 5
+
+Note that White used its initial sente on the race to play `C`, so Black will be able to fill an extra liberty externally when compared to the variation on the correct answer.]LB[qn:C][rm:A][sl:B][sr:D]TR[qp][rp][sp];B[nq]C[Following from the main variation's explanations, we have that, after White fills up all of the ▲ liberties:
+
+- White: 2 external liberties + 3 internal (`A`) = 5.
+- Black: 1 (`B`) + 3 internal (`C`) = 4.
+
+It's White's turn, and she has 1 extra liberty on this race, so White can even tenuki.]LB[qn:C][sl:B][sr:A]TR[qp][rp][sp]HO[1];W[aa];B[no];W[sl];B[pr];W[qp];B[ps];W[rp];B[nn];W[sp];B[np];W[qm];B[sn];W[qn];B[rr];W[rs];B[sr];W[qm];B[rn];W[qm]))
