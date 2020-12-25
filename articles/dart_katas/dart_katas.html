@@ -6,6 +6,15 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
 
+    <meta name="author" content="Philippe Fanaro" />
+    <meta name="description" content="(My) Dart Katas" />
+
+    <meta property="og:image" content="thumbnail.png" />
+    <meta property="og:description" content="(My) Dart Katas" />
+    <meta property="og:title" content="(My) Dart Katas" />
+    <meta property="og:site_name" content="fanaro.io" />
+    <meta property="og:type" content="blog" />
+
     <script src="../../index.js"></script>
 
     <link rel="stylesheet" type="text/css" href="../../index.css" />
@@ -35,191 +44,197 @@
         </strong>
       </blockquote>
 
-      <h2>1. What is a Programming Kata? And where do they come from?</h2>
-      <p>
-        The website <a href="http://codekata.com/">CodeKata</a> has a wonderful
-        motivation text about programming katas, with which I squarely agree:
-      </p>
-      <p>
-        How do you get to be a great musician? It helps to know the theory, and
-        to understand the mechanics of your instrument. It helps to have talent.
-        But ultimately, greatness comes from practicing; applying the theory
-        over and over again, using feedback to get better every time.
-      </p>
-      <p>
-        How do you get to be an All-Star sports person? Obviously fitness and
-        talent help. But the great athletes spend hours and hours every day,
-        practicing.
-      </p>
-      <p>
-        But in the software industry we take developers trained in the theory
-        and throw them straight in to the deep-end, working on a project. It’s
-        like taking a group of fit kids and telling them that they have four
-        quarters to beat the Redskins (hey, we manage by objectives, right?). In
-        software we do our practicing on the job, and that’s why we make
-        mistakes on the job. We need to find ways of splitting the practice from
-        the profession. We need practice sessions.
-      </p>
-      <p>
-        It is important to emphasize the fact that katas should be
-        <em>minimalistic</em> units of practice so you can focus on just one
-        topic. This will help us identify mistakes and univocally connect them
-        to their root, with no ambiguity at all. Similarly to what Doug McIlroy
-        mentions in the Bell System Technical Journal from 1978, albeit in a
-        different context and with different intentions:
-      </p>
-
-      <blockquote>
+      <section>
+        <h2>1. What is a Programming Kata? And where do they come from?</h2>
         <p>
-          Make each program do one thing well. To do a new job, build afresh
-          rather than complicate old programs by adding new "features".
+          The website <a href="http://codekata.com/">CodeKata</a> has a
+          wonderful motivation text about programming katas, with which I
+          squarely agree:
         </p>
-      </blockquote>
-      <p>Again, CodeKata has a nice description of what katas are:</p>
-      <p>
-        What makes a good practice session? You need time without interruptions,
-        and a simple thing you want to try. You need to try it as many times as
-        it takes, and be comfortable making mistakes<foot-note
-          text="This cannot be
+        <p>
+          How do you get to be a great musician? It helps to know the theory,
+          and to understand the mechanics of your instrument. It helps to have
+          talent. But ultimately, greatness comes from practicing; applying the
+          theory over and over again, using feedback to get better every time.
+        </p>
+        <p>
+          How do you get to be an All-Star sports person? Obviously fitness and
+          talent help. But the great athletes spend hours and hours every day,
+          practicing.
+        </p>
+        <p>
+          But in the software industry we take developers trained in the theory
+          and throw them straight in to the deep-end, working on a project. It’s
+          like taking a group of fit kids and telling them that they have four
+          quarters to beat the Redskins (hey, we manage by objectives, right?).
+          In software we do our practicing on the job, and that’s why we make
+          mistakes on the job. We need to find ways of splitting the practice
+          from the profession. We need practice sessions.
+        </p>
+        <p>
+          It is important to emphasize the fact that katas should be
+          <em>minimalistic</em> units of practice so you can focus on just one
+          topic. This will help us identify mistakes and univocally connect them
+          to their root, with no ambiguity at all. Similarly to what Doug
+          McIlroy mentions in the Bell System Technical Journal from 1978,
+          albeit in a different context and with different intentions:
+        </p>
+
+        <blockquote>
+          <p>
+            Make each program do one thing well. To do a new job, build afresh
+            rather than complicate old programs by adding new "features".
+          </p>
+        </blockquote>
+        <p>Again, CodeKata has a nice description of what katas are:</p>
+        <p>
+          What makes a good practice session? You need time without
+          interruptions, and a simple thing you want to try. You need to try it
+          as many times as it takes, and be comfortable making
+          mistakes<foot-note
+            text="This cannot be
         understated. If you don't create an atmosphere where people are
         comfortable making mistakes, the practice session, the learning
         experience will fail."
-        ></foot-note
-        >. You need to look for feedback each time so you can work to improve.
-        There needs to be no pressure: this is why it is hard to practice in a
-        project environment. It helps to keep it fun: make small steps forward
-        when you can. Finally, you’ll recognize a good practice session because
-        you’ll come out of it knowing more than when you went in.
-      </p>
+          ></foot-note
+          >. You need to look for feedback each time so you can work to improve.
+          There needs to be no pressure: this is why it is hard to practice in a
+          project environment. It helps to keep it fun: make small steps forward
+          when you can. Finally, you’ll recognize a good practice session
+          because you’ll come out of it knowing more than when you went in.
+        </p>
 
-      <p>
-        Code Kata is an attempt to bring this element of practice to software
-        development. A kata is an exercise in karate<foot-note
-          text="They are actually present in basically all Japanese Martial Arts."
-        ></foot-note>
-        where you repeat a form many, many times, making little improvements in
-        each. The intent behind code kata is similar. Each is a short exercise
-        (perhaps 30 minutes to an hour long). Some involve programming, and can
-        be coded in many different ways. Some are open ended, and involve
-        thinking about the issues behind programming. These are unlikely to have
-        a single correct answer. I add a new kata every week or so. Invest some
-        time in your craft and try them.
-      </p>
-      <p>
-        Remember that the point of the kata is not arriving at a correct answer.
-        The point is the stuff you learn along the way. The goal is the
-        practice, not the solution.
-      </p>
-      <p>
-        Feedback on your craft is very important so you can do the movements or
-        write the code correctly. As Vince Lombardi once famously said, again,
-        in a different context and with different intentions:
-      </p>
+        <p>
+          Code Kata is an attempt to bring this element of practice to software
+          development. A kata is an exercise in karate<foot-note
+            text="They are actually present in basically all Japanese Martial Arts."
+          ></foot-note>
+          where you repeat a form many, many times, making little improvements
+          in each. The intent behind code kata is similar. Each is a short
+          exercise (perhaps 30 minutes to an hour long). Some involve
+          programming, and can be coded in many different ways. Some are open
+          ended, and involve thinking about the issues behind programming. These
+          are unlikely to have a single correct answer. I add a new kata every
+          week or so. Invest some time in your craft and try them.
+        </p>
+        <p>
+          Remember that the point of the kata is not arriving at a correct
+          answer. The point is the stuff you learn along the way. The goal is
+          the practice, not the solution.
+        </p>
+        <p>
+          Feedback on your craft is very important so you can do the movements
+          or write the code correctly. As Vince Lombardi once famously said,
+          again, in a different context and with different intentions:
+        </p>
 
-      <blockquote>
-        <p>Practice does not make perfect. Perfect practice makes perfect.</p>
-      </blockquote>
+        <blockquote>
+          <p>Practice does not make perfect. Perfect practice makes perfect.</p>
+        </blockquote>
 
-      <p>
-        The Programming Kata's origins are unkown, but the earliest explicit
-        mention comes from Dave "Pragmatic Dave" Thomas' book
-        <em
-          ><a
-            href="https://www.amazon.com/Pragmatic-Programmer-journey-mastery-Anniversary-ebook/dp/B07VRS84D1/ref=tmm_kin_swatch_0?_encoding=UTF8&amp;qid=1586537989&amp;sr=8-1"
-            >The Pragmatic Programmer</a
-          > </em
-        >(1999). This practice was further popularized by Robert "Uncle Bob" C.
-        Martin on his blog, in an article called
-        <a
-          href="http://www.butunclebob.com/ArticleS.UncleBob.TheProgrammingDojo"
-          ><em>The Programming Dojo</em></a
-        >.
-      </p>
-      <p>
-        Personally, I first got in touch with it after reading Uncle Bob's books
-        <a
-          href="https://www.amazon.com/Clean-Code-Handbook-Software-Craftsmanship-ebook/dp/B001GSTOAM/ref=sr_1_1?dchild=1&amp;keywords=clean+code&amp;qid=1586539102&amp;sr=8-1"
-          ><em>Clean Code</em></a
-        >
-        and
-        <em
-          ><a
-            href="https://www.amazon.com/Clean-Coder-Conduct-Professional-Programmers-ebook/dp/B0050JLC9Y/ref=sr_1_1?dchild=1&amp;keywords=clean+coder&amp;qid=1586539112&amp;sr=8-1"
-            >The Clean Coder</a
-          ></em
-        >, in which he not only mentions and recommends this practice but also
-        puts a layer on top: TDD or Test-Driven Development<foot-note
-          text="I don't know if Prag Dave also mentions it in his book because I haven't yet read it."
-        ></foot-note
-        >. The TDD requirement for katas makes your thinking much more
-        systematic, your program easier to read, and the overall code more
-        organized and robust. It's more work and time<foot-note
-          text="For small projects
+        <p>
+          The Programming Kata's origins are unkown, but the earliest explicit
+          mention comes from Dave "Pragmatic Dave" Thomas' book
+          <em
+            ><a
+              href="https://www.amazon.com/Pragmatic-Programmer-journey-mastery-Anniversary-ebook/dp/B07VRS84D1/ref=tmm_kin_swatch_0?_encoding=UTF8&amp;qid=1586537989&amp;sr=8-1"
+              >The Pragmatic Programmer</a
+            > </em
+          >(1999). This practice was further popularized by Robert "Uncle Bob"
+          C. Martin on his blog, in an article called
+          <a
+            href="http://www.butunclebob.com/ArticleS.UncleBob.TheProgrammingDojo"
+            ><em>The Programming Dojo</em></a
+          >.
+        </p>
+        <p>
+          Personally, I first got in touch with it after reading Uncle Bob's
+          books
+          <a
+            href="https://www.amazon.com/Clean-Code-Handbook-Software-Craftsmanship-ebook/dp/B001GSTOAM/ref=sr_1_1?dchild=1&amp;keywords=clean+code&amp;qid=1586539102&amp;sr=8-1"
+            ><em>Clean Code</em></a
+          >
+          and
+          <em
+            ><a
+              href="https://www.amazon.com/Clean-Coder-Conduct-Professional-Programmers-ebook/dp/B0050JLC9Y/ref=sr_1_1?dchild=1&amp;keywords=clean+coder&amp;qid=1586539112&amp;sr=8-1"
+              >The Clean Coder</a
+            ></em
+          >, in which he not only mentions and recommends this practice but also
+          puts a layer on top: TDD or Test-Driven Development<foot-note
+            text="I don't know if Prag Dave also mentions it in his book because I haven't yet read it."
+          ></foot-note
+          >. The TDD requirement for katas makes your thinking much more
+          systematic, your program easier to read, and the overall code more
+          organized and robust. It's more work and time<foot-note
+            text="For small projects
         only, in my opinion. TDD improves the code so much that the more
         complicated the workflow is, the easier it will be with TDD than
         without."
-        ></foot-note
-        >, but the end-product makes the effort worthwhile.
-      </p>
-      <p>
-        After mentioning TDD, it's also worth citing Kent Beck, who is actually
-        its inventor<foot-note
-          text="At least in the way it's practiced today."
-        ></foot-note
-        >. Beck has written many books related to TDD and, specially in his
-        <a
-          href="https://www.amazon.com/Test-Driven-Development-Kent-Beck/dp/0321146530/ref=sr_1_1?dchild=1&amp;keywords=tdd+by+example&amp;qid=1586541249&amp;sr=8-1"
-          >TDD by Example</a
-        >, he goes on to formalize some coding exercises he uses to learn
-        languages and continuously hone his skills. In reality, these are not
-        only katas, but benchmarks, points of reference in terms of code
-        quality, structure and his programming ability in a specific language.
-        The most important of these TDD exercises or katas is the
-        <a href="https://en.wikipedia.org/wiki/XUnit">xUnit</a> framework, a
-        harness he created for implementing TDD into code, which has been
-        implemented in many different languages.
-      </p>
+          ></foot-note
+          >, but the end-product makes the effort worthwhile.
+        </p>
+        <p>
+          After mentioning TDD, it's also worth citing Kent Beck, who is
+          actually its inventor<foot-note
+            text="At least in the way it's practiced today."
+          ></foot-note
+          >. Beck has written many books related to TDD and, specially in his
+          <a
+            href="https://www.amazon.com/Test-Driven-Development-Kent-Beck/dp/0321146530/ref=sr_1_1?dchild=1&amp;keywords=tdd+by+example&amp;qid=1586541249&amp;sr=8-1"
+            >TDD by Example</a
+          >, he goes on to formalize some coding exercises he uses to learn
+          languages and continuously hone his skills. In reality, these are not
+          only katas, but benchmarks, points of reference in terms of code
+          quality, structure and his programming ability in a specific language.
+          The most important of these TDD exercises or katas is the
+          <a href="https://en.wikipedia.org/wiki/XUnit">xUnit</a> framework, a
+          harness he created for implementing TDD into code, which has been
+          implemented in many different languages.
+        </p>
+      </section>
 
-      <h2>2. My Dart Katas</h2>
+      <section>
+        <h2>2. My Dart Katas</h2>
 
-      <p>
-        My most current katas are the ones written in my
-        <a href="https://github.com/psygo/dart_katas">Dart Katas</a> Github
-        repository. These are much longer than the usual expected time of 1 hour
-        to 1 afternoon. On average, mine took an afternoon to a whole day. The
-        main reason for this is that I was intentionally more careful with the
-        structure of the code, featuring TDD while also trying to make it more
-        clean<foot-note
-          text="In Uncle Bob's Clean Code's sense that is."
-        ></foot-note>
-        and object-oriented.
-      </p>
-      <p>
-        Some will disagree with my code and I'm not here to say that it is the
-        best ever or the most correct<foot-note
-          text="Writing code is very similar to
+        <p>
+          My most current katas are the ones written in my
+          <a href="https://github.com/psygo/dart_katas">Dart Katas</a> Github
+          repository. These are much longer than the usual expected time of 1
+          hour to 1 afternoon. On average, mine took an afternoon to a whole
+          day. The main reason for this is that I was intentionally more careful
+          with the structure of the code, featuring TDD while also trying to
+          make it more clean<foot-note
+            text="In Uncle Bob's Clean Code's sense that is."
+          ></foot-note>
+          and object-oriented.
+        </p>
+        <p>
+          Some will disagree with my code and I'm not here to say that it is the
+          best ever or the most correct<foot-note
+            text="Writing code is very similar to
         writing and editing in general. There's a lot that is simply just
         subjective, while a whole other lot which is actually good and bad
         practice, i.e.: the good, the bad and the ugly."
-        ></foot-note
-        >, I'm not really a 9 dan at coding. If you have any constructive
-        criticism about my code, please do create an issue on Github about it.
-        But, for now, I haven't been fully convinced about the wrongness of most
-        of the practices I exposed in that repository.
-      </p>
-      <p>
-        One example of practice for which a much more experienced and overall
-        much better programmer,
-        <a href="https://github.com/marcglasberg">Marcelo Glasberg</a>,
-        criticized me was, in his words, "my systematic obfuscation of the test
-        answers". For example, in the
-        <a href="http://butunclebob.com/ArticleS.UncleBob.TheBowlingGameKata"
-          >Bowling Game Kata</a
-        >, I created a file called <code>fixture_data.dart</code> where I
-        deposit all of the variables used as the test answers:
-      </p>
+          ></foot-note
+          >, I'm not really a 9 dan at coding. If you have any constructive
+          criticism about my code, please do create an issue on Github about it.
+          But, for now, I haven't been fully convinced about the wrongness of
+          most of the practices I exposed in that repository.
+        </p>
+        <p>
+          One example of practice for which a much more experienced and overall
+          much better programmer,
+          <a href="https://github.com/marcglasberg">Marcelo Glasberg</a>,
+          criticized me was, in his words, "my systematic obfuscation of the
+          test answers". For example, in the
+          <a href="http://butunclebob.com/ArticleS.UncleBob.TheBowlingGameKata"
+            >Bowling Game Kata</a
+          >, I created a file called <code>fixture_data.dart</code> where I
+          deposit all of the variables used as the test answers:
+        </p>
 
-      <pre>
+        <pre>
         <code class="dart">final Map&lt;Map&lt;String, int&gt;, int&gt; rollsPinsAndScores = {
   gutterGame: 0,
   allOnes: 20,
@@ -242,33 +257,34 @@ const Map&lt;String, int&gt; perfectGame = {
 };</code>
       </pre>
 
-      <p>
-        His critique was that this was incredibly unnecessary since it doesn't
-        really add much to so simple a program/problem. He also mentioned that
-        it makes it harder for other people to read my code because they now
-        have to manage more files and screens in their heads. I mostly do agree
-        with his criticism actually, but I left it that way because it serves to
-        show what I would do if the program got a little bit more
-        unwieldy<foot-note
-          text="In a way, the wrongness is that I'm not taking the circumstances of the
+        <p>
+          His critique was that this was incredibly unnecessary since it doesn't
+          really add much to so simple a program/problem. He also mentioned that
+          it makes it harder for other people to read my code because they now
+          have to manage more files and screens in their heads. I mostly do
+          agree with his criticism actually, but I left it that way because it
+          serves to show what I would do if the program got a little bit more
+          unwieldy<foot-note
+            text="In a way, the wrongness is that I'm not taking the circumstances of the
         complexity of the problem properly into account."
-        ></foot-note
-        >; I do believe, though, that separating those variables helps the
-        reader understand what's being tested on a higher level of thinking and,
-        if he wants to, he can examine the test data later on.
-      </p>
-      <p>
-        Putting the maps used in each separate test scenario inside another map
-        was yet another source of his dislike of my code. In this case, I was
-        trying to avoid the needless repetition of the test setups, which always
-        had the same heuristics. I still think this makes the reader better
-        think at a higher level more easily though. Rote repetition of simpler
-        tests might be easier to read, but its volume will be harder to memorize
-        and visualize as a whole. Instead of setting up the same types of tests
-        over and over, you can simply use a <code>forEach</code>:
-      </p>
+          ></foot-note
+          >; I do believe, though, that separating those variables helps the
+          reader understand what's being tested on a higher level of thinking
+          and, if he wants to, he can examine the test data later on.
+        </p>
+        <p>
+          Putting the maps used in each separate test scenario inside another
+          map was yet another source of his dislike of my code. In this case, I
+          was trying to avoid the needless repetition of the test setups, which
+          always had the same heuristics. I still think this makes the reader
+          better think at a higher level more easily though. Rote repetition of
+          simpler tests might be easier to read, but its volume will be harder
+          to memorize and visualize as a whole. Instead of setting up the same
+          types of tests over and over, you can simply use a
+          <code>forEach</code>:
+        </p>
 
-      <pre>
+        <pre>
         <code class="dart">test('Test canonical games: gutter, all ones and perfect', () {
   rollsPinsAndScores.forEach((Map&lt;String, int&gt; rollsPins, int score) {
     _game = BowlingGame();
@@ -279,25 +295,26 @@ const Map&lt;String, int&gt; perfectGame = {
 });</code>
       </pre>
 
-      <p>
-        Another last warning I must give about my kata code in this particular
-        repository is that I sometimes overparameterized or overgeneralized the
-        problem too much &mdash; for practicing purposes &mdash;, which is a
-        very easy trap to fall into for programmers. For example, my Tic-Tac-Toe
-        solution can work for any symbol/character and any board size. Not only
-        the board class but also the parser's would be much simpler if I hadn't
-        chosen to implement this overgeneralized solution.
-      </p>
-      <p>
-        At any rate, in the end, I'll let you be the judge of what practice is
-        best &mdash; if there is one thing I've learned from Go (Baduk or Weiqi)
-        is that the discussion itself can be much more enlightening than simply
-        labeling a practice as good or bad<foot-note
-          text="Don't forget that there are also the ugly."
-        ></foot-note
-        >. Just keep in mind that, most likely, the circumstances will be
-        stronger than your personal or supposedly general preferences.
-      </p>
+        <p>
+          Another last warning I must give about my kata code in this particular
+          repository is that I sometimes overparameterized or overgeneralized
+          the problem too much &mdash; for practicing purposes &mdash;, which is
+          a very easy trap to fall into for programmers. For example, my
+          Tic-Tac-Toe solution can work for any symbol/character and any board
+          size. Not only the board class but also the parser's would be much
+          simpler if I hadn't chosen to implement this overgeneralized solution.
+        </p>
+        <p>
+          At any rate, in the end, I'll let you be the judge of what practice is
+          best &mdash; if there is one thing I've learned from Go (Baduk or
+          Weiqi) is that the discussion itself can be much more enlightening
+          than simply labeling a practice as good or bad<foot-note
+            text="Don't forget that there are also the ugly."
+          ></foot-note
+          >. Just keep in mind that, most likely, the circumstances will be
+          stronger than your personal or supposedly general preferences.
+        </p>
+      </section>
     </article>
   </body>
 </html>
