@@ -1,8 +1,8 @@
-import ArticlesTable from "./articles_table";
-import ArticleFooter from "./article_footer";
-import FanaroNav from "./fanaro_nav";
-import Footnote from "./footnote";
-import LocalLink from "./local_link";
+import ArticlesTable from "../components/articles_table";
+import ArticleFooter from "../components/article_footer";
+import FanaroNav from "../components/fanaro_nav";
+import Footnote from "../components/footnote";
+import LocalLink from "../components/local_link";
 
 export default class Setup {
   constructor() {
