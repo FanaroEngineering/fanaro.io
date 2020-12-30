@@ -1,20 +1,7 @@
 export default class Footnote extends HTMLElement {
   static readonly tag: string = "foot-note";
 
-  private static readonly anchorColor: string = "#D9C07B";
-
-  private static readonly template: string = `
-    <style>
-      a {
-        color: ${Footnote.anchorColor};
-        text-decoration: none;
-      }
-
-      sup {
-        color: ${Footnote.anchorColor};
-      }
-    </style>
-    
+  private static readonly template: string = `   
     <sup><a></a></sup>
   `;
 
@@ -27,17 +14,11 @@ export default class Footnote extends HTMLElement {
 
   constructor(text: string = "") {
     super();
-
     this._text = text;
-
-    const template: HTMLTemplateElement = document.createElement("template");
-    template.innerHTML = Footnote.template;
-
-    this.attachShadow({ mode: "open" });
-    this.shadowRoot!.appendChild(template.content.cloneNode(true));
   }
 
   connectedCallback() {
+    this.innerHTML = Footnote.template;
     if (this._text == "") this._text = this.getAttribute("text")!;
     this.calculateNextIndex();
     this.editSup();
@@ -52,10 +33,10 @@ export default class Footnote extends HTMLElement {
   };
 
   private editSup = (): void => {
-    const supAnchor: HTMLAnchorElement = this.shadowRoot!.querySelector("a")!;
+    const supAnchor: HTMLAnchorElement = this.querySelector("a")!;
     supAnchor.innerHTML = this.nextIndex.toString();
     supAnchor.href = "#footnote-" + this.nextIndex.toString();
-    const sup: HTMLElement = this.shadowRoot!.querySelector("sup")!;
+    const sup: HTMLElement = this.querySelector("sup")!;
     sup.id = "footnote-base-" + this.nextIndex.toString();
   };
 
@@ -63,7 +44,7 @@ export default class Footnote extends HTMLElement {
     const subAnchor: HTMLAnchorElement = document.createElement("a");
     subAnchor.innerHTML = this.nextIndex.toString();
     subAnchor.href = "#footnote-base-" + this.nextIndex.toString();
-    subAnchor.style.color = Footnote.anchorColor;
+    subAnchor.style.color = "#D9C07B";
     const sub: HTMLElement = document.createElement("sub");
     sub.id = "footnote-" + this.nextIndex.toString();
     sub.innerHTML = ": " + this._text;
