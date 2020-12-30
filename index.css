@@ -165,3 +165,18 @@ sup {
   color: #d9c07b;
   text-decoration: none;
 }
+
+article-footer hr {
+  margin-left: 0px;
+  border: none;
+  max-width: 150px;
+  width: 35vw;
+  height: 0.75px;
+  color: var(--text-color);
+  background-color: var(--text-color);
+}
+
+article-footer a {
+  color: #95c379;
+  text-decoration: none;
+}
