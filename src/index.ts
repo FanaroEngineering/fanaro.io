@@ -1,3 +1,3 @@
-import Setup from "./components/setup";
+import Setup from "./infra/setup";
 
 new Setup();
