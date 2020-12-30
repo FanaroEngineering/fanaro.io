@@ -5,8 +5,6 @@ export default class ArticlesTable extends HTMLElement {
   static readonly tag: string = "articles-table";
 
   private static readonly template: string = `
-    <link rel="stylesheet" href="index.css" />
-
     <table>
       <caption>Articles</caption>
       <thead>
@@ -34,18 +32,11 @@ export default class ArticlesTable extends HTMLElement {
 
   constructor() {
     super();
-
-    const template: HTMLTemplateElement = document.createElement("template");
-    template.innerHTML = ArticlesTable.template;
-
-    this.attachShadow({ mode: "open" });
-    this.shadowRoot!.appendChild(template.content.cloneNode(true));
   }
 
   connectedCallback() {
-    const tbody: HTMLTableSectionElement = this.shadowRoot!.querySelector(
-      "tbody"
-    )!;
+    this.innerHTML = ArticlesTable.template;
+    const tbody: HTMLTableSectionElement = this.querySelector("tbody")!;
     articlesMetadata.forEach((article: Article) => {
       this.article = article;
       this.tr = document.createElement("tr");
