@@ -180,3 +180,15 @@ article-footer a {
   color: #95c379;
   text-decoration: none;
 }
+
+fanaro-nav a {
+  display: inline-flex;
+  align-items: center;
+  font-size: 1.5rem;
+  color: var(--text-color);
+  text-decoration: none;
+}
+
+fanaro-nav img {
+  padding-right: 10px;
+}
