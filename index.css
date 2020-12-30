@@ -192,3 +192,8 @@ fanaro-nav a {
 fanaro-nav img {
   padding-right: 10px;
 }
+
+local-link a {
+  color: #e67d40;
+  text-decoration: none;
+}
