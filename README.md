@@ -28,16 +28,24 @@ It was meant to be a [single-page application (SPA)][spa] &mdash; Angular style 
 
 **Table of Contents**
 
-<!-- TOC depthFrom:2 -->
+<div id="user-content-toc">
+  <ul>
+    <li><a href="#1-for-the-developer">1. For the developer</a>
+      <ul>
+        <li><a href="#11-the-full-development-workflow">1.1. The Full Development Workflow</a>
+          <ul>
+            <li><a href="#111-compiling-with-typescript">1.1.1. Compiling with TypeScript</a></li>
+            <li><a href="#112-testing-with-npm">1.1.2. Testing with NPM</a></li>
+            <li><a href="#113-bundling-everything-together-with-webpack">1.1.3. Bundling everything together with Webpack</a></li>
+          </ul>
+        </li>
+        <li><a href="#12-formatting">1.2. Formatting</a></li>
+      </ul>
+    </li>
+  </ul>
+</div>
 
-- [1. For the developer](#1-for-the-developer)
-    - [1.1. The Full Development Workflow](#11-the-full-development-workflow)
-        - [1.1.1. Compiling with TypeScript](#111-compiling-with-typescript)
-        - [1.1.2. Testing with NPM](#112-testing-with-npm)
-        - [1.1.3. Bundling everything together with Webpack](#113-bundling-everything-together-with-webpack)
-    - [1.2. Formatting](#12-formatting)
-
-<!-- /TOC -->
+---
 
 ## 1. For the developer
 
