@@ -14,7 +14,7 @@ export default class Footnote extends HTMLElement {
 
   constructor(text: string = "") {
     super();
-    this.onmouseover = this.hover;
+    this.onmouseenter = this.hover;
     this._text = text;
   }
 
@@ -56,6 +56,17 @@ export default class Footnote extends HTMLElement {
   };
 
   private hover = (): void => {
-    console.log("hover");
+    if (!this.doesDivAlreadyExist) {
+      const p: HTMLParagraphElement = document.createElement("p");
+      p.innerHTML = this._text;
+      p.id = "footnote-hover-" + this.index;
+      p.className = "footnote-hover";
+      p.onmouseleave = () => p.remove();
+      this.append(p);
+    }
   };
+
+  private get doesDivAlreadyExist(): boolean {
+    return this.querySelector(`p#footnote-hover-${this.index}`) != null;
+  }
 }

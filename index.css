@@ -166,6 +166,10 @@ sup {
   text-decoration: none;
 }
 
+foot-note p {
+  padding: 15px;
+}
+
 article-footer hr {
   margin-left: 0px;
   border: none;
