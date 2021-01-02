@@ -1,3 +1,5 @@
+import LocalLink from "./local_link";
+
 export default class Toc extends HTMLElement {
   static readonly tag: string = "table-of-contents";
 
@@ -30,11 +32,12 @@ export default class Toc extends HTMLElement {
 
       const li: HTMLLIElement = document.createElement("li");
 
-      const a: HTMLAnchorElement = document.createElement("a");
-      a.href = "#" + h2?.id;
-      a.innerHTML = this.stripNumberedPrefix(h2?.innerHTML);
+      const localLink: LocalLink = new LocalLink(
+        "#" + h2?.id,
+        this.stripNumberedPrefix(h2?.innerHTML)
+      );
 
-      li.append(a);
+      li.append(localLink);
       li.append(this.appendH3s(section));
       ol.append(li);
     });
@@ -52,11 +55,12 @@ export default class Toc extends HTMLElement {
     h3s.forEach((h3: HTMLHeadingElement) => {
       const li: HTMLLIElement = document.createElement("li");
 
-      const a: HTMLAnchorElement = document.createElement("a");
-      a.href = "#" + h3?.id;
-      a.innerHTML = this.stripNumberedPrefix(h3?.innerHTML);
+      const localLink: LocalLink = new LocalLink(
+        "#" + h3?.id,
+        this.stripNumberedPrefix(h3?.innerHTML)
+      );
 
-      li.append(a);
+      li.append(localLink);
       ol.append(li);
     });
 

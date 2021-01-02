@@ -2,6 +2,7 @@
   --text-color: #abb2bf;
   --background-color: #282a36;
   --link-color: #95c379;
+  --local-link-color: #cc7847;
   --max-content-width-mobile: 90vw;
   --max-content-width-desktop: 580px;
   --margin: 1rem;
@@ -203,23 +204,29 @@ fanaro-nav img {
 }
 
 local-link a {
-  color: #e67d40;
+  color: var(--local-link-color);
   text-decoration: none;
 }
 
 table-of-contents ol {
   counter-reset: item;
   margin-top: 8px;
+  margin-left: 20px;
+  margin-bottom: 8px;
+  padding: 0;
 }
 
 table-of-contents li {
-  display: block;
+  display: table;
+  margin: 0;
 }
 
 table-of-contents li:before {
-  color: var(--link-color);
+  color: var(--local-link-color);
   content: counters(item, ".") ". ";
   counter-increment: item;
+  display: table-cell;
+  padding-right: 0.6em;
 }
 
 table-of-contents h2 {

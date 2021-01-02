@@ -32,6 +32,6 @@ export default class LocalLink extends HTMLElement {
     const innerAnchor: HTMLAnchorElement = this.querySelector("a")!;
 
     innerAnchor.href = this._link;
-    innerAnchor.text = this._text;
+    innerAnchor.innerHTML = this._text;
   }
 }

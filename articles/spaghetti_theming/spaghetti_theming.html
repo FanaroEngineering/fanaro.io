@@ -45,7 +45,7 @@
       <h1>Avoiding Spaghetti Theming | With an Example in Flutter</h1>
 
       <section>
-        <h2>1. What is Spaghetti Theming?</h2>
+        <custom-h2 text="What is Spaghetti Theming?"></custom-h2>
 
         <p>
           <em>Spaghetti Code</em> is when you have references and dependencies
@@ -100,7 +100,9 @@
       </section>
 
       <section>
-        <h2>2. Using Classes and OOP to Organize your Theme Code</h2>
+        <custom-h2
+          text="Using Classes and OOP to Organize your Theme Code"
+        ></custom-h2>
         <p>
           One of the most basic ways of avoiding this cross-referencing hell is
           to better organize your code and, if you're using Object-Oriented
@@ -182,7 +184,7 @@
       </section>
 
       <section>
-        <h2>3. DO: Avoid Hungarian Notation (HN)</h2>
+        <custom-h2 text="DO: Avoid Hungarian Notation (HN)"></custom-h2>
         <p>
           The
           <a href="https://en.wikipedia.org/wiki/Hungarian_notation"
@@ -251,9 +253,10 @@
       </section>
 
       <section>
-        <h2>
-          4. Centralizing your Theme with <code>ThemeData</code> in Flutter
-        </h2>
+        <custom-h2
+          text="Centralizing your Theme with <code>ThemeData</code> in Flutter"
+        >
+        </custom-h2>
         <p>
           Besides what I discussed in the second section of this article about
           placing different aspects of UI in different classes, in Flutter, you
@@ -305,13 +308,13 @@
 
         <pre>
         <code class="dart">abstract class Theming {
-  static final ThemeData app = ThemeData(
-    iconTheme: defaultIcon,
-  );
+static final ThemeData app = ThemeData(
+  iconTheme: defaultIcon,
+);
 
-  static const IconThemeData icon = IconThemeData(
-    color: BasicColors.grey,
-  );
+static const IconThemeData icon = IconThemeData(
+  color: BasicColors.grey,
+);
 }</code>
       </pre>
 
@@ -365,9 +368,10 @@
           doing something wrong.
         </p>
 
-        <h2>
-          5. Going Further: Managing Web and Mobile Themes with Media Queries
-        </h2>
+        <custom-h2
+          text="Going Further: Managing Web and Mobile Themes with Media Queries"
+        >
+        </custom-h2>
         <p>
           Managing multiple screen sizes can be time consuming and a maintenance
           nightmare, even with good practices. There is no panacea for this
@@ -447,7 +451,7 @@
       </section>
 
       <section>
-        <h2>5. On the Designer's Responsibility</h2>
+        <custom-h2 text="On the Designer's Responsibility"></custom-h2>
         <p>
           One of the sources of <em>Spaghetti Theming</em> has virtually nothing
           to do with code: design purely as art. Designers usually treat
