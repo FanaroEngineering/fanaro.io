@@ -6,7 +6,7 @@ export default class Footnote extends HTMLElement {
   `;
 
   private _text: string = "";
-  private nextIndex: number = 1;
+  private index: number = 1;
 
   get text(): string {
     return this._text;
@@ -14,6 +14,7 @@ export default class Footnote extends HTMLElement {
 
   constructor(text: string = "") {
     super();
+    this.onmouseover = this.hover;
     this._text = text;
   }
 
@@ -29,28 +30,32 @@ export default class Footnote extends HTMLElement {
     const article: HTMLElement = document.querySelector("article")!;
     const currentFootnotes = article.querySelectorAll("foot-note")!;
     const numberOfFootnotes: number = currentFootnotes.length;
-    this.nextIndex = numberOfFootnotes;
+    this.index = numberOfFootnotes;
   };
 
   private editSup = (): void => {
     const supAnchor: HTMLAnchorElement = this.querySelector("a")!;
-    supAnchor.innerHTML = this.nextIndex.toString();
-    supAnchor.href = "#footnote-" + this.nextIndex.toString();
+    supAnchor.innerHTML = this.index.toString();
+    supAnchor.href = "#footnote-" + this.index.toString();
     const sup: HTMLElement = this.querySelector("sup")!;
-    sup.id = "footnote-base-" + this.nextIndex.toString();
+    sup.id = "footnote-base-" + this.index.toString();
   };
 
   private editSub = (): void => {
     const subAnchor: HTMLAnchorElement = document.createElement("a");
-    subAnchor.innerHTML = this.nextIndex.toString();
-    subAnchor.href = "#footnote-base-" + this.nextIndex.toString();
+    subAnchor.innerHTML = this.index.toString();
+    subAnchor.href = "#footnote-base-" + this.index.toString();
     subAnchor.style.color = "#D9C07B";
     const sub: HTMLElement = document.createElement("sub");
-    sub.id = "footnote-" + this.nextIndex.toString();
+    sub.id = "footnote-" + this.index.toString();
     sub.innerHTML = ": " + this._text;
     sub.prepend(subAnchor);
 
     const article: HTMLElement = document.querySelector("article")!;
     article.append(sub);
+  };
+
+  private hover = (): void => {
+    console.log("hover");
   };
 }
