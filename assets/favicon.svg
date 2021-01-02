@@ -1,1 +1,27 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><defs><style>.cls-1{fill:#d01b6a;}.cls-2{fill:#963b96;}.cls-3{fill:#883a95;}.cls-4{fill:#4d3c97;}.cls-5{fill:#156cb5;}.cls-6{fill:#1d87c9;}.cls-7{fill:#1d95d1;}.cls-8{fill:#76c8f0;}.cls-9{fill:#84cdf0;}.cls-10{fill:#bc1e70;}.cls-11{fill:#1680c4;}.cls-12{fill:#e3236a;}.cls-13{fill:#244497;}.cls-14{fill:#603e98;}.cls-15{fill:#683f98;}.cls-16{fill:#61b5e5;}.cls-17{fill:#0e57a4;}.cls-18{fill:#95d2f2;}</style></defs><g id="Top"><polygon class="cls-1" points="14.93 4 10.31 4 8 0 14.93 4"/><polygon class="cls-2" points="14.93 4 12.62 8 12.62 8 11.46 6 14.93 4"/><polygon class="cls-3" points="14.93 4 14.93 12 12.62 8 12.62 8 14.93 4"/><polygon class="cls-4" points="14.93 12 8 16 10.31 12 14.93 12"/><path class="cls-5" d="M8,16,1.07,12H5.69Z"/><polygon class="cls-6" points="4.54 10 1.07 12 3.38 8 4.54 10"/><polygon class="cls-7" points="3.38 8 1.07 12 1.07 4 3.38 8"/><polygon class="cls-8" points="5.69 4 4.54 6 1.07 4 5.69 4"/><polygon class="cls-9" points="8 0 5.69 4 1.07 4 8 0"/><polygon class="cls-10" points="14.93 4 11.46 6 10.31 4 14.93 4"/><polygon class="cls-11" points="5.69 12 1.07 12 4.54 10 5.69 12"/><polygon class="cls-12" points="12.62 8 10.93 6.31 8 3.38 8 0 10.31 4 11.46 6 12.62 8"/><polygon class="cls-13" points="12.62 8 11.46 10 10.31 12 8 16 8 12.62 8.62 12 10.93 9.69 12.62 8"/><polygon class="cls-14" points="14.93 12 10.31 12 11.46 10 14.93 12"/><polygon class="cls-15" points="14.93 12 11.46 10 12.62 8 12.62 8 14.93 12"/><polygon class="cls-16" points="4.54 6 3.38 8 1.07 4 4.54 6"/><polygon class="cls-17" points="8 12.62 8 16 5.69 12 4.54 10 3.38 8 8 12.62"/><polygon class="cls-18" points="8 0 8 3.38 7.38 4 5.07 6.31 3.38 8 4.54 6 5.69 4 8 0"/></g></svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+	<defs>
+		<style>
+			.cls-1{fill:#d01b6a;}.cls-2{fill:#963b96;}.cls-3{fill:#883a95;}.cls-4{fill:#4d3c97;}.cls-5{fill:#156cb5;}.cls-6{fill:#1d87c9;}.cls-7{fill:#1d95d1;}.cls-8{fill:#76c8f0;}.cls-9{fill:#84cdf0;}.cls-10{fill:#bc1e70;}.cls-11{fill:#1680c4;}.cls-12{fill:#e3236a;}.cls-13{fill:#244497;}.cls-14{fill:#603e98;}.cls-15{fill:#683f98;}.cls-16{fill:#61b5e5;}.cls-17{fill:#0e57a4;}.cls-18{fill:#95d2f2;}
+		</style>
+	</defs>
+	<g id="Top">
+		<polygon class="cls-1" points="14.93 4 10.31 4 8 0 14.93 4" />
+		<polygon class="cls-2" points="14.93 4 12.62 8 12.62 8 11.46 6 14.93 4" />
+		<polygon class="cls-3" points="14.93 4 14.93 12 12.62 8 12.62 8 14.93 4" />
+		<polygon class="cls-4" points="14.93 12 8 16 10.31 12 14.93 12" />
+		<path class="cls-5" d="M8,16,1.07,12H5.69Z" />
+		<polygon class="cls-6" points="4.54 10 1.07 12 3.38 8 4.54 10" />
+		<polygon class="cls-7" points="3.38 8 1.07 12 1.07 4 3.38 8" />
+		<polygon class="cls-8" points="5.69 4 4.54 6 1.07 4 5.69 4" />
+		<polygon class="cls-9" points="8 0 5.69 4 1.07 4 8 0" />
+		<polygon class="cls-10" points="14.93 4 11.46 6 10.31 4 14.93 4" />
+		<polygon class="cls-11" points="5.69 12 1.07 12 4.54 10 5.69 12" />
+		<polygon class="cls-12" points="12.62 8 10.93 6.31 8 3.38 8 0 10.31 4 11.46 6 12.62 8" />
+		<polygon class="cls-13" points="12.62 8 11.46 10 10.31 12 8 16 8 12.62 8.62 12 10.93 9.69 12.62 8" />
+		<polygon class="cls-14" points="14.93 12 10.31 12 11.46 10 14.93 12" />
+		<polygon class="cls-15" points="14.93 12 11.46 10 12.62 8 12.62 8 14.93 12" />
+		<polygon class="cls-16" points="4.54 6 3.38 8 1.07 4 4.54 6" />
+		<polygon class="cls-17" points="8 12.62 8 16 5.69 12 4.54 10 3.38 8 8 12.62" />
+		<polygon class="cls-18" points="8 0 8 3.38 7.38 4 5.07 6.31 3.38 8 4.54 6 5.69 4 8 0" />
+	</g>
+</svg>
