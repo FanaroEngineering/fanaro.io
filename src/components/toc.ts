@@ -31,8 +31,8 @@ export default class Toc extends HTMLElement {
       const li: HTMLLIElement = document.createElement("li");
 
       const a: HTMLAnchorElement = document.createElement("a");
-      a.href = "#" + h2.id;
-      a.innerHTML = this.stripNumberedPrefix(h2.innerHTML);
+      a.href = "#" + h2?.id;
+      a.innerHTML = this.stripNumberedPrefix(h2?.innerHTML);
 
       li.append(a);
       li.append(this.appendH3s(section));
@@ -42,7 +42,7 @@ export default class Toc extends HTMLElement {
     this.append(ol);
   };
 
-  private stripNumberedPrefix = (text: string): string =>
+  private stripNumberedPrefix = (text: string = ""): string =>
     text.split(" ").slice(1).join(" ");
 
   private appendH3s = (section: HTMLElement): HTMLOListElement => {
@@ -53,8 +53,8 @@ export default class Toc extends HTMLElement {
       const li: HTMLLIElement = document.createElement("li");
 
       const a: HTMLAnchorElement = document.createElement("a");
-      a.href = "#" + h3.id;
-      a.innerHTML = this.stripNumberedPrefix(h3.innerHTML);
+      a.href = "#" + h3?.id;
+      a.innerHTML = this.stripNumberedPrefix(h3?.innerHTML);
 
       li.append(a);
       ol.append(li);

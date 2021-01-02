@@ -51,9 +51,11 @@ export default class Setup {
   private prependToc = (): void => {
     const h1: HTMLHeadingElement = this.article?.querySelector("h1")!;
 
-    h1.parentNode?.insertBefore(
-      document.createElement("table-of-contents"),
-      h1.previousSibling
-    );
+    if (document.querySelectorAll("h2").length > 0) {
+      h1.parentNode?.insertBefore(
+        document.createElement("table-of-contents"),
+        h1.previousSibling
+      );
+    }
   };
 }
