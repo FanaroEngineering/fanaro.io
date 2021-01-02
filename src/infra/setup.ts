@@ -3,6 +3,7 @@ import ArticleFooter from "../components/article_footer";
 import FanaroNav from "../components/fanaro_nav";
 import Footnote from "../components/footnote";
 import LocalLink from "../components/local_link";
+import Toc, { CustomH2, CustomH3 } from "../components/toc";
 
 export default class Setup {
   constructor() {
@@ -10,7 +11,9 @@ export default class Setup {
     this.prependAppend();
   }
 
-  private article: HTMLElement | null = null;
+  private get article(): HTMLElement | null {
+    return document.querySelector("article");
+  }
 
   private define = (): void => {
     customElements.define(LocalLink.tag, LocalLink);
@@ -18,19 +21,22 @@ export default class Setup {
     customElements.define(ArticleFooter.tag, ArticleFooter);
     customElements.define(FanaroNav.tag, FanaroNav);
     customElements.define(ArticlesTable.tag, ArticlesTable);
+    customElements.define(Toc.tag, Toc);
+    customElements.define(CustomH2.tag, CustomH2);
+    customElements.define(CustomH3.tag, CustomH3);
   };
 
   private prependAppend = (): void =>
     window.addEventListener("DOMContentLoaded", (_: Event) => {
       this.prependNav();
       this.appendFooter();
+      this.prependToc();
     });
 
   private prependNav = (): void =>
     document.body.prepend(document.createElement("fanaro-nav"));
 
   private appendFooter = (): void => {
-    this.article = document.querySelector("article");
     if (this.articleContainsFootnotes)
       this.article!.append(document.createElement("article-footer"));
   };
@@ -41,4 +47,13 @@ export default class Setup {
       this.article.querySelectorAll("foot-note").length > 0
     );
   }
+
+  private prependToc = (): void => {
+    const h1: HTMLHeadingElement = this.article?.querySelector("h1")!;
+
+    h1.parentNode?.insertBefore(
+      document.createElement("table-of-contents"),
+      h1.previousSibling
+    );
+  };
 }
