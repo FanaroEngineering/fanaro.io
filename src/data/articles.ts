@@ -48,6 +48,15 @@ export default interface Article {
 
 export const articlesMetadata: Article[] = [
   {
+    index: 110,
+    title: "A Github Table of Contents Hack",
+    link: "/articles/github_toc_hack/github_toc_hack.html",
+    date: Date.UTC(2021, 0, 5),
+    languages: [Language.english],
+    mainTopic: Topic.design,
+    otherTopics: [Topic.design],
+  },
+  {
     index: 109,
     title: "Murugandi's Fighting Spirit Design",
     link: "/articles/murugandi/murugandi.html",
