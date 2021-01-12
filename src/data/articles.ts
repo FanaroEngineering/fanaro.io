@@ -48,6 +48,15 @@ export default interface Article {
 
 export const articlesMetadata: Article[] = [
   {
+    index: 111,
+    title: "Guia Completo de Contagem de Pontos",
+    link: "/articles/contagem_guia_completo/contagem_guia_completo.html",
+    date: Date.UTC(2021, 0, 12),
+    languages: [Language.portuguese],
+    mainTopic: Topic.go,
+    otherTopics: [],
+  },
+  {
     index: 110,
     title: "A Github Table of Contents Hack",
     link: "/articles/github_toc_hack/github_toc_hack.html",
