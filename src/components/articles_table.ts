@@ -11,7 +11,7 @@ export default class ArticlesTable extends HTMLElement {
         <th>#</th>
         <th>Date</th>
         <th>Languages</th>
-        <th>Article</th>
+        <th>Title</th>
         <th>Main Topic</th>
         <th>Other Topics</th>
       </thead>
