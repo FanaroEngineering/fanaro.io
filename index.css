@@ -34,6 +34,8 @@ blockquote {
 blockquote {
   margin-block-start: 10px;
   margin-block-end: 10px;
+  border-left: 3px solid var(--text-color);
+  padding-left: 10px;
 }
 
 .home-quote {
@@ -86,11 +88,6 @@ figcaption {
 
 .design-fragments {
   max-width: 300px;
-}
-
-blockquote {
-  border-left: 3px solid var(--text-color);
-  padding-left: 10px;
 }
 
 table {
