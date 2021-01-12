@@ -147,6 +147,29 @@ pre {
   margin-left: 30px;
 }
 
+#home-top {
+  display: flex;
+  padding-right: 32px;
+}
+
+#right {
+  vertical-align: middle;
+}
+
+svg,
+image {
+  height: 27.5px;
+  width: 27.5px;
+}
+
+svg {
+  margin-bottom: 10px;
+}
+
+#badges {
+  margin-left: 22px;
+}
+
 @media (min-width: 600px) {
   body {
     max-width: var(--max-content-width-desktop);
