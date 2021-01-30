@@ -9,7 +9,7 @@
     <meta name="author" content="Philippe Fanaro" />
     <meta name="description" content="FIC: Fast Immutable Collections" />
 
-    <meta property="og:image" content="assets/logo_400.png" />
+    <meta property="og:image" content="logo.png" />
     <meta property="og:description" content="FIC: Fast Immutable Collections" />
     <meta property="og:title" content="FIC: Fast Immutable Collections" />
     <meta property="og:site_name" content="fanaro.io" />
@@ -22,7 +22,7 @@
   </head>
   <body>
     <article>
-      <img src="fic.png" alt="FIC Logo" />
+      <img src="logo.png" alt="FIC Logo" />
 
       <h1>FIC: Fast Immutable Collections</h1>
 
@@ -35,11 +35,29 @@
       <p>
         Managing many objects each inside their respective architectural layers
         can be an even bigger challenge if they keep unexpectedly changing
-        throughout their lifetimes. Joshua Bloch even goes so far as to state in <em>Effective Java</em>:
+        throughout their lifetimes. Joshua Bloch even goes so far as to state in
+        <em>Effective Java</em
+        ><foot-note
+          text="Chapter 4: Classes and Interfaces, page 86 of the 3rd Edition."
+        ></foot-note
+        >:
       </p>
 
-      <!-- TODO: Mention Effective Java's best practice of making objects immutable by default. -->
-      <blockquote></blockquote>
+      <blockquote>
+        Classes should be immutable unless there’s a very good reason to make
+        them mutable.
+      </blockquote>
+
+      <p>
+        Interestingly, if you're a Java programmer, one of the main
+        <em>raison d'êtres</em> of the language is to abstract away the use of
+        pointers, which is a lower level manifestation of mutability. James
+        Gosling, the main developer of Java, deliberately set out to make it
+        close to impossible for people to deal with pointers and direct memory
+        allocation because they were the #1 source of bugs in lower level
+        languages like C &mdash; that's also <em>the</em> reason for
+        garbage-collection.
+      </p>
 
       <!-- TODO: Mention the part of the README that says that objects inside an immutable object need to be immutable. -->
 
