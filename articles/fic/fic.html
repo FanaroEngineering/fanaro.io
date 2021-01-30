@@ -1,17 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>FIC: Fast Immutable Collections</title>
+    <title>FIC: Fast Immutable Collections, for Dart</title>
 
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
 
     <meta name="author" content="Philippe Fanaro" />
-    <meta name="description" content="FIC: Fast Immutable Collections" />
+    <meta
+      name="description"
+      content="FIC: Fast Immutable Collections, for Dart"
+    />
 
     <meta property="og:image" content="logo.png" />
-    <meta property="og:description" content="FIC: Fast Immutable Collections" />
-    <meta property="og:title" content="FIC: Fast Immutable Collections" />
+    <meta
+      property="og:description"
+      content="FIC: Fast Immutable Collections, for Dart"
+    />
+    <meta
+      property="og:title"
+      content="FIC: Fast Immutable Collections, for Dart"
+    />
     <meta property="og:site_name" content="fanaro.io" />
     <meta property="og:type" content="blog" />
 
@@ -19,12 +28,21 @@
 
     <link rel="stylesheet" href="index.css" />
     <link rel="icon" type="image/svg+xml" href="assets/favicon.png" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.4.1/styles/atom-one-dark.min.css"
+    />
+    <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.5.0/build/highlight.min.js"></script>
+    <script defer>
+      hljs.initHighlightingOnLoad();
+    </script>
   </head>
   <body>
     <article>
       <img src="logo.png" alt="FIC Logo" />
 
-      <h1>FIC: Fast Immutable Collections</h1>
+      <h1>FIC: Fast Immutable Collections, for Dart</h1>
 
       <p>
         Have you ever wondered if there was a way of getting rid of the plague
@@ -59,7 +77,95 @@
         garbage-collection.
       </p>
 
+      <blockquote>
+        If you wanna go down the rabbit hole, this is such a major topic that
+        there are those who have dedicated decades of their careers to
+        completely avoiding state. Pure functional programming languages try to
+        respect mathematical functions, which, by definition, need to be
+        deterministic, meaning, if you input something, the output needs to
+        <em>always</em> be the same. But how can anything be useful in the real
+        world without any state? Well, it's a bit complicated and
+        couter-intuitive, but there's a solution for abstracting state and still
+        remaining pure, namely Monads. If you're interested, I suggest checking
+        out Haskell, Coq<foot-note
+          text="Have you ever felt the desire of having the PC help you check mathematical demonstrations? Then you're gonna love Coq and feel mad at your college teachers for not telling you it exists."
+        ></foot-note
+        >, Clojure or Elm, though there's an endless sea of programming
+        languages in this area.
+      </blockquote>
+
+      <!-- TODO: link for the native collections specification in Dart -->
+      <p>
+        Dart doesn't feature native immutable collections<foot-note
+          text="Though there's a specification for it. Which also means that, once they complete it, the FIC project will be completely obsolete."
+        ></foot-note
+        >, unlike other modern OOP languages, like Kotlin, every object has its
+        equals operator (<code>==</code>) defaulting to reference equality. In
+        the end, they are actually pointers to memory locations. This means that
+        doing something like
+        <code>Person(name: "Bob") == A(name: "Bob")</code> will yield
+        <code>false</code>, since those objects are not the same instance or
+        memory location. However you can override this behavior, despite it
+        being annoying boilerplate<foot-note
+          text='The example below has been shamelessly copied from the &lt;a href="https://pub.dev/packages/equatable"&gt;Equatable&lt;/a&gt; Dart package, which tries to reduce the boilerplate for creating these classes.'
+        ></foot-note
+        >:
+      </p>
+
+      <pre>
+        <code class="dart">class Person {
+final String name;
+
+const Person(this.name);
+
+@override
+bool operator ==(Object other) =>
+  identical(this, other) ||
+  other is Person &&
+  runtimeType == other.runtimeType &&
+  name == other.name;
+
+@override
+int get hashCode => name.hashCode;
+}
+        </code>
+      </pre>
+
+      <p>
+        Overriding equals (<code>==</code>) and <code>hashCode</code
+        ><foot-note
+          text="Always override &lt;code&gt;hashCode&lt;/code&gt; and &lt;code&gt;==&lt;/code&gt; at the same time, otherwise you might end up with very unexpected behavior when trying to orchestrate these lower level objects. And that's actually a recommendation from Joshua Bloch himself in &lt;em&gt;Effective Java&lt;/em&gt;, page 50, Chapter 11 of the 3rd Edition."
+        ></foot-note>
+        is an annoyance we can't really fully get around. But for these types of
+        atomic, entity or data value objects it isn't such a big deal. Most of
+        your architectural work will actually be orchestrating them, which is
+        where FIC comes in.
+      </p>
+
+      <p>
+        In your next layer of abstraction, it is very likely you might end up
+        with a <em>collection</em> of these simple objects, like a <em>set</em>,
+        <em>list</em> or <em>map</em> of <code>Person</code>. Once you get
+        there, you might want to deploy the same tactic you used for layer one,
+        meaning the collections themselves should be immutable. If you don't,
+        changes to the objects in the collections might happen without your
+        knowledge, because there will be no programmatic way of detecting them,
+        static analysis will not detect it because it is a valid feature.
+      </p>
+
+      <p>
+        Now that you've hopefully decided to make your collection of application
+        objects immutable, you're gonna have to solve the problem of dealing
+        internally with
+        <em>mutable operations on top of mutable collections</em>, such as
+        Dart's <code>List</code>, <code>Set</code> and <code>Map</code>. Eventually, you might come up with the typical pattern of creating 
+      </p>
+
+      <!-- TODO: add a simple example (one operation) of how to create an immutable collection in Dart -->
+
       <!-- TODO: Mention the part of the README that says that objects inside an immutable object need to be immutable. -->
+
+      <!-- TODO: Mention overriding hashCode and == -->
 
       <!-- TODO: Mention the extensive amount of resources in the README file. -->
 
