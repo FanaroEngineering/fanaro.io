@@ -158,14 +158,83 @@ int get hashCode => name.hashCode;
         objects immutable, you're gonna have to solve the problem of dealing
         internally with
         <em>mutable operations on top of mutable collections</em>, such as
-        Dart's <code>List</code>, <code>Set</code> and <code>Map</code>. Eventually, you might come up with the typical pattern of creating 
+        Dart's <code>List</code>, <code>Set</code> and <code>Map</code>.
+        Eventually, you might come up with the typical pattern of creating a
+        private constructor to internally copy the whole collection into a new
+        mutable one whenever you do change its content, that is, its state:
       </p>
 
-      <!-- TODO: add a simple example (one operation) of how to create an immutable collection in Dart -->
+      <blockquote>
+        <strong
+          >Pay close attention below! It's very important the items in the
+          supposedly immutable collection be all immutable. You absolutely
+          cannot have items changing state in a supposedly immutable collection,
+          all the more because static analysis will not typically warn you at
+          any point about this.</strong
+        >
+      </blockquote>
 
-      <!-- TODO: Mention the part of the README that says that objects inside an immutable object need to be immutable. -->
+      <pre>
+        <code class="dart">
+          @immutable
+          class People {
+            final List&lt;Person&gt; _people;
 
-      <!-- TODO: Mention overriding hashCode and == -->
+            People({List&lt;Person&gt; people}): _people = List.of(people);
+
+            People._(this.people);
+
+            /// An example "mutable" operaton. Now imagine dozens of these 
+            /// operations, each needing extra care for not causing any side 
+            /// effects.
+            People add(Person person) => People._(_people..add(person));
+
+            /// If you want to create value equality for this class, you will
+            /// need to override reference equality. The simplest way is to use
+            /// the collection package.
+          }
+        </code>
+      </pre>
+
+      <!-- TODO: check if `People._(_people..add(person));` really does work -->
+
+      <p>
+        The <code>People._</code> constructor avoids wasteful recopying of the
+        <code>_people</code> list, but this type of pattern is clunky and needs
+        a lot of boilerplate. Not to mention that, even though, from the
+        outside, programmers can't change the inner list, whoever is working
+        outside still has a ton of room for mistakes.
+      </p>
+
+      <p>
+        This situation is where FIC shines. Its collections are already
+        programmatically sealed for mutable operations. There is no room for the
+        programmer to mutate its collections, and all that while minimizing
+        boilerplat and arguably vastly simplifying the code:
+      </p>
+
+      <pre>
+        <code class="dart">
+          @immutable
+          class People {
+            final IList&lt;Person&gt; people;
+
+            People({this.people});
+
+            People add(Person person) => People(people.add(person));
+
+            @override
+            bool operator ==(Object other) => ...
+          }
+        </code>
+      </pre>
+
+      <section>
+        <h2>
+          But how is FIC different from other packages such as built_collection
+          and kt.dart? And why does it have "fast" in its name?
+        </h2>
+      </section>
 
       <!-- TODO: Mention the extensive amount of resources in the README file. -->
 
