@@ -90,8 +90,14 @@ export class CustomH2 extends HTMLElement {
     super();
   }
 
-  static countHeadings = (level: Headings = Headings.h2): number => {
-    const headings = document.querySelectorAll(level);
+  static countHeadings = (
+    level: Headings = Headings.h2,
+    section: HTMLElement | null = null
+  ): number => {
+    const headings =
+      section == null
+        ? document.querySelectorAll(level)
+        : section.querySelectorAll(level);
     return headings == null ? 0 : headings.length;
   };
 
@@ -136,10 +142,11 @@ export class CustomH3 extends CustomH2 {
   }
 
   protected order() {
+    const section: HTMLElement = this.parentElement!;
     const h3: HTMLHeadingElement = this.querySelector("h3")!;
     const fullHeading: string =
       CustomH3.extractUpperHeading() +
-      CustomH2.countHeadings(Headings.h3).toString() +
+      CustomH2.countHeadings(Headings.h3, section).toString() +
       ". " +
       this.text;
     h3.innerHTML = fullHeading;
