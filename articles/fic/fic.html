@@ -44,6 +44,19 @@
 
       <h1>FIC: Fast Immutable Collections, for Dart</h1>
 
+      <blockquote>
+        <p>
+          <a href="https://pub.dev/packages/fast_immutable_collections"
+            >FIC on pub.dev</a
+          >
+        </p>
+        <p>
+          <a href="https://github.com/marcglasberg/fast_immutable_collections"
+            >FIC on Github</a
+          >
+        </p>
+      </blockquote>
+
       <section>
         <custom-h2 text="Motivation"></custom-h2>
 
@@ -58,11 +71,7 @@
           layers can be an even bigger challenge if they keep unexpectedly
           changing throughout their respective lifetimes. Joshua Bloch even goes
           so far as to state in
-          <em>Effective Java</em
-          ><foot-note
-            text="Chapter 4: Classes and Interfaces, page 86 of the 3rd Edition."
-          ></foot-note
-          >:
+          <em>Effective Java</em>:
         </p>
 
         <blockquote>
@@ -70,7 +79,10 @@
             Classes should be immutable unless there’s a very good reason to
             make them mutable.
           </p>
-          <p class="quote-author"><em>Effective Java</em>, Joshua Bloch.</p>
+          <p class="quote-author">
+            <em>Effective Java</em>, by Joshua Bloch. Chapter 4: Classes and
+            Interfaces, page 86 of the 3rd Edition.
+          </p>
         </blockquote>
 
         <p>
@@ -100,9 +112,12 @@
             But how can anything be useful in the real world without any state?
             Well, it's a bit complicated and couter-intuitive, but there's a
             solution for abstracting state and still remaining pure, namely,
-            Monads. If you're interested, I suggest checking out Haskell,
-            Coq<foot-note
-              text="Have you ever felt the desire of having the PC help you check mathematical demonstrations? Then you're gonna love Coq and feel mad at your college teachers for not telling you it exists."
+            Monads.
+          </p>
+
+          <p>
+            If you're interested, I suggest checking out Haskell, Coq<foot-note
+              text="Have you ever felt the desire of having the computer help you check mathematical demonstrations? Then you're gonna love Coq, and feel mad at your college teachers for not telling you it exists."
             ></foot-note
             >, Clojure or Elm, though there's an endless sea of &mdash; largely
             unknown &mdash; programming languages in this area.
@@ -113,7 +128,7 @@
 
         <p>
           Dart doesn't feature native immutable collections<foot-note
-            text='Though there&apos;s &lt;a href="https://github.com/dart-lang/language/blob/master/working/0125-static-immutability/feature-specification.md"&gt;a specification for it&lt;/a&gt;. Which also means that, once they complete it, the FIC project will be completely obsolete.'
+            text='Alhough there&apos;s &lt;a href="https://github.com/dart-lang/language/blob/master/working/0125-static-immutability/feature-specification.md"&gt;a specification for it&lt;/a&gt;. Which also means that, once they complete it, the FIC project will be almost entirely obsolete.'
           ></foot-note
           >, unlike other modern OOP languages, like Kotlin, every object has
           its equals operator (<code>==</code>) defaulting to reference
@@ -157,7 +172,15 @@ class Person {
         <p>
           Overriding equals (<code>==</code>) and <code>hashCode</code
           ><foot-note
-            text="Always override &lt;code&gt;hashCode&lt;/code&gt; and &lt;code&gt;==&lt;/code&gt; at the same time, otherwise you might end up with very unexpected behavior when trying to orchestrate these lower level objects. And that's actually a recommendation from Joshua Bloch himself in &lt;em&gt;Effective Java&lt;/em&gt;, page 50, Chapter 11 of the 3rd Edition."
+            text='Always override &lt;code&gt;hashCode&lt;/code&gt; and 
+            &lt;code&gt;==&lt;/code&gt; at the same time, otherwise 
+            you might end up with very unexpected behavior when trying to 
+            orchestrate these lower level objects &mdash; maps use 
+            &lt;code&gt;hashCode&lt;/code&gt; internally to create the 
+            "table look-ups" for example. And that&apos;s actually a 
+            recommendation from Joshua Bloch himself in 
+            &lt;em&gt;Effective Java&lt;/em&gt;, page 50, 
+            Chapter 11 of the 3rd Edition.'
           ></foot-note>
           is an annoyance we can't really fully get around. But for these types
           of atomic, entity or data value objects, it isn't such a big deal.
@@ -351,6 +374,63 @@ class PeopleWithFic {
 
       <section>
         <custom-h2 text="Why is FIC fast?"></custom-h2>
+
+        <p>
+          FIC's whole implementation is complicated. There are a lot of details.
+          But one of those details is worth knowing even for those who don't
+          want to have anything to do with developing this package.
+        </p>
+
+        <p>
+          The major detail is that FIC doesn't actually copy
+          <em>everything</em> whenever the user attempts a mutable operation.
+          For example, when adding elements to a list, FIC will sort of "create
+          an internal variable" that points to those elements. This is similar
+          to the structure of data in many functional programming languages: in
+          the end it becomes something like a tree or a trie<foot-note
+            text='Rich Hickey, the author of Clojure, explains all this for 
+            the context of his own language 
+            &lt;a href="https://youtu.be/wASCH_gPnDw?t=1941"&gt;here.&lt;/a&gt;'
+          ></foot-note
+          >.
+        </p>
+
+        <p>
+          If the data you're trying to add is a single item or an immutable
+          collection, FIC will create a recursive branch in its structure. So,
+          in the end, if you're adding a huge immutable <code>IList</code> to
+          another <code>IList</code>, the change will be virtually immediate,
+          much faster than the native <code>List</code>s actually. If you add a
+          regular <code>List</code> to an <code>IList</code>, then FIC will need
+          to make an immutable copy though, that's why once you decide to go for
+          FIC, we recommend sticking to it throughout the whole process.
+        </p>
+
+        <custom-h3 text="The Benchmark App"></custom-h3>
+
+        <p>
+          FIC features two other inner packages: <code>benchmark</code> and
+          <code>benchmark_app</code>. The benchmark app package uses the
+          benchmark package to run many of the typical collection operations and
+          compare the different collection packages to each other.
+        </p>
+
+        <figure>
+          <img src="demo.gif" alt="Demo GIF" />
+          <figcaption>
+            The <code>benchmark_app</code> app for comparing this package's collections to
+            others. Use it preferably in release mode.
+          </figcaption>
+        </figure>
+
+        <p>
+          Overall, FIC performs very well. In most cases, it is on par with the
+          native collections, and sometimes it even beats them, as in the case
+          of <code>IList.addAll</code>. But sometimes it is indeed slower than
+          expected, even though not by that much &mdash; some operations on map
+          and sets did not end up being so optimal in within FIC's design
+          context.
+        </p>
       </section>
 
       <section>
