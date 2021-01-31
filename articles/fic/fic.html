@@ -75,13 +75,13 @@
 
         <p>
           Interestingly, if you're a Java programmer, one of the main
-          <em>raison d'êtres</em> of the language itself is to abstract away the
-          use of pointers, which is a lower level manifestation of mutability.
-          James Gosling, the main developer of Java, deliberately set out to
-          make it very difficult for people to deal with pointers and direct
-          memory allocation because they were the #1 source of bugs in lower
-          level languages like C &mdash; that's also <em>the</em> reason for
-          garbage-collection's existence.
+          <em>raisons d'êtres</em> of the language itself is to abstract away
+          the use of pointers, which is a lower level manifestation of
+          mutability. James Gosling, the main developer of Java, deliberately
+          set out to make it very difficult for people to deal with pointers and
+          direct memory allocation because they were the #1 source of bugs in
+          lower level languages like C &mdash; that's also <em>the</em> reason
+          for garbage-collection's existence.
         </p>
 
         <blockquote>
@@ -230,7 +230,7 @@ class People {
       return true;
     // Don't write this recursively, you might end up with space leaks.
     // For more info on this, check out Tail Call Optimization (TCO).
-    for (int index = 0; index < a.length; index += 1) {
+    for (int index = 0; index &lt; a.length; index += 1) {
       if (a[index] != b[index]) return false;
     }
     return true;
