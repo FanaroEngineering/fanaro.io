@@ -114,6 +114,8 @@ class People {
       return false;
     if (identical(a, b))
       return true;
+    // Don't write this recursively, you might end up with space leaks.
+    // For more info on this, check out Tail Call Optimization (TCO).
     for (int index = 0; index < a.length; index += 1) {
       if (a[index] != b[index]) return false;
     }

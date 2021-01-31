@@ -143,14 +143,14 @@ class Person {
   const Person(this.name);
 
   @override
-  bool operator ==(Object other) =>
+  bool operator ==(Object other) =&gt;
       identical(this, other) ||
-      other is Person &&
-      runtimeType == other.runtimeType &&
+      other is Person &amp;&amp;
+      runtimeType == other.runtimeType &amp;&amp;
       name == other.name;
 
   @override
-  int get hashCode => name.hashCode;
+  int get hashCode =&gt; name.hashCode;
 }</code>
         </pre>
 
@@ -196,25 +196,56 @@ class People {
 
   People(List&lt;Person&gt; people): _people = List.of(people);
 
-  /// An example "mutable" operaton. Now imagine dozens of these 
-  /// operations, each needing extra care for not causing any side 
-  /// effects.
-  People add(Person person) => People(_people..add(person));
+  People._(this._people);
 
-  /// If you want to create value equality for this class, you will
-  /// need to override reference equality. The simplest way is to use
-  /// the collection package.
+  // An example "mutable" operaton. Now imagine dozens of these operations, 
+  // each needing extra care from you in order to not cause any side effects.
+  People add(Person person) {
+    var newPeopleList = List.of(_people)..add(person);
+    return People._(newPeopleList);
+  } 
+
+  // If you want to create value equality for this class, you will need to 
+  // override reference equality. The simplest way is to do this is to use the 
+  // collection package.
+  @override
+  bool operator ==(Object other) =&gt; identical(this, other) ||
+      other is People &amp;&amp;
+      runtimeType == other.runtimeType &amp;&amp;
+      const ListEquality().equals(_people, other._people);
+
+  @override
+  int get hashCode =&gt; const ListEquality().hash(_people);
+
+  @override
+  String toString() =&gt; _people.toString();
+
+  // You could also write your own list equality. Something close to this:
+  bool _listEquals&lt;T&gt;(List&lt;T&gt; a, List&lt;T&gt; b) {
+    if (a == null)
+      return b == null;
+    if (b == null || a.length != b.length)
+      return false;
+    if (identical(a, b))
+      return true;
+    // Don't write this recursively, you might end up with space leaks.
+    // For more info on this, check out Tail Call Optimization (TCO).
+    for (int index = 0; index < a.length; index += 1) {
+      if (a[index] != b[index]) return false;
+    }
+    return true;
+  }
 }</code>
         </pre>
 
         <blockquote>
+          Pay close attention! It's very important that
           <strong
-            >Pay close attention It's very important that all of the items in
-            the supposedly immutable collection are all immutable. You
-            absolutely cannot have items changing state in a supposedly
-            immutable collection, all the more because static analysis will not
-            typically warn you at any point about any of the changes.</strong
-          >
+            >all of the items in the supposedly immutable collection are all
+            immutable</strong
+          >. You absolutely cannot have items changing state in a supposedly
+          immutable collection, all the more because static analysis will not
+          typically warn you at any point about any of the changes.
         </blockquote>
 
         <p>
@@ -231,25 +262,40 @@ class People {
           This situation is where FIC shines. Its collections are already
           programmatically sealed for mutable operations. There is no room for
           the programmer to mutate its collections, and all that while
-          minimizing boilerplat and arguably vastly simplifying the code:
+          minimizing boilerplate and arguably vastly simplifying the code:
         </p>
 
         <pre>
           <code class="dart">@immutable
-class People {
+class PeopleWithFic {
   final IList&lt;Person&gt; people;
 
-  People({this.people});
+  PeopleWithFic(this.people);
 
-  People add(Person person) => People(people.add(person));
-
-  @override
-  bool operator ==(Object other) => ...
+  PeopleWithFic add(Person person) =&gt; PeopleWithFic(people.add(person));
 
   @override
-  int get hashCode => ...
+  bool operator ==(Object other) =&gt; identical(this, other) ||
+      other is PeopleWithFic &amp;&amp;
+      runtimeType == other.runtimeType &amp;&amp;
+      people == other.people;
+
+  @override
+  int get hashCode =&gt; people.hashCode;
+
+  @override
+  String toString() =&gt; people.toString();
 }</code>
-        </pre>
+    </pre>
+
+        <p>
+          FIC uses deep equality by default, which makes dealing with
+          collections of values much more natural and concise. And now you can
+          treat the whole inner list as a value,
+          <code>people == other.people</code> actually works safely. The whole
+          list is immutable and locked so, if you wish, you can now expose the
+          <code>people</code> attribute/property publicly.
+        </p>
       </section>
 
       <section>
@@ -258,10 +304,63 @@ class People {
         &lt;a href="https://github.com/google/built_collection.dart"
           &gt;built_collection&lt;/a
         &gt;
-        and &lt;a href="https://github.com/passsy/kt.dart"&gt;kt.dart&lt;/a&gt;? And why
-        does it have "fast" in its name?'
+        and &lt;a href="https://github.com/passsy/kt.dart"&gt;kt.dart&lt;/a&gt;?'
         >
         </custom-h2>
+
+        <!-- TODO: add a link to (almost) every mention of FIC. -->
+
+        <p>
+          Both
+          <a href="https://github.com/google/built_collection.dart"
+            >built_collection</a
+          >
+          and <a href="https://github.com/passsy/kt.dart">kt.dart</a> are
+          excellent packages, you could use either of them instead of FIC and
+          live happy ever after. However, when it comes to the end user, the
+          programmer, FIC offers some valuable contributions/improvements:
+        </p>
+
+        <ul>
+          <li>
+            The
+            <a href="https://github.com/google/built_collection.dart"
+              >built_collection</a
+            >
+            package is based on the
+            <a
+              href="https://en.wikipedia.org/wiki/Builder_pattern#:~:text=The%20Builder%20design%20pattern%20is%20one%20of%20the%20GoF%20design,representations%20of%20a%20complex%20object%3F"
+              >Builder Design Pattern</a
+            >, which helps in making it very fast, since operations on
+            collections will only complete when you "rebuild" the collection.
+            However, going through the builder pattern as an API leads to
+            somewhat cumbersome code, and you have to remember when to rebuild
+            your collections. FIC offers a much more natural API with near-equal
+            performance, something we will discuss in the next section.
+          </li>
+          <li>
+            On the other side of the spectrum,
+            <a href="https://github.com/passsy/kt.dart">kt.dart</a> brings the
+            easier Kotlin API while making some sacrifices in performance, since
+            it mostly copies the collection on every "mutable" operation. FIC
+            brings in the typical OOP collection API and plenty of functional
+            operations, while avoiding copies and preserving performance.
+          </li>
+        </ul>
+      </section>
+
+      <section>
+        <custom-h2 text="Why is FIC fast?"></custom-h2>
+      </section>
+
+      <section>
+        <custom-h2
+          text="Other Valuable, More Advanced Features of FIC"
+        ></custom-h2>
+      </section>
+
+      <section>
+        <custom-h2 text="Further Reading"></custom-h2>
       </section>
 
       <!-- TODO: Mention the extensive amount of resources in the README file. -->
