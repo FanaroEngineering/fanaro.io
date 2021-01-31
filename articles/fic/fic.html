@@ -418,8 +418,8 @@ class PeopleWithFic {
         <figure>
           <img src="demo.gif" alt="Demo GIF" />
           <figcaption>
-            The <code>benchmark_app</code> app for comparing this package's collections to
-            others. Use it preferably in release mode.
+            The <code>benchmark_app</code> app for comparing this package's
+            collections to others. Use it preferably in release mode.
           </figcaption>
         </figure>
 
@@ -437,6 +437,91 @@ class PeopleWithFic {
         <custom-h2
           text="Other Valuable, More Advanced Features of FIC"
         ></custom-h2>
+
+        This list is simply a copy paste of the
+        <a
+          href="https://github.com/marcglasberg/fast_immutable_collections#11-introduction"
+          >introductory section</a
+        >
+        of the documentation:
+
+        <ul>
+          <li><code>IList</code>, an immutable list</li>
+          <li><code>ISet</code>, an immutable set</li>
+          <li><code>IMap</code>, an immutable map</li>
+          <li>
+            <code>IMapOfSets</code>, an immutable map of sets (a multimap)
+          </li>
+          <li>
+            Lock and unlock extensions, so you can easily transform mutable
+            collections into immutable ones, and vice-versa. For example:
+            <code>[1, 2].lock</code>
+          </li>
+          <li>
+            Global and local configurations that alter how your immutable
+            collections behave with respect to equality, sorting, caching, and
+            flushing.
+          </li>
+          <li>
+            Optional deep equalities and cached hashCodes, which let you treat
+            your collections as value-objects.
+          </li>
+          <li>
+            Mixins for you to build your own immutable collections or objects.
+          </li>
+          <li>
+            View wrappers, so that you can work with immutable collection as if
+            they were mutable.
+          </li>
+        </ul>
+
+        And other valuable features:
+
+        <ul>
+          <li>
+            <p>
+              <code>ListSet</code>, a very efficient fixed-size mutable
+              collection which is at the same time an ordered
+              <code>Set</code> and a <code>List</code>.
+            </p>
+          </li>
+          <li>
+            <p>
+              <code>ListMap</code> is a mutable, fixed-sized, and ordered map
+              which has some very efficient <code>List</code> methods, like
+              <code>sort</code> and <code>shuffle</code>, and lets you
+              efficiently read its information by index.
+            </p>
+          </li>
+          <li>
+            <p>
+              General purpose extensions to the native collections:
+              <code>List</code>, <code>Set</code>, <code>Map</code>. See classes
+              <code>FicListExtension</code>, <code>FicSetExtension</code>, and
+              <code>FicMapExtension</code>. For example:
+              <code>[1, 2, 1].removeDuplicates()</code>
+            </p>
+          </li>
+          <li>
+            <p>
+              Other extensions: <code>IterableExtension</code>,
+              <code>IteratorExtension</code>, <code>MapIteratorExtension</code>,
+              <code>FicComparatorExtension</code>,
+              <code>FicComparableExtension</code> and
+              <code>FicBooleanExtension</code>. For example:
+              <code>false.compareTo(true)</code>
+            </p>
+          </li>
+          <li>
+            <p>
+              Comparators and related helpers to be used with native or
+              immutable collections, or any sort algorithms, such as
+              <code>compareObject</code>, <code>sortBy</code>,
+              <code>sortLike</code>, <code>if0</code>, in
+              <code>sort.dart</code>.
+            </p>
+          </li>
+        </ul>
       </section>
 
       <section>
