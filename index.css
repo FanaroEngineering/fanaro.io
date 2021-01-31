@@ -24,13 +24,6 @@ h1 {
   font-size: 1.85rem;
 }
 
-p,
-ul,
-ol,
-blockquote {
-  text-align: justify;
-}
-
 blockquote {
   margin-block-start: 10px;
   margin-block-end: 10px;

@@ -44,76 +44,100 @@
 
       <h1>FIC: Fast Immutable Collections, for Dart</h1>
 
-      <p>
-        Have you ever wondered if there was a way of getting rid of the plague
-        of mutability in OOP and imperative languages? Or maybe restrict it? If
-        you did, you're not alone.
-      </p>
+      <section>
+        <custom-h2 text="Motivation"></custom-h2>
 
-      <p>
-        Managing many objects each inside their respective architectural layers
-        can be an even bigger challenge if they keep unexpectedly changing
-        throughout their lifetimes. Joshua Bloch even goes so far as to state in
-        <em>Effective Java</em
-        ><foot-note
-          text="Chapter 4: Classes and Interfaces, page 86 of the 3rd Edition."
-        ></foot-note
-        >:
-      </p>
+        <p>
+          Have you ever wondered if there was a way of getting rid of the plague
+          of mutability in OOP and imperative languages? Or maybe restrict it?
+          If you did, you're not alone.
+        </p>
 
-      <blockquote>
-        Classes should be immutable unless there’s a very good reason to make
-        them mutable.
-      </blockquote>
+        <p>
+          Managing many objects each inside their respective architectural
+          layers can be an even bigger challenge if they keep unexpectedly
+          changing throughout their respective lifetimes. Joshua Bloch even goes
+          so far as to state in
+          <em>Effective Java</em
+          ><foot-note
+            text="Chapter 4: Classes and Interfaces, page 86 of the 3rd Edition."
+          ></foot-note
+          >:
+        </p>
 
-      <p>
-        Interestingly, if you're a Java programmer, one of the main
-        <em>raison d'êtres</em> of the language is to abstract away the use of
-        pointers, which is a lower level manifestation of mutability. James
-        Gosling, the main developer of Java, deliberately set out to make it
-        close to impossible for people to deal with pointers and direct memory
-        allocation because they were the #1 source of bugs in lower level
-        languages like C &mdash; that's also <em>the</em> reason for
-        garbage-collection.
-      </p>
+        <blockquote>
+          <p>
+            Classes should be immutable unless there’s a very good reason to
+            make them mutable.
+          </p>
+          <p class="quote-author"><em>Effective Java</em>, Joshua Bloch.</p>
+        </blockquote>
 
-      <blockquote>
-        If you wanna go down the rabbit hole, this is such a major topic that
-        there are those who have dedicated decades of their careers to
-        completely avoiding state. Pure functional programming languages try to
-        respect mathematical functions, which, by definition, need to be
-        deterministic, meaning, if you input something, the output needs to
-        <em>always</em> be the same. But how can anything be useful in the real
-        world without any state? Well, it's a bit complicated and
-        couter-intuitive, but there's a solution for abstracting state and still
-        remaining pure, namely Monads. If you're interested, I suggest checking
-        out Haskell, Coq<foot-note
-          text="Have you ever felt the desire of having the PC help you check mathematical demonstrations? Then you're gonna love Coq and feel mad at your college teachers for not telling you it exists."
-        ></foot-note
-        >, Clojure or Elm, though there's an endless sea of programming
-        languages in this area.
-      </blockquote>
+        <p>
+          Interestingly, if you're a Java programmer, one of the main
+          <em>raison d'êtres</em> of the language itself is to abstract away the
+          use of pointers, which is a lower level manifestation of mutability.
+          James Gosling, the main developer of Java, deliberately set out to
+          make it very difficult for people to deal with pointers and direct
+          memory allocation because they were the #1 source of bugs in lower
+          level languages like C &mdash; that's also <em>the</em> reason for
+          garbage-collection's existence.
+        </p>
 
-      <!-- TODO: link for the native collections specification in Dart -->
-      <p>
-        Dart doesn't feature native immutable collections<foot-note
-          text="Though there's a specification for it. Which also means that, once they complete it, the FIC project will be completely obsolete."
-        ></foot-note
-        >, unlike other modern OOP languages, like Kotlin, every object has its
-        equals operator (<code>==</code>) defaulting to reference equality. In
-        the end, they are actually pointers to memory locations. This means that
-        doing something like
-        <code>Person(name: "Bob") == A(name: "Bob")</code> will yield
-        <code>false</code>, since those objects are not the same instance or
-        memory location. However you can override this behavior, despite it
-        being annoying boilerplate<foot-note
-          text='The example below has been shamelessly copied from the &lt;a href="https://pub.dev/packages/equatable"&gt;Equatable&lt;/a&gt; Dart package, which tries to reduce the boilerplate for creating these classes.'
-        ></foot-note
-        >:
-      </p>
+        <blockquote>
+          <p>
+            If you wanna go down the rabbit hole... this is such a major topic
+            there are those who have dedicated decades of their careers to
+            completely avoiding state.
+          </p>
+          <p>
+            Pure functional programming languages try to respect mathematical
+            functions, which, by definition, need to be deterministic, meaning,
+            if you input something, the output needs to <em>always</em> be the
+            same.
+          </p>
+          <p>
+            But how can anything be useful in the real world without any state?
+            Well, it's a bit complicated and couter-intuitive, but there's a
+            solution for abstracting state and still remaining pure, namely,
+            Monads. If you're interested, I suggest checking out Haskell,
+            Coq<foot-note
+              text="Have you ever felt the desire of having the PC help you check mathematical demonstrations? Then you're gonna love Coq and feel mad at your college teachers for not telling you it exists."
+            ></foot-note
+            >, Clojure or Elm, though there's an endless sea of &mdash; largely
+            unknown &mdash; programming languages in this area.
+          </p>
+        </blockquote>
 
-      <pre>
-        <code class="dart">class Person {
+        <custom-h3 text="Dart's Context"></custom-h3>
+
+        <p>
+          Dart doesn't feature native immutable collections<foot-note
+            text='Though there&apos;s &lt;a href="https://github.com/dart-lang/language/blob/master/working/0125-static-immutability/feature-specification.md"&gt;a specification for it&lt;/a&gt;. Which also means that, once they complete it, the FIC project will be completely obsolete.'
+          ></foot-note
+          >, unlike other modern OOP languages, like Kotlin, every object has
+          its equals operator (<code>==</code>) defaulting to reference
+          equality. In the end, they are actually more or less like sealed
+          pointers to memory locations. This means that doing something like
+          <code>Person("Bob") == Person("Bob")</code> will yield
+          <code>false</code>, since those objects are not the same instance or
+          memory location. However you can override this behavior, despite it
+          being annoying boilerplate<foot-note
+            text='The example below has been shamelessly copied from the &lt;a href="https://pub.dev/packages/equatable"&gt;Equatable&lt;/a&gt; Dart package, which tries to reduce the boilerplate for creating these types of data classes.'
+          ></foot-note
+          >:
+        </p>
+
+        <!-- TODO: update gist link when the example code is stable -->
+        <blockquote>
+          You can find the whole code used in this article
+          <local-link text="here" link="example.dart"></local-link>, or,
+          alternatively, inside <a href="">this gist</a>.
+        </blockquote>
+
+        <pre>
+          <code class="dart">@immutable
+class Person {
   final String name;
 
   const Person(this.name);
@@ -128,91 +152,90 @@
   @override
   int get hashCode => name.hashCode;
 }</code>
-      </pre>
+        </pre>
 
-      <p>
-        Overriding equals (<code>==</code>) and <code>hashCode</code
-        ><foot-note
-          text="Always override &lt;code&gt;hashCode&lt;/code&gt; and &lt;code&gt;==&lt;/code&gt; at the same time, otherwise you might end up with very unexpected behavior when trying to orchestrate these lower level objects. And that's actually a recommendation from Joshua Bloch himself in &lt;em&gt;Effective Java&lt;/em&gt;, page 50, Chapter 11 of the 3rd Edition."
-        ></foot-note>
-        is an annoyance we can't really fully get around. But for these types of
-        atomic, entity or data value objects it isn't such a big deal. Most of
-        your architectural work will actually be orchestrating them, which is
-        where FIC comes in.
-      </p>
+        <p>
+          Overriding equals (<code>==</code>) and <code>hashCode</code
+          ><foot-note
+            text="Always override &lt;code&gt;hashCode&lt;/code&gt; and &lt;code&gt;==&lt;/code&gt; at the same time, otherwise you might end up with very unexpected behavior when trying to orchestrate these lower level objects. And that's actually a recommendation from Joshua Bloch himself in &lt;em&gt;Effective Java&lt;/em&gt;, page 50, Chapter 11 of the 3rd Edition."
+          ></foot-note>
+          is an annoyance we can't really fully get around. But for these types
+          of atomic, entity or data value objects, it isn't such a big deal.
+          Most of your architectural work &mdash; and grunt work &mdash; will
+          actually be orchestrating them, which is where FIC comes in.
+        </p>
 
-      <p>
-        In your next layer of abstraction, it is very likely you might end up
-        with a <em>collection</em> of these simple objects, like a <em>set</em>,
-        <em>list</em> or <em>map</em> of <code>Person</code>. Once you get
-        there, you might want to deploy the same tactic you used for layer one,
-        meaning the collections themselves should be immutable. If you don't,
-        changes to the objects in the collections might happen without your
-        knowledge, because there will be no programmatic way of detecting them,
-        static analysis will not detect it because it is a valid feature.
-      </p>
+        <p>
+          In your next layer of abstraction, it is very likely you might end up
+          with a <em>collection</em> of these simple objects, like a
+          <em>set</em>, <em>list</em> or <em>map</em> of <code>Person</code>.
+          Once you get there, you might want to deploy the same tactic you used
+          for layer one, meaning the collections themselves will be immutable.
+          If you don't, changes to the objects in the collections might happen
+          without your knowledge, because there will be no programmatic way of
+          detecting them; static analysis will not detect it because it is a
+          valid feature.
+        </p>
 
-      <p>
-        Now that you've hopefully decided to make your collection of application
-        objects immutable, you're gonna have to solve the problem of dealing
-        internally with
-        <em>mutable operations on top of mutable collections</em>, such as
-        Dart's <code>List</code>, <code>Set</code> and <code>Map</code>.
-        Eventually, you might come up with the typical pattern of creating a
-        private constructor to internally copy the whole collection into a new
-        mutable one whenever you do change its content, that is, its state:
-      </p>
+        <p>
+          Now that you've hopefully decided to also make your collection objects
+          immutable, you're gonna have to solve the problem of internally
+          dealing with
+          <em>mutable operations on top of mutable collections</em>, such as
+          Dart's <code>List</code>, <code>Set</code> and <code>Map</code>.
+          Eventually, you might come up with the typical pattern of creating a
+          private constructor to help manage the endless and dangerous
+          collection copies you're gonna have to manage inside the object's
+          state:
+        </p>
 
-      <blockquote>
-        <strong
-          >Pay close attention below! It's very important the items in the
-          supposedly immutable collection be all immutable. You absolutely
-          cannot have items changing state in a supposedly immutable collection,
-          all the more because static analysis will not typically warn you at
-          any point about this.</strong
-        >
-      </blockquote>
-
-      <!-- TODO: Wrong!!!!!!! -->
-      <pre>
-        <code class="dart">@immutable
+        <pre>
+          <code class="dart">@immutable
 class People {
   final List&lt;Person&gt; _people;
 
-  People({List&lt;Person&gt; people}): _people = List.of(people);
-
-  People._(this.people);
+  People(List&lt;Person&gt; people): _people = List.of(people);
 
   /// An example "mutable" operaton. Now imagine dozens of these 
   /// operations, each needing extra care for not causing any side 
   /// effects.
-  People add(Person person) => People._(_people..add(person));
+  People add(Person person) => People(_people..add(person));
 
   /// If you want to create value equality for this class, you will
   /// need to override reference equality. The simplest way is to use
   /// the collection package.
 }</code>
-      </pre>
+        </pre>
 
-      <!-- TODO: check if `People._(_people..add(person));` really does work -->
+        <blockquote>
+          <strong
+            >Pay close attention It's very important that all of the items in
+            the supposedly immutable collection are all immutable. You
+            absolutely cannot have items changing state in a supposedly
+            immutable collection, all the more because static analysis will not
+            typically warn you at any point about any of the changes.</strong
+          >
+        </blockquote>
 
-      <p>
-        The <code>People._</code> constructor avoids wasteful recopying of the
-        <code>_people</code> list, but this type of pattern is clunky and needs
-        a lot of boilerplate. Not to mention that, even though, from the
-        outside, programmers can't change the inner list, whoever is working
-        outside still has a ton of room for mistakes.
-      </p>
+        <p>
+          The <code>People._</code> constructor avoids wasteful recopying of the
+          <code>_people</code> list through the public constructor, since you've
+          already copied it inside the "mutation" method
+          (<code>People.add</code>). But this type of pattern is clunky and
+          needs a lot of boilerplate. Not to mention that, even though, from the
+          outside, programmers can't change the inner list, whoever is working
+          inside the object still has a ton of room for mistakes.
+        </p>
 
-      <p>
-        This situation is where FIC shines. Its collections are already
-        programmatically sealed for mutable operations. There is no room for the
-        programmer to mutate its collections, and all that while minimizing
-        boilerplat and arguably vastly simplifying the code:
-      </p>
+        <p>
+          This situation is where FIC shines. Its collections are already
+          programmatically sealed for mutable operations. There is no room for
+          the programmer to mutate its collections, and all that while
+          minimizing boilerplat and arguably vastly simplifying the code:
+        </p>
 
-      <pre>
-        <code class="dart">@immutable
+        <pre>
+          <code class="dart">@immutable
 class People {
   final IList&lt;Person&gt; people;
 
@@ -226,17 +249,19 @@ class People {
   @override
   int get hashCode => ...
 }</code>
-      </pre>
+        </pre>
+      </section>
 
       <section>
-        <h2>
-          But how is FIC different from other packages such as
-          <a href="https://github.com/google/built_collection.dart"
-            >built_collection</a
-          >
-          and <a href="https://github.com/passsy/kt.dart">kt.dart</a>? And why
-          does it have "fast" in its name?
-        </h2>
+        <custom-h2
+          text='But how is FIC different from other packages such as
+        &lt;a href="https://github.com/google/built_collection.dart"
+          &gt;built_collection&lt;/a
+        &gt;
+        and &lt;a href="https://github.com/passsy/kt.dart"&gt;kt.dart&lt;/a&gt;? And why
+        does it have "fast" in its name?'
+        >
+        </custom-h2>
       </section>
 
       <!-- TODO: Mention the extensive amount of resources in the README file. -->
