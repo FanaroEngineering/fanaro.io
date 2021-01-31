@@ -80,8 +80,11 @@
             make them mutable.
           </p>
           <p class="quote-author">
-            <em>Effective Java</em>, by Joshua Bloch. Chapter 4: Classes and
-            Interfaces, page 86 of the 3rd Edition.
+            <a
+              href="https://www.goodreads.com/book/show/34927404-effective-java?ac=1&from_search=true&qid=IbP7HRP5tr&rank=1"
+              ><em>Effective Java</em></a
+            >, by Joshua Bloch. Chapter 4: Classes and Interfaces, page 86 of
+            the 3rd Edition.
           </p>
         </blockquote>
 
@@ -131,7 +134,7 @@
 
         <p>
           Dart doesn't feature native immutable collections<foot-note
-            text='Alhough there&apos;s 
+            text='Although there&apos;s 
             &lt;a href="https://github.com/dart-lang/language/blob/master/working/0125-static-immutability/feature-specification.md"&gt;a 
             specification for it&lt;/a&gt;. Which also means that, once they 
             complete it, the FIC project will be almost entirely obsolete.'
@@ -152,11 +155,15 @@
           >:
         </p>
 
-        <!-- TODO: update gist link when the example code is stable -->
         <blockquote>
           You can find the whole code used in this article
-          <local-link text="here" link="example.dart"></local-link>, or,
-          alternatively, inside <a href="">this gist</a>.
+          <local-link text="here" link="fic_example.dart"></local-link>, or,
+          alternatively, inside
+          <a
+            href="https://gist.github.com/psygo/6ee55f7c744646b39a306c4645cd43ed"
+            >this gist</a
+          >. You can also <a href="">test it out live through DartPad</a>,
+          however it uses some packages which are not available on DartPad.
         </blockquote>
 
         <pre>
@@ -304,21 +311,17 @@ class PeopleWithFic {
 
   PeopleWithFic(this.people);
 
-  PeopleWithFic add(Person person) =&gt; PeopleWithFic(people.add(person));
-
   @override
-  bool operator ==(Object other) =&gt; identical(this, other) ||
-      other is PeopleWithFic &amp;&amp;
+  bool operator ==(Object other) =&gt;
+      identical(this, other) ||
+      other is People &amp;&amp;
       runtimeType == other.runtimeType &amp;&amp;
       people == other.people;
 
   @override
   int get hashCode =&gt; people.hashCode;
-
-  @override
-  String toString() =&gt; people.toString();
 }</code>
-    </pre>
+        </pre>
 
         <p>
           FIC uses deep equality by default, which makes dealing with
@@ -339,8 +342,6 @@ class PeopleWithFic {
         and &lt;a href="https://github.com/passsy/kt.dart"&gt;kt.dart&lt;/a&gt;?'
         >
         </custom-h2>
-
-        <!-- TODO: add a link to (almost) every mention of FIC. -->
 
         <p>
           Both
@@ -552,8 +553,8 @@ class PeopleWithFic {
         </p>
 
         <p>
-          Regardless of the each person's attributions, we both had to research
-          and read a ton of articles to complete the project. I took the time of
+          Regardless of each person's attributions, we both had to research and
+          read a ton of articles to complete the project. I took the time of
           cataloguing all of these resources in the
           <a
             href="https://github.com/marcglasberg/fast_immutable_collections#17-bibliography"
@@ -566,11 +567,15 @@ class PeopleWithFic {
           If we ever come back to redesign this project or create something
           similar, we plan on diving deeper into
           <a href="https://en.wikipedia.org/wiki/Hash_array_mapped_trie"
-            >Hash Array Mapped Tries</a
+            >Hash Array Mapped Tries (HAMT)</a
           >, which is a very important data structure for functional programming
           languages' implementations &mdash; you can watch Rich Hickey, the
           author of Clojure, explain a little bit a about this data structure
-          <a href="https://youtu.be/wASCH_gPnDw?t=1941">here</a>.
+          <a href="https://youtu.be/wASCH_gPnDw?t=1941">here</a
+          ><foot-note
+            text='Oh, have I mentioned that "fick" means "fuck" in German?'
+          ></foot-note
+          >.
         </p>
       </section>
     </article>
