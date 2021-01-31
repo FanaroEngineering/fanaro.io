@@ -24,10 +24,10 @@
     <meta property="og:site_name" content="fanaro.io" />
     <meta property="og:type" content="blog" />
 
-    <script src="index.js"></script>
+    <script src="../../index.js"></script>
 
-    <link rel="stylesheet" href="index.css" />
-    <link rel="icon" type="image/svg+xml" href="assets/favicon.png" />
+    <link rel="stylesheet" href="../../index.css" />
+    <link rel="icon" type="image/svg+xml" href="../../assets/favicon.png" />
 
     <link
       rel="stylesheet"
@@ -127,8 +127,7 @@ bool operator ==(Object other) =>
 
 @override
 int get hashCode => name.hashCode;
-}
-        </code>
+}</code>
       </pre>
 
       <p>
@@ -175,25 +174,23 @@ int get hashCode => name.hashCode;
       </blockquote>
 
       <pre>
-        <code class="dart">
-          @immutable
-          class People {
-            final List&lt;Person&gt; _people;
+        <code class="dart">@immutable
+class People {
+  final List&lt;Person&gt; _people;
 
-            People({List&lt;Person&gt; people}): _people = List.of(people);
+  People({List&lt;Person&gt; people}): _people = List.of(people);
 
-            People._(this.people);
+  People._(this.people);
 
-            /// An example "mutable" operaton. Now imagine dozens of these 
-            /// operations, each needing extra care for not causing any side 
-            /// effects.
-            People add(Person person) => People._(_people..add(person));
+  /// An example "mutable" operaton. Now imagine dozens of these 
+  /// operations, each needing extra care for not causing any side 
+  /// effects.
+  People add(Person person) => People._(_people..add(person));
 
-            /// If you want to create value equality for this class, you will
-            /// need to override reference equality. The simplest way is to use
-            /// the collection package.
-          }
-        </code>
+  /// If you want to create value equality for this class, you will
+  /// need to override reference equality. The simplest way is to use
+  /// the collection package.
+}</code>
       </pre>
 
       <!-- TODO: check if `People._(_people..add(person));` really does work -->
@@ -214,19 +211,20 @@ int get hashCode => name.hashCode;
       </p>
 
       <pre>
-        <code class="dart">
-          @immutable
-          class People {
-            final IList&lt;Person&gt; people;
+        <code class="dart">@immutable
+class People {
+  final IList&lt;Person&gt; people;
 
-            People({this.people});
+  People({this.people});
 
-            People add(Person person) => People(people.add(person));
+  People add(Person person) => People(people.add(person));
 
-            @override
-            bool operator ==(Object other) => ...
-          }
-        </code>
+  @override
+  bool operator ==(Object other) => ...
+
+  @override
+  int get hashCode => ...
+}</code>
       </pre>
 
       <section>
