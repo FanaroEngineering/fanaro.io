@@ -117,7 +117,10 @@
 
           <p>
             If you're interested, I suggest checking out Haskell, Coq<foot-note
-              text="Have you ever felt the desire of having the computer help you check mathematical demonstrations? Then you're gonna love Coq, and feel mad at your college teachers for not telling you it exists."
+              text="Have you ever felt the desire of having the computer help 
+              you check mathematical demonstrations? Then you're gonna love 
+              Coq, and feel mad at your college teachers for not telling you 
+              it exists."
             ></foot-note
             >, Clojure or Elm, though there's an endless sea of &mdash; largely
             unknown &mdash; programming languages in this area.
@@ -128,7 +131,10 @@
 
         <p>
           Dart doesn't feature native immutable collections<foot-note
-            text='Alhough there&apos;s &lt;a href="https://github.com/dart-lang/language/blob/master/working/0125-static-immutability/feature-specification.md"&gt;a specification for it&lt;/a&gt;. Which also means that, once they complete it, the FIC project will be almost entirely obsolete.'
+            text='Alhough there&apos;s 
+            &lt;a href="https://github.com/dart-lang/language/blob/master/working/0125-static-immutability/feature-specification.md"&gt;a 
+            specification for it&lt;/a&gt;. Which also means that, once they 
+            complete it, the FIC project will be almost entirely obsolete.'
           ></foot-note
           >, unlike other modern OOP languages, like Kotlin, every object has
           its equals operator (<code>==</code>) defaulting to reference
@@ -138,7 +144,10 @@
           <code>false</code>, since those objects are not the same instance or
           memory location. However you can override this behavior, despite it
           being annoying boilerplate<foot-note
-            text='The example below has been shamelessly copied from the &lt;a href="https://pub.dev/packages/equatable"&gt;Equatable&lt;/a&gt; Dart package, which tries to reduce the boilerplate for creating these types of data classes.'
+            text='The example below has been shamelessly copied from the 
+            &lt;a href="https://pub.dev/packages/equatable"&gt;Equatable&lt;/a&gt; 
+            Dart package, which tries to reduce the boilerplate for creating 
+            these types of data classes.'
           ></foot-note
           >:
         </p>
@@ -526,12 +535,44 @@ class PeopleWithFic {
 
       <section>
         <custom-h2 text="Further Reading"></custom-h2>
+
+        <p>
+          Developing FIC took way longer than both I and
+          <a href="https://github.com/marcglasberg">Marcelo Glasberg</a>
+          expected. Marcelo is a much more experienced and savvy programmer and
+          the one responsible for 90% of the design and implementation. My work
+          was about 90% testing and trying to poke holes into his code to find
+          bugs<foot-note
+            text="Not classic TDD &mdash; since we the person implementing is 
+            not the same as the one testing &mdash; but we both had limited 
+            time in our hands, so this division of labor was the best we 
+            could get."
+          ></foot-note
+          >.
+        </p>
+
+        <p>
+          Regardless of the each person's attributions, we both had to research
+          and read a ton of articles to complete the project. I took the time of
+          cataloguing all of these resources in the
+          <a
+            href="https://github.com/marcglasberg/fast_immutable_collections#17-bibliography"
+            >bibliography section of the documentation</a
+          >, but some of the other final sections also feature these resources
+          indirectly.
+        </p>
+
+        <p>
+          If we ever come back to redesign this project or create something
+          similar, we plan on diving deeper into
+          <a href="https://en.wikipedia.org/wiki/Hash_array_mapped_trie"
+            >Hash Array Mapped Tries</a
+          >, which is a very important data structure for functional programming
+          languages' implementations &mdash; you can watch Rich Hickey, the
+          author of Clojure, explain a little bit a about this data structure
+          <a href="https://youtu.be/wASCH_gPnDw?t=1941">here</a>.
+        </p>
       </section>
-
-      <!-- TODO: Mention the extensive amount of resources in the README file. -->
-
-      <!-- TODO: Mention a link to the video on how Clojure manages its immutable data: through the HAMT. -->
-      <!-- TODO: Also mention that this would be the main alternative for when redesigning the project. -->
     </article>
   </body>
 </html>
