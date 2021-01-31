@@ -114,19 +114,19 @@
 
       <pre>
         <code class="dart">class Person {
-final String name;
+  final String name;
 
-const Person(this.name);
+  const Person(this.name);
 
-@override
-bool operator ==(Object other) =>
-  identical(this, other) ||
-  other is Person &&
-  runtimeType == other.runtimeType &&
-  name == other.name;
+  @override
+  bool operator ==(Object other) =>
+      identical(this, other) ||
+      other is Person &&
+      runtimeType == other.runtimeType &&
+      name == other.name;
 
-@override
-int get hashCode => name.hashCode;
+  @override
+  int get hashCode => name.hashCode;
 }</code>
       </pre>
 
@@ -173,6 +173,7 @@ int get hashCode => name.hashCode;
         >
       </blockquote>
 
+      <!-- TODO: Wrong!!!!!!! -->
       <pre>
         <code class="dart">@immutable
 class People {
@@ -229,8 +230,12 @@ class People {
 
       <section>
         <h2>
-          But how is FIC different from other packages such as built_collection
-          and kt.dart? And why does it have "fast" in its name?
+          But how is FIC different from other packages such as
+          <a href="https://github.com/google/built_collection.dart"
+            >built_collection</a
+          >
+          and <a href="https://github.com/passsy/kt.dart">kt.dart</a>? And why
+          does it have "fast" in its name?
         </h2>
       </section>
 
