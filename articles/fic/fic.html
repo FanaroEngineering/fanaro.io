@@ -44,15 +44,28 @@
 
       <h1>FIC: Fast Immutable Collections, for Dart</h1>
 
+      <p align="center">
+        <a href="https://pub.dartlang.org/packages/fast_immutable_collections"
+          ><img
+            src="https://img.shields.io/pub/v/fast_immutable_collections.svg"
+        /></a>
+        <a
+          href="https://github.com/marcglasberg/fast_immutable_collections/actions"
+          ><img
+            src="https://github.com/marcglasberg/fast_immutable_collections/workflows/Dart%20%7C%7C%20Tests%20%7C%20Formatting%20%7C%20Analyzer/badge.svg?"
+            alt="Github CI"
+        /></a>
+        <a href="https://codecov.io/gh/marcglasberg/fast_immutable_collections/"
+          ><img
+            src="https://codecov.io/gh/marcglasberg/fast_immutable_collections/branch/master/graphs/badge.svg"
+            alt="Codecov.io Coverage"
+        /></a>
+      </p>
+
       <blockquote>
         <p>
-          <a href="https://pub.dev/packages/fast_immutable_collections"
-            >FIC on pub.dev</a
-          >
-        </p>
-        <p>
           <a href="https://github.com/marcglasberg/fast_immutable_collections"
-            >FIC on Github</a
+            >Click here to check out FIC on Github</a
           >
         </p>
       </blockquote>
@@ -70,8 +83,7 @@
           Managing many objects each inside their respective architectural
           layers can be an even bigger challenge if they keep unexpectedly
           changing throughout their respective lifetimes. Joshua Bloch even goes
-          so far as to state in
-          <em>Effective Java</em>:
+          as far as to state:
         </p>
 
         <blockquote>
@@ -83,8 +95,8 @@
             <a
               href="https://www.goodreads.com/book/show/34927404-effective-java?ac=1&from_search=true&qid=IbP7HRP5tr&rank=1"
               ><em>Effective Java</em></a
-            >, by Joshua Bloch. Chapter 4: Classes and Interfaces, page 86 of
-            the 3rd Edition.
+            >, by Joshua Bloch. &nbsp; Chapter 4: Classes and Interfaces, page
+            86 of the 3rd Edition.
           </p>
         </blockquote>
 
@@ -92,18 +104,18 @@
           Interestingly, if you're a Java programmer, one of the main
           <em>raisons d'êtres</em> of the language itself is to abstract away
           the use of pointers, which is a lower level manifestation of
-          mutability. James Gosling, the main developer of Java, deliberately
-          set out to make it very difficult for people to deal with pointers and
-          direct memory allocation because they were the #1 source of bugs in
-          lower level languages like C &mdash; that's also <em>the</em> reason
-          for garbage-collection's existence.
+          mutability. James Gosling, the main developer/creator of Java,
+          deliberately set out to make it very difficult for people to deal with
+          pointers and direct memory allocation because they were the #1 source
+          of bugs in lower level languages like C &mdash; that's also
+          <em>the</em> reason for garbage-collection's existence.
         </p>
 
         <blockquote>
           <p>
             If you wanna go down the rabbit hole... this is such a major topic
             there are those who have dedicated decades of their careers to
-            completely avoiding state.
+            completely avoiding or bypassing state.
           </p>
           <p>
             Pure functional programming languages try to respect mathematical
@@ -113,7 +125,7 @@
           </p>
           <p>
             But how can anything be useful in the real world without any state?
-            Well, it's a bit complicated and couter-intuitive, but there's a
+            Well, it's a bit complicated and counter-intuitive, but there's a
             solution for abstracting state and still remaining pure, namely,
             Monads.
           </p>
@@ -138,11 +150,12 @@
             &lt;a href="https://github.com/dart-lang/language/blob/master/working/0125-static-immutability/feature-specification.md"&gt;a 
             specification for it&lt;/a&gt;. Which also means that, once they 
             complete it, the FIC project will be almost entirely obsolete.'
-          ></foot-note
-          >, unlike other modern OOP languages, like Kotlin, every object has
-          its equals operator (<code>==</code>) defaulting to reference
-          equality. In the end, they are actually more or less like sealed
-          pointers to memory locations. This means that doing something like
+          ></foot-note>
+          &mdash; unlike other modern OOP languages, like Kotlin &mdash; every
+          object has its own equals operator (<code>==</code>) defaulting to
+          reference equality (<code>identity</code>). In the end, they are
+          actually more or less like sealed pointers to memory locations. This
+          means that doing something like
           <code>Person("Bob") == Person("Bob")</code> will yield
           <code>false</code>, since those objects are not the same instance or
           memory location. However you can override this behavior, despite it
@@ -199,7 +212,7 @@ class Person {
             Chapter 11 of the 3rd Edition.'
           ></foot-note>
           is an annoyance we can't really fully get around. But for these types
-          of atomic, entity or data value objects, it isn't such a big deal.
+          of atomic, entity, data or value objects, it isn't such a big deal.
           Most of your architectural work &mdash; and grunt work &mdash; will
           actually be orchestrating them, which is where FIC comes in.
         </p>
@@ -212,8 +225,8 @@ class Person {
           for layer one, meaning the collections themselves will be immutable.
           If you don't, changes to the objects in the collections might happen
           without your knowledge, because there will be no programmatic way of
-          detecting them; static analysis will not detect it because it is a
-          valid feature.
+          detecting them &mdash; static analysis, for instance, won't point it
+          out it because it is a valid feature.
         </p>
 
         <p>
@@ -235,20 +248,24 @@ class People {
 
   People(List&lt;Person&gt; people): _people = List.of(people);
 
+  /// Since there are no references to the list once it is inside
+  /// the object, there's no need for copying.
   People._(this._people);
 
-  // An example "mutable" operaton. Now imagine dozens of these operations, 
-  // each needing extra care from you in order to not cause any side effects.
+  // An example of immutable operaton on a mutable collection
+  // (List). Now imagine dozens of these operations, each needing
+  // extra care from you in order to not cause any side effects.
   People add(Person person) {
     var newPeopleList = List.of(_people)..add(person);
     return People._(newPeopleList);
   } 
 
-  // If you want to create value equality for this class, you will need to 
-  // override reference equality. The simplest way is to do this is to use the 
-  // collection package.
+  // If you want to create value equality for this class, you will
+  // need to override reference equality. The simplest way is to 
+  // do this is to use the `collection` package.
   @override
-  bool operator ==(Object other) =&gt; identical(this, other) ||
+  bool operator ==(Object other) =&gt; 
+      identical(this, other) ||
       other is People &amp;&amp;
       runtimeType == other.runtimeType &amp;&amp;
       const ListEquality().equals(_people, other._people);
@@ -259,7 +276,8 @@ class People {
   @override
   String toString() =&gt; _people.toString();
 
-  // You could also write your own list equality. Something close to this:
+  // Optionally, you could also write your own list equality. 
+  // Something close to this:
   bool _listEquals&lt;T&gt;(List&lt;T&gt; a, List&lt;T&gt; b) {
     if (a == null)
       return b == null;
@@ -267,8 +285,9 @@ class People {
       return false;
     if (identical(a, b))
       return true;
-    // Don't write this recursively, you might end up with space leaks.
-    // For more info on this, check out Tail Call Optimization (TCO).
+    // Don't write this recursively, you might end up with 
+    // space leaks. For more info on this, check out 
+    // Tail Call Optimization (TCO).
     for (int index = 0; index &lt; a.length; index += 1) {
       if (a[index] != b[index]) return false;
     }
@@ -311,6 +330,9 @@ class PeopleWithFic {
 
   PeopleWithFic(this.people);
 
+  PeopleWithFic add(Person person) => 
+      PeopleWithFic(people.add(person));
+
   @override
   bool operator ==(Object other) =&gt;
       identical(this, other) ||
@@ -327,9 +349,10 @@ class PeopleWithFic {
           FIC uses deep equality by default, which makes dealing with
           collections of values much more natural and concise. And now you can
           treat the whole inner list as a value,
-          <code>people == other.people</code> actually works safely. The whole
-          list is immutable and locked so, if you wish, you can now expose the
-          <code>people</code> attribute/property publicly.
+          <code>people == other.people</code> actually works safely and as most
+          people would expect. The whole list is immutable and locked so, if you
+          wish, you can now expose the <code>people</code> attribute/property
+          publicly.
         </p>
       </section>
 
@@ -350,8 +373,8 @@ class PeopleWithFic {
           >
           and <a href="https://github.com/passsy/kt.dart">kt.dart</a> are
           excellent packages, you could use either of them instead of FIC and
-          live happy ever after. However, when it comes to the end user, the
-          programmer, FIC offers some valuable contributions/improvements:
+          live happily ever after. Nonetheless, when it comes to the end user,
+          the programmer, FIC offers some valuable contributions/improvements:
         </p>
 
         <ul>
@@ -365,19 +388,21 @@ class PeopleWithFic {
               href="https://en.wikipedia.org/wiki/Builder_pattern#:~:text=The%20Builder%20design%20pattern%20is%20one%20of%20the%20GoF%20design,representations%20of%20a%20complex%20object%3F"
               >Builder Design Pattern</a
             >, which helps in making it very fast, since operations on
-            collections will only complete when you "rebuild" the collection.
-            However, going through the builder pattern as an API leads to
-            somewhat cumbersome code, and you have to remember when to rebuild
-            your collections. FIC offers a much more natural API with near-equal
-            performance, something we will discuss in the next section.
+            collections will only complete when you "rebuild" the collection,
+            almost like lazy collections. However, going through the builder
+            pattern as an API leads to somewhat cumbersome code, and you have to
+            remember when to rebuild your collections. FIC offers a much more
+            natural API with near-equal performance, something we will discuss
+            in the next section.
           </li>
           <li>
             On the other side of the spectrum,
             <a href="https://github.com/passsy/kt.dart">kt.dart</a> brings the
-            easier Kotlin API while making some sacrifices in performance, since
-            it mostly copies the collection on every "mutable" operation. FIC
-            brings in the typical OOP collection API and plenty of functional
-            operations, while avoiding copies and preserving performance.
+            easier Kotlin Collections API while making some sacrifices in
+            performance, since it mostly copies the collection on every
+            "mutable" operation. FIC brings in the regular, intuitive OOP
+            collection API and plenty of functional operations, while avoiding
+            copies and preserving performance.
           </li>
         </ul>
       </section>
@@ -397,7 +422,8 @@ class PeopleWithFic {
           For example, when adding elements to a list, FIC will sort of "create
           an internal variable" that points to those elements. This is similar
           to the structure of data in many functional programming languages: in
-          the end it becomes something like a tree or a trie<foot-note
+          the end it becomes something like a (recursive) tree or a
+          trie<foot-note
             text='Rich Hickey, the author of Clojure, explains all this for 
             the context of his own language 
             &lt;a href="https://youtu.be/wASCH_gPnDw?t=1941"&gt;here.&lt;/a&gt;'
@@ -412,15 +438,17 @@ class PeopleWithFic {
           another <code>IList</code>, the change will be virtually immediate,
           much faster than the native <code>List</code>s actually. If you add a
           regular <code>List</code> to an <code>IList</code>, then FIC will need
-          to make an immutable copy though, that's why once you decide to go for
-          FIC, we recommend sticking to it throughout the whole process.
+          to make an immutable, safe copy though, that's why we recommend that,
+          once you decide to go for FIC, we recommend sticking to it throughout
+          the whole process, algorithm or application.
         </p>
 
         <custom-h3 text="The Benchmark App"></custom-h3>
 
         <p>
           FIC features two other inner packages: <code>benchmark</code> and
-          <code>benchmark_app</code>. The benchmark app package uses the
+          <code>benchmark_app</code> &mdash; they are now inside the
+          <code>example</code> folder. The benchmark app package uses the
           benchmark package to run many of the typical collection operations and
           compare the different collection packages to each other.
         </p>
@@ -437,9 +465,8 @@ class PeopleWithFic {
           Overall, FIC performs very well. In most cases, it is on par with the
           native collections, and sometimes it even beats them, as in the case
           of <code>IList.addAll</code>. But sometimes it is indeed slower than
-          expected, even though not by that much &mdash; some operations on map
-          and sets did not end up being so optimal in within FIC's design
-          context.
+          expected, even though not by that much &mdash; some operations on maps
+          and sets did not end up being so optimal within FIC's design context.
         </p>
       </section>
 
@@ -453,7 +480,7 @@ class PeopleWithFic {
           href="https://github.com/marcglasberg/fast_immutable_collections#11-introduction"
           >introductory section</a
         >
-        of the documentation:
+        of the &mdash; very thorough &mdash; documentation:
 
         <ul>
           <li><code>IList</code>, an immutable list</li>
@@ -465,7 +492,7 @@ class PeopleWithFic {
           <li>
             Lock and unlock extensions, so you can easily transform mutable
             collections into immutable ones, and vice-versa. For example:
-            <code>[1, 2].lock</code>
+            <code>[1, 2].lock</code>.
           </li>
           <li>
             Global and local configurations that alter how your immutable
@@ -473,7 +500,7 @@ class PeopleWithFic {
             flushing.
           </li>
           <li>
-            Optional deep equalities and cached hashCodes, which let you treat
+            Optional deep equalities and cached hash codes, which let you treat
             your collections as value-objects.
           </li>
           <li>
@@ -544,12 +571,12 @@ class PeopleWithFic {
           the one responsible for 90% of the design and implementation. My work
           was about 90% testing and trying to poke holes into his code to find
           bugs<foot-note
-            text="Not classic TDD &mdash; since we the person implementing is 
+            text="Not classic TDD &mdash; since the person implementing is 
             not the same as the one testing &mdash; but we both had limited 
             time in our hands, so this division of labor was the best we 
             could get."
           ></foot-note
-          >.
+          >, and 10% giving back feedback.
         </p>
 
         <blockquote>
@@ -567,7 +594,7 @@ class PeopleWithFic {
 
         <p>
           Regardless of each person's attributions, we both had to research and
-          read a ton of articles to complete the project. I took the time of
+          read a ton of articles to complete this project. I took the time of
           cataloguing all of these resources in the
           <a
             href="https://github.com/marcglasberg/fast_immutable_collections#17-bibliography"
@@ -586,7 +613,8 @@ class PeopleWithFic {
           author of Clojure, explain a little bit a about this data structure
           <a href="https://youtu.be/wASCH_gPnDw?t=1941">here</a
           ><foot-note
-            text='Oh, have I mentioned that "fick" means "fuck" in German?'
+            text='Oh, and have I mentioned that "fick" means "fuck" in German?
+            And what about the unexpected pun with the current THICC slange?'
           ></foot-note
           >.
         </p>
