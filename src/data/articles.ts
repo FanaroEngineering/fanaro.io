@@ -479,4 +479,13 @@ export const articlesMetadata: Article[] = [
     mainTopic: Topic.go,
     otherTopics: [Topic.tsumego],
   },
+  {
+    index: 65,
+    title: "Fundamentos de Go &mdash; Tsumegos Parte I",
+    link: "/articles/tsumegos_1/tsumegos_1.html",
+    date: Date.UTC(2019, 2, 11),
+    languages: [Language.portuguese],
+    mainTopic: Topic.go,
+    otherTopics: [Topic.tsumego],
+  },
 ];
