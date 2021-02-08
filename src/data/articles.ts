@@ -48,6 +48,15 @@ export default interface Article {
 
 export const articlesMetadata: Article[] = [
   {
+    index: 112,
+    title: "FIC: Fast Immutable Collections, for Dart",
+    link: "/articles/fic/fic.html",
+    date: Date.UTC(2021, 1, 6),
+    languages: [Language.english],
+    mainTopic: Topic.programming,
+    otherTopics: [Topic.dart],
+  },
+  {
     index: 111,
     title: "Guia Completo de Contagem de Pontos",
     link: "/articles/contagem_guia_completo/contagem_guia_completo.html",
