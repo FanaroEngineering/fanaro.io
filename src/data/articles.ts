@@ -19,6 +19,7 @@ export enum Topic {
   productivity = "Productivity",
   psychology = "Psychology",
   math = "Math",
+  statistics = "Statistics",
   browserExtension = "Browser Extension",
   programming = "Programming",
   dart = "Dart",
@@ -450,5 +451,14 @@ export const articlesMetadata: Article[] = [
     languages: [Language.portuguese],
     mainTopic: Topic.go,
     otherTopics: [Topic.myYouTubeChannel],
+  },
+  {
+    index: 68,
+    title: "Formulário e Estatísticas sobre o Go Brasileiro",
+    link: "/articles/estatisticas_go_br/estatisticas_go_br.html",
+    date: Date.UTC(2019, 2, 25),
+    languages: [Language.portuguese],
+    mainTopic: Topic.go,
+    otherTopics: [Topic.statistics],
   },
 ];

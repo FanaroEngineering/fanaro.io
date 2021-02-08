@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <title>Formulário e Estatísticas sobre o Go Brasileiro</title>
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+
+    <meta name="author" content="Philippe Fanaro" />
+    <meta
+      name="description"
+      content="Formulário e Estatísticas sobre o Go Brasileiro"
+    />
+
+    <meta property="og:image" content="thumbnail.jpg" />
+    <meta
+      property="og:description"
+      content="Formulário e Estatísticas sobre o Go Brasileiro"
+    />
+    <meta
+      property="og:title"
+      content="Formulário e Estatísticas sobre o Go Brasileiro"
+    />
+    <meta property="og:site_name" content="fanaro.io" />
+    <meta property="og:type" content="blog" />
+
+    <script src="../../index.js"></script>
+
+    <link rel="stylesheet" href="../../index.css" />
+    <link rel="icon" type="image/svg+xml" href="../../assets/favicon.svg" />
+  </head>
+  <body>
+    <article>
+      <img src="thumbnail.jpg" alt="Thumbnail" />
+
+      <h1>Formulário e Estatísticas sobre o Go Brasileiro</h1>
+
+      <section>
+        <custom-h2 text="Introdução"></custom-h2>
+
+        <p>
+          Para aqueles que acompanharam meu post no grupo
+          <a href="https://www.facebook.com/groups/gobrasil/">Go Brasil</a> do
+          Facebook, peço desculpas pela demora. Mas confesso que uma pequena
+          justificativa pelo menos há: em um grupo de mais de 1000 pessoas, só
+          obtive 36 respostas. É bastante desmotivante presenciar algo assim, e
+          isso resume bem o cenário do Go brasileiro, uma comunidade que não
+          consegue crescer organicamente. Globalmente, é fato que jogos de
+          tabuleiro possuem dificuldades para desenvolver e manter suas bases;
+          porém, dado que temos uma sede da Nihon Kiin e outros eventos
+          asiáticos, o nosso caso chega a ser patológico.
+        </p>
+
+        <p>
+          De qualquer forma, obtive já um número razoável para começar a tirar
+          algumas estatísticas de nossa população goísta &mdash; antigamente,
+          antes da era dos dados massivos, era comum estimar que 30 amostras
+          seriam já suficientes para se obter primeiras estatísticas. Depois de
+          reunir mais sugestões e consultar alguns amigos, pretendo sedimentar
+          um questionário rotineiro que deixarei ativo de tempos em tempos no
+          Facebook e aqui.
+        </p>
+
+        <p>
+          Como fatores mais surpreendentes da pesquisa até agora, mencionaria o
+          fato de que há, sim, bastante vontade (> 64%) em se deslocar para
+          jogar Go ao vivo, além do considerável interesse em aulas &mdash;
+          aqui, fico um pouco assustado com o fato de que a grande maioria
+          colocou que não pagaria nada por elas: o professor viveria de quê? A
+          sua atenção tem poderes nutritivos? &mdash;, com uma média de
+          remuneração de aproximadamente R$ 40, nada mal se houvesse volume
+          considerável de demanda.
+        </p>
+
+        <p>Este relatório está divido nas seguintes macro-seções:</p>
+
+        <ul>
+          <li>Informações Gerais</li>
+          <li>Interesses</li>
+          <li>Sugestões</li>
+        </ul>
+
+        <p>
+          Já que ele será algo regular, acabei criando código em Python para
+          gerar os gráficos. Caso queira, você pode encontrá-lo
+          <a href="https://github.com/psygo/Go_Forms"
+            >neste repositório Github</a
+          >.
+        </p>
+
+        <p>
+          <strong>Importante</strong> Sempre que o gráfico/histograma estiver
+          com as barras na horizontal era possível marcar mais de uma opção para
+          a pergunta.
+        </p>
+      </section>
+
+      <section>
+        <custom-h2 text="Informações Gerais"></custom-h2>
+
+        <custom-h3 text="Idade"></custom-h3>
+
+        <p>
+          Adultos de meia idade provavelmente predominam na população goísta
+          brasileira.
+        </p>
+
+        <figure>
+          <img src="hist_idade-600x479.jpg" />
+        </figure>
+
+        <custom-h3 text="Força"></custom-h3>
+
+        <p>Grande parte dos que responderam possuem nível alto.</p>
+
+        <figure>
+          <img src="pie_forca-600x473.jpg" />
+        </figure>
+
+        <custom-h3 text="Experiência"></custom-h3>
+
+        <p>A maior parte dos respondentes são jogadores mais experientes.</p>
+
+        <img src="hist_exp-600x429.jpg" />
+
+        <custom-h3 text="Percentual de Tempo que Go toma da Vida"></custom-h3>
+
+        <p>
+          O tempo aqui é normalizado por semana. Há algumas pessoas se dedicando
+          consideravelmente ao jogo.
+        </p>
+
+        <img src="hist_perc_temp-600x429.jpg" />
+
+        <custom-h3 text="Posição do Go em relação a Outros Jogos"></custom-h3>
+
+        <p>
+          Aqui, pedimos para que o jogador ranqueie Go dentre todos os jogos que
+          conhece.
+        </p>
+
+        <img src="hist_go_rank-600x429.jpg" />
+
+        <custom-h3 text="Residência: Cidade"></custom-h3>
+
+        <p>O 2.8% representa uma amostra somente.</p>
+
+        <img src="pie_cidade-600x572.jpg" />
+
+        <custom-h3 text="Servidores mais Utilizados"></custom-h3>
+
+        <p>
+          Alguns servidores não haviam sido listados inicialmente, mas, graças a
+          sugestões, eu os incluí mais tarde, o que pode mudar um pouco os
+          resultados. Porém, eles são tão pouco utilizados que não haverá muitas
+          mudanças significativas.
+        </p>
+
+        <img src="mult_hist_servidor-600x419.jpg" />
+
+        <custom-h3 text="Horário de Jogo"></custom-h3>
+
+        <p>
+          Como já era de se esperar, a maior parte dos jogadores brasileiros
+          joga à noite, o que se deve ao fato de muitos trabalharem durante o
+          dia.
+        </p>
+
+        <custom-h3 text="Habilidades em Outras Línguas"></custom-h3>
+
+        <p>
+          A esmagadora maioria das pessoas fala inglês, mas há muitas pessoas
+          com habilidades linguísticas variadas.
+        </p>
+
+        <img src="mult_hist_lingua-600x391.jpg" alt="" />
+
+        <custom-h3 text="Go Ajuda Educacionalmente?"></custom-h3>
+
+        <p>
+          Considero que Go, visto que simulação das emoções e lições da vida
+          real em velocidade muito acelerada, me ajudou muito a melhorar como
+          ser humano e profissional. Fico feliz em saber que quase todos os
+          outros experienciaram o mesmo que eu.
+        </p>
+
+        <img src="pie_go_educ-600x562.jpg" alt="" />
+
+        <custom-h3 text="Expectativas sobre as Partidas"></custom-h3>
+
+        <p>
+          Os jogadores mais assíduos que conheci partilham da mesma opinião de
+          que é difícil se dedicar ludicamente ao Go. Contudo, não é essa a
+          opinião dos brasileiros aparentemente.
+        </p>
+
+        <img src="pie_go_expec-600x371.jpg" alt="" />
+
+        <custom-h3 text="Número de Livros de Go"></custom-h3>
+
+        <p>
+          Até que há uma quantidade razoável de pessoas com bastantes livros. A
+          média aqui não é muito relevante pois a distribuição possui uma cauda
+          longa.
+        </p>
+
+        <img src="hist_livros-600x479.jpg" alt="" />
+      </section>
+
+      <section>
+        <custom-h2 text="Interesses"></custom-h2>
+
+        <custom-h3 text="Deslocamento para Jogar ao Vivo"></custom-h3>
+
+        <p>Há bastante interesse em se deslocar para jogar ao vivo.</p>
+
+        <img src="pie_int_desloc-600x381.jpg" alt="" />
+
+        <custom-h3 text="Em qual Dia da Semana?"></custom-h3>
+
+        <p>
+          Apesar de amigos meus advogarem por quarta ou quinta como dia para
+          jogar ao vivo &mdash; devido ao fato de as pessoas quererem sair no
+          final de semana &mdash;, a maior parte dos jogadores prefere fazê-lo
+          aos sábados.
+        </p>
+
+        <img src="mult_hist_int_desloc_dia-600x422.jpg" alt="" />
+
+        <custom-h3 text="De Onde?"></custom-h3>
+
+        <p>
+          Interessante notar que o Sesi é tão popular. A Nihon Kiin, apesar de
+          ser um espaço criado para se jogar Go, não chama tanto o interesse dos
+          respondentes &mdash; não esqueçamos o fato de que há muitas pessoas de
+          fora de São Paulo preenchendo o formulário também.
+        </p>
+
+        <img src="mult_hist_int_desloc_loc-600x335.jpg" alt="" />
+
+        <custom-h3 text="Tempo Máximo de Deslocamento?"></custom-h3>
+
+        <p>
+          Até que o tempo aceitável máximo de deslocamento não é tão baixo. É
+          possível até mesmo atravessar certas cidades com eles.
+        </p>
+
+        <img src="pie_int_desloc_tempo-600x609.jpg" alt="" />
+
+        <custom-h3 text="Tempo Gasto com Vídeos de Go"></custom-h3>
+
+        <p>
+          O tempo desta pergunta é normalizado por semana. Provavelmente, quem
+          respondeu números muito grandes pensou que era minutos por semana.
+        </p>
+
+        <img src="hist_tempo_videos-600x479.jpg" alt="" />
+
+        <custom-h3 text="Aulas de Go"></custom-h3>
+
+        <p>Há bastante interesse em aulas.</p>
+
+        <img src="mult_hist_int_aulas-600x380.jpg" alt="" />
+
+        <custom-h3 text="Quanto Pagaria?"></custom-h3>
+
+        <p>
+          O valor médio não é muito baixo, mas o fato de que muitos não se
+          disporiam a pagar nada é muito desmotivante par quem quiser se
+          aventurar na área. A pessoa viverá de que se não houver pagamento? Sua
+          sabedoria e experiência não possuem valor monetário?
+        </p>
+
+        <img src="hist_int_aulas_valor-600x481.jpg" alt="" />
+
+        <custom-h3 text="Faceta Mais Importante do Jogo"></custom-h3>
+
+        <p>
+          Depois de muito viajar e jogar, descobri, finalmente, que, na verdade,
+          o mais importante não é progredir, mas, sim, vencer. Não sei se muitos
+          outros jogadores caem nessa mesma armadilha em que eu caí (acredito
+          que sim), mas a resposta obtida foi que progredir é sim mais
+          importante.
+        </p>
+
+        <img src="pie_importancia-600x530.jpg" alt="" />
+
+        <custom-h3 text="Esportes Mentais ou Físicos?"></custom-h3>
+
+        <p>
+          Houve sugestão de que deveria haver uma terceira opção para aqueles
+          que dão a mesma importância para ambas as modalidades. Francamente,
+          prefiro não incluí-la pois muitos se sentiriam seduzidos por ela, uma
+          vez que seria a supostamente mais sábia.
+        </p>
+
+        <img src="pie_esportes-600x611.jpg" alt="" />
+
+        <custom-h3 text="Competições e Eventos de Go"></custom-h3>
+
+        <p>
+          O interesse grande aqui me surpreendeu um bocado. Se ele se
+          concretizaria em ações é outra história.
+        </p>
+
+        <img src="pie_int_comp-600x611.jpg" alt="" />
+
+        <custom-h3
+          text="Pretende Participar do Toneio Iberoamericano deste Ano?"
+        ></custom-h3>
+
+        <p>
+          Esta é a única pergunta com alto teor de especificidade do formulário
+          inteiro, só a incluí devido ao Torneio Iberoamericano deste ano ser em
+          São Paulo.
+        </p>
+
+        <img src="pie_ibero-600x610.jpg" alt="" />
+      </section>
+
+      <section>
+        <custom-h2 text="Sugestões"></custom-h2>
+
+        <p>
+          Há muito o que melhorar. Não me atentei a certos detalhes e à expansão
+          do leque de questões pois meu intuito inicial era só fazer um primeiro
+          teste para ver como a comunidade reagiria e quais seriam os
+          resultados. No entanto, houve bastante apoio ao longo deste mês e
+          pretendo que este formulário se torne algo regular e que fique fixado
+          não só no grupo Go Brasil do Facebook, como no meu próprio site.
+        </p>
+
+        <p>
+          Duas mudanças que implementarei já na próxima versão serão: inclusão
+          opcional de email; e adicionar uma seção para expectativas e
+          avaliações sobre o cenário do Go brasileiro.
+        </p>
+      </section>
+    </article>
+  </body>
+</html>
