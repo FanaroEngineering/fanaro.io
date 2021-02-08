@@ -433,4 +433,13 @@ export const articlesMetadata: Article[] = [
     mainTopic: Topic.comedy,
     otherTopics: [Topic.myYouTubeChannel],
   },
+  {
+    index: 70,
+    title: "Jogando Online | Tygem 2",
+    link: "/articles/tygem_2/tygem_2.html",
+    date: Date.UTC(2019, 3, 30),
+    languages: [Language.portuguese],
+    mainTopic: Topic.go,
+    otherTopics: [Topic.myYouTubeChannel],
+  },
 ];
