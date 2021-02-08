@@ -1,6 +1,9 @@
 name: fic_example
 author: Philippe Fanaro <philippefanaro@gmail.com
 
+environment:
+  sdk: ">=2.10.0 <3.0.0"
+
 dependencies:
   fast_immutable_collections: ^1.0.19
   collection: ^1.14.13
