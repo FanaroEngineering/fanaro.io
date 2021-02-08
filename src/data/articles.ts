@@ -407,12 +407,21 @@ export const articlesMetadata: Article[] = [
     otherTopics: [Topic.philosophy, Topic.meta, Topic.social],
   },
   {
-    index: 74,
+    index: 73,
     title: "Say Hello to My AI Friend",
     link: "/articles/say_hello_to_my_ai_friend/say_hello_to_my_ai_friend.html",
     date: Date.UTC(2019, 4, 11),
     languages: [Language.portuguese, Language.english],
     mainTopic: Topic.go,
     otherTopics: [Topic.comedy, Topic.meta],
+  },
+  {
+    index: 72,
+    title: "Quase Morrendo | Tygem 3",
+    link: "/articles/tygem_3/tygem_3.html",
+    date: Date.UTC(2019, 4, 2),
+    languages: [Language.portuguese],
+    mainTopic: Topic.go,
+    otherTopics: [],
   },
 ];
