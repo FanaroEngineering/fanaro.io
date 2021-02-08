@@ -399,6 +399,15 @@ export const articlesMetadata: Article[] = [
   },
   {
     index: 74,
+    title: "Negative Language: WHY you should avoid it",
+    link: "/articles/negative_language/negative_language.html",
+    date: Date.UTC(2019, 6, 11),
+    languages: [Language.english],
+    mainTopic: Topic.psychology,
+    otherTopics: [Topic.philosophy, Topic.meta, Topic.social],
+  },
+  {
+    index: 74,
     title: "Say Hello to My AI Friend",
     link: "/articles/say_hello_to_my_ai_friend/say_hello_to_my_ai_friend.html",
     date: Date.UTC(2019, 4, 11),
