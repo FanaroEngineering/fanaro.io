@@ -422,6 +422,15 @@ export const articlesMetadata: Article[] = [
     date: Date.UTC(2019, 4, 2),
     languages: [Language.portuguese],
     mainTopic: Topic.go,
-    otherTopics: [],
+    otherTopics: [Topic.myYouTubeChannel],
+  },
+  {
+    index: 71,
+    title: "Quadra Molhada? Sem problemas.",
+    link: "/articles/quadra_molhada/quadra_molhada.html",
+    date: Date.UTC(2019, 3, 30),
+    languages: [Language.portuguese],
+    mainTopic: Topic.comedy,
+    otherTopics: [Topic.myYouTubeChannel],
   },
 ];
