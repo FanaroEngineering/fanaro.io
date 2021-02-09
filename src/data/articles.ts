@@ -606,4 +606,13 @@ export const articlesMetadata: Article[] = [
       Topic.social,
     ],
   },
+  {
+    index: 52,
+    title: "Revisão: Philippe Fanaro [1d] vs Carlos Dutra [?k]",
+    link: "/articles/revisao_carlos/revisao_carlos.html",
+    date: Date.UTC(2018, 10, 3),
+    languages: [Language.portuguese],
+    mainTopic: Topic.go,
+    otherTopics: [Topic.review],
+  },
 ];
