@@ -20,6 +20,13 @@
 		],
 		"description": "Complete IMG HTML tag"
 	},
+	"figcaption": {
+		"prefix": "figcaption",
+		"body": [
+			"<figcaption>$1</figcaption>"
+		],
+		"description": "The figcaption HTML tag"
+	},
 	"foot-note": {
 		"prefix": "foot-note",
 		"body": [
