@@ -544,4 +544,13 @@ export const articlesMetadata: Article[] = [
     mainTopic: Topic.go,
     otherTopics: [Topic.fuseki],
   },
+  {
+    index: 58,
+    title: "Critique de Livre: Le Potentiel Érotique de Ma Femme",
+    link: "/articles/potentiel_erotique/potentiel_erotique.html",
+    date: Date.UTC(2018, 11, 4),
+    languages: [Language.french, Language.english, Language.portuguese],
+    mainTopic: Topic.literature,
+    otherTopics: [Topic.writing],
+  },
 ];
