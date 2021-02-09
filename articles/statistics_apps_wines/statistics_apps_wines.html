@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>
+      Statistics: Paid Apps vs Free Apps? Expensive Wines vs Cheap Wines?
+    </title>
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+
+    <meta name="author" content="Philippe Fanaro" />
+    <meta
+      name="description"
+      content="Statistics: Paid Apps vs Free Apps? Expensive Wines vs Cheap Wines?"
+    />
+
+    <meta property="og:image" content="thumbnail.jpg" />
+    <meta
+      property="og:description"
+      content="Statistics: Paid Apps vs Free Apps? Expensive Wines vs Cheap Wines?"
+    />
+    <meta
+      property="og:title"
+      content="Statistics: Paid Apps vs Free Apps? Expensive Wines vs Cheap Wines?"
+    />
+    <meta property="og:site_name" content="fanaro.io" />
+    <meta property="og:type" content="blog" />
+
+    <script src="../../index.js"></script>
+
+    <link rel="stylesheet" href="../../index.css" />
+    <link rel="icon" type="image/svg+xml" href="../../assets/favicon.svg" />
+  </head>
+  <body>
+    <article>
+      <img src="thumbnail.jpg" alt="Thumbnail" />
+
+      <h1>
+        Statistics: Paid Apps vs Free Apps? Expensive Wines vs Cheap Wines?
+      </h1>
+
+      <section>
+        <custom-h2 text="About the Datasets"></custom-h2>
+
+        <p>
+          These datasets come from
+          <a href="https://www.kaggle.com/datasets">Kaggle</a> and have been
+          upvoted quite consistently by the community. The
+          <a href="https://www.kaggle.com/lava18/google-play-store-apps"
+            >Apps Dataset</a
+          >
+          comes from web scraping the Google Play Store on 10,000 apps and
+          64,000 reviews &mdash; though it seems to have some repeated lines on
+          it, which effectively makes it a 8,900 apps dataset. And the
+          <a href="https://www.kaggle.com/zynicide/wine-reviews/home"
+            >Wines Dataset</a
+          >
+          comes from web scraping the
+          <a href="https://www.winemag.com/?s=&drink_type=wine"
+            >WineEnthusiast</a
+          >
+          website &mdash; and it also suffers from repeated lines: it goes from
+          150,000 to 90,000 reviews. All this data offers invaluable insights
+          about the app and wine markets, some of which we will discuss here.
+        </p>
+
+        <p>
+          In order to study these datasets, I’ve taken the time of refreshing my
+          Statistics background with an incredible Udemy course by Jose Portilla
+          &mdash; he manages to create a very simple, practical and easy to
+          learn approach to the subject &mdash;:
+          <a
+            href="https://www.udemy.com/probability-and-statistics-for-business-and-data-science/"
+            >Probability and Statistics for Business and Data Science</a
+          >. The statistical tests discussed in the second half of the course
+          will be useful to attest our findings. I’ve also made my course notes
+          and a mind map available, along with my Python code, in
+          <a href="https://github.com/psygo/Statistics">this Github Repo</a>.
+        </p>
+      </section>
+
+      <section>
+        <custom-h2 text="Paid Apps vs Free Apps"></custom-h2>
+
+        <figure>
+          <img src="google_price_x_rating.jpg" alt="Google Price x Rating" />
+          <figcaption>
+            Right off the bat, we can see that, for different prices, we can get
+            very different ratings, meaning that price might not be very
+            correlated with quality.
+          </figcaption>
+        </figure>
+
+        <p>
+          First, let’s take a look at the general characteristics of the data.
+          From the graphs below, histograms that show the percentage of apps for
+          each range of rating, we can clearly see that the majority of the apps
+          stand within the range of 4.0 to 4.5 (a little bit more than 50%), and
+          the apps that manage to get really good scores represent at best 7% of
+          the market.
+        </p>
+
+        <figure>
+          <img src="google_hist_ratings.jpg" alt="" />
+        </figure>
+
+        <figure>
+          <img src="google_hist_ratings_detailed.jpg" alt="" />
+        </figure>
+
+        <figure>
+          <img src="google_hist_prices.jpg" alt="" />
+        </figure>
+
+        <p>
+          Now, when it comes to prices, this dataset is &mdash; as is reality
+          &mdash; heavily skewed towards free apps, since they represent most of
+          the Google Play Store<foot-note
+            text="Or, at least, the one depicted in the dataset."
+          ></foot-note
+          >. Effectively, only 7% &mdash; coincidentally, but totally
+          uncorrelated, the same percentage of apps that happen to get the
+          highest scores &mdash; that of the apps are paid, and that’s why the
+          statistical tests briefly mentioned at the beginning of the post will
+          come in handy.
+        </p>
+
+        <p>
+          But, first, let’s take a look at the means and standard
+          deviations<foot-note
+            text="For those who don’t know what standard deviation is: 
+            essentially, it is a measurement of how far the data is from the 
+            average, i.e., a measurement of dispersion."
+          ></foot-note>
+          of the ratings and the prices. Although, the vast majority of the
+          prices are zero, the mean is slightly off, reaching $0.97, with a very
+          high standard deviation of 16.2. This is due to the fact that there
+          are some apps at very high prices, like $399 for the app
+          <em>I Am Rich Pro</em> &mdash; which offers no content and is actually
+          (obviously) a joke<foot-note
+            text="Its reviews are quite hilarious."
+          ></foot-note
+          >. As for the ratings, their mean is at 4.18 and, if you were to
+          consider them as normally distributed as an approximation<foot-note
+            text="Most phenomena in life are normally distributed, like 
+            height, weight, flips of coins, etc."
+          ></foot-note
+          >, 66% of them would range from 3.66 to 4.70, a standard deviation of
+          approximately 0.52. This rating mean will be useful for us later, when
+          we assess the difference between free and paid apps.
+        </p>
+
+        <p>
+          Now, after some lines of code to divide our data into the two
+          categories, we finally arrive at the difference in quality between
+          paid and free apps. The mean and standard deviations (std) for the
+          free apps remain intact (4.18 and 0.52, respectively), since they were
+          the overwhelming majority in the data. On the other hand, indeed, the
+          paid apps offer us an improvement, with a mean of 4.26, though with an
+          std of 0.56. But the question now is: is this difference due to
+          oscillations in the data or is it truly the reality?
+        </p>
+
+        <p>
+          To answer that question, we can use a statistical test, which would
+          try to discern the statistical differences between the two samples, a
+          not so trivial task, specially because the size of the groups is very
+          different. I’ve coded two tests which both work in this case: the
+          Student’s t-Test and the ANOVA Test. ANOVA will try to discern the
+          variance between groups (useful information) from the variance within
+          groups (useless information or noise), while the Student’s t-Test will
+          use the ratio between the difference of the means and the samples
+          variabilities. In the end, you will compare your coefficient to
+          another, theoretically calculated, that will give you, within a
+          percentage of confidence, their likelihood of being similar. In our
+          case, for the ANOVA test, we get that, with 99% confidence, our
+          results do hold true (our F = 12.88 > 6.63 = the critical F
+          coefficient) – a similar difference can be obtained for the Student’s
+          t-Test, with our t = 3.38 > 2.33 = the critical t
+          coefficient<foot-note
+            text="Summarizing everything in a paragraph feels like a 
+            disrespect to my brain…"
+          ></foot-note
+          >.
+        </p>
+
+        <p>
+          So… indeed, with at least 99% confidence, paid apps are better than
+          free apps. But should you care? Again, the difference is minuscule,
+          less than 0.1 in a scale of 0 to 5, with a much bigger variability
+          than the difference itself. Of course, this difference is much more
+          complex, because, in reality, the revenue usually doesn’t come
+          directly from buying the app &mdash; and there are many more variables
+          to account for; nevertheless, we can safely say that a paid app is not
+          at all a safe bet for better quality.
+        </p>
+      </section>
+
+      <section>
+        <custom-h2 text="Cheap Wines vs Expensive Wines"></custom-h2>
+
+        <p>
+          We will perform a similar procedure to the one used with the apps
+          dataset. But first let’s take a look at a problem that also happens
+          with apps and is much more flagrant here:
+        </p>
+
+        <figure>
+          <img src="wines_prices_x_points.jpg" alt="" />
+        </figure>
+
+        <p>
+          The graph above is a scatter plot of the price versus the rating or
+          points (0 to 100), and we can clearly see that, for one given rating,
+          we can get a wide range of prices, that is, to get a better wine, you
+          don’t necessarily need to buy an expensive one.
+        </p>
+
+        <p>
+          Let’s move on with the analysis and take a look at some histograms:
+        </p>
+
+        <figure>
+          <img src="hist_wine_prices.jpg" alt="" />
+          <figcaption>
+            The prices go up to $2300 in this dataset, but I chose to zoom into
+            a narrower range to get a better look at the shape.
+          </figcaption>
+        </figure>
+
+        <figure>
+          <img src="hist_wine_points-1.jpg" alt="" />
+        </figure>
+
+        <p>
+          The wine prices mean is of about $33, somewhat reasonable, but with an
+          std of $37, a very big spread. When it comes to points, the shape is
+          much closer to a normal distribution, with a mean of 87.87 and a std
+          of 3.22, i.e., 66% of all the wines would have 84-90 points, or 95% of
+          them would have 81-93 points; quite a lot of points, meaning that most
+          wines do indeed have quality.
+        </p>
+
+        <p>
+          Next, we divide the wines into 3 categories, that I’ve named as cheap
+          (up to $10), expensive (from $10 to $100) and super expensive (more
+          than $100). The respective means and stds are: 84.69, 2.06; 87.98,
+          3.06; 92.80, 2.82. And, given that we now have samples around the
+          thousands, we can safely say<foot-note
+            text="I actually did test them with ANOVA and they passed with 
+            absurd margins."
+          ></foot-note>
+          that there is indeed a meaningful statistical difference between these
+          categories.
+        </p>
+
+        <p>
+          Nonetheless, don’t be so sure about what that means in the real world,
+          because numerous accounts report that oenophiles are very biased
+          towards poshy wines. My suggestion is to be satisfied with cheap wines
+          if you can’t buy the more expensive ones, since they have decently
+          high scores anyway.
+        </p>
+
+        <p>
+          Another interesting sidenote before we wrap up this post is about the
+          wine champions of this dataset: what are their prices? It will not
+          surprise you that some of them have steep fees, but you can,
+          unexpectedly, buy the top of the litter without going broke. Here are
+          the 100-pointers (by name, country, region and price, respectively):
+        </p>
+
+        <ul>
+          <li>En Chamberlin Vineyard, USA, Oregon, $65</li>
+          <li>Litton Estate Vineyard, USA, California, $100</li>
+          <li>Guado de Gemoli, ITA, Tuscany, $195</li>
+          <li>Unknown, USA, California, $200</li>
+          <li>Occhio di Pernice, ITA, Tuscany, 210</li>
+          <li>Hillside Select, USA, California, $215</li>
+          <li>Red Wine, USA, California, $245</li>
+          <li>Rare, AUS, Victoria, $300</li>
+          <li>Masseto, ITA, Tuscany, $460</li>
+          <li>Unknown, FRA, Bordeaux, $848</li>
+          <li>Clos du Mesnil, FRA, Champagne, $1400</li>
+        </ul>
+      </section>
+    </article>
+  </body>
+</html>

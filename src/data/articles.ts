@@ -562,4 +562,14 @@ export const articlesMetadata: Article[] = [
     mainTopic: Topic.go,
     otherTopics: [Topic.fuseki],
   },
+  {
+    index: 56,
+    title:
+      "Statistics: Paid Apps vs Free Apps? Expensive Wines vs Cheap Wines?",
+    link: "/articles/statistics_apps_wines/statistics_apps_wines.html",
+    date: Date.UTC(2018, 10, 27),
+    languages: [Language.english],
+    mainTopic: Topic.statistics,
+    otherTopics: [Topic.dataScience],
+  },
 ];
