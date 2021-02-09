@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Some Interesting Go Statistics</title>
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+
+    <meta name="author" content="Philippe Fanaro" />
+    <meta name="description" content="Some Interesting Go Statistics" />
+
+    <meta property="og:image" content="thumbnail.png" />
+    <meta property="og:description" content="Some Interesting Go Statistics" />
+    <meta property="og:title" content="Some Interesting Go Statistics" />
+    <meta property="og:site_name" content="fanaro.io" />
+    <meta property="og:type" content="blog" />
+
+    <script src="../../index.js"></script>
+    <script
+      src="https://polyfill.io/v3/polyfill.min.js?features=es6"
+      defer
+    ></script>
+    <script
+      id="MathJax-script"
+      async
+      defer
+      src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
+    ></script>
+
+    <link rel="stylesheet" href="../../index.css" />
+    <link rel="icon" type="image/svg+xml" href="../../assets/favicon.svg" />
+  </head>
+  <body>
+    <article>
+      <img src="thumbnail.jpg" alt="Thumbnail" />
+
+      <h1>Some Interesting Go Statistics</h1>
+
+      <section>
+        <custom-h2 text="Introduction"></custom-h2>
+
+        <p>
+          This is part of an experiment I’ve been wanting to do for quite some
+          time, I’ve always wanted to know some Go statistics. Now that I have
+          the massive
+          <a href="https://gogodonline.co.uk/">GoGoD</a> database<foot-note
+            text="The go4go database also seems to be quite adequate for this 
+            sort of task."
+          ></foot-note
+          >, I can finally try it out. In this post I will focus on only a few
+          questions though; nonetheless, I would love to hear if people have
+          other creative ones that could be answered with the same data.
+        </p>
+
+        <p>
+          What I did was to simply scan all of the games from the GoGoD database
+          using Python and Regular Expressions (patterns in text) to extract the
+          information from each SGF file. After going through all the pain of
+          scraping the database, I found out that the database software it ships
+          with allows for exporting all the data (except for the games
+          themselves) through a CSV file. But when I tried that feature, it
+          wasn’t working properly, the exporting process would always give me an
+          error. Thus, I continued on with my code, it wasn’t a waste of time
+          after all &mdash; I did learn many things about regular expressions
+          anyway.
+        </p>
+
+        <p>
+          After the painstaking process of extracting the data, I finally
+          managed to get everything into a Pandas DataFrame; it’s a bit tough on
+          your computer since it has approximately 200 MB of data, but ok. If
+          you get rid of the moves column, it goes down to only 13 MB. Anyway, I
+          don’t want to make either of the tables freely available because it
+          probably infringes a lot of the copyrights of the GoGoD database.
+          Despite that, I can make my code available, as you can basically only
+          try it if you have paid for the product, and you can find it in this
+          <a href="https://github.com/psygo/GoGoD">Github Repo</a> &mdash; if
+          you have the know-how, try checking and reproducing my results, it’s
+          important to have results verified in science after all… Now let’s
+          move on to some of the statistics.
+        </p>
+      </section>
+
+      <section>
+        <custom-h2 text="The players with the most games played"></custom-h2>
+
+        <p>
+          This one is not so interesting since you can just manually scrape
+          <a href="https://go4go.net/go/">go4go</a> and find out who the
+          champions are. It’s no surprise to any veteran Go player that the
+          winners of the ranking would be Cho Chikun 9p and Cho Hunhyeon 9p.
+          Nonetheless, here are the top 10 as of the date I bought the database,
+          about 3 months ago:
+        </p>
+
+        <ol>
+          <li>Cho Chikun (2142)</li>
+          <li>Cho Hunhyeon (2023)</li>
+          <li>Lee Changho (1917)</li>
+          <li>Rin Kaiho (1705)</li>
+          <li>Hashimoto Utaro (1552)</li>
+          <li>Kobayashi Koichi (1427)</li>
+          <li>Seo Bongsoo (1367)</li>
+          <li>Sakata Eio (1349)</li>
+          <li>Kato Masao (1336)</li>
+          <li>Lee Sedol (1295)</li>
+        </ol>
+      </section>
+
+      <section>
+        <custom-h2 text="Mean Length of a Go Game"></custom-h2>
+
+        <p>
+          I think it was in the Ogawa & Davies’s book about the yose (endgame)
+          that I first read about this statistic, and it seems that they were
+          pretty much on point, because in the book they estimated &mdash;
+          probably from studies with pros &mdash; it as 220; and, from this
+          database, it seems to be around 208<foot-note
+            text="In my code, it will be 206.9, but my parser seems to be 
+            missing one move for every Go file, so we should sum 1 point to the 
+            mean. Anyway, it isn’t that much of a difference."
+          ></foot-note
+          >. If you move forward to recent times, the average seems to have only
+          been going up: 198 for the first 20,000 games, and upwards to 215 in
+          the last 5,000. This increase in the length of games is probably an
+          effect of the highly competitive environment we have today.
+        </p>
+
+        <p>
+          In their book about the endgame, that number was used to show that not
+          only is Go a marathon, but about half of the game is spent in the
+          yose, because the last part of the game usually ranges from 100-150
+          moves. Henceforth, I hope you have no excuse for neglecting the
+          endgame.
+        </p>
+
+        <p>
+          This kind of statistic is also somewhat relevant for calculating the
+          complexity of Go. One common estimate is to assume that, on average,
+          Go has 5 candidate moves per turn<foot-note
+            text="Don’t ask me the rationale behind that. It probably comes 
+            from someone’s intuition."
+          ></foot-note
+          >, which yields \(5^{210} \approx 10^{146}\) plausible games. For
+          chess, people often use \(3^{50} \approx 10^{24}\) for humans; and
+          \(3^{80} \approx 10^{38}\) for machines.
+        </p>
+      </section>
+
+      <section>
+        <custom-h2 text="Histograms of the Players’ Ranks"></custom-h2>
+
+        <p>
+          What is the percentage of players for each rank<foot-note
+            text="I’ve used only the final career rank of each player."
+          ></foot-note
+          >? That’s probably the most curious statistic of this post/exercise.
+          Since our era is much different than the past or the overall Go
+          history, I decided to plot 3 graphs, one for the last 20,000 games
+          (out of 94,000), one for the 20,000 games before that, and one for all
+          of the games. You can see the results below.
+        </p>
+
+        <figure>
+          <img src="last-20000-ranks.png" alt="Rank Last 20k Games" />
+          <figcaption>
+            Histogram of the last 20,000 games. (-20,000 games)
+          </figcaption>
+        </figure>
+
+        <figure>
+          <img src="40000-to-20000-ranks.png" alt="" />
+          <figcaption>
+            Histogram of games -40,000 to -20,000. Zero means the most recent
+            game.
+          </figcaption>
+        </figure>
+
+        <figure>
+          <img src="all-ranks.png" alt="" />
+          <figcaption>Histogram of all games.</figcaption>
+        </figure>
+
+        <p>
+          It seems that nowadays a quarter of the active players is composed by
+          9 dan professionals, even though it’s the highest rank, which is
+          understandable because the end of the ranking acts as a bottleneck. I
+          would explain the higher numbers for the 1p-3p range as coming from
+          the fact that the effort to get there is much smaller than getting to
+          5p &mdash; there are some automatic promotions up to a certain rank
+          &mdash; and beyond, or at least that’s how most Go associations seem
+          to think it should be.
+        </p>
+
+        <p>
+          As for the global results, I would say that today’s ranking system is
+          harder?<foot-note
+            text="It could also be that there are far more players turning pro 
+            today than in the past. We would have to investigate more."
+          ></foot-note>
+          We have basically the same effect in less recent times (second graph),
+          but the first bottleneck then was not at 1p-3p, it was around 5p, so I
+          guess people are stagnating sooner nowadays. Is the root cause of all
+          this too much competition? Too many pros having to quit to find other
+          jobs? This would be a worthwhile comparison and study for the Asian Go
+          Associations, since it would show with numbers what is going on with
+          young professionals.
+        </p>
+      </section>
+
+      <section>
+        <custom-h2 text="Winning Percentages for Black and White"></custom-h2>
+
+        <p>
+          Out of all the games we have (close to 94,000), Black seems to have a
+          slight edge, at a 51.5% win rate. But, if you check the most recent
+          games, say, the last 5,000, the trend flips, and now White has the
+          approximate 51.5%.
+        </p>
+
+        <p>
+          The main problem with komi or trying to correct the percentage to the
+          perfect 50% is that, besides being inherently imbalanced, due to the
+          unattainable 0.5 point, there might not be a perfect compensation,
+          maybe the 19×19 board is imbalanced by definition. At any rate, this
+          1.5% sliver is kind of minuscule and shouldn’t change anyone’s life
+          &mdash; except for Ke Jie 9p’s… &mdash;, I mean at least until the
+          droids become living beings.
+        </p>
+      </section>
+
+      <section>
+        <custom-h2 text="Farewell"></custom-h2>
+
+        <p>
+          That’s it for me, I’m kind of out of ideas and wanting to enjoy my
+          vacation. I hope this article will spark some new questions somewhere,
+          just so we can explore them together.
+        </p>
+      </section>
+    </article>
+  </body>
+</html>

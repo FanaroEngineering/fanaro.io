@@ -507,4 +507,13 @@ export const articlesMetadata: Article[] = [
     mainTopic: Topic.go,
     otherTopics: [],
   },
+  {
+    index: 62,
+    title: "Some Interesting Go Statistics",
+    link: "/articles/go_statistics/go_statistics.html",
+    date: Date.UTC(2018, 11, 26),
+    languages: [Language.english],
+    mainTopic: Topic.go,
+    otherTopics: [Topic.statistics],
+  },
 ];
