@@ -6,6 +6,7 @@ export enum Language {
 
 export enum Topic {
   go = "Go",
+  fuseki = "Fuseki",
   tsumego = "Tsumego",
   joseki = "Joseki",
   goVariants = "Go Variants",
@@ -515,5 +516,14 @@ export const articlesMetadata: Article[] = [
     languages: [Language.english],
     mainTopic: Topic.go,
     otherTopics: [Topic.statistics],
+  },
+  {
+    index: 61,
+    title: "The Pocket Fuseki Encyclopedia",
+    link: "/articles/fuseki_encyclopedia/fuseki_encyclopedia.html",
+    date: Date.UTC(2018, 11, 24),
+    languages: [Language.english],
+    mainTopic: Topic.go,
+    otherTopics: [Topic.fuseki],
   },
 ];
