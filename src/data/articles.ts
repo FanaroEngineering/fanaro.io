@@ -20,6 +20,7 @@ export enum Topic {
   psychology = "Psychology",
   math = "Math",
   statistics = "Statistics",
+  dataScience = "Data Science",
   browserExtension = "Browser Extension",
   programming = "Programming",
   dart = "Dart",
@@ -487,5 +488,14 @@ export const articlesMetadata: Article[] = [
     languages: [Language.portuguese],
     mainTopic: Topic.go,
     otherTopics: [Topic.tsumego],
+  },
+  {
+    index: 64,
+    title: "The KDD 2009 Data Science Challenge",
+    link: "/articles/kdd_2009/kdd_2009.html",
+    date: Date.UTC(2019, 1, 27),
+    languages: [Language.english],
+    mainTopic: Topic.dataScience,
+    otherTopics: [Topic.statistics, Topic.math],
   },
 ];

@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>The KDD 2009 Data Science Challenge</title>
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+
+    <meta name="author" content="Philippe Fanaro" />
+    <meta name="description" content="The KDD 2009 Data Science Challenge" />
+
+    <meta
+      property="og:image"
+      content="Importance-Sum-x-Amount-of-Variables.png"
+    />
+    <meta
+      property="og:description"
+      content="The KDD 2009 Data Science Challenge"
+    />
+    <meta property="og:title" content="The KDD 2009 Data Science Challenge" />
+    <meta property="og:site_name" content="fanaro.io" />
+    <meta property="og:type" content="blog" />
+
+    <script src="../../index.js"></script>
+
+    <link rel="stylesheet" href="../../index.css" />
+    <link rel="icon" type="image/svg+xml" href="../../assets/favicon.svg" />
+  </head>
+  <body>
+    <article>
+      <img src="Importance-Sum-x-Amount-of-Variables.png" alt="Thumbnail" />
+
+      <h1>The KDD 2009 Data Science Challenge</h1>
+
+      <section>
+        <custom-h2 text="Introduction"></custom-h2>
+
+        <p>
+          The <a href="https://www.kdd.org/">KDD</a> (Knowledge Discovery and
+          Data Mining) Competition is an annual event that originated websites
+          like Kaggle. Most of the challenges there do not focus on money but
+          rather on knowledge and research itself.
+        </p>
+
+        <p>
+          Recently, as part of a firm’s selective process, I’ve been asked to
+          solve the
+          <a href="https://www.kdd.org/kdd-cup/view/kdd-cup-2009/Intro"
+            >2009 edition</a
+          >, alongside a cybersecurity mini-challenge. I had only one week to
+          complete it all, and the whole exercise set comprised even more tasks
+          &mdash; there is also a larger version of the dataset, with 15,000
+          variables instead of 260 &mdash;, thus, unfortunately, I’ve only
+          managed to get to the end of the minimum requirements. You can find my
+          code in this
+          <a href="https://github.com/psygo/KDD2009">github repo</a>.
+        </p>
+      </section>
+
+      <section>
+        <custom-h2 text="My Results"></custom-h2>
+
+        <p>
+          In the end, we are asked to make 3 predictions, churn, upselling and
+          appetency, and use ROC’s<foot-note
+            text="This is a graph where we plot the True Positive Rate 
+            (Sensitivity) versus the False Positive Rate (1 - Specificity)."
+          ></foot-note>
+          (Receiver Operating Characteristic) AUC (Area Under the Curve) as a
+          performance metric. Here are my results (using solely Gradient
+          Boosting):
+        </p>
+
+        <table>
+          <tbody>
+            <tr>
+              <th>Churn</th>
+              <th>.73202</th>
+            </tr>
+            <tr>
+              <th>Upselling</th>
+              <th>.86373</th>
+            </tr>
+            <tr>
+              <th>Appetency</th>
+              <th>.82624</th>
+            </tr>
+            <tr>
+              <th>Average</th>
+              <th>.80733</th>
+            </tr>
+          </tbody>
+        </table>
+
+        <p>
+          With these numbers, I would be around the 34th position of the Fast
+          Track Rankings. Come to think of it, I think I should have used
+          Stacked classifiers, instead of only Gradient Boosting (GB). And GB
+          can be deceiving sometimes, because it tends to overfit much more than
+          Random Forests. Anyway, this performance seems acceptable as a first
+          iteration.
+        </p>
+      </section>
+
+      <section>
+        <custom-h2 text="Outline"></custom-h2>
+
+        <p>
+          Here is the macro-algorithm I’ve used to get the results I’ve
+          mentioned:
+        </p>
+
+        <ol>
+          <li>
+            <strong>Prepreocessing</strong>
+
+            <ol>
+              <li>Imports</li>
+              <li>Opening the Data</li>
+              <li>Verifying Consistency</li>
+              <li>Feature Scaling</li>
+              <li>Deleting Vars with too many NaNs</li>
+              <li>Filling NaNs</li>
+              <li>Deleting Vars with too many Categories</li>
+              <li>Feature Selection with Decision Trees</li>
+            </ol>
+          </li>
+          <li>
+            <strong>Modeling</strong>
+
+            <ol>
+              <li>Imports</li>
+              <li>Train Test Split</li>
+              <li>Evaluating Models’ Performances (ROC-AUC)</li>
+            </ol>
+          </li>
+          <li>
+            <strong>Best Model Optimization (Gradient Boosting)</strong>
+
+            <ol>
+              <li>Separate Optimization</li>
+              <li>Global Optimization</li>
+              <li>Final Model’s ROC-AUC</li>
+            </ol>
+          </li>
+        </ol>
+      </section>
+
+      <section>
+        <custom-h2 text="Some Brief Notes"></custom-h2>
+
+        <p>
+          The targets are very sparse, which causes many problems, since putting
+          everything to zeros should be good enough to get very high levels of
+          accuracy.
+        </p>
+
+        <p>
+          To mitigate this effect, besides using ROC-AUC, FPR and TPR criteria,
+          we could resample the positive values of the targets. However, this
+          has not been proven very effective, neither Subsampling the negative
+          values nor using SMOTE to oversample the positive values worked very
+          well.
+        </p>
+
+        <p>
+          Another item to try in a later attempt is to calculate the
+          <strong>mutual info</strong>
+          scores (analogous to Pearson Correlations, but for classes), in order
+          to get how much information even the variables with many NaNs carry.
+          In this notebook, I’ve deliberately deleted variables with too many
+          NaNs instead.
+        </p>
+      </section>
+
+      <section>
+        <custom-h2 text="Some Insights"></custom-h2>
+
+        <p>
+          Two of the major preprocessing steps to get these results are dealing
+          with NaNs and categorical variables with too many categories.
+        </p>
+
+        <p>
+          The first problem was “solved” by deleting variables with more than
+          40,000 NaNs, i.e., more than 80% (the total is 50,000) of the training
+          dataset. As you can see from the image below, there is a considerable,
+          and hopefully not compromising, amount of them:
+        </p>
+
+        <figure>
+          <img src="histogram_nans.png" alt="Histogram NaNs" />
+        </figure>
+
+        <p>
+          The second preprocessing issue had a similar solution. From the graph
+          below we can see that there are quite a lot of categorical variables
+          with way too many categories to be considered useful. With 14,000
+          categories in a single variable and 50,000 samples, how will our
+          machine ever learn anything? I’ve established a visual cutoff and
+          deleted any variables with more than 2,000 categories &mdash; which is
+          also quite a lot actually.
+        </p>
+
+        <figure>
+          <img src="histogram-categories.png" alt="Histogram Categories" />
+        </figure>
+
+        <p>
+          The last, and probably most important &mdash; otherwise dealing with
+          this dataset is going to infeasible &mdash;, problem is feature
+          selection. We have to somehow filter out the variables which will not
+          aggregate much information. There are a number of ways of doing this;
+          a first one would be to get the variables which correlate the most
+          with the targets; an alternative would be to use a Decision Tree-like
+          algorithm to decide which features have more importance: and that’s
+          the path I chose.
+        </p>
+
+        <p>
+          After one-hot encoding the preprocessed training data set, we will
+          have around 1,000 variables, very cumbersome for a commodity PC;
+          however, as we can see from the graph below, the cumulative importance
+          sum tells us that 99% of the overall importance comes from around 600
+          variables, and, thus we manage to cut the dataset in half without much
+          loss.
+        </p>
+
+        <figure>
+          <img src="Importance-Sum-x-Amount-of-Variables.png" alt="" />
+        </figure>
+
+        <p>
+          Lastly, we have to choose the model in terms of performance and we can
+          see from the graph below that Gradient Boosting is performing better
+          than all the others. However, again, after a little bit of thought and
+          hindsight, now, I would suggest going for the Random Forests
+          algorithm, because the performance loss against GB is minimal and it
+          tends to generalize to test sets better.
+        </p>
+
+        <figure>
+          <img src="scaled-cross-validation-roc-auc-x-algorithm.png" alt="" />
+        </figure>
+
+        <p>
+          On a sidenote, I mention that I’ve also tested SVMs, but, aside taking
+          an unbearably long time to train, they do not perform very well,
+          sitting in-between the Logistic Regression’s and the Neural Network’s
+          performances. Also, Neural Networks have a lot of space to gain in
+          improvements, since the number of hidden layers and their sizes still
+          have to be optimized &mdash; I’ve tried it with 4 hidden layers of 300
+          neurons (~ number of variables / 2), deeper networks would likely be
+          better.
+        </p>
+      </section>
+    </article>
+  </body>
+</html>
