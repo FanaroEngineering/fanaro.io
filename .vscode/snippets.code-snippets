@@ -1,0 +1,67 @@
+{
+	"Custom H2": {
+		"prefix": "ch2",
+		"body": [
+			"<custom-h2 text=\"$1\"></custom-h2>"
+		],
+		"description": "Custom header level 2"
+	},
+	"Custom H3": {
+		"prefix": "ch3",
+		"body": [
+			"<custom-h3 text=\"$1\"></custom-h3>"
+		],
+		"description": "Custom header level 3"
+	},
+	"IMG": {
+		"prefix": "img",
+		"body": [
+			"<img src=\"$1\" alt=\"$2\" />"
+		],
+		"description": "Complete IMG HTML tag"
+	},
+	"foot-note": {
+		"prefix": "foot-note",
+		"body": [
+			"<foot-note text=\"$1\"></foot-note>"
+		],
+		"description": "The custom foot-note used in the fanaro.io website."
+	},
+	"fanaro_post": {
+		"prefix": "fanaro_post",
+		"body": [
+			"<!DOCTYPE html>",
+			"<html lang=\"en\">",
+			"  <head>",
+			"    <title>${1:title}</title>",
+			"",
+			"    <meta charset=\"UTF-8\" />",
+			"    <meta name=\"viewport\" content=\"width=device-width\" />",
+			"",
+			"    <meta name=\"author\" content=\"Philippe Fanaro\" />",
+			"    <meta name=\"description\" content=\"${1:title}\"/>",
+			"",
+			"    <meta property=\"og:image\" content=\"${2:thumbnail.png}\" />",
+			"    <meta property=\"og:description\" content=\"${1:title}\" />",
+			"    <meta property=\"og:title\" content=\"${1:title}\" />",
+			"    <meta property=\"og:site_name\" content=\"fanaro.io\" />",
+			"    <meta property=\"og:type\" content=\"blog\" />",
+			"",
+			"    <script src=\"../../index.js\"></script>",
+			"",
+			"    <link rel=\"stylesheet\" href=\"../../index.css\" />",
+			"    <link rel=\"icon\" type=\"image/svg+xml\" href=\"../../assets/favicon.svg\" />",
+			"  </head>",
+			"  <body>",
+			"    <article>",
+			"      <img src=\"${3:thumbnail.png}\" alt=\"${4:Thumbnail}\" />",
+			"",
+			"      <h1>${1:title}</h1>",
+			"    </article>",
+			"  </body>",
+			"</html>",
+			""
+		],
+		"description": "The initial boilerplate for a post on fanaro.io"
+	}
+}
