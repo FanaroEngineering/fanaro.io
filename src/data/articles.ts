@@ -624,4 +624,13 @@ export const articlesMetadata: Article[] = [
     mainTopic: Topic.statistics,
     otherTopics: [Topic.dataScience, Topic.politics],
   },
+  {
+    index: 50,
+    title: "Copa do Brasil 2018: Uyama Hissao [Kiin 7d]",
+    link: "/articles/revisao_uyama/revisao_uyama.html",
+    date: Date.UTC(2018, 9, 30),
+    languages: [Language.portuguese],
+    mainTopic: Topic.go,
+    otherTopics: [Topic.review],
+  },
 ];
