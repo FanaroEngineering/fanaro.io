@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <title>Ali Trump and the 40 Ghost Supporters</title>
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+
+    <meta name="author" content="Philippe Fanaro" />
+    <meta name="description" content="Ali Trump and the 40 Ghost Supporters" />
+
+    <meta
+      property="og:image"
+      content="wordfreq-trump-obama-reagan-carter-gwbush.png"
+    />
+    <meta
+      property="og:description"
+      content="Ali Trump and the 40 Ghost Supporters"
+    />
+    <meta property="og:title" content="Ali Trump and the 40 Ghost Supporters" />
+    <meta property="og:site_name" content="fanaro.io" />
+    <meta property="og:type" content="blog" />
+
+    <script src="../../index.js"></script>
+
+    <link rel="stylesheet" href="../../index.css" />
+    <link rel="icon" type="image/svg+xml" href="../../assets/favicon.svg" />
+  </head>
+  <body>
+    <article>
+      <img
+        src="wordfreq-trump-obama-reagan-carter-gwbush.png"
+        alt="Thumbnail"
+      />
+
+      <h1>Ali Trump and the 40 Ghost Supporters</h1>
+
+      <section>
+        <custom-h2 text="Introduction"></custom-h2>
+
+        <p>
+          This post is a (very) short word analysis of U.S.A.’s presidential
+          speeches &mdash; it will be clearer later what that means. Sorry if
+          you think the title was rather clickbaity :P.
+        </p>
+      </section>
+
+      <section>
+        <custom-h2 text="The Dataset"></custom-h2>
+
+        <p>
+          The whole dataset for this mini-project is composed by the 12 last
+          presidential speeches of all presidents going from Trump to Eisenhower
+          &mdash; though I won’t use Eisenhower’s data because there is not that
+          much available. The other presidents were less relevant &mdash; due to
+          the much different textual patterns; quite frankly, I should have
+          stopped much earlier than Eisenhower &mdash; and much trickier to get,
+          so I decided to stop at the 34th one.
+        </p>
+
+        <p>
+          All of the text comes from University of Virginia’s Miller Center, and
+          I’ve written a Python web scraping code to get it in a more automated
+          way. I won’t paste the code here, but you can check it at
+          <a href="https://github.com/psygo/presidents">this</a> Github Repo.
+        </p>
+      </section>
+
+      <section>
+        <custom-h2 text="Analyzing the Most Used Word"></custom-h2>
+
+        <p>
+          The reason why I started this mini-project is that, when listening to
+          Trump, I can’t help but have the impression he is trying to hypnotize
+          the spectator with the repetition of a set of words to compensate for
+          his lack of content or unconsciously mischieveous intentions. A rather
+          biased project I must admit, but maybe I can lessen the bad taste with
+          a similar analysis of other presidents; and, as you will see, the
+          difference, for example, between him and Obama is much smaller than
+          one would estimate beforehand.
+        </p>
+
+        <p>
+          When it comes to analyzing words, it is common practice in
+          <em>Natural Language</em> Processing to eliminate the so-called “stop
+          words”. These are repeated words in the text that are mostly only
+          useful for grammar or connections, which don’t add a lot of
+          information overall; some examples are: “I”, “me”, “myself”, “the”,
+          “a”, “by”, etc. For this dataset I decided to include only “I” from
+          all of the stop words that were excluded because &mdash; I had an
+          inkling that the 45th president is a bit of narcissist.
+        </p>
+
+        <p>Here are two word frequency plots for different presidents:</p>
+
+        <figure>
+          <img src="wordfreq-trump-obama-reagan-carter-gwbush.png" alt="" />
+        </figure>
+
+        <figure>
+          <img src="wordfreq-rest.png" alt="" />
+        </figure>
+
+        <p>
+          From the top graph, we can see that Trump likes to talk about himself
+          even more than another populist president, Ronald Reagan. And I
+          haven’t even commented the fact that the data from past presidents
+          comes from their last speeches in office, which usually tends to be
+          the ongoing president talking about his achievements; so for Trump to
+          compete with or beat them in that situation is quite remarkable.
+          Nonetheless, I’ll grant him a pass on a bigger analysis of his
+          egotistic behavior, since the difference is of only about 20% &mdash;
+          and presidents like G. H. W. Bush and L. B. Johnson seem to be weirdly
+          way over the top &mdash; and, thus, would need more research.
+        </p>
+
+        <p>
+          Moving on, another more important pattern is very clear: Trump is
+          addicted to &mdash; or perhaps he wants us to be addicted to &mdash;
+          the word “people”, which is basically his way of validating whatever
+          he says. The vast majority of the instances when he cites the word
+          “people” is related to either him boasting about America or creating
+          anonymous nonexistent beings that would prove him right, ranging from
+          suffering partisans of his to “criminal” opponents. Here are some some
+          examples of the latter strategy from within the dataset:
+        </p>
+
+        <ul>
+          <li>
+            I know people came up to me with tears in their eyes; they’re
+            saying, I’m forced to pay not to have healthcare. Very unfair.
+            &mdash;
+            <em
+              >Even if that were true, it’s a logical fallacy. You don’t destroy
+              everything because some of the subjects are being treated
+              unfairly, it would be much better to just fix the issues with the
+              outliers.</em
+            >
+          </li>
+          <li>
+            Thank you, Mike. It’s amazing, generous. And I’ve watched the police
+            and the fire&mdash;they come around and they’ve become so good at
+            it. But I’ve seen people that are just about dead wake up. &mdash;
+            what people? Somehow he has managed to credit and discredit a whole
+            department at the same time.
+          </li>
+          <li>
+            “Just talk about tax cuts. People don’t know what reform means. They
+            think reform might mean it’s going up.” And I said, “Do tax cuts.”
+            &mdash; Nope. Not everyone thinks like that. At all. And I would
+            argue that the opposite is just as likely.
+          </li>
+          <li>
+            Leaders in Washington imposed on the country an immigration policy
+            that Americans never voted for, never asked for, and never
+            approved—a policy where the wrong people are allowed into our
+            country and the right people are rejected. &mdash; The former
+            immigration policy could be wrong, but this generically bad outcome
+            is nonexistent.
+          </li>
+        </ul>
+
+        <p>
+          Interestingly, everything about Trump is aligned with the definition
+          of a demagogue &mdash; and all that’s around the new wave of
+          post-truth &mdash;: a political leader who seeks support by appealing
+          to popular desires and prejudices rather than by using rational
+          argument. Such a politician combined with the flagrant Russian support
+          and a lying rate which has reached a whopping 10% of his discourse
+          creates a threat to America (and the world) that is much bigger than
+          what people might be led to believe.
+        </p>
+
+        <p>
+          Anyway, I will stop with my critique of Trump, otherwise this article
+          will become a book.
+        </p>
+
+        <section>
+          <custom-h2
+            text="Presidential Sentence Generation with Bigrams"
+          ></custom-h2>
+
+          <p>
+            This part is an extra, more for fun than anything else &mdash; and
+            not at all serious &mdash;, so it will most likely not add any
+            valuable information. It is only at your peril to keep reading.
+          </p>
+
+          <p>
+            Prior to the Deep Learning era, one of the techniques of text
+            generation used entities called n-grams. These are connected
+            structures in the text that would hopefully carry linguistic
+            patterns with them. Here we will use bigrams, which will simply be
+            two words next to each other. The concept behind text generation is
+            to use the bigrams to assess the probability of the next word: so,
+            for example, if we find out that, after the word “I”, the word “am”
+            appears 90% of the time, our algorithm will generate “am” 90% of the
+            time after it sees the word “I”. Simple as that.
+          </p>
+
+          <p>
+            Despite the above example, there are actually two ways of generating
+            phrases with this algorithm. The first one is to only get the word
+            which is most likely to appear as the next one, so we can take a
+            look at which are the favorite patterns of the given writer.
+            However, this inherently ends up in a fractal pattern<foot-note
+              text="Which reminds me an interesting automaton called Langton’s 
+              Ant. An algorithm that starts looking kind of random but ends up 
+              in a big fractal pattern."
+            ></foot-note>
+            that doesn’t seem to be very conclusive, though kind of funny:
+          </p>
+
+          <ul>
+            <li>
+              Obama: I have a seat thank you so much thank you so much thank you
+              so much thank you so much thank you so much thank you so much
+              thank you (…)
+            </li>
+            <li>
+              Trump: I don t know if you to our first lady melania who has been
+              so incredible applause thank you to our first lady melania who has
+              been so incredible applause (…)
+            </li>
+            <li>
+              Clinton: I am profoundly grateful to speak to speak to speak to
+              speak to speak to speak to speak to speak to speak to speak to
+              speak to speak to speak (…)
+            </li>
+            <li>
+              G. W. Bush &mdash; somehow the president that doesn’t know the
+              conjugation of the verb to be: I are just delighted to be seated
+              thank you all very much good luck please be seated thank you all
+              very much good luck please be seated thank you all (…)
+            </li>
+          </ul>
+
+          <p>
+            The other way of generating phrases is to do it as previously
+            mentioned, assigning probabilities to each word encountered in the
+            original corpus of text. This method yields more reasonably looking
+            phrases, such as:
+          </p>
+
+          <ul>
+            <li>
+              Trump: I want to do things that threatens our nation state
+              building up as a surprise to pay not acceptable in 65 years of a
+              big deal my first lady michelle (…)
+            </li>
+            <li>
+              Eisenhower: I would rapidly be intolerable if not be made
+              essentially unchanged and do expect the contrary to serve the
+              principles of the congress or alien force huge costs involved (…)
+            </li>
+            <li>
+              Ford: I called for a global policy general revenue sharing we have
+              seen most good night god guide this year through these times to
+              defend ourselves reliable partner in a chance (…)
+            </li>
+            <li>
+              L. B. Johnson: I have in withholdings deferments impoundings and
+              we are making progress we have already completed that is a
+              recommendation is absolutely necessary for wanting to enter into
+              achievements but the (…)
+            </li>
+          </ul>
+
+          <p>
+            In conclusion, indeed these are not the brightest phrases in the
+            galaxy, nevertheless, given such a simplistic algorithm, I feel very
+            impressed by the results. A Deep Neural Network would do much better
+            at generating phrases and I might even try one next, now that I have
+            the dataset. If you wish to improve what I did or just mess around
+            with it, feel free to do so, the code is available at
+            <a href="https://github.com/psygo/presidents">this Github Repo</a>.
+          </p>
+        </section>
+      </section>
+    </article>
+  </body>
+</html>

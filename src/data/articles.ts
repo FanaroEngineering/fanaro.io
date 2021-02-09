@@ -615,4 +615,13 @@ export const articlesMetadata: Article[] = [
     mainTopic: Topic.go,
     otherTopics: [Topic.review],
   },
+  {
+    index: 51,
+    title: "Ali Trump and the 40 Ghost Supporters",
+    link: "/articles/trump_40_supporters/trump_40_supporters.html",
+    date: Date.UTC(2018, 9, 30),
+    languages: [Language.english],
+    mainTopic: Topic.statistics,
+    otherTopics: [Topic.dataScience, Topic.politics],
+  },
 ];
