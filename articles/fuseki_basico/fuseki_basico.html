@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <title>Fundamentos de Go: Abertura ou Fuseki (Nível Básico</title>
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+
+    <meta name="author" content="Philippe Fanaro" />
+    <meta
+      name="description"
+      content="Fundamentos de Go: Abertura ou Fuseki (Nível Básico"
+    />
+
+    <meta property="og:image" content="thumbnail.png" />
+    <meta
+      property="og:description"
+      content="Fundamentos de Go: Abertura ou Fuseki (Nível Básico"
+    />
+    <meta
+      property="og:title"
+      content="Fundamentos de Go: Abertura ou Fuseki (Nível Básico"
+    />
+    <meta property="og:site_name" content="fanaro.io" />
+    <meta property="og:type" content="blog" />
+
+    <script src="../../index.js"></script>
+    <script src="../../assets/glift_1_1_2.min.js"></script>
+
+    <link rel="stylesheet" href="../../index.css" />
+    <link rel="icon" type="image/svg+xml" href="../../assets/favicon.svg" />
+  </head>
+  <body>
+    <article>
+      <img src="thumbnail.png" alt="Thumbnail" />
+
+      <h1>Fundamentos de Go: Abertura ou Fuseki (Nível Básico</h1>
+
+      <p>
+        O <em>Fuseki</em> ou Abertura é uma das etapas de uma partida de Go mais
+        abstratas, especialmente para os iniciantes. O tabuleiro é tão amplo e
+        aberto que fica difícil saber por onde começar. Felizmente, já temos
+        milhares de anos de experiência e, assim, pelo menos, algumas boas
+        práticas para o início do jogo.
+      </p>
+
+      <p>
+        A ideia principal é começar nos cantos, e o motivo é o fato de que é
+        mais fácil cercar território perto das bordas pois podemos utilizar os
+        limites do tabuleiro como parede do cerco. É bem verdade que movimentos
+        menos ortodoxos, como o tengen e o 5-5, já foram testados, mas, no
+        final, se mostraram menos eficazes.
+      </p>
+
+      <p>
+        Com o vídeo seguinte, quis clarear mais a mente dos iniciantes que,
+        provavelmente têm muitas dificuldades nessa etapa. Para aqueles que
+        queiram estudar um pouco mais, disponibilizo aqui também um arquivo SGF
+        em que discuto mais a fundo as sequências relevantes.
+      </p>
+
+      <iframe
+        src="https://www.youtube.com/embed/iugY7Lfqrgo"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen
+      ></iframe>
+
+      <p>
+        Na próxima edição da série, discutirei casos particulares de aberturas e
+        suas mais típicas armadilhas. E, para aqueles que ficaram curiosos em
+        saber de onde vem a foto do japonês de óculos de sol (Takemiya Masaki
+        9p):
+      </p>
+
+      <div class="SGF" id="SGF"></div>
+      <script>
+        glift.create({
+          divId: "SGF",
+          sgf: "Ultra-Basico.sgf",
+        });
+      </script>
+    </article>
+  </body>
+</html>

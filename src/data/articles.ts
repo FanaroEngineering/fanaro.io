@@ -642,4 +642,13 @@ export const articlesMetadata: Article[] = [
     mainTopic: Topic.dataScience,
     otherTopics: [],
   },
+  {
+    index: 48,
+    title: "Fundamentos de Go: Abertura ou Fuseki (Nível Básico)",
+    link: "/articles/fuseki_basico/fuseki_basico.html",
+    date: Date.UTC(2018, 9, 16),
+    languages: [Language.portuguese],
+    mainTopic: Topic.go,
+    otherTopics: [Topic.fuseki],
+  },
 ];

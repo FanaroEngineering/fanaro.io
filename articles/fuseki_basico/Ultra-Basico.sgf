@@ -1,0 +1,472 @@
+(
+  ;GM[1]FF[4]CA[UTF-8]AP[Sabaki:0.35.1]KM[0.5]SZ[19]DT[2018-09-27]C[Na abertura, o que se deseja é um balanço entre força local e força global, além de alguma eficiência na aquisição de território.
+
+Para simplificar, comecemos pela diagonal, pois o eixo de simetria simplifica as avaliações. Outra simplificação que farei é sempre responder localmente aos movimentos de cada jogador, algo não recomendável em uma partida real.
+
+Os princípios mais importantes que você conseguirá neste arquivo são:
+
+1 - A diferença entre a 3a (território) e a 4a (influência) linhas.
+2 - A importância de se balancear a dinâmica das pedras.
+3 - Não deixe todas as suas pedras em um lado só.]LB[jj:F][oo:E][pp:D][qq:C][rr:B][ss:A]
+  (
+    ;B[ss]C[Aqui, não fazemos território, pois, efetivamente, não cercamos nada.]
+    ;W[qq]LB[ss:A]C[Brancas efetivamente capturam A sem muito esforço. Ou fugimos na segunda linha com B, fazendo pouquíssimo território, ou simplesmente deixamos como está.]
+    ;B[pr]
+    ;W[pq]
+    ;B[or]
+    ;W[oq]
+    ;B[nq]
+    ;W[np]
+    ;B[mq]
+    ;W[mp]
+    ;B[lq]
+    ;W[lp]
+    ;B[kq]
+    ;W[pk]LB[ms:B][pm:A]C[A >> B]
+  )(
+    ;B[rr]C[Começamos a cercar algo, mas será que não seria possível cercar mais território com uma pedra só?]MA[rs][sr]CR[ss]
+    ;W[qq]C[Similar quando Pretas jogam no 1-1. Pretas ficarão com pouquíssimo território, enquanto Brancas crescem seu potencial.]
+    ;B[rq]
+    ;W[qp]
+    ;B[rp]
+    ;W[qo]
+    ;B[qr]
+    ;W[oq]
+    ;B[pr]C[A e B são possíveis.]LB[mp:B][or:A]
+    (
+      ;W[or]LB[mq:A][pm:B][pq:C][ss:D]C[A influência em A e B é muito maior do que o território em D. E o corte em C é algo não muito difícil de se lidar para Brancas.]
+      ;B[pq]
+      ;W[op]
+      ;B[pp]
+      ;W[po]
+      ;B[oo]
+      ;W[pm]
+      ;B[no]
+      ;W[lq]C[Pretas possuem um novo grupo fraco e continuam a não fazer território.]
+    )(
+      ;W[mp]
+      ;B[pq]LB[op:A][pp:B]
+      (
+        ;W[op]
+        ;B[pp]
+        ;W[po]
+        ;B[oo]
+        ;W[pm]C[Preto possui um grupo fraco, pouco território e os grupos brancos estão razoavelmente estáveis.]
+        ;B[no]
+        ;W[mq]
+        ;B[nm]
+        ;W[pk]
+        ;B[ln]
+        ;W[jp]C[O território de A e B será muito maior do que a soma dos territórios pretos no centro e no canto.]LB[kr:A][rl:B]
+      )(
+        ;W[pp]
+        ;B[op]
+        ;W[oo]
+        ;B[np]
+        ;W[no]
+        ;B[nq]
+        ;W[mq]
+        ;B[nr]LB[ln:A][mo:B]
+        ;W[ln]C[A influência branca supera o território pequeno do canto.]
+      )
+    )
+  )(
+    ;B[qq]C[Finalmente chegamos ao ponto de máxima eficiência: conseguimos cercar tudo dentro dos X's (o que entrar lá será capturado). A 3a linha é um ponto chave teorica e praticamente: nela, podemos construir mais seguramente território e defender firmemente uma área - há espaço sufiente e eficiente para se contruir uma base e viver. Mais, tarde, ao entrar na teoria do meio do jogo, você verá o quão importante a 3a linha é para assegurar a vida dos grupos.
+
+Nossa influência sobre as regiões A, B e C é pequena, no entanto, não para ter tudo na vida...
+
+A, D, E e F são continuções comuns para Brancas.]LB[nn:C][nq:B][pn:F][pp:D][qn:A][qo:E]MA[qr][qs][rq][sq]CR[rr][rs][sr][ss]
+    (
+      ;W[qn]
+      ;B[nq]
+      ;W[qk]
+    )(
+      ;W[pp]
+      ;B[pq]
+      ;W[op]C[A, B e C são possíveis. O mais importante aqui é que Pretas estão seguras, enquanto Brancas possuem um grupo fraco para defender.]LB[nq:B][nr:C][ro:A]
+      (
+        ;B[ro]LB[oq:B][pm:A]C[A ou B são possíveis.]
+        (
+          ;W[oq]LB[lq:B][pn:A]
+          (
+            ;B[lq]
+            ;W[pm]
+            ;B[qn]
+            ;W[pn]
+            ;B[ql]
+          )(
+            ;B[pn]
+            ;W[kq]
+          )
+        )(
+          ;W[pm]
+          ;B[nr]LB[nq:A]C[Pretas A não funciona muito bem, há muito aji.]
+          ;W[lp]LB[ln:B][mp:A]
+          (
+            ;B[mp]
+            ;W[mo]
+            ;B[mq]
+            ;W[lo]
+            ;B[jq]
+          )(
+            ;B[ln]C[Brancas não têm uma maneira efetiva de consertar sua forma.]
+          )
+        )
+      )(
+        ;B[nr]
+        ;W[qp]
+        ;B[ql]
+      )(
+        ;B[nq]
+        ;W[np]
+        (
+          ;B[mq]C[Profissionais às vezes advogam A ao invés de B.]LB[mq:B][oq:A]
+          ;W[qp]
+          ;B[ql]LB[oq:A]C[Há aji com A, é preciso que Pretas estejam atentas.]
+          ;W[oq]
+          ;B[or]
+          ;W[pr]
+          ;B[qr]
+          ;W[nr]
+          ;B[ps]C[A - Começa uma luta que seria boa para Brancas somente se houvesse mais pedras ajudando.
+B - É um tesuji que ajuda a forçar Pretas a se curvarem.
+C - Possível pois torna Brancas mais fortes para o contra-ataque à pedra D.]LB[lq:B][mp:C][mr:A][ql:D]
+          (
+            ;W[mr]LB[lq:B][lr:A]
+            (
+              ;B[lr]
+              ;W[lq]
+              ;B[mp]
+              ;W[kr]
+              ;B[mo]
+              ;W[om]C[Em geral, muito bom para Brancas.]
+            )(
+              ;B[lq]C[Brancas A geralmente só funciona com reforço perto de B]LB[dp:B][mr:A]
+            )
+          )(
+            ;W[lq]LB[mp:B][mr:A]
+            (
+              ;B[mr]
+              ;W[mp]LB[lp:A]C[A só irá fortalecer Brancas ainda mais ou iniciar outra luta.]
+              ;B[lp]LB[kq:A][lo:B]
+              (
+                ;W[kq]
+                ;B[lo]
+              )(
+                ;W[lo]
+                ;B[kp]
+                ;W[ko]
+                ;B[jp]
+                ;W[jo]
+                ;B[ip]
+                ;W[qj]
+              )
+            )(
+              ;B[mp]
+              ;W[mr]
+              ;B[lp]
+              ;W[kq]
+              ;B[kp]
+              ;W[jq]
+              ;B[jp]
+              ;W[iq]
+              ;B[nn]
+            )
+          )(
+            ;W[mp]
+            ;B[lq]
+            ;W[lp]
+            ;B[kq]
+            ;W[kp]
+            ;B[jq]
+            ;W[qj]
+          )
+        )(
+          ;B[oq]
+          ;W[mp]LB[lq:B][ro:A]
+        )
+      )
+    )(
+      ;W[qo]
+      ;B[oq]
+      ;W[ql]
+    )(
+      ;W[pn]
+      ;B[np]
+      ;W[qj]
+    )(
+      ;W[rr]
+      ;B[rq]
+      ;W[qr]
+      ;B[pr]
+      ;W[pq]
+      ;B[or]
+      ;W[oq]
+      ;B[nq]
+      ;W[np]
+      ;B[mq]
+      ;W[qp]
+      ;B[rp]
+      ;W[ro]C[Brancas salvam o canto, mas rastejam na primeira linha.]
+      ;B[qo]
+      ;W[sp]
+      ;B[pp]
+      ;W[sq]
+      ;B[op]
+    )
+  )(
+    ;B[pp]C[Enfim, chegamos ao ponto em que a eficiência na construção do território pára de crescer e, na verdade, diminui. Mas não se engane: o 4-4 ou hoshi é muito poderoso.
+
+O 4-4 é o exemplo mais claro das propriedades da 4a linha. Aqui, devido à invasão em A, fica claro que não há propriamente território para Pretas, o que há é uma influência! Influência na região ao redor do 4-4, há maior controle sobre o entorno, o que chegar perto do 4-4 será atacado severamente! - e nos ajudará a assegurar território na 4a linha, muito mais eficiente do que na 3a.
+
+A e E são, de longe, as variações mais comuns para Brancas.]LB[nn:D][np:B][pn:C][qn:E][qq:A]
+    (
+      ;W[qq]
+      ;B[qp]
+      ;W[pq]LB[nq:B][op:C][oq:A]
+      (
+        ;B[oq]
+        ;W[or]
+        ;B[nq]
+        ;W[nr]
+        ;B[mq]
+        ;W[mr]
+        ;B[lq]
+        ;W[pj]
+      )(
+        ;B[nq]LB[nr:B][oq:A]
+        (
+          ;W[oq]
+          ;B[op]
+          ;W[nr]LB[mr:B][rq:A]
+          (
+            ;B[rq]
+            ;W[rr]LB[mr:B][or:A]
+            ;B[or]LB[pr:A][rp:B]
+            (
+              ;W[pr]
+              ;B[mr]
+              ;W[np]
+              ;B[mq]
+              ;W[os]
+              ;B[no]
+            )(
+              ;W[rp]
+              ;B[qr]
+              ;W[sq]
+              ;B[pr]
+              ;W[rq]
+              ;B[mr]
+              ;W[np]
+              ;B[mq]
+              ;W[qn]LB[nn:B][no:A]
+              (
+                ;B[no]
+              )(
+                ;B[nn]
+              )
+            )
+          )(
+            ;B[mr]
+            ;W[mq]
+            ;B[np]
+            ;W[lr]LB[mp:B][rq:A]
+            (
+              ;B[rq]
+              ;W[ms]
+              ;B[qr]
+              ;W[pr]
+              ;B[ps]
+              ;W[or]
+            )(
+              ;B[mp]LB[lq:A][ms:B]
+              (
+                ;W[lq]
+                ;B[rq]
+                ;W[ms]
+                ;B[qr]
+                ;W[pr]
+                ;B[ps]
+                ;W[or]C[Geralmente inferior. A pedra A é um pouco ineficiente.]LB[lq:A]
+              )(
+                ;W[ms]
+                ;B[lq]C[A, B ou tenuki.]LB[kq:B][mr:A]
+                ;W[mr]
+              )
+            )
+          )
+        )(
+          ;W[nr]
+          ;B[mr]
+          ;W[oq]
+          ;B[np]
+          ;W[op]
+          ;B[oo]
+          ;W[no]C[Complicado.]
+        )
+      )(
+        ;B[op]LB[nq:B][nr:A]
+        (
+          ;W[nr]
+        )(
+          ;W[nq]
+          ;B[np]LB[mq:B][oq:A]
+          (
+            ;W[mq]
+            ;B[oq]
+            ;W[or]
+            ;B[pr]
+            ;W[qr]
+            ;B[nr]
+            ;W[ps]
+            ;B[mr]C[Luta complicada, geralmente melhor para Pretas.]
+          )(
+            ;W[oq]
+            ;B[mq]
+          )
+        )
+      )
+    )(
+      ;W[dd]
+      ;B[pd]
+      ;W[dp]
+      ;B[pj]
+      ;W[nq]
+      ;B[lq]
+      ;W[qq]
+      ;B[qp]
+      ;W[pq]
+      ;B[op]
+      ;W[nr]
+      ;B[mo]
+      ;W[nc]
+      ;B[lc]
+      ;W[qc]
+      ;B[qd]
+      ;W[pc]
+      ;B[od]
+      ;W[nb]
+      ;B[me]
+      ;W[lj]C[Pretas investiram todas as suas pedras em um mesmo lado do tabuleiro. Mas o moyo, apesar de grande, não é imune a reduções e há ainda aji em A.
+
+A partida ainda é jogável, mas, segundo estudos, favorável às Brancas.]LB[qj:A]
+    )
+  )(
+    ;B[oo]C[Aqui, adentramos o mundo da Guerra nas Estrelas. Não se sabe o que acontecerá estando as pedras tão longe do chão.
+
+Depois de muitos estudos, os profissionais concluíram que o 5-5 não possui ganho suficiente em influência em relação ao 4-4 para compensar a perda grande em território. Assim, recomenda-se o 4-4 se quisermos jogar por influência. Há outras alternativas também, como o 5-4 e o 5-3.]
+    ;W[qq]
+    ;B[oq]
+    ;W[qn]
+    ;B[pm]LB[pn:B][qm:A]
+    (
+      ;W[qm]
+      ;B[pl]
+      ;W[ql]
+      ;B[pk]
+      ;W[qj]
+      ;B[jp]
+    )(
+      ;W[pn]
+      ;B[on]
+      ;W[om]
+      ;B[qm]
+      ;W[rm]
+      ;B[rl]
+      ;W[rn]
+      ;B[pk]
+      ;W[nm]C[Luta complicada.]
+    )
+  )(
+    ;B[jj]C[A influência suprema! Tengen: o zênite do goban. Tanta empolgação, para pouco sucesso...
+
+O tengen possui muita influência ao redor do tabuleiro, porém, depois de anos e anos de estudos, observou-se que ela é vaga e insuficiente para compensar o komi.]
+    ;W[pp]
+    ;B[dp]
+    ;W[dd]
+    ;B[qc]C[Fuseki Go Seigen 9p. As pedras A e B tentam balancear a influência preta.]LB[dp:A][qc:B]
+  )(
+    ;B[qp]C[O 3-4 é um dos movimentos de canto mais comuns. É preciso atenção, no entanto, ao fato de que ele não é simétrico.
+
+É razoavelmente assegurado às Pretas certo território no lado direito, em A. E, como expansão primária, algo na direção de B é o ideal. C não é a primeira direção de expansão do canto, um erro muito comum entre iniciantes. C expande o território em uma direção em que Pretas estão na 3a linha, menos eficiente do que a 4a de B.]LB[op:B][pj:C][rp:A]
+    ;W[dd]
+    (
+      ;B[pd]
+      ;W[dq]LB[nq:A][pj:B]
+      (
+        ;B[nq]C[A expande naturalmente o canto e coloca uma pedra em um dos maiores lados do tabuleiro. B é uma próxima expansão.]LB[nq:A][pj:B]
+        ;W[dn]
+        ;B[pj]C[Pretas estabelecem seu moyo com A. Algo em B também teria sido possível.]LB[fc:B][pj:A]
+      )(
+        ;B[pj]
+        ;W[oq]C[Todas as pedras pretas estão do mesmo lado e Brancas expandem seu moyo à medida que diminuem o do adversário. B é um erro, Pretas expandem seu território na direção em que A está na 3a linha, achatando o potencial.
+
+Resta às Pretas somente pinçar, mas é difícil de obter muito lucro no ataque de D, uma vez que E está estável. Além disso, o contra-ataque certamente será um problema.]LB[dq:E][oq:D][pd:C][pj:B][qp:A]
+      )
+    )(
+      ;B[pc]
+      ;W[dp]
+      ;B[fq]
+      ;W[cn]
+      ;B[qh]C[Esta é a primeira partida entre Lee Sedol 9p e AlphaGo em Março de 2016.
+
+Nela, ficará clara a ineficiência da pedra A.]LB[qh:A]
+      ;W[op]
+      ;B[lp]
+      ;W[qq]
+      ;B[rq]
+      ;W[pq]
+      ;B[ro]
+      ;W[on]
+      ;B[pm]LB[qm:A]C[(Pretas deveriam ter jogado em A.)]
+      ;W[om]
+      ;B[pl]
+      ;W[ip]
+      ;B[ln]
+      ;W[ol]
+      ;B[pk]
+      ;W[ll]C[No centro, basicamente, todos os grupos importantes viverão. Mas a questão é: dado que A está bastante forte, você jogaria B onde ela está posicionada?
+
+Por tewari, fica claro que não, pois B está muito próximo de uma pedra forte. Seria muito mais eficiente tê-la próxima de uma pedra menos forte, como C.]LB[pc:C][pk:A][qh:B]
+    )(
+      ;B[dp]
+      ;W[pd]
+      ;B[oq]C[Esta é uma abertura um pouco mais arcaica. O fluxo das pedras não é tão atrativo mais pois o canto inferior direito não é muito ambicioso e as pedras pretas estão todas no mesmo lado. Hoje em dia, seria mais comum tentar algo em A.]LB[np:A]
+      ;W[cn]C[Aqui, temos uma pergunta sobre o fluxo das pedras. A ou B?]LB[fp:B][fq:A]
+      (
+        ;B[fq]LB[fq:A][oq:B]C[A e B estão na 3a linha e, também, no mesmo lado, o potencial preto foi severamente diminuído.]
+        ;W[np]LB[nq:A][op:B]C[A e B são ambos satisfatórios para Brancas, que possuem um desenvolvimento mais rápido.]
+        (
+          ;B[op]
+          ;W[dj]C[Um exemplo de continuação típica para Brancas. Pretas provavelmente não conseguirão compensar o komi.]
+          ;B[pj]
+          ;W[jd]
+        )(
+          ;B[nq]
+          ;W[dj]LB[fc:B][jp:C][pj:A]C[A e B são continuações possíveis para Pretas, mas seu território já foi bastante achatado.
+
+C é um erro. A área já é uma das menores e mais infrutíferas do tabuleiro, não vale mais a pena investir por lá por enquanto.]
+          ;B[jp]
+          ;W[pj]C[Brancas fazem do tabuleiro seu moyo.]
+        )
+      )(
+        ;B[fp]C[As pedras A e B se balanceiam. É este o fluxo ideal das pedras em moyos ou mesmo globalmente no tabuleiro. Pedras na 4a linha, focando em influência, balanceadas com pedras na 3a, mais estáveis, focando em território.
+
+Além disso, o potencial do moyo preto é agora suficiente para equalizar melhor a partida.]LB[fp:A][oq:B]
+        ;W[dj]
+        (
+          ;B[pj]C[Pretas tomam a extensão natural do canto depois de B. Resta às Brancas, invadir o moyo com algo como C.]LB[hq:C][oq:B][pj:A]
+        )(
+          ;B[ip]LB[ip:A]C[Todas as pedras Pretas estão no mesmo lado. O resto do tabuleiro será dominado pelas Brancas.]
+          ;W[np]
+          ;B[op]
+          ;W[nn]
+          ;B[no]
+          ;W[mo]
+          ;B[oo]
+          ;W[pj]
+        )
+      )
+    )
+  )
+)
