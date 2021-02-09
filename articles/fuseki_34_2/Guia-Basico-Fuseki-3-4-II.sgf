@@ -1,0 +1,558 @@
+(
+  ;GM[1]FF[4]CA[UTF-8]AP[Sabaki:0.41.0]KM[0.5]SZ[19]DT[2018-09-19]GN[Guia Básico de Fuseki]PB[Preto]PW[Branco]C[A - 4-4 ou Hoshi
+B - 3-4 ou Komoku
+D - 5-3
+E - 5-4
+F - 3-3 ou Sansan
+G - Tengen
+H - 7-5 ou fuseki do Buraco Negro
+I - 5-5
+
+Discutirei os movimentos D, E, F, G, H e I apenas superficialmente, uma vez que são bem menos comuns, para deixar o arquivo mais suscinto.
+
+Como princípio-mor, tome a regra de que, quando colocamos uma pedra na 4a linha, estamos indicando influência, isto é, poder na área ao redor da pedra; e, quando colocamos uma na 3a linha, indicamos muito maior certeza em relação ao território, mas menos poder de controle na região.
+
+Outro princípio muito importante é o fato de que, ao colocar uma pedra em determinada região, esta perde valor por ser ocupada. Por isso, evitamos de aglomerar muitos movimentos em uma mesma região no início da partida.
+
+Um pequeno adendo faço sobre o Go espelhado, que é simplesmente imitar os movimentos pretos, esperando que o komi faça a diferença se ambos os jogadores obtiverem quantidades próximas de pontos. É uma estratégia possível e bastante difícil para ambos os lados. É preciso, no entanto, atenção ao fato de que quebrar a simetria logo de início no tengen, geralmente não é muito eficiente; os profissionais estimam que o valor do tengen no início seja, ao final da partida, de somente 3 pontos a mais para Pretas, insuficiente para compensar o komi.
+
+Ah, não se esqueça: Ninguém perde a partida nos primeiros movimentos!]LB[jj:G][oe:I][og:H][pc:C][pd:A][pe:E][qc:F][qd:B][qe:D]
+  (
+    ;B[pd]C[Não há certeza nenhuma de que o canto será preto, pois o 3-3 está aberto, mas há grande influência na região do canto.
+
+Note também que o 4-4 estabelece uma posição simétrica, ou seja, não direção de jogo preestabelecida.]
+    ;W[dd]LB[dd:2][dp:D][pp:A][pq:C][qp:B]C[Há dezenas de opções de 2o movimento para as Brancas, porém, vou me restringir somente a variações com o 4-4 por ser a mais comum e, também, para que o arquivo não fique demasiado extenso.
+
+D nos leva à abertura diagonal.]
+    (
+      ;B[qp]LB[cp:C][dp:A][dq:B]
+      (
+        ;W[dp]C[A e B eram as variantes mais comuns antes do AlphaGo. Ambos os movimentos acabaram sendo demonstrados como pouco ambiciosos. Foi assim que nasceram C e D como padrões.
+
+E gera as variações famosas conhecidas como mini-chinesa (mini-chinese) e micro-chinesa.
+
+F é um erro (inclusive, foi mais ou menos empiricamente provado na primeira partida entre AlphaGo e Lee Sedol 9p) pois vai contra a direção primária do 3-4 do canto inferior direito.]LB[fq:E][np:C][nq:D][op:A][oq:B][pj:F]
+        ;B[fq]LB[hq:A]C[Se Brancas quiserem evitar as aberturas chinesas, podem jogar uma pinça como A.]
+        (
+          ;W[cn]LB[kq:A][lq:B]C[A e B são, respectivamente, a mini-chinesa e a micro-chinesa.]
+          (
+            ;B[kq]C[Brancas seguem com A, B ou C.
+
+AlphaGo inovou com D.]LB[pp:D][qi:C][qj:A][qk:B]
+            ;W[qj]LB[pk:D][qh:A][qk:C][ql:B]C[Há inúmeras variantes, com A, B, C e D.]
+            (
+              ;B[qh]
+              ;W[qm]
+              ;B[pk]
+              ;W[qk]
+              ;B[pn]
+              (
+                ;W[ro]C[Brancas A é uma invenção coreana (creio que de Lee Changho 9p). Outros movimentos como B levam a variações supostamente ligeiramente melhores para Pretas.]LB[qn:B][ro:A]
+                ;B[rp]
+                ;W[qo]
+                ;B[po]
+                ;W[pp]C[Nesta variação, uma das mais comuns, a pedra B estando em C muda completamente o resultado da luta. Este é o principal motivo da popularização da micro-chinesa.]LB[kq:B][lq:C][pp:A]
+                ;B[op]
+                ;W[pq]
+                ;B[qr]
+                ;W[pr]
+                ;B[qq]
+                ;W[oq]
+                ;B[np]
+                ;W[mq]LB[kq:A][lq:B]C[Se a pedra A estivesse em B, Pretas matariam Brancas facilmente.]
+                (
+                  ;B[mp]
+                  ;W[lq]
+                  ;B[lp]
+                  ;W[kr]
+                  ;B[jr]
+                  ;W[lr]
+                  ;B[jq]
+                  ;W[nr]C[Brancas vivem e matam o canto A.]LB[qq:A]
+                )(
+                  ;B[lp]
+                  ;W[kr]LB[lr:A]C[A não dá certo...]
+                  ;B[lr]
+                  ;W[lq]
+                  ;B[jr]
+                  ;W[kp]
+                  ;B[jq]
+                  ;W[mr]
+                  ;B[ks]
+                  ;W[mp]
+                )
+              )(
+                ;W[qn]
+                ;B[qo]C[Pretas estão fortes e o grupo Branco à direita tem potencial para ser desestabilizado, enquanto o moyo preto só crescerá.]
+              )
+            )(
+              ;B[ql]
+              ;W[qf]
+              ;B[nc]
+              ;W[rd]
+              ;B[qc]
+              ;W[ph]
+              ;B[op]C[Exemplo de continuação possível. A é uma formação muito boa para Brancas, mas Pretas possuem também uma excelente posição no moyo do lado de baixo.]LB[ph:A]
+            )(
+              ;B[pk]LB[pj:B][qk:A]
+              (
+                ;W[qk]
+                ;B[pl]
+                ;W[ql]
+                ;B[pm]
+                ;W[qf]
+                ;B[nc]
+                ;W[rd]
+                ;B[qc]
+                ;W[oi]LB[pk:A]C[A parede preta é geralmente vista como melhor para Pretas.]
+              )(
+                ;W[pj]
+                ;B[ok]
+                ;W[rl]
+                ;B[qm]
+                ;W[rm]
+                ;B[qn]
+                ;W[qf]
+                ;B[qe]
+                ;W[pf]
+                ;B[nc]C[O chute A é questionável.]LB[qe:A]
+                ;W[lp]C[Invadir o moyo preto é praticamente obrigatório. B ou C também são opções. Sem a troca de D por E, F também teria sido opção para Brancas.]LB[lp:A][op:B][oq:C][pp:F][qn:E][rm:D]
+              )
+            )(
+              ;B[qk]
+              ;W[pk]
+              ;B[ql]
+              ;W[pj]
+              ;B[pl]
+              ;W[qf]
+              ;B[nc]LB[lp:D][op:B][oq:C][pp:A]C[A, B, C ou D são possíveis continuações para Brancas.]
+            )
+          )(
+            ;B[lq]C[Micro-chinesa.]
+          )
+        )(
+          ;W[hq]
+          ;B[nq]LB[cn:C][fp:A][kq:B]C[A leva a uma variação um pouco inferior para Brancas. B e C são opções mais normais.]
+          (
+            ;W[fp]
+            ;B[cn]
+            ;W[eq]
+            ;B[dj]C[Jogo dito como ligeiramente melhor para Pretas.]
+          )(
+            ;W[kq]
+            ;B[cn]LB[cq:B][fp:A]C[A é normal, mas profissionais vêm experimentando com B.]
+            ;W[fp]
+            ;B[cq]
+            ;W[eq]
+            ;B[cp]
+            ;W[qc]
+          )(
+            ;W[cn]
+            ;B[jq]
+            ;W[fp]
+            ;B[gq]
+            ;W[gp]
+            ;B[hr]
+            ;W[eq]
+            ;B[hp]
+            ;W[ho]
+            ;B[iq]
+            ;W[qj]C[Variação equilibrada.]
+          )
+        )
+      )(
+        ;W[cp]
+        ;B[ep]
+        ;W[eq]
+        ;B[fq]
+        ;W[dq]
+        ;B[fp]
+        ;W[cn]C[Antes, A era o mais comum. Porém, com AlphaGo, B, uma opção mais ambiciosa foi popularizada.]LB[jp:A][np:B]
+        ;B[np]C[As pedras pretas trabalham bem globalmente. Branco A não é recomendado, por oferecer uma aproximação muito confortável às Pretas.]LB[cp:A]
+      )
+    )(
+      ;B[pq]LB[cp:C][dp:A][dq:B]
+      (
+        ;W[dp]C[A é a famosa abertura chinesa. Criada por um profissional japonês nos anos 1970, foi extensivamente jogada por profissionais chineses. Geralmente, leva a grandes brigas, uma especialidade chinesa. Foi a abertura mais popular no início dos anos 2000.
+
+B, C e D são bastante ordoxos. Em geral, eles acabam sendo pouco ambiciosos e colocam todas as pedras pretas no mesmo lado, o que é, em teoria, não recomendável.
+
+E é mais uma inovação de AlphaGo, que visa um moyo global.
+
+F leva ou à abertura clássica Kobayashi ou à variação mais complicada da chinesa.
+
+]LB[fq:F][pn:E][po:C][qk:A][qn:D][qo:B]
+        (
+          ;B[qk]C[As opções mais comuns são A e B. C e D são experimentos criados por Gu Li 9p. AlphaGo chegou a jogar E diretamente algumas vezes contra si mesmo.]LB[fc:D][fq:C][mp:A][nc:B][pp:E]
+          (
+            ;W[mp]
+            ;B[po]
+            ;W[jp]
+            ;B[fc]
+            ;W[cf]
+            ;B[jd]
+            ;W[qf]
+          )(
+            ;W[nc]LB[lc:B][pf:A]C[A é mais comum, e com boa razão. B é uma pinça amedrontadora, mas o moyo preto é grande demais.]
+            (
+              ;B[pf]
+              ;W[jd]
+              ;B[fq]
+              ;W[cn]
+              ;B[jp]
+              ;W[po]LB[po:A]C[Branco A dá origem à sequência mais típica desta abertura. Globalmente, o resultado é tido como inferior para as Brancas.]
+              ;B[np]
+              ;W[qq]
+              ;B[qr]
+              ;W[qp]
+              ;B[rr]LB[no:B][qm:A]C[A é o mais comum, mas sequências mais modernas com B vêm sendo tentadas.]
+              (
+                ;W[qm]LB[no:B][qm:A]C[Por ser inferior, alguns profissionais mudaram a sequência com B.]
+                ;B[nn]
+                (
+                  ;W[om]C[Antes de A, alguns profissionais tentaram movimentos forçados como B para compensar a força final das Pretas.]LB[mo:B][om:A]
+                  ;B[on]
+                  ;W[pn]
+                  ;B[pl]
+                  ;W[rk]C[Importante jogar aqui antes de conectar em A.]LB[pm:A]
+                  ;B[rj]
+                  ;W[rl]
+                  ;B[qj]
+                  ;W[pm]C[Branco está vivo localmente, mas a parede A é muito benéfica para Pretas.]LB[qj:A]
+                )(
+                  ;W[mo]
+                  ;B[no]
+                  ;W[om]TR[nn][no]LB[on:A]C[Agora, quando a forma do joseki comum é refeita, Pretas possuem um triângulo vazio, má forma em geral.]
+                )
+              )(
+                ;W[no]
+                ;B[mo]
+                ;W[nn]
+                ;B[mn]
+                ;W[nl]
+                ;B[nm]
+                ;W[om]
+                ;B[mm]
+                ;W[ol]C[Uma alternativa. Brancas não possuem base, mas Pretas estão superconcentradas, isto é, A está muito próximo de B.]LB[jp:A][mn:B]
+              )
+            )(
+              ;B[lc]
+              ;W[qc]
+              ;B[qd]
+              ;W[pc]
+              ;B[od]
+              ;W[nb]
+              ;B[me]
+              ;W[pj]C[A destrói o potencial do moyo, Pretas não têm como matar o grupo branco.]
+            )
+          )(
+            ;W[pp]
+            ;B[qp]
+            ;W[oq]
+            ;B[po]
+            ;W[op]
+            ;B[qq]
+            ;W[oo]
+            ;B[pn]
+            ;W[jp]C[Em geral, uma boa variação para Brancas.]
+          )
+        )(
+          ;B[qo]
+          ;W[pn]C[AlphaGo acha que o canto preto é superconcentrado. A é portanto natural.]LB[pn:A]
+          (
+            ;B[qn]
+            ;W[pl]
+            ;B[pm]
+            ;W[om]
+            ;B[qm]
+            ;W[nc]
+          )(
+            ;B[po]
+            ;W[nc]
+          )
+        )(
+          ;B[qn]
+          ;W[nc]
+        )(
+          ;B[po]LB[nc:B][pn:A]
+          ;W[pn]
+          ;B[qn]
+          ;W[qm]LB[pm:A][qo:B]
+          ;B[qo]
+          ;W[nc]
+        )(
+          ;B[pn]LB[fq:A][nc:C][qc:D][ql:B]C[A, B, C e D são todos possíveis.]
+        )(
+          ;B[fq]
+          ;W[cn]LB[ip:B][jp:A][qk:C]C[A e B são variantes da abertura Kobayashi, popularizada pelo ex-campeão mundial Kobayashi Koichi 9p na década de 1970.
+
+C volta à abertura chinesa, em uma variação mais agressiva.]
+          (
+            ;B[jp]C[O intuito é que Brancas se aproximem em A. Preto atacará ferozmente e contando com o apoio de B.
+
+O mais recomendável por profissionais são as aproximações em C ou D.]LB[jp:B][pn:C][po:A][qn:D]
+            (
+              ;W[po]C[A é a opção mais clássica do Kobayashi.
+
+B é algo mais passivo e não muito aconselhável.
+
+C seguido de D é um fuseki muito utilizado e popularizado por In-seong Hwang 8d, leva a lutas muito complexas.]LB[np:B][pl:C][pm:A][qq:D]
+              (
+                ;B[pm]
+                ;W[no]
+                ;B[op]
+                ;W[oo]
+                ;B[lp]
+              )(
+                ;B[np]
+                ;W[qq]
+                ;B[qr]
+                ;W[qp]
+                ;B[rr]
+                ;W[qk]C[Posição razoável para os dois lados.]
+              )(
+                ;B[pl]
+                ;W[qq]
+                ;B[qr]
+                ;W[qp]
+                ;B[np]
+                ;W[oq]C[Aqui, temos uma bifurcação muito importante. A é a primeira opção a vir à mente, porém é tida como inferior pois a influência não é suficiente para compensar o território branco, além de ser má direção.
+
+B é um joseki extremamente complicado. A pedra C e uma outra como D ou E são reforços necessários para que B seja possível.]LB[ip:E][jp:D][op:A][or:B][pd:C]
+                (
+                  ;B[op]
+                  ;W[pr]
+                  ;B[pp]
+                  ;W[rr]
+                  ;B[qo]
+                  ;W[ro]
+                  ;B[qn]
+                  ;W[rn]
+                  ;B[qm]
+                  ;W[or]
+                )(
+                  ;B[or]
+                  ;W[nq]
+                  ;B[op]
+                  ;W[pp]
+                  ;B[pr]LB[mq:B][nr:A]C[A ou B são possíveis. Ambos levam a lutas extremamente complicadas. Caso queira, consulte a Josekipedia.]
+                )
+              )
+            )(
+              ;W[pn]LB[oo:B][ql:C][qo:A]C[Há diversas variações.]
+              (
+                ;B[qo]
+                ;W[po]
+                ;B[pp]
+                ;W[qn]
+                ;B[ro]
+              )(
+                ;B[oo]
+                ;W[po]
+                ;B[pp]
+                ;W[on]
+                ;B[no]
+                ;W[pj]
+              )(
+                ;B[ql]C[A não funciona quando a pinça está em B.]LB[ql:B][qq:A]
+                (
+                  ;W[oo]
+                  ;B[qp]
+                  ;W[rn]
+                  ;B[np]
+                )(
+                  ;W[qq]
+                  ;B[pp]
+                  ;W[qp]
+                  ;B[qo]
+                  ;W[po]
+                  ;B[qn]
+                )
+              )
+            )(
+              ;W[qn]C[A é a opção mais comum, seguida de B e C.]LB[po:A][ql:B][qp:C]
+              (
+                ;B[po]
+                (
+                  ;W[rp]
+                  ;B[pn]
+                  ;W[qm]
+                  ;B[pk]
+                  ;W[qq]
+                  ;B[pr]
+                  ;W[pm]
+                  ;B[om]
+                  ;W[ol]
+                  ;B[pl]
+                  ;W[ok]C[Luta complicada.]
+                )(
+                  ;W[pn]
+                  ;B[qo]
+                  ;W[on]
+                  ;B[oo]
+                  ;W[nn]
+                  ;B[qj]
+                  ;W[no]
+                  ;B[mq]C[Há aji em A e B mais tarde.
+
+Em geral, a posição é dita como melhor para Pretas, já que elas possuem muitos pontos, e Brancas, um grupo fraco (C é muito importante pois ataca o grupo fraco e ainda serve quase que como uma extensão do 4-4 no canto superior direito).]LB[pr:B][qj:C][qq:A]
+                )
+              )(
+                ;B[ql]LB[qq:A]C[Com A, a posição pode ser revertida para um joseki mais clássico.]
+                ;W[qq]LB[pp:A][qp:B]
+                (
+                  ;B[pp]
+                  ;W[qp]
+                  ;B[po]
+                  ;W[rn]LB[om:A][pn:B]C[A ou B são possíveis.]
+                  (
+                    ;B[om]C[Pretas possuem uma posição muito boa na parte inferior do tabuleiro.]
+                  )(
+                    ;B[pn]
+                  )
+                )(
+                  ;B[qp]
+                  ;W[pp]C[Primeiro o atari em A.]LB[po:B][rq:A]
+                  (
+                    ;B[rq]
+                    ;W[qr]
+                    ;B[po]
+                    ;W[op]
+                    ;B[qo]
+                    ;W[rr]
+                    ;B[no]
+                    ;W[oo]
+                    ;B[on]
+                    ;W[oq]
+                    ;B[pn]C[Preto mudou sua direção de jogo. A está agora mal posicionada.]LB[jp:A]
+                  )(
+                    ;B[po]
+                    ;W[op]
+                    ;B[rq]
+                    ;W[qo]C[Brancas revertem o joseki e conseguem uma posição estável do lado de fora.]
+                    ;B[qr]
+                    ;W[on]LB[rp:A]C[O atari em A também era possível.]
+                  )
+                )
+              )
+            )
+          )(
+            ;B[ip]C[Análogo a A, mas mais ambicioso.]
+          )(
+            ;B[qk]C[A pedra A faz a diferença agora. Se Brancas se aproximarem em B, pretas pinçam diretamente em C ou D (mais comum).]LB[fq:A][jp:D][kp:C][mp:B]
+            ;W[mp]
+            ;B[kp]C[A é a saída mais comum nessa situação e leva a variações extremamente complicadas. B é outra opção também que, às vezes, pode ser eficaz.
+
+Choi Cheolhan 9p, um jogador de estilo muito agressivo, obteve bons resultados com este fuseki.]LB[oo:B][pp:A]
+            (
+              ;W[oo]
+              ;B[qo]
+              ;W[ln]
+            )(
+              ;W[pp]
+              ;B[qp]LB[qo:B][qq:A]C[A era o mais comum, mas B também é possível.]
+              ;W[qq]C[Muito complicado.]
+            )
+          )
+        )
+      )(
+        ;W[dq]C[Análogo a quando A está em B.]LB[dp:B][dq:A]
+        ;B[pn]
+        (
+          ;W[dn]C[Go espelhado (em japonês, mane go) é uma modalidade que foi extensivamente estudada pelos japoneses. A conclusão é que Pretas não conseguiriam pagar o komi se simplesmente jogassem no tengen ou passivamente.
+
+Aqui, no entanto, quebrar a simetria em A é pegar uma extensão importante para ambos os lados e eliminar a possibilidade do irritante Go espelhado.]LB[jp:A]
+        )(
+          ;W[co]LB[fc:A][jp:B]C[A ou B são possíveis.]
+          (
+            ;B[fc]
+            ;W[df]
+            ;B[jd]
+            ;W[jp]C[Balanceado.]
+          )(
+            ;B[jp]LB[dq:B][jp:A][pq:C]C[A é bastante grande, por ser extensão tanto de B quanto de C.]
+          )
+        )
+      )(
+        ;W[cp]
+        ;B[ep]
+        ;W[eq]
+        ;B[fq]
+        ;W[dq]
+        ;B[fp]
+        ;W[cn]LB[mp:A][pn:B]C[A ou B são possíveis.]
+        ;B[mp]C[Novamente, Brancas oferecem uma extensão confortável para Pretas.]
+      )
+    )
+  )(
+    ;B[qd]C[O 3-4 possui um direcionamento primário de jogo já preestabelecido, mais especificamente, em A. Isso ocorre devido a A ser o maior lado e, também, por C ser uma aproximação muito confortável para o adversário.
+
+A direção B é secundária, e ocorre, como regra, somente depois que Pretas obtiveram C ou D como extensão primária.]LB[jd:A][oc:D][od:C][pj:B]
+    ;W[dd]LB[pp:A][pq:B][qp:C]
+    (
+      ;B[pp]LB[cp:C][dp:A][dq:B]C[Posição já discutida.]
+    )(
+      ;B[pq]LB[cp:C][dp:A][dq:B]
+      ;W[dp]LB[fc:A][nc:D][nd:C][oc:E][od:B][po:F]C[Posição parecida com a mini- e micro-chinesas. O lado superior é mais urgente por ser de maior extensão e compartilhado por ambos os lados. F é desaconselhável, mas possível, o problema é que deixa livre a aproximação confortável branca em B.]
+      ;B[fc]
+      ;W[cf]
+      ;B[lc]
+      ;W[po]
+      ;B[qo]
+      ;W[qn]
+      ;B[qp]
+      ;W[pn]
+      ;B[nq]
+      ;W[qj]LB[cq:B][qh:A]C[A é muito grande por ser extensão para as Pretas e, também, por desestabilizar um pouco as Brancas. Depois de AlphaGo, B talvez seja a opção mais comum.]
+      (
+        ;B[qh]LB[oj:A]C[Responder diretamente em A é um pouco passivo.]
+        ;W[od]C[Mais tarde, Pretas possuem aji com movimentos como A ou B.]LB[rk:B][rl:A]
+      )(
+        ;B[cq]
+        ;W[dq]
+        ;B[cp]
+        ;W[cn]
+        ;B[co]
+        ;W[do]
+        ;B[bn]
+        ;W[cr]
+        ;B[br]
+        ;W[bo]
+        ;B[dr]
+        ;W[bq]
+        ;B[cs]
+        ;W[bp]
+        ;B[cr]
+        ;W[bm]
+        ;B[dn]
+        ;W[cm]
+        ;B[fq]
+        ;W[fn]
+      )
+    )(
+      ;B[qp]LB[cp:C][dp:A][dq:B]
+      ;W[dp]C[Posição não recomendada para Pretas. O moyo será muito baixo, já que A e B estão na terceira linha. Além disso, ambos os 3-4 oferecem aproximações gratuitas Brancas.]LB[qd:B][qp:A]
+      ;B[oq]
+      ;W[od]
+      ;B[oc]
+      ;W[nc]
+      ;B[pc]
+      ;W[nd]LB[pe:C][pf:B][qf:A][qg:D]C[A, B, C ou D são possíveis. Porém, A e D são bastante achatadas.]
+      ;B[pf]
+      ;W[jd]
+    )
+  )(
+    ;B[pc]
+    ;W[dd]LB[pp:A][pq:C][qp:B]
+    (
+      ;B[pp]LB[cp:C][dp:A][dq:B]C[Posição já discutida.]
+    )(
+      ;B[qp]LB[cp:C][dp:A][dq:B]C[Posição já discutida.]
+    )(
+      ;B[pq]LB[cp:C][dp:A][dq:B]
+      ;W[dp]LB[pc:A][pq:B]C[Abertura experimentada por profissionais, mas não muito bem sucedida. O moyo criado por A e B é tão extenso que acaba sendo de fácil invasão.]
+      ;B[qk]
+      ;W[pe]LB[pe:A][po:B]C[Se Brancas viverem tanto em A quanto em B - e não é muito difícil -, a partida ficará muito difícil para Pretas.]
+    )
+  )
+)
