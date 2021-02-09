@@ -651,4 +651,13 @@ export const articlesMetadata: Article[] = [
     mainTopic: Topic.go,
     otherTopics: [Topic.fuseki],
   },
+  {
+    index: 47,
+    title: "Eleições 2018: Por Mais Sanidade",
+    link: "/articles/eleicoes_2018/eleicoes_2018.html",
+    date: Date.UTC(2018, 9, 14),
+    languages: [Language.portuguese],
+    mainTopic: Topic.politics,
+    otherTopics: [Topic.logic],
+  },
 ];
