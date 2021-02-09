@@ -590,4 +590,20 @@ export const articlesMetadata: Article[] = [
     mainTopic: Topic.go,
     otherTopics: [Topic.fuseki],
   },
+  {
+    index: 53,
+    title: "On Korea: A Brief Summary of My Experience",
+    link: "/articles/on_korea/on_korea.html",
+    date: Date.UTC(2018, 10, 10),
+    languages: [Language.english],
+    mainTopic: Topic.go,
+    otherTopics: [
+      Topic.meta,
+      Topic.psychology,
+      Topic.philosophy,
+      Topic.politics,
+      Topic.history,
+      Topic.social,
+    ],
+  },
 ];
