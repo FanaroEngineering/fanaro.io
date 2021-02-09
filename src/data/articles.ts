@@ -535,4 +535,13 @@ export const articlesMetadata: Article[] = [
     mainTopic: Topic.literature,
     otherTopics: [Topic.writing],
   },
+  {
+    index: 59,
+    title: "Fundamentos de Go: Outros Fusekis",
+    link: "/articles/outros_fusekis/outros_fusekis.html",
+    date: Date.UTC(2018, 11, 10),
+    languages: [Language.portuguese],
+    mainTopic: Topic.go,
+    otherTopics: [Topic.fuseki],
+  },
 ];

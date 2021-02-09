@@ -7,15 +7,19 @@
     <meta name="viewport" content="width=device-width" />
 
     <meta name="author" content="Philippe Fanaro" />
-    <meta name="description" content="Fundamentos de Go: Outros Fusekis"/>
+    <meta name="description" content="Fundamentos de Go: Outros Fusekis" />
 
     <meta property="og:image" content="thumbnail.png" />
-    <meta property="og:description" content="Fundamentos de Go: Outros Fusekis" />
+    <meta
+      property="og:description"
+      content="Fundamentos de Go: Outros Fusekis"
+    />
     <meta property="og:title" content="Fundamentos de Go: Outros Fusekis" />
     <meta property="og:site_name" content="fanaro.io" />
     <meta property="og:type" content="blog" />
 
     <script src="../../index.js"></script>
+    <script src="../../assets/glift_1_1_2.min.js"></script>
 
     <link rel="stylesheet" href="../../index.css" />
     <link rel="icon" type="image/svg+xml" href="../../assets/favicon.svg" />
@@ -26,7 +30,59 @@
 
       <h1>Fundamentos de Go: Outros Fusekis</h1>
 
-      <p></p>
+      <p>
+        Assim como em Cálculo 4, não há como negar que os fusekis deste capítulo
+        final são os restos da teoria da abertura. Mas só porque as coisas são é
+        desta maneira, não quer dizer que a realidade deva ser essa. Os
+        movimentos são menos ortodoxos, porém a diversão parte do jogador e não
+        do movimento em si.
+      </p>
+
+      <p>
+        Paralelamente, eu ainda comentei no vídeo sobre 3 partidas muito
+        famosas, talvez os 3 dos jogos mais importantes dos últimos 3 séculos de
+        Go: a partida do "<a
+          href="https://en.wikipedia.org/wiki/Ear-reddening_game"
+          >ear-reddening move</a
+        >" ou "movimento que avermelha a orelha", entre Genan Inseki e Shusaku
+        em 1846;
+        <a href="https://en.wikipedia.org/wiki/Go_Seigen"
+          >a partida do século XX</a
+        >, entre Honinbo Shusai e Go Seigen, em 1933; e
+        <a href="https://deepmind.com/research/alphago/alphago-china/"
+          >a partida entre Ke Jie 9p e AlphaGo</a
+        >
+        em 2017.
+      </p>
+
+      <p>
+        Em um pequeno adendo, cito aqui uma
+        <a href="https://rfg.jeudego.org/index.php/item/135-fuseki-trou-noir"
+          >matéria</a
+        >, em francês, sobre um dos fusekis mais curiosos desta parte das aulas:
+        o fuseki do Buraco Negro.
+      </p>
+
+      <p>
+        Seguem aqui as versões finais dos arquivos sgf também &mdash; o pacote
+        zip completo deles pode ser baixado
+        <a href="Guia-Basico-de-Fuseki.zip">aqui</a> &mdash;:
+      </p>
+
+      <div class="SGF" id="SGF"></div>
+      <script>
+        glift.create({
+          divId: "SGF",
+          sgf: "Guia-Basico-Fuseki-Outros.sgf",
+        });
+      </script>
+
+      <iframe
+        src="https://www.youtube.com/embed/UOHHfzDv8mU"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen
+      ></iframe>
     </article>
   </body>
 </html>

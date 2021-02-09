@@ -1,0 +1,364 @@
+(
+  ;GM[1]FF[4]CA[UTF-8]AP[Sabaki:0.41.0]KM[0.5]SZ[19]DT[2018-09-19]GN[Guia Básico de Fuseki]PB[Preto]PW[Branco]C[A - 4-4 ou Hoshi
+B - 3-4 ou Komoku
+D - 5-3
+E - 5-4
+F - 3-3 ou Sansan
+G - Tengen
+H - 7-5 ou fuseki do Buraco Negro
+I - 5-5
+J - Fuseki da Grande Muralha
+
+Discutirei os movimentos D, E, F, G, H, I e J apenas superficialmente, uma vez que são bem menos comuns, para deixar o arquivo mais suscinto.
+
+Como princípio-mor, tome a regra de que, quando colocamos uma pedra na 4a linha, estamos indicando influência, isto é, poder na área ao redor da pedra; e, quando colocamos uma na 3a linha, indicamos muito maior certeza em relação ao território, mas menos poder de controle na região.
+
+Outro princípio muito importante é o fato de que, ao colocar uma pedra em determinada região, esta perde valor por ser ocupada. Por isso, evitamos de aglomerar muitos movimentos em uma mesma região no início da partida.
+
+Um pequeno adendo faço sobre o Go espelhado, que é simplesmente imitar os movimentos pretos, esperando que o komi faça a diferença se ambos os jogadores obtiverem quantidades próximas de pontos. É uma estratégia possível e bastante difícil para ambos os lados. É preciso, no entanto, atenção ao fato de que quebrar a simetria logo de início no tengen, geralmente não é muito eficiente; os profissionais estimam que o valor do tengen no início seja, ao final da partida, de somente 3 pontos a mais para Pretas, insuficiente para compensar o komi.
+
+Ah, não se esqueça: Ninguém perde a partida nos primeiros movimentos!]LB[jj:G][oe:I][og:H][pc:C][pd:A][pe:E][pj:J][qc:F][qd:B][qe:D]
+  (
+    ;B[qe]C[Aqui, assim como no 5-4, procura-se estabelecer influência externa, e não tomar o canto logo de início.
+
+Em geral, há duas abordagens bem sucedidas com esse tipo de movimento. A primeira seria simplesmente se aproximar por fora em A, por exemplo, o que forçaria Pretas a ou voltar a um jogo padrão em B ou a deixar o canto aberto para Brancas, o que pode ser prejudicial.
+
+A segunda, possibilidade seria simplesmente entrar no canto diretamente com B. É suscetível às armadilhas dos complicados josekis que o 5-4 e o 5-3 guardam - como a taisha -, porém é talvez a estratégia mais efetiva.]LB[pc:B][qj:A]
+    ;W[dd]
+    ;B[oq]
+    ;W[dp]LB[fc:A][fq:B]C[A e B são possíveis.]
+    (
+      ;B[fc]
+      ;W[cf]LB[jd:B][nc:A]C[A é uma "extensão" do canto que foi experimentada recentemente.
+
+B é uma ideia análoga ao fuseki Kobayashi (discutido no arquivo também), é preciso muito cuidado com as armadilhas da Taisha.]
+      (
+        ;B[jd]
+        (
+          ;W[pc]
+          ;B[nd]C[Início da Taisha, aspedra A e B farão grande diferença na luta.
+
+B é um erro, era melhor C ou D.]LB[jd:A][pc:B][qk:C][qp:D]
+          ;PL[W]AE[jd][fc][dd][cf][dp][oq]C[Para aqueles que não conhecem a Taisha...
+
+Brancas têm A ou B para evitar a Taisha.]LB[oc:B][od:A]
+          (
+            ;W[pe]C[A é a Taisha. 
+
+Caso Pretas ainda queiram evitar a Taisha, podem jogar em B.]LB[pd:A][pf:B]
+            ;B[pd]
+            ;W[od]
+            ;B[qd]LB[oc:A][oe:B]C[A é a continuação típica. B é possível se Brancas tiverem a escada.]
+            (
+              ;W[oc]
+              ;B[oe]LB[ne:B][pf:A]C[B não é tão bom pois Pretas ficam muito fortes.]
+              (
+                ;W[pf]C[A é uma variação mais moderna. B é o típico.]LB[of:A][qc:B]
+                (
+                  ;B[of]
+                )(
+                  ;B[qc]
+                  ;W[nc]C[A, B e C são possíveis. Modernamente, C se tornou a mais bem sucedida opção. B era o mais comum no passado.
+
+É importante notar que é possível começar um ko como Brancas em D, é uma arma importante e que pode ser decisiva em algumas variações. Essa arma foi inclusive utilizada em uma das partida mais lendárias da história do Go, a partida do "ear-reddening move" (movimento que avermelha a orelha), entre Genan Inseki e Shusaku.]LB[md:A][ne:B][of:C]
+                  ;B[of]LB[pg:B][qf:A]C[A, modernamente, parece ser o único movimento. B é o mais típico do passado.]
+                  ;W[pg]
+                  ;B[og]
+                  ;W[ph]
+                  ;B[md]
+                  ;W[mc]
+                  ;B[oh]
+                  ;W[pi]
+                  ;B[lc]
+                  ;W[lb]
+                  ;B[kb]
+                  ;W[ld]
+                  ;B[kc]
+                  ;W[qb]
+                  ;B[rb]
+                  ;W[ra]
+                  ;B[mb]
+                  ;W[nb]
+                  ;B[pb]
+                  ;W[pa]C[Ko visto na partida entre Genan Inseki e Shusaku.]
+                )
+              )(
+                ;W[ne]
+                ;B[pf]
+                ;W[md]
+                ;B[nf]
+                ;W[nc]C[Pretas estão fortes e têm sente.]
+              )
+            )(
+              ;W[oe]
+              ;B[oc]
+              ;W[nc]
+              ;B[ob]
+              ;W[md]
+            )
+          )(
+            ;W[oc]
+            ;B[oe]
+            ;W[mc]
+          )(
+            ;W[od]
+            ;B[oe]
+            ;W[nc]
+            ;B[md]
+            ;W[mc]
+            ;B[ld]
+            ;W[lc]
+            ;B[kd]
+            ;W[jc]TR[lc][mc][nc]C[Importante caminhar 3 vezes na 3a linha.]
+          )
+        )(
+          ;W[qk]
+          ;B[qi]
+          ;W[qo]
+          ;B[qq]
+          ;W[oo]
+        )
+      )(
+        ;B[nc]C[A ideia é convidar Brancas a invadir em A mais tarde. Pretas gostariam de contra-atacar ferozmente.
+
+B caiu em desuso rapidamente, pois a opinião que prevalece é a de que algo como C é mais eficiente e seguro, uma vez que não há continuações boas o suficiente para B.]LB[nc:B][pc:C][pd:A]
+        ;W[pd]
+        ;B[qd]
+        ;W[pc]
+        ;B[qc]C[Brancas invadem o território, mas obtêm um grupo fraco.]
+      )
+    )(
+      ;B[fq]
+      ;W[cn]
+      ;B[jp]LB[jp:B][qp:A]C[Se Brancas se aproximarem em A, Pretas B fará grande diferença na luta. Pretas B mudam completamente o resultado de josekis agressivos como a taisha.]
+      ;W[qp]LB[pn:B][qn:A]C[A e B são boas opções para Pretas.]
+      ;B[qn]
+      ;W[op]
+      ;B[pq]
+      ;W[pp]
+      ;B[qq]
+      ;W[mp]
+      ;B[nq]LB[jp:A]C[A faz a diferença na luta.]
+    )
+  )(
+    ;B[pe]LB[nc:B][pc:A]C[Outra canto popular para aqueles que querem forçar o adversário ao erro. Em geral, mais tarde, após a aproximação branca em A, Pretas B lança um ataque difícil para ambos os lados.]
+    (
+      ;W[dd]
+      ;B[op]LB[pp:A]C[Gostaria de adicionar uma pequena nota sobre A.]
+      (
+        ;W[dp]
+        ;B[fc]
+        ;W[cf]
+        ;B[jd]C[A e B são as melhores opções.]LB[qk:A][qp:B]
+        (
+          ;W[qk]
+          ;B[qi]
+          ;W[qo]
+          ;B[qq]
+          ;W[ok]
+        )(
+          ;W[qp]
+          ;B[pn]
+          ;W[oq]C[Nesta abertura, a ideia de Pretas é criar complicações com B, seja agora, ou mais tarde quando Brancas invadirem em C.]LB[pc:C][pn:A][pq:B]
+          ;B[pq]
+          ;W[pp]
+          ;B[qq]
+          ;W[rq]
+          ;B[rr]
+          ;W[rp]
+          ;B[or]
+          ;W[nq]
+          ;B[nr]
+          ;W[mq]
+          ;B[oo]
+          ;W[sr]
+          ;B[qr]
+          ;W[qm]
+          ;B[pl]
+          ;W[kq]
+          ;B[mr]
+          ;W[lr]
+          ;B[lp]
+          ;W[lq]
+          ;B[ms]
+          ;W[rl]
+          ;B[ql]
+          ;W[rk]
+          ;B[qn]
+          ;W[rn]
+          ;B[pm]
+          ;W[rm]C[Uma das variações do joseki.]
+        )
+      )(
+        ;PL[W]AE[op]AB[pp]
+        ;W[dp]C[O "joseki" que eu gostaria de comentar é sobre quanto Branco, mais tarde, eventualmente, se aproxima em A.]LB[qn:A]
+        ;PL[B]AW[qn]LB[pm:A]C[A é uma "armadilha" muito comum dos adeptos de jogadas truque.]
+        ;B[pm]
+        ;W[pn]
+        ;B[on]LB[om:B][oo:A]C[A é menos elegante e deixa Pretas mais fortes.]
+        (
+          ;W[om]
+          ;B[oo]
+          ;W[pl]
+          ;B[nm]C[A é provavelmente a primeira intuição e não está errada (atestado por um profissional 9p). Já B é mais comum dentre os jogadores de mais alto nível. Por quê?
+
+B retira o aji da pedra preta, simples assim. Mais tarde, o que os jogadores mais ingênuos não veem é que há movimentos muito severos de cerco na área com C e D, além do tesuji em E para retirar os olhos das Brancas e proteger um pouco o canto.
+
+Vale deixar registrado que as sequências aqui não são joseki. A influência das Pretas é muito alta, não agrega muito; além de o canto estar aberto.]LB[oj:D][ol:A][pj:C][qm:B][rn:E]
+          (
+            ;W[qm]C[Seguro, porém afetando menos o exterior. Mais recomendado.]
+          )(
+            ;W[ol]C[Mais complicado. Mais tarde, A, B e C podem ser úteis.]
+            (
+              ;B[nl]
+              ;W[mc]
+              (
+                ;B[pj]
+                ;W[oj]
+                ;B[ok]C[Difícil sair...]
+              )(
+                ;B[oj]C[Menos severo.]
+                ;W[qj]
+              )
+            )(
+              ;B[rn]LB[rm:B][ro:A]
+              (
+                ;W[ro]
+                ;B[qm]
+                ;W[rm]
+                ;B[ql]TR[pm][ql][qm]C[Pretas dividem as Brancas.]
+              )(
+                ;W[rm]
+                ;B[ro]C[O canto é razoavelmente protegido da invasão em A, porém B também fortalece razoavelmente as Brancas, que possuem sente.]LB[qq:A][rm:B]
+              )
+            )
+          )
+        )(
+          ;W[oo]LB[om:B][po:A]C[A é mais razoável para as Pretas. B leva a uma variação bastante ruim para Pretas.]
+          (
+            ;B[om]
+            ;W[po]
+            ;B[no]
+            ;W[op]C[O canto é bastante difícil de ser resgatado.]LB[pq:A]
+            ;B[pq]
+            ;W[oq]
+            (
+              ;B[mq]
+              ;W[rq]
+            )(
+              ;B[or]
+              ;W[nr]
+              ;B[pr]
+              ;W[mq]C[Brancas estão para fora e A ou B têm potencial para matar o canto.]LB[rp:B][rq:A]
+            )
+          )(
+            ;B[po]
+            ;W[om]
+            ;B[nn]
+            ;W[pl]
+            ;B[nm]
+            ;W[qm]
+            ;B[np]LB[oo:A]C[A pedra A é uma perda para Brancas. A variação ainda é subótima para Pretas, porém cortar do outro lado era melhor.]
+          )
+        )
+      )
+    )(
+      ;W[pc]
+      ;B[nc]
+      ;W[od]
+      ;B[qc]
+      ;W[qb]
+      ;B[qd]
+      ;W[ob]
+      ;B[md]C[Luta difícil geralmente. Mais difícil ainda para Brancas se Pretas possuírem reforço em A, o que é típico dos fusekis que começam com B.]LB[pe:B][pj:A]
+    )
+  )(
+    ;B[qc]C[O foco aqui é em assegurar o território do canto logo de início. No começo do século XX, era muito popular, contudo, caiu em desuso por ser um pouco lento e pouco ambicioso. Voltou à moda depois das partidas entre AlphaGo Master e Ke Jie 9p em 2017.]
+    ;W[dd]
+    ;B[qp]
+    ;W[dp]LB[np:A][nq:B]C[A e B são possíveis.]
+    ;B[np]C[Fuseki jogado em uma das partidas entre AlphaGo Master e Ke Jie 9p em 2017.
+
+A, B ou C são comuns.]LB[lq:C][nd:A][qi:B]
+    (
+      ;W[nd]
+      ;B[pf]
+      ;W[kd]
+      ;B[cq]
+    )(
+      ;W[qi]
+      ;B[qk]
+      ;W[qf]
+      ;B[nc]
+    )(
+      ;W[lq]
+      ;B[pf]
+    )
+  )(
+    ;B[jj]C[Tengen logo no início do jogo foi estudado por profissionais japoneses durante muito tempo em meados do século XX. Teoricamente, seu valor é vago por ser ineficiente, já que é mais difícil de se fazer território no centro. A estimativa depois dos estudos é que Pretas finalizariam a partida com, no máximo, 3 pontos a mais que Brancas, ou seja, insuficiente para compensar o komi.
+
+Mas, talvez, o motivo mais relevante seja porque sua influência ao longo do tabuleiro é muito vaga. Em tabuleiros menores, 9x9 ou 13x13, por exemplo, é uma abertura viável de jogo.]
+    ;W[dd]
+    ;B[pd]
+    ;W[pp]
+    ;B[cq]LB[cq:B][pd:A]C[Variante de Go Seigen 9p.
+
+Nos anos 1950, essa era a variante que acontecia com frequência com Go Seigen 9p. A ideia das Brancas é interromper a influência com o fuseki cruzado; e a ideia das Pretas é equilibrar a influência da abertura jogando ao mesmo tempo um 4-4 e um 3-3. Go Seigen 9p obteve muito sucesso com essa abertura, mas muito se deve às suas habilidades lendárias.
+
+Caso queira, há inclusive uma partida muito famosa entre Go Seigen e Honinbo Shusai (o último Honinbo "hereditário"), entitulada de Partida do Século (XX). https://senseis.xmp.net/?GameOfTheCentury]
+  )(
+    ;B[og]C[O 7-5 é uma invenção recente devido ao profissional japonês So Yokoku 9p e ao profissional taiwanês Cho U 9p, ambos da Nihon Kiin. A ideia é criar uma formação simétrica no centro, apelidada de fuseki do Buraco Negro.]
+    ;W[pd]
+    ;B[ge]
+    ;W[dd]
+    ;B[em]
+    ;W[dp]
+    ;B[mo]
+    ;W[pp]C[Depois de aproximadamente 1 ano jogando frequentemente esta abertura - e com razoável sucesso -, ambos os profissionais chegaram à conclusão de que ela não era ótima.]
+  )(
+    ;B[oe]C[O 5-5 não se tornou muito popular, a conclusão foi que o 4-4 tem maior equilíbrio entre influência e território.
+
+O mais comum é entrar no 3-3 mais tarde.]
+    ;W[qc]
+    ;B[qe]
+    ;W[nc]
+    ;B[md]LB[mc:A][nd:B]C[A - variação pacífica.
+
+B - variação de luta.]
+    (
+      ;W[mc]
+      ;B[ld]
+      ;W[lc]
+      ;B[kd]
+      ;W[jc]
+      ;B[pj]
+    )(
+      ;W[nd]
+      ;B[ne]
+      ;W[me]
+      ;B[mc]
+      ;W[mb]
+      ;B[lb]
+      ;W[nb]
+      ;B[kd]
+      ;W[mf]
+    )
+  )(
+    ;B[pj]C[O fuseki da Grande Muralha foi um experimento criado por um jogador amador do ocidente que, na verdade, talvez nem mereceria menção aqui, mas creio que seria bom mencioná-lo ainda pois é certamente algo que pode pegar desprevenido alguém menos experiente.]
+    ;W[pd]
+    ;B[dj]
+    ;W[dd]
+    ;B[jj]
+    ;W[dp]
+    ;B[gj]LB[mj:B][pp:A]
+    (
+      ;W[pp]
+      ;B[mj]C[Essencialmente, a ideia é que Pretas possuem uma influência tão maciça ao redor do tabuleiro que Brancas não teriam como proteger seu território.
+
+A recomendação de profissionais é que, se Brancas se sentirem desconfortáveis em jogar em uma posição como esta -- que é boa para elas --, basta apenas quebrar a muralha ao invés de pegar o último canto.]
+    )(
+      ;W[mj]
+      ;B[mc]C[Brancas quebram o fuseki preto. O jogo continua, apesar de que complicado.]
+    )
+  )
+)
