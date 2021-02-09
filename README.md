@@ -40,6 +40,7 @@ It was meant to be a [single-page application (SPA)][spa] &mdash; Angular style 
           </ul>
         </li>
         <li><a href="#12-formatting">1.2. Formatting</a></li>
+        <li><a href="#13-snippets">1.3. Snippets</a></li>
       </ul>
     </li>
   </ul>
@@ -114,3 +115,10 @@ npx prettier -w .
 
 [prettier]: https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode
 [prettierrc]: .prettierrc
+
+### 1.3. Snippets
+
+The [snippets][snippets] file contains all of the extremely useful code snippets for this project. They will not only speed you up but guarantee everything is standardized as it should.
+
+
+[snippets]: .vscode/snippets.code-snippets
