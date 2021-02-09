@@ -526,4 +526,13 @@ export const articlesMetadata: Article[] = [
     mainTopic: Topic.go,
     otherTopics: [Topic.fuseki],
   },
+  {
+    index: 60,
+    title: "The Left Hand of Darkness, and SciFi",
+    link: "/articles/left_hand_of_darkness/left_hand_of_darkness.html",
+    date: Date.UTC(2018, 11, 20),
+    languages: [Language.english],
+    mainTopic: Topic.literature,
+    otherTopics: [Topic.writing],
+  },
 ];
