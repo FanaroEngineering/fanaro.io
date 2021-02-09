@@ -498,4 +498,13 @@ export const articlesMetadata: Article[] = [
     mainTopic: Topic.dataScience,
     otherTopics: [Topic.statistics, Topic.math],
   },
+  {
+    index: 63,
+    title: "Mini-Jogos de Go",
+    link: "/articles/mini_jogos_go/mini_jogos_go.html",
+    date: Date.UTC(2019, 1, 12),
+    languages: [Language.english],
+    mainTopic: Topic.go,
+    otherTopics: [],
+  },
 ];
