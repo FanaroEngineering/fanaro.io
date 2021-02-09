@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>My deeplearning.ai Experience</title>
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+
+    <meta name="author" content="Philippe Fanaro" />
+    <meta name="description" content="My deeplearning.ai Experience" />
+
+    <meta property="og:image" content="thumbnail.jpg" />
+    <meta property="og:description" content="My deeplearning.ai Experience" />
+    <meta property="og:title" content="My deeplearning.ai Experience" />
+    <meta property="og:site_name" content="fanaro.io" />
+    <meta property="og:type" content="blog" />
+
+    <script src="../../index.js"></script>
+
+    <link rel="stylesheet" href="../../index.css" />
+    <link rel="icon" type="image/svg+xml" href="../../assets/favicon.svg" />
+  </head>
+  <body>
+    <article>
+      <img src="thumbnail.jpg" alt="Thumbnail" />
+
+      <h1>My deeplearning.ai Experience</h1>
+
+      <section>
+        <custom-h2 text="Introduction"></custom-h2>
+
+        <p>
+          At the end of July 2018, as some of the readers might have guessed
+          from
+          <a href="https://fanaro.com.br/reenter-the-dragon-engineering/"
+            >this post</a
+          >, I decided to turn my career back towards engineering. The first
+          week was dedicated solely to getting acquainted with Python, but the
+          main theme of the next ones was the Coursera Specialization
+          <a href="https://www.deeplearning.ai/">Deeplearning.ai</a> &mdash;
+          though I tried to learn from something more cutting edge like
+          <a href="http://www.fast.ai/">fast.ai</a>, but couldn’t do much
+          without the basic concepts<foot-note
+            text="Jeremy Howard, fast.ai’s main teacher, is one the best 
+            practitioners in the world, however, quite frankly, he skips so 
+            many steps and so many important concepts, that I hardly believe 
+            you go from zero to hero with only his videos &mdash; though he 
+            advertises it. Most of his successful students already had a 
+            Machine Learning background."
+          ></foot-note
+          >. Now that it has been approximately 2 weeks since I finished the
+          whole set of courses, I can give a somewhat thorough review of the
+          full experience.
+        </p>
+
+        <p>
+          Before entering the review, let me give you an idea of how many hours
+          you would have to sink in (counting the time you will take to write
+          your notes also) to learn the content of the courses:
+        </p>
+
+        <table>
+          <thead>
+            <th>Topic</th>
+            <th>Time Needed</th>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Neural Networks and Deep Learning</td>
+              <td>10h</td>
+            </tr>
+            <tr>
+              <td>Improving Neural Networks</td>
+              <td>8.5h</td>
+            </tr>
+            <tr>
+              <td>Structuring Machine Learning Projects</td>
+              <td>3.5h</td>
+            </tr>
+            <tr>
+              <td>Convolutional Neural Networks</td>
+              <td>10h</td>
+            </tr>
+            <tr>
+              <td>Sequence Models</td>
+              <td>8h</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <p>
+          In total, it would be roughly 40h, but I would estimate 50h to 60h in
+          order to have the knowledge really make its way into your long-term
+          memory.
+        </p>
+
+        As usual, (most of) the source code will be in my Github profile, more
+        specifically,
+        <a href="https://github.com/psygo/deeplearning.ai">this repo</a>. In it,
+        you will also find my course notes, which are all in the markdown
+        language and include all the necessary formulas in LaTeX also, a
+        material I would like to believe is very useful even for those who have
+        taken the specialization, since it summarizes the whole experience in
+        only 5 files (encoded as <code>dlCS#.md</code>, for Deep Learning Cheat
+        Sheet + the number of the course).
+      </section>
+
+      <section>
+        <custom-h2 text="Neural Networks and Deep Learning"></custom-h2>
+
+        <p>This first course was the one that got me hooked.</p>
+
+        <p>
+          I had already taken the first week of it 2 years ago, but didn’t have
+          the necessary mindset nor the belief that it would be worth the time
+          to go through it to the end. This time, since my mental state was much
+          more in tune with online courses and I was much more interested, I
+          decided to take it again, and I think I can safely say that this
+          course feels like a must-have.
+        </p>
+
+        <p>
+          Andrew Ng<foot-note
+            text="He is also the co-founder of Coursera. Prior to him, his 
+            friend and colleague, Geoffrey Hinton, the godfather of Deep 
+            Learning, taught the course. During that time, an online group of 
+            students developed the most used optimization algorithm for Neural 
+            Networks: ADAM."
+          ></foot-note
+          >, the main teacher &mdash; and the only one you will see &mdash;, is
+          not only one of the most competent practitioners of Deep Learning in
+          the world, but also an amazing teacher who has an incredibly simple
+          way of explaining complex concepts. His explanations always start with
+          the ideas behind systems or algorithms and then the more difficult to
+          understand respective set of equations, a technique that enabled
+          learning feel pleasant and fulfilling. Another of his strengths is
+          notation: there is no real consensus among practitioners nor
+          researchers, so beginners can be very confused; thankfully, Andrew
+          chose a very simple, consistent and practical notation.
+        </p>
+
+        <p>
+          The concepts discussed in this course are paramount to the field and
+          all of the more complex networks you will later learn, such as
+          Convolutional Neural Networks (CNN) and Recurrent Neural Networks
+          (RNN). Some of them are:
+        </p>
+
+        <ul>
+          <li>Activation Functions</li>
+          <li>Sigmoid and Softmax</li>
+          <li>Logistic Regression Cost Function</li>
+          <li>Backpropagation & Gradient Descent (and how to implement it)</li>
+          <li>General Equations for Neural Networks</li>
+          <li>Random Initializations</li>
+        </ul>
+
+        <p>
+          All of the important parts will be coded from scratch in Python and
+          you will end up feeling very proud of yourself for being able to go
+          from zero to working NN with very few lines of code. You can consult
+          the Jupyter Notebooks in the aforementioned
+          <a href="https://github.com/psygo/deeplearning.ai">Github Repo</a> (or
+          google it) to get an idea of how it is done.
+        </p>
+      </section>
+
+      <section>
+        <custom-h2
+          text="Improving Deep Neural Networks: Hyperparameter Tuning, 
+          Regularization and Optimization"
+        ></custom-h2>
+
+        <p>
+          In this following course we will then enter the realm of art, since
+          many of the techniques involving hyperparameters don’t work for all
+          cases and, thus, rely a lot on the intuition of the engineer. This is
+          another essential chapter of a Deep Learning practitioner, sometimes
+          you can only make an NN work properly if you make a good optimization.
+        </p>
+
+        <p>
+          Most of the topics here are studied both in a high and low level of
+          abstraction, with very clear explanations from Andrew Ng &mdash; I
+          haven’t yet found clearer explanations anywhere else &mdash;, they
+          are:
+        </p>
+
+        <ul>
+          <li>Regularization</li>
+          <li>Dropout</li>
+          <li>Data Augmentation</li>
+          <li>Early Stopping</li>
+          <li>Vanishing/Exploding Gradients</li>
+          <li>Gradient Checking</li>
+          <li>Batch vs Mini-Batch Gradient Descent</li>
+          <li>RMSprop</li>
+          <li>ADAM</li>
+          <li>Learning Rate Decay</li>
+          <li>The Problem of Local Optima</li>
+          <li>Batch Normalization</li>
+          <li>Deep Learning Frameworks</li>
+        </ul>
+
+        <p>
+          Again, surprisingly, you will find yourself implementing basically all
+          of the above from scratch, a quite impressive feat in my opinion.
+        </p>
+
+        <p>
+          Nonetheless, I believe the last coding exercise is quite a strong
+          indication of what’s to come. In the Deep Learning Frameworks section
+          you will have a very brief introduction of one of the core tools used
+          by most of today’s practitioners: TensorFlow; but, despite its
+          importance, only a very small percentage of the course is devoted to
+          it, and you will inevitably have to scrape the web for tutorials
+          trying to figure out how to deal with the very strange way of thinking
+          TensorFlow has<foot-note
+            text="Many industry professionals complain that many of Google’s 
+            products come with very non-standard behaviors, which is one of 
+            their ways of making clients depend solely on them. Facebook’s 
+            Pytorch, for example, a competing framework, took an approach that 
+            is much more in line with Pythonic coding and is nowadays the 
+            mainstream choice for researchers."
+          ></foot-note
+          >. From the end of this course I started to suspect that I would not
+          be a fully independent practitioner or researcher after I had finished
+          the whole specialization.
+        </p>
+      </section>
+
+      <section>
+        <custom-h2 text="Structuring Machine Learning Projects"></custom-h2>
+
+        <p>
+          This part of the set feels like an interlude. It is centered around
+          two longer quizzes which would test your ability of dealing with the
+          implementation of real-world systems (a bird classifier and an
+          autonomous driving car). Andrew Ng created these two problems to train
+          and test his students on what they had learned, but soon realized that
+          their use could be broadened, since he later witnessed engineering
+          teams stuck for months in problems that were solved within his
+          simulations/quizzes.
+        </p>
+
+        <p>
+          Some students that are more experienced in the field have reviewed
+          this course as a huge breakthrough in their Deep Learning careers,
+          however, I think I won’t be able to fully assess its value until I
+          face similar problems in real life<foot-note
+            text="I’m stuck on a project right now. But, unfortunately, these 
+            quizzes are not related to it. T.T"
+          ></foot-note
+          >. For now, they feel like a more complicated repetition of the two
+          former courses. My only complaint would be that the submission of the
+          quizzes here were a painstaking process as my answers were
+          involuntarily changed many times due to some kind of weird minor bug.
+        </p>
+      </section>
+
+      <section>
+        <custom-h2 text="Convolutional Neural Networks"></custom-h2>
+
+        <p>
+          As previously mentioned, the quality of the courses starts to drop
+          from here and that’s mostly because the coding exercises are too short
+          for the complexity of the algorithms. It was probably mandatory for
+          the developers to fit everything into short pills, but I can’t help
+          but still feel uneasy when it comes to implementing CNNs after this
+          course &mdash; that’s one of the reasons why I’ve been going around
+          the web looking for different tutorials with different implementations
+          &mdash;, although you will indeed implement the most important steps
+          of the CNN various algorithms.
+        </p>
+
+        <p>
+          The other factor that accounts for the diminishing value of the
+          courses is the fact that a detailed explanation about the
+          peculiarities of the Keras library &mdash; which sits on top of
+          TensorFlow and Pytorch, and is widely used by researchers and
+          practitioners &mdash; is lacking. Though mostly an easy to understand
+          framework, Keras also has some specific ways of executing some aspects
+          of NNs<foot-note text="Specially the dimensions notation"></foot-note>
+          &mdash; it also comes from Google in a way… &mdash;, so adapting
+          yourself to it can be quite annoying.
+        </p>
+
+        <p>
+          Anyway, the intuition and theory of the course seems, as usual, to
+          have enough quality to avoid any complaints &mdash; even though it
+          hasn’t been updated since around the end of 2016:
+        </p>
+
+        <ul>
+          <li>How (and Why) Convolutions Work</li>
+          <li>Padding and Strided Convolutions</li>
+          <li>Pooling (Max and Average) Layers</li>
+          <li>
+            Various Classical Architectures (LeNet-5, AlexNet, VGG-16, ResNet,
+            Inception)
+          </li>
+          <li>1×1 Convolutions</li>
+        </ul>
+      </section>
+
+      <section>
+        <custom-h2 text="Sequence Models"></custom-h2>
+
+        <p>
+          Out of the last 3 courses, this is my favorite. The notation and
+          distinction between LSTMs and GRUs is probably its strongest point,
+          and, certainly, not very easy to find elsewhere. Sequence Models are a
+          very peculiar and newer area when compared to normal NNs and CNNs, so
+          everything here can be quite eye-opening &mdash; much like when you
+          see recurrent algorithms for the first time. The main topics are:
+        </p>
+
+        <ul>
+          <li>
+            Why and When to choose RNNs (when there is a step-wise dependency in
+            the independent variables)
+          </li>
+          <li>How RNNs measure conditional probabilities</li>
+          <li>Language Modeling</li>
+          <li>
+            Vanishing Gradients in RNNs (more usual than exploding gradients)
+          </li>
+          <li>GRUs & LSTMs</li>
+          <li>Bidirectional and Deep RNNs</li>
+          <li>Embedding Matrices and Transfer Learning</li>
+          <li>Similarity Functions, Linguistic Regularities and t-SNE</li>
+          <li>
+            Algorithms for learning embedding matrices (Word2Vec, Negative
+            Sampling, GloVe)
+          </li>
+          <li>Beam Search</li>
+          <li>Translation Metrics (e.g. Bleu Score)</li>
+          <li>Attention Models</li>
+          <li>Trigger Word Detection</li>
+        </ul>
+
+        <p>
+          I wouldn’t say I can implement any of the above methods from scratch
+          with only this course; in the coding exercises, we see only a higher
+          level application &mdash; though I could do it if I studied the
+          particular application. The ending of this last section of the
+          specialization is the biggest example of the issue I had mentioned
+          about skimming through the details of the implementation to fit the
+          time slot.
+        </p>
+      </section>
+
+      <section>
+        <custom-h2 text="Conclusion"></custom-h2>
+
+        <p>
+          The more you use the internet the more you realize how ludicrous it is
+          to give complex experiences a rating that usually has at most 5
+          levels. If I give a 4-star rating to this specialization, you will
+          believe it is rather mediocre, if, on the other hand, I give it a
+          5-star, you might believe this is the bomb. It’s neither of those, to
+          be more precise, I would give it 85% (a 4.25-star rating) and that’s
+          because I think they oversimplified the implementations of the CNNs
+          and RNNs.
+        </p>
+
+        <p>
+          However, the grading is not the most important concept to be grasped
+          here, but the realization that the status quo of the online courses
+          today is almost always not enough to convert people into real
+          practitioners, simply because they won’t be able to give enough
+          experience to the student &mdash; i.e., they mostly deal with toy and
+          classical problems. What the student should realize is that no course,
+          be it online or not, will be able to compensate for a team of trained
+          developers and novel problems, that is: real-life experience.
+        </p>
+      </section>
+    </article>
+  </body>
+</html>

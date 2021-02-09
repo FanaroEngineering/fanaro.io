@@ -633,4 +633,13 @@ export const articlesMetadata: Article[] = [
     mainTopic: Topic.go,
     otherTopics: [Topic.review],
   },
+  {
+    index: 49,
+    title: "My deeplearning.ai Experience",
+    link: "/articles/deeplearning.ai/deeplearning.ai.html",
+    date: Date.UTC(2018, 9, 20),
+    languages: [Language.english],
+    mainTopic: Topic.dataScience,
+    otherTopics: [],
+  },
 ];
