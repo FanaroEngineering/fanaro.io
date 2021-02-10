@@ -23,6 +23,7 @@ export enum Topic {
   statistics = "Statistics",
   dataScience = "Data Science",
   browserExtension = "Browser Extension",
+  engineering = "Engineering",
   programming = "Programming",
   dart = "Dart",
   python = "Python",
@@ -741,5 +742,14 @@ export const articlesMetadata: Article[] = [
     languages: [Language.portuguese],
     mainTopic: Topic.go,
     otherTopics: [Topic.tsumego],
+  },
+  {
+    index: 37,
+    title: "Reenter the Dragon: Engineering",
+    link: "/articles/reenter_engineering/reenter_engineering.html",
+    date: Date.UTC(2018, 7, 15),
+    languages: [Language.english],
+    mainTopic: Topic.engineering,
+    otherTopics: [Topic.meta, Topic.philosophy],
   },
 ];
