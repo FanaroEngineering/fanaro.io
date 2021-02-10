@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <title>Quebra-Cabeça de Go</title>
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+
+    <meta name="author" content="Philippe Fanaro" />
+    <meta name="description" content="Quebra-Cabeça de Go" />
+
+    <meta property="og:image" content="thumbnail.png" />
+    <meta property="og:description" content="Quebra-Cabeça de Go" />
+    <meta property="og:title" content="Quebra-Cabeça de Go" />
+    <meta property="og:site_name" content="fanaro.io" />
+    <meta property="og:type" content="blog" />
+
+    <script src="../../index.js"></script>
+    <script src="../../assets/glift_1_1_2.min.js"></script>
+
+    <link rel="stylesheet" href="../../index.css" />
+    <link rel="icon" type="image/svg+xml" href="../../assets/favicon.svg" />
+  </head>
+  <body>
+    <article>
+      <img src="thumbnail.png" alt="Thumbnail" />
+
+      <h1>Quebra-Cabeça de Go</h1>
+
+      <p>
+        Estava eu na BIBA (Blackie’s International Baduk Academy) em mais um dia
+        de árduo treinamento com tsumegos e inevitáveis mortes trágicas contra
+        jogadores mais fortes quando, para descontrair o clima um pouco pesado,
+        a professora Diana propõe um desafio, um quebra-cabeça, separadamente a
+        cada um dos estudantes. Havia um outro muito interessante também, mas eu
+        só me lembro do meu.
+      </p>
+
+      <p>
+        A proposição é a seguinte: Preto acaba de cometer um erro e, assim, pede
+        ao adversário para corrigi-lo e seguir a partida normalmente. Branco,
+        inesperadamente, aceita. Qual era a posição original e qual é o
+        movimento que salva o grupo preto?
+      </p>
+
+      <p>
+        Eu respondi depois de pensar algo entre 5 e 10 minutos. Aparentemente,
+        quanto melhor for o seu nível de Go, mais difícil será resolver o
+        problema na verdade. O meu tempo de resolução até que foi bastante
+        rápido segundo eles; acreditem se quiserem: houve até profissionais que
+        não conseguiram resolver o quebra-cabeça.
+      </p>
+
+      <blockquote>
+        Novamente, sugiro baixar o <a href="Desafio-13x13.sgf">arquivo</a> ao
+        invés de utilizá-lo online.
+      </blockquote>
+
+      <div class="SGF" id="SGF"></div>
+      <script>
+        glift.create({
+          divId: "SGF",
+          sgf: "Desafio-13x13.sgf",
+        });
+      </script>
+    </article>
+  </body>
+</html>

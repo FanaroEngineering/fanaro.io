@@ -1,0 +1,11 @@
+(;GM[1]FF[4]CA[UTF-8]AP[CGoban:3]ST[2]
+RU[Japanese]SZ[13]KM[0.00]
+PW[Branco]PB[Preto]AW[ak][bk][ck][dk][ek][fk][gk][gl][em][gm]AB[al][bl][cl][bm][dm][fm]C[Preto acaba de cometer um erro, o que mata o grupo no canto.
+
+Arrependido, ele pergunta a Branco se poderia voltar e consertar o erro. Branco aceita.
+
+Desafio: Qual era a posição original? E qual é o movimento que salvaria Preto?]
+;B[al]
+;AE[bm]AW[am][cm]C[Esta era a posição original. É difícil de imaginar que havia duas, e não apenas uma, pedra branca no interior.]
+;W[bl]
+;AB[dl]LB[dl:A][bm:B]C[A é a resposta final. B é uma jogada ilegal para Branco e, assim, direito somente de Preto, o que garante a vida do grupo.])
