@@ -27,6 +27,13 @@
 		],
 		"description": "The figcaption HTML tag"
 	},
+	"Indented Paragraph": {
+		"prefix": "p-indent",
+		"body": [
+			"<p class=\"indented-paragraph\">$1</p>"
+		],
+		"description": "Indented paragraph"
+	},
 	"foot-note": {
 		"prefix": "foot-note",
 		"body": [

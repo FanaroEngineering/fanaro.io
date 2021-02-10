@@ -779,4 +779,13 @@ export const articlesMetadata: Article[] = [
     mainTopic: Topic.go,
     otherTopics: [Topic.goVariants],
   },
+  {
+    index: 33,
+    title: "CLL&M &mdash; Jean Jaurès, a Esquerda Francesa do Final do Século XIX",
+    link: "/articles/esquerda_francesa_xix/esquerda_francesa_xix.html",
+    date: Date.UTC(2018, 6, 27),
+    languages: [Language.portuguese, Language.french],
+    mainTopic: Topic.history,
+    otherTopics: [Topic.politics],
+  },
 ];
