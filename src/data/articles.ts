@@ -671,6 +671,15 @@ export const articlesMetadata: Article[] = [
   },
   {
     index: 45,
+    title: "The Power of Neural Networks: Simple Wage Predictions with Keras",
+    link: "/articles/wage_pred/wage_pred.html",
+    date: Date.UTC(2018, 8, 27),
+    languages: [Language.english],
+    mainTopic: Topic.dataScience,
+    otherTopics: [Topic.statistics],
+  },
+  {
+    index: 44,
     title: "Copa do Brasil 2018: Murao Yoshihisa",
     link: "/articles/revisao_murao/revisao_murao.html",
     date: Date.UTC(2018, 8, 21),

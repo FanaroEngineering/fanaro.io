@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>
+      The Power of Neural Networks: Simple Wage Predictions with Keras
+    </title>
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+
+    <meta name="author" content="Philippe Fanaro" />
+    <meta
+      name="description"
+      content="The Power of Neural Networks: Simple Wage Predictions with Keras"
+    />
+
+    <meta property="og:image" content="3D-Model.jpeg" />
+    <meta
+      property="og:description"
+      content="The Power of Neural Networks: Simple Wage Predictions with Keras"
+    />
+    <meta
+      property="og:title"
+      content="The Power of Neural Networks: Simple Wage Predictions with Keras"
+    />
+    <meta property="og:site_name" content="fanaro.io" />
+    <meta property="og:type" content="blog" />
+
+    <script src="../../index.js"></script>
+    <script
+      src="https://polyfill.io/v3/polyfill.min.js?features=es6"
+      defer
+    ></script>
+    <script
+      id="MathJax-script"
+      async
+      defer
+      src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
+    ></script>
+
+    <link rel="stylesheet" href="../../index.css" />
+    <link rel="icon" type="image/svg+xml" href="../../assets/favicon.svg" />
+  </head>
+  <body>
+    <article>
+      <img src="3D-Model.jpeg" alt="Thumbnail" />
+
+      <h1>The Power of Neural Networks: Simple Wage Predictions with Keras</h1>
+
+      <section>
+        <custom-h2 text="Introduction"></custom-h2>
+
+        <p>
+          For this post, I’ve chosen to first clarify some concepts related to
+          Neural Networks (with increasing complexity) and then jump into the
+          example, because we can learn the rest from exercises rather than
+          having to abstract everything from theory. Here, you will find some
+          ideas I wish I had read about on the first day I had contact with
+          Neural Networks, I hope you enjoy it :).
+        </p>
+
+        <p>
+          As usual, my code will be available at github in
+          <a href="https://github.com/psygo/wages">this repo</a>.
+        </p>
+      </section>
+
+      <section>
+        <custom-h2 text="What are Neural Networks?"></custom-h2>
+
+        <p>
+          Neural Networks are basically an enhanced way of doing linear
+          regression. The problem with linear regression is, obviously, that it
+          is linear, i.e., it doesn’t cover a whole wide range of functions,
+          more specifically: the non-linear ones. And, as it turns out, the set
+          of non-linear functions is much bigger and more general than the
+          linear one &mdash; the reason why we mostly only use linear functions
+          is because we don’t know very systematic ways of dealing with the
+          non-linear ones (but now we may) &mdash;, which poses a problem if we
+          want to continue modelling the world and still stick to linear simple
+          models. Neural Networks take linear models one step forward by putting
+          a non-linear mask on the linear regressor and granting us, finally,
+          access to non-linear modelling.
+        </p>
+
+        <figure>
+          <img src="NN-history.jpg" alt="Nueral Networks history" />
+          <figcaption>The Neural Networks Timeline.</figcaption>
+        </figure>
+      </section>
+
+      <section>
+        <custom-h2 text="Why and How do they work?"></custom-h2>
+
+        <p>
+          Neural Networks are an attempt at having a more well structured way of
+          approximating non-linear functions than linear regressors: by using
+          using networks of neurons composed of a linear regressor and an
+          activation (non-linear) function we can finally access non-linear
+          space. If you only use cells with linear regressors you would not be
+          able to achieve the same results, because a sum of linear cells is
+          also linear; and a sequence o linear cells is simply an embedded
+          linear regressor.
+        </p>
+
+        <figure>
+          <img src="artificial_neural_network_1-791x388-300x147.jpg" alt="" />
+          <figcaption>
+            An example of simple Neural Network. Hidden Layers represent
+            concepts that are not seen in the real world. For example, the
+            inputs could be age, education and sex, and the hidden layers would
+            be a combination of each, which do not necessarily correlate to
+            anything we have in reality.
+          </figcaption>
+
+          <p>
+            Another important breakthrough, which is largely due to Geoffrey
+            Hinton and others is the discovery of the power hidden inside the
+            Gradient Descent method for iterating to the minimum of the complex
+            functions. Essentially, it was found that using the local slope in
+            order to find the direction of the minimum generalizes very
+            well<foot-note
+              tex="Statistically, it is very unlikely for Gradient Descent to 
+              end up in local minima, because the derivatives in all 
+              directions must be zero at the same time. It is much more 
+              frequent that you will find saddle points instead, which GD can 
+              deal with normally."
+            ></foot-note
+            >. With Gradient Descent we can then tune our network using
+            previously checked examples in our training dataset.
+          </p>
+
+          <figure>
+            <img src="neuron-300x192.png" alt="" />
+            <figcaption>
+              A neuron in a neural network. Weights multiply the inputs to
+              compose a linear regression and then become the input of an
+              activation non-linear function.
+            </figcaption>
+          </figure>
+        </figure>
+      </section>
+
+      <section>
+        <custom-h2 text="Now, on to the example"></custom-h2>
+
+        <custom-h3 text="The Data and Our Task"></custom-h3>
+
+        <p>
+          We are going to try to predict wages from a set of features within a
+          dataset composed by 534 examples<foot-note
+            text="Not so big a dataset."
+          ></foot-note
+          >. More specifically we will be trying to find a function \(f\) such
+          that:
+        </p>
+
+        \[ \begin{bmatrix} Education \ Years \\ Experience \ Years \\ Sex
+        \end{bmatrix} \rightarrow Wage \ per \ Hour \]
+
+        <p>
+          The real data set has other features, but they are, somewhat
+          unexpectedly, much less relevant<foot-note
+            text="Believe me, I’ve tried models with them also, the 
+            improvements are minimal."
+          ></foot-note>
+          &mdash; the other features are age, if the individual is a member of a
+          union, marital status, if he/she lives in the south, if the person
+          works in the construction or the manufacturing sector. Let’s take a
+          look at a 3-dimensional representation of our data:
+        </p>
+
+        <figure>
+          <img src="3D-Data-768x333.jpeg" alt="" />
+          <figcaption>
+            3D representation of the data. It is visible that most of the higher
+            wage dots are male, which is, sadly, consistent with reality.
+          </figcaption>
+        </figure>
+
+        <p>
+          In the graph it is easy to see a sad aspect of reality: women earn, on
+          average, less than men. In this particular dataset, men earn 26.85%
+          more than their female counterparts. And that’s why sex is a relevant
+          feature when predicting wages, besides the individual years of
+          education and experience.
+        </p>
+      </section>
+
+      <custom-h3 text="The Models"></custom-h3>
+
+      <p>
+        We will, of course use Neural Networks, but we should also use linear
+        regression to have a benchmark we can make comparisons with. If our
+        Neural Network is worse than the linear regression, then we should stick
+        to the linear model, instead of using the more sophisticated approach.
+      </p>
+
+      <p>
+        With python, it’s very easy to use linear regression with scikit-learn
+        (<code>sklearn</code>):
+      </p>
+    </article>
+  </body>
+</html>
