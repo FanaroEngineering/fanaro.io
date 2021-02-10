@@ -752,4 +752,13 @@ export const articlesMetadata: Article[] = [
     mainTopic: Topic.engineering,
     otherTopics: [Topic.meta, Topic.philosophy],
   },
+  {
+    index: 36,
+    title: "Problema Profissional Nível 20k",
+    link: "/articles/tsumego_pro_20k/tsumego_pro_20k.html",
+    date: Date.UTC(2018, 7, 10),
+    languages: [Language.portuguese],
+    mainTopic: Topic.go,
+    otherTopics: [Topic.tsumego],
+  },
 ];
