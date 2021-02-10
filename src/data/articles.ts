@@ -724,4 +724,13 @@ export const articlesMetadata: Article[] = [
     mainTopic: Topic.go,
     otherTopics: [Topic.review],
   },
+  {
+    index: 39,
+    title: "Telecom Nostalgia and Python Basics",
+    link: "/articles/telecom_nostalgia/telecom_nostalgia.html",
+    date: Date.UTC(2018, 7, 28),
+    languages: [Language.english],
+    mainTopic: Topic.go,
+    otherTopics: [Topic.review],
+  },
 ];
