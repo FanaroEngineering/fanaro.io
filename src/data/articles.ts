@@ -761,4 +761,13 @@ export const articlesMetadata: Article[] = [
     mainTopic: Topic.go,
     otherTopics: [Topic.tsumego],
   },
+  {
+    index: 35,
+    title: "Casey at the Bat",
+    link: "/articles/casey_at_the_bat/casey_at_the_bat.html",
+    date: Date.UTC(2018, 7, 7),
+    languages: [Language.english],
+    mainTopic: Topic.literature,
+    otherTopics: [Topic.writing],
+  },
 ];
