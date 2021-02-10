@@ -38,6 +38,15 @@
       src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
     ></script>
 
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.4.1/styles/atom-one-dark.min.css"
+    />
+    <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.5.0/build/highlight.min.js"></script>
+    <script defer>
+      hljs.initHighlightingOnLoad();
+    </script>
+
     <link rel="stylesheet" href="../../index.css" />
     <link rel="icon" type="image/svg+xml" href="../../assets/favicon.svg" />
   </head>
@@ -120,7 +129,7 @@
             functions. Essentially, it was found that using the local slope in
             order to find the direction of the minimum generalizes very
             well<foot-note
-              tex="Statistically, it is very unlikely for Gradient Descent to 
+              text="Statistically, it is very unlikely for Gradient Descent to 
               end up in local minima, because the derivatives in all 
               directions must be zero at the same time. It is much more 
               frequent that you will find saddle points instead, which GD can 
@@ -185,21 +194,185 @@
           feature when predicting wages, besides the individual years of
           education and experience.
         </p>
+
+        <custom-h3 text="The Models"></custom-h3>
+
+        <p>
+          We will, of course use Neural Networks, but we should also use linear
+          regression to have a benchmark we can make comparisons with. If our
+          Neural Network is worse than the linear regression, then we should
+          stick to the linear model, instead of using the more sophisticated
+          approach.
+        </p>
+
+        <p>
+          With python, it’s very easy to use linear regression with scikit-learn
+          (<code>sklearn</code>):
+        </p>
+
+        <pre>
+                <code class="python">data = pd.read_csv("hourly_wages.csv")
+train = data[['education_yrs', 'experience_yrs', 'female']].values
+target = data[['wage_per_hour']].value
+X_train, X_test, y_train, y_test = train_test_split(train, target, test_size = 0.1, random_state = 2)
+regr = linear_model.LinearRegression()
+regr.fit(X_train, y_train)
+y_pred = regr.predict(X_test)
+mean_squared_error(y_test, y_pred)</code>
+              </pre>
+
+        <p>
+          The usual measurement for the fitness of our model is the mean squared
+          error &mdash; a mean over the sum of the individual errors our model
+          makes &mdash; and, in our case, we get 18.86. This is rather high but
+          the dataset doesn’t help because it’s small and there are many
+          individuals with very similar stats and very different wages, so,
+          unfortunately, we won’t get spectacular results with this dataset.
+        </p>
+
+        <p>
+          The next step is to finally get our Neural Network going. With Keras
+          &mdash; a Python library that uses higher level functions to make
+          Neural Networks implementations faster and easier &mdash;, we can
+          build our model with very few lines. Adding <code>Dense</code> (each
+          node in one layer is connected to each node in the next) layers with
+          one-liners and calling powerful optimizers like ADAM with another
+          one-liner:
+        </p>
+
+        <pre>
+                <code>model = Sequential()
+model.add(Dense(43, activation = 'relu', input_shape = (train.shape[1],)))
+model.add(Dense(28, activation = 'relu'))
+model.add(Dense(1))
+model.compile(optimizer = 'adam', loss = 'mean_squared_error')
+model_training = model.fit(x = X_train, y = y_train, epochs = 500, validation_data = (X_test, y_test))</code>
+              </pre>
+
+        <p>
+          After some tuning, I’ve found that something around 40 nodes for the
+          first layer and 25 for the second was giving me something close to the
+          optimal results. Some more tuning and I arrived at 43 and 28 for the
+          number of nodes. This is not very necessary as the improvement was
+          minimal, but is common practice when creating Neural Networks model.
+        </p>
+
+        <figure>
+          <img src="model-summary.jpg" alt="" />
+          <figcaption>
+            The summary of our model. We have a total of 1,433 parameters to
+            tune.
+          </figcaption>
+        </figure>
       </section>
 
-      <custom-h3 text="The Models"></custom-h3>
+      <section>
+        <custom-h2 text="Underfitting and Overfitting"></custom-h2>
 
-      <p>
-        We will, of course use Neural Networks, but we should also use linear
-        regression to have a benchmark we can make comparisons with. If our
-        Neural Network is worse than the linear regression, then we should stick
-        to the linear model, instead of using the more sophisticated approach.
-      </p>
+        <p>
+          Now, before we can finish our neural network model, we have to check
+          for underfitting and overfitting, a very important step.
+        </p>
 
-      <p>
-        With python, it’s very easy to use linear regression with scikit-learn
-        (<code>sklearn</code>):
-      </p>
+        <figure>
+          <img src="Underfitting-Overfitting-768x267.png" alt="" />
+          <figcaption>
+            Illustrative examples of underfitting and overfitting.
+          </figcaption>
+        </figure>
+
+        <p>
+          Underfitting is when our model is not having good results for the
+          training set, which means it will probably not generalize to other
+          (test) sets. This is checked with the training loss and is usually not
+          a problem, because, given a high enough number of epochs (runs over
+          the training set), the training loss will go to the minimum possible
+          value.
+        </p>
+
+        <p>
+          Overfitting is a much more common and harder to solve issue and is
+          mostly diagnosed by the difference in the accuracy with the training
+          and test sets. It is a phenomenon that describes the model as being
+          overly attached to the training data, addicted to its patterns so much
+          that it won’t be able to generalize to new (test) data. There are a
+          number of ways to deal with it, but the most common are: add more
+          training data, limit the number of epochs for training, reduce the
+          complexity of the model, regularization, etc.
+        </p>
+
+        <p>
+          In our case, underfitting happens if you use a low number of epochs,
+          less than 150, and overfitting starts to appear after about 500
+          epochs. If we add too many layers with many nodes, overfitting also
+          starts to take a toll on our loss.
+        </p>
+
+        <p>
+          After all our work, our loss is nothing to be proud of; 500 epochs and
+          we beat the linear regressor by only a very small margin 18.42 to
+          18.86. This isn’t even a win, it is more like a tie, given that the
+          training and test sets are randomly generated from the original data
+          and have intrinsic variances. But…
+        </p>
+      </section>
+
+      <section>
+        <custom-h2 text="Comparing the Models"></custom-h2>
+
+        <p>
+          Although both models have similar losses, that doesn’t mean the linear
+          regressor is good enough and our efforts were fruitless. As I’ve said
+          at the beginning of this post, linear things are linear, i.e., they
+          don’t capture non-linearities inside our model. The question is then:
+          is a linear model adequate to describe our data?…
+        </p>
+
+        <p>
+          Probably not I would say, simply because, in reality, wages don’t grow
+          linearly with education and experience. What we often see when it
+          comes to earning money is that, given a certain number of years of
+          education, at the beginning, a linear growth happens and then it
+          usually stagnates or grows very slowly after, say, 15 years of
+          experience. This can be seen in the picture below:
+        </p>
+
+        <figure>
+          <img src="fixed_educ_15.jpeg" alt="" />
+          <figcaption>
+            Wage per Hour x Eperience Years, with fixed 15 years of education.
+          </figcaption>
+        </figure>
+
+        <p>
+          On the other hand, I believe we can also expect that, fixed the number
+          of experience years, the wages would grow more or less linearly for
+          increasing numbers of years of education, which is what our neural
+          network indicates also:
+        </p>
+
+        <figure>
+          <img src="fixed_exp_10.png" alt="" />
+          <figcaption>
+            Wage per Hour x Education Years, with fixed 10 years of experience.
+          </figcaption>
+        </figure>
+
+        <p>
+          Finally, we can plot our models on a 3D graph to take a look at the
+          models as a whole. You will notice that they recognize men and women
+          as having different behaviors and it seems that the difference becomes
+          bigger as we add more experience years.
+        </p>
+
+        <figure>
+          <img src="3D-Model.jpeg" alt="" />
+          <figcaption>
+            3D Plot of Wage per Hour vs Experience Years vs Education Years,
+            with also Linear Regression for women.
+          </figcaption>
+        </figure>
+      </section>
     </article>
   </body>
 </html>

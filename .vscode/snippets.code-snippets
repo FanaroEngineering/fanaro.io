@@ -69,6 +69,20 @@
 		],
 		"description": "LaTeX HTML Import from MathJax."
 	},
+	"HighlightJS Import": {
+		"prefix": "highlightjs_import",
+		"body": [
+			"<link",
+			"  rel=\"stylesheet\"",
+			"  href=\"https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.4.1/styles/atom-one-dark.min.css\"",
+		    "/>",
+		    "<script src=\"//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.5.0/build/highlight.min.js\"></script>",
+		    "<script defer>",
+			"  hljs.initHighlightingOnLoad();",
+		    "</script>",
+		],
+		"description": "HighlightJS import."
+	},
 	"Fanaro Post Boilerplate": {
 		"prefix": "fanaro_post",
 		"body": [
