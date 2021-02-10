@@ -1,0 +1,54 @@
+(
+  ;GM[1]FF[4]CA[UTF-8]AP[Sabaki:0.35.1]KM[6.5]SZ[19]DT[2018-08-17]AB[po][pp][pq][qq][rm][ql][pl][qe][pd][oc][nd][ne][mc][lc][jc][id][he][ge][gd][cd][cc][cb][db][ea][da][ca][fa][fb][fc][be][ad][cf][df][eg][dg][eh][ip][kp][eq]AW[qp][qo][rl][rk][qi][qg][qc][pb][ob][nb][nc][md][hd][hc][gc][gb][ga][fd][fe][ec][eb][dd][dc][de][ce][bf][ef][gf][fg][hh][cg][dh][lq][kq][iq][hq][dq][cp]
+  (
+    ;B[gg]C[A e B foram defendidos com a possibilidade de um ko muito pesado para Brancas.
+
+Há uma maneira de capturar o grupo preto C, porém é gote e Pretas ganham força à esquerda.]LB[ei:A][he:C][ie:B]
+    (
+      ;W[hg]
+      ;B[hf]
+      ;W[ei]
+      ;B[fh]
+      ;W[fi]
+      ;B[ff]
+      ;W[gh]
+      ;B[ee]C[Talvez uma variação razoável para ambos os lados.]
+      (
+        ;W[ch]
+      )(
+        ;W[dn]
+      )
+    )(
+      ;W[gh]
+      ;B[fh]
+      ;W[ie]
+      ;B[hf]
+      ;W[if]
+      ;B[ff]
+      ;W[hg]
+      ;B[ee]
+      ;W[gf]
+      ;B[cn]C[Pretas se saíram ligeiramente melhor.
+
+Proteger em A talvez fosse a jogada mais segura e correta na verdade.]LB[lf:A]
+    )
+  )(
+    ;B[ee]LB[ie:A]C[Com B, o problema em A seria consertado. Porém Brancas jogariam diretamente em A.]
+    (
+      ;W[ie]
+      ;B[ed]
+      ;W[hf]C[Talvez esta seja a variação mais razoável. Preto tem sente e Brancas estão fortes no topo.
+
+B seria a continuação mais segura.]LB[cn:A][lf:B]
+    )(
+      ;W[ed]
+      ;B[gg]
+      ;W[gh]
+      ;B[fh]
+      ;W[ie]
+      ;B[hf]
+      ;W[if]
+      ;B[ff]LB[hg:A]C[Agora A não funciona para Brancas.]
+    )
+  )
+)

@@ -733,4 +733,13 @@ export const articlesMetadata: Article[] = [
     mainTopic: Topic.go,
     otherTopics: [Topic.review],
   },
+  {
+    index: 38,
+    title: "O Tesuji-Mor",
+    link: "/articles/tesuji_mor/tesuji_mor.html",
+    date: Date.UTC(2018, 7, 20),
+    languages: [Language.portuguese],
+    mainTopic: Topic.go,
+    otherTopics: [Topic.tsumego],
+  },
 ];
