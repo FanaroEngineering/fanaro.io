@@ -807,4 +807,13 @@ export const articlesMetadata: Article[] = [
     mainTopic: Topic.sports,
     otherTopics: [Topic.history],
   },
+  {
+    index: 30,
+    title: "Como Digitar Sem Olhar e Mais Rápido em 5 Minutos!",
+    link: "/articles/como_digitar/como_digitar.html",
+    date: Date.UTC(2018, 6, 19),
+    languages: [Language.portuguese],
+    mainTopic: Topic.productivity,
+    otherTopics: [Topic.meta],
+  },
 ];
