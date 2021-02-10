@@ -1,0 +1,13 @@
+(;GM[1]FF[4]CA[UTF-8]AP[CGoban:3]ST[2]
+RU[Japanese]SZ[13]KM[0.00]
+PW[Branco]PB[Preto]AW[fa][fb][gb][gc][gd][id][jd][md][ge][he][ie][je][ke][le][me]AB[ga][ha][ia][hb][lb][hc][ic][jc][mc][hd][kd][ld]C[Como contar os pontos do preto com as regras de Sunjang Baduk? Primeiro, precisamos retirar as pedras desnecessárias.]
+;B[aa]TR[ia][lb]C[As pedras marcadas com triângulo são vistas como desnecessárias pelas regras.]
+;AE[ia][lb]LB[id:A]TB[ia][ja][ka][la][ma][ib][jb][kb][lb][mb][kc][lc]C[Preto possui 12 pontos no total. Mas o que aconteceria se A fosse uma pedra preta e não branca?]
+;W[ba]
+;AB[lb][id]LB[id:A]C[Pelas regras japonesas, A seria apenas um dame, sem valor para a contagem final. Para a contagem chinesa, isso agregaria 1 ponto à pontuação final das pretas, pois a essa contagem utiliza a soma dos pontos mais o número de pedras no tabuleiro.
+
+Mas e a contagem do Sunjang Baduk?]
+;B[ab]LB[lb:B][ic:A]C[Para o Sunjang Baduk, a pedra A e a B são desnecessárias.]
+;AE[lb][ic]LB[id:A][ie:B][je:C]TB[ia][ja][ka][la][ma][ib][jb][kb][lb][mb][ic][kc][lc]C[Preto possui agora 13 pontos portanto.
+
+Caso A fosse uma pedra Branca, B e C se tornariam, então, as pedras desnecessárias, agregando pontos às Brancas.])

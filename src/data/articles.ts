@@ -508,7 +508,7 @@ export const articlesMetadata: Article[] = [
     date: Date.UTC(2019, 1, 12),
     languages: [Language.english],
     mainTopic: Topic.go,
-    otherTopics: [],
+    otherTopics: [Topic.goVariants],
   },
   {
     index: 62,
@@ -769,5 +769,14 @@ export const articlesMetadata: Article[] = [
     languages: [Language.english],
     mainTopic: Topic.literature,
     otherTopics: [Topic.writing],
+  },
+  {
+    index: 34,
+    title: "Sunjang Baduk",
+    link: "/articles/sunjang/sunjang.html",
+    date: Date.UTC(2018, 7, 2),
+    languages: [Language.english],
+    mainTopic: Topic.go,
+    otherTopics: [Topic.goVariants],
   },
 ];

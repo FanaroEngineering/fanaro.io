@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Sunjang Baduk</title>
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+
+    <meta name="author" content="Philippe Fanaro" />
+    <meta name="description" content="Sunjang Baduk" />
+
+    <meta property="og:image" content="Sunjang-Baduk-Initial-Position.jpg" />
+    <meta property="og:description" content="Sunjang Baduk" />
+    <meta property="og:title" content="Sunjang Baduk" />
+    <meta property="og:site_name" content="fanaro.io" />
+    <meta property="og:type" content="blog" />
+
+    <script src="../../index.js"></script>
+    <script src="../../assets/glift_1_1_2.min.js"></script>
+
+    <link rel="stylesheet" href="../../index.css" />
+    <link rel="icon" type="image/svg+xml" href="../../assets/favicon.svg" />
+  </head>
+  <body>
+    <article>
+      <img src="Sunjang-Baduk-Initial-Position.jpg" alt="Thumbnail" />
+
+      <h1>Sunjang Baduk</h1>
+
+      <section>
+        <custom-h2 text="História"></custom-h2>
+
+        <p>
+          Ao longo da história, diversas variantes de Go foram jogadas,
+          inclusive, até aproximadamente o século VII, o tamanho mais utilizado
+          de tabuleiros era o 17×17, que ainda é utilizado no Tibete. A Coreia
+          não foi um caso diferente, apesar de que não se sabe exatamente quando
+          Sunjang Baduk (순장바둑)<foot-note
+            text="Baduk é o termo coreano para Go ou Igo em japonês, ou Weiqi 
+            em chinês."
+          ></foot-note>
+          realmente apareceu, estima-se que sua proliferação tenha ocorrido no
+          século XVI.
+        </p>
+
+        <p>
+          A
+          <a
+            href="https://web.archive.org/web/20080908041312/http://www.msoworld.com:80/mindzine/news/orient/go/history/sunjang.html"
+            >origem do nome Sunjang</a
+          >
+          é um pouco obscura e, aparentemente, seria relacionada com hierarquia
+          militar, uma característica muito forte da sociedade coreana da época,
+          e também atual. A documentação bastante escassa da modalidade, ainda
+          que haja diversas histórias relacionadas ao assunto &mdash; como
+          <a href="http://english.baduk.or.kr/sub01_01.htm?menu=f11"
+            >a dos generais Kangjo e Choi Chunghun</a
+          >
+          que jogavam partidas antes das batalhas &mdash;, e o fato de que a
+          introdução das regras japonesas durante o período imperial japonês no
+          século XX praticamente anulou o prestígio dessa variante dificultam
+          muito a pesquisa factual sobre o assunto. Pessoalmente, eu mesmo
+          experienciei tal fenômeno: quando estive na Coreia do Sul, poucos
+          nativos sabiam me apontar para algum registro sobre o assunto; a minha
+          impressão foi a de que os coreanos apagaram inconscientemente esse
+          registro da cultura nacional.
+        </p>
+
+        <p>
+          Outro aspecto que complica as coisas é algo análogo ao que aconteceu
+          com o xadrez coreano. Sem uma instituição padronizadora, variantes
+          locais eram muito comuns e diferenças consideráveis nas regras podem
+          ser observadas.
+        </p>
+
+        <p>
+          Hoje, <em>Sunjang Baduk</em> é nada mais do que uma lembrança de
+          tempos esquecidos e obscuros para os coreanos, e, por isso, talvez,
+          uma curiosidade para os estrangeiros.
+        </p>
+      </section>
+
+      <section>
+        <custom-h2 text="Regras"></custom-h2>
+
+        <p>
+          Após essa breve introdução ao contexto histórico que levou ao
+          desenvolvimento de tal variante, vejamos finalmente como ela é jogada
+          na prática.
+        </p>
+
+        <p>
+          O início da partida é dado com Preto e Branco &mdash; com uma
+          sequência específica, assim como nas partidas com pedras de
+          compensação em regras japonesas; mas essa ordem se perdeu ao longo da
+          história: utilizo aqui a ordem citada no apêndice &mdash; colocando 16
+          pedras em uma formação alternada e simétrica até que Preto faz o
+          primeiro movimento obrigatoriamente no <em>tengen</em
+          ><foot-note
+            text="Tengen é um termo japonês para o centro do tabuleiro, que 
+            significa “a origem do céu”. Um dos 7 títulos nacionais do Go 
+            japonês também leva o mesmo nome."
+          ></foot-note>
+          ou centro do tabuleiro. A rigor, portanto, quem começa a partida é, na
+          verdade, Preto.
+        </p>
+
+        <div class="SGF" id="SGF-1"></div>
+        <script>
+          glift.create({
+            divId: "SGF-1",
+            sgf: "Sunjang-Baduk-Initial-Position.sgf",
+          });
+        </script>
+
+        <p>
+          Essa configuração inicial leva a partidas bastante violentas, devido
+          ao grande número de grupos fracos para ambos os lados. Essa luta
+          intrínseca, segundo alguns historiadores, foi um dos principais
+          fatores que levou o Go coreano a focar tanto nas lutas e nos detalhes
+          dos problemas de vida e morte (tsumego); além disso, ela também
+          facilitou a implementação de uma metodologia de apostas, o Bang Neki
+          ou Bang Naegi (방내기)<foot-note
+            text="Apostar é uma das maiores fontes de diversão para os 
+            coreanos. Go já até chegou a ser banido pelo imperador por conta 
+            do caos e imoralidade que as apostas geravam. Hoje em dia, 
+            surpreendentemente, somente estrangeiros possuem o direito de 
+            frequentar cassinos em Seoul. Caso um coreano queira apostar, ele 
+            provavelmente precisará encontrar uma cidade com autorização legal 
+            para tanto e ainda achar entradas, devido à alta procura."
+          ></foot-note
+          >.
+        </p>
+
+        <p>
+          A maior diferença entre <em>Sunjang Baduk</em> e outras modalidades
+          está, certamente, nas regras de contagem. Nela, além das capturas,
+          pedras denominadas redundantes na delimitação das fronteiras do
+          território são retiradas do tabuleiro para se obter a contagem, o que
+          pode levar a grandes diferenças a depender de qual <em>dame</em
+          ><foot-note
+            text="&lt;em&gt;Dame&lt;/em&gt; é outro termo japonês de Go para 
+            intersecções vazias que não têm relevância para a partida e só 
+            serão preenchidas para se obter as delimitações finais dos territórios."
+          ></foot-note>
+          cada jogador tomar. Veja o diagrama SGF abaixo para maiores
+          esclarecimentos (há, por vezes, alguns problemas com a visualização
+          desses arquivos, sugiro baixá-los e vê-los por um editor):
+        </p>
+
+        <div class="SGF" id="SGF-2"></div>
+        <script>
+          glift.create({
+            divId: "SGF-2",
+            sgf: "Sunjang-Baduk-Regras.sgf",
+          });
+        </script>
+
+        <p>
+          Até a introdução das regras japonesas, Sunjang Baduk não possuía o
+          conceito de komi<foot-note
+            text="&lt;em&gt;Komi&lt;/em&gt; é a compensação que Preto dá às Brancas por ter a vantagem de iniciar a partida. Tipicamente, é de 6,5 pontos para as regras japonesas, e 7,5 para as chinesas. Durante o século XX, já assumiu valores diferentes como 4,5 e 5,5 pontos."
+          ></foot-note
+          >, ou seja, o jogador mais forte sempre jogava com as Brancas. Depois
+          de estudos feitos por profissionais japoneses sobre o movimento preto
+          inicial no tengen, conclui-se que essa jogada, como inicial,
+          equivaleria, ao final, a, aproximadamente, 3 pontos; ou seja,
+          insuficiente para compensar o komi; o que levou a se cogitar algo
+          semelhante para o Sunjang Baduk. Sendo assim, presume-se que Branco
+          tenha, na realidade, uma vantagem a priori.
+        </p>
+
+        <p>
+          Por fim, temos as regras de compensação. Novamente, é um assunto
+          obscuro, mas sabe-se que pedras pretas seriam postas nos pontos
+          simétricos remanescentes e Branco tomaria o tengen, além de também
+          começar, vide os exemplos abaixo:
+        </p>
+
+        <p>
+          Partida com 5 pedras de compensação, isto é, 6 pedras pretas
+          adicionais, Branco no tengen e começando:
+        </p>
+
+        <div class="SGF" id="SGF-3"></div>
+        <script>
+          glift.create({
+            divId: "SGF-3",
+            sgf: "Partida-Handicap-5.sgf",
+          });
+        </script>
+
+        <p>Agora, com 4 pedras de compensação somente:</p>
+
+        <div class="SGF" id="SGF-4"></div>
+        <script>
+          glift.create({
+            divId: "SGF-4",
+            sgf: "Partida-Handicap-4.sgf",
+          });
+        </script>
+      </section>
+
+      <section>
+        <custom-h2 text="Partidas"></custom-h2>
+
+        <p>
+          Como já discutido, a documentação de Sunjang Baduk é bastante escassa,
+          não há muitos registros de partidas facilmente disponíveis. O maior
+          banco de dados disponível de jogos de Go, o
+          <a href="https://gogodonline.co.uk/">GoGoD</a>, gerenciado pelo
+          historiador de Go e de outros temas da cultura asiática, John
+          Fairbairn, possui 14 partidas<foot-note
+            text="John Fairbairn, em uma discussão no fórum Life in 19×19 
+            declara que possui mais partidas, porém não possui tempo nem 
+            interesse em colocá-las no banco de dados."
+          ></foot-note
+          >, sendo a mais velha datada de 1899 e composta de somente 31
+          movimentos. Eu gostaria de divulgar todas as partidas aqui, no
+          entanto, devido a problemas de direitos autorais, só poderei divulgar
+          3 partidas que são encontradas em sites públicos na internet.
+        </p>
+
+        <p>
+          A primeira partida é entre Chae Keukmun (채 극문) e Jeong Kyuchun (정
+          규춘)<foot-note
+            text="A transliteração dos nomes coreanos para o alfabeto romano é 
+            aqui muito confusa, pois há a utilização de uma regra antiga que 
+            não condiz com a transliteração feita atualmente. Existe uma 
+            grande confusão entre os sons “g” e “k”; e os “ch” e “sh”. Por 
+            exemplo, “Kyuchun”, pela regra nova, seria escrito “Gyuchun”; e 
+            “Keukmun”, “Geukmun”."
+          ></foot-note
+          >, realizada em 28/01/1934, patrocinada pelo jornal Chosun Ilbo.
+        </p>
+
+        <div class="SGF" id="SGF-5"></div>
+        <script>
+          glift.create({
+            divId: "SGF-5",
+            sgf: "Chae-Keukmun-vs-Jeong-Gyuchun1933-09-30.sgf",
+          });
+        </script>
+
+        <p>
+          A segunda partida é entre No Sacho (노 사초) e Chae Keukmun (채 극문)
+          realizada em 23/03/1937, também patrocinada pelo Chosun Ilbo. Note um
+          padrão aqui: aparentemente, já havia influência japonesa suficiente
+          para enviesar os movimentos. Há uma tendência para jogadas que
+          possuem, intrinsicamente, boas formas, algo notável do Go japonês da
+          época.
+        </p>
+
+        <p>
+          Uma curiosidade é que No Sacho foi, durante um bom tempo, o Kuksu ou
+          Mestre Nacional do Sunjang Baduk da Coreia, seria como o título de
+          Meijin<foot-note
+            text=" Meijin é um termo japonês não só restrito ao Go significa 
+            mestre ou virtuoso. Durante o período Edo, somente um jogador 
+            receberia tal título, após um longo processo seletivo que envolvia 
+            muita política também. Hoje, ele faz parte de um dos 7 grandes 
+            títulos nacionais do Go japonês."
+          ></foot-note>
+          do Japão.
+        </p>
+
+        <div class="SGF" id="SGF-6"></div>
+        <script>
+          glift.create({
+            divId: "SGF-6",
+            sgf: "No-Sacho-vs-Chae-Keukmun-1937.sgf",
+          });
+        </script>
+
+        <p>
+          A terceira partida é bem mais atual, entre Cho Namcheol<foot-note
+            text="A grafia mais moderna é Cho Namchul. Houve a substituição de 
+            “eo” por “u”, vide “Kim Jisuk” 9p, que era antes “Kim Jiseok” 9p. 
+            Isso não é muito preciso em termos de som, mas facilita a 
+            pronúncia em inglês."
+          ></foot-note>
+          (조 남철) 9p e Lee Changho (이 창호) 7p, realizada em 06/10/1995. Para
+          quem não os conhece, Cho Namcheol é reverenciado como o fundador do Go
+          coreano moderno, ele foi insei de Kitani Minoru 7p a partir de 1937 e,
+          quando voltou para a Coreia, fundou a Hanguk Kiwon, a associação
+          coreana de Go; e Lee Changho, conhecido por seu estilo passivo, é um
+          dos jogadores mais condecorados da história, dominando a cena
+          internacional na década de 1990. Veja que a partida já toma contornos
+          mais típicos do Go coreano, com muita atenção às formas típicas das
+          lutas. Esse jogo é citado tanto pelo site coreano
+          <a
+            href="http://www.cyberoro.com/column/writer_view.oro?write_no=13118"
+            >Cyberoro</a
+          >
+          quanto
+          <a href="https://www.101weiqi.com/chessbook/chess/45572/">101weiqi</a
+          >.
+        </p>
+
+        <div class="SGF" id="SGF-7"></div>
+        <script>
+          glift.create({
+            divId: "SGF-7",
+            sgf: "Cho-Namcheol-9p-vs-Lee-Changho-7p-1995-10-06.sgf",
+          });
+        </script>
+
+        <p>
+          Como um pequeno adicional, registro aqui ainda uma partida entre IAs,
+          ELF versus ELF, a IA mais forte da atualidade. Interessante notar que
+          ELF não pensa que o movimento inicial preto no tengen é tão ruim nesse
+          caso, há apenas uma perda de 1%. Vale ressaltar também o quão valioso
+          é o contato no 3-4 (komoku) abaixo do 4-4 (hoshi) adversário, ambos os
+          lados procuram essa jogada quando podem, algo confirmado pela Leela
+          Zero e a PhoenixGo também. A porcentagem de vitória para as Pretas
+          também não muda quase nada em relação a um início sem pedras,
+          começando em 46%. Também deixo aqui disponível uma análise de partida
+          feita pela Leela Zero (<a
+            href="https://fanaro.com.br/wp-content/uploads/2018/07/LZvsLZGRPAnalysis.zip"
+            >Leela Zero versus Leela Zero</a
+          >) através do programa
+          <a
+            href="http://yuntingdian.com/goreviewpartner/grp-documentation/doc.htm#game-review"
+            >Go Review Partner</a
+          >.
+        </p>
+
+        <div class="SGF" id="SGF-8"></div>
+        <script>
+          glift.create({
+            divId: "SGF-8",
+            sgf: "Sunjang-Baduk-ELF-vs-ELF.sgf",
+          });
+        </script>
+      </section>
+
+      <section>
+        <custom-h2 text="Apêndice"></custom-h2>
+
+        <p>
+          Em minha estadia na Coreia do Sul, acabei tendo uma aula na
+          universidade com um professional chinês que explicou para os outros
+          alunos chineses o que era Sunjang Baduk. Apesar de não entender quase
+          nada, eu havia feito amizade com um outro profissional chinês, Chen
+          Bisen 2p, que me traduzia o que podia. Ele me confessou que as
+          explicações não estavam exatamente claras, mas eu já sabia um pouco
+          sobre Sunjang Baduk, então não foi tão difícil de acompanhar. Ao final
+          da aula, o professor fez os alunos profissionais jogarem entre si, e
+          os outros, a assistirem. Chen Bisen jogou contra uma profissional,
+          também jovem, cujo primeiro nome é Sun &mdash; não me lembro de seu
+          nome completo. Eu pude registrar a partida no meu celular e a
+          compartilho aqui &mdash; apesar de a partida terminar com um movimento
+          branco, Preto, i.e., Chen Bisen 2p, vence, devido à dificuldade em
+          sobreviver com o dragão branco à direita. Além dela, também
+          compartilho imagens do material em chinês que o professor havia
+          preparado para nós.
+        </p>
+
+        <div class="SGF" id="SGF-9"></div>
+        <script>
+          glift.create({
+            divId: "SGF-9",
+            sgf: "sunjang-sun-vs-bi-sen-2017-10-17.sgf",
+          });
+        </script>
+
+        <figure>
+          <img src="sunjang-myongji1.jpg" alt="" />
+        </figure>
+
+        <figure>
+          <img src="sunjang-myongji2.jpg" alt="" />
+        </figure>
+      </section>
+    </article>
+  </body>
+</html>
