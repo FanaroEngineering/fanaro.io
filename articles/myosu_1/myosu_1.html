@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <title>Meu Artigo para a Revista Myosu</title>
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+
+    <meta name="author" content="Philippe Fanaro" />
+    <meta name="description" content="Meu Artigo para a Revista Myosu" />
+
+    <meta property="og:image" content="thumbnail.jpg" />
+    <meta property="og:description" content="Meu Artigo para a Revista Myosu" />
+    <meta property="og:title" content="Meu Artigo para a Revista Myosu" />
+    <meta property="og:site_name" content="fanaro.io" />
+    <meta property="og:type" content="blog" />
+
+    <script src="../../index.js"></script>
+    <script src="../../assets/glift_1_1_2.min.js"></script>
+
+    <link rel="stylesheet" href="../../index.css" />
+    <link rel="icon" type="image/svg+xml" href="../../assets/favicon.svg" />
+  </head>
+  <body>
+    <article>
+      <img src="thumbnail.jpg" alt="Thumbnail" />
+
+      <h1>Meu Artigo para a Revista Myosu</h1>
+
+      <p>
+        Um semestre antes de eu chegar na Coreia, uma aluna do curso de
+        mestrado, Le Linh, propôs a criação de uma revista de Go em inglês, uma
+        vez que iniciativas passadas haviam desaparecido com o tempo e, assim,
+        não haveria mais peródicos do assunto em inglês sendo formalmente
+        publicados. O diretor do curso, e seu orientador de tese, incentivou a
+        ideia e, alguns meses depois, com a ajuda de diversos alunos<foot-note
+          text="Um deles sendo um profissional inclusive, o aluno de mestrado 
+          On Sojin 7p."
+        ></foot-note>
+        e amigos vietnamitas, ela conseguiu finalizar a
+        <a href="http://www.mjubadukstudies.com/en/">primeira edição</a> da
+        revista, que tem um design muito atraente e matérias interessantes. O
+        nome escolhido foi Myosu, que significa tesuji em coreano, algo que
+        serviria muito mais para convencer possíveis futuros patrocinadores
+        coreanos do que atrair leitores estrangeiros na minha opinião, já que a
+        quase totalidade não conhece a palavra myosu e, sim, tesuji &mdash; dada
+        a reprovação coreana histórica aos japoneses, duvido que entitular uma
+        revista com uma palavra nipônica seria de bom tom por lá.
+      </p>
+
+      <blockquote>
+        Você também pode encontrar a edição de Outubro de 2017 da revista Myosu
+        <a href="Myosu - October 2017.pdf">aqui</a>. Meu artigo está na página
+        45.
+      </blockquote>
+
+      <p>
+        Assim que apareci na universidade, ao verem que eu possuía um bom nível
+        de inglês, fui já requisitado para fazer revisões gramaticais dos
+        artigos da segunda edição. Pouco tempo depois, perguntaram-me se eu não
+        gostaria de escrever um artigo, o que acabei recusando por não estar com
+        muita vontade na verdade. Contudo, no meio do semestre, um dos alunos
+        coreanos da graduação, Na Hyeonseok (나 현석), com quem eu já havia
+        jogado algumas partidas inclusive, veio me pedir ajuda para escrever um
+        artigo para a revista, pois seu conhecimento de inglês não seria muito
+        grande. Confesso que foi um pouco difícil conciliar o que ele tinha
+        escrito com minhas sugestões de correções e no que eu achava que o
+        artigo deveria focar, mas, quando ele viu, enfim, a versão final foi
+        positivamente surpreendido e a aceitou de bate-pronto.
+      </p>
+
+      <p>
+        O artigo trata de uma partida que, creio, não está disponível nos
+        registros ocidentais das partidas de Go Seigen<foot-note
+          text="Go Seigen, originalmente Wu Qingyuan, foi um jogador icônico 
+          da primeira metade do século XX, que revolucionou a abertura e o 
+          meio do jogo, além de ter sido o jogador mais forte por, pelo menos, 
+          duas décadas. O nome Go Seigen pode ser traduzido literalmente do 
+          japonês com “Santo do Go”."
+        ></foot-note>
+        e que Hyeonseok havia encontrado no meio de uma coletânea chinesa dos
+        jogos de Go Seigen. Provavelmente, a partida caiu no esquecimento por
+        ter sido contra um profissional um tanto desconhecido, Kojima Haruichi
+        4p (tradução do chinês feita por outro aluno), porém, garanto que ela
+        lhe surpreenderá. Como prévia para a surpresa, o título do artigo em
+        inglês é Dying for a Squeeze, um trocadilho para alguém que está
+        morrendo de vontade de espremer algo; ou alguém que morre para conseguir
+        espremer algo: veja a partida e decida qual o sentido intencionado.
+      </p>
+
+      <p>
+        Sem mais delongas, fique com a versão em
+        <a href="https://fanaro.com.br/traducao-de-um-livro-classico-do-go/"
+          >SGF do artigo</a
+        ><foot-note
+          text='Caso haja alguma dificuldade com algum termo técnico, sugiro 
+          ver o dicionário de termos que escrevi na minha tradução de uma das 
+          obras-primas da literatura goísta, o &lt;a href="https://fanaro.com.br/traducao-de-um-livro-classico-do-go/"&gt;Lições sobre os Fundamentos do 
+          Go&lt;/a&gt;, por Toshiro Kageyama 7p.'
+        ></foot-note
+        >:
+      </p>
+
+      <div class="SGF" id="SGF"></div>
+      <script>
+        glift.create({
+          divId: "SGF",
+          sgf: "Go-Seigen-vs-Kojima.sgf",
+        });
+      </script>
+    </article>
+  </body>
+</html>

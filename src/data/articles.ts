@@ -715,4 +715,13 @@ export const articlesMetadata: Article[] = [
     mainTopic: Topic.programming,
     otherTopics: [Topic.python, Topic.math],
   },
+  {
+    index: 40,
+    title: "Meu Artigo para a Revista Myosu",
+    link: "/articles/myosu_1/myosu_1.html",
+    date: Date.UTC(2018, 7, 28),
+    languages: [Language.english],
+    mainTopic: Topic.go,
+    otherTopics: [Topic.review],
+  },
 ];
