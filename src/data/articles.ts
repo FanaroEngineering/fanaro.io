@@ -696,4 +696,13 @@ export const articlesMetadata: Article[] = [
     mainTopic: Topic.go,
     otherTopics: [Topic.review],
   },
+  {
+    index: 42,
+    title: "The ATP Dataset and The Filthy Rich Tennis Players",
+    link: "/articles/atp/atp.html",
+    date: Date.UTC(2018, 8, 7),
+    languages: [Language.english],
+    mainTopic: Topic.dataScience,
+    otherTopics: [Topic.statistics],
+  },
 ];
