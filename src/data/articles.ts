@@ -669,4 +669,13 @@ export const articlesMetadata: Article[] = [
     mainTopic: Topic.go,
     otherTopics: [Topic.review],
   },
+  {
+    index: 45,
+    title: "Copa do Brasil 2018: Murao Yoshihisa",
+    link: "/articles/revisao_murao/revisao_murao.html",
+    date: Date.UTC(2018, 8, 21),
+    languages: [Language.portuguese],
+    mainTopic: Topic.go,
+    otherTopics: [Topic.review],
+  },
 ];
