@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Python Basics, Eratosthenes and Problem 51</title>
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+
+    <meta name="author" content="Philippe Fanaro" />
+    <meta
+      name="description"
+      content="Python Basics, Eratosthenes and Problem 51"
+    />
+
+    <meta property="og:image" content="eratos.png" />
+    <meta
+      property="og:description"
+      content="Python Basics, Eratosthenes and Problem 51"
+    />
+    <meta
+      property="og:title"
+      content="Python Basics, Eratosthenes and Problem 51"
+    />
+    <meta property="og:site_name" content="fanaro.io" />
+    <meta property="og:type" content="blog" />
+
+    <script src="../../index.js"></script>
+    <script
+      src="https://polyfill.io/v3/polyfill.min.js?features=es6"
+      defer
+    ></script>
+    <script
+      id="MathJax-script"
+      async
+      defer
+      src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.4.1/styles/atom-one-dark.min.css"
+    />
+    <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.5.0/build/highlight.min.js"></script>
+    <script defer>
+      hljs.initHighlightingOnLoad();
+    </script>
+
+    <link rel="stylesheet" href="../../index.css" />
+    <link rel="icon" type="image/svg+xml" href="../../assets/favicon.svg" />
+  </head>
+  <body>
+    <article>
+      <img src="eratos.png" alt="Thumbnail" />
+
+      <h1>Python Basics, Eratosthenes and Problem 51</h1>
+
+      <section>
+        <custom-h2 text="Python Basics"></custom-h2>
+
+        <p>
+          At university, I mostly used two programming languages: C and Matlab.
+          The former was mostly for the first two years and the norm for math
+          courses, the latter would be much more to the students’ taste, since
+          it is in a higher level, i.e., easier to work with. From my experience
+          a hundred-line code in Matlab would easily be more than a thousand
+          lines in C and that really makes a difference when it comes making
+          things work first and, only later, worrying about optimization. And
+          that’s exactly Python’s<foot-note
+            text="Although Python uses the snake as its logo, the name 
+            actually comes from the TV show Monty Python."
+          ></foot-note>
+          intention: an easy to read and write language; but there is one major
+          difference with respect to Matlab: it’s free. Instead of having to buy
+          the annoying bundle of software MathWorks demands from the customer,
+          you only need to download packages from the web. Python relies on the
+          community to bridge the gap between private and public software:
+          slowly &mdash; more than 25 years already &mdash;, the open source
+          language crawled its way to becoming the best jack of all trades
+          language in the world. Nowadays, the numerous packages can be enough
+          to satisfy users ranging from database managers to the best
+          researchers in the world.
+        </p>
+
+        <p>
+          For Machine and Deep Learning, the most widely used language is a
+          seemingly never-ending debate between Python and R. The latter is a
+          statistical more old school language, an inheritance of a prior
+          language, S<foot-note
+            text="These scientists can be very creative sometimes…"
+          ></foot-note
+          >, but doesn’t seem to have the same simplicity Python does, nor the
+          same hype. Having a good amount of experience with the two now &mdash;
+          I used it for a year during my graduation &mdash;, I can tell you
+          Python is a much better language to get things done more clearly and
+          faster.
+        </p>
+
+        <p>
+          After deciding what language to focus on, I looked for a systematic
+          way of adapting my knowledge of other languages to the new one and
+          also learning its unique properties. And what better way than doing a
+          course…<foot-note
+            text="Actually, the better way would be to directly code, I guess, 
+            but that would be a bit too blunt to my lazy self."
+          ></foot-note>
+          After searching the web for a bit in sites like Coursera, Udemy and
+          Udacity, I arrived at a very well rated
+          <a href="https://www.udemy.com/complete-python-bootcamp/"
+            >course from Udemy</a
+          >
+          which seemed to teach the basics and much more in a good pace, exactly
+          what I needed to jump start my coding skills. The instructor is a
+          master &mdash; master in a literal and strict sense, not the diploma
+          &mdash; engineer and I was quite impressed about his deep knowledge of
+          the language besides him being a great teacher. My only critique is
+          with respect to what he doesn’t teach you, which is how to structure
+          your code: most of the course’s projects have kind of a recipe-like
+          Jupyter Notebook which you blindly follow, and that really doesn’t
+          help the student develop a global vision of the code. If I had to rate
+          the course, I would probably give it 4 stars = 80%, though 4 stars
+          sounds more like 60% for internet standards.
+        </p>
+
+        <p>
+          Anyway, you can find the notes I’ve taken throughout the course in
+          <a
+            href="https://fanaro.com.br/wp-content/uploads/2018/08/PythonCheatSheet.zip"
+            >this file</a
+          >
+          &mdash; which have extra information also &mdash;, they have all the
+          core components of python, like numbers, lists and dictionaries
+          &mdash; and, most importantly, list and dictionary comprehensions.
+          It’s a markdown file, a more structured way of editing text for
+          programming, science and html; there are numerous online editors which
+          can render the file properly.
+        </p>
+      </section>
+
+      <section>
+        <custom-h2 text="Problem 51"></custom-h2>
+
+        <p>
+          This problem comes from a site called
+          <a href="https://projecteuler.net/about">Project Euler</a>, which aims
+          at stimulating the practice of programming and mathematics. In it, you
+          will find hundreds of challenging problems that require creativity,
+          logic and a basic (usually) amount of programming.
+        </p>
+
+        <p>
+          After looking for a challenge that I could code in one or two days, I
+          bumped into this peculiar problem of replacing digits &mdash; it’s
+          actually not really unusual, most of the basic problems there deal
+          with manipulating primes. It goes like this:
+        </p>
+
+        <p class="indented-paragraph">
+          By replacing the 1st digit of the 2-digit number *3, it turns out that
+          six of the nine possible values: 13, 23, 43, 53, 73, and 83, are all
+          prime.
+        </p>
+        <p class="indented-paragraph">
+          By replacing the 3rd and 4th digits of 56**3 with the same digit, this
+          5-digit number is the first example having seven primes among the ten
+          generated numbers, yielding the family: 56003, 56113, 56333, 56443,
+          56663, 56773, and 56993. Consequently 56003, being the first member of
+          this family, is the smallest prime with this property.
+        </p>
+        <p class="indented-paragraph">
+          Find the smallest prime which, by replacing part of the number (not
+          necessarily adjacent digits) with the same digit, is part of an eight
+          prime value family.
+        </p>
+
+        <p>
+          Frankly, I suck at manipulating numbers: primes, modulo and digits
+          have never ever been my thing. So when I was faced with this problem,
+          my thought was process was to just make a brute force search. The idea
+          would be to simply find all the possible combinations of digits to be
+          replaced, check if the numbers were primes and see if the family size
+          is bigger than 7. Let’s see if it works…
+        </p>
+
+        <custom-h3 text="Solving Problem 51"></custom-h3>
+
+        <p>
+          After having the primes, we can finally tackle the problem itself. I
+          chose to first create a list with all the possible combinations of n
+          digits, apply them to the prime being checked and see if it generates
+          a big enough family. So, for example, if the algorithm is checking
+          numbers with 5 digits, it will have to go through:
+        </p>
+
+        \[C_{5,5} + C_{5,4} + C_{5,3} + C_{5,2} + C_{5,1} = 1 + 5 + 10 + 10 + 5
+        = 31\]
+
+        <p>
+          I chose to store the combinatios in a list and make the number being
+          checked a dictionary<foot-note
+            text="Damn, by the way, dictionaries are sooo useful."
+          ></foot-note>
+          to better structure it with indexes. In code, it would be:
+        </p>
+
+        <pre>
+          <code class="python">comb = []
+for L in range(1, len(indexy)):
+  for subset in itertools.combinations(indexy, L):
+    comb.append(subset)
+comb_list = [list(i) for i in comb]
+prime_collection = []
+new_numb_dict = {a:b for a,b in
+                  zip(dict_of_number.keys(),
+                  dict_of_number.values())}</code>
+        </pre>
+
+        <p>
+          This is, admittedly, very dumb. Many combinations will be checked
+          repeatedly, but I had made a decision to have something working first
+          rather than optimizing something I wasn’t sure would work. Now, we go
+          to the main part of the code; we need to replace the digits in the
+          combinations, check if they’re prime and, if so, add them to the
+          family, which will be checked for its size in the end:
+        </p>
+
+        <pre>
+          <code class="python">for i in range(0,len(comb_list)):
+  prime_collection = []
+  # Replacing the numbers according to the combinations
+  for j in range(0,10):
+    for k in comb_list[i]:
+      new_numb_dict[k] = j
+  # Transform into number
+  list_new_numb = [i for i in new_numb_dict.values()]
+  new_numb = int("".join(map(str,list_new_numb)))
+  # Check if prime
+  # Need to exclude numbers with leading '0'
+  if new_numb in primes_N and len(str(new_numb)) == len(str(n)):
+    prime_collection.append(new_numb)
+  new_numb_dict = {a:b for a,b in
+                    zip(dict_of_number.keys(),
+                    dict_of_number.values())}
+  
+  # Need to include the original number and exclude copies
+  prime_collection = list(set(prime_collection))
+  # Length of the prime collection searched
+  if len(prime_collection) >= len_51:
+    print('\n',n)
+    print(comb_list)
+    print(comb_list[i])
+    print(prime_collection)
+    return
+print("Sad! No numbers found to solve the problem!")</code>
+        </pre>
+
+        <p>
+          Checking all of the combinations grows very fast as the number of
+          digits increase, thus, even though it takes less than expected, the
+          amount of time needed to find it is a bit absurd compared to solutions
+          mathematicians would come up with: an hour. And that is without
+          computing the primes first. After trying to run the sieve for primes
+          up to 1,000,000 &mdash; you need primes up to 10x if you want to work
+          with x digits &mdash; and watching my computer almost melt, I chose to
+          download a pre-calculated list on the internet.
+        </p>
+
+        <figure>
+          <img src="Problem-51-Solution.png" alt="" />
+          <figcaption>
+            Spoiler Alert! The Solution to Problem 51: 121313.
+          </figcaption>
+        </figure>
+
+        <p>
+          It was quite the challenge to solve this problem, not really due to
+          the mathematical difficulty but to my struggles with the language,
+          since I was still too much of a beginner; if you want to check out my
+          complete code, you can go to this
+          <a href="https://github.com/psygo/algorithms">Github Repo</a>. And if
+          you would like to see a more optimized and sophisticated approach that
+          only takes 0.25s to find the answer, check
+          <a href="https://blog.dreamshire.com/project-euler-51-solution/"
+            >this post</a
+          >
+          from the Dreamshire’s blog.
+        </p>
+      </section>
+
+      <section>
+        <custom-h2 text="Sieve of Eratosthenes"></custom-h2>
+
+        <p>
+          First, we need a way of generating primes. And probably the most
+          efficient way &mdash; there are some formulas to get families of
+          primes but they only work for a restricted amount of them &mdash; to
+          do it is with the Sieve of Eratosthenes, an ingenious algorithm
+          invented in Ancient Greece by Eratosthenes of Cyrene &mdash; he is
+          best known for being the first person to calculate the circumference
+          of the Earth. Essentially, you’re going to use the prime found to
+          sieve out all of its multiples. For example, we first scratch out all
+          of the multiples of 2, then of 3, then of 5, and so on. Naturally, the
+          only numbers left will be primes.
+        </p>
+
+        <p>
+          Two classic improvements have also been added to our code: firstly,
+          you need only to check numbers above and including the square of the
+          prime being checked, because the numbers below it will either have
+          been already scratched out by prior primes or are primes; and,
+          secondly, you only need to check multiples of numbers up to the root
+          of the biggest number in the list, since the ones above it will be
+          checked during the algorithm<foot-note
+            text="There are more improvements which could be implemented, for 
+            more information, check out Wikipedia."
+          ></foot-note
+          >.
+        </p>
+
+        <p>
+          The core part of the code is very simple, it would look like this in
+          Python:
+        </p>
+
+        <pre>
+          <code class="python">for j in range(i**2,N+1,i):
+  try:
+    numbers.remove(j)
+  except:
+    continue</code>
+        </pre>
+      </section>
+    </article>
+  </body>
+</html>
