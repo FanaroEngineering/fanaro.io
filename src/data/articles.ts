@@ -660,4 +660,13 @@ export const articlesMetadata: Article[] = [
     mainTopic: Topic.politics,
     otherTopics: [Topic.logic],
   },
+  {
+    index: 46,
+    title: "Copa do Brasil 2018: Ronaldo Matayoshi",
+    link: "/articles/revisao_matayoshi/revisao_matayoshi.html",
+    date: Date.UTC(2018, 8, 29),
+    languages: [Language.portuguese],
+    mainTopic: Topic.go,
+    otherTopics: [Topic.review],
+  },
 ];
