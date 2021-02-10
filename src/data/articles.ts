@@ -687,4 +687,13 @@ export const articlesMetadata: Article[] = [
     mainTopic: Topic.go,
     otherTopics: [Topic.review],
   },
+  {
+    index: 43,
+    title: "Revisão No Seongho [Tygem 8d]",
+    link: "/articles/revisao_no_seongho/revisao_no_seongho.html",
+    date: Date.UTC(2018, 8, 11),
+    languages: [Language.portuguese],
+    mainTopic: Topic.go,
+    otherTopics: [Topic.review],
+  },
 ];
