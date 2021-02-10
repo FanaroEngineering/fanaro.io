@@ -798,4 +798,13 @@ export const articlesMetadata: Article[] = [
     mainTopic: Topic.go,
     otherTopics: [Topic.tsumego],
   },
+  {
+    index: 31,
+    title: "A Origem dos Cartões",
+    link: "/articles/origem_cartoes/origem_cartoes.html",
+    date: Date.UTC(2018, 6, 15),
+    languages: [Language.portuguese],
+    mainTopic: Topic.sports,
+    otherTopics: [Topic.history],
+  },
 ];
