@@ -1059,4 +1059,13 @@ export const articlesMetadata: Article[] = [
     mainTopic: Topic.go,
     otherTopics: [Topic.review],
   },
+  {
+    index: 3,
+    title: "Uma Breve Introdução ao Go",
+    link: "/articles/introcuao_ao_go/introcuao_ao_go.html",
+    date: Date.UTC(2018, 4, 12),
+    languages: [Language.portuguese],
+    mainTopic: Topic.go,
+    otherTopics: [],
+  },
 ];
