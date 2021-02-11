@@ -984,4 +984,13 @@ export const articlesMetadata: Article[] = [
     mainTopic: Topic.go,
     otherTopics: [Topic.yose],
   },
+  {
+    index: 11,
+    title: "Regras Chinesas",
+    link: "/articles/regras_chinesas/regras_chinesas.html",
+    date: Date.UTC(2018, 4, 26),
+    languages: [Language.portuguese],
+    mainTopic: Topic.go,
+    otherTopics: [],
+  },
 ];

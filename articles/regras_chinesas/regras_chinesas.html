@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <title>Regras Chinesas</title>
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+
+    <meta name="author" content="Philippe Fanaro" />
+    <meta name="description" content="Regras Chinesas" />
+
+    <meta property="og:image" content="thumbnail.png" />
+    <meta property="og:description" content="Regras Chinesas" />
+    <meta property="og:title" content="Regras Chinesas" />
+    <meta property="og:site_name" content="fanaro.io" />
+    <meta property="og:type" content="blog" />
+
+    <script src="../../index.js"></script>
+    <script src="../../assets/glift_1_1_2.min.js"></script>
+
+    <link rel="stylesheet" href="../../index.css" />
+    <link rel="icon" type="image/svg+xml" href="../../assets/favicon.svg" />
+  </head>
+  <body>
+    <article>
+      <img src="thumbnail.png" alt="Thumbnail" />
+
+      <h1>Regras Chinesas</h1>
+
+      <p>
+        Explico no vídeo abaixo as peculiaridades das regras chinesas.
+        Geralmente, quando as conhecemos, ficamos com a impressão de que são
+        estranhíssimas. Afinal, o que é aquela bagunça que aqueles dois
+        jogadores estão fazendo? Mas, de certa forma, elas fazem até mais
+        sentido do que as regras japonesas.
+      </p>
+
+      <p>
+        O objetivo do jogo, para as regras chinesas, é conquistar mais material
+        do que o adversário, portanto, contam-se tanto o território em si quanto
+        as pedras que cada um colocou no tabuleiro. Em termos práticos, conta-se
+        só um lado na verdade e a bagunça mencionada é somente os jogadores
+        arrumando as pedras de uma das cores para ficar mais claro quem ganhou.
+        A matemática é simples: a soma de tudo que está no tabuleiro é 361
+        pontos, um dos lados é contado, e o outro sai por subtração. Para não
+        termos de ficar calculando quantos pontos são necessários para a
+        vitória, decore que Brancas precisam de 177 pontos para ganhar, e
+        Pretas, 185. Ou lembre logicamente que 177 + 7,5 (o komi nas regras
+        chinesas é 7,5) = 184,5 > 184 (pontuação complementar das Pretas, isto
+        é, 361 – 177 = 184); e que 185 > 176 + 7,5 = 183,5. Note ainda que,
+        quando Pretas ganham, a diferença mínima é de 1,5 ponto e, quando
+        Brancas ganham, 0,5 ponto. Como detalhe, se você fosse ver o registro
+        das partidas em sites ou livros chineses, a diferença estaria como 0,25
+        ou 0,75 pedra. Isso ocorre porque eles estão dividindo os pontos entre
+        os dois jogadores, ou seja, é só dividir a diferença original por dois.
+      </p>
+
+      <p>
+        Entretanto, nem tudo são rosas. Existe um pequeno lembrete sobre os
+        sekis que pouca gente conhece &mdash; ou esquece depois de automatizar a
+        contagem por subtração &mdash;: as intersecções que não são ocupadas por
+        nenhum dos jogadores e não fazem parte de território (até mesmo se
+        ocorrerem dames) não são pontos. Ou seja, na contagem mecanizada
+        mencionada, deveríamos utilizar a soma de 361 subtraídas as tais
+        intersecções inutilizadas. Na partida do vídeo,
+        <a href="http://www.go4go.net/go/games/sgfview/45243"
+          >Iyama Yuta 9p vs Chen Yaoye 9p</a
+        >
+        pelo título de World Meijin 2015 (no vídeo, eu menciono equivocadamente
+        que seria a Asian TV Cup), que foi comentada em vídeo em inglês pelo
+        site GoGameGuru, vocês verão que dois pontos estão inutilizados, o que
+        leva à soma total de 359 no final<foot-note
+          text="Outra maneira de se ver isso é que, uma vez que é impossível 
+          de se jogar nas duas últimas intersecções, Brancas jogarão duas 
+          pedras a menos do que o usual. Ou seja o placar para elas será 
+          361 – Total de Pedras Pretas – 2."
+        ></foot-note
+        >.
+      </p>
+
+      <p>
+        Talvez o maior benefício das regras chinesas seja o reduzido manual de
+        regras. Como colocar pedras em seu próprio território não afeta a
+        pontuação final, caso alguém tenha dúvida sobre o status de um grupo,
+        basta iniciar uma corrida pela captura imediatamente para acabar com a
+        rixa. Nas regras japonesas, caso haja dúvida, a situação é bastante
+        delicada e só é resolvida com a ajuda de um árbitro, que, por sua vez,
+        tem que se apoiar em um livro grande com padrões considerados vivos e
+        mortos. Ser tão compacta não a impede, contudo, de nos fornecer algumas
+        bizarrices, como no caso do Bent-4 (4-curvado), em que ameaças
+        irremovíveis (ao exemplo daquelas que usualmente configuram os sekis)
+        podem fornecer ameaças de ko suficientes para reviver um grupo que
+        estaria morto segundo a regra usual ou japonesa.
+      </p>
+
+      <blockquote>
+        Baixe o jogo do Iyama Yuta 9p e Chen Yaoye 9p
+        <a href="go4go_20150108_Chen-Yaoye_Iyama-Yuta.sgf">aqui</a>.
+      </blockquote>
+
+      <div class="SGF" id="SGF"></div>
+      <script>
+        glift.create({
+          divId: "SGF",
+          sgf: "go4go_20150108_Chen-Yaoye_Iyama-Yuta.sgf",
+        });
+      </script>
+
+      <iframe
+        src="https://www.youtube.com/embed/pNUPeHUQ0Ts"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen
+      ></iframe>
+    </article>
+  </body>
+</html>
