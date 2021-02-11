@@ -928,4 +928,22 @@ export const articlesMetadata: Article[] = [
     mainTopic: Topic.economy,
     otherTopics: [Topic.politics],
   },
+  {
+    index: 17,
+    title: "4-Color Go",
+    link: "/articles/4_color_go/4_color_go.html",
+    date: Date.UTC(2018, 5, 6),
+    languages: [Language.english],
+    mainTopic: Topic.go,
+    otherTopics: [Topic.goVariants],
+  },
+  {
+    index: 16,
+    title: "Go de 4 Cores",
+    link: "/articles/4_cores_go/4_cores_go.html",
+    date: Date.UTC(2018, 5, 4),
+    languages: [Language.portuguese],
+    mainTopic: Topic.go,
+    otherTopics: [Topic.goVariants],
+  },
 ];
