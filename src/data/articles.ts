@@ -900,4 +900,13 @@ export const articlesMetadata: Article[] = [
     mainTopic: Topic.logic,
     otherTopics: [],
   },
+  {
+    index: 20,
+    title: "Revisão Diogo Barbosa [Melhor 4k do Mundo]",
+    link: "/articles/revisao_diogo/revisao_diogo.html",
+    date: Date.UTC(2018, 5, 10),
+    languages: [Language.portuguese],
+    mainTopic: Topic.go,
+    otherTopics: [Topic.review],
+  },
 ];
