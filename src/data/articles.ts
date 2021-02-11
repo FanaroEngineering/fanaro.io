@@ -1004,4 +1004,13 @@ export const articlesMetadata: Article[] = [
     mainTopic: Topic.writing,
     otherTopics: [Topic.trips, Topic.culture],
   },
+  {
+    index: 9,
+    title: "Revisão de Mais Alto Nível (2d vs 2k com 3 pedras de compensação)",
+    link: "/articles/revisao_laercio/revisao_laercio.html",
+    date: Date.UTC(2018, 4, 24),
+    languages: [Language.portuguese],
+    mainTopic: Topic.go,
+    otherTopics: [Topic.review],
+  },
 ];
