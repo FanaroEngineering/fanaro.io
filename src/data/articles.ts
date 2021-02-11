@@ -975,4 +975,13 @@ export const articlesMetadata: Article[] = [
     mainTopic: Topic.cryptography,
     otherTopics: [Topic.math],
   },
+  {
+    index: 12,
+    title: "Guia de Bolso do Yose",
+    link: "/articles/guia_yose/guia_yose.html",
+    date: Date.UTC(2018, 4, 29),
+    languages: [Language.portuguese],
+    mainTopic: Topic.go,
+    otherTopics: [Topic.yose],
+  },
 ];

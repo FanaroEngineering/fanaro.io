@@ -1,0 +1,259 @@
+(;GM[1]FF[4]CA[UTF-8]AP[CGoban:3]ST[2]
+RU[Japanese]SZ[19]KM[0.00]
+PW[Branco]PB[Preto]DT[2018-05-26]AN[Philippe Fanaro]LB[jc:I][dd:G][pd:F][ji:C][dj:J][ij:A][ol:E][jp:D][pp:H][eq:B]C[Guia de Bolso do Yose de Philippe Fanaro
+
+Menu:
+
+A: Hierarquia Duplo-sente, Sente e Gote.
+B: Princípio de quem tem mais a perder.
+C: Matemática do Yose Nível Básico.
+D: Hane-kosumi na 2a Linha; e Privilégios.
+E: Por que o centro é tão ineficiente?
+F: Como contar posições abertas.
+G: Yoses Gigantes em Continuações de Josekis.
+H: Invasão do 3-3 e Peculiaridades do Canto.
+I: Outros Yoses Típicos: Pulo do Macaco; Hane na 1a Linha; e Conexão no Canto.
+J: Estimando o Valor de um Ko.]
+(;B[ij]
+;AW[ki][li][mi][jj][jk][lk][mk][kl]AB[ii][ji][lj][mj][nj][ik][kk][il][jl]LB[kj:A][mj:B]C[Duplo-sente 5 (pelo menos) pontos. 
+
+Aqui, a conexão branca em A garante a conexão dos grupos brancos, o que, por sua vez, desestabiliza completamente o grupo preto B e demanda uma reação gote das pretas.
+
+Já a conexão preta em A faz o oposto, desconectando de vez os grupos brancos e causando graves problemas às Brancas.
+
+Jogadas duplo-sente são de urgência suprema, não importando seu valor. Geralmente, estão relacionadas a grupos instáveis, sendo ameaças de conexão ou captura. Não as perca de vista, dói na alma quando o adversário as vê, e você, não.
+
+Não se preocupe com o valor das jogadas por enquanto, mais à frente ficará mais claro como calculá-las.]
+;W[ss]
+;AE[kl]AW[jf][lf][ph][pj][ql][pn]AB[nk][nl]LB[kj:A][kk:B][kl:C]C[Sente ~4 pontos.
+
+A conexão branca em A deixa em atari a pedra B, o que força Pretas a se conectar em C para evitar problemas futuros de desconexão. Já a conexão preta em A somente é uma captura que não afeta muito a situação branca externa.]
+;B[rs]
+;AE[ph][nl][ql][pn]AW[nk][ok][pk][qk][po]AB[qf][oj][pj][qj][kl]LB[kj:A]C[Gote 4 pontos.
+
+Aqui, a captura ou conexão em A não muda em nada a situação dos grupos externos, não força resposta alguma do adversário, são só pontos e, por isso, é gote.
+
+Guarde a hierarquia (+oo = infinito):
+
++oo = Duplo-sente >> Sente ~ 2*Gote > Gote
+
+Importante: Sente ~ 2*Gote. Por quê? 
+
+Grosso modo, dizemos que Sente ~ 2*Gote pois podemos jogar dois yoses em conjunto em um yose sente. Mas fique atento pois o valor dos yoses gotes pode mudar essa situação. Se fazemos um yose em sente, quer dizer que preservamos a iniciativa, ou seja, podemos realizar um yose sente de valor X e um outro, gote, de valor Y em conjunto, o que nos leva ao valor de X + Y para o movimento sente. No entanto, se Y for muito grande, maior do que Z (o próximo gote depois de Y), temos que o nosso adversário vai nos ignorar e pegar Y diretamente, pois a nova soma ficaria X + Z < Y. 
+
+Uma outra observação importante é o sente-reverso. Se você tiver a oportunidade de jogar algo que cancele a jogada sente do oponente, ela terá o mesmo valor do sente que ele teria (e talvez mais algum benefício futuro!). Isso raramente acontece devido ao fato de que o adversário tenta buscar sempre impor os seus sentes antes que possam ser revertidos.])
+(;B[eq]
+;AW[dk][dl][dm][dn][do][dp][dq]AB[ek][nk][el][nl][em][nm][en][nn][eo][no][ep][np][nq]LB[dr:A][er:B]C[Princípio de quem tem mais a perder: A área que toma mais prejuízo é aquela que deve responder primeiro.
+
+Qual é mais sente? Branco A ou Preto B?]
+;W[dr]
+;B[sa]
+;W[fr]LB[fr:A][gs:B]C[O moyo preto é bem maior do que canto branco, Pretas têm bem mais a perder, portanto, Branco A é mais sente do que Pretas B.
+
+(Como regra, A > B (também conhecido como Pulo do Macaco).)])
+(;B[ji]
+;AW[lh][mh][ki][mi][kj][mj][lk][mk]AB[jh][kh][li][jj][jk][kk]LB[ki:C][li:B][kj:D][lj:A]C[Matemática do Yose Nível Básico.
+
+Como efetuar o cálculo do valor de A?
+
+Primeiro, calculamos a quantidade de pontos que cada um vai obter ao jogar ali.
+
+Brancas: 2 pontos (1 ponto em B + 1 pedra capturada)
+Pretas: 4 pontos (2 pontos em C e D + 2 pedras capturadas)
+
+Depois, somamos a quantidade de pontos que cada um fez. A lógica seria que pontos feitos pelo adversário seriam equivalentes a pontos negativos feitos por nós. Então, se fôssemos Brancas, teríamos 2 - (-4) = 6; e se fôssemos Pretas, 4 - (-2) = 6. Veja que ambas as contas resultam no mesmo valor, o que também simplifica o cálculo.]
+;W[ss]
+;AE[mk]AW[nk][nl][nm][jn][ln][nn]AB[hl][ll]LB[lj:A][lk:B]C[E se houvesse uma continuação?
+
+Por exemplo, A agora, se jogada, põe em atari a pedra B, o que oferece benefícios futuros a pelo menos um dos lados.]
+;B[lj]LB[lk:A][ml:B]C[Neste caso, calculamos de maneira similar à anterior, isto é, permanecem os 6 pontos da conta anterior, porém devemos adicionar os benefícios de mais uma jogada divididos por 2, pois estaríamos utilizando 2 movimentos para obtê-los. Seria:
+
+Pretas: 4 + 2/2 (1 ponto + 1 pedra) = 5
+Brancas: 2 pontos (não há continuação para as Brancas)  = 2
+
+Total: 7 pontos.
+
+É claro que essa é uma conta aproximada, pois, nesse caso, não é certo que A será ponto preto, já que Brancas futuramente poderão fazer atari em B.
+
+Se tivéssemos uma terceira continuação, dividiríamos por 3 e assim por diante. Assim, com maior rigor, a situação descrita deveria ser na verdade 6 + 1/2 + 1/3 = 6 + 5/6 (o que é muito próximo de 7). Esse último valor de 1/3 só seria verdadeiro se o atari em B não fosse ko (se for ko, é menor ainda), mas não se preocupe com isso, é demasiado preciosismo.])
+(;B[jp]
+;AW[hl][in][io][dp][ip][gq][iq][hr]AB[kl][jn][jo][pp][jq][lq][ir]LB[jr:A]C[Qual o valor da captura em A para as Brancas?]
+(;W[jr]
+;B[kr]
+;W[is]LB[ir:A][hs:B]TR[kr][js][ks]C[Vemos que Brancas agregou 3 pontos ao seu território. 2 em A e 1 em B. 
+
+E se as Pretas tivessem conectado? Ora, elas preservariam os pontos marcados em triângulo como seu território. (Desenho no sgf para ver por você mesmo.)
+
+Assim, o valor desse hane-kosumi na 2a linha é de 3 + 3 = 6 pontos. Grave isso! Quando o hane-kosumi na 2a linha não traz privilégios (veremos a seguir o que eles são), valem 6 pontos (exceto no canto... há bizarrices no canto).])
+(;W[sa]
+;AE[gq]LB[gq:A]C[E se a pedra em A não existisse? Aí, entram os privilégios.
+
+]
+;B[jr]
+;AW[fr][gr][fs]AB[gs][hs][is]LB[gq:G][fr:F][gr:B][fs:D][gs:C][hs:A][is:E]C[O lado das pretas fica intacto em relação ao já discutido. Portanto, do lado das pretas, contabilizamos 3 pontos.
+
+Ao fazer o hane em A, é bem verdade que Brancas poderiam fazer um contra hane em C, mas isso levaria a um ko que é, em geral, nada razoável, o que leva a esta sequência típica. 
+
+Agora, note que o território branco foi reduzido de 4 pontos em relação à sequência discutida anteriormente: A + B + C + D + F - A (para compensar a pedra em G que não existe mais) = 4. Portanto, o valor do hane-kosumi, nesse caso, é de 6 + 4 = 10 pontos.
+
+Esses 4 pontos representam o que nós chamamos de privilégios. São movimentos cujo privilégio de serem jogados é de um dos jogadores, funcionam como um sente implícito.  O privilégio mínimo para o hane-kosumi é de 2 pontos, no caso em que o ko mencionado ou formas similares sejam possíveis. Tal benefício pode ser contabilizado para qualquer um dos jogadores. Para o hane-kosumi, ele pode ir até 4 para cada lado.
+
+Guarde isso: o valor máximo do hane-kosumi na 2a linha é de 14 (= 6 + 4 + 4) pontos! (E ele varia de 2 em 2.)]))
+(;B[nl]
+;AB[cg][ch][ci][cj][ck][nk][ok][pk][pl][nm][om][pm][rn][sn][ro][rp][sp][rr][sr][rs]LB[hi:D][om:A][ro:B][rr:C]TR[ah][bh][ai][bi][aj][bj]C[As formas A, B e C no canto inferior direito são as que eu uso para ensinar iniciantes sobre o porquê de se começar normalmente no canto e não no centro ou nos lados. Veja que no centro é muito mais difícil de se fazer pontos do que no lado e no canto (A > B > C, em termos de dificuldade).
+
+Agora, foquemos no lado esquerdo. Pretas estão fazendo, até o momento 6 pontos. Não se preocupe com como chegamos a esse número, isso será esclarecido mais adiante. Qual seria o movimento para se fazer a mesma quantidade de pontos no centro? Podemos pensar em algo como D, numa primeira aproximação.]
+;W[as]
+;AB[hi]LB[fg:A][fh:B]C[Mas será que estaríamos realmente fazendo 6 pontos no mínimo?
+
+Uma vez que o pequeno moyo está aberto e não há força preta exterior, Brancas podem tentar reduzir com A e B. Se Pretas quiserem manter o território, terão, inevitavelmente, de responder...]
+;B[bs]
+;AW[gh][fk]AB[fi][gi]LB[gh:3][ei:A][fi:2][gi:4][fk:1][hk:B]C[À primeira vista, um iniciante diria que as pedras Brancas são suas (ou pelo menos a 3). Porém, não há nenhuma garantia para tanto. Na verdade, agora, Pretas vai ter de colocar talvez até mais de uma pedra para garantir pontos em apenas um dos lados.
+
+Enquanto isso... Brancas jogam nos cantos e nos lados, fazendo muito mais pontos. Uma partida que poderia ter sido preta no passado termina em 20 pontos para as Brancas devido à paixão desmedida das Pretas pelo centro.
+
+(Uma pequena ressalva deve ser feita à sequência de demonstração. Globalmente, pode ser que ela seja muito ruim para as Brancas, pois fortaleceram ainda mais a posição preta.)
+
+Se vocês puderem encontrar comentários de profissionais, quando eles vão estimar a pontuação nesses casos, eles nem sequer contam os pontos de uma região como A, ou talvez contem 1 ou 2 pontos.
+
+Alguns jogadores têm medo de que o moyo Preto comece a ficar grande caso Pretas, antes das trocas aqui feitas jogassem B, por exemplo. Veremos que isso é infundado, pois só agregaria pouco mais de 4 pontos à posição.])
+(;B[pd]
+;AW[cd][rd][ce][qf][cg][ch][di][qi][dj][ej][nn][no][ep][fp][np][fq][jq]AB[ec][hc][nc][qc][de][he][df][dg][dh][ei][fi][nm][cn][on][oo][cp][op][qp][dq][eq][nq][oq]LB[pb:C][fe:B][bf:A][rg:D][bq:G][rq:E][hr:F]C[Pratique a contagem antes de seguir às respostas.]
+;W[kj]LB[pb:C][rc:H][fe:B][ag:A][sg:D][no:I][bq:G][hr:F][qr:E]TR[ea][ha][na][ra][eb][hb][nb][qb][rb][oc][ad][bd][ed][hd][sd][re][bf][gf][gg][qg][gh][qh][ri][si][aj][bj][cj][an][bn][pn][qn][rn][sn][co][gq][hq][iq][er][fr][jr][nr][es][fs][js][ns]SQ[rj]C[Este é o método de contagem por mínimos mais utilizados pelos profissionais. Nele, contamos implicitamente que trocas como quadrado por triângulo na região D estão implícitas como sente em algum momento da partida. Basicamente, ligamos de maneira reta nossas pedras e também fazemos linhas transversais em direção às bordas.
+
+Destaque para o limite estranho em C. Ele advém do fato de que a teoria minimalista considera movimentos como H uma espécie de sente minimizador em algum momento.
+
+Gabarito:
+
+A: 10
+B: 17
+C: 6 
+D: 7
+E: 21 (As pedras I não devem ser contadas pois não foram ainda capturadas!)
+F: 6
+G: 15
+])
+(;B[dd]
+;AW[ra][qb][qc][rc][bd][cf][ci]AB[pa][pb][cc][fc][pc][pd][qd][rd][sd]LB[sb:B][bc:A]C[Qual o valor de A? O que vale mais: A ou B?
+
+Essa é uma questão bastante difícil. Vale ressaltar que A pode alterar o status de ambos os grupos dependendo do exterior. Mas isso é questão para outra hora, em uma aula de continuação de josekis. Para calcularmos o valor de A, precisamos recorrer ao método principal de contagem, isto é, contar os benefícios de Pretas e Brancas separadamente e, depois, juntá-los.
+
+Do exercício anterior, já sabemos que o território Preto original é de 6 pontos, e o Branco, de 6 (apesar de que a resposta do último exercício era de que ele valia 7 pontos, na realidade, é, em geral, algo mais próximo de 6).]
+(;W[bc]
+;AW[ab][be][cg]AB[ba][bb][ce][df]LB[ba:D][cb:C][ac:A][cd:B]TR[ai][bi]C[O território Branco não tem muitos ganhos, 2 pontos apenas, de 6 para 8.
+
+O sacrifício em A é um direito das Pretas e, de fato, o território branco acaba sendo reduzido, mas, para fins de aproximação, fiquemos com 8 pontos. 
+
+Em geral, é bem mais comum e apropriada a resposta em C do que em D; e o atari em B é ignorado pois o intuito da sequência é simplesmente demonstrar o valor mínimo do território branco.])
+(;W[as]
+;AB[bc]LB[bd:A]TR[fa][fb][ac][ec]C[Inicialmente, o território preto passa de 6 a 11 pontos. Porém, temos que acrescentar os futuros benefícios da possível captura de A.]
+(;B[ss]
+;AW[ce]LB[ac:A]TR[af][bf]C[Uma variação complementar a Pretas B15. Há um acréscimo de 2 pontos no território branco além de mais 2 pontos em sente como privilégio. Como é preciso um segundo movimento, o total fica 4/2 = 2.])
+(;B[be]
+;AW[ce][bf]AB[cd]LB[sb:A][ac:6][bc:B][hc:C][ad:5][cd:3][be:1][ce:2][af:7][bf:4]C[Note que esta captura é bastante similar ao hane-kosumi já discutido - analisar um yose desconhecido com formas já conhecidas é uma técnica muito útil, o que também já foi visto nas análises por tewari. Observe que, tanto Brancas quanto Pretas possuem privilégios em 6 e 7. Para fins práticos, isso quer dizer que a captura pode variar aproximadamente de 10 a 14 pontos aproximadamente. Escolhamos 12 pontos como um meio termo (utilizar meio termos é algo muito utilizado para cálculos no yose, o meio do caminho entre os valores máximos e mínimos é visto como uma aproximação justa).
+
+Dessa forma, efetuemos o cálculo final:
+
+Primeira Aproximação: 2 + 5 = 7
+Segunda Aproximação: 12/2 (pois precisaríamos de um segundo movimento) + 4/2 (vide variação anterior) = 8
+Total: 15 pontos
+
+Na maioria dos livros, esse yose será dado como pouco mais de 16 pontos (memorize este número, ele é muito útil!), pois o autor terá utilizado 14/2 = 7 na segunda aproximação e, também, terá sido mais minucioso com os sentes implícitos e sacrifícios. No entanto, fique atento nas suas partidas! É preciso analisar caso a caso. Atenção também ao entorno, pedras brancas em lugares como C podem fazer com que Branco B não seja simplesmente gote, mas sente: um yose de 16 pontos em sente, equivalente a 32 pontos (nesse tamanho, está mais para movimento de meio de jogo na verdade...) em gote poderá reverter sua partida completamente!
+
+E voltemos para a segunda pergunta inicial. A vale mais ou menos do que 15 ou 16 pontos?
+
+Veja que capturar com A agrega 12 pontos às pretas. E se Brancas jogássem em A, fariam 2 pontos. Um total de 14 pontos de valor. Ou seja, um simples empurrão em B vale mais (ou aproximadamente o mesmo) do que capturar um canto! É bem comum que essas continuações de yose em josekis quase terminados valham tanto, portanto, fique atento!])))
+(;B[pp]
+;AW[bb][cc][dc][fc][rn][ro][qp][qq][pr][qr]AB[bc][bd][cd][cg][qm][rm][qn][sn][qo][nq][pq][or]LB[jd:B][qm:9][rm:15][qn:7][rn:8][sn:17][qo:5][ro:6][pp:1][qp:4][sp:A][nq:13][pq:3][qq:2][or:11][pr:10][qr:12][as:14][bs:16]C[A sequência do canto inferior direito é bem comum de acontecer com a invasão do 3-3 (apesar de que nem tanto após o AlphaGo). Nela, Pretas geralmente conseguem virar em 15 e, em seguida, fazer o hane em 17. A questão é: como Brancas devem responder? A está certo?
+
+Clique em B para ver o outro tópico.]
+(;W[sp]
+;LB[sr:A]C[Pretas têm um tesuji escondido em A.]
+;B[sr]LB[sq:A]C[O melhor movimento Branco é A.]
+;W[sq]
+;B[sm]LB[so:A][rr:B]C[O que acontece se Brancas tentarem A?]
+(;W[so]
+;B[rq]
+;W[rp]
+;B[rr]
+;W[rs]
+;B[ps]TR[rq][rr][sr]C[A forma marcada é uma forma morta.])
+(;W[rr]
+;B[rp]LB[so:A]C[Brancas não podem se conectar em A pois se põem em atari.]
+;W[rq]LB[ss:A]C[O correto aqui teria sido a captura direta em A na verdade.]
+;B[so]LB[rp:A]C[Brancas não podem se conectar em A.]
+(;W[rp]
+;B[ps])
+(;W[ps]LB[ro:A][rp:B][ps:C][ss:D]C[C não é o melhor yose, simplesmente capturar em D é o melhor na verdade. C foi jogado somente para ficar mais clara a pontuação final.]
+;B[rs]
+;W[qs]
+;B[os]
+;W[ss]LB[rp:A]C[Aqui, o território é de 1 ponto (aproximadamente) para as Pretas devido à captura em A; e de 4 + 1 (captura em B) = 5 para Brancas.])))
+(;W[rp]LB[so:B][sp:C][ps:A]C[O território Branco pode variar de 5 a 8 pontos dependendo se Brancas conseguirem ou não A e B. O que nos leva a um território total de 13/2 = 6,5. Na outra variação, errônea, o território é aproximadamente 5 pontos, e a redução foi feita em sente.
+
+Ou seja, C é um erro que acarreta em uma redução de até 2 pontos em sente! Guarde isso!]
+;B[ps]
+;W[sr]
+;B[so]
+;W[sp]
+;B[sm])
+(;W[jd]
+;AW[db]AB[ab][cb]LB[cb:A]C[Quanto vale a captura em A?]
+;B[cb]
+;W[db]
+;B[jf]
+;W[ca]LB[ba:A][da:B][fc:C]C[Novamente, voltamos ao hane-kosumi na 2a linha. Sabemos que ele vale 6 pontos no mínimo e, no caso, devido ao privilégio das Pretas em B, há um bônus de 2 pontos (atenção à pedra C!). Portanto, um total de 8 pontos.
+
+Porém, há o detalhe do ko em A. Como ele é em geral mais danoso às Brancas do que Pretas, é bem provável que aquelas simplesmente tenham de se conectar, o que causaria uma perda de 1 ponto. Por isso, dizemos que o hane-kosumi na 2a linha no canto não tem o mesmo valor que nos lados, sendo decrescido, em regra, de um ponto de sua contra parte - neste caso, teríamos algo perto de 7 pontos devido ao ko.]))
+(;B[jc]
+;AW[ib][ic][id][bj][cj][dj][ej][gk][cn][po][pp][lq][pq][pr][ps][qs]AB[kc][nc][ce][gh][bi][ci][di][ei][qk][qn][qo][qp][qq][qr][rs]LB[la:B][ib:A][ai:D][aj:C][rr:E]C[O Pulo do Macaco é o grande keima na beirada do tabuleiro de A para B. Geralmente, é preciso A, um sagari ou extensão para a borda do tabuleiro na 2a linha, para que ele seja possível.
+
+O Hane na 1a Linha é bastante típico como movimento sente no yose, seria Branco D ou Preto C.
+
+A Conexão no Canto (E) que gostaria de discutir é um erro bem comum que já vi até mesmo jogadores dan fazer, ela não vale tanto quanto se pensa.]
+(;W[la]
+;AW[ja][ka][jb]AB[ma][kb][lb][mb]LB[ja:7][ka:3][la:1][ma:4][jb:5][kb:6][lb:2][mb:8]TR[ia]C[Branco reduz Pretas e ainda acresce seu território de 1 ponto.
+
+O valor do Pulo do Macaco pode variar. Algumas vezes, Pretas optam por fazer um sacrifício jogando em 7 para criar um problema de liberdades por exemplo.])
+(;W[sc]
+;B[jb]LB[ia:A]TR[ka][la][ma][kb][lb][mb]C[Como já visto, o valor do Pulo do Macaco depende da sequência de reação escolhida. Aqui, na mais simples, temos que ele seria 6+1 = 7 pontos. Contudo, já podemos perceber que o privilégio em A deveria ser acrescido. Esse yose é na verdade demasiado complicado e há erros catalogados de profissionais inclusive. Para fins de jogo, sugiro memorizar que ele vale na verdade 7 ou 8 (8 é mais comum) pontos aproximadamente.])
+(;W[ai]
+;AW[aj]AB[ah][bh]LB[bg:B][ah:2][bh:4][ai:1][aj:3][bl:A]C[Esse hane é um dos yoses mais importantes do jogo. Muitos pontos podem ser ganhos com ele. Em geral, ele é duplo-sente, isto é, tanto Branco 1 quanto Preto 3 são sente. Seria um duplo-sente de 2 pontos. Quem não gostaria de ganhar 2 pontos de graça?
+
+Atenção ao fato de que o entorno pode mudar a caracterização da jogada. Se houvesse uma pedra preta em B, Branco 1 não seria mais sente, seria sente-reverso pois previne Preto 3 em sente. No mesmo caso, Preto 3 seria sente de 2 pontos. Virtualmente teria o valor de um gote de 4 pontos, todavia, a perda no território branco é tamanha que o sente é, na realidade, absoluto.])
+(;W[rr]
+;B[rq]
+(;W[ss]LB[rr:A]C[Brancas ganham 1 ponto e eliminam 4 pontos do território das Pretas, num total de 4 + 1 = 5 pontos.
+
+Veja o quão pequeno é esse yose. Observo frequentemente kyus conectando em A automaticamente quando há hane-kosumis de 14 pontos no tabuleiro.
+
+É claro que é preciso se atentar se o status do grupo preto no canto não se altera, mas o fato é que A é bastante pequeno.])
+(;AE[rq]AB[rr]TR[rq][sq][sr][ss]C[Os 4 pontos que foram eliminados na outra variação.])))
+(;B[dj]
+;AW[cb][bc][cd][cg][ck][cn]AB[bb][db][cc][ec][dd][bj][bp][dp][fp]LB[bj:C][dj:B][ck:A]C[Ko é um capítulo à parte e eu somente o cobrirei superficialmente aqui. É preciso muito cuidado e sua estimativa varia muito caso a caso, no entanto, certamente, há regras gerais.
+
+Calcular exatamente o valor do ko é geralmente bastante difícil, como se pode ver na posição à esquerda, entretanto, a maioria das posições não necessita de um cálculo preciso, somente saber que ele vale mais do que qualquer outra coisa no tabuleiro é o suficiente.
+
+O mais importante talvez seja a comparação entre as ameaças e finalizar o ko. O que temos que ter em mente é que o lucro total local deve equivaler a, no mínimo, dois movimentos externos do adversário, isto é, deve-se observar uma proporção de 1:2 em termos de lucro. Essa proporção é o que dá a valoração típica global do ko: quem finaliza o ko fica com somente 1/3 do lucro global! Alguns livros põem mais ou menos ênfase nesse último número, mas, na verdade, o mais importante é a proporção de 1:2 (ter somente 1/3 do lucro global é um pouco deprimente, não?).
+
+Só faço um adendo para o fato de que as ameaças do adversário, se ignoradas, carregam, normalmente, um fator sente por trás e, assim, este deve ser acrescido à valoração do ko. Pode parecer óbvio, mas muitos jogadores cometem esse erro.
+
+Veja, por exemplo, a ameaça em A. Não é só uma perda local de pontos para as Pretas, mas também um problema enorme pois as pedras B e C serão desconectadas. Pode ser que o ko no canto superior esquerdo valha tanto em certas circunstâncias, mas é preciso muito cuidado.
+
+Enfim, a necessidade de se continuar a responder onde a ameaça de ko foi ignorada é um fator muito importante para se avaliar se vale a pena ou não capturar o ko.]
+;W[cj]
+;B[ci]
+;W[di]
+;B[dh]LB[ch:B][bi:A][ei:C]C[Todos os 3 movimentos são possíveis para as Brancas, apesar de que, talvez, C seja a mais benéfica em geral.]
+(;W[ei]
+;B[ch]
+;W[eh]
+;B[dg]
+;W[ek])
+(;W[ch]
+;B[ei]
+;W[bi]
+;B[bh]C[Ko])
+(;W[bi]
+;B[ei]
+;W[bh]C[É preciso avaliar se o ponnuki preto seria ou não suficiente para compensar benefício das Brancas (provavelmente não).])))
