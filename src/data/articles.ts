@@ -873,4 +873,13 @@ export const articlesMetadata: Article[] = [
     mainTopic: Topic.sports,
     otherTopics: [Topic.politics, Topic.logic, Topic.law],
   },
+  {
+    index: 23,
+    title: "Tradução de um Livro Clássico do Go",
+    link: "/articles/toshiro/toshiro.html",
+    date: Date.UTC(2018, 5, 21),
+    languages: [Language.portuguese],
+    mainTopic: Topic.go,
+    otherTopics: [Topic.books],
+  },
 ];
