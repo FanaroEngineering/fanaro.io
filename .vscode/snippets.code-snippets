@@ -27,6 +27,16 @@
 		],
 		"description": "The figcaption HTML tag"
 	},
+	"Better figure": {
+		"prefix": "figure",
+		"body": [
+			"<figure>",
+			"  <img src=\"$1\" alt=\"$2\" />",
+			"  <figcaption>$3</figcaption>",
+			"</figure>"
+		],
+		"description": "A more appropriate figure tag."
+	},
 	"Indented Paragraph": {
 		"prefix": "p-indent",
 		"body": [

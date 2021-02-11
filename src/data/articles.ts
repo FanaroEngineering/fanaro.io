@@ -854,4 +854,13 @@ export const articlesMetadata: Article[] = [
     mainTopic: Topic.literature,
     otherTopics: [Topic.writing],
   },
+  {
+    index: 25,
+    title: "A Lenda de Nestor de la Palissade",
+    link: "/articles/nestor_de_la_palissade/nestor_de_la_palissade.html",
+    date: Date.UTC(2018, 5, 28),
+    languages: [Language.portuguese, Language.french],
+    mainTopic: Topic.go,
+    otherTopics: [],
+  },
 ];
