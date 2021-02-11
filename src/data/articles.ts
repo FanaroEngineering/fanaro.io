@@ -43,6 +43,8 @@ export enum Topic {
   sports = "Sports",
   comedy = "Comedy",
   health = "Health",
+  trips = "Trips",
+  culture = "Culture",
 }
 
 export default interface Article {
@@ -992,5 +994,14 @@ export const articlesMetadata: Article[] = [
     languages: [Language.portuguese],
     mainTopic: Topic.go,
     otherTopics: [],
+  },
+  {
+    index: 10,
+    title: "My Brief Trip to Amsterdam: Red Lights, Go and Biblical Flirting",
+    link: "/articles/amsterdam/amsterdam.html",
+    date: Date.UTC(2018, 4, 25),
+    languages: [Language.portuguese],
+    mainTopic: Topic.writing,
+    otherTopics: [Topic.trips, Topic.culture],
   },
 ];
