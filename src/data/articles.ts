@@ -835,4 +835,14 @@ export const articlesMetadata: Article[] = [
     mainTopic: Topic.literature,
     otherTopics: [Topic.writing],
   },
+  {
+    index: 27,
+    title:
+      "Revisão pelo Patreon: Efraim Queiroz, Comandante das Estrelas da Morte",
+    link: "/articles/revisao_efraim/revisao_efraim.html",
+    date: Date.UTC(2018, 6, 3),
+    languages: [Language.portuguese],
+    mainTopic: Topic.go,
+    otherTopics: [Topic.review],
+  },
 ];
