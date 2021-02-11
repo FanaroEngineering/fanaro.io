@@ -20,7 +20,6 @@ export default class ArticlesTable extends HTMLElement {
   `;
 
   private article: Article = {
-    index: 0,
     title: "",
     link: "",
     date: 0,
@@ -29,6 +28,7 @@ export default class ArticlesTable extends HTMLElement {
     otherTopics: [Topic.go],
   };
   private tr: HTMLTableRowElement = document.createElement("tr");
+  private currentIndex: number = 0;
 
   constructor() {
     super();
@@ -37,6 +37,7 @@ export default class ArticlesTable extends HTMLElement {
   connectedCallback() {
     this.innerHTML = ArticlesTable.template;
     const tbody: HTMLTableSectionElement = this.querySelector("tbody")!;
+    this.currentIndex = articlesMetadata.length;
     articlesMetadata.forEach((article: Article) => {
       this.article = article;
       this.tr = document.createElement("tr");
@@ -54,8 +55,9 @@ export default class ArticlesTable extends HTMLElement {
 
   private rowIndex = (): void => {
     const indexCell: HTMLTableDataCellElement = document.createElement("td");
-    indexCell.innerHTML = this.article.index.toString();
+    indexCell.innerHTML = this.currentIndex.toString();
     this.tr.append(indexCell);
+    this.currentIndex--;
   };
 
   private rowArticle = (): void => {

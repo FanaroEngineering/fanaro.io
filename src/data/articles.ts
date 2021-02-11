@@ -48,7 +48,6 @@ export enum Topic {
 }
 
 export default interface Article {
-  index: number;
   title: string;
   link: string;
   date: number;
@@ -59,7 +58,6 @@ export default interface Article {
 
 export const articlesMetadata: Article[] = [
   {
-    index: 112,
     title: "FIC: Fast Immutable Collections, for Dart",
     link: "/articles/fic/fic.html",
     date: Date.UTC(2021, 1, 6),
@@ -68,7 +66,6 @@ export const articlesMetadata: Article[] = [
     otherTopics: [Topic.dart],
   },
   {
-    index: 111,
     title: "Guia Completo de Contagem de Pontos",
     link: "/articles/contagem_guia_completo/contagem_guia_completo.html",
     date: Date.UTC(2021, 0, 12),
@@ -77,7 +74,6 @@ export const articlesMetadata: Article[] = [
     otherTopics: [],
   },
   {
-    index: 110,
     title: "A Github Table of Contents Hack",
     link: "/articles/github_toc_hack/github_toc_hack.html",
     date: Date.UTC(2021, 0, 5),
@@ -86,7 +82,6 @@ export const articlesMetadata: Article[] = [
     otherTopics: [Topic.design],
   },
   {
-    index: 109,
     title: "Murugandi's Fighting Spirit Design",
     link: "/articles/murugandi/murugandi.html",
     date: Date.UTC(2020, 11, 21),
@@ -95,7 +90,6 @@ export const articlesMetadata: Article[] = [
     otherTopics: [Topic.design, Topic.design],
   },
   {
-    index: 108,
     title: "My New Website | Meu Novo Site",
     link: "/articles/new_site/new_site.html",
     date: Date.UTC(2020, 11, 20),
@@ -104,7 +98,6 @@ export const articlesMetadata: Article[] = [
     otherTopics: [Topic.design],
   },
   {
-    index: 107,
     title: "Revisão com Amir Fragman",
     link: "/articles/revisao_amir/revisao_amir.html",
     date: Date.UTC(2020, 11, 5),
@@ -113,7 +106,6 @@ export const articlesMetadata: Article[] = [
     otherTopics: [Topic.review, Topic.myYouTubeChannel],
   },
   {
-    index: 106,
     title: "OGS Kbd Nav",
     link: "/articles/ogs_kbd_nav/ogs_kbd_nav.html",
     date: Date.UTC(2020, 10, 28),
@@ -122,7 +114,6 @@ export const articlesMetadata: Article[] = [
     otherTopics: [Topic.go, Topic.browserExtension, Topic.myYouTubeChannel],
   },
   {
-    index: 105,
     title: "Tips and Advice on Go Etiquette",
     link: "/articles/go_etiquette/go_etiquette.html",
     date: Date.UTC(2020, 10, 22),
@@ -131,7 +122,6 @@ export const articlesMetadata: Article[] = [
     otherTopics: [Topic.psychology, Topic.myYouTubeChannel],
   },
   {
-    index: 104,
     title: "YouTube Kbd Nav",
     link: "/articles/youtube_kbd_nav/youtube_kbd_nav.html",
     date: Date.UTC(2020, 8, 29),
@@ -140,7 +130,6 @@ export const articlesMetadata: Article[] = [
     otherTopics: [Topic.browserExtension, Topic.myYouTubeChannel],
   },
   {
-    index: 103,
     title: "Recursion: Fibonacci in Go",
     link: "/articles/recursion_fibonacci_in_go/recursion_fibonacci_in_go.html",
     date: Date.UTC(2020, 7, 17),
@@ -149,7 +138,6 @@ export const articlesMetadata: Article[] = [
     otherTopics: [Topic.tsumego, Topic.math, Topic.myYouTubeChannel],
   },
   {
-    index: 102,
     title: "Tradução de um Vídeo da BIBA Baduk",
     link: "/articles/traducao_biba/traducao_biba.html",
     date: Date.UTC(2020, 7, 16),
@@ -158,7 +146,6 @@ export const articlesMetadata: Article[] = [
     otherTopics: [Topic.review, Topic.myYouTubeChannel],
   },
   {
-    index: 101,
     title: "Etimologia da Palavra Carro",
     link: "/articles/etimologia_carro/etimologia_carro.html",
     date: Date.UTC(2020, 7, 11),
@@ -167,7 +154,6 @@ export const articlesMetadata: Article[] = [
     otherTopics: [],
   },
   {
-    index: 100,
     title: "Os Grandes Debates de Joseki: Aula com Thiago Sinji Ramos",
     link: "/articles/joseki_debates_sinji/joseki_debates_sinji.html",
     date: Date.UTC(2020, 7, 7),
@@ -176,7 +162,6 @@ export const articlesMetadata: Article[] = [
     otherTopics: [Topic.books, Topic.joseki, Topic.myYouTubeChannel],
   },
   {
-    index: 99,
     title: "Quote #3 - Martin Fowler on Good Code",
     link: "/articles/quote_3_fowler/quote_3_fowler.html",
     date: Date.UTC(2020, 5, 28),
@@ -185,7 +170,6 @@ export const articlesMetadata: Article[] = [
     otherTopics: [Topic.productivity, Topic.quotes],
   },
   {
-    index: 98,
     title: "DeepL: Traduza Meus Artigos",
     link: "/articles/deepl/deepl.html",
     date: Date.UTC(2020, 4, 20),
@@ -194,7 +178,6 @@ export const articlesMetadata: Article[] = [
     otherTopics: [],
   },
   {
-    index: 97,
     title: '"Less Code" Print Design',
     link: "/articles/less_code/less_code.html",
     date: Date.UTC(2020, 3, 19),
@@ -203,7 +186,6 @@ export const articlesMetadata: Article[] = [
     otherTopics: [Topic.design],
   },
   {
-    index: 96,
     title: "Print Designs for My Aunt",
     link: "/articles/design_aunt/design_aunt.html",
     date: Date.UTC(2020, 3, 18),
@@ -212,7 +194,6 @@ export const articlesMetadata: Article[] = [
     otherTopics: [],
   },
   {
-    index: 95,
     title: "(My) Dart Katas",
     link: "/articles/dart_katas/dart_katas.html",
     date: Date.UTC(2020, 3, 11),
@@ -221,7 +202,6 @@ export const articlesMetadata: Article[] = [
     otherTopics: [Topic.dart, Topic.flutter],
   },
   {
-    index: 94,
     title: "Avoid Spaghetti Theming",
     link: "/articles/spaghetti_theming/spaghetti_theming.html",
     date: Date.UTC(2020, 3, 4),
@@ -230,7 +210,6 @@ export const articlesMetadata: Article[] = [
     otherTopics: [Topic.programming, Topic.design, Topic.dart, Topic.flutter],
   },
   {
-    index: 93,
     title: "Musashi, Craftsmanship and The Critical Moment",
     link: "/articles/musashi/musashi.html",
     date: Date.UTC(2020, 3, 1),
@@ -239,7 +218,6 @@ export const articlesMetadata: Article[] = [
     otherTopics: [Topic.programming, Topic.design, Topic.go, Topic.sports],
   },
   {
-    index: 92,
     title: "My Dad's Logo",
     link: "/articles/dad_logo/dad_logo.html",
     date: Date.UTC(2020, 3, 1),
@@ -248,7 +226,6 @@ export const articlesMetadata: Article[] = [
     otherTopics: [],
   },
   {
-    index: 91,
     title: "A Weightlifting Logo",
     link: "/articles/weightlifting_logo/weightlifting_logo.html",
     date: Date.UTC(2020, 3, 1),
@@ -257,7 +234,6 @@ export const articlesMetadata: Article[] = [
     otherTopics: [Topic.sports, Topic.myYouTubeChannel],
   },
   {
-    index: 90,
     title: "Anti Bullshit Bullshit Club",
     link: "/articles/anti_bullshit_logo/anti_bullshit_logo.html",
     date: Date.UTC(2020, 2, 17),
@@ -266,7 +242,6 @@ export const articlesMetadata: Article[] = [
     otherTopics: [Topic.comedy],
   },
   {
-    index: 89,
     title: "DIY Minimalist Portrait",
     link: "/articles/diy_minimalist_portrait/diy_minimalist_portrait.html",
     date: Date.UTC(2020, 1, 26),
@@ -275,7 +250,6 @@ export const articlesMetadata: Article[] = [
     otherTopics: [Topic.comedy],
   },
   {
-    index: 88,
     title: "Please Stop this Fallacy",
     link: "/articles/fallacy_against_communism/fallacy_against_communism.html",
     date: Date.UTC(2020, 1, 10),
@@ -284,7 +258,6 @@ export const articlesMetadata: Article[] = [
     otherTopics: [Topic.politics, Topic.history, Topic.philosophy],
   },
   {
-    index: 87,
     title: "My Twitter: @PFanaro",
     link: "/articles/my_twitter/my_twitter.html",
     date: Date.UTC(2020, 0, 20),
@@ -293,7 +266,6 @@ export const articlesMetadata: Article[] = [
     otherTopics: [Topic.meta],
   },
   {
-    index: 86,
     title: "KG-LBS Converter",
     link: "/articles/kg_lbs_converter/kg_lbs_converter.html",
     date: Date.UTC(2019, 11, 30),
@@ -302,7 +274,6 @@ export const articlesMetadata: Article[] = [
     otherTopics: [Topic.sports, Topic.design],
   },
   {
-    index: 85,
     title: "Universal Principles of Design",
     link:
       "/articles/universal_principles_design/universal_principles_design.html",
@@ -312,7 +283,6 @@ export const articlesMetadata: Article[] = [
     otherTopics: [Topic.uiUx],
   },
   {
-    index: 84,
     title: "Quote #2 - Stalin on Elections",
     link: "/articles/quote_2_stalin/quote_2_stalin.html",
     date: Date.UTC(2019, 10, 18),
@@ -327,7 +297,6 @@ export const articlesMetadata: Article[] = [
     ],
   },
   {
-    index: 83,
     title: "Quote #1 - Dorothy Parker on What Writing Is",
     link: "/articles/quote_1_parker/quote_1_parker.html",
     date: Date.UTC(2019, 11, 2),
@@ -336,7 +305,6 @@ export const articlesMetadata: Article[] = [
     otherTopics: [Topic.productivity, Topic.language, Topic.meta],
   },
   {
-    index: 82,
     title: "Tetris Go",
     link: "/articles/tetris_go/tetris_go.html",
     date: Date.UTC(2019, 8, 7),
@@ -345,7 +313,6 @@ export const articlesMetadata: Article[] = [
     otherTopics: [Topic.goVariants, Topic.myYouTubeChannel],
   },
   {
-    index: 81,
     title: "Scrum (Part 2)",
     link: "/articles/scrum_2/scrum_2.html",
     date: Date.UTC(2019, 8, 3),
@@ -354,7 +321,6 @@ export const articlesMetadata: Article[] = [
     otherTopics: [Topic.psychology, Topic.programming],
   },
   {
-    index: 80,
     title: "Simão Gonçalves [4-5d EGF] vs Philippe Fanaro [2k-2d KGS]",
     link:
       "/articles/simao_goncalves_vs_philippe_fanaro/simao_goncalves_vs_philippe_fanaro.html",
@@ -364,7 +330,6 @@ export const articlesMetadata: Article[] = [
     otherTopics: [Topic.review, Topic.myYouTubeChannel],
   },
   {
-    index: 79,
     title: "Scrum (Part 1)",
     link: "/articles/scrum_1/scrum_1.html",
     date: Date.UTC(2019, 7, 21),
@@ -373,7 +338,6 @@ export const articlesMetadata: Article[] = [
     otherTopics: [Topic.psychology, Topic.programming],
   },
   {
-    index: 78,
     title: "Less Pain in the Office",
     link: "/articles/less_pain_office/less_pain_office.html",
     date: Date.UTC(2019, 7, 3),
@@ -382,7 +346,6 @@ export const articlesMetadata: Article[] = [
     otherTopics: [Topic.productivity, Topic.programming],
   },
   {
-    index: 77,
     title: "My VS Code Settings",
     link: "/articles/my_vs_code_settings/my_vs_code_settings.html",
     date: Date.UTC(2019, 6, 28),
@@ -391,7 +354,6 @@ export const articlesMetadata: Article[] = [
     otherTopics: [Topic.productivity],
   },
   {
-    index: 76,
     title: "Fluent Forever",
     link: "/articles/fluent_forever/fluent_forever.html",
     date: Date.UTC(2019, 6, 4),
@@ -400,7 +362,6 @@ export const articlesMetadata: Article[] = [
     otherTopics: [Topic.productivity, Topic.psychology],
   },
   {
-    index: 75,
     title: "Macunaíma",
     link: "/articles/macunaima/macunaima.html",
     date: Date.UTC(2019, 5, 21),
@@ -409,7 +370,6 @@ export const articlesMetadata: Article[] = [
     otherTopics: [Topic.language],
   },
   {
-    index: 74,
     title: "Negative Language: WHY you should avoid it",
     link: "/articles/negative_language/negative_language.html",
     date: Date.UTC(2019, 6, 11),
@@ -418,7 +378,6 @@ export const articlesMetadata: Article[] = [
     otherTopics: [Topic.philosophy, Topic.meta, Topic.social],
   },
   {
-    index: 73,
     title: "Say Hello to My AI Friend",
     link: "/articles/say_hello_to_my_ai_friend/say_hello_to_my_ai_friend.html",
     date: Date.UTC(2019, 4, 11),
@@ -427,7 +386,6 @@ export const articlesMetadata: Article[] = [
     otherTopics: [Topic.comedy, Topic.meta],
   },
   {
-    index: 72,
     title: "Quase Morrendo | Tygem 3",
     link: "/articles/tygem_3/tygem_3.html",
     date: Date.UTC(2019, 4, 2),
@@ -436,7 +394,6 @@ export const articlesMetadata: Article[] = [
     otherTopics: [Topic.myYouTubeChannel],
   },
   {
-    index: 71,
     title: "Quadra Molhada? Sem problemas.",
     link: "/articles/quadra_molhada/quadra_molhada.html",
     date: Date.UTC(2019, 3, 30),
@@ -445,7 +402,6 @@ export const articlesMetadata: Article[] = [
     otherTopics: [Topic.myYouTubeChannel],
   },
   {
-    index: 70,
     title: "Cabeçada | Tygem 2",
     link: "/articles/tygem_2/tygem_2.html",
     date: Date.UTC(2019, 3, 12),
@@ -454,7 +410,6 @@ export const articlesMetadata: Article[] = [
     otherTopics: [Topic.myYouTubeChannel],
   },
   {
-    index: 69,
     title: "Grupos Fracos Para Todo Lado | Tygem 1",
     link: "/articles/tygem_1/tygem_1.html",
     date: Date.UTC(2019, 3, 3),
@@ -463,7 +418,6 @@ export const articlesMetadata: Article[] = [
     otherTopics: [Topic.myYouTubeChannel],
   },
   {
-    index: 68,
     title: "Formulário e Estatísticas sobre o Go Brasileiro",
     link: "/articles/estatisticas_go_br/estatisticas_go_br.html",
     date: Date.UTC(2019, 2, 26),
@@ -472,7 +426,6 @@ export const articlesMetadata: Article[] = [
     otherTopics: [Topic.statistics],
   },
   {
-    index: 67,
     title: "The Essential Guide to Keyboards",
     link: "/articles/kbd_guide/kbd_guide.html",
     date: Date.UTC(2019, 2, 20),
@@ -481,7 +434,6 @@ export const articlesMetadata: Article[] = [
     otherTopics: [Topic.programming, Topic.writing],
   },
   {
-    index: 66,
     title: "Fundamentos de Go &mdash; Tsumegos Parte II",
     link: "/articles/tsumegos_2/tsumegos_2.html",
     date: Date.UTC(2019, 2, 19),
@@ -490,7 +442,6 @@ export const articlesMetadata: Article[] = [
     otherTopics: [Topic.tsumego],
   },
   {
-    index: 65,
     title: "Fundamentos de Go &mdash; Tsumegos Parte I",
     link: "/articles/tsumegos_1/tsumegos_1.html",
     date: Date.UTC(2019, 2, 11),
@@ -499,7 +450,6 @@ export const articlesMetadata: Article[] = [
     otherTopics: [Topic.tsumego],
   },
   {
-    index: 64,
     title: "The KDD 2009 Data Science Challenge",
     link: "/articles/kdd_2009/kdd_2009.html",
     date: Date.UTC(2019, 1, 27),
@@ -508,7 +458,6 @@ export const articlesMetadata: Article[] = [
     otherTopics: [Topic.statistics, Topic.math],
   },
   {
-    index: 63,
     title: "Mini-Jogos de Go",
     link: "/articles/mini_jogos_go/mini_jogos_go.html",
     date: Date.UTC(2019, 1, 12),
@@ -517,7 +466,6 @@ export const articlesMetadata: Article[] = [
     otherTopics: [Topic.goVariants],
   },
   {
-    index: 62,
     title: "Some Interesting Go Statistics",
     link: "/articles/go_statistics/go_statistics.html",
     date: Date.UTC(2018, 11, 26),
@@ -526,7 +474,6 @@ export const articlesMetadata: Article[] = [
     otherTopics: [Topic.statistics],
   },
   {
-    index: 61,
     title: "The Pocket Fuseki Encyclopedia",
     link: "/articles/fuseki_encyclopedia/fuseki_encyclopedia.html",
     date: Date.UTC(2018, 11, 24),
@@ -535,7 +482,6 @@ export const articlesMetadata: Article[] = [
     otherTopics: [Topic.fuseki],
   },
   {
-    index: 60,
     title: "The Left Hand of Darkness, and SciFi",
     link: "/articles/left_hand_of_darkness/left_hand_of_darkness.html",
     date: Date.UTC(2018, 11, 20),
@@ -544,7 +490,6 @@ export const articlesMetadata: Article[] = [
     otherTopics: [Topic.writing],
   },
   {
-    index: 59,
     title: "Fundamentos de Go: Outros Fusekis",
     link: "/articles/outros_fusekis/outros_fusekis.html",
     date: Date.UTC(2018, 11, 10),
@@ -553,7 +498,6 @@ export const articlesMetadata: Article[] = [
     otherTopics: [Topic.fuseki],
   },
   {
-    index: 58,
     title: "Critique de Livre: Le Potentiel Érotique de Ma Femme",
     link: "/articles/potentiel_erotique/potentiel_erotique.html",
     date: Date.UTC(2018, 11, 4),
@@ -562,7 +506,6 @@ export const articlesMetadata: Article[] = [
     otherTopics: [Topic.writing],
   },
   {
-    index: 57,
     title: "Fundamentos de Go: Fusekis com 3-4 Parte II",
     link: "/articles/fuseki_34_2/fuseki_34_2.html",
     date: Date.UTC(2018, 11, 3),
@@ -571,7 +514,6 @@ export const articlesMetadata: Article[] = [
     otherTopics: [Topic.fuseki],
   },
   {
-    index: 56,
     title:
       "Statistics: Paid Apps vs Free Apps? Expensive Wines vs Cheap Wines?",
     link: "/articles/statistics_apps_wines/statistics_apps_wines.html",
@@ -581,7 +523,6 @@ export const articlesMetadata: Article[] = [
     otherTopics: [Topic.dataScience],
   },
   {
-    index: 55,
     title: "Fundamentos de Go: Fusekis com 3-4 Parte I",
     link: "/articles/fuseki_34_1/fuseki_34_1.html",
     date: Date.UTC(2018, 10, 26),
@@ -590,7 +531,6 @@ export const articlesMetadata: Article[] = [
     otherTopics: [Topic.fuseki],
   },
   {
-    index: 54,
     title: "Fundamentos de Go: Fusekis com 4-4",
     link: "/articles/fuseki_44/fuseki_44.html",
     date: Date.UTC(2018, 10, 21),
@@ -599,7 +539,6 @@ export const articlesMetadata: Article[] = [
     otherTopics: [Topic.fuseki],
   },
   {
-    index: 53,
     title: "On Korea: A Brief Summary of My Experience",
     link: "/articles/on_korea/on_korea.html",
     date: Date.UTC(2018, 10, 10),
@@ -615,7 +554,6 @@ export const articlesMetadata: Article[] = [
     ],
   },
   {
-    index: 52,
     title: "Revisão: Philippe Fanaro [1d] vs Carlos Dutra [?k]",
     link: "/articles/revisao_carlos/revisao_carlos.html",
     date: Date.UTC(2018, 10, 3),
@@ -624,7 +562,6 @@ export const articlesMetadata: Article[] = [
     otherTopics: [Topic.review],
   },
   {
-    index: 51,
     title: "Ali Trump and the 40 Ghost Supporters",
     link: "/articles/trump_40_supporters/trump_40_supporters.html",
     date: Date.UTC(2018, 9, 30),
@@ -633,7 +570,6 @@ export const articlesMetadata: Article[] = [
     otherTopics: [Topic.dataScience, Topic.politics],
   },
   {
-    index: 50,
     title: "Copa do Brasil 2018: Uyama Hissao [Kiin 7d]",
     link: "/articles/revisao_uyama/revisao_uyama.html",
     date: Date.UTC(2018, 9, 30),
@@ -642,7 +578,6 @@ export const articlesMetadata: Article[] = [
     otherTopics: [Topic.review],
   },
   {
-    index: 49,
     title: "My deeplearning.ai Experience",
     link: "/articles/deeplearning.ai/deeplearning.ai.html",
     date: Date.UTC(2018, 9, 20),
@@ -651,7 +586,6 @@ export const articlesMetadata: Article[] = [
     otherTopics: [],
   },
   {
-    index: 48,
     title: "Fundamentos de Go: Abertura ou Fuseki (Nível Básico)",
     link: "/articles/fuseki_basico/fuseki_basico.html",
     date: Date.UTC(2018, 9, 16),
@@ -660,7 +594,6 @@ export const articlesMetadata: Article[] = [
     otherTopics: [Topic.fuseki],
   },
   {
-    index: 47,
     title: "Eleições 2018: Por Mais Sanidade",
     link: "/articles/eleicoes_2018/eleicoes_2018.html",
     date: Date.UTC(2018, 9, 14),
@@ -669,7 +602,6 @@ export const articlesMetadata: Article[] = [
     otherTopics: [Topic.logic],
   },
   {
-    index: 46,
     title: "Copa do Brasil 2018: Ronaldo Matayoshi",
     link: "/articles/revisao_matayoshi/revisao_matayoshi.html",
     date: Date.UTC(2018, 8, 29),
@@ -678,7 +610,6 @@ export const articlesMetadata: Article[] = [
     otherTopics: [Topic.review],
   },
   {
-    index: 45,
     title: "The Power of Neural Networks: Simple Wage Predictions with Keras",
     link: "/articles/wage_pred/wage_pred.html",
     date: Date.UTC(2018, 8, 27),
@@ -687,7 +618,6 @@ export const articlesMetadata: Article[] = [
     otherTopics: [Topic.statistics],
   },
   {
-    index: 44,
     title: "Copa do Brasil 2018: Murao Yoshihisa",
     link: "/articles/revisao_murao/revisao_murao.html",
     date: Date.UTC(2018, 8, 21),
@@ -696,7 +626,6 @@ export const articlesMetadata: Article[] = [
     otherTopics: [Topic.review],
   },
   {
-    index: 43,
     title: "Revisão No Seongho [Tygem 8d]",
     link: "/articles/revisao_no_seongho/revisao_no_seongho.html",
     date: Date.UTC(2018, 8, 11),
@@ -705,7 +634,6 @@ export const articlesMetadata: Article[] = [
     otherTopics: [Topic.review],
   },
   {
-    index: 42,
     title: "The ATP Dataset and The Filthy Rich Tennis Players",
     link: "/articles/atp/atp.html",
     date: Date.UTC(2018, 8, 7),
@@ -714,7 +642,6 @@ export const articlesMetadata: Article[] = [
     otherTopics: [Topic.statistics, Topic.python],
   },
   {
-    index: 41,
     title: "Python Basics, Eratosthenes and Problem 51",
     link: "/articles/eratos/eratos.html",
     date: Date.UTC(2018, 7, 30),
@@ -723,7 +650,6 @@ export const articlesMetadata: Article[] = [
     otherTopics: [Topic.python, Topic.math],
   },
   {
-    index: 40,
     title: "Meu Artigo para a Revista Myosu",
     link: "/articles/myosu_1/myosu_1.html",
     date: Date.UTC(2018, 7, 28),
@@ -732,7 +658,6 @@ export const articlesMetadata: Article[] = [
     otherTopics: [Topic.review],
   },
   {
-    index: 39,
     title: "Telecom Nostalgia and Python Basics",
     link: "/articles/telecom_nostalgia/telecom_nostalgia.html",
     date: Date.UTC(2018, 7, 28),
@@ -741,7 +666,6 @@ export const articlesMetadata: Article[] = [
     otherTopics: [Topic.review],
   },
   {
-    index: 38,
     title: "O Tesuji-Mor",
     link: "/articles/tesuji_mor/tesuji_mor.html",
     date: Date.UTC(2018, 7, 20),
@@ -750,7 +674,6 @@ export const articlesMetadata: Article[] = [
     otherTopics: [Topic.tsumego],
   },
   {
-    index: 37,
     title: "Reenter the Dragon: Engineering",
     link: "/articles/reenter_engineering/reenter_engineering.html",
     date: Date.UTC(2018, 7, 15),
@@ -759,7 +682,6 @@ export const articlesMetadata: Article[] = [
     otherTopics: [Topic.meta, Topic.philosophy],
   },
   {
-    index: 36,
     title: "Problema Profissional Nível 20k",
     link: "/articles/tsumego_pro_20k/tsumego_pro_20k.html",
     date: Date.UTC(2018, 7, 10),
@@ -768,7 +690,6 @@ export const articlesMetadata: Article[] = [
     otherTopics: [Topic.tsumego],
   },
   {
-    index: 35,
     title: "Casey at the Bat",
     link: "/articles/casey_at_the_bat/casey_at_the_bat.html",
     date: Date.UTC(2018, 7, 7),
@@ -777,7 +698,6 @@ export const articlesMetadata: Article[] = [
     otherTopics: [Topic.writing],
   },
   {
-    index: 34,
     title: "Sunjang Baduk",
     link: "/articles/sunjang/sunjang.html",
     date: Date.UTC(2018, 7, 2),
@@ -786,7 +706,6 @@ export const articlesMetadata: Article[] = [
     otherTopics: [Topic.goVariants],
   },
   {
-    index: 33,
     title:
       "CLL&M &mdash; Jean Jaurès, a Esquerda Francesa do Final do Século XIX",
     link: "/articles/esquerda_francesa_xix/esquerda_francesa_xix.html",
@@ -796,7 +715,6 @@ export const articlesMetadata: Article[] = [
     otherTopics: [Topic.politics],
   },
   {
-    index: 32,
     title: "Quebra-Cabeça de Go",
     link: "/articles/quebra_cabeca_go/quebra_cabeca_go.html",
     date: Date.UTC(2018, 6, 23),
@@ -805,7 +723,6 @@ export const articlesMetadata: Article[] = [
     otherTopics: [Topic.tsumego],
   },
   {
-    index: 31,
     title: "A Origem dos Cartões",
     link: "/articles/origem_cartoes/origem_cartoes.html",
     date: Date.UTC(2018, 6, 15),
@@ -814,7 +731,6 @@ export const articlesMetadata: Article[] = [
     otherTopics: [Topic.history],
   },
   {
-    index: 30,
     title: "Como Digitar Sem Olhar e Mais Rápido em 5 Minutos!",
     link: "/articles/como_digitar/como_digitar.html",
     date: Date.UTC(2018, 6, 19),
@@ -823,7 +739,6 @@ export const articlesMetadata: Article[] = [
     otherTopics: [Topic.meta],
   },
   {
-    index: 29,
     title: "Guia de Inteligências Artificiais de Go",
     link: "/articles/guia_ia/guia_ia.html",
     date: Date.UTC(2018, 6, 12),
@@ -832,7 +747,6 @@ export const articlesMetadata: Article[] = [
     otherTopics: [Topic.productivity],
   },
   {
-    index: 28,
     title:
       "Collection Littéraire L&M Parte II &mdash; Como entrar para a Academia Francesa",
     link: "/articles/tristan_bernard/tristan_bernard.html",
@@ -842,7 +756,6 @@ export const articlesMetadata: Article[] = [
     otherTopics: [Topic.writing],
   },
   {
-    index: 27,
     title:
       "Revisão pelo Patreon: Efraim Queiroz, Comandante das Estrelas da Morte",
     link: "/articles/revisao_efraim/revisao_efraim.html",
@@ -852,7 +765,6 @@ export const articlesMetadata: Article[] = [
     otherTopics: [Topic.review],
   },
   {
-    index: 26,
     title: "Collection Littéraire Lagarde & Michard Parte I: Poesia",
     link: "/articles/cllm_poesia/cllm_poesia.html",
     date: Date.UTC(2018, 5, 31),
@@ -861,7 +773,6 @@ export const articlesMetadata: Article[] = [
     otherTopics: [Topic.writing],
   },
   {
-    index: 25,
     title: "A Lenda de Nestor de la Palissade",
     link: "/articles/nestor_de_la_palissade/nestor_de_la_palissade.html",
     date: Date.UTC(2018, 5, 28),
@@ -870,7 +781,6 @@ export const articlesMetadata: Article[] = [
     otherTopics: [],
   },
   {
-    index: 24,
     title: "A Polêmica do VAR",
     link: "/articles/var_polemica/var_polemica.html",
     date: Date.UTC(2018, 5, 24),
@@ -879,7 +789,6 @@ export const articlesMetadata: Article[] = [
     otherTopics: [Topic.politics, Topic.logic, Topic.law],
   },
   {
-    index: 23,
     title: "Tradução de um Livro Clássico do Go",
     link: "/articles/toshiro/toshiro.html",
     date: Date.UTC(2018, 5, 21),
@@ -888,7 +797,6 @@ export const articlesMetadata: Article[] = [
     otherTopics: [Topic.books],
   },
   {
-    index: 22,
     title: "Aula pelo Patreon: Philippe Fanaro [1d] vs Augusto Cezar [14k]",
     link: "/articles/revisao_augusto/revisao_augusto.html",
     date: Date.UTC(2018, 5, 17),
@@ -897,7 +805,6 @@ export const articlesMetadata: Article[] = [
     otherTopics: [Topic.review],
   },
   {
-    index: 21,
     title: "26 Ovelhas e 10 Bodes: Qual a Idade do Capitão?",
     link: "/articles/qual_idade_capitao/qual_idade_capitao.html",
     date: Date.UTC(2018, 5, 15),
@@ -906,7 +813,6 @@ export const articlesMetadata: Article[] = [
     otherTopics: [],
   },
   {
-    index: 20,
     title: "Revisão Diogo Barbosa [Melhor 4k do Mundo]",
     link: "/articles/revisao_diogo/revisao_diogo.html",
     date: Date.UTC(2018, 5, 10),
@@ -915,7 +821,6 @@ export const articlesMetadata: Article[] = [
     otherTopics: [Topic.review],
   },
   {
-    index: 19,
     title: "O Problema de Monty Hall",
     link: "/articles/monty_hall/monty_hall.html",
     date: Date.UTC(2018, 5, 9),
@@ -924,7 +829,6 @@ export const articlesMetadata: Article[] = [
     otherTopics: [Topic.math],
   },
   {
-    index: 18,
     title: "The Insufficiency of the Right (and, therefore, of the Left?)",
     link: "/articles/inequality/inequality.html",
     date: Date.UTC(2018, 5, 8),
@@ -933,7 +837,6 @@ export const articlesMetadata: Article[] = [
     otherTopics: [Topic.politics],
   },
   {
-    index: 17,
     title: "4-Color Go",
     link: "/articles/4_color_go/4_color_go.html",
     date: Date.UTC(2018, 5, 6),
@@ -942,7 +845,6 @@ export const articlesMetadata: Article[] = [
     otherTopics: [Topic.goVariants],
   },
   {
-    index: 16,
     title: "Go de 4 Cores",
     link: "/articles/4_cores_go/4_cores_go.html",
     date: Date.UTC(2018, 5, 4),
@@ -951,7 +853,6 @@ export const articlesMetadata: Article[] = [
     otherTopics: [Topic.goVariants],
   },
   {
-    index: 15,
     title: "Voto Branco, Voto Nulo e a Crise da Democracia",
     link: "/articles/votos/votos.html",
     date: Date.UTC(2018, 5, 2),
@@ -960,7 +861,6 @@ export const articlesMetadata: Article[] = [
     otherTopics: [],
   },
   {
-    index: 14,
     title: "Pocket Guide to Yose",
     link: "/articles/pocket_yose/pocket_yose.html",
     date: Date.UTC(2018, 4, 31),
@@ -969,7 +869,6 @@ export const articlesMetadata: Article[] = [
     otherTopics: [Topic.yose],
   },
   {
-    index: 13,
     title: "A Solution to Frauds in Digital (Electoral) Voting: Beyond Safety",
     link: "/articles/electoral_fraud_solution/electoral_fraud_solution.html",
     date: Date.UTC(2018, 4, 30),
@@ -978,7 +877,6 @@ export const articlesMetadata: Article[] = [
     otherTopics: [Topic.math],
   },
   {
-    index: 12,
     title: "Guia de Bolso do Yose",
     link: "/articles/guia_yose/guia_yose.html",
     date: Date.UTC(2018, 4, 29),
@@ -987,7 +885,6 @@ export const articlesMetadata: Article[] = [
     otherTopics: [Topic.yose],
   },
   {
-    index: 11,
     title: "Regras Chinesas",
     link: "/articles/regras_chinesas/regras_chinesas.html",
     date: Date.UTC(2018, 4, 26),
@@ -996,7 +893,6 @@ export const articlesMetadata: Article[] = [
     otherTopics: [],
   },
   {
-    index: 10,
     title: "My Brief Trip to Amsterdam: Red Lights, Go and Biblical Flirting",
     link: "/articles/amsterdam/amsterdam.html",
     date: Date.UTC(2018, 4, 25),
@@ -1005,7 +901,6 @@ export const articlesMetadata: Article[] = [
     otherTopics: [Topic.trips, Topic.culture],
   },
   {
-    index: 9,
     title: "Revisão de Mais Alto Nível (2d vs 2k com 3 pedras de compensação)",
     link: "/articles/revisao_laercio/revisao_laercio.html",
     date: Date.UTC(2018, 4, 24),
@@ -1014,7 +909,6 @@ export const articlesMetadata: Article[] = [
     otherTopics: [Topic.review],
   },
   {
-    index: 8,
     title: "A Insuficiência da Direita (e, por consequência, da Esquerda?)",
     link: "/articles/insuficiencia_direita/insuficiencia_direita.html",
     date: Date.UTC(2018, 4, 20),
@@ -1023,7 +917,6 @@ export const articlesMetadata: Article[] = [
     otherTopics: [Topic.economy],
   },
   {
-    index: 7,
     title: "Um vídeo antigo sobre o livro Os Grandes Debates de Josekis",
     link:
       "/articles/sinji_great_joseki_debates/sinji_great_joseki_debates.html",
@@ -1033,7 +926,6 @@ export const articlesMetadata: Article[] = [
     otherTopics: [Topic.tsumego, Topic.books],
   },
   {
-    index: 6,
     title: "Duas Partidas 7k Revisadas",
     link: "/articles/revisao_7k/revisao_7k.html",
     date: Date.UTC(2018, 4, 17),
@@ -1042,7 +934,6 @@ export const articlesMetadata: Article[] = [
     otherTopics: [Topic.review],
   },
   {
-    index: 5,
     title: "Uma Solução para Fraudes e Manipulações em Votos Digitais",
     link: "/articles/solucao_fraude_votos/solucao_fraude_votos.html",
     date: Date.UTC(2018, 4, 15),
@@ -1051,7 +942,6 @@ export const articlesMetadata: Article[] = [
     otherTopics: [Topic.politics],
   },
   {
-    index: 4,
     title: "Copa Samsung 2017",
     link: "/articles/copa_samsung_2017/copa_samsung_2017.html",
     date: Date.UTC(2018, 4, 14),
@@ -1060,7 +950,6 @@ export const articlesMetadata: Article[] = [
     otherTopics: [Topic.review],
   },
   {
-    index: 3,
     title: "Uma Breve Introdução ao Go",
     link: "/articles/introducao_ao_go/introducao_ao_go.html",
     date: Date.UTC(2018, 4, 12),
@@ -1069,7 +958,6 @@ export const articlesMetadata: Article[] = [
     otherTopics: [],
   },
   {
-    index: 2,
     title: "Fundamentos de Tewari",
     link: "/articles/tewari/tewari.html",
     date: Date.UTC(2018, 4, 12),
