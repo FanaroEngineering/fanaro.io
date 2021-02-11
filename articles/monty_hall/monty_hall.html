@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <title>O Problema de Monty Hall</title>
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+
+    <meta name="author" content="Philippe Fanaro" />
+    <meta name="description" content="O Problema de Monty Hall" />
+
+    <meta property="og:image" content="monty-hall-goat.jpg" />
+    <meta property="og:description" content="O Problema de Monty Hall" />
+    <meta property="og:title" content="O Problema de Monty Hall" />
+    <meta property="og:site_name" content="fanaro.io" />
+    <meta property="og:type" content="blog" />
+
+    <script src="../../index.js"></script>
+    <script
+      src="https://polyfill.io/v3/polyfill.min.js?features=es6"
+      defer
+    ></script>
+    <script
+      id="MathJax-script"
+      async
+      defer
+      src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
+    ></script>
+
+    <link rel="stylesheet" href="../../index.css" />
+    <link rel="icon" type="image/svg+xml" href="../../assets/favicon.svg" />
+  </head>
+  <body>
+    <article>
+      <img src="monty-hall-goat.jpg" alt="Thumbnail" />
+
+      <h1>O Problema de Monty Hall</h1>
+
+      <p>
+        Este problema ficou muito famoso após uma das edições da revista
+        <em>Parade</em>
+        nos EUA. Nela, a colunista Marilyn vos Savant, a pessoa de QI mais
+        elevado do mundo à época, respondia à seguinte questão de um de seus
+        leitores, sobre o programa de TV do apresentador Monty Hall (tente
+        encontrar a resposta antes de seguir à resolução):
+      </p>
+
+      <p class="indented-paragraph">
+        Imagine que você está em um programa de TV, e lhe é dada a escolha de 3
+        portas: atrás de uma delas, está um carro; das outras, bodes. Você
+        escolhe, digamos, a porta número 1, e o anfitrião, que sabe o que há
+        atrás das portas, abre uma outra, digamos, número 3, que contém um bode.
+        Ele, então, lhe diz, “você gostaria de trocar para a porta número 2?”
+        Pergunta-se: é vantajosa a troca?
+      </p>
+
+      <p>
+        Se você achou o problema simples, ou é um gênio, ou terá uma senhora
+        surpresa a seguir. Pegue um lápis e uma folha de papel, pois resposta
+        dada por Marilyn vos Savant, apesar de certa, enraiveceu e enlouqueceu
+        tanto leigos quanto renomados pesquisadores e até mesmo alguns
+        receptores do prêmio Nobel. O correto é mudar de porta. A probabilidade
+        de vitória caso mudemos é de 2/3, e não 1/2, como imaginamos a
+        princípio, já que temos 2 portas, uma com um carro e outra com um bode.
+        Calma, uma explicação virá a seguir.
+      </p>
+
+      <figure>
+        <img src="prob_diagram.PNG" alt="" />
+        <figcaption>
+          Árvore de probabilidade do problema de Monty Hall.
+        </figcaption>
+      </figure>
+
+      <p>
+        O problema fica um pouco mais claro se desenharmos a árvore de
+        probabilidades como na imagem acima. Há duas decisões a serem feitas,
+        uma escolha inicial basicamente aleatória e uma segunda, após Monty Hall
+        abrir uma das portas e perguntar se gostaríamos de mudar de opinião.
+        Devido a essas duas etapas, a árvore terá profundidade 2, como visto no
+        digrama acima.
+      </p>
+
+      <p>
+        A probabilidade de escolhermos inicialmente o carro é de 1/3, e a de
+        escolhermos um bode, de 2/3 consequentemente. A seguir, na segunda fase
+        do desafio, temos que analisar os casos em que mudamos ou não de
+        opinião. Para o caso de termos escolhido inicialmente o carro, se
+        ficarmos, é certo que ganheremos, assim, a probabilidade condicional
+        será de 1; por outro lado, se mudarmos de porta, acabamos por
+        invariavelmente perder, ou seja, a probabilidade condicional de vitória
+        é, então, nula.
+      </p>
+
+      <p>
+        Após realizarmos o mesmo raciocínio para o outro lado da árvore, podemos
+        chegar aos valores à direita da imagem, com meras multiplicações das
+        fatores condicionais, isto é, as respectivas probabilidades de
+        ganharmos. Vemos então que:
+      </p>
+
+      \[P(Ganhar \, ao \, Ficar) = \frac{1}{3}\]
+
+      <br />
+
+      \[P(Ganhar \, ao \, Mudar) = \frac{2}{3}\]
+
+      <p>
+        Se você não entendeu ou não consegue aceitar a resolução até agora,
+        fique calmo, o problema é realmente bastante contraintuitivo. Há duas
+        outras maneiras alternativas que creio serem bem mais palatáveis de se
+        compreender.
+      </p>
+
+      <p>
+        A primeira seria fazer uma breve análise de conjunto. Na escolha
+        inicial, temos dois conjuntos, a nossa porta (P = 1/3) e as outras duas
+        (P = 2/3). Ao abrir uma das portas do segundo conjunto, Monty está
+        zerando a probabilidade de vitória que estaria embutida nela, mais
+        precisamente, a metade dos 2/3. Porém, a probabilidade de 2/3 deve
+        permanecer para o conjunto, já que era um dado a priori, e, assim, temos
+        que a outra porta, acaba concentrando o que era atribuído às duas,
+        totalizando os 2/3.
+      </p>
+
+      <p>
+        A segunda resolução alternativa é, na verdade, somente uma analogia para
+        que possamos melhor compreender a lógica por trás do problema, e foi,
+        inclusive, uma sugestão da própria Marilyn. A ideia é aumentar
+        absurdamente o número de portas para, por exemplo, 1,000,000. Se, agora,
+        Monty, depois de nossa primeira escolha, abrisse 999,999,998 portas,
+        sentimo-nos muito mais compelidos a trocar, não? Similarmente ao método
+        alternativo anterior, teríamos que nossa probabilidade de vitória se
+        ficarmos com a primeira seria de 1/1,000,000 e, se mudarmos, de
+        999,999,999/1,000,000. Você mudaria agora? Psicólogos, depois de
+        realizadas pesquisas, chegaram à conclusão de que as pessoas começam a
+        perceber que vale mais a pena trocar após o número de portas chegar a 7.
+      </p>
+
+      <p>
+        Não se preocupe se, ainda depois de todos esses volteios, não ficou
+        muito clara a resposta. Paul Erdös, um dos então matemáticos mais
+        renomados no campo da probabilidade, precisou de inúmeras explicações e,
+        ainda adicionalmente, uma simulação computacional para aceitá-la. Creio
+        que o maior impecílio para a resolução do problema seja o fato de não
+        levarmos em consideração a informação adicional que Monty está nos
+        fornecendo. Se tivéssemos somente duas portas, uma com um bode e outra
+        com um carro, certamente, a probabilidade de vitória seria de 1/2. Mas
+        Monty está nos dando informação privilegiada! Isso deveria valer alguma
+        coisa, não?
+      </p>
+    </article>
+  </body>
+</html>

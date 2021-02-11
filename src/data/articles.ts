@@ -909,4 +909,13 @@ export const articlesMetadata: Article[] = [
     mainTopic: Topic.go,
     otherTopics: [Topic.review],
   },
+  {
+    index: 19,
+    title: "O Problema de Monty Hall",
+    link: "/articles/monty_hall/monty_hall.html",
+    date: Date.UTC(2018, 5, 9),
+    languages: [Language.portuguese],
+    mainTopic: Topic.statistics,
+    otherTopics: [Topic.math],
+  },
 ];

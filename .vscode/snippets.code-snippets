@@ -119,7 +119,7 @@
 			"    <meta name=\"viewport\" content=\"width=device-width\" />",
 			"",
 			"    <meta name=\"author\" content=\"Philippe Fanaro\" />",
-			"    <meta name=\"description\" content=\"${1:title}\"/>",
+			"    <meta name=\"description\" content=\"${1:title}\" />",
 			"",
 			"    <meta property=\"og:image\" content=\"${2:thumbnail.png}\" />",
 			"    <meta property=\"og:description\" content=\"${1:title}\" />",
