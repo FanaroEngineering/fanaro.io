@@ -1050,4 +1050,13 @@ export const articlesMetadata: Article[] = [
     mainTopic: Topic.cryptography,
     otherTopics: [Topic.politics],
   },
+  {
+    index: 4,
+    title: "Copa Samsung 2017",
+    link: "/articles/copa_samsung_2017/copa_samsung_2017.html",
+    date: Date.UTC(2018, 4, 14),
+    languages: [Language.portuguese],
+    mainTopic: Topic.go,
+    otherTopics: [Topic.review],
+  },
 ];
