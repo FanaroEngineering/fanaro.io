@@ -816,4 +816,13 @@ export const articlesMetadata: Article[] = [
     mainTopic: Topic.productivity,
     otherTopics: [Topic.meta],
   },
+  {
+    index: 29,
+    title: "Guia de Inteligências Artificiais de Go",
+    link: "/articles/guia_ia/guia_ia.html",
+    date: Date.UTC(2018, 6, 12),
+    languages: [Language.portuguese],
+    mainTopic: Topic.go,
+    otherTopics: [Topic.productivity],
+  },
 ];
