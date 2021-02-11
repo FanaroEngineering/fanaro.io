@@ -1022,4 +1022,14 @@ export const articlesMetadata: Article[] = [
     mainTopic: Topic.politics,
     otherTopics: [Topic.economy],
   },
+  {
+    index: 7,
+    title: "Um vídeo antigo sobre o livro Os Grandes Debates de Josekis",
+    link:
+      "/articles/sinji_great_joseki_debates/sinji_great_joseki_debates.html",
+    date: Date.UTC(2018, 4, 19),
+    languages: [Language.portuguese],
+    mainTopic: Topic.go,
+    otherTopics: [Topic.tsumego, Topic.books],
+  },
 ];
