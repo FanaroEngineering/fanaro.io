@@ -882,4 +882,13 @@ export const articlesMetadata: Article[] = [
     mainTopic: Topic.go,
     otherTopics: [Topic.books],
   },
+  {
+    index: 22,
+    title: "Aula pelo Patreon: Philippe Fanaro [1d] vs Augusto Cezar [14k]",
+    link: "/articles/revisao_augusto/revisao_augusto.html",
+    date: Date.UTC(2018, 5, 17),
+    languages: [Language.portuguese],
+    mainTopic: Topic.go,
+    otherTopics: [Topic.review],
+  },
 ];
