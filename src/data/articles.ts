@@ -1062,7 +1062,16 @@ export const articlesMetadata: Article[] = [
   {
     index: 3,
     title: "Uma Breve Introdução ao Go",
-    link: "/articles/introcuao_ao_go/introcuao_ao_go.html",
+    link: "/articles/introducao_ao_go/introducao_ao_go.html",
+    date: Date.UTC(2018, 4, 12),
+    languages: [Language.portuguese],
+    mainTopic: Topic.go,
+    otherTopics: [],
+  },
+  {
+    index: 2,
+    title: "Fundamentos de Tewari",
+    link: "/articles/tewari/tewari.html",
     date: Date.UTC(2018, 4, 12),
     languages: [Language.portuguese],
     mainTopic: Topic.go,
