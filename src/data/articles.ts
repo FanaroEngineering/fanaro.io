@@ -17,6 +17,7 @@ export enum Topic {
   law = "Law",
   social = "Social",
   politics = "Politics",
+  economy = "Economy",
   history = "History",
   productivity = "Productivity",
   psychology = "Psychology",
@@ -917,5 +918,14 @@ export const articlesMetadata: Article[] = [
     languages: [Language.portuguese],
     mainTopic: Topic.statistics,
     otherTopics: [Topic.math],
+  },
+  {
+    index: 18,
+    title: "The Insufficiency of the Right (and, therefore, of the Left?)",
+    link: "/articles/inequality/inequality.html",
+    date: Date.UTC(2018, 5, 8),
+    languages: [Language.english],
+    mainTopic: Topic.economy,
+    otherTopics: [Topic.politics],
   },
 ];
