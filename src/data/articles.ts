@@ -1032,4 +1032,13 @@ export const articlesMetadata: Article[] = [
     mainTopic: Topic.go,
     otherTopics: [Topic.tsumego, Topic.books],
   },
+  {
+    index: 6,
+    title: "Duas Partidas 7k Revisadas",
+    link: "/articles/revisao_7k/revisao_7k.html",
+    date: Date.UTC(2018, 4, 17),
+    languages: [Language.portuguese],
+    mainTopic: Topic.go,
+    otherTopics: [Topic.review],
+  },
 ];
