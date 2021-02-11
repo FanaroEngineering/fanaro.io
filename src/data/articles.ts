@@ -9,6 +9,7 @@ export enum Topic {
   fuseki = "Fuseki",
   tsumego = "Tsumego",
   joseki = "Joseki",
+  yose = "Yose",
   goVariants = "Go Variants",
   review = "Review",
   philosophy = "Philosophy",
@@ -954,5 +955,14 @@ export const articlesMetadata: Article[] = [
     languages: [Language.portuguese],
     mainTopic: Topic.politics,
     otherTopics: [],
+  },
+  {
+    index: 14,
+    title: "Pocket Guide to Yose",
+    link: "/articles/pocket_yose/pocket_yose.html",
+    date: Date.UTC(2018, 4, 31),
+    languages: [Language.portuguese],
+    mainTopic: Topic.go,
+    otherTopics: [Topic.yose],
   },
 ];

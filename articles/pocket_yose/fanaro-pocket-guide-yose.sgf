@@ -1,0 +1,258 @@
+(;GM[1]FF[4]CA[UTF-8]AP[CGoban:3]ST[2]
+RU[Japanese]SZ[19]KM[0.00]
+PW[Branco]PB[Preto]DT[2018-05-26]AN[Philippe Fanaro]LB[jc:I][dd:G][pd:F][ji:C][dj:J][ij:A][ol:E][jp:D][pp:H][eq:B]C[Philippe Fanaro's Pocket Guide to Yose
+
+Menu:
+
+A: Hierarchy of Double-Sente, Sente and Gote.
+B: The Principle of who has more to lose.
+C: Yose Math: Basic Level.
+D: Hane-kosumi on the 2nd Line; and privileges.
+E: Why is the center so inefficient?
+F: How to count open positions.
+G: Big Yoses in Joseki Continuations.
+H: 3-3 Invasions and Corner Peculiarities.
+I: Other Typical Yoses: Monkey Jump; Hane on the 1st Line; and Corner Connection.
+J: Estimating the Value of a Ko.]
+(;B[ij]
+;AW[ki][li][mi][jj][jk][lk][mk][kl]AB[ii][ji][lj][mj][nj][ik][kk][il][jl]LB[kj:A][mj:B]C[Double-sente 5 (at least 5) points. 
+
+Here, the White's connection at A guarantees both groups' safety, which also destabilizes Black's B group completely and demands a reaction from Black.
+
+On the other hand, Black's connection at A does the opposite, disconnecting White's groups and causing severe problems for him.
+
+Double-sente moves are of the utmost urgency, its values accounting for the loss and not for a place in the hierarchy. Oftentimes, they are related to unstable groups, threats of disconnection or threats of capture. Do not lose sight of them.
+
+Do not worry with the value of the moves for now, later they will become more clear.]
+;W[ss]
+;AE[kl]AW[jf][lf][ph][pj][ql][pn]AB[nk][nl]LB[kj:A][kk:B][kl:C]C[Sente ~4 points.
+
+The White's connection at A leaves B in atari, which forces Black to connect at C in order to avoid future problems with his center group. The Black's connection at A, though, only accounts for a capture, which does not alter much of the White's situation on the outside.]
+;B[rs]
+;AE[ph][nl][ql][pn]AW[nk][ok][pk][qk][po]AB[qf][oj][pj][qj][kl]LB[kj:A]C[Gote 4 points.
+
+Here, the capture or connection at A does not change the status of any of the external groups, it does not force a response from the opponent, and, thus, is gote.
+
+Memorize the following hierarchy (+oo = infinity):
+
++oo = Double-sente >> Sente ~ 2*Gote > Gote
+
+Important: Sente ~ 2*Gote. Why?
+
+Roughly, we say that Sente ~ 2*Gote because we can play 2 yoses in conjunction in a sente yose. But keep in mind that this value is a rule, with its inherent exceptions. If we do a yose in sente, we preserve the initiative, i.e., we can make a  sente yose of value X and another of Y value, summing X + Y in total. However, if Y is too big, bigger than Z (the next gote after Y), we have that our opponent will ignore us and grab Y directly, since the sum X + Z < Y.
+
+Another important observation is reverse-sente. If you have the opportunity to play something that cancels the opponen's sente play, it will have the same value of the former sente (and maybe some other benefit!). That rarely happens though, due to the fact that our opponent always tries to impose his sentes before they can be profitably reversed.])
+(;B[eq]
+;AW[dk][dl][dm][dn][do][dp][dq]AB[ek][nk][el][nl][em][nm][en][nn][eo][no][ep][np][nq]LB[dr:A][er:B]C[The principle of who has more to lose: the area which loses more is the first one to demand an answer.
+
+Which is more sente: A or B?]
+;W[dr]
+;B[sa]
+;W[fr]LB[fr:A][gs:B]C[The Black's moyo is much bigger than White's corner, Black has much more to lose, thus, White A is more sente than Black B in the question.
+
+(As a rule, A > B (also known as Monkey Jump).)])
+(;B[ji]
+;AW[lh][mh][ki][mi][kj][mj][lk][mk]AB[jh][kh][li][jj][jk][kk]LB[ki:C][li:B][kj:D][lj:A]C[Yose Math: Basic Level.
+
+How to calculate the value of A?
+
+First, we calculate the amount of points which each player is going to obtain when playing there.
+
+White: 2 points (1 point at B + 1 captured stone)
+Black: 4 points (2 points at C and D + 2 captured stones)
+
+Later, we sum the amount of points each player made. The logic behind it would be that points made by our opponent are equivalent to minus points made by us. So, if we were White, we would have 2 - (-4) = 6; and if we were Black 4 - (-2) = 6. Note that both calculations result in the same value, which also simplifies the method.]
+;W[ss]
+;AE[mk]AW[nk][nl][nm][jn][ln][nn]AB[hl][ll]LB[lj:A][lk:B]C[And what if there were a continuation?
+
+For example, A, now, if played, puts B in atari, which offers further benefits to at least one of the players.]
+;B[lj]LB[lk:A][ml:B]C[In this case, we do a similar calculation, the 6 points remain but we have to add the new benefits divided by 2, since we would need 2 moves to obtain them. So:
+
+Black: 4 + 2/2 (1 point + 1 stone) = 5
+White: 2 (there is no continuation for White) = 2
+
+Total: 7 points.
+
+It is obvious that this is an aproximation. In this case, it is not certain that A is going to be a point for Black, since White can do an atari with B in the future.
+
+If we had a third continuation or benefit, we would divide it by 3 and so on. In this manner, with bigger precision, a better approximation should be 6 + 1/2 + 1/3 = 6 + 5/6 (very close to 7). This last value would only be true if B did not result in a ko, but do not worry with it for now, this is a bit of an overkill in most situations.])
+(;B[jp]
+;AW[hl][in][io][dp][ip][gq][iq][hr]AB[kl][jn][jo][pp][jq][lq][ir]LB[jr:A]C[What is the value of the capture at A for White?]
+(;W[jr]
+;B[kr]
+;W[is]LB[ir:A][hs:B]TR[kr][js][ks]C[We see that White has gained 3 points at A and B.
+
+And what if Black had connected? In that case, he would have preserved the points marked with a triangle.
+
+This way, the value of this hane-kosumi on the 2nd line is 3 + 3 = 6 points. Memorize it! When the hane-kosumi on the 2nd line does not have any privilege (we will see what that means next), it is worth 6 points (except in the corner... there is weird stuff in the corner).])
+(;W[sa]
+;AE[gq]LB[gq:A]C[And what if the A stone did not exist? Then, we would have a privilege.
+
+]
+;B[jr]
+;AW[fr][gr][fs]AB[gs][hs][is]LB[gq:G][fr:F][gr:B][fs:D][gs:C][hs:A][is:E]C[Black's side is intact compared to the other variation's analysis. Thus, on Black's side, we count a total of 3 points.
+
+After doing the hane at A, it is indeed true that White could counter-hane at C, but that would lead to an unreasonable ko.
+
+Now, note that the White's territory was reduced by 4 points with respect to the last sequence: A + B + C + D + F - A (to compensate for the stone at G which doesn't exist anymore) = 4. Thus, the value of the hane-kosumi in this case is 6 + 4 = 10 points.
+
+These 4 points represent what we call a privilege. They are the privilege of one the players, and function as an implicit sente. The minimum privilege is, in the case of the hane-kosumi, of 2 points. This benefit can exist for both players, going up to a maximum of 4 points for each side.
+
+Memorize it: the maximum value of the hane-kosumi on the 2nd line is 14 (6 + 4 + 4) points! (And it has variations of 6, 8, 10 and 12 points, obviously.)]))
+(;B[nl]
+;AB[cg][ch][ci][cj][ck][nk][ok][pk][pl][nm][om][pm][rn][sn][ro][rp][sp][rr][sr][rs]LB[hi:D][om:A][ro:B][rr:C]TR[ah][bh][ai][bi][aj][bj]C[The shapes A, B and C in the lower right-hand corner are the ones I use to teach beginners about why we generally start in the corners and not on the sides or the center. Note that the center is much more difficult to make points than on the side or the corner (A > B > C, in terms of inefficiency).
+
+Now, let's focus on the left side. Black is making at the moment about 6 points. Don't worry about how we got to this number, it will be clarified in the next sections. What would be the move to make the same amount of points in the center? We can think of something like D as a first approximation.]
+;W[as]
+;AB[hi]LB[fg:A][fh:B]C[But would we really be doing at least 6 points?
+
+Since the mini moyo is open and there is no Black influence in the exterior, White can try to reduce it with A or B. If Black really wants to keep the territory, he will have to respond...]
+;B[bs]
+;AW[gh][fk]AB[fi][gi]LB[gh:3][ei:A][fi:2][gi:4][fk:1][hk:B]C[At first sight, a beginner would say that the white stones are his (or at least the 3). But there is no guarantee for such. In truth, now, Black will have to put maybe even more than one stone to get the points on only one side.
+
+Meanwhile... White plays in the corners and side, making much more points. A game that could have been Black's in the past ends in 20 points for White due to the Black's unmeasurable passion for the center.
+
+(A small concession must be made to the sequence at hand. Globally, it could be very bad for White, because Black's position was strengthened.)
+
+If you manage to look at commentaries from professionals, when they try to estimate the points in these cases, they don't even count points in the regions like A, or maybe count something like 1 or 2 points.
+
+Some players are afraid of Black's moyo getting too big if Black, before the exchanges, after B, for example. We will see that it is not the case, since B only increases the amount of Black's points by a little more than 4 points.])
+(;B[pd]
+;AW[cd][rd][ce][qf][cg][ch][di][qi][dj][ej][nn][no][ep][fp][np][fq][jq]AB[ec][hc][nc][qc][de][he][df][dg][dh][ei][fi][nm][cn][on][oo][cp][op][qp][dq][eq][nq][oq]LB[pb:C][fe:B][bf:A][rg:D][bq:G][rq:E][hr:F]C[Try practicing counting before going to the next section.]
+;W[kj]LB[pb:C][rc:H][fe:B][ag:A][sg:D][no:I][bq:G][hr:F][qr:E]TR[ea][ha][na][ra][eb][hb][nb][qb][rb][oc][ad][bd][ed][hd][sd][re][bf][gf][gg][qg][gh][qh][ri][si][aj][bj][cj][an][bn][pn][qn][rn][sn][co][gq][hq][iq][er][fr][jr][nr][es][fs][js][ns]SQ[rj]C[This is the method of counting used by most professionals, it relies on counting the minimum amount of territory in a position. We use implicit sente exchanges, such as square for triangle on the right side, to get the final shape, and then basically connect our stones with straight lines and also make transversal lines to the sides.
+
+Note the strange border around C. It comes from the fact that the minimalist theory counts moves like H as an implicit sente to complete the minimization.
+
+Answers:
+
+A: 10
+B: 17
+C: 6 
+D: 7
+E: 21 (The I stones should not be counted because they were not captured!)
+F: 6
+G: 15])
+(;B[dd]
+;AW[ra][qb][qc][rc][bd][cf][ci]AB[pa][pb][cc][fc][pc][pd][qd][rd][sd]LB[sb:B][bc:A]C[What is the value of A? Which one is bigger: A or B?
+
+This is a very difficult question. It is worth mentioning that A can alter the status of both groups depending on the exterior. But that's a topic for another lesson, in joseki continuation class. To calculate the value of A, we must analyze the gains from each side at every branch of the tree, just as taught previously.
+
+From the previous exercise, we already know that the Black's territory is 6 points, and White's, 6 (even though in the last exercise the answer was indeed 7, I would say it actually varies from 6 to 7).]
+(;W[bc]
+;AW[ab][be][cg]AB[ba][bb][ce][df]LB[ba:D][cb:C][ac:A][cd:B]TR[ai][bi]C[White's territory doesn't have much gains, 2 points only, going from 6 to 8.
+
+The sacrifice at is a privilege for Black and the territory ends up being reduced, but, as an approximation, let's accept 8.
+
+In general, the answer at C is much more common and appropriate at D; and the atari at B is ignored, since it's only there to show the miminum of White's territory.])
+(;W[as]
+;AB[bc]LB[bd:A]TR[fa][fb][ac][ec]C[Initially, Black's territory goes from 6 to 11 points. But we have to also account for the further benefits of the possible capture of A..]
+(;B[ss]
+;AW[ce]LB[ac:A]TR[af][bf]C[A complementary variation to Black B15. There is an increase of about 2 points in White's territory, and also 2 points in sente as privilege at A. As a second movement is necessary, the total is 4/2.])
+(;B[be]
+;AW[ce][bf]AB[cd]LB[sb:A][ac:6][bc:B][hc:C][ad:5][cd:3][be:1][ce:2][af:7][bf:4]C[Note that this capture is very similar to the hane-kosumi discussed before - analyzing an unknown yose with known shapes is a very useful technique, a variation of the tewari technique. Observe that both Black and White have privileges at 6 and 7. In practice, this means that the capture can vary from 10 to 14 points approximately. Let us choose 12 points as a middle ground (middle grounds are very useful in the yose).
+
+This way, the final calculation is:
+
+First approximation: 2 + 5 = 7
+Second Approximation: 12/2 (since we would need a second move) + 4/2 (see the last variation) = 8
+Total: 15 points
+
+In most books, this yose is counted as a little bit more than 16 points (memorize this number! It's very useful!), because the author is using 14/2 = 7 in the second approximation and he will also be more careful with the details of implicit sente and sacrifices. Nevertheless, be cautious in your games! It is necessary to analyze it case by case. The surroundings and a stone close do C could make a move like B to become sente for White: a sente yose of 16 points, on par with a 32 points gote yose (with this size it's should actually be a middle game move...). It could certainly reverse a loss for you!
+
+And let's get back to the initial question. Which one is bigger: A or B?
+
+A capture at A is worth 12 points for Black, and if White lives, he makes 2 points. A total of 14 points. So, a simple push at B is worth more than capturing a whole corner! It's very common for these joseki continuations to be so big actually, so keep your eyes open!])))
+(;B[pp]
+;AW[bb][cc][dc][fc][rn][ro][qp][qq][pr][qr]AB[bc][bd][cd][cg][qm][rm][qn][sn][qo][nq][pq][or]LB[jd:B][qm:9][rm:15][qn:7][rn:8][sn:17][qo:5][ro:6][pp:1][qp:4][sp:A][nq:13][pq:3][qq:2][or:11][pr:10][qr:12][as:14][bs:16]C[The sequence in the lower right-hand corner is very common after the 3-3 invasion (though not so much anymore after AlphaGo). Black generally manages to turn at 15 and, next, to hane at 17. The question is: how should White answer? Is A right?
+
+Click at B to see the other topic.]
+(;W[sp]
+;LB[sr:A]C[Black has a tesuji at A.]
+;B[sr]LB[sq:A]C[The best move is usually at A.]
+;W[sq]
+;B[sm]LB[so:A][rr:B]C[What happens if White tries A?]
+(;W[so]
+;B[rq]
+;W[rp]
+;B[rr]
+;W[rs]
+;B[ps]TR[rq][rr][sr]C[This is a dead shape.])
+(;W[rr]
+;B[rp]LB[so:A]C[White cannot connect at A because he puts himself in atari.]
+;W[rq]LB[ss:A]C[The correct move here was actually to just capture at A.]
+;B[so]LB[rp:A]C[White cannot connect at A.]
+(;W[rp]
+;B[ps])
+(;W[ps]LB[ro:A][rp:B][ps:C][ss:D]C[C is not the best yose, simply capture at D is in fact the best. C was played only to make the final counting simpler.]
+;B[rs]
+;W[qs]
+;B[os]
+;W[ss]LB[rp:A]C[Here the territory is of 1 point for Black at A; and the total is of about 4 + 1 (capture at B) = 5.])))
+(;W[rp]LB[so:B][sp:C][ps:A]C[White's territory can vary from 5 to 8 points depending if he manages to get A and B or not. Which brings us to the total of 13/2 = 6.5. In the other variation, with the mistake, the territory is of about 5 points and the reduction was made in sente.
+
+In the end, we have that C is a mistake that causes a sente reduction of more than 1 point in sente!]
+;B[ps]
+;W[sr]
+;B[so]
+;W[sp]
+;B[sm])
+(;W[jd]
+;AW[db]AB[ab][cb]LB[cb:A]C[What is the value of the capture at A?]
+;B[cb]
+;W[db]
+;B[jf]
+;W[ca]LB[ba:A][da:B][fc:C]C[Again, we go back to the hane-kosumi on the 2nd line. We know it's worth at least 6 points and, in this case, due to Black's privilege at B, there is a bonus of 2 points (attention to the stone at C!). Thus, a total of 8 points.
+
+But there is the detail of the ko at A. Since it is usually more damaging to White than Black, it is very likely White will have to simply connect, which would cause a loss of about 1 point. So we say that the hane-kosumi on the 2nd line in the corner doesn't have the same value as on the sides. It is usually worth close to one point less; in this case, it would be something close to 7 points.]))
+(;B[jc]
+;AW[ib][ic][id][bj][cj][dj][ej][gk][cn][po][pp][lq][pq][pr][ps][qs]AB[kc][nc][ce][gh][bi][ci][di][ei][qk][qn][qo][qp][qq][qr][rs]LB[la:B][ib:A][ai:D][aj:C][rr:E]C[The Monkey Jump is the big keima on the first line from A to B.
+
+The Hane on the 1st Line is a very typical sente yose, be it C or D.
+
+The Connection in the corner at E is a very common mistake I've seen even dan players make, it's not worth that much.]
+(;W[la]
+;AW[ja][ka][jb]AB[ma][kb][lb][mb]LB[ja:7][ka:3][la:1][ma:4][jb:5][kb:6][lb:2][mb:8]TR[ia]C[White reduces Black and increases its territory by 1 point.
+
+The value of the monkey jump can vary. Sometimes, Black will opt for making a sacrifice at 7 to create a shortage of liberties.])
+(;W[sc]
+;B[jb]LB[ia:A]TR[ka][la][ma][kb][lb][mb]C[As mentioned, the value of the Monkey Jump depends on the sequence chosen. Here, in the simplest one, we have 6 + 1 = 7 points. However we can see that the privilege at A should be accounted for. This yose is actually much more complicated than one expects it to be and there are even examples of mistakes in professional games. In practice, though, I would suggest to memorize the value of 7 or 8 (8 is more common) points for it.])
+(;W[ai]
+;AW[aj]AB[ah][bh]LB[bg:B][ah:2][bh:4][ai:1][aj:3][bl:A]C[This hane is one of the most important ones in the endgame. Many points can be gained with it. In general, it is even double-sente. Who wouldn't like to get 2 points for free?
+
+Pay attention to the surroundings though. If there were a stone at B, White 1 would no longer be sente but only reverse-sente. In the same hypothesis, Black 3 would be sente 2 points, virtually worth a gote 4 points.])
+(;W[rr]
+;B[rq]
+(;W[ss]LB[rr:A]C[White gains 1 point and eliminates 4 points from Black's territory, in a grand total of 4 + 1 = 5 points.
+
+Note how small this yose really is. Frequently, kyus connect at A automatically when there are hane-kosumis of 14 points on the board. 
+
+Obviously, the status of the Black group in the corner is also important at evaluating this yose.])
+(;AE[rq]AB[rr]TR[rq][sq][sr][ss]C[The 4 points eliminated in the other varitation.])))
+(;B[dj]
+;AW[cb][bc][cd][cg][ck][cn]AB[bb][db][cc][ec][dd][bj][bp][dp][fp]LB[bj:C][dj:B][ck:A]C[Ko is a very special chapter and I will only briefly cover it here. Caution of the utmost importance is necessary when evaluating it and its worth varies a lot case by case.
+
+Calculating exactly the value of a ko is usually extremely difficult, as you can see on the position to the left, nevertheless, the majority of the situations don't need a precise number, only knowing what is bigger is enough.
+
+The most important concept to grasp may be the comparison between threats and ending the ko. What we must have in mind is that the total local profit should equal, at least, to two moves elsewhere, i.e., the proportion of 1:2 should be preserved. This proportion is what gives the typical global value of the ko: whoever finishes it keeps only 1/3 of the global profit! The emphasis on this last number depends on the book, but, in truth, what really matters is the proportion of 1:2 (having only a 1/3 of the profit is rather depressing, isn't it?)
+
+Another remark must be made: the opponent's threats, if ignored, carry, usually, a sente factor with them and, thus, this effect must be accounted for when calculating the value of the threat. It may seem obvious, but many players make this mistake.
+
+Take a look, for example, at the A threat. It is not only a local loss of points for Black if ignored, but also an gigantic problem since the stones B and C will get disconnected. It could be that the ko in upper left-hand corner is worth that much under certain circumstances, but the calculations should be made carefully.
+
+In conclusion, the need for continuing to answer the ignored threat is a very important factor to the decision of ending the ko!]
+;W[cj]
+;B[ci]
+;W[di]
+;B[dh]LB[ch:B][bi:A][ei:C]C[All the 3 moves are possible for White, although maybe C is best in most situations.]
+(;W[ei]
+;B[ch]
+;W[eh]
+;B[dg]
+;W[ek])
+(;W[ch]
+;B[ei]
+;W[bi]
+;B[bh]C[Ko])
+(;W[bi]
+;B[ei]
+;W[bh]C[It is necessary to evaluate the power of the ponnuki in order to choose this evaluation.])))

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Pocket Guide to Yose</title>
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+
+    <meta name="author" content="Philippe Fanaro" />
+    <meta name="description" content="Pocket Guide to Yose" />
+
+    <meta property="og:image" content="thumbnail.png" />
+    <meta property="og:description" content="Pocket Guide to Yose" />
+    <meta property="og:title" content="Pocket Guide to Yose" />
+    <meta property="og:site_name" content="fanaro.io" />
+    <meta property="og:type" content="blog" />
+
+    <script src="../../index.js"></script>
+    <script src="../../assets/glift_1_1_2.min.js"></script>
+
+    <link rel="stylesheet" href="../../index.css" />
+    <link rel="icon" type="image/svg+xml" href="../../assets/favicon.svg" />
+  </head>
+  <body>
+    <article>
+      <img src="thumbnail.png" alt="Thumbnail" />
+
+      <h1>Pocket Guide to Yose</h1>
+
+      <p>
+        This is the first version of my pocket guide to the yose, some minor
+        corrections are necessary, and I’ll hopefully make them soon. But, for
+        now, enjoy this one.
+      </p>
+
+      <div class="SGF" id="SGF"></div>
+      <script>
+        glift.create({
+          divId: "SGF",
+          sgf: "fanaro-pocket-guide-yose.sgf",
+        });
+      </script>
+    </article>
+  </body>
+</html>
