@@ -845,4 +845,13 @@ export const articlesMetadata: Article[] = [
     mainTopic: Topic.go,
     otherTopics: [Topic.review],
   },
+  {
+    index: 26,
+    title: "Collection Littéraire Lagarde & Michard Parte I: Poesia",
+    link: "/articles/cllm_poesia/cllm_poesia.html",
+    date: Date.UTC(2018, 5, 31),
+    languages: [Language.portuguese, Language.french],
+    mainTopic: Topic.literature,
+    otherTopics: [Topic.writing],
+  },
 ];
