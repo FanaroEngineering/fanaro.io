@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <title>
+      Uma Solução para Fraudes e Manipulações em Votos Digitais (e também
+      eleitorais): Além da Segurança
+    </title>
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+
+    <meta name="author" content="Philippe Fanaro" />
+    <meta
+      name="description"
+      content="Uma Solução para Fraudes e Manipulações em Votos Digitais (e também eleitorais): Além da Segurança"
+    />
+
+    <meta property="og:image" content="thumbnail.png" />
+    <meta
+      property="og:description"
+      content="Uma Solução para Fraudes e Manipulações em Votos Digitais (e também eleitorais): Além da Segurança"
+    />
+    <meta
+      property="og:title"
+      content="Uma Solução para Fraudes e Manipulações em Votos Digitais (e também eleitorais): Além da Segurança"
+    />
+    <meta property="og:site_name" content="fanaro.io" />
+    <meta property="og:type" content="blog" />
+
+    <script src="../../index.js"></script>
+
+    <link rel="stylesheet" href="../../index.css" />
+    <link rel="icon" type="image/svg+xml" href="../../assets/favicon.svg" />
+  </head>
+  <body>
+    <article>
+      <img src="thumbnail.png" alt="Thumbnail" />
+
+      <h1>
+        Uma Solução para Fraudes e Manipulações em Votos Digitais (e também
+        eleitorais): Além da Segurança
+      </h1>
+
+      <blockquote>
+        Atualização (18 de Outubro de 2019): Recentemente, descobri que o
+        sistema que propus aqui já havia sido proposto e está atualmente em
+        implementação ao redor do mundo. Seu nome técnico é
+        <em
+          >End-to-End Verifiable Voting Systems (with optional Homomorphic
+          Encryption)</em
+        >
+        (ou
+        <em
+          >Sistemas de Votação com Verificação Fim-a-Fim (com Criptografia
+          Homomórfica opcional)</em
+        >). Ele é explicado neste vídeo do
+        <a href="https://youtu.be/BYRTvoZ3Rho">canal Numberphile de 2016</a>,
+        com participação do Professor Ron Rivest, um dos criadores do,
+        amplamente utilizado mundo afora, paradigma RSA de criptografia.
+      </blockquote>
+
+      <p>
+        Recentemente, e com razão, vem sendo muito debatido o voto digital. O
+        motivo: a fragilidade da informação. A maioria das soluções:
+        essencialmente, retrogredir, voltando às eleições manuais. Será que não
+        há meio termo?
+      </p>
+
+      <p>
+        O que gostaria de discutir hoje é uma possível solução. Há, sim, um meio
+        de unir o útil ao agradável, e ele nem é tão difícil assim.
+      </p>
+
+      <p>
+        Esta discussão é bastante análoga à questão de segurança na internet que
+        vivíamos um tempo atrás, o problema das fraudes digitais era de grande
+        relevância, e muitos até optavam por deixar o mundo digital devido às
+        frustrações e aos roubos. O problema foi, contudo, minimizado, aos
+        poucos, a ponto de ter se tornado, hoje, algo secundário e que ocorre
+        quase que automaticamente, através de modernos protocolos de segurança.
+        Mas qual foi a razão para esse progresso? Em suma, criptografia.
+        Passamos a utilizar um método bastante seguro baseado em números primos,
+        que é, para fins práticos, inquebrável, já que a única maneira de se
+        descriptografar neste caso demandaria capacidades computacionais
+        estratosféricas &mdash; vale ressaltar, no entanto, que as falhas
+        humanas são, obviamente, ainda inerentes. Em um resumo excessivamente
+        suscinto, o algoritmo utiliza uma chave pública, que serve para
+        criptografar qualquer informação cujo acesso será restrito ao
+        destinatário, e uma chave privada, a qual garante que somente o receptor
+        poderá decifrar a mensagem. Haveria, aqui, ainda, alguns outros
+        problemas relacionados, como o de saber se quem enviou a combinação de
+        chave público-privada é realmente quem alega ser, mas isso foi
+        pragmaticamente solucionado com o advento dos institutos autenticadores.
+        Outra pequena ressalva deve-se também fazer à tecnologia quântica, que,
+        se for viabilizada, tornaria o tal algoritmo quebrável &mdash; o que, em
+        termos práticos, somente faria com que nos adaptássemos a métodos
+        pertinentes à criptografia quântica.
+      </p>
+
+      <p>
+        Finalmente, agora, em posse de tal poderosa ferramenta, podemos voltar
+        ao assunto principal de propor uma solução ao problema das fraudes
+        eleitorais. Dado o histórico da internet com a criptografia, é possível
+        suspeitar de que algo similar possa ser feito. E, realmente, é o caso.
+        Inicialmente, pensaríamos que a criptografia nos ajudaria somente com o
+        problema de proteger as informações dentro dos votos, o que seria
+        insuficiente para garantir uma eleição infraudada, pois os órgãos
+        eleitorais poderiam simplesmente apagar o conteúdo e substituí-lo por
+        algo que lhes agradasse. Porém, como já foi visto, a autenticidade
+        também é um atributo do algoritmo de criptografia supracitado, ou seja,
+        há como verificar se o conteúdo utilizado é verídico. Mas, então, como
+        isso seria feito na prática? Primeiramente, viabilizaríamos ao eleitor
+        uma chave privada, com uma correspondente chave pública, que seria
+        basicamente a moderna manifestação do título eleitoral; em seguida, o
+        voto ocorreria, e o governo não somente os contaria, muito mais do que
+        isso, ele os divulgaria, paradoxalmente, de maneira secreta e
+        transparente: grosso modo, uma planilha enorme seria divulgada com os
+        dados dos votantes de cada candidato, codificados por suas respectivas
+        chaves públicas, o que tornaria a verificação do voto fácil, acessível e
+        segura a todos, algo inquestionavelmente impraticável em uma eleição à
+        moda antiga ou manual. Nessa situação, espera-se que cada cidadão
+        verifique se seu voto está correto e, assim, caso não haja reclamações,
+        ora, é altamente improvável que haja fraude.
+      </p>
+
+      <p>
+        Para finalizar, aproveita-se a discussão para reiterar que a tecnologia
+        é apenas um meio, que, quase sempre, só substitui outro mais antigo e,
+        portanto, mantém os problemas de inidoneidade humana de seu precedente.
+        Cabe a nós não retroceder ao nos depararmos com uma nova forma de
+        manifestação de algo negativo e, sim, adaptar a inovadora tecnologia,
+        que, muito provavelmente, proporcionará uma maneira mais eficiente
+        &mdash; e talvez mais eficaz &mdash; de se lidar com o persistente
+        problema original.
+      </p>
+    </article>
+  </body>
+</html>

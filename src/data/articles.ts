@@ -1041,4 +1041,13 @@ export const articlesMetadata: Article[] = [
     mainTopic: Topic.go,
     otherTopics: [Topic.review],
   },
+  {
+    index: 5,
+    title: "Uma Solução para Fraudes e Manipulações em Votos Digitais",
+    link: "/articles/solucao_fraude_votos/solucao_fraude_votos.html",
+    date: Date.UTC(2018, 4, 15),
+    languages: [Language.portuguese],
+    mainTopic: Topic.cryptography,
+    otherTopics: [Topic.politics],
+  },
 ];
