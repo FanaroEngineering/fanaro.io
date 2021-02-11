@@ -1013,4 +1013,13 @@ export const articlesMetadata: Article[] = [
     mainTopic: Topic.go,
     otherTopics: [Topic.review],
   },
+  {
+    index: 8,
+    title: "A Insuficiência da Direita (e, por consequência, da Esquerda?)",
+    link: "/articles/insuficiencia_direita/insuficiencia_direita.html",
+    date: Date.UTC(2018, 4, 20),
+    languages: [Language.portuguese],
+    mainTopic: Topic.politics,
+    otherTopics: [Topic.economy],
+  },
 ];
