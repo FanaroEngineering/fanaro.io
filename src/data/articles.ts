@@ -946,4 +946,13 @@ export const articlesMetadata: Article[] = [
     mainTopic: Topic.go,
     otherTopics: [Topic.goVariants],
   },
+  {
+    index: 15,
+    title: "Voto Branco, Voto Nulo e a Crise da Democracia",
+    link: "/articles/votos/votos.html",
+    date: Date.UTC(2018, 5, 2),
+    languages: [Language.portuguese],
+    mainTopic: Topic.politics,
+    otherTopics: [],
+  },
 ];
