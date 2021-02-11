@@ -825,4 +825,14 @@ export const articlesMetadata: Article[] = [
     mainTopic: Topic.go,
     otherTopics: [Topic.productivity],
   },
+  {
+    index: 28,
+    title:
+      "Collection Littéraire L&M Parte II &mdash; Como entrar para a Academia Francesa",
+    link: "/articles/tristan_bernard/tristan_bernard.html",
+    date: Date.UTC(2018, 6, 7),
+    languages: [Language.portuguese, Language.french],
+    mainTopic: Topic.literature,
+    otherTopics: [Topic.writing],
+  },
 ];
