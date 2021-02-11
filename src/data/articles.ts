@@ -24,6 +24,7 @@ export enum Topic {
   psychology = "Psychology",
   math = "Math",
   statistics = "Statistics",
+  cryptography = "Cryptography",
   dataScience = "Data Science",
   browserExtension = "Browser Extension",
   engineering = "Engineering",
@@ -964,5 +965,14 @@ export const articlesMetadata: Article[] = [
     languages: [Language.portuguese],
     mainTopic: Topic.go,
     otherTopics: [Topic.yose],
+  },
+  {
+    index: 13,
+    title: "A Solution to Frauds in Digital (Electoral) Voting: Beyond Safety",
+    link: "/articles/electoral_fraud_solution/electoral_fraud_solution.html",
+    date: Date.UTC(2018, 4, 30),
+    languages: [Language.portuguese],
+    mainTopic: Topic.cryptography,
+    otherTopics: [Topic.math],
   },
 ];

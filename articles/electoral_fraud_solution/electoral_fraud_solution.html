@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>
+      A Solution to Frauds in Digital (Electoral) Voting: Beyond Safety
+    </title>
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+
+    <meta name="author" content="Philippe Fanaro" />
+    <meta
+      name="description"
+      content="A Solution to Frauds in Digital (Electoral) Voting: Beyond Safety"
+    />
+
+    <meta
+      property="og:description"
+      content="A Solution to Frauds in Digital (Electoral) Voting: Beyond Safety"
+    />
+    <meta
+      property="og:title"
+      content="A Solution to Frauds in Digital (Electoral) Voting: Beyond Safety"
+    />
+    <meta property="og:site_name" content="fanaro.io" />
+    <meta property="og:type" content="blog" />
+
+    <script src="../../index.js"></script>
+
+    <link rel="stylesheet" href="../../index.css" />
+    <link rel="icon" type="image/svg+xml" href="../../assets/favicon.svg" />
+  </head>
+  <body>
+    <article>
+      <h1>A Solution to Frauds in Digital (Electoral) Voting: Beyond Safety</h1>
+
+      <blockquote>
+        Quick Update (October 18, 2019): Recently, I found out that the system I
+        had previously proposed here basically already exists and is currently
+        under implementation all over the world. Its technical name is
+        <em
+          >End-to-End Verifiable Voting Systems (with optional Homomorphic
+          Encryption)</em
+        >. It is explained in this
+        <a href="https://youtu.be/BYRTvoZ3Rho">Numberphile video</a> from 2016,
+        featuring Professor Ron Rivest, one of the creators of the widely used
+        RSA encryption paradigm.
+      </blockquote>
+
+      <p>
+        Recently, and with reason, the debate around digital (electoral) voting
+        has been receiving more and more attention, with the most important
+        topic being the vulnerability of the information. To solve the problem,
+        the vast majority of solutions essentially recommend going back to good
+        old manual counting. But is it really better than what technology has to
+        offer?
+      </p>
+
+      <p>
+        What is going to be explained next is a possible solution: there is a
+        way to use technology to solve the security issue, and go even beyond
+        it, offering authenticity and accountability.
+      </p>
+
+      <p>
+        This discussion is very analogous to the security problems posed by the
+        internet not so long ago, digital frauds were big threats, and many even
+        opted for leaving the virtual world due to the frustrations and thefts.
+        The problem was, nevertheless, slowly, minimized, to the point where it
+        has become something secondary and that happens automatically and almost
+        completely in the backstage through modern security protocols. But what
+        was the main reason for this progress? In short: cryptography. We have
+        adopted a very secure method based on prime numbers which is, in
+        practice, unbreakable, since the only way to decipher the information
+        would demand astronomical computational resources &mdash; obviously,
+        humans are a source of vulnerability that is still inherent. In an
+        excessively succinct overview, the algorithm uses a public key, which
+        cryptographs any information whose access should be restricted to the
+        end-receiver; and a private key, with which the receiver will decode the
+        message safely. The analogy widely used to explain this method is to
+        replace the public key for a lock, and the private key for a regular
+        key, one that, to be replicated, would require the god of all locksmiths
+        to work day in and day out for ages.
+      </p>
+
+      <p>
+        Additionally, related to the protection of the information, we have
+        other problems, like authenticity, that is, to know if the sender of the
+        public-private key combination is indeed who he or she claims to be.
+        However, this was pragmatically solved with the advent of authentication
+        institutes. As a curiosity, one minor concession on the safety of this
+        algorithm must be made, related to quantum technology: if it is made
+        possible on a larger scale, the encryption we use safely today could be
+        cracked easily &mdash; not so minor a concession… although it could be
+        argued that we would only need to adapt to quantum cryptography; there
+        will always be the apocalyptical scenario where we lose all of our
+        information without ever knowing it.
+      </p>
+
+      <p>
+        Finally, with such a powerful tool in our hands, we can go back to the
+        main topic and propose a solution to voting frauds. Initially, one might
+        think cryptography would only help us with the problem of protecting the
+        voting information, a measure which would not be enough to prevent
+        voting frauds, since the government could simply erase all the content
+        and replace it with something more agreeable with their intentions. But,
+        as briefly mentioned before, authenticity is a possible attribute of the
+        cited public-private key algorithm, in other words, it is possible to
+        verify if the content being used is indeed the original. How would that
+        be done in practice? Firstly, a more modern manifestation of the
+        electoral documents would replace our classical ones: all the necessary
+        documents would be encrypted with the public-private key pair; next,
+        after the votes, the government would not only count them, much more
+        than that, it would publish them, paradoxically, in a secret and
+        transparent manner: roughly, an enormous worksheet with the data of each
+        vote and voter, encrypted by the respective public keys, would render
+        verification easy, accessible and safe for all, something inconceivable
+        with the good old manual methods. In this situation, each citizen is
+        expected to verify if his vote is indeed correct and, if there are no
+        complaints, there is no fraud.
+      </p>
+
+      <p>
+        To conclude the discussion, it is imperative to reiterate the motto that
+        technology is nothing but a means, which, invariably, only substitutes
+        an older one, thereby maintaining the same problems of human improbity
+        of its predecessor. It is on us to not regress in face of a new
+        manifestation of something negative but to adapt the innovative
+        technology which, most likely, will provide newer and more efficient
+        ways &mdash; and maybe even more effective, as in this case &mdash; of
+        dealing with the persistent original problem.
+      </p>
+    </article>
+  </body>
+</html>
