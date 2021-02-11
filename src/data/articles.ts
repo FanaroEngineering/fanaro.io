@@ -891,4 +891,13 @@ export const articlesMetadata: Article[] = [
     mainTopic: Topic.go,
     otherTopics: [Topic.review],
   },
+  {
+    index: 21,
+    title: "26 Ovelhas e 10 Bodes: Qual a Idade do Capitão?",
+    link: "/articles/qual_idade_capitao/qual_idade_capitao.html",
+    date: Date.UTC(2018, 5, 15),
+    languages: [Language.portuguese],
+    mainTopic: Topic.logic,
+    otherTopics: [],
+  },
 ];
