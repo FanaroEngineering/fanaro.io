@@ -14,6 +14,7 @@ export enum Topic {
   philosophy = "Philosophy",
   meta = "Meta",
   logic = "Logic",
+  law = "Law",
   social = "Social",
   politics = "Politics",
   history = "History",
@@ -862,5 +863,14 @@ export const articlesMetadata: Article[] = [
     languages: [Language.portuguese, Language.french],
     mainTopic: Topic.go,
     otherTopics: [],
+  },
+  {
+    index: 24,
+    title: "A Polêmica do VAR",
+    link: "/articles/var_polemica/var_polemica.html",
+    date: Date.UTC(2018, 5, 24),
+    languages: [Language.portuguese],
+    mainTopic: Topic.sports,
+    otherTopics: [Topic.politics, Topic.logic, Topic.law],
   },
 ];
