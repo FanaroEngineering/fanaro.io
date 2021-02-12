@@ -666,20 +666,20 @@ export const articlesMetadata: Article[] = [
     otherTopics: [Topic.review],
   },
   {
-    title: "O Tesuji-Mor",
-    link: "/articles/tesuji_mor/tesuji_mor.html",
-    date: Date.UTC(2018, 7, 20),
-    languages: [Language.portuguese],
-    mainTopic: Topic.go,
-    otherTopics: [Topic.tsumego],
-  },
-  {
     title: "Reenter the Dragon: Engineering",
     link: "/articles/reenter_engineering/reenter_engineering.html",
     date: Date.UTC(2018, 7, 15),
     languages: [Language.english],
     mainTopic: Topic.engineering,
     otherTopics: [Topic.meta, Topic.philosophy],
+  },
+  {
+    title: "O Tesuji-Mor",
+    link: "/articles/tesuji_mor/tesuji_mor.html",
+    date: Date.UTC(2018, 7, 20),
+    languages: [Language.portuguese],
+    mainTopic: Topic.go,
+    otherTopics: [Topic.tsumego],
   },
   {
     title: "Problema Profissional Nível 20k",
@@ -698,20 +698,20 @@ export const articlesMetadata: Article[] = [
     otherTopics: [Topic.writing],
   },
   {
-    title: "Sunjang Baduk",
-    link: "/articles/sunjang/sunjang.html",
-    date: Date.UTC(2018, 7, 2),
-    languages: [Language.english],
-    mainTopic: Topic.go,
-    otherTopics: [Topic.goVariants],
-  },
-  {
     title: "A Guide to Go AI Programs",
     link: "/articles/guide_ai/guide_ai.html",
     date: Date.UTC(2018, 6, 30),
     languages: [Language.english],
     mainTopic: Topic.go,
     otherTopics: [],
+  },
+  {
+    title: "Sunjang Baduk",
+    link: "/articles/sunjang/sunjang.html",
+    date: Date.UTC(2018, 7, 2),
+    languages: [Language.english],
+    mainTopic: Topic.go,
+    otherTopics: [Topic.goVariants],
   },
   {
     title:
