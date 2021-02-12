@@ -29,7 +29,7 @@ void main() {
 
   // 2) This is not ok. Immutability doens't work because the nested elements
   //    are not themselves immutable.
-  //    This is also covered in the `List.unmodifiable` docs.)
+  //    (This is also covered in the `List.unmodifiable` docs.)
   print("2) Nested Immutability\n\n");
 
   var list1 = [1, 2];

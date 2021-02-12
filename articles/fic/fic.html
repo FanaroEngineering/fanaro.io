@@ -370,22 +370,110 @@ class PeopleWithFic {
         ></custom-h3>
 
         <p>
-          The native <code>List</code> in Dart features a handy constructor
+          The native <code>List</code> in Dart features a handy
+          constructor/factory<foot-note
+            text="It's actually an &lt;code&gt;external factory&lt;/code&gt;. 
+            Basically, Dart's end platform will likely offer a different, 
+            specific implementation for it."
+          ></foot-note>
           called <code>unmodifiable</code> which seemingly does exactly
           everything you need for basic immutability. So why on Earth would
           anyone go on as big a rant as we did?
         </p>
 
         <p>
-          That's because that constructor doesn't offer immutability, it offers
-          a variation of a read-only interface. If you're the creator of the
-          object the <code>List.unmodifiable</code> constructor is pointing to,
-          then there will likely not be a problem, because you have full control
-          of everything. However, if that list is given to you by a third party,
-          then you might be in trouble without knowing because someone else
-          might changed that object, <em>you</em> have read-only permissions,
-          but the creators of the object have all permissions.
+          The 2 main reasons for not being satisfied are the insufficiency and
+          clunkiness of that constructor/factory.
         </p>
+
+        <p>
+          <code>List.unmodifiable</code> will offer immutability or at least
+          level 1 immutability, which is actually what FIC offers as well. Take
+          a brief look at
+          <local-link
+            link="fic_vs_unmodifiable.dart"
+            text="this code example"
+          ></local-link>
+          or &mdash; that code is also available in the
+          <a
+            href="https://gist.github.com/psygo/6ee55f7c744646b39a306c4645cd43ed"
+            >same Gist as the other part of the code</a
+          >
+          &mdash; what's below:
+        </p>
+
+        <pre>
+          <code class="dart">// 1) This is ok. Immutability does work in this case.
+//    (This is covered in the `List.unmodifiable` docs.)
+print("1) Direct Immutability\n\n");
+
+var list = [1, 2, 3];
+
+var unmodifiableList1 = List.unmodifiable(list);
+
+list.add(4);
+
+print("Original List: $list"); // [1, 2, 3]
+print("Unmodifiable List 1: $unmodifiableList1"); // Still [1, 2, 3]
+
+print("\n\n---------------------------------------------------------\n\n");
+
+// 2) This is not ok. Immutability doens't work because the nested elements
+//    are not themselves immutable.
+//    (This is also covered in the `List.unmodifiable` docs.)
+print("2) Nested Immutability\n\n");
+
+var list1 = [1, 2];
+var list2 = [1, 2, 3];
+var nestedList = [list1, list2];
+
+var unmodifiableList2 = List.unmodifiable(nestedList);
+
+list1.add(10);
+
+print("Original List 1: $list1"); // [1, 2, 10]
+print("Original List 2: $list2"); // [1, 2, 3]
+print("UnmodifiableList 2: $unmodifiableList2"); // [[1, 2, 10], [1, 2, 3]]</code>
+        </pre>
+
+        <p>
+          All of that seems enough for most people but the real problem starts
+          when you actually want to apply changes to the collections. With that
+          unmodifiable interface, you can only resort to copying it on the
+          outside and then, once you're done with the dangerous mutable
+          operations, retransform the result into a new unmodifiable object.
+        </p>
+
+        <p>
+          That's very problematic because you're copying stuff, which is very
+          error prone and slow, and the process itself isn't really as clean as
+          using an API that's made for this type of operation. Besides all that,
+          using operations such as <code>add</code> on the unmodifiable object
+          will only get flagged during runtime, which will make catching bugs
+          more difficult.
+        </p>
+
+        <p>Take a look at the difference:</p>
+
+        <pre>
+          <code class="dart">// 3) How would you modify, add, remove, etc. this 
+//    `List.unmodifiable` object?
+//    FIC makes it much simpler and less error prone...
+//    And copying things to make changes will make `List.unmodifiable`
+//    unbearably slow.
+print("3) Clunky modifications natively | FIC makes it easy!\n\n");
+
+var list3 = [1, 2, 3];
+var unmodifiableList3 = List.unmodifiable(list3);
+var ilist3 = list3.lock;
+
+var newUnmodifiableList3 =
+    List.unmodifiable(unmodifiableList3.toList()..add(4));
+var newIlist3 = ilist3.add(4);
+
+print("New UnmodifiableList 3: $newUnmodifiableList3");
+print("New IList 3: $newIlist3");</code>
+        </pre>
       </section>
 
       <section>
