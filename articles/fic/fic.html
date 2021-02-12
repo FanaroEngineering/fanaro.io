@@ -363,6 +363,29 @@ class PeopleWithFic {
           wish, you can now expose the <code>people</code> attribute/property
           publicly.
         </p>
+
+        <custom-h3
+          text="Why aren't Dart's built-in constructors like 
+          &lt;code&gt;List.unmodifiable&lt;/code&gt; enough?"
+        ></custom-h3>
+
+        <p>
+          The native <code>List</code> in Dart features a handy constructor
+          called <code>unmodifiable</code> which seemingly does exactly
+          everything you need for basic immutability. So why on Earth would
+          anyone go on as big a rant as we did?
+        </p>
+
+        <p>
+          That's because that constructor doesn't offer immutability, it offers
+          a variation of a read-only interface. If you're the creator of the
+          object the <code>List.unmodifiable</code> constructor is pointing to,
+          then there will likely not be a problem, because you have full control
+          of everything. However, if that list is given to you by a third party,
+          then you might be in trouble without knowing because someone else
+          might changed that object, <em>you</em> have read-only permissions,
+          but the creators of the object have all permissions.
+        </p>
       </section>
 
       <section>
