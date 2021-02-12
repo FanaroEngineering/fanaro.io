@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>A Guide to Go AI Programs</title>
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+
+    <meta name="author" content="Philippe Fanaro" />
+    <meta name="description" content="A Guide to Go AI Programs" />
+
+    <meta property="og:image" content="thumbnail.png" />
+    <meta property="og:description" content="A Guide to Go AI Programs" />
+    <meta property="og:title" content="A Guide to Go AI Programs" />
+    <meta property="og:site_name" content="fanaro.io" />
+    <meta property="og:type" content="blog" />
+
+    <script src="../../index.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.4.1/styles/atom-one-dark.min.css"
+    />
+    <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.5.0/build/highlight.min.js"></script>
+    <script defer>
+      hljs.initHighlightingOnLoad();
+    </script>
+
+    <link rel="stylesheet" href="../../index.css" />
+    <link rel="icon" type="image/svg+xml" href="../../assets/favicon.svg" />
+  </head>
+  <body>
+    <article>
+      <img src="thumbnail.png" alt="Thumbnail" />
+
+      <h1>A Guide to Go AI Programs</h1>
+
+      <p>
+        In this post, I’ll be teaching you how to install the main AI Go tools
+        of today, at least the freely available ones. These are very valuable
+        items to have at your disposal &mdash; after all, who wouldn’t like to
+        have AlphaGo reviewing your own game? 🙂 &mdash;, and they do not take
+        that long to install. This guide is composed of 4 tools with different
+        objectives and different pros and cons:
+      </p>
+
+      <ol>
+        <li>Leela, to analyze games and play against an AI;</li>
+        <li>
+          Lizzie, to analyze games on the spot (without registering the
+          variations);
+        </li>
+        <li>
+          Leela + Sabaki (and the ELF and PhoenixGo versions), to play against
+          an AI and make them play against each other;
+        </li>
+        <li>
+          Go Review Partner, to analyze games in more detail and in a more
+          automated manner.
+        </li>
+      </ol>
+
+      <p>
+        Huge thanks to George from the
+        <a href="https://www.youtube.com/channel/UCfmbgDBr2m7k-676AIzJgYQ"
+          >Igo Baduk Weiqi</a
+        >
+        Youtube Channel for the help; and
+        <a href="https://github.com/pnprog">pnprog</a>, author of the Go Review
+        Partner, for the corrections to my mistakes.
+      </p>
+
+      <section>
+        <custom-h2 text="Leela"></custom-h2>
+
+        <figure>
+          <img src="Leela-1024x624.png" alt="" />
+          <figcaption>Leela’s Interface.</figcaption>
+        </figure>
+
+        <p>
+          Leela<foot-note
+            text="The name Leela comes from a character of the animated sitcom 
+            Futurama, a girl who only has one eye."
+          ></foot-note>
+          is the most famous item of this list, since it is available from even
+          before the Deep Learning storm. It was created by the Belgian
+          scientist<foot-note
+            text="Who I never happened to meet, even though I lived for a year… T.T"
+          ></foot-note
+          >, Gian-Carlo Pascutto, who, originally, worked with chess. After
+          AlphaGo, Pascutto was one of the quickest online creators to make a
+          new artificial intelligence utilizing Deep Learning available.
+        </p>
+
+        <p>
+          There are two versions of the program, one that contains AlphaGo’s
+          basic algorithm <a href="https://sjeng.org/leela.html">Leela</a>, and
+          another, which has the latest version of the algorithm, starting from
+          scratch, without any prior knowledge of Go:
+          <a href="https://github.com/gcp/leela-zero">Leela Zero</a>. For those
+          who don’t know much about this branch of Go, I would suggest
+          downloading Leela and playing with it for a bit, the interface is
+          quite complete and its level is around 9d KGS, i.e., extremely strong,
+          just as good as a strong insei at least<foot-note
+            text="Insei is a Japanese Go term for those who train and study to 
+            become a professional Go player. "
+          ></foot-note
+          >.
+        </p>
+
+        <p>
+          Leela Zero is an under-construction project. Despite
+          <a href="https://deepmind.com/research/alphago/">Deep Mind</a>'s last
+          article’s algorithm &mdash; in which AlphaGo Zero learned, by itself
+          and from scratch, to become even stronger than its last version in
+          only about 8 hours<foot-note
+            text="You can also learn a bit about the opening with the tool 
+            AlphaGo Teach. The only warning is that the tool does not use 
+            AlphaGo Zero, but AlphaGo Master, its penultimate version."
+          ></foot-note>
+          &mdash; being elegant and simple, calculating the tuned parameters
+          would take approximately 1700 years<foot-note
+            text='&lt;a href="http://computer-go.org/pipermail/computer-go/2017-October/010307.html"&gt;Estimate&lt;/a&gt; 
+            made by Pascutto.'
+          ></foot-note>
+          with an average (not so average actually) computer. To produce AlphaGo
+          Zero, Google utilized special hardware for a more efficient
+          computation of tensors, with GPUs specialized in Deep Learning that
+          cost millions of dollars. To try to replicate the weights of the
+          neural network, Pascutto created a sharing system where each user can
+          help with his or her own computer. Since the project is not yet
+          finished, if you wish to use Leela Zero, you will have to use a
+          graphical interface, which we will discuss later on.
+        </p>
+
+        <figure>
+          <img src="AlphaGo-Teach.png" alt="" />
+          <figcaption>The AlphaGo Teach tool.</figcaption>
+        </figure>
+      </section>
+
+      <section>
+        <custom-h2 text="Lizzie"></custom-h2>
+
+        <figure>
+          <img src="Lizzie-1024x543.png" alt="" />
+          <figcaption>Lizzie’s interface.</figcaption>
+        </figure>
+
+        <p>
+          This is a graphical interface which makes studying with AIs much more
+          pleasant.
+          <a href="https://github.com/featurecat/lizzie">Lizzie</a> uses Leela
+          Zero to generate candidates for the next moves, while showing live
+          variations, besides a graph of the winning percentages. Some of the
+          most useful commands are:
+        </p>
+
+        <ol>
+          <li>X for showing the commands menu;</li>
+          <li>Space for turning the pondering on and off;</li>
+          <li>O for opening SGF files;</li>
+          <li>
+            A for starting the autoanalysis and specifying the number of
+            variations per move.
+          </li>
+        </ol>
+
+        <p>
+          Although very pleasant and powerful, Lizzie doesn’t solve the demand
+          problem completely. There are still some imperfections. The biggest
+          flaw would be not having a way to save the variations in the SGF file
+          or even being able to recover them while running the program, this
+          problem with recording makes the software a bit impractical for some
+          purposes. Fortunately, this last issue can be solved in a very
+          automated way with another tool, the Go Review Partner.
+        </p>
+      </section>
+
+      <section>
+        <custom-h2 text="Leela + Sabaki (ELF + PhoenixGo)"></custom-h2>
+
+        <p>
+          <a href="https://sabaki.yichuanshen.de/">Sabaki</a
+          ><foot-note
+            text="Sabaki is another Go term, which designates the settling of 
+            a weak group inside the opponent’s sphere of influence, through 
+            light and flexible moves."
+          ></foot-note>
+          is one of the most modern Go editors nowadays. The software was
+          focuses in customization, better feel and the contribution of the
+          community. The code is open source, anybody can create new themes,
+          there are new editing tools, the variations tree is vertical and, more
+          importantly, there is an integration with executables of AIs. Through
+          this software, we can play against AIs and make them play against each
+          other.
+        </p>
+
+        <p>
+          Before we continue with the implementation, we must first download the
+          essential files. An AI is composed basically of two files: its
+          executable, which contains the algorithm; and its text file, which
+          contains the calculated parameters of the neural network<foot-note
+            text="Try imagining a neural network as a human brain. Its 
+            executable would be the hardware and the connections between the 
+            neurons, while the text file with the weights or parameters of the 
+            network would be analogous to memories and experience. Without the 
+            text file, it would be as if we were starting from zero ground."
+          ></foot-note
+          >. The executable which I recommend is the one inside Lizzie &mdash;
+          I’ve tried others, but only got errors. As for the text file with the
+          weights, there are several options.
+        </p>
+
+        <p>
+          The first one is to directly download
+          <a href="http://zero.sjeng.org/best-network"
+            >the best Leela Zero weights</a
+          >, also found in
+          <a href="https://github.com/gcp/leela-zero"
+            >Leela Zero’s GitHub Page</a
+          >, under the section <em>I just want to play right now</em>. The other
+          is to go where they are actually stored. In the site dedicated to
+          Leela Zero, we can find an enormous number of its versions, in each
+          line of the tables, the strength being roughly proportional to the
+          product of the dimensions of the column Size. According to
+          <a href="https://www.youtube.com/channel/UCfmbgDBr2m7k-676AIzJgYQ"
+            >Igo Baduk Weiqi</a
+          >, the 128×6 versions would already be strong enough to give me (1d
+          KGS) 3 handicap stones. However, the fun doesn’t end there. On the
+          table to the right, at some point, we will encounter, with bold
+          percentages, a version with the numbers 83% (this number might change
+          in the future); this is the winning probability of these weights
+          against the best Leela Zero version.
+        </p>
+
+        <p>
+          How is that possible? That’s the iteration created by
+          <a href="https://research.fb.com/facebook-open-sources-elf-opengo/"
+            >Facebook: ELF</a
+          >. If you wish, you can download its weights directly
+          <a
+            href="http://zero.sjeng.org/networks/62b5417b64c46976795d10a6741801f15f857e5029681a42d02c9852097df4b9.gz"
+            >here</a
+          >. After downloading the files, let’s finally get to the
+          implementation…
+        </p>
+
+        <figure>
+          <img src="Facebook-ELF-1024x594.png" alt="" />
+          <figcaption>
+            <a href="https://research.fb.com/facebook-open-sources-elf-opengo/"
+              >Facebook ELF</a
+            >
+            inside <a href="http://zero.sjeng.org/">zero.sjeng.org</a>.
+          </figcaption>
+        </figure>
+
+        <p>
+          There are many possible configurations in Leela’s implementation, but
+          I will only show here what worked for me &mdash; obviously, feel free
+          to test others<foot-note
+            text="There are other commands such as “–heatmap” and “–flat” that 
+            I will not discuss here, see Leela Sabaki’s GitHub page for more info."
+          ></foot-note
+          >.
+        </p>
+
+        <p>
+          Upon opening Sabaki, go to <kbd>Engines</kbd>
+          <kbd>Manage Engines...</kbd>, click on <kbd>Add</kbd> and name the AI
+          you’re going to implement. Below, you will either type the path to the
+          AI’s executable (<kbd>.exe</kbd>) or simply click on the folder symbol
+          and point to the file directly. Next, on the next line, we will need
+          to to provide some specifications for the simulation, besides the path
+          to the text file with the weights (to find the path you can simply
+          click on the path bar from Windows Explorer; but keep in mind that you
+          should avoid paths that use spaces). What worked for me was:
+        </p>
+
+        <pre>
+          <code class="bash">--gtp -w C:\Users\Philippe\Desktop\GoAI\elf_converted_weights.txt -t 2 --noponder --timemanage off</code>
+        </pre>
+
+        <p>
+          If you have additional GPUs, you can include the command
+          <code>--gpu 0</code> or <code>--gpu 1</code>:
+        </p>
+
+        <pre>
+          <code class="bash">--gtp --gpu 0 --gpu 1 -w C:\Users\Philippe\Desktop\GoAI\elf_converted_weights.txt -t 2 --noponder --timemanage off</code>
+        </pre>
+
+        <p>
+          Lastly, it is necessary to place the initial commands of the
+          simulation. What I use is simply the time configurations for each
+          move. The second parameter of this command is probably the most
+          important, informing the amount of seconds for each play, therefore;
+          if we wish to make the AI think for only 5 seconds, we will have:
+        </p>
+
+        <pre>
+          <code class="bash">time_settings 0 5 1</code>
+        </pre>
+
+        <figure>
+          <img src="Creating-Engines-1024x354.png" alt="" />
+          <figcaption>An example of AI creation inside of Sabaki.</figcaption>
+        </figure>
+
+        <p>
+          Voilà! We now have our first pet AI (maybe two if you’ve also
+          implemented Facebook ELF). To use them, you only need to go to
+          <kbd>Engines</kbd> > <kbd>Attach...</kbd> and click on the arrows
+          right next to Black and White.
+        </p>
+
+        <figure>
+          <img src="Attach-Engine-1024x221.png" alt="" />
+          <figcaption>Creating a game with AIs.</figcaption>
+        </figure>
+
+        <p>
+          There is still another AI that deserves some attention:
+          <a href="https://github.com/Tencent/PhoenixGo">PhoenixGo</a>. At the
+          beginning of this year, surprisingly, we had a different AI winning
+          the <em>World AI Go Tournament 2018</em> PhoenixGo, from
+          Tencent<foot-note
+            text="Tencent is a giant Chinese conglomerate, most notably, in 
+            the internet market. It owns QQ and WeChat, very big and popular 
+            communication services in China."
+          ></foot-note
+          >, dethroning Fine Art (also from Tencent; PhoenixGo was most likely
+          only created so they could win the tournament) and Leela Zero. You can
+          find its
+          <a
+            href="https://github.com/yenw/LeelaZero_PhoenixGo/releases/download/v1/leelaz_win_x86_cpu.exe.zip"
+            >executable</a
+          >
+          and
+          <a
+            href="https://github.com/yenw/LeelaZero_PhoenixGo/releases/download/v1/PhoenixGo_v1.txt.gz"
+            >text</a
+          >
+          files
+          <a href="https://github.com/Tencent/PhoenixGo/issues/35">here</a>.
+          PhoenixGo is the AI which runs the fastest and smoothest among the
+          ones I’ve tested so far, but, actually, it doesn’t seem to be the
+          strongest (perhaps Leela Zero has improved a lot since its loss in the
+          world championship?). Apparently, among the three, ELF is still the
+          strongest AI.
+        </p>
+
+        <figure>
+          <img
+            src="Variação-Moderna-do-3-3-Leela-Zero-vs-PhoenixGo-1024x604.png"
+            alt=""
+          />
+          <figcaption>
+            A game between Leela Zero (White) and PhoenixGo (Black). PhoenixGo
+            is even playing the most recent variation of the 3-3 invasion. The
+            moves analyzed by the AIs can be seen on the left.
+          </figcaption>
+        </figure>
+
+        <figure>
+          <img
+            src="Derrota-do-PhoenixGo-para-Leela-Zero-Move-117-1024x594.png"
+            alt=""
+          />
+          <figcaption>
+            The end of the same game between Leela Zero (White) and PhoenixGo
+            (Black), Leela Zero+R.
+          </figcaption>
+        </figure>
+      </section>
+
+      <section>
+        <custom-h2 text="Go Review Partner (GRP)"></custom-h2>
+
+        <figure>
+          <img src="GRP1.png" alt="" />
+          <figcaption>GRP’s Menu.</figcaption>
+        </figure>
+
+        <p>
+          The objective of
+          <a
+            href="http://yuntingdian.com/goreviewpartner/grp-documentation/doc.htm#game-review"
+            >Go Review Partner</a
+          >
+          (there is also a
+          <a href="https://github.com/pnprog/goreviewpartner">GRP GitHub page</a
+          >) is to automate the AI analysis process. The standard output of the
+          software is, however, an <code>.rsgf</code> file and not a
+          <code>.sgf</code> file, as usual. The <code>.rsgf</code> standard was
+          created to handle files <code>.sgf</code> files which have a very big
+          amount of variations, leading to big and almost intractable variation
+          trees. The GRP itself is able to open them, but, if you want, there
+          are two alternatives. The first one would be to open them with another
+          program, <a href="http://www.ruijiang.com/multigo/">MultiGo</a
+          ><foot-note
+            text="MultiGo is one of the oldest SGF editing software, and one 
+            of the most complete, although the aesthetics are not very charming."
+          ></foot-note
+          >; and the second would be to convert the <code>.rsgf</code> file to a
+          <code>.sgf</code> one through the GRP.
+        </p>
+
+        <p>
+          To use the software, you’ll first need to have
+          <a href="https://www.python.org/downloads/">Python</a> installed. Pay
+          attention, though, to the version you’re installing because the more
+          recent ones will yield errors. Only the 2.7.X versions will work
+          properly (I use the 2.7.13, for example). If you have Windows, you
+          only need to download the <code>.msi</code> file and continue the
+          installation process normally. If you have another operating system,
+          installing the <code>TkInter</code> library is necessary, which can be
+          achieved through a command like:
+        </p>
+
+        <pre>
+          <code class="bash">sudo apt-get install python python-tk</code>
+        </pre>
+
+        <p>
+          Next, inside Windows, after downloading one of the
+          <a href="http://yuntingdian.com/goreviewpartner/">packages</a>
+          containing an AI, you will only need to open the
+          <code>GoReviewPartner.exe</code>
+          file. I warn you, however, that, after several tests, I’ve had
+          problems with some AIs: some of them were not changing the winning
+          percentages by more than 1% throughout the whole analysis. I would
+          suggest starting with the Leela and Leela Zero versions which use no
+          GPU. If you still have questions and problems related to the GRP, its
+          creator is available in the Life in 19×19 forum answering comments
+          inside this
+          <a
+            href="https://lifein19x19.com/viewtopic.php?f=9&t=14050&p=233725#p233725"
+            >post</a
+          >.
+        </p>
+
+        <figure>
+          <img src="GRP3-1024x420.png" alt="" />
+          <figcaption>An analysis example from the GRP.</figcaption>
+        </figure>
+
+        <figure>
+          <img src="GRP2.png" alt="" />
+          <figcaption>
+            The GRP also analyzes other board sizes. (Although Leela Zero
+            apparently rejects them.)
+          </figcaption>
+        </figure>
+      </section>
+
+      <section>
+        <custom-h2 text="Final Comments"></custom-h2>
+
+        <p>
+          It is possible to test a vast number of AIs with the various software
+          mentioned. For example, we can try to replace the executable inside
+          Lizzie with that of PhoenixGo, along with its weights, to have a new
+          version of Lizzie. Nevertheless, I haven’t had much success with that
+          technique and it seems the reason for the failure is, in fact, my
+          hardware.
+        </p>
+
+        <p>
+          On a sidenote, I would like to mention a smartphone app that runs
+          Leela Zero. There are still some imperfections and bugs but it works
+          well in general. The app is called
+          <a
+            href="https://play.google.com/store/apps/details?id=nl.tengen.gridmaster"
+            >Go Grid Master</a
+          >
+          and has both a free and a paid versions.
+        </p>
+
+        <p>
+          Another update is a chinese app that featers AQ and Leela Zero in your
+          phone,
+          <a
+            href="https://drive.google.com/file/d/1dmL9ODvl-quIeLqed1j9AnDjrZivZ7d2/view"
+            >try it out</a
+          >.
+        </p>
+      </section>
+    </article>
+  </body>
+</html>

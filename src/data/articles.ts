@@ -706,6 +706,14 @@ export const articlesMetadata: Article[] = [
     otherTopics: [Topic.goVariants],
   },
   {
+    title: "A Guide to Go AI Programs",
+    link: "/articles/guide_ai/guide_ai.html",
+    date: Date.UTC(2018, 6, 30),
+    languages: [Language.english],
+    mainTopic: Topic.go,
+    otherTopics: [],
+  },
+  {
     title:
       "CLL&M &mdash; Jean Jaurès, a Esquerda Francesa do Final do Século XIX",
     link: "/articles/esquerda_francesa_xix/esquerda_francesa_xix.html",
