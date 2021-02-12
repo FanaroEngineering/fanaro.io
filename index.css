@@ -193,6 +193,12 @@ foot-note p {
   padding: 15px;
 }
 
+a#articles,
+a#pages {
+  cursor: pointer;
+  color: var(--local-link-color);
+}
+
 article-footer hr {
   margin-left: 0px;
   border: none;

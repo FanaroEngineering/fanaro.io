@@ -1,4 +1,9 @@
-import Article, { articlesMetadata, Language, Topic } from "../data/articles";
+import Article, {
+  articlesMetadata,
+  pagesMetadata,
+  Language,
+  Topic,
+} from "../data/articles";
 import LocalLink from "./local_link";
 
 export default class ArticlesTable extends HTMLElement {
@@ -6,7 +11,11 @@ export default class ArticlesTable extends HTMLElement {
 
   private static readonly template: string = `
     <table>
-      <caption>Articles</caption>
+      <caption>
+        <a id="articles">Articles</a>
+        |
+        <a id="pages">Static Pages</a>
+      </caption>
       <thead>
         <th>#</th>
         <th>Date</th>
@@ -29,6 +38,7 @@ export default class ArticlesTable extends HTMLElement {
   };
   private tr: HTMLTableRowElement = document.createElement("tr");
   private currentIndex: number = 0;
+  private currentContent: Article[] = articlesMetadata;
 
   constructor() {
     super();
@@ -36,9 +46,36 @@ export default class ArticlesTable extends HTMLElement {
 
   connectedCallback() {
     this.innerHTML = ArticlesTable.template;
+
+    this.buildTable(); // default build
+
+    this.registerClicksOTables();
+  }
+
+  private registerClicksOTables = (): void => {
+    const articlesLink: HTMLAnchorElement = this.querySelectorAll("a")[0]!;
+    const pagesLink: HTMLAnchorElement = this.querySelectorAll("a")[1]!;
+
+    articlesLink.onclick = (_: MouseEvent): void =>
+      this.clickOnTable(articlesMetadata);
+
+    pagesLink.onclick = (_: MouseEvent): void =>
+      this.clickOnTable(pagesMetadata);
+  };
+
+  private clickOnTable = (newContent: Article[]): void => {
+    if (this.currentContent != newContent) {
+      const tbody = this.querySelector("tbody")!;
+      tbody.innerHTML = "";
+      this.currentContent = newContent;
+      this.buildTable();
+    }
+  };
+
+  private buildTable = (): void => {
     const tbody: HTMLTableSectionElement = this.querySelector("tbody")!;
-    this.currentIndex = articlesMetadata.length;
-    articlesMetadata.forEach((article: Article) => {
+    this.currentIndex = this.currentContent.length;
+    this.currentContent.forEach((article: Article): void => {
       this.article = article;
       this.tr = document.createElement("tr");
 
@@ -51,7 +88,7 @@ export default class ArticlesTable extends HTMLElement {
 
       tbody.append(this.tr);
     });
-  }
+  };
 
   private rowIndex = (): void => {
     const indexCell: HTMLTableDataCellElement = document.createElement("td");

@@ -56,6 +56,17 @@ export default interface Article {
   otherTopics: Topic[];
 }
 
+export const pagesMetadata: Article[] = [
+  {
+    title: "About Me",
+    link: "/pages/aboutme.html",
+    date: Date.UTC(2018, 4, 2),
+    languages: [Language.english],
+    mainTopic: Topic.meta,
+    otherTopics: [],
+  },
+];
+
 export const articlesMetadata: Article[] = [
   {
     title: "FIC: Fast Immutable Collections, for Dart",
