@@ -98,7 +98,7 @@ export const articlesMetadata: Article[] = [
     date: Date.UTC(2021, 1, 14),
     languages: [Language.english],
     mainTopic: Topic.productivity,
-    otherTopics: [],
+    otherTopics: [Topic.books],
   },
   {
     title: "FIC: Fast Immutable Collections, for Dart",
