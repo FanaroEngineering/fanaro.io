@@ -1,0 +1,8 @@
+name: laziness_vs_eagerness
+author: Philippe Fanaro <philippefanaro@gmail.com>
+
+environment:
+  sdk: ">=2.10.0 <3.0.0"
+
+dependencies:
+  test: ^1.15.7
