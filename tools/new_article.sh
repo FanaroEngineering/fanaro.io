@@ -7,11 +7,11 @@
 
 ARTICLE_NAME=$1
 
-cd articles || exit
+cd articles || exit 1
 
 mkdir "$ARTICLE_NAME"
 
-cd "$ARTICLE_NAME" || exit
+cd "$ARTICLE_NAME" || exit 1
 
 touch "$ARTICLE_NAME.html"
 
