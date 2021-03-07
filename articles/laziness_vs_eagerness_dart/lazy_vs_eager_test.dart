@@ -31,72 +31,52 @@ void main() {
     print("Lazy: $lazyCounter");
     print("Eager: $eagerCounter");
 
-    print("\n\n---------- FIM ----------\n\n");
+    print("\n\n---------- END ----------\n\n");
   });
-  //----------------------------------------------------------------------------
-  // TODO: Mencionar diretamente os EfficientLengthIterable
-  // IterableMixin, ListMixin, SetMixin e MapMixin
-
-  /// O método `SnipsCanalRecentes.comConversasRecentesDasMsgs` ilustra bem uma aplicação desse
-  /// conceito:
-  ///
-  /// TODO: Atualizar o código aqui!
-  /// ```dart
-  ///
-  /// ```
-  ///
-  /// Por padrão, talvez seja válido utilizar `List`s, pois o comportamento é mais usual e é muito
-  /// mais provável que cálculos sobre uma lista ou iterable sejam feitos mais de uma vez do que
-  /// somente uma.
-  ///
-  /// Porém também é preciso notar que, a princípio, não há paginação no Pid, ou seja, o número
-  /// máximo de itens de uma lista pode ser muito grande, sendo assim, não fica claro, como regra
-  /// geral, qual direção tomar, é preciso ficar atento.
   //----------------------------------------------------------------------------
   int eagerCounter = 0;
   int lazyCounter = 0;
 
-  List<int> removeImpares_eager(Iterable<int> source) {
+  List<int> removeOdd_eager(Iterable<int> source) {
     return source.where((i) {
       eagerCounter++;
-      print("removeImpares_eager");
+      print("removeOdd_eager");
       return i % 2 == 0;
     }).toList();
   }
 
-  List<int> removeMenoresQue10_eager(Iterable<int> source) {
+  List<int> removeLessThan10_eager(Iterable<int> source) {
     return source.where((i) {
       eagerCounter++;
-      print("removeMenoresQue10_eager");
+      print("removeLessThan10_eager");
       return i >= 10;
     }).toList();
   }
 
-  Iterable<int> removeImpares_lazy(Iterable<int> source) {
+  Iterable<int> removeOdd_lazy(Iterable<int> source) {
     return source.where((i) {
-      print("removeImpares_lazy");
+      print("removeOdd_lazy");
       lazyCounter++;
       return i % 2 == 0;
     });
   }
 
-  Iterable<int> removeMenoresQue10_lazy(Iterable<int> source) {
+  Iterable<int> removeLessThan10_lazy(Iterable<int> source) {
     return source.where((i) {
-      print("removeMenoresQue10_lazy");
+      print("removeLessThan10_lazy");
       lazyCounter++;
       return i >= 10;
     });
   }
 
-  //----------------------------------------------------------------------------
-  test("Ordem de avaliação", () {
+  test("Evaluation Order", () {
     var list = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15];
 
     print("\n\n---------- Init ----------\n\n");
 
-    Iterable<int> eager = removeMenoresQue10_eager(removeImpares_eager(list));
+    Iterable<int> eager = removeLessThan10_eager(removeOdd_eager(list));
 
-    Iterable<int> lazy = removeMenoresQue10_lazy(removeImpares_lazy(list));
+    Iterable<int> lazy = removeLessThan10_lazy(removeOdd_lazy(list));
 
     print("\n\n---------- Lazy ----------\n\n");
 
@@ -107,24 +87,18 @@ void main() {
 
     print(eager);
 
-    print("\n\n---------- Contadores ----------\n\n");
+    print("\n\n---------- Counters ----------\n\n");
 
     print("Lazy: $lazyCounter");
     print("Eager: $eagerCounter");
 
-    print("\n\n---------- FIM ----------\n\n");
+    print("\n\n---------- END ----------\n\n");
   });
   //----------------------------------------------------------------------------
-  /// Um Iterable(Iterable) sobre N valores seria basicamente equivalente a um `for` dentro de
-  /// outro `for`, resultando em X*Y operacoes (*thunk*s em linguagens funcionais). Cada operação é
-  /// ocupa sempre mais espaço/memória do que um valor isoladamente. Isso no final gera muita
-  /// ineficiência em memória, *memory leaks*. Em linguagens funcionais é imperativo criar *Tail
-  /// Call Optimitazions* (TCO) para solucionar este problema.
-  //----------------------------------------------------------------------------
-  /// Gerador sob demanda.
+  /// On-demand generator.
   Iterable<int> naturalsFunc() sync* {
     int k = 0;
-    // Loop infinito!!!
+    // Infinite loop!
     while (true) yield k++;
   }
 
