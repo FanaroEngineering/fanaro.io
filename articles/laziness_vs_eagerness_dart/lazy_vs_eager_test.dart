@@ -1,31 +1,30 @@
 import "package:test/test.dart";
 
 void main() {
-  //////////////////////////////////////////////////////////////////////////////////////////////////
-
+  //----------------------------------------------------------------------------
   test("Lazy vs Eager", () {
     var lazyCounter = 0;
     var eagerCounter = 0;
 
-    var filtraImparLazy = [1, 2, 3, 4, 5, 6, 7].where((i) {
+    var lazyOddFilter = [1, 2, 3, 4, 5, 6, 7].where((i) {
       lazyCounter++;
       return i % 2 == 0;
     });
 
-    var filtraImparEager = [1, 2, 3, 4, 5, 6, 7].where((i) {
+    var evenFilterEager = [1, 2, 3, 4, 5, 6, 7].where((i) {
       eagerCounter++;
       return i % 2 == 0;
     }).toList();
 
     print("\n\n---------- Init ----------\n\n");
 
-    filtraImparLazy.length;
-    filtraImparLazy.length;
-    filtraImparLazy.length;
+    lazyOddFilter.length;
+    lazyOddFilter.length;
+    lazyOddFilter.length;
 
-    filtraImparEager.length;
-    filtraImparEager.length;
-    filtraImparEager.length;
+    evenFilterEager.length;
+    evenFilterEager.length;
+    evenFilterEager.length;
 
     print("\n\n---------- Lazy vs Eager ----------\n\n");
 
@@ -34,7 +33,7 @@ void main() {
 
     print("\n\n---------- FIM ----------\n\n");
   });
-
+  //----------------------------------------------------------------------------
   // TODO: Mencionar diretamente os EfficientLengthIterable
   // IterableMixin, ListMixin, SetMixin e MapMixin
 
@@ -53,9 +52,7 @@ void main() {
   /// Porém também é preciso notar que, a princípio, não há paginação no Pid, ou seja, o número
   /// máximo de itens de uma lista pode ser muito grande, sendo assim, não fica claro, como regra
   /// geral, qual direção tomar, é preciso ficar atento.
-
-  //////////////////////////////////////////////////////////////////////////////////////////////////
-
+  //----------------------------------------------------------------------------
   int eagerCounter = 0;
   int lazyCounter = 0;
 
@@ -91,6 +88,7 @@ void main() {
     });
   }
 
+  //----------------------------------------------------------------------------
   test("Ordem de avaliação", () {
     var list = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15];
 
@@ -116,15 +114,13 @@ void main() {
 
     print("\n\n---------- FIM ----------\n\n");
   });
-
+  //----------------------------------------------------------------------------
   /// Um Iterable(Iterable) sobre N valores seria basicamente equivalente a um `for` dentro de
   /// outro `for`, resultando em X*Y operacoes (*thunk*s em linguagens funcionais). Cada operação é
   /// ocupa sempre mais espaço/memória do que um valor isoladamente. Isso no final gera muita
   /// ineficiência em memória, *memory leaks*. Em linguagens funcionais é imperativo criar *Tail
   /// Call Optimitazions* (TCO) para solucionar este problema.
-
-  //////////////////////////////////////////////////////////////////////////////////////////////////
-
+  //----------------------------------------------------------------------------
   /// Gerador sob demanda.
   Iterable<int> naturalsFunc() sync* {
     int k = 0;
@@ -132,6 +128,7 @@ void main() {
     while (true) yield k++;
   }
 
+  //----------------------------------------------------------------------------
   test("List/Iterable infinito", () {
     var naturalsIter = naturalsFunc();
 
@@ -152,9 +149,7 @@ void main() {
 
     print("\n\n---------- FIM ----------\n\n");
   });
-
-  //////////////////////////////////////////////////////////////////////////////////////////////////
-
+  //----------------------------------------------------------------------------
   test("É possível iterar mais de uma vez em um Iterable? E em um Iterator?",
       () {
     var iterable = [1, 2, 3].where((value) => true);
@@ -192,9 +187,5 @@ void main() {
 
     // Mais informações: https://stackoverflow.com/a/52347550/4756173
   });
-
-  //////////////////////////////////////////////////////////////////////////////////////////////////
-
-  // TODO: Perguntar para os desenvolvedores de Dart por que exatamente a escolha de fazer as
-  // coleções com Iterable
+  //----------------------------------------------------------------------------
 }

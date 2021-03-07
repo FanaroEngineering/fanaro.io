@@ -1,4 +1,5 @@
 name: laziness_vs_eagerness
+version: 0.0.1
 author: Philippe Fanaro <philippefanaro@gmail.com>
 
 environment:
