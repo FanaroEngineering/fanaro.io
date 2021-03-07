@@ -103,29 +103,31 @@ void main() {
   }
 
   //----------------------------------------------------------------------------
-  test("List/Iterable infinito", () {
+  test("Infinite List/Iterable", () {
     var naturalsIter = naturalsFunc();
 
     print("\n\n---------- Init ----------\n\n");
 
-    print("A lista/iterable infinita foi criada, mas não avaliada.");
+    print("The infinite list/iterable was created, but not evaluated.");
 
     print("\n\n--------------------\n\n");
 
     print("\n\n---------- takeWhile ----------\n\n");
 
-    print("É possível trabalhar com ela, "
-        "mas é preciso utilizar um método que pára em algum momento.\n\n");
+    print("It's possible to work with it,"
+        "but it's necessary to add a method to "
+        "stop the processing at some point");
 
     var naturalsUpTo10 = naturalsIter.takeWhile((value) => value <= 10);
 
-    print("Naturais até 10: $naturalsUpTo10");
+    print("Naturals up to 10: $naturalsUpTo10");
 
-    print("\n\n---------- FIM ----------\n\n");
+    print("\n\n---------- END ----------\n\n");
   });
   //----------------------------------------------------------------------------
-  test("É possível iterar mais de uma vez em um Iterable? E em um Iterator?",
-      () {
+  test(
+      "Is it possible to iterate more than once over an iterable?"
+      "What about an Iterator?", () {
     var iterable = [1, 2, 3].where((value) => true);
     var iterator = iterable.iterator;
 
@@ -138,28 +140,26 @@ void main() {
 
     print("\n\n---------- Loop no Iterable ----------\n\n");
 
+    // Implementing an Iterable enables you to use the `for (...) {}` structure
     for (int i = 0; i < 10; i++) {
-      // Utiliza um loop com `for (E element in this)`,
-      // que precisa da interface do Iterable para funcionar.
-
       print(iterable.elementAt(i % 3));
     }
 
-    // Internatmente, o Iterable.last cria um Iterator para iterar.
+    // Internally, `Iterable.last` cria um Iterator para iterar.
 
-    print("\n\n---------- Loop no Iterator ----------\n\n");
+    print("\n\n---------- Loop inside Iterator ----------\n\n");
 
     for (int i = 0; i < 10; i++) {
       iterator.moveNext();
       print(iterator.current);
     }
 
-    print("\n\n---------- FIM ----------\n\n");
+    print("\n\n---------- END ----------\n\n");
 
-    // Há diversas especializações de Iterable e Iterator, é possível encontrá-los
-    // no arquivo internal\iterable.dart
+    // There are many subclasses of Iterable and Iterator, you can find them
+    // in the internal/iterable.dart file
 
-    // Mais informações: https://stackoverflow.com/a/52347550/4756173
+    // More info: https://stackoverflow.com/a/52347550/4756173
   });
   //----------------------------------------------------------------------------
 }
