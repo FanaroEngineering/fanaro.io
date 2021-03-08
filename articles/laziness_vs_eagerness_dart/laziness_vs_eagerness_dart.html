@@ -19,41 +19,126 @@
 
     <link rel="stylesheet" href="../../index.css" />
     <link rel="icon" type="image/svg+xml" href="../../assets/favicon.svg" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.4.1/styles/atom-one-dark.min.css"
+    />
+    <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.5.0/build/highlight.min.js"></script>
+    <script defer>
+      hljs.initHighlightingOnLoad();
+    </script>
   </head>
   <body>
     <article>
-      <img src="thumbnail.png" alt="Thumbnail" />
-
       <h1>Laziness vs Eagerness in Dart</h1>
+
+      <p>
+        This article is inspired by some of weirdness we faced when developing
+        my and Marcelo's immutable collections package,
+        <local-link
+          text="Fast Immutable Collections (FIC)"
+          link="../fic/fic.html"
+        ></local-link>
+        package.
+      </p>
 
       <section>
         <custom-h2 text="Why should I care?"></custom-h2>
 
-        <!-- TODO: Mention FIC -->
-        <p></p>
+        <p>
+          What's discussed in this article is specially relevant if you happened
+          to "mix" <code>Iterable</code> and <code>List</code>,
+          <code>Set</code>, etc. Mixing those types can be useful, for example,
+          when you have an object that could accept more than one type of
+          collection.
+        </p>
 
         <custom-h3 text="Number of Evaluations"></custom-h3>
 
-        <!-- TODO: Mention the "unpredictability" of lazy vs eager (test #1) -->
+        <p>
+          If I presented you with the following code, what would your
+          expectations be? What would be your bets for each counter?
+        </p>
 
-        <!-- TODO: Mention IterableMixin, ListMixin, SetMixin and MapMixin -->
+        <pre><code class="dart">var lazyCounter = 0;
+var eagerCounter = 0;
 
-        <!-- TODO: Mention why `List` should be the first choice most of the time-->
-        <!-- TODO: Pagination makes it less bad to use `Iterable` -->
+var lazyOddFilter = [1, 2, 3, 4, 5, 6, 7].where((i) {
+  lazyCounter++;
+  return i % 2 == 0;
+});
+
+var evenFilterEager = [1, 2, 3, 4, 5, 6, 7].where((i) {
+  eagerCounter++;
+  return i % 2 == 0;
+}).toList();
+
+print("\n\n---------- Init ----------\n\n");
+
+lazyOddFilter.length;
+lazyOddFilter.length;
+lazyOddFilter.length;
+
+evenFilterEager.length;
+evenFilterEager.length;
+evenFilterEager.length;
+
+print("\n\n---------- Lazy vs Eager ----------\n\n");
+
+print("Lazy: $lazyCounter");
+print("Eager: $eagerCounter");
+
+print("\n\n---------- END ----------\n\n");</code></pre>
+
+        <p>Do the results below suprise you?</p>
+
+        <pre><code>Lazy: 21
+Eager: 7</code></pre>
+
+        <p>
+          How would you go about explaining them, even if you did get them
+          right?
+        </p>
+
+        <p>
+          Quite frankly, I would bet 8:2 you got it wrong, as did I, at least on
+          the first try. The language used in the example also contributes to
+          the misunderstanding: who wouldn't simply trivially assume that the
+          eager version wouldn't be the one overdoing things?
+        </p>
+
+        <p>
+          The reason for what happened above comes from the fact that the lazy
+          filter actually doesn't return a thing, it returns an object that
+          carries the operation to return a thing. So, every time you want to
+          really know the result of the operation, the lazy object has to
+          evaluate the operation, it has no memory and it doesn't evaluate the
+          operation at first. The eager version, on the other hand, does
+          everything right away and does remember the results.
+        </p>
 
         <custom-h3 text="Evaluation Order"></custom-h3>
 
+        <!-- TODO: Mention the "unpredictability" of lazy vs eager (test #1) -->
         <!-- TODO: Note that Iterables print (), while List prints [] -->
       </section>
 
       <section>
         <custom-h2 text="The Weird World of Iterables"></custom-h2>
 
+        <!-- TODO: Mention IterableMixin, ListMixin, SetMixin and MapMixin -->
+        <!-- TODO: Pagination makes it less bad to use `Iterable` -->
+
         <custom-h3 text="The Pros and Cons"></custom-h3>
+
+        <!-- TODO: Mention why `List` should be the first choice most of the time-->
 
         <custom-h3 text="Infinity"></custom-h3>
 
-        <custom-h3 text="One of The Main Benefits of Implementing Iterable: &lt;code&gt;for (... in ...) {}&lt;/code&gt;"></custom-h3>
+        <custom-h3
+          text="One of The Main Benefits of Implementing Iterable: &lt;code&gt;for (... in ...) {}&lt;/code&gt;"
+        ></custom-h3>
       </section>
 
       <section>
@@ -61,7 +146,9 @@
 
         <custom-h3 text="Tail Call Optimization (TCO)"></custom-h3>
 
-        <custom-h3 text="Why Dart choose <kbd>Iterable</kbd> for its design"></custom-h3>
+        <custom-h3
+          text="Why Dart choose <code>Iterable</code> for its design"
+        ></custom-h3>
       </section>
     </article>
   </body>
