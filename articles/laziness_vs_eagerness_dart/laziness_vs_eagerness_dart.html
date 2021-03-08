@@ -195,19 +195,11 @@ Iterable&lt;int&gt; lazy = removeLessThan10_lazy(removeOdd_lazy(list));
 
 print("\n\n---------- Lazy ----------\n\n");
 
-// Note que, para Iterables, Dart imprime com `()`; e, para List, com `[]`.
 print(lazy);
 
 print("\n\n---------- Eager ----------\n\n");
 
-print(eager);
-
-print("\n\n---------- Counters ----------\n\n");
-
-print("Lazy: $lazyCounter");
-print("Eager: $eagerCounter");
-
-print("\n\n---------- END ----------\n\n");</code></pre>
+print(eager);</code></pre>
 
         <blockquote>
           Note that <code>Iterable</code>s print <code>()</code> when logged,
@@ -215,32 +207,126 @@ print("\n\n---------- END ----------\n\n");</code></pre>
           <code>Set</code>s, <code>{}</code>.
         </blockquote>
 
+        <p>Here is what the code above prints out:</p>
+
         <!-- TODO: print the results here actuall -->
+        <pre><code>---------- Eager ----------
+
+removeOdd_eager
+
+removeOdd_eager
+
+removeOdd_eager
+
+removeOdd_eager
+
+removeOdd_eager
+
+removeOdd_eager
+
+removeOdd_eager
+
+removeOdd_eager
+
+removeOdd_eager
+
+removeOdd_eager
+
+removeOdd_eager
+
+removeOdd_eager
+
+removeOdd_eager
+
+removeOdd_eager
+
+removeOdd_eager
+
+removeLessThan10_eager
+
+removeLessThan10_eager
+
+removeLessThan10_eager
+
+removeLessThan10_eager
+
+removeLessThan10_eager
+
+removeLessThan10_eager
+
+removeLessThan10_eager
+
+---------- Lazy ----------
+
+removeOdd_lazy
+
+removeOdd_lazy
+
+removeLessThan10_lazy
+
+removeOdd_lazy
+
+removeOdd_lazy
+
+removeLessThan10_lazy
+
+removeOdd_lazy
+
+removeOdd_lazy
+
+removeLessThan10_lazy
+
+removeOdd_lazy
+
+removeOdd_lazy
+
+removeLessThan10_lazy
+
+removeOdd_lazy
+
+removeOdd_lazy
+
+removeLessThan10_lazy
+
+removeOdd_lazy
+
+removeOdd_lazy
+
+removeLessThan10_lazy
+
+removeOdd_lazy
+
+removeOdd_lazy
+
+removeLessThan10_lazy
+
+removeOdd_lazy</code></pre>
 
         <p>
-          I won't print the output of the code above here. This article is
-          already long enough. You can run all the code from
+          You can run all the code from
           <local-link
             text="this file"
             link="lazy_vs_eager_test.dart"
           ></local-link
-          >, but, long story short, you will see that the eager version of the
-          compound operations above will first solve all of the inner operations
-          and then pass everything to the outer function; while the lazy version
-          will do things whenever they're needed. All that means is: if you're
-          going for the lazy version, when debugging, you might end up with logs
-          and results of both functions mixed together, which will very likely
-          make things more difficult to solve. Lazy functions and methods are
-          much more easilly debugged atomically than when put together with
-          other lazy abstractions.
+          >, but, long story short, you will see from the log above that the
+          eager version of the compound operations above will first solve all of
+          the inner operations and then pass everything to the outer function;
+          while the lazy version will do things only whenever they're needed.
+          All that means is: if you're going for the lazy version, when
+          debugging, you might end up with logs and results of both functions
+          mixed together, which will very likely make things more difficult to
+          solve. Lazy functions and methods are much more easilly debugged
+          atomically than when put together with other lazy abstractions, but
+          that's only my opinion, maybe you will develop different intuition
+          with respect to this topic.
         </p>
 
         <blockquote>
           Laziness seems to have been historically very appealing to academia
           and mathematicians. Typically, those individuals don't care much about
           <strike>concrete results</strike> numerical results, only that their
-          shapes are correct. For instance, <em>functional</em> languages like
-          Haskell are, lazy by default.
+          <em>shapes</em> are correct. For instance,
+          <em>functional</em> languages like Haskell are, lazy by default.
         </blockquote>
       </section>
 
@@ -474,8 +560,8 @@ print("\n\n---------- END ----------\n\n");</code></pre>
           <code>MapEntry</code> been around before or at the creation of
           <code>Map</code>, then maybe <code>Map</code> would have been an
           <code>Iterable&lt;MapEntry&gt;</code>. But I'm still not 100%
-          convinced I know the answer to the questions surrounding this topic &mdash; and I apparently don't know how to
-          ask the question either.
+          convinced I know the answer to the questions surrounding this topic
+          &mdash; and I apparently don't know how to ask the question either.
         </p>
       </section>
     </article>
