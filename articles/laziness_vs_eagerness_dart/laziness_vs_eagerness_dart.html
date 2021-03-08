@@ -34,8 +34,8 @@
       <h1>Laziness vs Eagerness in Dart</h1>
 
       <p>
-        This article is inspired by some of weirdness we faced when developing
-        my and Marcelo's immutable collections package,
+        This article is inspired by some of the weirdness we faced when
+        developing my and Marcelo's immutable collections package,
         <local-link
           text="Fast Immutable Collections (FIC)"
           link="../fic/fic.html"
@@ -46,26 +46,28 @@
       </p>
 
       <section>
-        <custom-h2 text="Why should I care?"></custom-h2>
+        <custom-h2 text="Why should anyone care?"></custom-h2>
 
         <p>
           What's discussed in this article is specially relevant if you happened
           to "mix" <code>Iterable</code> and <code>List</code>,
           <code>Set</code>, etc. Mixing those types can be useful, for example,
           when you have an object that could accept more than one type of
-          collection.
+          collection. At any rate, many other reasons will be discussed
+          throughout the article.
         </p>
 
         <custom-h3 text="Number of Evaluations"></custom-h3>
 
         <p>
           If I presented you with the following code, what would your
-          expectations be? What would be your bets for each counter?
+          expectations be? What would be your bets for each of the counters'
+          values?
         </p>
 
         <blockquote>
           Note the <code>.where</code> method returns an <code>Iterable</code>,
-          even when on a <code>List</code> or <code>Set</code>.
+          even when applied to a <code>List</code> or <code>Set</code>.
         </blockquote>
 
         <pre><code class="dart">var lazyCounter = 0;
@@ -118,10 +120,10 @@ Eager: 7</code></pre>
         <p>
           The reason for what happened above comes from the fact that the lazy
           filter actually doesn't return a thing, it returns an object that
-          carries the operation to return a thing. So, every time you want to
-          really know the result of the operation, the lazy object has to
-          evaluate the operation, it has no memory and it doesn't evaluate the
-          operation at first. The eager version, on the other hand, does
+          carries the operation to return a thing. So, every time you really
+          want to know the result of the operation, the lazy object has to
+          (re)evaluate the operation, it has no memory and it doesn't evaluate
+          the operation at first. The eager version, on the other hand, does
           everything right away and does remember the results.
         </p>
 
@@ -137,10 +139,10 @@ Eager: 7</code></pre>
         </p>
 
         <p>
-          The when things happen can affect the order in which things happen.
-          Debugging will certainly be more difficult if you're not aware of
-          what's happening when, and readability will suffer if what you write
-          doesn't represent 100% what's going on.
+          The <em>when</em> things happen can affect the order in which things
+          happen. Debugging will certainly be more difficult if you're not aware
+          of what's happening when, and readability will suffer if what you
+          write doesn't represent 100% of what's going on.
         </p>
 
         <p>
@@ -212,6 +214,9 @@ print("\n\n---------- END ----------\n\n");</code></pre>
           while <code>List</code>s print <code>[]</code>, and,
           <code>Set</code>s, <code>{}</code>.
         </blockquote>
+
+        <!-- TODO: print the results here actuall -->
+
         <p>
           I won't print the output of the code above here. This article is
           already long enough. You can run all the code from
@@ -232,10 +237,10 @@ print("\n\n---------- END ----------\n\n");</code></pre>
 
         <blockquote>
           Laziness seems to have been historically very appealing to academia
-          and mathematicians. Typically, those individuals don't care about
+          and mathematicians. Typically, those individuals don't care much about
           <strike>concrete results</strike> numerical results, only that their
-          shapes are correct. <em>Functional</em> languages like Haskell are,
-          for instance, lazy by default.
+          shapes are correct. For instance, <em>functional</em> languages like
+          Haskell are, lazy by default.
         </blockquote>
       </section>
 
@@ -245,23 +250,26 @@ print("\n\n---------- END ----------\n\n");</code></pre>
         <custom-h3 text="The Pros and Cons"></custom-h3>
 
         <p>
-          After all of the headache you might have had after reading the last
-          section, you might feel like why in the world would someone even use
-          laziness, it complicates things so much... &mdash; but what really
-          complicates things is actually mixing laziness with eagerness.
+          After all of that headache you might have had reading the last
+          section, you might be thinking: why in the world would someone even
+          use laziness, it complicates things so much...
+          <foot-note
+            text="What really complicates things is actually mixing laziness
+            with eagerness."
+          ></foot-note>
           However, it has its use cases.
         </p>
 
         <p>
-          The simplest use cass is obviously not having to calculate stuff up
-          front. Imagine you want to deliver the user the UI before making only
-          the necessary calculations. If your language doesn't programmatically
-          support laziness, you will have to manually monitor every single
-          entity to ensure it is so. But, if you were working with
-          <code>Iterable</code>s or in Haskell, you would be sure not had been
-          triggered unless totally necessary. Flutter isn't really technically a
-          lazy framework, but its declarativeness does offer many of the same
-          features.
+          The simplest use case to justify laziness is obviously not having to
+          calculate stuff up front. Imagine you want to deliver the user the UI,
+          making only the necessary calculations. If your language doesn't
+          programmatically support laziness, you will have to manually monitor
+          every single entity to ensure it is so. But, if you were working with
+          <code>Iterable</code>s or in Haskell, you would be sure it had not
+          been triggered unless totally necessary. Flutter isn't really
+          technically a lazy framework, but its declarativeness does offer many
+          of the same features.
         </p>
 
         <blockquote>
@@ -282,8 +290,8 @@ print("\n\n---------- END ----------\n\n");</code></pre>
         <p>
           That all being said, I really do think it is better to discourage the
           default use of <code>Iterable</code>s. Since it is very unlikely that
-          you're going to perform an operation on sequence only once, it is much
-          wiser to use <code>List</code> as the default than the other way
+          you're going to perform an operation on a sequence only once, it is
+          much wiser to use <code>List</code> as the default than the other way
           around.
         </p>
 
@@ -292,18 +300,18 @@ print("\n\n---------- END ----------\n\n");</code></pre>
         <p>
           One of the beauties of laziness is that infinity becomes a feasible
           abstraction. For example, modeling a list that's tied to the database
-          could become much more seamless because the querying will be done
-          on-demand, there will be no need to recreate the iterable for every
-          batch, i.e., the iterable itself represents the connection to the
-          database.
+          could become much more seamless because querying would then be done
+          on-demand, there would be no need to recreate the iterable for every
+          batch, i.e., the iterable itself partially represents the connection
+          to the database.
         </p>
 
         <p>
           In Dart, infinite <code>Iterable</code>s are also called
           <a href="https://dart.dev/guides/language/language-tour#generators"
             >synchronous generators</a
-          >, but, if you're going for something asynchrouns, you could use
-          <code>Stream</code>. In fact, the on-demand potentially infinite
+          >, but, if you're going for something asynchronous, you could use
+          <code>Stream</code>s. In fact, the on-demand, potentially infinite
           connection to the database in Dart is done through streams on top of
           socket layers.
         </p>
@@ -341,22 +349,22 @@ print("\n\n---------- END ----------\n\n");</code></pre>
           &lt;code&gt;for (... in ...) {}&lt;/code&gt;"
         ></custom-h3>
 
-        <!-- TODO: Mention IterableMixin, ListMixin, SetMixin and MapMixin -->
-
         <p>
           One of the most mundane but very practical benefits of implementing
           <code>Iterable</code> is the possibility of iterating over it through
           the very readable <code>for (... in ...) {}</code>. It seems very
-          minor, but the readability improves dramatically with it, and it is
-          totally worth it to take the time to implement
-          <code>Iterable</code> or any of its subclasses.
+          minor, but readability improves dramatically with it, and it is
+          totally worth it taking the time to implement <code>Iterable</code> or
+          any of its subclasses, if you're at a low dependency level in your
+          application that is.
         </p>
 
         <p>
-          That being said, if you end up having to implement any of these
-          gigantic interfaces, it will surely come in handy to be aware of some
-          built-in Dart <code>mixin</code>s, like <code>IterableMixin</code>,
-          <code>ListMixin</code>, <code>SetMixin</code> and <code>MapMixin</code
+          That being said, if you end up having to implement any of
+          <code>Iterable</code>'s gigantic interfaces, it will surely come in
+          handy to be aware of some built-in Dart <code>mixin</code>s, like
+          <code>IterableMixin</code>, <code>ListMixin</code>,
+          <code>SetMixin</code> and <code>MapMixin</code
           ><foot-note
             text="I know, I know, &lt;code&gt;Map&lt;/code&gt; doesn't
             implement &lt;code&gt;Iterable&lt;/code&gt;, we're gonna discuss
@@ -407,11 +415,11 @@ print("\n\n---------- END ----------\n\n");</code></pre>
           languages is that, when disassembling the recursion stack, the
           language will create whole layers for each of its stages, when most of
           them might be simply return calls or very simple computations. This
-          can easily cause memory leaks for complex computations and some
+          can easily cause memory leaks for complex computations, and some
           languages &mdash; specially functional ones, like Haskell, which
           doesn't even feature loops, only recursion<foot-note
             text="Can loops be totally be replaced by recursion? What is the
-            Venn diagram here? &lt;a&gt;Here is the answer&lt;/a&gt;"
+            Venn diagram here? &lt;a&gt;Here is the answer&lt;/a&gt;."
           ></foot-note>
           &mdash; have implemented ways of compiling only the necessary
           operations to have the recursion going, and that feature or abstaction
@@ -439,7 +447,8 @@ print("\n\n---------- END ----------\n\n");</code></pre>
         </p>
 
         <custom-h3
-          text="Why Dart chose &lt;code&gt;Iterable&lt;/code&gt; for its design"
+          text="Why Dart chose &lt;code&gt;Iterable&lt;/code&gt;
+          for its design (Not a Complete Answer)"
         ></custom-h3>
 
         <p>
@@ -452,7 +461,7 @@ print("\n\n---------- END ----------\n\n");</code></pre>
         </p>
 
         <p>
-          Besides that, I personally think that a lazy layer is easier to
+          Besides that, I personally believe that a lazy layer is easier to
           implement underneath an eager one than the other way around.
         </p>
 
@@ -462,10 +471,10 @@ print("\n\n---------- END ----------\n\n");</code></pre>
           <a href="https://stackoverflow.com/q/66356823/4756173"
             >another question on StackOverflow</a
           >. This time I got some more info, like the fact that, had
-          <code>MapEntry</code> been around before or at the time of
+          <code>MapEntry</code> been around before or at the creation of
           <code>Map</code>, then maybe <code>Map</code> would have been an
           <code>Iterable&lt;MapEntry&gt;</code>. But I'm still not 100%
-          convinced I know the answer &mdash; and I apparently don't know how to
+          convinced I know the answer to the questions surrounding this topic &mdash; and I apparently don't know how to
           ask the question either.
         </p>
       </section>
