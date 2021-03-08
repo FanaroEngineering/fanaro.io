@@ -264,6 +264,13 @@ print("\n\n---------- END ----------\n\n");</code></pre>
           features.
         </p>
 
+        <blockquote>
+          This topic has also been discussed in
+          <a href="https://stackoverflow.com/a/52347550/4756173"
+            >this popular StackOverflow question</a
+          >.
+        </blockquote>
+
         <p>
           Pagination is yet another use case. Through the pagination mechanism,
           you ensure that only the data that fits the user screen &mdash; or
@@ -292,9 +299,11 @@ print("\n\n---------- END ----------\n\n");</code></pre>
         </p>
 
         <p>
-          In Dart, infinite <code>Iterable</code>s are also called synchronous
-          generators, but, if you're going for something asynchrouns, you could
-          use <code>Stream</code>. In fact, the on-demand potentially infinite
+          In Dart, infinite <code>Iterable</code>s are also called
+          <a href="https://dart.dev/guides/language/language-tour#generators"
+            >synchronous generators</a
+          >, but, if you're going for something asynchrouns, you could use
+          <code>Stream</code>. In fact, the on-demand potentially infinite
           connection to the database in Dart is done through streams on top of
           socket layers.
         </p>
@@ -324,16 +333,68 @@ var naturalsUpTo10 = naturalsIter.takeWhile((value) =&gt; value &lt;= 10);
 
 print("Naturals up to 10: $naturalsUpTo10");
 
-print("\n\n---------- END ----------\n\n");
-        </code></pre>
+print("\n\n---------- END ----------\n\n");</code></pre>
 
         <custom-h3
-          text="One of The Main Benefits of Implementing &lt;code&gt;Iterable&lt;/code&gt;: &lt;code&gt;for (... in ...) {}&lt;/code&gt;"
+          text="One of The Main Benefits of Implementing
+          &lt;code&gt;Iterable&lt;/code&gt;:
+          &lt;code&gt;for (... in ...) {}&lt;/code&gt;"
         ></custom-h3>
 
         <!-- TODO: Mention IterableMixin, ListMixin, SetMixin and MapMixin -->
 
-        <custom-h3 text="Iterators"></custom-h3>
+        <p>
+          One of the most mundane but very practical benefits of implementing
+          <code>Iterable</code> is the possibility of iterating over it through
+          the very readable <code>for (... in ...) {}</code>. It seems very
+          minor, but the readability improves dramatically with it, and it is
+          totally worth it to take the time to implement
+          <code>Iterable</code> or any of its subclasses.
+        </p>
+
+        <p>
+          That being said, if you end up having to implement any of these
+          gigantic interfaces, it will surely come in handy to be aware of some
+          built-in Dart <code>mixin</code>s, like <code>IterableMixin</code>,
+          <code>ListMixin</code>, <code>SetMixin</code> and <code>MapMixin</code
+          ><foot-note
+            text="I know, I know, &lt;code&gt;Map&lt;/code&gt; doesn't
+            implement &lt;code&gt;Iterable&lt;/code&gt;, we're gonna discuss
+            that later."
+          ></foot-note
+          >. Choose the most specific <code>mixin</code> out of them, because
+          each of them feature appropriate implementations for each of their
+          default respective targets.
+        </p>
+
+        <pre><code class="dart">for (value in values) {
+  print(value);
+}</code></pre>
+
+        <custom-h3
+          text="&lt;code&gt;Iterator&lt;/code&gt; and
+          &lt;code&gt;EfficientLengthIterable&lt;/code&gt;"
+        ></custom-h3>
+
+        <p>
+          Most of <code>Iterable</code>'s core methods will internally create an
+          <code>Iterator</code> to handle its logic. For example, the
+          <code>length</code> method has to iterate over all of the iterable to
+          finally compute the collection's length.
+        </p>
+
+        <p>
+          As you might have already realized, that isn't very efficient. That's
+          why Dart features
+          <a
+            href="https://github.com/dart-lang/sdk/blob/4a484c88e13ef0f4847daba3c25fa22dbe933a08/sdk/lib/internal/iterable.dart#L7-L10"
+            ><code>EfficientLengthIterable</code></a
+          >
+          <code>abstract class</code>, which is supposed to be implemented by
+          classes that offer a more efficient way of calculating the
+          <code>length</code> of collections, like <code>List</code> and
+          <code>Set</code>.
+        </p>
       </section>
 
       <section>
@@ -341,9 +402,72 @@ print("\n\n---------- END ----------\n\n");
 
         <custom-h3 text="Tail Call Optimization (TCO)"></custom-h3>
 
+        <p>
+          One of the main problems with (ab)using recursion in most programming
+          languages is that, when disassembling the recursion stack, the
+          language will create whole layers for each of its stages, when most of
+          them might be simply return calls or very simple computations. This
+          can easily cause memory leaks for complex computations and some
+          languages &mdash; specially functional ones, like Haskell, which
+          doesn't even feature loops, only recursion<foot-note
+            text="Can loops be totally be replaced by recursion? What is the
+            Venn diagram here? &lt;a&gt;Here is the answer&lt;/a&gt;"
+          ></foot-note>
+          &mdash; have implemented ways of compiling only the necessary
+          operations to have the recursion going, and that feature or abstaction
+          is typically called <em>Tail Call Optimization (TCO)</em>.
+        </p>
+
+        <p>
+          So... does Dart feature TCO?
+          <a href="https://stackoverflow.com/q/66356967/4756173"
+            >I've asked about it on StackOverflow</a
+          >
+          and fortunately got an answer from
+          <a href="https://stackoverflow.com/users/2156621/lrn">lrn</a> himself,
+          one of the main developers of the Dart language at Google.
+        </p>
+
+        <p>
+          Long story short, Dart doesn't support the feature and there are no
+          plans of incorporating it. And that's apparently very much due to
+          JavaScript. Nevertheless, there's an
+          <a href="https://github.com/dart-lang/language/issues/1159"
+            >ongoing open issue on Github</a
+          >
+          about it.
+        </p>
+
         <custom-h3
           text="Why Dart chose &lt;code&gt;Iterable&lt;/code&gt; for its design"
         ></custom-h3>
+
+        <p>
+          Again,
+          <a href="https://stackoverflow.com/a/52353197/4756173"
+            >according to lrn</a
+          >, the answer seems to be that, mainly, having an overarching
+          interface for many collections helps in satisfying design constraints,
+          if the programmer ever faces them.
+        </p>
+
+        <p>
+          Besides that, I personally think that a lazy layer is easier to
+          implement underneath an eager one than the other way around.
+        </p>
+
+        <p>
+          Anyhow, I was still curious about why Dart chose this specific design.
+          Is there something I'm missing here? I ended up asking
+          <a href="https://stackoverflow.com/q/66356823/4756173"
+            >another question on StackOverflow</a
+          >. This time I got some more info, like the fact that, had
+          <code>MapEntry</code> been around before or at the time of
+          <code>Map</code>, then maybe <code>Map</code> would have been an
+          <code>Iterable&lt;MapEntry&gt;</code>. But I'm still not 100%
+          convinced I know the answer &mdash; and I apparently don't know how to
+          ask the question either.
+        </p>
       </section>
     </article>
   </body>
