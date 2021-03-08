@@ -61,6 +61,11 @@
           expectations be? What would be your bets for each counter?
         </p>
 
+        <blockquote>
+          Note the <code>.where</code> method returns an <code>Iterable</code>,
+          even when on a <code>List</code> or <code>Set</code>.
+        </blockquote>
+
         <pre><code class="dart">var lazyCounter = 0;
 var eagerCounter = 0;
 
@@ -120,7 +125,87 @@ Eager: 7</code></pre>
 
         <custom-h3 text="Evaluation Order"></custom-h3>
 
-        <!-- TODO: Mention the "unpredictability" of lazy vs eager (test #1) -->
+        <p>
+          Ok, that was weird. But, most of the time, performance isn't really
+          the problem, specially since computers have got so fast<foot-note
+            text="Oh, have they really?"
+          ></foot-note
+          >. Debugging and readability tend to be much more relevant and
+          recurrent problems during development. So why should we care?
+        </p>
+
+        <p>
+          The when things happen can affect the order in which things happen.
+          Debugging will certainly be more difficult if you're not aware of
+          what's happening when, and readability will suffer if what you write
+          doesn't represent 100% what's going on.
+        </p>
+
+        <p>
+          Let's take a look at the following example, try predicting the order
+          in which each method will be called in each case:
+        </p>
+
+        <pre><code class="dart">int eagerCounter = 0;
+int lazyCounter = 0;
+
+List&lt;int&gt; removeOdd_eager(Iterable&lt;int&gt; source) {
+  return source.where((i) {
+    eagerCounter++;
+    print("removeOdd_eager");
+    return i % 2 == 0;
+  }).toList();
+}
+
+List&lt;int&gt; removeLessThan10_eager(Iterable&lt;int&gt; source) {
+  return source.where((i) {
+    eagerCounter++;
+    print("removeLessThan10_eager");
+    return i &gt;= 10;
+  }).toList();
+}
+
+Iterable&lt;int&gt; removeOdd_lazy(Iterable&lt;int&gt; source) {
+  return source.where((i) {
+    print("removeOdd_lazy");
+    lazyCounter++;
+    return i % 2 == 0;
+  });
+}
+
+Iterable&lt;int&gt; removeLessThan10_lazy(Iterable&lt;int&gt; source) {
+  return source.where((i) {
+    print("removeLessThan10_lazy");
+    lazyCounter++;
+    return i &gt;= 10;
+  });
+}
+
+var list = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15];
+
+print("\n\n---------- Init ----------\n\n");
+
+Iterable&lt;int&gt; eager = removeLessThan10_eager(removeOdd_eager(list));
+
+Iterable&lt;int&gt; lazy = removeLessThan10_lazy(removeOdd_lazy(list));
+
+print("\n\n---------- Lazy ----------\n\n");
+
+// Note que, para Iterables, Dart imprime com `()`; e, para List, com `[]`.
+print(lazy);
+
+print("\n\n---------- Eager ----------\n\n");
+
+print(eager);
+
+print("\n\n---------- Counters ----------\n\n");
+
+print("Lazy: $lazyCounter");
+print("Eager: $eagerCounter");
+
+print("\n\n---------- END ----------\n\n");</code></pre>
+
+        <!-- TODO: Mention the "unpredictability" of lazy vs eager (test #2) -->
         <!-- TODO: Note that Iterables print (), while List prints [] -->
       </section>
 

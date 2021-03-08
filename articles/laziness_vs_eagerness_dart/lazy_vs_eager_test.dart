@@ -80,7 +80,7 @@ void main() {
 
     print("\n\n---------- Lazy ----------\n\n");
 
-    // Note que, para Iterables, Dart imprime com `()`; e, para List, com `[]`.
+    // Note that, for Iterables, Dart prints `()`; and, for Lists, it prints `[]`.
     print(lazy);
 
     print("\n\n---------- Eager ----------\n\n");
