@@ -205,7 +205,33 @@ print("Eager: $eagerCounter");
 
 print("\n\n---------- END ----------\n\n");</code></pre>
 
-        <!-- TODO: Mention the "unpredictability" of lazy vs eager (test #2) -->
+        <blockquote>Note that <code>Iterable</code>s print <code>()</code> when logged, while <code>List</code>s print <code>[]</code>, and, <code>Set</code>s, <code>{}</code>.</blockquote>
+        <p>
+          I won't print the output of the code above here. This article is
+          already long enough. You can run all the code from
+          <local-link
+            text="this file"
+            link="lazy_vs_eager_test.dart"
+          ></local-link
+          >, but, long story short, you will see that the eager version of the
+          compound operations above will first solve all of the inner operations
+          and then pass everything to the outer function; while the lazy version
+          will do things whenever they're needed. All that means is: if you're
+          going for the lazy version, when debugging, you might end up with logs
+          and results of both functions mixed together, which will very likely
+          make things more difficult to solve. Lazy functions and methods are
+          much more easilly debugged atomically than when put together with
+          other lazy abstractions.
+        </p>
+
+        <blockquote>
+          Laziness seems to have been historically very appealing to academia
+          and mathematicians. Typically, those individuals don't care about
+          <strike>concrete results</strike> numerical results, only that their
+          shapes are correct. <em>Functional</em> languages like Haskell are,
+          for instance, lazy by default.
+        </blockquote>
+
         <!-- TODO: Note that Iterables print (), while List prints [] -->
       </section>
 
