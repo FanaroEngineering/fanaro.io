@@ -242,27 +242,107 @@ print("\n\n---------- END ----------\n\n");</code></pre>
       <section>
         <custom-h2 text="The Weird World of Iterables"></custom-h2>
 
-        <!-- TODO: Mention IterableMixin, ListMixin, SetMixin and MapMixin -->
-        <!-- TODO: Pagination makes it less bad to use `Iterable` -->
-
         <custom-h3 text="The Pros and Cons"></custom-h3>
 
-        <!-- TODO: Mention why `List` should be the first choice most of the time-->
+        <p>
+          After all of the headache you might have had after reading the last
+          section, you might feel like why in the world would someone even use
+          laziness, it complicates things so much... &mdash; but what really
+          complicates things is actually mixing laziness with eagerness.
+          However, it has its use cases.
+        </p>
 
-        <custom-h3 text="Infinity"></custom-h3>
+        <p>
+          The simplest use cass is obviously not having to calculate stuff up
+          front. Imagine you want to deliver the user the UI before making only
+          the necessary calculations. If your language doesn't programmatically
+          support laziness, you will have to manually monitor every single
+          entity to ensure it is so. But, if you were working with
+          <code>Iterable</code>s or in Haskell, you would be sure not had been
+          triggered unless totally necessary. Flutter isn't really technically a
+          lazy framework, but its declarativeness does offer many of the same
+          features.
+        </p>
+
+        <p>
+          Pagination is yet another use case. Through the pagination mechanism,
+          you ensure that only the data that fits the user screen &mdash; or
+          whatever UX you're delivering &mdash; will be queried and delivered.
+          For that, overarching the design with <code>Iterable</code> might be
+          the way to go.
+        </p>
+
+        <p>
+          That all being said, I really do think it is better to discourage the
+          default use of <code>Iterable</code>s. Since it is very unlikely that
+          you're going to perform an operation on sequence only once, it is much
+          wiser to use <code>List</code> as the default than the other way
+          around.
+        </p>
+
+        <custom-h3 text="Infinity and Databases"></custom-h3>
+
+        <p>
+          One of the beauties of laziness is that infinity becomes a feasible
+          abstraction. For example, modeling a list that's tied to the database
+          could become much more seamless because the querying will be done
+          on-demand, there will be no need to recreate the iterable for every
+          batch, i.e., the iterable itself represents the connection to the
+          database.
+        </p>
+
+        <p>
+          In Dart, infinite <code>Iterable</code>s are also called synchronous
+          generators, but, if you're going for something asynchrouns, you could
+          use <code>Stream</code>. In fact, the on-demand potentially infinite
+          connection to the database in Dart is done through streams on top of
+          socket layers.
+        </p>
+
+        <pre><code class="dart">/// On-demand generator.
+Iterable&lt;int&gt; naturalsFunc() sync* {
+  int k = 0;
+  // Infinite loop!
+  while (true) yield k++;
+}
+
+var naturalsIter = naturalsFunc();
+
+print("\n\n---------- Init ----------\n\n");
+
+print("The infinite list/iterable was created, but not evaluated.");
+
+print("\n\n--------------------\n\n");
+
+print("\n\n---------- takeWhile ----------\n\n");
+
+print("It's possible to work with it,"
+    "but it's necessary to add a method to "
+    "stop the processing at some point");
+
+var naturalsUpTo10 = naturalsIter.takeWhile((value) =&gt; value &lt;= 10);
+
+print("Naturals up to 10: $naturalsUpTo10");
+
+print("\n\n---------- END ----------\n\n");
+        </code></pre>
 
         <custom-h3
-          text="One of The Main Benefits of Implementing Iterable: &lt;code&gt;for (... in ...) {}&lt;/code&gt;"
+          text="One of The Main Benefits of Implementing &lt;code&gt;Iterable&lt;/code&gt;: &lt;code&gt;for (... in ...) {}&lt;/code&gt;"
         ></custom-h3>
+
+        <!-- TODO: Mention IterableMixin, ListMixin, SetMixin and MapMixin -->
+
+        <custom-h3 text="Iterators"></custom-h3>
       </section>
 
       <section>
-        <custom-h2 text="Extras"></custom-h2>
+        <custom-h2 text="Appendix"></custom-h2>
 
         <custom-h3 text="Tail Call Optimization (TCO)"></custom-h3>
 
         <custom-h3
-          text="Why Dart choose <code>Iterable</code> for its design"
+          text="Why Dart chose &lt;code&gt;Iterable&lt;/code&gt; for its design"
         ></custom-h3>
       </section>
     </article>
