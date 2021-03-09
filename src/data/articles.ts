@@ -93,7 +93,7 @@ export const pagesMetadata: Article[] = [
 
 export const articlesMetadata: Article[] = [
   {
-    title: "(Draft) Laziness vs Eagerness in Dart",
+    title: "Laziness vs Eagerness in Dart",
     link: "/articles/laziness_vs_eagerness_dart/laziness_vs_eagerness_dart.html",
     date: Date.UTC(2021, 2, 11),
     languages: [Language.english],

@@ -49,12 +49,12 @@
         <custom-h2 text="Why should anyone care?"></custom-h2>
 
         <p>
-          What's discussed in this article is specially relevant if you happened
+          What's discussed in this article is specially relevant if you happen
           to "mix" <code>Iterable</code> and <code>List</code>,
           <code>Set</code>, etc. Mixing those types can be useful, for example,
           when you have an object that could accept more than one type of
-          collection. At any rate, many other reasons will be discussed
-          throughout the article.
+          collection. At any rate, many other reasons, as well as pros and cons,
+          will be discussed throughout the article.
         </p>
 
         <custom-h3 text="Number of Evaluations"></custom-h3>
@@ -111,10 +111,11 @@ Eager: 7</code></pre>
         </p>
 
         <p>
-          Quite frankly, I would bet 8:2 you got it wrong, as did I, at least on
-          the first try. The language used in the example also contributes to
-          the misunderstanding: who wouldn't simply trivially assume that the
-          eager version wouldn't be the one overdoing things?
+          Quite frankly, I would bet 8:2 you got it wrong &mdash; as did I
+          &mdash; at least on the first try. The language used in the example
+          also contributes to the misunderstanding: who wouldn't simply
+          trivially assume that the eager version would <em>not</em> be the one
+          overdoing things?
         </p>
 
         <p>
@@ -139,14 +140,14 @@ Eager: 7</code></pre>
         </p>
 
         <p>
-          The <em>when</em> things happen can affect the order in which things
-          happen. Debugging will certainly be more difficult if you're not aware
-          of what's happening when, and readability will suffer if what you
-          write doesn't represent 100% of what's going on.
+          The <em>when</em> things happen can affect the <em>order</em> in which
+          things happen. Debugging will certainly be more difficult if you're
+          not aware of what's happening when, and readability will suffer if
+          what you write doesn't clearly represent 100% of what's going on.
         </p>
 
         <p>
-          Let's take a look at the following example, try predicting the order
+          Let's take a look at the following example. Try predicting the order
           in which each method will be called in each case:
         </p>
 
@@ -308,7 +309,7 @@ removeOdd_lazy</code></pre>
             text="this file"
             link="lazy_vs_eager_test.dart"
           ></local-link
-          >, but, long story short, you will see from the log above that the
+          >, but, long story short, you will realize from the log above that the
           eager version of the compound operations above will first solve all of
           the inner operations and then pass everything to the outer function;
           while the lazy version will do things only whenever they're needed.
@@ -326,7 +327,7 @@ removeOdd_lazy</code></pre>
           and mathematicians. Typically, those individuals don't care much about
           <strike>concrete results</strike> numerical results, only that their
           <em>shapes</em> are correct. For instance,
-          <em>functional</em> languages like Haskell are, lazy by default.
+          <em>functional</em> languages, like Haskell, are lazy by default.
         </blockquote>
       </section>
 
@@ -340,7 +341,7 @@ removeOdd_lazy</code></pre>
           section, you might be thinking: why in the world would someone even
           use laziness, it complicates things so much...
           <foot-note
-            text="What really complicates things is actually mixing laziness
+            text="What actually really complicates things is mixing laziness
             with eagerness."
           ></foot-note>
           However, it has its use cases.
@@ -388,8 +389,8 @@ removeOdd_lazy</code></pre>
           abstraction. For example, modeling a list that's tied to the database
           could become much more seamless because querying would then be done
           on-demand, there would be no need to recreate the iterable for every
-          batch, i.e., the iterable itself partially represents the connection
-          to the database.
+          batch, i.e., the iterable itself &mdash; partially &mdash; represents
+          the connection to the database.
         </p>
 
         <p>
@@ -438,8 +439,8 @@ print("\n\n---------- END ----------\n\n");</code></pre>
         <p>
           One of the most mundane but very practical benefits of implementing
           <code>Iterable</code> is the possibility of iterating over it through
-          the very readable <code>for (... in ...) {}</code>. It seems very
-          minor, but readability improves dramatically with it, and it is
+          the very readable <code>for (... in ...) {}</code> pattern. It seems
+          very minor, but readability improves dramatically with it, and it is
           totally worth it taking the time to implement <code>Iterable</code> or
           any of its subclasses, if you're at a low dependency level in your
           application that is.
@@ -472,14 +473,14 @@ print("\n\n---------- END ----------\n\n");</code></pre>
 
         <p>
           Most of <code>Iterable</code>'s core methods will internally create an
-          <code>Iterator</code> to handle its logic. For example, the
-          <code>length</code> method has to iterate over all of the iterable to
+          <code>Iterator</code> to handle their logic. For example, the
+          <code>length</code> method has to iterate over the whole iterable to
           finally compute the collection's length.
         </p>
 
         <p>
           As you might have already realized, that isn't very efficient. That's
-          why Dart features
+          why Dart features the
           <a
             href="https://github.com/dart-lang/sdk/blob/4a484c88e13ef0f4847daba3c25fa22dbe933a08/sdk/lib/internal/iterable.dart#L7-L10"
             ><code>EfficientLengthIterable</code></a
@@ -500,8 +501,8 @@ print("\n\n---------- END ----------\n\n");</code></pre>
           One of the main problems with (ab)using recursion in most programming
           languages is that, when disassembling the recursion stack, the
           language will create whole layers for each of its stages, when most of
-          them might be simply return calls or very simple computations. This
-          can easily cause memory leaks for complex computations, and some
+          them might just be plain return calls or very simple computations.
+          This can easily cause memory leaks for complex computations, and some
           languages &mdash; specially functional ones, like Haskell, which
           doesn't even feature loops, only recursion<foot-note
             text="Can loops be totally be replaced by recursion? What is the
@@ -527,14 +528,14 @@ print("\n\n---------- END ----------\n\n");</code></pre>
           plans of incorporating it. And that's apparently very much due to
           JavaScript. Nevertheless, there's an
           <a href="https://github.com/dart-lang/language/issues/1159"
-            >ongoing open issue on Github</a
+            >ongoing, open issue on Github</a
           >
           about it.
         </p>
 
         <custom-h3
           text="Why Dart chose &lt;code&gt;Iterable&lt;/code&gt;
-          for its design (Not a Complete Answer)"
+          for its design (not a complete answer)"
         ></custom-h3>
 
         <p>
@@ -559,9 +560,10 @@ print("\n\n---------- END ----------\n\n");</code></pre>
           >. This time I got some more info, like the fact that, had
           <code>MapEntry</code> been around before or at the creation of
           <code>Map</code>, then maybe <code>Map</code> would have been an
-          <code>Iterable&lt;MapEntry&gt;</code>. But I'm still not 100%
-          convinced I know the answer to the questions surrounding this topic
-          &mdash; and I apparently don't know how to ask the question either.
+          <code>Iterable&lt;MapEntry&gt;</code>, I'm not sure. Anyhow, I'm still
+          not 100% convinced I know the answer to the questions surrounding this
+          topic &mdash; and I apparently don't even know how to ask the question
+          either, given the feedback I've received so far.
         </p>
       </section>
     </article>
