@@ -2,13 +2,18 @@
 /* 1. Global Configs */
 
 :root {
-  --text-color: #abb2bf;
+  --text-color: #afb2bf;
   --background-color: #282a36;
   --link-color: #95c379;
   --local-link-color: #cc7847;
   --max-content-width-mobile: 90vw;
-  --max-content-width-desktop: 580px;
+  --max-content-width-desktop: 680px;
   --margin: 1rem;
+}
+
+html {
+  display: table;
+  margin: auto;
 }
 
 body {
@@ -21,6 +26,7 @@ body {
   padding-bottom: 30px;
   padding-left: var(--margin);
   padding-right: var(--margin);
+  display: table-cell;
 }
 
 /* -------------------------------------------------------------------------- */
