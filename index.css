@@ -140,8 +140,11 @@ svg {
 }
 
 div.SGF {
-  height: 500px;
+  max-height: 600px;
   width: 100%;
+  margin: 0;
+  margin-top: 30px;
+  margin-bottom: 30px;
 }
 
 /* -------------------------------------------------------------------------- */
