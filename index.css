@@ -1,3 +1,6 @@
+/* -------------------------------------------------------------------------- */
+/* 1. Global Configs */
+
 :root {
   --text-color: #abb2bf;
   --background-color: #282a36;
@@ -19,6 +22,9 @@ body {
   padding-left: var(--margin);
   padding-right: var(--margin);
 }
+
+/* -------------------------------------------------------------------------- */
+/* 2. Text Configs */
 
 h1 {
   font-size: 1.85rem;
@@ -53,6 +59,28 @@ a {
   text-decoration: none;
 }
 
+code {
+  color: #c26f79;
+}
+
+pre {
+  margin-left: 30px;
+}
+
+kbd {
+  color: rgb(189, 183, 174);
+  border-color: rgb(101, 93, 83);
+  background-color: rgb(10, 14, 18);
+  box-shadow: rgb(90, 97, 101) 0px -1px 0px inset;
+  border-radius: 6px;
+  font: 0.85rem monospace;
+  padding: 3px 5px;
+  vertical-align: middle;
+}
+
+/* -------------------------------------------------------------------------- */
+/* 3. Media */
+
 iframe {
   max-width: var(--max-content-width-mobile);
   max-height: 51vw;
@@ -81,6 +109,37 @@ figcaption {
 .design-fragments {
   max-width: 300px;
 }
+
+#home-top {
+  display: flex;
+  padding-right: 32px;
+}
+
+#right {
+  vertical-align: middle;
+}
+
+svg,
+image {
+  height: 27.5px;
+  width: 27.5px;
+}
+
+svg {
+  margin-bottom: 10px;
+}
+
+#badges {
+  margin-left: 22px;
+}
+
+div.SGF {
+  height: 500px;
+  width: 100%;
+}
+
+/* -------------------------------------------------------------------------- */
+/* 4. Tables */
 
 table {
   padding-right: 24px;
@@ -120,116 +179,8 @@ th {
   background-color: #090705;
 }
 
-kbd {
-  color: rgb(189, 183, 174);
-  border-color: rgb(101, 93, 83);
-  background-color: rgb(10, 14, 18);
-  box-shadow: rgb(90, 97, 101) 0px -1px 0px inset;
-  border-radius: 6px;
-  font: 0.85rem monospace;
-  padding: 3px 5px;
-  vertical-align: middle;
-}
-
-code {
-  color: #c26f79;
-}
-
-pre {
-  margin-left: 30px;
-}
-
-#home-top {
-  display: flex;
-  padding-right: 32px;
-}
-
-#right {
-  vertical-align: middle;
-}
-
-svg,
-image {
-  height: 27.5px;
-  width: 27.5px;
-}
-
-svg {
-  margin-bottom: 10px;
-}
-
-#badges {
-  margin-left: 22px;
-}
-
-div.SGF {
-  height: 500px;
-  width: 100%;
-}
-
-@media (min-width: 600px) {
-  body {
-    max-width: var(--max-content-width-desktop);
-    width: var(--max-content-width-desktop);
-  }
-
-  img,
-  iframe {
-    max-width: var(--max-content-width-desktop);
-  }
-
-  .quote-author {
-    padding-left: 200px;
-  }
-}
-
-foot-note a,
-sup {
-  color: #d9c07b;
-  text-decoration: none;
-}
-
-foot-note p {
-  padding: 15px;
-}
-
-a#articles,
-a#pages {
-  cursor: pointer;
-  color: var(--local-link-color);
-}
-
-article-footer hr {
-  margin-left: 0px;
-  border: none;
-  max-width: 150px;
-  width: 35vw;
-  height: 0.75px;
-  color: var(--text-color);
-  background-color: var(--text-color);
-}
-
-article-footer a {
-  color: #95c379;
-  text-decoration: none;
-}
-
-fanaro-nav a {
-  display: inline-flex;
-  align-items: center;
-  font-size: 1.5rem;
-  color: var(--text-color);
-  text-decoration: none;
-}
-
-fanaro-nav img {
-  padding-right: 10px;
-}
-
-local-link a {
-  color: var(--local-link-color);
-  text-decoration: none;
-}
+/* -------------------------------------------------------------------------- */
+/* 5. Table of Contents */
 
 table-of-contents ol {
   counter-reset: item;
@@ -256,3 +207,84 @@ table-of-contents h2 {
   margin-top: 8px;
   margin-bottom: 0;
 }
+
+a#articles,
+a#pages {
+  cursor: pointer;
+  color: var(--local-link-color);
+}
+
+/* -------------------------------------------------------------------------- */
+/* 6. Foot-note */
+
+foot-note a,
+sup {
+  color: #d9c07b;
+  text-decoration: none;
+}
+
+foot-note p {
+  padding: 15px;
+}
+
+/* -------------------------------------------------------------------------- */
+/* 7. Article Footer */
+
+article-footer hr {
+  margin-left: 0px;
+  border: none;
+  max-width: 150px;
+  width: 35vw;
+  height: 0.75px;
+  color: var(--text-color);
+  background-color: var(--text-color);
+}
+
+article-footer a {
+  color: #95c379;
+  text-decoration: none;
+}
+
+/* -------------------------------------------------------------------------- */
+/* 8. Fanaro Nav */
+
+fanaro-nav a {
+  display: inline-flex;
+  align-items: center;
+  font-size: 1.5rem;
+  color: var(--text-color);
+  text-decoration: none;
+}
+
+fanaro-nav img {
+  padding-right: 10px;
+}
+
+/* -------------------------------------------------------------------------- */
+/* 9. Local Link */
+
+local-link a {
+  color: var(--local-link-color);
+  text-decoration: none;
+}
+
+/* -------------------------------------------------------------------------- */
+/* 10. Other Widths */
+
+@media (min-width: 600px) {
+  body {
+    max-width: var(--max-content-width-desktop);
+    width: var(--max-content-width-desktop);
+  }
+
+  .quote-author {
+    padding-left: 200px;
+  }
+
+  img,
+  iframe {
+    max-width: var(--max-content-width-desktop);
+  }
+}
+
+/* -------------------------------------------------------------------------- */
