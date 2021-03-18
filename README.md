@@ -42,7 +42,12 @@ It was meant to be a [single-page application (SPA)][spa] &mdash; Angular style 
         </li>
         <li><a href="#12-formatting">1.2. Formatting</a></li>
         <li><a href="#13-snippets">1.3. Snippets</a></li>
-        <li><a href="#14-go-sgf-viewers">1.3. Go SGF Viewers</a></li>
+        <li><a href="#14-go-sgf-viewers">1.4. Go SGF Viewers</a>
+          <ul>
+            <li><a href="#141-glift">1.4.1. Glift</a></li>
+            <li><a href="#141-wgo.js">1.4.2. WGo.js</a></li>
+          </ul>
+        </li>
       </ul>
     </li>
   </ul>
@@ -169,8 +174,8 @@ Anyway, if you really want to use it:
     divId: "SGF",
     sgf: "game-name.sgf",
   });
-</script>```
-
+</script>
+```
 
 The import is typically done with:
 
