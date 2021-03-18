@@ -15,4 +15,6 @@ cd "$ARTICLE_NAME" || exit 1
 
 touch "$ARTICLE_NAME.html"
 
+printf "<url><loc>https://fanaro.io/articles/$ARTICLE_NAME/$ARTICLE_NAME.html</loc></url>" >> sitemap.xml
+
 exit 0
