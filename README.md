@@ -45,7 +45,7 @@ It was meant to be a [single-page application (SPA)][spa] &mdash; Angular style 
         <li><a href="#14-go-sgf-viewers">1.4. Go SGF Viewers</a>
           <ul>
             <li><a href="#141-glift">1.4.1. Glift</a></li>
-            <li><a href="#141-wgo.js">1.4.2. WGo.js</a></li>
+            <li><a href="#141-wgojs">1.4.2. WGo.js</a></li>
           </ul>
         </li>
       </ul>
