@@ -565,6 +565,45 @@ print("\n\n---------- END ----------\n\n");</code></pre>
           topic &mdash; and I apparently don't even know how to ask the question
           either, given the feedback I've received so far.
         </p>
+
+        <custom-h3 text="The feedback I've received from this post"></custom-h3>
+
+        <p>
+          The whole discussion on Reddit can be found
+          <a
+            href="https://www.reddit.com/r/dartlang/comments/m2uzfz/laziness_vs_eagerness_in_dart/?utm_source=share&utm_medium=web2x&context=3"
+            >here</a
+          >. To my surprise, one of Dart's team members,
+          <a href="https://github.com/munificent"
+            >Robert Nystrom or @munificent</a
+          >
+          read the post and gave me feedback. Please do read
+          <a
+            href="https://www.reddit.com/r/dartlang/comments/m2uzfz/laziness_vs_eagerness_in_dart/gqtf6du?utm_source=share&utm_medium=web2x&context=3"
+            >his comments</a
+          >, he points out many of my imprecisions.
+        </p>
+
+        <p>However, two feedbacks I've received so far stand out:</p>
+
+        <ul>
+          <li>
+            As Marcelo pointed out to me later on in an indirect fashion, the
+            real annoyance behind the <code>Iterable</code> topic is that
+            programmers will expect it to <em>only</em> be an encompassing
+            interface for multiple different collections. Much to their demise,
+            after they've implemented a bunch of stuff, will they stumble upon
+            the fact that there's "hidden", different behavior to it.
+          </li>
+          <li>
+            Nystrom accidentally answered one of the questions that was most
+            puzzling me:
+            <em
+              >if the fundamental operations are eager, there is no way to opt
+              out of that behavior</em
+            >.
+          </li>
+        </ul>
       </section>
     </article>
   </body>
