@@ -9,11 +9,13 @@ ARTICLE_NAME=$1
 
 cd articles || exit 1
 
-mkdir "$ARTICLE_NAME"
+[ ! -d "$ARTICLE_NAME" ] && mkdir "$ARTICLE_NAME"
 
 cd "$ARTICLE_NAME" || exit 1
 
-touch "$ARTICLE_NAME.html"
+[ ! -f "$ARTICLE_NAME" ] && touch "$ARTICLE_NAME.html"
+
+cd ../..
 
 printf "<url><loc>https://fanaro.io/articles/$ARTICLE_NAME/$ARTICLE_NAME.html</loc></url>" >> sitemap.xml
 
