@@ -93,7 +93,7 @@ export const pagesMetadata: Article[] = [
 
 export const articlesMetadata: Article[] = [
   {
-    title: "Introdução ao Meu Canal de YouTube",
+    title: "(Draft) Introdução ao Meu Canal de YouTube",
     link: "/articles/introducao_ao_meu_canal/introducao_ao_meu_canal.html",
     date: Date.UTC(2021, 2, 22),
     languages: [Language.portuguese],
