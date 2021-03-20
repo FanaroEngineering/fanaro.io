@@ -93,7 +93,15 @@ export const pagesMetadata: Article[] = [
 
 export const articlesMetadata: Article[] = [
   {
-    title: "(Draft) Introdução ao Meu Canal de YouTube",
+    title: "(Rascunho) Um Novo Site para a Brasil Nihon Kiin",
+    link: "/articles/novo_site_brnhk/novo_site_brnhk.html",
+    date: Date.UTC(2021, 2, 23),
+    languages: [Language.portuguese],
+    mainTopic: Topic.myYouTubeChannel,
+    otherTopics: [Topic.go, Topic.programming],
+  },
+  {
+    title: "(Rascunho) Introdução ao Meu Canal de YouTube",
     link: "/articles/introducao_ao_meu_canal/introducao_ao_meu_canal.html",
     date: Date.UTC(2021, 2, 22),
     languages: [Language.portuguese],
