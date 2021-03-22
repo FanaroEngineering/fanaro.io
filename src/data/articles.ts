@@ -93,7 +93,7 @@ export const pagesMetadata: Article[] = [
 
 export const articlesMetadata: Article[] = [
   {
-    title: "(Rascunho) Um Novo Site para a Brasil Nihon Kiin",
+    title: "Um Novo Site para a Brasil Nihon Kiin",
     link: "/articles/novo_site_brnhk/novo_site_brnhk.html",
     date: Date.UTC(2021, 2, 23),
     languages: [Language.portuguese],
