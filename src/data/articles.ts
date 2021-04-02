@@ -96,7 +96,7 @@ export const pagesMetadata: Article[] = [
 
 export const articlesMetadata: Article[] = [
   {
-    title: "ApocalipseCast #1 - Browsers",
+    title: "(Rascunho) ApocalipseCast #1 &mdash; Browsers",
     link: "/articles/apocalipse_cast_1/apocalipse_cast_1.html",
     date: Date.UTC(2021, 3, 4),
     languages: [Language.portuguese],
