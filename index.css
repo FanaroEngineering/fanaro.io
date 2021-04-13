@@ -9,6 +9,7 @@
   --max-content-width-mobile: 90vw;
   --max-content-width-desktop: 680px;
   --margin: 1rem;
+  color-scheme: dark;
 }
 
 html {
@@ -28,7 +29,6 @@ body {
   padding-right: var(--margin);
   display: table-cell;
 }
-
 /* -------------------------------------------------------------------------- */
 /* 2. Text Configs */
 
@@ -83,7 +83,6 @@ kbd {
   padding: 3px 5px;
   vertical-align: middle;
 }
-
 /* -------------------------------------------------------------------------- */
 /* 3. Media */
 
@@ -146,7 +145,6 @@ div.SGF {
   margin-top: 30px;
   margin-bottom: 30px;
 }
-
 /* -------------------------------------------------------------------------- */
 /* 4. Tables */
 
@@ -187,7 +185,6 @@ tr:nth-child(even),
 th {
   background-color: #090705;
 }
-
 /* -------------------------------------------------------------------------- */
 /* 5. Table of Contents */
 
@@ -222,7 +219,6 @@ a#pages {
   cursor: pointer;
   color: var(--local-link-color);
 }
-
 /* -------------------------------------------------------------------------- */
 /* 6. Foot-note */
 
@@ -235,7 +231,6 @@ sup {
 foot-note p {
   padding: 15px;
 }
-
 /* -------------------------------------------------------------------------- */
 /* 7. Article Footer */
 
@@ -253,7 +248,6 @@ article-footer a {
   color: #95c379;
   text-decoration: none;
 }
-
 /* -------------------------------------------------------------------------- */
 /* 8. Fanaro Nav */
 
@@ -268,7 +262,6 @@ fanaro-nav a {
 fanaro-nav img {
   padding-right: 10px;
 }
-
 /* -------------------------------------------------------------------------- */
 /* 9. Local Link */
 
@@ -276,7 +269,6 @@ local-link a {
   color: var(--local-link-color);
   text-decoration: none;
 }
-
 /* -------------------------------------------------------------------------- */
 /* 10. Other Widths */
 
@@ -295,5 +287,4 @@ local-link a {
     max-width: var(--max-content-width-desktop);
   }
 }
-
 /* -------------------------------------------------------------------------- */
