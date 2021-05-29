@@ -92,6 +92,14 @@ export const pagesMetadata: Article[] = [
     mainTopic: Topic.design,
     otherTopics: [Topic.meta],
   },
+  {
+    title: "My Competences",
+    link: "/pages/competences.html",
+    date: Date.UTC(2021, 29, 5),
+    languages: [Language.english],
+    mainTopic: Topic.meta,
+    otherTopics: [],
+  },
 ];
 
 export const articlesMetadata: Article[] = [
