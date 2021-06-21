@@ -104,6 +104,14 @@ export const pagesMetadata: Article[] = [
 
 export const articlesMetadata: Article[] = [
   {
+    title: "Aula de Go com Ariel Oliveira",
+    link: "/articles/aula_ariel/aula_ariel.html",
+    date: Date.UTC(2021, 5, 22),
+    languages: [Language.portuguese],
+    mainTopic: Topic.go,
+    otherTopics: [Topic.myYouTubeChannel, Topic.books],
+  },
+  {
     title: "ApocalipseCast #1 &mdash; Browsers",
     link: "/articles/apocalipse_cast_1/apocalipse_cast_1.html",
     date: Date.UTC(2021, 3, 4),
