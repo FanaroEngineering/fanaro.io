@@ -104,6 +104,14 @@ export const pagesMetadata: Article[] = [
 
 export const articlesMetadata: Article[] = [
   {
+    title: "A Jogadora de Go, por Shan Sa | Leitura de Livro",
+    link: "/articles/shan_sa/shan_sa.html",
+    date: Date.UTC(2021, 5, 25),
+    languages: [Language.portuguese],
+    mainTopic: Topic.go,
+    otherTopics: [Topic.myYouTubeChannel, Topic.books],
+  },
+  {
     title: "Aula de Go com Ariel Oliveira",
     link: "/articles/aula_ariel/aula_ariel.html",
     date: Date.UTC(2021, 5, 22),
