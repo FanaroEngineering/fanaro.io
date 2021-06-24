@@ -9,6 +9,7 @@
     <meta name="author" content="Philippe Fanaro" />
     <meta name="description" content="My Dotfiles" />
 
+    <meta property="og:image" content="thumbnail.png" />
     <meta property="og:description" content="My Dotfiles" />
     <meta property="og:title" content="My Dotfiles" />
     <meta property="og:site_name" content="fanaro.io" />
@@ -21,6 +22,8 @@
   </head>
   <body>
     <article>
+      <img src="thumbnail.png" alt="Thumbnail"/>
+
       <h1>My Dotfiles</h1>
 
       <blockquote>
@@ -42,35 +45,48 @@
         <ul>
           <li>Privacy</li>
           <li>Security</li>
-          <li>Open Source (mostly)</li>
+          <li>
+            Open Source (mostly) &mdash; or Free and Open Source Software (FOSS)
+          </li>
           <li>Customization</li>
-          <li>Learning more about tech | Investing in your IT career</li>
+          <li>Learning more about tech, or investing in your IT career</li>
+          <li>Less resources/hardware needed</li>
         </ul>
 
         <p>
           Those are all good reasons, but they were not what cut it for me
-          actually. In fact, I think the usual lists and blog posts on the topic
-          are missing one giant ingredient that could change everyone's view of
-          the operating system wars: Linux is at its core a
+          actually. Quite frankly, I think the usual lists and blog posts on the
+          topic are missing one giant ingredient that could change everyone's
+          view of the operating system wars: Linux is at its core a
           <strong>text-based OS</strong>.
         </p>
 
         <p>
-          Before I start getting the hatemail from hardcore users saying I'm
-          wrong, let me explain what I mean. Linux-based distros &mdash; even
-          the ones leaning more heavily on the GUI side, like Ubuntu and Mint
-          &mdash; can all be customized to their core with text-based
-          configurations, simple files with plain text, which makes managing
-          your system more reproducible and manageable. In more mainstream OSs,
-          such as Windows and MacOS, the standard way is through the GUI, which
-          makes it harder to customize and remember your configurations, even
-          though, I do admit, it can be much easier in the short run.
+          Before I start getting hatemail from hardcore users saying I'm wrong,
+          let me explain what I mean. Linux-based distros &mdash; even the ones
+          leaning more heavily on the GUI side, like Ubuntu and Mint &mdash; can
+          all be customized to their core with text-based configurations, simple
+          files with plain text. That makes managing your system much more
+          reproducible and manageable. In more mainstream OSs, such as Windows
+          and MacOS, the standard way is through the GUI, which makes it harder
+          to customize<foot-note
+            text="And vendors will only expose parts of the software through 
+            the GUI. Even though that can also be done through code, it's 
+            usually not part of programming culture to hide useful features 
+            from knowledgeable users."
+          ></foot-note>
+          and remember your configurations, even though, I do admit, it can be
+          much easier in the short run.
         </p>
 
         <p>
           As a result, most Linux power users end up being able to centralize
-          their files into the typically known as the <em>dotfiles repo</em>.
-          This makes sharing configurations with others much easier, not to
+          their files into the typically known as the <em>dotfiles repo</em
+          ><foot-note
+            text="The term dotfiles comes from most Linux configuration files 
+            being prefixed by a dot."
+          ></foot-note
+          >. This makes sharing configurations with others much easier, not to
           mention that, if you're managing multiple machines, you can
           potentially configure them all with the same file/commands.
         </p>
@@ -78,36 +94,115 @@
         <p>
           Having a text-based OS is also very important due to its efficiency:
           you can go through your day using basically only the keyboard. Granted
-          that you know how to touch-type, there will be way less stress on your
-          hands.
+          that you know how to touch-type, there will also be way less stress on
+          your hands and arms.
         </p>
       </section>
 
       <section>
         <custom-h2
-          text="A Walkthrough the Major Parts of My Dotfiles"
+          text="A Walk Through the Major Parts of My Dotfiles"
         ></custom-h2>
 
         <blockquote>
           My distro is <a href="https://artixlinux.org/">Artix</a>, a subdistro
-          of <a href="https://archlinux.org/">ArchLinux</a>, without
+          stemming from <a href="https://archlinux.org/">Arch Linux</a>, without
           <a href="https://systemd.io/">Systemd</a>. You can also check out my
           hardware in the
           <a href="https://github.com/psygo/dotfiles"
-            ><code>README</code> of the repo I previously mentioned</a
-          >.
+            ><code>README</code> of my dotfiles repo</a
+          >, which I previously mentioned above.
         </blockquote>
 
-        <p>The major components of my setup are:</p>
+        <p>The most important components of my setup are:</p>
 
         <ul>
-          <li><a href="https://github.com/neovim/neovim">Neovim</a></li>
-          <li><a href="https://sw.kovidgoyal.net/kitty/">Kitty</a></li>
-          <li><a href="https://xmonad.org/">XMonad</a></li>
           <li>
-            <a href="https://github.com/qutebrowser/qutebrowser">qutebrowser</a>
+            <strong
+              ><a href="https://github.com/neovim/neovim">Neovim</a></strong
+            >: a better version of Vim, with its awesome shortcuts and modal
+            editing. It's a community-based version of Vim, focused on bringing
+            more IDE features to the editor and better support for programming
+            languages. It has everything Vim does, so you don't lose anything
+            when switching to it.
           </li>
-          <li><a href="https://getferdi.com/">Ferdi</a></li>
+          <li>
+            <strong><a href="https://sw.kovidgoyal.net/kitty/">Kitty</a></strong
+            >: a very minimal and performant &mdash; in fact, the most
+            performant, as far as I know &mdash; terminal emulator. It's way
+            less bloated than others, like Konsole, and as fast as some more
+            established ones, like Alacritty. Its author is the same as
+            <a href="https://calibre-ebook.com/">Calibre</a>'s, so you can be
+            sure it's gonna have a strong open source and performance core.
+            Another important feature, at least to me, is its support for font
+            ligatures &mdash; I use
+            <a href="https://github.com/tonsky/FiraCode">Fira Code</a> &mdash;,
+            which is a rarity when it comes to minimal terminal emulators.
+          </li>
+          <li>
+            <strong><a href="https://xmonad.org/">XMonad</a></strong
+            >: despite <a href="https://dwm.suckless.org/">dwm</a> claiming the
+            suckless crown, XMonad is still king, in my opinion. You will not
+            find anything more customizable, and it's written in Haskell, the
+            cool,
+            <a href="https://en.wikipedia.org/wiki/Functional_programming"
+              >functional</a
+            >
+            language of the moment. Instead of having all of the bazillion
+            features most desktop managers throw at you, I chose to use a very
+            minimal setup of XMonad, one which would surprise even most XMonad
+            users &mdash; I don't even use
+            <a href="https://xmobar.org/">XMobar</a>, not even
+            <a href="https://tools.suckless.org/dmenu/">dmenu</a>, I use
+            <a
+              href="https://hackage.haskell.org/package/xmonad-contrib-0.16/docs/XMonad-Prompt.html"
+              ><code>XMonad.Prompt</code></a
+            >
+            instead.
+          </li>
+          <li>
+            <strong
+              ><a href="https://github.com/qutebrowser/qutebrowser"
+                >qutebrowser</a
+              ></strong
+            >: I, like almost everybody else, used Chromium-based browsers
+            &mdash; e.g. Chrome, Vivaldi, etc. and then later Brave &mdash;,
+            but, after <em>really</em> learning Vim, I got very frustrated with
+            the lack of keyboard support and care on those browsers. I even
+            ended up creating a
+            <a href="https://github.com/FanaroEngineering/youtube_kbd_nav"
+              >browser extension for navigating YouTube through the keyboard</a
+            >. Other extensions, such as
+            <a
+              href="https://chrome.google.com/webstore/detail/cvim/ihlenndgcmojhcghmfjfneahoeklbjjh?hl=en"
+              >cVim</a
+            >
+            or <a href="https://vimium.github.io/">Vimium</a>, did help to
+            enhance the experience, but they sometimes collide with the
+            browser's main GUI interface. That's when I finally heard about
+            qutebrowser, a command/text-based browser. If you're not a Vim user,
+            you're gonna struggle with the shortcuts, but you can also use the
+            mouse, so it isn't that big a deal &mdash; invest in yourself and
+            learn Vim (!). From my experience, some of the shortcuts in
+            qutebrowser are not very usable or friendly out of the box, so I
+            highly suggest you copy or examine
+            <a
+              href="https://github.com/psygo/dotfiles/blob/master/.config/qutebrowser/config.py"
+              >my configuration</a
+            >.
+          </li>
+          <li>
+            <strong><a href="https://getferdi.com/">Ferdi</a></strong
+            >: this piece of software might not be for everyone, it's a
+            messaging browser, where you can centralize your chats &mdash;
+            actually it can access other web pages, but its design wasn't meant
+            for those types of pages. If your job demands you communicate with a
+            lot of people in multiple different apps, you're surely going to
+            appreciate and benefit from this. In terms of security, I think your
+            worries can be minimized, since your credentials seem to stay local,
+            and the project is open source, so anyone can check if they are
+            cheating their users.
+          </li>
         </ul>
       </section>
 
@@ -122,26 +217,111 @@
 
         <ul>
           <li>
-            Some special, extra folders to help you <em>organize</em> things
-            better:
+            Some special, extra <strong>folders</strong> to help you
+            <em>organize</em> things better:
 
             <ul>
-              <li><code>~/Code/</code></li>
-              <li><code>~/Notes/</code></li>
-              <li><code>~/Library/</code></li>
+              <li>
+                <strong><code>~/Code/</code></strong
+                >: where I centralize all of my code/software projects. Please,
+                don't go out spreading software projects all over your system.
+                I'm not saying that putting code elsewhere isn't allowed, but
+                I'm saying it should be more rare than what you think at first.
+                And, by the way, this is a common practice for most software
+                engineers I know.
+              </li>
+              <li>
+                <strong><code>~/Notes/</code></strong
+                >: my digitized notebook. I currently have more than 3,200
+                Markdown notes, which I was previously tracking with
+                <a href="https://notion.so">Notion</a>. Remember what I said
+                about the beauty of having a text-based OS? This is where it can
+                shine the most: imagine all of your hard-earned study sessions
+                being centralized in one place and all searchable, not to
+                mention formattable, taggable and many other "-able"s. I
+                typically use
+                <a href="https://github.com/junegunn/fzf"><code>fzf</code></a>
+                to make this easier to work with in the terminal and in Vim.
+              </li>
+              <li>
+                <strong><code>~/Library/</code></strong
+                >: I choose to use Git locally for managing my digital library
+                of books, instead of Calibre &mdash; I still use Google Drive as
+                a cloud back up though. It's a much more viable option than you
+                might think. If you want to properly deal with binary files
+                through Git, however, you'll have to take a look at
+                <a href="https://git-lfs.github.com/">Git-LFS</a>.
+              </li>
             </ul>
           </li>
-          <li>Neovim extensions</li>
           <li>
-            <code><a href="https://github.com/junegunn/fzf">FZF</a></code>
+            <strong>Neovim Extensions</strong>: Vim is actually quite simple to
+            learn if you have the
+            <a href="https://www.udemy.com/course/vim-commands-cheat-sheet/"
+              >right teacher</a
+            >. Most of your research time is actually going to go into
+            customizing it, which will eventually make it morph into an IDE.
+            Your setup will depend on the languages you use, and your
+            objectives, so I guess you're gonna have to do it for yourself.
+            Nonetheless, a lot of what I have will coincide with yours, as it is
+            more or less general purpose. If you wish for a starting point, 2 of
+            the most valuable contributors in this space are
+            <a href="https://github.com/tpope">Tim Pope</a> and
+            <a href="https://github.com/junegunn">Junegunn Choi</a>.
           </li>
           <li>
-            <a href="https://www.gnu.org/software/emacs/">Emacs</a> (with
-            <a href="https://github.com/emacs-evil/evil">Evil Mode</a>)
+            <code
+              ><strong
+                ><a href="https://github.com/junegunn/fzf">FZF</a></strong
+              ></code
+            >: this is a tool that was sorely missing from the Linux terminal
+            for so many years. It makes <code>grep</code> looks like a silly toy
+            project, it's much more friendly to use, features better terminal UI
+            and is even much faster, a must for modern users. Junegunn Choi has
+            also created
+            <a href="https://github.com/junegunn/fzf.vim">Vim integration</a>,
+            if you want to use it there as well.
           </li>
           <li>
-            <a href="https://okular.kde.org/">Okular</a> or
-            <a href="https://pwmt.org/projects/zathura/">Zathura</a>
+            <strong
+              ><a href="https://www.gnu.org/software/emacs/">Emacs</a></strong
+            >
+            (with <a href="https://github.com/emacs-evil/evil">Evil Mode</a>):
+            my love for Vim has already been declared multiple times throughout
+            this article, however, Vim is unfortunately not a silver bullet.
+            Especially when it comes to software development. Dealing with
+            larger projects and trying to leverage language-specific features is
+            still a huge pain, despite Neovim's recent efforts &mdash; it has
+            taken more than, what, only 35 years<foot-note
+              text="Vim is actually from 1991, but it's based on 1976's Vi, 
+              by Bill Joy."
+            ></foot-note>
+            to get this going? That's where Emacs can find its place. It's a GUI
+            editor that isn't limited by the capabilities of your terminal
+            emulator, customizable through a much better language (LISP) than
+            the horrendous abomination called VimScript<foot-note
+              text="Thank the gods the Neovim team chose to offer support 
+              for customizability for any language the user wants."
+            ></foot-note
+            >. The learning curve for Emacs is very steep, so I do recommend you
+            read and watch a lot of tutorials before commiting. One YouTube
+            channel that might help you a lot is
+            <a href="https://www.youtube.com/channel/UCAiiOTio8Yu69c3XnR7nQBQ"
+              >System Crafters</a
+            >.
+          </li>
+          <li>
+            <strong><a href="https://okular.kde.org/">Okular</a></strong> or
+            <strong
+              ><a href="https://pwmt.org/projects/zathura/">Zathura</a></strong
+            >: I wish Zathura would be enough, because it's a much more minimal
+            and keyboard-driven piece of software when compared with Okular.
+            However, they seem to have no interest in implementing some core
+            features, such as highlighting and proper text-copying. So, in the
+            end, I use Zathura for quick looks and comics; and Okular for deeper
+            study sessions. Both support changing text and background colors, so
+            you can create a dark mode for any digital document, a feature for
+            which my eyes are very thankful.
           </li>
         </ul>
       </section>
