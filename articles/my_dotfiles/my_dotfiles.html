@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>My Dotfiles</title>
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+
+    <meta name="author" content="Philippe Fanaro" />
+    <meta name="description" content="My Dotfiles" />
+
+    <meta property="og:description" content="My Dotfiles" />
+    <meta property="og:title" content="My Dotfiles" />
+    <meta property="og:site_name" content="fanaro.io" />
+    <meta property="og:type" content="blog" />
+
+    <script src="../../index.js"></script>
+
+    <link rel="stylesheet" href="../../index.css" />
+    <link rel="icon" type="image/svg+xml" href="../../assets/favicon.svg" />
+  </head>
+  <body>
+    <article>
+      <h1>My Dotfiles</h1>
+
+      <blockquote>
+        The repo with my actual dotfiles can be found
+        <a href="https://github.com/psygo/dotfiles">here</a>, this is just an
+        article to serve as motivation for that repo. In fact, the contents of
+        this article might become outdated, and I don't guarantee I'll be
+        keeping it up-to-date till the end of time.
+      </blockquote>
+
+      <section>
+        <custom-h2 text="Why Linux?"></custom-h2>
+
+        <p>
+          These are the usual reasons people mention as motivation to migrating
+          to the Linux ecosystem:
+        </p>
+
+        <ul>
+          <li>Privacy</li>
+          <li>Security</li>
+          <li>Open Source (mostly)</li>
+          <li>Customization</li>
+          <li>Learning more about tech | Investing in your IT career</li>
+        </ul>
+
+        <p>
+          Those are all good reasons, but they were not what cut it for me
+          actually. In fact, I think the usual lists and blog posts on the topic
+          are missing one giant ingredient that could change everyone's view of
+          the operating system wars: Linux is at its core a
+          <strong>text-based OS</strong>.
+        </p>
+
+        <p>
+          Before I start getting the hatemail from hardcore users saying I'm
+          wrong, let me explain what I mean. Linux-based distros &mdash; even
+          the ones leaning more heavily on the GUI side, like Ubuntu and Mint
+          &mdash; can all be customized to their core with text-based
+          configurations, simple files with plain text, which makes managing
+          your system more reproducible and manageable. In more mainstream OSs,
+          such as Windows and MacOS, the standard way is through the GUI, which
+          makes it harder to customize and remember your configurations, even
+          though, I do admit, it can be much easier in the short run.
+        </p>
+
+        <p>
+          As a result, most Linux power users end up being able to centralize
+          their files into the typically known as the <em>dotfiles repo</em>.
+          This makes sharing configurations with others much easier, not to
+          mention that, if you're managing multiple machines, you can
+          potentially configure them all with the same file/commands.
+        </p>
+
+        <p>
+          Having a text-based OS is also very important due to its efficiency:
+          you can go through your day using basically only the keyboard. Granted
+          that you know how to touch-type, there will be way less stress on your
+          hands.
+        </p>
+      </section>
+
+      <section>
+        <custom-h2
+          text="A Walkthrough the Major Parts of My Dotfiles"
+        ></custom-h2>
+
+        <blockquote>
+          My distro is <a href="https://artixlinux.org/">Artix</a>, a subdistro
+          of <a href="https://archlinux.org/">ArchLinux</a>, without
+          <a href="https://systemd.io/">Systemd</a>. You can also check out my
+          hardware in the
+          <a href="https://github.com/psygo/dotfiles"
+            ><code>README</code> of the repo I previously mentioned</a
+          >.
+        </blockquote>
+
+        <p>The major components of my setup are:</p>
+
+        <ul>
+          <li><a href="https://github.com/neovim/neovim">Neovim</a></li>
+          <li><a href="https://sw.kovidgoyal.net/kitty/">Kitty</a></li>
+          <li><a href="https://xmonad.org/">XMonad</a></li>
+          <li>
+            <a href="https://github.com/qutebrowser/qutebrowser">qutebrowser</a>
+          </li>
+          <li><a href="https://getferdi.com/">Ferdi</a></li>
+        </ul>
+      </section>
+
+      <section>
+        <custom-h2 text="Some Other Elements of My Setup"></custom-h2>
+
+        <p>
+          Some other important elements that serve as a complement to some of
+          the holes you're gonna need to fill in order to be a productive member
+          of society are:
+        </p>
+
+        <ul>
+          <li>
+            Some special, extra folders to help you <em>organize</em> things
+            better:
+
+            <ul>
+              <li><code>~/Code/</code></li>
+              <li><code>~/Notes/</code></li>
+              <li><code>~/Library/</code></li>
+            </ul>
+          </li>
+          <li>Neovim extensions</li>
+          <li>
+            <code><a href="https://github.com/junegunn/fzf">FZF</a></code>
+          </li>
+          <li>
+            <a href="https://www.gnu.org/software/emacs/">Emacs</a> (with
+            <a href="https://github.com/emacs-evil/evil">Evil Mode</a>)
+          </li>
+          <li>
+            <a href="https://okular.kde.org/">Okular</a> or
+            <a href="https://pwmt.org/projects/zathura/">Zathura</a>
+          </li>
+        </ul>
+      </section>
+    </article>
+  </body>
+</html>

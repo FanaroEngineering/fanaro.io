@@ -25,6 +25,7 @@ export enum Topic {
   joseki = "Joseki",
   language = "Language",
   law = "Law",
+  linux = "Linux",
   literature = "Literature",
   logic = "Logic",
   math = "Math",
@@ -103,6 +104,14 @@ export const pagesMetadata: Article[] = [
 ];
 
 export const articlesMetadata: Article[] = [
+  {
+    title: "My Dotfiles (Draft)",
+    link: "/articles/my_dotfiles/my_dotfiles.html",
+    date: Date.UTC(2021, 5, 29),
+    languages: [Language.english],
+    mainTopic: Topic.linux,
+    otherTopics: [Topic.programming, Topic.meta],
+  },
   {
     title: "A Jogadora de Go, por Shan Sa | Leitura de Livro",
     link: "/articles/shan_sa/shan_sa.html",
