@@ -105,7 +105,7 @@ export const pagesMetadata: Article[] = [
 
 export const articlesMetadata: Article[] = [
   {
-    title: "My Dotfiles (Draft)",
+    title: "My Dotfiles",
     link: "/articles/my_dotfiles/my_dotfiles.html",
     date: Date.UTC(2021, 5, 29),
     languages: [Language.english],
