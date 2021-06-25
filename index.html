@@ -103,9 +103,13 @@
     </div>
 
     <div id="donations">
-      <button
-        onclick='window.prompt("Copy the following to your clipboard: (Ctrl+C)", "zpub6o1BausLvdMgM3ebTGvUAcXnb965XnenGw5ij8gVWHvaDyKxBCUHi3yg2ZbTXE5XnZrfQTLHxdQDnp5UfbwSUP92awRXc8nV57JJzXcqq6M");'
-      >
+      <script>
+        const message = "Copy the following to your clipboard: (Ctrl+C)";
+        const walletAddr =
+          "zpub6o1BausLvdMgM3ebTGvUAcXnb965XnenGw5ij8gVWHvaDyKxBCUHi3yg2ZbTXE5XnZrfQTLHxdQDnp5UfbwSUP92awRXc8nV57JJzXcqq6M";
+      </script>
+      
+      <button onclick="window.prompt(message, walletAddr);">
         <svg>
           <image href="/assets/bitcoin.svg"></image>
         </svg>
