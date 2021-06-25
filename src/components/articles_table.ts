@@ -101,15 +101,15 @@ export default class ArticlesTable extends HTMLElement {
     const localLinkCell: HTMLTableDataCellElement = document.createElement(
       "td"
     );
-    this.article.draft ? localLinkCell.append(this.draftLabel()) : null;
+    this.article.draft ? localLinkCell.append(this.draftLabel) : null;
     this.article.draft ? localLinkCell.append(" | ") : null;
     localLinkCell.append(new LocalLink(this.article.link, this.article.title));
     this.tr.append(localLinkCell);
   };
 
-  private draftLabel = (): HTMLSpanElement => {
+  private get draftLabel(): HTMLSpanElement {
     const draftText: HTMLSpanElement = document.createElement("span");
-    draftText.append("Draft");
+    draftText.append("Draft ");
     draftText.style.color = "#E1C16E";
     return draftText;
   }

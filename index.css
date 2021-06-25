@@ -191,15 +191,20 @@ th {
 
 table-of-contents ol {
   counter-reset: item;
-  margin-top: 8px;
+  margin-top: 18px;
   margin-left: 20px;
-  margin-bottom: 8px;
+  margin-bottom: 0;
   padding: 0;
+}
+
+table-of-contents hr {
+  margin-top: 18px;
 }
 
 table-of-contents li {
   display: table;
   margin: 0;
+  margin-bottom: 8px;
 }
 
 table-of-contents li:before {

@@ -38,12 +38,15 @@ export default class Toc extends HTMLElement {
       );
 
       li.append(localLink);
-      li.append(this.appendH3s(section));
+      this.ifH3sOnLI(section) ? li.append(this.appendH3s(section)) : null;
       ol.append(li);
     });
 
     this.append(ol);
   };
+
+  private ifH3sOnLI = (section: HTMLElement): boolean =>
+    section.querySelectorAll("h3").length > 0;
 
   private stripNumberedPrefix = (text: string = ""): string =>
     text.split(" ").slice(1).join(" ");
