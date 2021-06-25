@@ -29,8 +29,8 @@
   </head>
   <body>
     <script>
-      if ('serviceWorker' in navigator) {
-        navigator.serviceWorker.register('/service-worker.js');
+      if ("serviceWorker" in navigator) {
+        navigator.serviceWorker.register("/service-worker.js");
       }
     </script>
 
@@ -100,6 +100,26 @@
           </svg>
         </a>
       </div>
+    </div>
+
+    <br />
+
+    <div id="donations">
+      <span>Donations:</span>
+
+      <button
+        onclick='window.prompt("Copy the following to your clipboard: (Ctrl+C)", "zpub6o1BausLvdMgM3ebTGvUAcXnb965XnenGw5ij8gVWHvaDyKxBCUHi3yg2ZbTXE5XnZrfQTLHxdQDnp5UfbwSUP92awRXc8nV57JJzXcqq6M");'
+      >
+        <svg>
+          <image href="/assets/bitcoin.svg"></image>
+        </svg>
+      </button>
+
+      <a href="https://paypal.com">
+        <svg>
+          <image href="/assets/paypal.svg"></image>
+        </svg>
+      </a>
     </div>
 
     <br />

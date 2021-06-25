@@ -146,6 +146,18 @@ div.SGF {
   margin-top: 30px;
   margin-bottom: 30px;
 }
+
+#donations {
+  display: flex;
+  vertical-align: center;
+}
+
+#donations > button {
+  background-color: transparent;
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
 /* -------------------------------------------------------------------------- */
 /* 4. Tables */
 
