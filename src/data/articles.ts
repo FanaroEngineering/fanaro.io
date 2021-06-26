@@ -120,6 +120,7 @@ export const articlesMetadata: Article[] = [
     languages: [Language.portuguese],
     mainTopic: Topic.go,
     otherTopics: [Topic.myYouTubeChannel, Topic.books],
+    draft: true,
   },
   {
     title: "Aula de Go com Ariel Oliveira",
