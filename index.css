@@ -121,8 +121,12 @@ figcaption {
   padding-right: 32px;
 }
 
-#right {
+#right-media, #right-donations {
   vertical-align: middle;
+}
+
+#right-donations {
+  margin-left: 15px;
 }
 
 svg,
@@ -147,6 +151,12 @@ div.SGF {
   margin-bottom: 30px;
 }
 
+#right-donations > button {
+  background-color: transparent;
+  cursor: pointer;
+  padding: 0;
+  border: 0;
+}
 /* -------------------------------------------------------------------------- */
 /* Donations */
 
