@@ -113,7 +113,6 @@ export const articlesMetadata: Article[] = [
     languages: [Language.english],
     mainTopic: Topic.go,
     otherTopics: [],
-    draft: true,
   },
   {
     title: "My Dotfiles",
