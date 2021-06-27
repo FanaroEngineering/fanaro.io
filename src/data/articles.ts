@@ -58,7 +58,7 @@ export default interface Article {
   languages: Language[];
   mainTopic: Topic;
   otherTopics: Topic[];
-  draft?: boolean,
+  draft?: boolean;
 }
 
 export const pagesMetadata: Article[] = [
@@ -105,6 +105,16 @@ export const pagesMetadata: Article[] = [
 ];
 
 export const articlesMetadata: Article[] = [
+  {
+    title: "Fanaro's Sabaki Theme Collection",
+    link:
+      "/articles/fanaro_sabaki_theme_collection/fanaro_sabaki_theme_collection.html",
+    date: Date.UTC(2021, 5, 28),
+    languages: [Language.english],
+    mainTopic: Topic.go,
+    otherTopics: [],
+    draft: true,
+  },
   {
     title: "My Dotfiles",
     link: "/articles/my_dotfiles/my_dotfiles.html",
@@ -157,7 +167,8 @@ export const articlesMetadata: Article[] = [
   },
   {
     title: "Laziness vs Eagerness in Dart",
-    link: "/articles/laziness_vs_eagerness_dart/laziness_vs_eagerness_dart.html",
+    link:
+      "/articles/laziness_vs_eagerness_dart/laziness_vs_eagerness_dart.html",
     date: Date.UTC(2021, 2, 11),
     languages: [Language.english],
     mainTopic: Topic.programming,

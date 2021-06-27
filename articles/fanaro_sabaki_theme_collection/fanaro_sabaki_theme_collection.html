@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Fanaro's Sabaki Theme Collection</title>
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+
+    <meta name="author" content="Philippe Fanaro" />
+    <meta name="description" content="Fanaro's Sabaki Theme Collection" />
+
+    <meta property="og:image" content="bluish_purple_squared.png" />
+    <meta
+      property="og:description"
+      content="Fanaro's Sabaki Theme Collection"
+    />
+    <meta property="og:title" content="Fanaro's Sabaki Theme Collection" />
+    <meta property="og:site_name" content="fanaro.io" />
+    <meta property="og:type" content="blog" />
+
+    <script src="../../index.js"></script>
+
+    <link rel="stylesheet" href="../../index.css" />
+    <link rel="icon" type="image/svg+xml" href="../../assets/favicon.svg" />
+  </head>
+  <body>
+    <article>
+      <img src="bluish_purple_squared.png" alt="Thumbnail" />
+
+      <h1>Fanaro's Sabaki Theme Collection</h1>
+
+      <blockquote>
+        This article is mostly a pointer to the hopefully
+        <a
+          href="https://github.com/FanaroEngineering/fanaro_sabaki_theme_collection"
+          >well documented repo</a
+        >.
+      </blockquote>
+
+      <p>
+        The idea behind that package came to me after getting tired of looking
+        at the mostly same design in multiple Go editors. It seemed to me a
+        waste of potential to have the malleability of software and stay stuck
+        with the same standard design from hundreds of years ago, if not
+        thousands. This is an old idea of mine but I didn't quite have the
+        know-how to pull off anything against it until a few years ago, and then
+        it was a matter of laziness and finding an editor which allowed its user
+        to mess around with its design. Luckily,
+        <a href="https://sabaki.yichuanshen.de/">Sabaki</a> fits the bill.
+      </p>
+
+      <p>
+        The most important point, at least initially, of the repo is to
+        experiment with very basic variations on the design, developing
+        benchmarks for what is visually pleasant or not. The reason this is so
+        crucial is due to the natural counter-attacks you will get when
+        presenting them as ideas to your fellow Go players: they will very
+        likely strikethrough any "weird" ideas<foot-note
+          text="Obviously, there will be wiser, more reasonable players 
+          willing to experiment."
+        ></foot-note
+        >. Now, you can show this repo instead, and end the prejudice.
+      </p>
+
+      <p>
+        Creating a new theme is not at all hard with Sabaki. There are 4 basic
+        ingredients to it:
+      </p>
+
+      <ul>
+        <li>
+          <strong><code>packages.json</code></strong
+          >: where you store the theme's metadata, and a pointer to the style's
+          file.
+        </li>
+        <li>
+          <strong><code>styles.css</code></strong
+          >: where the styling of your theme happens. Here you will point to
+          your media assets, as in stones, goban, etc.
+        </li>
+        <li>
+          <strong>Media Assets</strong>: you will need to create images for the
+          stones, goban, background, etc. You can use any image editor &mdash;
+          e.g. Illustrator, GIMP, Inkscape, Photoshop, etc. &mdash; to do this,
+          these are simple images<foot-note
+            text="I don't know if there's support to SVGs, but I don't think so."
+          ></foot-note
+          >.
+        </li>
+        <li>
+          <strong>Packaging</strong>: use
+          <code>asar pack &lt;folder&gt; &lt;theme-name&gt;</code> to package
+          your theme into an <code>asar</code> file, which is what's accepted by
+          Sabaki as a theme. You will need to install the <code>asar</code> tool
+          with NPM first, of course.
+        </li>
+      </ul>
+
+      <p>
+        The easiest way of creating a theme, though, is to copy one of the many
+        available in my repo and then modify it as needed.
+      </p>
+
+      <p>
+        What might not be so easy to do is to tinker with some more specific and
+        unusual elements. Apparently, Sabaki does allow it, you can check out
+        more about it in
+        <a href="https://github.com/SabakiHQ/Sabaki/issues/789">this issue</a>,
+        or in the documentation itself. An example of modifying the grid color
+        can be seen in the image below:
+      </p>
+
+      <figure>
+        <img
+          src="reverse_bookish_light_grid.png"
+          alt="Reverse Bookish Light Grid"
+        />
+        <figcaption>The <em>Reverse Bookish Light Grid</em> theme.</figcaption>
+      </figure>
+    </article>
+  </body>
+</html>
