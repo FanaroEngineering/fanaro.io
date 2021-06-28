@@ -162,7 +162,6 @@ export const articlesMetadata: Article[] = [
     languages: [Language.portuguese],
     mainTopic: Topic.myYouTubeChannel,
     otherTopics: [Topic.go, Topic.productivity],
-    draft: true,
   },
   {
     title: "Laziness vs Eagerness in Dart",
