@@ -4,6 +4,7 @@ import Bitcoin from "../components/bitcoin";
 import FanaroNav from "../components/fanaro_nav";
 import Footnote from "../components/footnote";
 import LocalLink from "../components/local_link";
+import MovableRuler from "../components/movable_ruler";
 import Toc, { CustomH2, CustomH3 } from "../components/toc";
 
 export default class Setup {
@@ -26,6 +27,7 @@ export default class Setup {
     customElements.define(CustomH2.tag, CustomH2);
     customElements.define(CustomH3.tag, CustomH3);
     customElements.define(Bitcoin.tag, Bitcoin);
+    customElements.define(MovableRuler.tag, MovableRuler);
   };
 
   private prependAppend = (): void =>
