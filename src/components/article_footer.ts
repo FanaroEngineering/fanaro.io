@@ -1,7 +1,7 @@
 export default class ArticleFooter extends HTMLElement {
   static readonly tag: string = "article-footer";
 
-  private static readonly template: string = `    
+  private static readonly template: string = `
     <br />
     <br />
     <br />
