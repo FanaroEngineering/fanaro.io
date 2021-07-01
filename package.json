@@ -1,10 +1,10 @@
 {
   "name": "fanaro.io",
+  "version": "1.0.1",
   "author": "Philippe Fanaro",
   "description": "Where I expose cool stuff about Go (Baduk or Weiqi), programming, productivity, philosophy, etc.",
-  "homepage": "https://github.com/FanaroEngineering/fanaro.io",
-  "version": "0.0.1",
   "license": "BSD-3-Clause",
+  "homepage": "https://github.com/FanaroEngineering/fanaro.io",
   "bugs": {
     "url": "https://github.com/FanaroEngineering/fanaro.io/issues"
   },
