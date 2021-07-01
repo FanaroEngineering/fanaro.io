@@ -1,5 +1,6 @@
 import ArticlesTable from "../components/articles_table";
 import ArticleFooter from "../components/article_footer";
+import Bitcoin from "../components/bitcoin";
 import FanaroNav from "../components/fanaro_nav";
 import Footnote from "../components/footnote";
 import LocalLink from "../components/local_link";
@@ -24,6 +25,7 @@ export default class Setup {
     customElements.define(Toc.tag, Toc);
     customElements.define(CustomH2.tag, CustomH2);
     customElements.define(CustomH3.tag, CustomH3);
+    customElements.define(Bitcoin.tag, Bitcoin);
   };
 
   private prependAppend = (): void =>
