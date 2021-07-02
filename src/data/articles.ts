@@ -114,6 +114,14 @@ export const pagesMetadata: Article[] = [
 
 export const articlesMetadata: Article[] = [
   {
+    title: "How I created my logo",
+    link: "/articles/my_logo/my_logo.html",
+    date: Date.UTC(2021, 6, 5),
+    languages: [Language.english],
+    mainTopic: Topic.design,
+    otherTopics: [Topic.meta, Topic.math, Topic.philosophy],
+  },
+  {
     title: "Fanaro's Sabaki Theme Collection",
     link:
       "/articles/fanaro_sabaki_theme_collection/fanaro_sabaki_theme_collection.html",
