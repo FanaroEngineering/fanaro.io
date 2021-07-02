@@ -13,10 +13,7 @@
 }
 
 html {
-  display: table;
   margin: auto;
-
-  overflow: auto;
 }
 
 body {
@@ -29,11 +26,7 @@ body {
   padding-bottom: 30px;
   padding-left: var(--margin);
   padding-right: var(--margin);
-  display: table-cell;
-
-  resize: both;
-  overflow: hidden;
-  border: 1px solid white;
+  margin: auto;
 }
 /* -------------------------------------------------------------------------- */
 /* 2. Text Configs */
@@ -317,9 +310,15 @@ local-link a {
 /* 10. Other Widths */
 
 @media (min-width: 600px) {
+  html {
+    overflow: auto;
+  }
+
   body {
-    max-width: var(--max-content-width-desktop);
+    max-width: var(--max-content-width-mobile);
     width: var(--max-content-width-desktop);
+    resize: horizontal;
+    overflow: hidden;
   }
 
   .quote-author {
