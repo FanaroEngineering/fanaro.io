@@ -120,6 +120,7 @@ export const articlesMetadata: Article[] = [
     languages: [Language.english],
     mainTopic: Topic.design,
     otherTopics: [Topic.meta, Topic.math, Topic.philosophy],
+    draft: true,
   },
   {
     title: "Fanaro's Sabaki Theme Collection",
@@ -145,7 +146,6 @@ export const articlesMetadata: Article[] = [
     languages: [Language.portuguese],
     mainTopic: Topic.go,
     otherTopics: [Topic.myYouTubeChannel, Topic.books],
-    draft: true,
   },
   {
     title: "Aula de Go com Ariel Oliveira",
