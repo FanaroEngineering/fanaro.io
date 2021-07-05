@@ -43,17 +43,107 @@
         <p>
           The idea behind my logo came to me after struggling with the
           infinitely fragmented knowledge we typically have in schools and
-          universities.
+          universities. Centralization and connections within each person's
+          knowledge base has since become one of my most important missions.
+        </p>
+
+        <p>
+          Not surprisingly, some people also do get it, and have come to the
+          same conclusion, though through very different paths. For example, Dr.
+          Alan Watkins<foot-note
+            text="If you haven't, go watch his 
+            &lt;a href='https://youtu.be/q06YIWCR2Js'&gt;amazing lecture&lt;/a&gt; 
+            on how to better perform under pressure."
+          ></foot-note
+          >, in his book
+          <a
+            href="https://www.goodreads.com/book/show/18210521-coherence?ac=1&from_search=true&qid=yVDHHh3LV8&rank=2"
+            ><em>Coherence</em></a
+          >, argues that the challenge of this century will lie on reintegrating
+          all of our overspecialized, island fields: we will, as some science
+          fiction has already stated, end up
+          <em>knowing everything about nothing</em>.
+        </p>
+
+        <p>
+          The marketplace seems to be at the culprit, the more specialized you
+          are, the more sought after you will be, generic problems can be solved
+          by most, after all. However, this can backfire when the complexity of
+          the managed system starts to spread along different subjects. That
+          might be one of the major causes of why there's usually a critical
+          mass or size for many companies, which crumble under their own
+          complexity weight, giving rise to usually new and lean competitors.
+          The cycle of corporate life repeats, and humans, who have a hard time
+          learning from their ancestors' mistakes, will have an even harder time
+          learning from their corporate ancestors' mistakes.
+        </p>
+
+        <p>
+          This capitalist problem creeps into universities and schools as well,
+          but maybe in a different shape. The more isolated departments are from
+          each other the easier it is to justify their own existence and
+          budgets, the easier it is to make it hard for others to get anything
+          done in your topic.
         </p>
       </section>
 
       <section>
         <custom-h2 text="The Math Supporting The Design"></custom-h2>
 
+        <p>
+          It's easy to spot why people find it hard and cumbersome to keep
+          everything connected. By laying it out in a graph<foot-note
+            text="Just a fancy word for a drawing with nodes and connections."
+          ></foot-note
+          >, we can see that different topics, with typical sequential
+          connections, form a polygon. Connecting all of the vertices of a
+          polygon seems to grow very quickly as we grow the number of sides.
+        </p>
+
+        <!-- TODO: sample graph image -->
+
+        <p>
+          That's because they grow quadratically &mdash; \(O(n^2)\) &mdash;, not
+          linearly &mdash; \(O(n)\) &mdash;. The number of connections,
+          specially the inner ones, as we shall see, grow with the square of the
+          number of sides, which is jargon for "boy, do they grow fast". But how
+          quickly do they grow, you might ask?
+        </p>
+
+        <p>
+          It turns out that connecting dots is analogous to making
+          <em>combinations</em> of pairs, at least in this case. That means
+          order doesn't matter either, so we can use the usual
+          <a href="https://en.wikipedia.org/wiki/Combination"
+            >combinatorics formula</a
+          ><foot-note
+            text="This is coincidentally 
+            &lt;a href='https://fanaro.io/articles/scrum_2/scrum_2.html#3-communication-channels-inside-teams-(p-59)'&gt;the same formula used to justify the optimal 
+            size of programming teams in Scrum&lt;/a&gt;."
+          ></foot-note>
+          we learn in high school:
+        </p>
+
         \begin{align} &\# \ of \ Connections = C_{n, 2} = \frac{n!}{2!(n - 2)!}
         = \frac{n(n - 1)}{2}, \ for \ n \geq 3 \\ &\# \ of \ Internal \
         Connections = C_{n,2} - n = \frac{n(n - 1)}{2} - n = \frac{n(n - 3)}{2},
         \ for \ n \geq 3 \end{align}
+
+        <p>
+          Notice from above that the number of internal connections also still
+          grows quadratically, even though the perimeter grows linearly. This is
+          yet another justification for taking a strong stance towards
+          connecting knowledge: connecting knowledge grows more quickly than
+          gathering knowledge sequentially, although creating the nodes is still
+          necessary, of course.
+        </p>
+
+        <p>
+          <em>But why exactly did I choose a hexagon shape for my logo?</em> Is
+          it just because it looks symmetrical and kind of nice?
+        </p>
+
+        <p></p>
 
         <table align="center">
           <thead>
@@ -113,6 +203,8 @@
 
       <section>
         <custom-h2 text="Final Extra Bits"></custom-h2>
+
+        <!-- TODO: What was I going to put here? -->
       </section>
 
       <section>
