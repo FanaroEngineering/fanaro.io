@@ -42,14 +42,15 @@
 
         <p>
           The idea behind my logo came to me after struggling with the
-          infinitely fragmented knowledge we typically have in schools and
+          infinitely fragmented knowledge typically featured in schools and
           universities. Centralization and connections within each person's
-          knowledge base has since become one of my most important missions.
+          knowledge base has since become one of my most important missions, my
+          main compass.
         </p>
 
         <p>
           Not surprisingly, some people also do get it, and have come to the
-          same conclusion, though through very different paths. For example, Dr.
+          same conclusion, albeit through very different paths. For example, Dr.
           Alan Watkins<foot-note
             text="If you haven't, go watch his 
             &lt;a href='https://youtu.be/q06YIWCR2Js'&gt;amazing lecture&lt;/a&gt; 
@@ -59,36 +60,39 @@
           <a
             href="https://www.goodreads.com/book/show/18210521-coherence?ac=1&from_search=true&qid=yVDHHh3LV8&rank=2"
             ><em>Coherence</em></a
-          >, argues that the challenge of this century will lie on reintegrating
-          all of our overspecialized, island fields: we will, as some science
-          fiction has already stated, end up
+          >, argues that the challenge for this century will lie on
+          reintegrating all of our overspecialized, island fields: otherwise we
+          will, as some science fiction has already stated, end up
           <em>knowing everything about nothing</em>.
         </p>
 
         <p>
-          The marketplace seems to be at the culprit, the more specialized you
-          are, the more sought after you will be, generic problems can be solved
-          by most, after all. However, this can backfire when the complexity of
-          the managed system starts to spread along different subjects. That
-          might be one of the major causes of why there's usually a critical
-          mass or size for many companies, which crumble under their own
-          complexity weight, giving rise to usually new and lean competitors.
-          The cycle of corporate life repeats, and humans, who have a hard time
-          learning from their ancestors' mistakes, will have an even harder time
-          learning from their corporate ancestors' mistakes.
+          The marketplace seems to be the culprit, in many regards. The more
+          specialized you are, the more sought after you will be, generic
+          problems can be solved by most, after all. However, this can backfire
+          when the complexity of the managed system starts to spread along
+          different subjects. That might be one of the major causes of why
+          there's usually a critical mass or size for many companies, which
+          crumble under their own complexity weights, giving rise to usually
+          newer, leaner, less complicated competitors. The cycle of corporate
+          life repeats, and humans, who have a hard time learning from their
+          ancestors' mistakes, will have an even harder time learning from their
+          less relatable corporate ancestors' mistakes.
         </p>
 
         <p>
           This capitalist problem creeps into universities and schools as well,
           but maybe in a different shape. The more isolated departments are from
-          each other the easier it is to justify their own existence and
+          each other, the easier it is to justify their own existence and
           budgets, the easier it is to make it hard for others to get anything
-          done in your topic.
+          done within your topic.
         </p>
       </section>
 
       <section>
         <custom-h2 text="The Math Supporting The Design"></custom-h2>
+
+        <custom-h3 text="The Formula"></custom-h3>
 
         <p>
           It's easy to spot why people find it hard and cumbersome to keep
@@ -96,24 +100,39 @@
             text="Just a fancy word for a drawing with nodes and connections."
           ></foot-note
           >, we can see that different topics, with typical sequential
-          connections, form a polygon. Connecting all of the vertices of a
-          polygon seems to grow very quickly as we grow the number of sides.
+          connections, form a polygon. Connections between all the vertices of
+          the polygon seem to grow very quickly as we grow the number of sides.
         </p>
 
-        <!-- TODO: sample graph image -->
+        <figure>
+          <img
+            src="connected_pentagon_subjects.png"
+            height="350px"
+            alt="Connected Pentagon of Different Subjects"
+          />
+          <figcaption>
+            Different subjects connected in a polygonal network. I do get that
+            sometimes, if not often, connecting subjects can be difficult: how
+            is math connected to English? But the toughest connections can yield
+            the highest rewards, like machine learning with natural languages
+            &mdash; see LSTMs, for instance.
+          </figcaption>
+        </figure>
+
+        <br />
 
         <p>
           That's because they grow quadratically &mdash; \(O(n^2)\) &mdash;, not
-          linearly &mdash; \(O(n)\) &mdash;. The number of connections,
+          linearly &mdash; \(O(n)\). In other words, the number of connections,
           specially the inner ones, as we shall see, grow with the square of the
           number of sides, which is jargon for "boy, do they grow fast". But how
-          quickly do they grow, you might ask?
+          exactly do they grow, you might ask?
         </p>
 
         <p>
           It turns out that connecting dots is analogous to making
-          <em>combinations</em> of pairs, at least in this case. That means
-          order doesn't matter either, so we can use the usual
+          <em>combinations</em> of pairs. That means order doesn't matter
+          either, so we can use the somewhat basic
           <a href="https://en.wikipedia.org/wiki/Combination"
             >combinatorics formula</a
           ><foot-note
@@ -121,13 +140,14 @@
             &lt;a href='https://fanaro.io/articles/scrum_2/scrum_2.html#3-communication-channels-inside-teams-(p-59)'&gt;the same formula used to justify the optimal 
             size of programming teams in Scrum&lt;/a&gt;."
           ></foot-note>
-          we learn in high school:
+          we learn in high school &mdash; \(n\) stands for number of vertices or
+          sides of the polygon &mdash;:
         </p>
 
-        \begin{align} &\# \ of \ Connections = C_{n, 2} = \frac{n!}{2!(n - 2)!}
-        = \frac{n(n - 1)}{2}, \ for \ n \geq 3 \\ &\# \ of \ Internal \
-        Connections = C_{n,2} - n = \frac{n(n - 1)}{2} - n = \frac{n(n - 3)}{2},
-        \ for \ n \geq 3 \end{align}
+        \begin{align} &\# \ of \ Connections(n) = C_{n, 2} = \frac{n!}{2!(n -
+        2)!} = \frac{n(n - 1)}{2}, \ for \ n \geq 3 \\ &\# \ of \ Internal \
+        Connections(n) = C_{n,2} - n = \frac{n(n - 1)}{2} - n = \frac{n(n -
+        3)}{2}, \ for \ n \geq 3 \end{align}
 
         <p>
           Notice from above that the number of internal connections also still
@@ -138,17 +158,19 @@
           necessary, of course.
         </p>
 
+        <custom-h3 text="Why a Hexagon"></custom-h3>
+
         <p>
           <em>But why exactly did I choose a hexagon shape for my logo?</em> Is
           it just because it looks symmetrical and kind of nice?
         </p>
 
         <p>
-          Nope. I chose it because it stands in the transition between where
-          perimeter connections are more numerous and where inner connections
-          start ruling the land. It's the first polygon where the number of
-          internal connections are higher than their outer counterparts, as you
-          can see from the table below:
+          Nope. I chose it because it stands in the transition between
+          <em>where perimeter connections are more numerous</em> and
+          <em>where inner connections start ruling the land</em>. It's the first
+          polygon where the number of internal connections are higher than their
+          outer counterparts, as you can see from the table below:
         </p>
 
         <table align="center">
@@ -262,8 +284,16 @@
         </p>
 
         <p>
-          If you're interested in learning more about design and its
-          craftsmanship, I highly recommend:
+          Personally, working on the connections throughout the past few years
+          has been both a source of relief and pleasure. Not only do I have
+          access to basically everything, no matter in which subject I am, but
+          the connections themselves seem to generate knowledge, not only the
+          nodes.
+        </p>
+
+        <p>
+          Additionally, if you're interested in learning more about design and
+          its craftsmanship, I highly recommend:
         </p>
 
         <ul>

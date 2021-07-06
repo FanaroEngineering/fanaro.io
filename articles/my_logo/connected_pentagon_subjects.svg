@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="400mm"
+   height="400mm"
+   viewBox="0 0 400 400"
+   version="1.1"
+   id="svg2732"
+   inkscape:version="1.1 (c4e8f9ed74, 2021-05-24)"
+   sodipodi:docname="connected_pentagon_subjects.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview2734"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:document-units="mm"
+     showgrid="false"
+     width="400mm"
+     inkscape:zoom="0.54488788"
+     inkscape:cx="782.72984"
+     inkscape:cy="786.40032"
+     inkscape:window-width="1812"
+     inkscape:window-height="1074"
+     inkscape:window-x="742"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs2729" />
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <path
+       sodipodi:type="star"
+       style="fill:none;stroke:#afb2bf;stroke-width:7.93323;stroke-opacity:1"
+       id="path2861"
+       inkscape:flatsided="true"
+       sodipodi:sides="5"
+       sodipodi:cx="529.28662"
+       sodipodi:cy="356.66693"
+       sodipodi:r1="680.0625"
+       sodipodi:r2="550.18213"
+       sodipodi:arg1="0.93006147"
+       sodipodi:arg2="1.55838"
+       inkscape:rounded="0"
+       inkscape:randomized="0"
+       d="M 935.81758,901.84358 136.41779,911.7697 -120.05063,154.56266 520.84296,-323.34315 1173.4054,138.50186 Z"
+       transform="matrix(0.20519366,0.00229356,-0.00229356,0.20519366,84.696385,139.96363)"
+       inkscape:transform-center-x="0.053450576"
+       inkscape:transform-center-y="-13.275314" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:17.2262px;line-height:1.25;font-family:sans-serif;fill:#afb2bf;fill-opacity:1;stroke:#afb2bf;stroke-width:0.430656;stroke-opacity:1"
+       x="8.8886967"
+       y="178.50424"
+       id="text11565"><tspan
+         sodipodi:role="line"
+         id="tspan11563"
+         style="stroke-width:0.430656;stroke:#afb2bf;stroke-opacity:1;fill:#afb2bf;fill-opacity:1"
+         x="8.8886967"
+         y="178.50424">Math</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:17.2262px;line-height:1.25;font-family:sans-serif;fill:#afb2bf;fill-opacity:1;stroke:#afb2bf;stroke-width:0.430656;stroke-opacity:1"
+       x="160.43929"
+       y="64.85598"
+       id="text11565-7"><tspan
+         sodipodi:role="line"
+         id="tspan11563-5"
+         style="stroke-width:0.430656;stroke:#afb2bf;stroke-opacity:1;fill:#afb2bf;fill-opacity:1"
+         x="160.43929"
+         y="64.85598">Physics</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:17.2262px;line-height:1.25;font-family:sans-serif;fill:#afb2bf;fill-opacity:1;stroke:#afb2bf;stroke-width:0.430656;stroke-opacity:1"
+       x="246.53265"
+       y="345.75403"
+       id="text11565-7-3"><tspan
+         sodipodi:role="line"
+         id="tspan11563-5-5"
+         style="stroke-width:0.430656;stroke:#afb2bf;stroke-opacity:1;fill:#afb2bf;fill-opacity:1"
+         x="246.53265"
+         y="345.75403">Geography</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:17.2262px;line-height:1.25;font-family:sans-serif;fill:#afb2bf;fill-opacity:1;stroke:none;stroke-width:0.430656"
+       x="330.60361"
+       y="177.29897"
+       id="text11565-7-3-6"><tspan
+         sodipodi:role="line"
+         id="tspan11563-5-5-2"
+         style="stroke-width:0.430656;fill:#afb2bf;fill-opacity:1"
+         x="330.60361"
+         y="177.29897">History</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:17.2262px;line-height:1.25;font-family:sans-serif;fill:#afb2bf;fill-opacity:1;stroke:#afb2bf;stroke-width:0.430656;stroke-opacity:1"
+       x="50.08812"
+       y="348.27118"
+       id="text11565-3"><tspan
+         sodipodi:role="line"
+         id="tspan11563-6"
+         style="stroke-width:0.430656;stroke:#afb2bf;stroke-opacity:1;fill:#afb2bf;fill-opacity:1"
+         x="50.08812"
+         y="348.27118">English</tspan></text>
+    <path
+       style="fill:none;stroke:#afb2bf;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:none"
+       d="M 59.708258,171.40356 325.15407,171.07461"
+       id="path18782" />
+    <path
+       style="fill:none;stroke:#afb2bf;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:none"
+       d="M 192.31166,74.810249 274.65178,327.16255"
+       id="path18784" />
+    <path
+       style="fill:none;stroke:#afb2bf;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:none"
+       d="M 192.31166,74.810249 110.59725,327.36586"
+       id="path18786" />
+    <path
+       style="fill:none;stroke:#afb2bf;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:none"
+       d="M 59.708258,171.40356 274.65178,327.16255"
+       id="path18788" />
+    <path
+       style="fill:none;stroke:#afb2bf;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:none"
+       d="M 325.15407,171.07461 110.59725,327.36586"
+       id="path18790" />
+  </g>
+</svg>
