@@ -114,6 +114,15 @@ export const pagesMetadata: Article[] = [
 
 export const articlesMetadata: Article[] = [
   {
+    title: "Search Engine Index",
+    link: "/articles/search_engines/search_engines.html",
+    date: Date.UTC(2021, 6, 9),
+    languages: [Language.english],
+    mainTopic: Topic.productivity,
+    otherTopics: [Topic.meta],
+    draft: true,
+  },
+  {
     title: "How I created my logo",
     link: "/articles/my_logo/my_logo.html",
     date: Date.UTC(2021, 6, 5),
