@@ -18,7 +18,16 @@
     <script src="../../index.js"></script>
 
     <link rel="stylesheet" href="../../index.css" />
-    <link rel="icon" type="image/svg+xml" href="../../assets/favicon.svg" />
+    <link rel="icon" type="image/svg+xml" href="../../assets/favicon.png" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.4.1/styles/atom-one-dark.min.css"
+    />
+    <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.5.0/build/highlight.min.js"></script>
+    <script defer>
+      hljs.initHighlightingOnLoad();
+    </script>
   </head>
   <body>
     <article>
@@ -27,15 +36,235 @@
       <h1>Search Engine Index</h1>
 
       <section>
-        <custom-h2 text="The Summarized Table of Search Engines"></custom-h2>
+        <custom-h2 text="Motivation"></custom-h2>
       </section>
 
       <section>
-        <custom-h2 text="How to Automate Search Engines"></custom-h2>
+        <custom-h2 text="The Summarized Table of Search Engines"></custom-h2>
 
-        <custom-h3 text="Brave Browser"></custom-h3>
+        <table>
+          <thead>
+            <tr>
+              <th>Search Engine</th>
+              <th>Category</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><a href="https://www.jstor.org/">JSTOR</a></td>
+              <td>Academia</td>
+              <td>Search through JSTOR articles</td>
+            </tr>
+            <tr>
+              <td><a href="https://www.researchgate.net/">ResearchGate</a></td>
+              <td>Academia</td>
+              <td>Search through ResearchGate&#39;s resources</td>
+            </tr>
+            <tr>
+              <td><a href="https://sci-hub.se/">Sci-Hub</a></td>
+              <td>Academia</td>
+              <td>Removes pay walls from scientific articles</td>
+            </tr>
+            <tr>
+              <td><a href="https://searx.me/">Searx</a></td>
+              <td>Privacy, General, Metasearch</td>
+              <td>
+                General purpose search engine you can run an instance of; uses
+                other search engines
+              </td>
+            </tr>
+            <tr>
+              <td><a href="https://www.wolframalpha.com/">WolframAlpha</a></td>
+              <td>Academia, Database, Math</td>
+              <td>
+                Lets you search through an immense, curated database of helpful
+                information; and you can also solve math with it
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
 
-        <custom-h3 text="Qutebrowser"></custom-h3>
+      <section>
+        <custom-h2 text="How to Automate Search on Your Browser"></custom-h2>
+
+        <custom-h3 text="qutebrowser"></custom-h3>
+
+        <blockquote>
+          My complete qutebrowser configurations are
+          <a
+            href="https://github.com/psygo/dotfiles/blob/master/.config/qutebrowser/config.py"
+            >here</a
+          >. I've also written a
+          <a href="https://fanaro.io/articles/my_dotfiles/my_dotfiles.html"
+            >guide article</a
+          >
+          to it.
+        </blockquote>
+
+        <p>
+          In qutebrowser, you have 2 options to manage your configurations:
+          <code>autoconfig.yml</code> and <code>config.py</code>. The YAML file
+          is much easier to read, but much more limited, and you won't have
+          access to any logical operations, since you're not really using a
+          programming language to configure your browser.
+          <code>autoconfig.yml</code> will get you going at first, but I
+          recommend you translate your configurations as soon as possible into
+          its Python counterpart, isolate and centralize things thence, it's
+          gonna be a much simpler and cleaner setup &mdash; add this line to the
+          top of your <code>config.py</code>:
+          <code>config.load_autoconfig(False)</code>.
+        </p>
+
+        <p>
+          Once you're done with the translation, you're able to mess around with
+          your search engine shortcuts. For example, when opening a new page,
+          you can use
+          <code>:open &lt;search-engine-shortcut&gt; &lt;search-query&gt;</code
+          >. I typically prefix my search engine shortcuts with
+          <code>:</code> so they don't collide with common words or other
+          commands, but you can use whatever you want. Don't forget to use
+          <code>{}</code> as a placeholder for your search queries. Most
+          websites use <code>/search?q=</code> as a URL code for search queries,
+          but you will have to test in each one before being sure, this is not
+          standardized anywhere, it's the website's choice.
+        </p>
+
+        <pre><code class="python">my_search_engine = 'https://www.searx.bar'
+
+c.url.start_pages = [my_search_engine]
+c.url.default_page = my_search_engine
+
+c.url.searchengines = {
+    'DEFAULT': f'{my_search_engine}/search?q=' + '{}',
+    ':am':      'https://www.amazon.com/s?k={}',
+    ':ambr':    'https://www.amazon.com.br/s?k={}',
+    ':aw':      'https://wiki.archlinux.org/?search={}',
+    ':col':     'https://www.collinsdictionary.com/us/dictionary/english/{}',
+    ':g':       'https://www.google.com/search?q={}',
+    ':gh':      'https://github.com/search?q={}',
+    ':gr':      'https://goodreads.com/search?q={}',
+    ':h':       'https://hoogle.haskell.org/?hoogle={}',
+    ':hw':      'https://wiki.haskell.org/index.php?search={}',
+    ':l':       'https://www.linguee.pt/portugues-ingles/search?query={}',
+    ':lbry':    'https://lbry.tv/$/search?q={}',
+    ':libgen':  'http://libgen.rs/search.php?req={}',
+    ':od':      'https://odysee.com/$/search?q={}',
+    ':pub':     'https://pub.dev/packages?q={}',
+    ':pr':      'https://thepiratebay.org/search.php?q={}',
+    ':prib':    'https://dicionario.priberam.org/{}',
+    ':re':      'https://www.reddit.com/search/?q={}',
+    ':sx':      'https://www.searx.bar/search?q={}',
+    ':ub':      'https://www.urbandictionary.com/define.php?term={}',
+    ':u':       'https://www.udemy.com/courses/search/?src={}',
+    ':yt':      'https://www.youtube.com/results?search_query={}',
+    ':w':       'https://en.wikipedia.org/wiki/{}',
+    ':wfr':     'https://fr.wikipedia.org/wiki/{}',
+    ':wpt':     'https://pt.wikipedia.org/wiki/{}',
+}</code></pre>
+
+        <custom-h3 text="Brave and Other Chromium-based Browsers"></custom-h3>
+
+        <p>
+          Brave, as most other Chromium-based browsers, also features this same
+          search engine shortcuts possibility. To tweak it, go to
+          <code>Settings</code> &rarr; <code>Manage search engines</code>.
+          Surprisingly, I think the GUI layout they chose for this part of the
+          settings obfuscates the feature they are trying to convey, it took me
+          a long while to realize what that part of the settings was about.
+          Hopefully, what I explained above for qutebrowser will help you
+          navigate it better.
+        </p>
+      </section>
+
+      <section>
+        <custom-h2 text="References"></custom-h2>
+
+        <p>Short list:</p>
+
+        <ul>
+          <li>
+            <a href="https://www.youtube.com/watch?v=3g2ZW2rWCtw"
+              >10 Google Search Alternatives You Should Know! - YouTube</a
+            >
+          </li>
+          <li>
+            <a href="https://www.youtube.com/watch?v=C3OMZq3rGZM"
+              >20 Search Engines That Are Better Than Google!? - YouTube</a
+            >
+          </li>
+          <li>
+            <a href="https://www.youtube.com/watch?v=xxnqhnZcA5A"
+              >Stop Using Google! Use These Search Engines Instead. - YouTube</a
+            >
+          </li>
+          <li>
+            <a href="https://www.youtube.com/watch?v=Rkv4rrdFBU0"
+              >The Proper Way to Do Web Searches (Searx) - YouTube</a
+            >
+          </li>
+          <li>
+            <a href="https://news.ycombinator.com/item?id=19045141"
+              >Ask HN: Is there room for a new ‘curated’ search engine? | Hacker
+              News</a
+            >
+          </li>
+          <li>
+            <a href="https://kinsta.com/blog/alternative-search-engines/"
+              >22 Alternative Search Engines To Use in 2021</a
+            >
+          </li>
+          <li>
+            <a
+              href="https://www.lowcountrygradcenter.org/the-6-best-search-engines-for-academic-research/"
+              >The 6 Best Search Engines for Academic Research | Lowcountry
+              Graduate Center</a
+            >
+          </li>
+        </ul>
+
+        <p>
+          Video thumbnails &mdash; these videos were listed above as well
+          &mdash;:
+        </p>
+
+        <iframe
+          src="https://www.youtube.com/embed/Rkv4rrdFBU0"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen
+        ></iframe>
+
+        <br />
+        <br />
+
+        <iframe
+          src="https://www.youtube.com/embed/xxnqhnZcA5A"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen
+        ></iframe>
+
+        <br />
+        <br />
+
+        <iframe
+          src="https://www.youtube.com/embed/C3OMZq3rGZM"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen
+        ></iframe>
+
+        <br />
+        <br />
+
+        <iframe
+          src="https://www.youtube.com/embed/3g2ZW2rWCtw"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen
+        ></iframe>
       </section>
     </article>
   </body>
