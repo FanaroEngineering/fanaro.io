@@ -120,7 +120,6 @@ export const articlesMetadata: Article[] = [
     languages: [Language.english],
     mainTopic: Topic.design,
     otherTopics: [Topic.meta, Topic.math, Topic.philosophy],
-    draft: true,
   },
   {
     title: "Fanaro's Sabaki Theme Collection",

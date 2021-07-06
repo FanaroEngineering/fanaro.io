@@ -18,7 +18,7 @@
     <script src="../../index.js"></script>
 
     <link rel="stylesheet" href="../../index.css" />
-    <link rel="icon" type="image/svg+xml" href="../../assets/favicon.svg" />
+    <link rel="icon" type="image/svg+xml" href="../../assets/favicon.png" />
 
     <script
       src="https://polyfill.io/v3/polyfill.min.js?features=es6"
@@ -45,35 +45,41 @@
           infinitely fragmented knowledge typically featured in schools and
           universities. Centralization and connections within each person's
           knowledge base has since become one of my most important missions, my
-          main compass.
+          main compass<foot-note
+            text="For example, I'm constantly taking notes in textual format
+            (Markdown), and cataloguing, and tagging them. At first I was either
+            using Evernote or Notion to do this, but I gradually transitioned
+            into using Linux tools and Git to manage my notes database."
+          ></foot-note
+          >.
         </p>
 
         <p>
           Not surprisingly, some people also do get it, and have come to the
           same conclusion, albeit through very different paths. For example, Dr.
           Alan Watkins<foot-note
-            text="If you haven't, go watch his 
-            &lt;a href='https://youtu.be/q06YIWCR2Js'&gt;amazing lecture&lt;/a&gt; 
+            text="If you haven't, go watch his
+            &lt;a href='https://youtu.be/q06YIWCR2Js'&gt;amazing lecture&lt;/a&gt;
             on how to better perform under pressure."
           ></foot-note
           >, in his book
           <a
             href="https://www.goodreads.com/book/show/18210521-coherence?ac=1&from_search=true&qid=yVDHHh3LV8&rank=2"
             ><em>Coherence</em></a
-          >, argues that the challenge for this century will lie on
+          >, argues that the challenge for the 21st century will lie on
           reintegrating all of our overspecialized, island fields: otherwise we
           will, as some science fiction has already stated, end up
           <em>knowing everything about nothing</em>.
         </p>
 
         <p>
-          The marketplace seems to be the culprit, in many regards. The more
-          specialized you are, the more sought after you will be, generic
+          The marketplace seems to be the culprit, at least in many regards. The
+          more specialized you are, the more sought after you will be; generic
           problems can be solved by most, after all. However, this can backfire
           when the complexity of the managed system starts to spread along
           different subjects. That might be one of the major causes of why
-          there's usually a critical mass or size for many companies, which
-          crumble under their own complexity weights, giving rise to usually
+          there's usually a critical mass or size for many companies before they
+          crumble under their own complexity weight, giving rise to usually
           newer, leaner, less complicated competitors. The cycle of corporate
           life repeats, and humans, who have a hard time learning from their
           ancestors' mistakes, will have an even harder time learning from their
@@ -99,7 +105,7 @@
           everything connected. By laying it out in a graph<foot-note
             text="Just a fancy word for a drawing with nodes and connections."
           ></foot-note
-          >, we can see that different topics, with typical sequential
+          >, we can see that different topics, with usually sequential
           connections, form a polygon. Connections between all the vertices of
           the polygon seem to grow very quickly as we grow the number of sides.
         </p>
@@ -111,11 +117,15 @@
             alt="Connected Pentagon of Different Subjects"
           />
           <figcaption>
-            Different subjects connected in a polygonal network. I do get that
-            sometimes, if not often, connecting subjects can be difficult: how
-            is math connected to English? But the toughest connections can yield
-            the highest rewards, like machine learning with natural languages
-            &mdash; see LSTMs, for instance.
+            An example of different subjects connected in a polygonal network. I
+            do get that sometimes, if not often, connecting subjects can be
+            difficult: how is math connected to English? But the toughest
+            connections can yield the highest rewards, like machine learning
+            with natural languages &mdash; see
+            <a href="https://en.wikipedia.org/wiki/Long_short-term_memory"
+              >LSTM</a
+            >s and <a href="https://openai.com/blog/gpt-3-apps/">GPT-3</a>, for
+            instance.
           </figcaption>
         </figure>
 
@@ -124,20 +134,20 @@
         <p>
           That's because they grow quadratically &mdash; \(O(n^2)\) &mdash;, not
           linearly &mdash; \(O(n)\). In other words, the number of connections,
-          specially the inner ones, as we shall see, grow with the square of the
-          number of sides, which is jargon for "boy, do they grow fast". But how
-          exactly do they grow, you might ask?
+          specially the inner ones, as we shall see, grows with the square of
+          the number of sides, which is jargon for "boy, do they grow fast". But
+          how exactly do they grow, you might ask?
         </p>
 
         <p>
           It turns out that connecting dots is analogous to making
-          <em>combinations</em> of pairs. That means order doesn't matter
-          either, so we can use the somewhat basic
+          <em>combinations</em> of pairs. That means order doesn't matter, so we
+          can use the somewhat basic
           <a href="https://en.wikipedia.org/wiki/Combination"
             >combinatorics formula</a
           ><foot-note
-            text="This is coincidentally 
-            &lt;a href='https://fanaro.io/articles/scrum_2/scrum_2.html#3-communication-channels-inside-teams-(p-59)'&gt;the same formula used to justify the optimal 
+            text="This is coincidentally
+            &lt;a href='https://fanaro.io/articles/scrum_2/scrum_2.html#3-communication-channels-inside-teams-(p-59)'&gt;the same formula used to justify the optimal
             size of programming teams in Scrum&lt;/a&gt;."
           ></foot-note>
           we learn in high school &mdash; \(n\) stands for number of vertices or
@@ -153,9 +163,11 @@
           Notice from above that the number of internal connections also still
           grows quadratically, even though the perimeter grows linearly. This is
           yet another justification for taking a strong stance towards
-          connecting knowledge: connecting knowledge grows more quickly than
-          gathering knowledge sequentially, although creating the nodes is still
-          necessary, of course.
+          connecting knowledge:
+          <strong
+            >connecting knowledge grows more quickly than gathering/creating
+            knowledge sequentially</strong
+          >, although creating the nodes is still necessary, of course.
         </p>
 
         <custom-h3 text="Why a Hexagon"></custom-h3>
@@ -177,7 +189,7 @@
           <thead>
             <th># of Sides on the Polygon</th>
             <th># of Total Connections</th>
-            <th># of Internal Connection</th>
+            <th># of Internal Connections</th>
           </thead>
           <tbody>
             <tr>
@@ -232,7 +244,7 @@
       <section>
         <custom-h2 text="Polishing the Design to Its Final Form"></custom-h2>
 
-        <p>The overall shape of the design is settled, so what now?</p>
+        <p>The overall shape of the design is, then, settled, so what now?</p>
 
         <p>
           Here are some extra decisions I had to take in order to get to the end
@@ -244,7 +256,9 @@
             I decided to take out the center part of the connected hexagon
             because the outer edges already represent the connections
             sufficiently, and it also seemed to be bloating up the logo, there
-            was too much information with it.
+            was too much information within it. The inner part is also not a
+            hexagon, but a square, for mostly the same reason: a square seems
+            less complex than a hexagon.
           </li>
           <li>
             When coloring, I confess I ran out of ideas. But then I thought:
@@ -252,21 +266,21 @@
             pretty colors? So I searched for a nice gradient &mdash; I find that
             <em>good</em> gradients can lend a design smoothness and a sense of
             calmness &mdash;, this set of colors is used a lot in modern app
-            design. If you're inclined to interpretations still, I would say the
-            light-blue-to-reddish gradient could represent some sort of warm-up,
-            in the sense that more connections are activating the global network
-            more.
+            design. If you're inclined to interpretations still, I would say
+            this light-blue-to-reddish gradient could represent some sort of
+            warm-up, in the sense that more connections are activating the
+            global network more.
           </li>
           <li>
             You will often see non-pointy designs nowadays, or shapes with
             smoothed corners. That comes from a psychological inclination humans
             have towards pointy objects<foot-note
               text="This I've learned from the &lt;a href='https://www.goodreads.com/book/show/130730.Universal_Principles_of_Design?from_search=true&from_srp=true&qid=nqTOYJHuH8&rank=1'&gt;&lt;em&gt;Universal Principles of
-              Design&lt;/em&gt;&lt;/a&gt; book, by Lidwell et al. I've already written an 
-              &lt;a href='https://fanaro.io/articles/universal_principles_design/universal_principles_design.html'&gt;article&lt;/a&gt; 
+              Design&lt;/em&gt;&lt;/a&gt; book, by Lidwell et al. I've already written an
+              &lt;a href='https://fanaro.io/articles/universal_principles_design/universal_principles_design.html'&gt;article&lt;/a&gt;
               about that book."
             ></foot-note>
-            &mdash; like knives &mdash;, they call our attention because they
+            &mdash; like knives &mdash;, which call our attention because they
             usually represent danger. So, naturally, I, at first, wanted to
             smooth the corners a little bit. However I ultimately reversed my
             decision so the logo would stand out even more. But that's something
@@ -280,16 +294,45 @@
 
         <p>
           So what do you think about my logo and its reasoning? Great? An
-          amazing example of overengineering?
+          amazing example of overengineering? Maybe you think the equivalence
+          between knowledge and graphs is a false or insufficient one?
         </p>
 
         <p>
           Personally, working on the connections throughout the past few years
           has been both a source of relief and pleasure. Not only do I have
-          access to basically everything, no matter in which subject I am, but
-          the connections themselves seem to generate knowledge, not only the
-          nodes.
+          access to basically every piece of knowledge I possess, no matter in
+          which subject I am, but the connections themselves seem to generate
+          knowledge, not only the nodes.
         </p>
+
+        <p>
+          Originally, I wanted to create some sort of surrealist logo based on
+          <a
+            href="https://en.wikipedia.org/wiki/Diogenes#/media/File:Jean-L%C3%A9on_G%C3%A9r%C3%B4me_-_Diogenes_-_Walters_37131.jpg"
+            >an iconic depiction of Diogenes of Sinope</a
+          >, an ancient Greek Cynic<foot-note
+            text="For those not very familiar with the topic, the Greek Cynics have
+            nothing to do with the current connotation of cynicism. In fact, it is
+            through corruption that the values have been inverted: the Greek Cynics
+            were the most virtuous philosophers of ancient Greece, they were the main
+            source of inspiration for the Stoics also."
+          ></foot-note>
+          philosopher I admire, probably my favorite philosopher in terms of
+          values. However, that's still a <strike>bit</strike> considerably
+          above my paygrade, I don't have the know-how. I've even tried to
+          contact <a href="https://www.instagram.com/murugandi/">Murugandi</a
+          ><foot-note
+            text="Murugandi, whose real name is Kim Ouweleen, is a Dutch artist
+            whose work is mostly centered around Go, another passion of mine."
+          ></foot-note>
+          for help, since he has a lot of expertise on the topic, but I just
+          couldn't fully articulate what I wanted.
+        </p>
+      </section>
+
+      <section>
+        <custom-h2 text="Extra Resources"></custom-h2>
 
         <p>
           Additionally, if you're interested in learning more about design and
@@ -305,24 +348,26 @@
             hermetic to people like me who can't draw anything &mdash; I still
             can't &mdash;, but, believe me, you can learn design, with
             computer-aided graphic tools at least. Daniel's courses are
-            available both on Udemy and Skillshare.
+            available both on Udemy and Skillshare, from total beginner to
+            advanced.
           </li>
           <li>
             <a href="https://www.skillshare.com/profile/Aaron-Draplin/6666857"
               >Aaron Draplin</a
             >: an incredibly experienced, top notch designer turned teacher who
-            just rocks at explaining how to bridge theory into practice, his
-            courses are a must-have for anyone taking this craft seriously at
-            this point. His courses are exclusive to Skillshare.
+            just rocks at explaining how to bridge theory into practice, a
+            master artisan. His content are a must-have for anyone taking this
+            craft seriously at some point. His courses are exclusive to
+            Skillshare.
           </li>
           <li>
             <a href="https://www.youtube.com/user/TheSkoolRocks">The Futur</a>:
             the design community has established a rift when it comes to The
             Futur and its creator, Chris Do. Some people think he's a charlatan,
             but I encourage you to evaluate it for yourself, because I certainly
-            do not agree with that assertion. Some of Chris' tips helped a lot
-            in many aspects of life, so I deem his work as a very valuable asset
-            to the community &mdash; for example, watch his
+            do not agree with that assertion. Some of Chris' tips helped me a
+            lot in many aspects of life, so I deem his work as a very valuable
+            asset to the community &mdash; for example, watch his
             <a href="https://youtu.be/RKXZ7t_RiOE"
               >lecture on pricing design work and creativity</a
             >, it's one of his most iconic videos. I do admit a lot of his
@@ -330,7 +375,7 @@
             but the overall product is just priceless.
           </li>
           <li>
-            Having a laugh with this
+            Go have a laugh with this
             <a href="https://youtu.be/gfHcnig8Lo4">masterpiece of a parody</a>,
             from the YouTube channel Kantega AS.
           </li>
@@ -340,10 +385,10 @@
       <br />
 
       <blockquote>
-        Sorry for the delay in this post, it took me 10+ months to start working
-        on it, after finishing my design. I waited to see if I would change my
-        mind with respect to the design, but, so far, I still like it and stand
-        by its logic and ideas.
+        Sorry for the delaying this post so much, it took me 10+ months to start
+        working on it, after finishing my design. I waited to see if I would
+        change my mind with respect to the design, but, so far, I still like it
+        and stand by its logic and ideas.
       </blockquote>
     </article>
   </body>
