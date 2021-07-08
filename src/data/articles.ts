@@ -120,7 +120,6 @@ export const articlesMetadata: Article[] = [
     languages: [Language.english],
     mainTopic: Topic.productivity,
     otherTopics: [Topic.meta],
-    draft: true,
   },
   {
     title: "How I created my logo",
