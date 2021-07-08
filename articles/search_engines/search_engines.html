@@ -39,15 +39,20 @@
         <custom-h2 text="Motivation"></custom-h2>
 
         <p>
-          Everyone knows Google's value. Even though they were not the first
-          search engine, they certainly made it <em>the tool</em> of the last
-          decades. Sites like Google, Bing, Yahoo, etc look like search engines
-          and act as such, but there are other sites in which we constantly
-          search and use as search engines &mdash; YouTube and Wikipedia are 2
-          simple examples &mdash; despite them not being fully categorized in
-          the search area. This article is mostly dedicated to being a
-          compendium of these tools so that you may come back whenever you wish
-          to experiment with something new or improve your setup.
+          Everyone knows Google's value nowadays. Even though they were not the
+          first search engine, they certainly made it <em>the tool</em> of the
+          last decades. Sites like Google, Bing, Yahoo, etc look like search
+          engines and act as such, but there are other sites in which we
+          constantly search and use as search engines &mdash; YouTube and
+          Wikipedia are 2 simple examples &mdash; despite them not being fully
+          categorized in the search area. This article is mostly dedicated to
+          being a compendium of these tools so that you may come back whenever
+          you wish to experiment with something new or improve your setup.
+        </p>
+
+        <p>
+          And who knows... maybe someone will create new search engines after
+          having the zoomed out view I'm providing here.
         </p>
       </section>
 
@@ -72,12 +77,12 @@
         <p>
           The tables below feature all of the relevant search engines I could
           find or remember, even those that are kind of known to anyone living
-          on this planet, it's important to list them all, in my opinion.
+          on this planet: it's important to list them all, in my opinion.
         </p>
 
         <p>
-          I've also tried to categorize the SEs in the subsections below, but
-          many of them could be used for other tasks, of course.
+          I've also tried to categorize the SEs into the subsections below, but
+          many of them could be used for many other tasks, of course.
         </p>
 
         <custom-h3 text="General"></custom-h3>
@@ -1087,24 +1092,24 @@
           programming language to configure your browser.
           <code>autoconfig.yml</code> will get you going at first, but I
           recommend you translate your configurations as soon as possible into
-          its Python counterpart, isolate and centralize things thence, it's
+          its Python counterpart; isolate and centralize things thence, it's
           gonna be a much simpler and cleaner setup &mdash; add this line to the
-          top of your <code>config.py</code>:
+          top of your <code>config.py</code> as well:
           <code>config.load_autoconfig(False)</code>.
         </p>
 
         <p>
-          Once you're done with the translation, you're able to mess around with
-          your search engine shortcuts. For example, when opening a new page,
-          you can use
+          Once you're done with the translation, you will able to mess around
+          with your search engine shortcuts. For example, when opening a new
+          page, you can use
           <code>:open &lt;search-engine-shortcut&gt; &lt;search-query&gt;</code
           >. I typically prefix my search engine shortcuts with
           <code>:</code> so they don't collide with common words or other
-          commands, but you can use whatever you want. Don't forget to use
+          commands, but you can use whatever you want. Don't forget to add
           <code>{}</code> as a placeholder for your search queries. Most
           websites use <code>/search?q=</code> as a URL code for search queries,
           but you will have to test in each one before being sure, this is not
-          standardized anywhere, it's the website's choice.
+          standardized anywhere after all, it's the website's choice.
         </p>
 
         <pre><code class="python">my_search_engine = 'https://www.searx.bar'
@@ -1157,9 +1162,12 @@ c.url.searchengines = {
       <section>
         <custom-h2 text="References"></custom-h2>
 
-        <p>Short list:</p>
+        <p>
+          Short list &mdash; the numbering below does not reflect any hierarchy
+          at all &mdash;:
+        </p>
 
-        <ul>
+        <ol>
           <li>
             <a href="https://www.youtube.com/watch?v=3g2ZW2rWCtw"
               >10 Google Search Alternatives You Should Know! - YouTube</a
@@ -1178,6 +1186,12 @@ c.url.searchengines = {
           <li>
             <a href="https://www.youtube.com/watch?v=Rkv4rrdFBU0"
               >The Proper Way to Do Web Searches (Searx) - YouTube</a
+            >
+          </li>
+          <li>
+            <a href="https://youtu.be/lLcwGDQPZ-s"
+              >The Brave Search Engine. Will This Be The Google Killer? -
+              YouTube</a
             >
           </li>
           <li>
@@ -1207,7 +1221,7 @@ c.url.searchengines = {
               title of that article seems questionable, to say the least."
             ></foot-note>
           </li>
-        </ul>
+        </ol>
 
         <p>
           Video thumbnails &mdash; these videos were listed above as well
