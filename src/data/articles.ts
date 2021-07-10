@@ -7,6 +7,7 @@ export enum Language {
 export enum Topic {
   books = "Books",
   browserExtension = "Browser Extension",
+  chuban = "Chuban",
   comedy = "Comedy",
   cryptography = "Cryptography",
   culture = "Culture",
@@ -113,6 +114,14 @@ export const pagesMetadata: Article[] = [
 ];
 
 export const articlesMetadata: Article[] = [
+  {
+    title: "Aula de Problemas de Meio de Jogo",
+    link: "/articles/aula_problemas_meio_de_jogo/aula_problemas_meio_de_jogo.html",
+    date: Date.UTC(2021, 6, 11),
+    languages: [Language.portuguese],
+    mainTopic: Topic.go,
+    otherTopics: [Topic.chuban],
+  },
   {
     title: "Search Engine Index",
     link: "/articles/search_engines/search_engines.html",
