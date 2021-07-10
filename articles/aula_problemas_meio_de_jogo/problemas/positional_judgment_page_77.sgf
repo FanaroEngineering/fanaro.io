@@ -1,0 +1,9 @@
+(;GM[1]FF[4]CA[UTF-8]AP[Sabaki:0.51.1]KM[6.5]SZ[19]DT[2021-07-09]N[Page 77 from Positional Judgment, by Cho Chikun 9p]C[# Example 3. The Stone-Capturing Disease Affects True Judgment
+
+Black 2 is a fine move showing that he isn't unduly concerned about the corner.
+
+Capturing the 4 black stones is great for White in terms of points, but is it great for the whole board?
+
+Hint: White 1 was a bit premature, playing around **A** and nullifying Black's thickness would have been best.]AB[pc][pe][nr][oq][op][pp][qp][mp][lp][kp][no][nn][qm]AE[dc]AW[dd][cp][rq][qq][pq][or][nq][np][mr][mq][mo][oo][pn]LB[oo:3][pn:1][qj:A][qm:2](;B[pm]TE[1];W[rp];B[on];W[qo];B[mn]LB[jd:B][mn:A]C[Playing **A** at **B** would also have been fine.])(;B[qn]BM[1];W[qo]LB[qn:1][qo:2]C[White 2 is a tesuji.](;B[ro];W[rp];B[po];W[qo])(;B[rp];W[ro]))(;B[po]C[This was the real game. Would you connect at **A**?]LB[on:A]BM[1];W[qn];B[on];W[pm]TR[pm][pn][qn]CR[qm]C[White's stones do not form an empty triangle, Black's stone is severely damaged.])(;B[ro]LB[mn:B][pm:A][ro:1]C[The only true way of saving Black's stones is with 1. However, this is at odds with the whole board. White **A** or **B** will make Black's thickness disappear.])(;AB[pc][pe][nr][oq][op][pp][qp][mp][lp][kp][no][nn]AE[dc][qm][oo][pn]AW[dd][cp][rq][qq][pq][or][nq][np][mr][mq][mo]C[Here's what White should have done...];B[];W[qj](;B[ql];W[qg])(;B[qh];W[qm]LB[pn:A]C[**A** for White would also have been a fine move.
+
+Black's thickness is for nothing.])))
