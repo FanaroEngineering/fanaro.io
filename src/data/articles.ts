@@ -121,6 +121,7 @@ export const articlesMetadata: Article[] = [
     languages: [Language.portuguese],
     mainTopic: Topic.go,
     otherTopics: [Topic.chuban],
+    draft: true,
   },
   {
     title: "Search Engine Index",
