@@ -15,6 +15,7 @@ export enum Topic {
   dataScience = "Data Science",
   design = "Design",
   economy = "Economy",
+  education = "Education",
   engineering = "Engineering",
   flutter = "Flutter",
   fuseki = "Fuseki",
@@ -115,8 +116,19 @@ export const pagesMetadata: Article[] = [
 
 export const articlesMetadata: Article[] = [
   {
+    title: "Scripted Classes vs Consulting or Private Lessons",
+    link:
+      "/articles/scripted_classes_vs_private_lessons/scripted_classes_vs_private_lessons.html",
+    date: Date.UTC(2021, 6, 15),
+    languages: [Language.english],
+    mainTopic: Topic.education,
+    otherTopics: [Topic.meta],
+    draft: true,
+  },
+  {
     title: "Aula de Problemas de Meio de Jogo",
-    link: "/articles/aula_problemas_meio_de_jogo/aula_problemas_meio_de_jogo.html",
+    link:
+      "/articles/aula_problemas_meio_de_jogo/aula_problemas_meio_de_jogo.html",
     date: Date.UTC(2021, 6, 11),
     languages: [Language.portuguese],
     mainTopic: Topic.go,
