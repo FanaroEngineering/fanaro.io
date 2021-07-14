@@ -9,6 +9,9 @@
    id="svg5"
    inkscape:version="1.1 (c4e8f9ed74, 2021-05-24)"
    sodipodi:docname="thumbnail.svg"
+   inkscape:export-filename="/home/philippe/Code/Fanaro Engineering/fanaro.io/articles/scripted_classes_vs_private_lessons/thumbnail.png"
+   inkscape:export-xdpi="96"
+   inkscape:export-ydpi="96"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns="http://www.w3.org/2000/svg"
@@ -26,8 +29,8 @@
      units="px"
      width="1280px"
      inkscape:zoom="1.0897757"
-     inkscape:cx="584.06512"
-     inkscape:cy="376.683"
+     inkscape:cx="597.82944"
+     inkscape:cy="362.0011"
      inkscape:window-width="2554"
      inkscape:window-height="1074"
      inkscape:window-x="0"
@@ -41,32 +44,70 @@
      inkscape:groupmode="layer"
      id="layer1">
     <rect
-       style="fill:#000000;stroke:#ffffff;stroke-width:0;fill-opacity:1"
+       style="fill:#000000;fill-opacity:1;stroke:#ffffff;stroke-width:0"
        id="rect846"
-       width="343.62967"
-       height="194.56146"
-       x="-1.5641265"
-       y="-1.3749049" />
-    <text
-       xml:space="preserve"
-       style="font-style:normal;font-weight:normal;font-size:28.4794px;line-height:1.25;font-family:sans-serif;text-align:center;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.711985"
-       x="170.42975"
-       y="63.991531"
-       id="text3534"><tspan
-         sodipodi:role="line"
-         id="tspan3532"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:BetecknaLowerCase;-inkscape-font-specification:BetecknaLowerCase;text-align:center;text-anchor:middle;fill:#14df19;fill-opacity:1;stroke-width:0.711985"
+       width="338.66666"
+       height="190.5"
+       x="5.0163959e-07"
+       y="5.0163959e-07"
+       inkscape:export-filename="/home/philippe/Code/Fanaro Engineering/fanaro.io/articles/scripted_classes_vs_private_lessons/thumbnail.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
+    <g
+       id="g46528"
+       transform="translate(2.5728542,7.9817942)">
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-weight:normal;font-size:28.4794px;line-height:1.25;font-family:sans-serif;text-align:center;text-anchor:middle;fill:#f90808;fill-opacity:1;stroke:none;stroke-width:0.711985"
          x="170.42975"
-         y="63.991531">Scripted Classes</tspan><tspan
-         sodipodi:role="line"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:BetecknaLowerCase;-inkscape-font-specification:BetecknaLowerCase;text-align:center;text-anchor:middle;fill:#14df19;fill-opacity:1;stroke-width:0.711985"
-         x="170.42975"
-         y="100.73663"
-         id="tspan13560">vs</tspan><tspan
-         sodipodi:role="line"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:BetecknaLowerCase;-inkscape-font-specification:BetecknaLowerCase;text-align:center;text-anchor:middle;fill:#14df19;fill-opacity:1;stroke-width:0.711985"
-         x="170.42975"
-         y="137.48174"
-         id="tspan13564">Private Lessons</tspan></text>
+         y="58.170692"
+         id="text3534"><tspan
+           sodipodi:role="line"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:BetecknaLowerCase;-inkscape-font-specification:BetecknaLowerCase;text-align:center;text-anchor:middle;fill:#f90808;fill-opacity:1;stroke-width:0.711985"
+           x="170.42975"
+           y="58.170692"
+           id="tspan20878">Scripted  Classes</tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-weight:normal;font-size:28.4794px;line-height:1.25;font-family:sans-serif;text-align:center;text-anchor:middle;fill:#ffffff;fill-opacity:0.768881;stroke:none;stroke-width:0.711985"
+         x="170.6601"
+         y="104.45579"
+         id="text3534-2"><tspan
+           sodipodi:role="line"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:BetecknaLowerCase;-inkscape-font-specification:BetecknaLowerCase;text-align:center;text-anchor:middle;fill:#ffffff;fill-opacity:0.768881;stroke-width:0.711985"
+           x="170.6601"
+           y="104.45579"
+           id="tspan20878-3">vs</tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-weight:normal;font-size:28.4794px;line-height:1.25;font-family:sans-serif;text-align:center;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.711985"
+         x="172.47559"
+         y="136.51711"
+         id="text3534-2-7"><tspan
+           sodipodi:role="line"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:BetecknaLowerCase;-inkscape-font-specification:BetecknaLowerCase;text-align:center;text-anchor:middle;fill:#14df19;fill-opacity:1;stroke-width:0.711985"
+           x="172.47559"
+           y="136.51711"
+           id="tspan20878-3-5">Private  Lessons</tspan></text>
+    </g>
+    <g
+       id="g47110"
+       transform="translate(-2.1166668,1.5875001)">
+      <g
+         id="g47894"
+         transform="translate(5.291667)">
+        <path
+           style="fill:none;stroke:#f72222;stroke-width:4.191;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+           d="m 148.70719,28.548581 42.89486,49.505335"
+           id="path46752" />
+        <ellipse
+           style="font-variation-settings:normal;opacity:0.998;fill:none;fill-opacity:1;fill-rule:evenodd;stroke:#e21212;stroke-width:4.04865;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;stop-color:#000000;stop-opacity:1"
+           id="path46982"
+           cx="169.40079"
+           cy="53.695587"
+           rx="31.756084"
+           ry="31.756088" />
+      </g>
+    </g>
   </g>
 </svg>

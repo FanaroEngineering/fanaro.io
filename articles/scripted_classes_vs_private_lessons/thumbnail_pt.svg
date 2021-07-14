@@ -9,6 +9,9 @@
    id="svg5"
    inkscape:version="1.1 (c4e8f9ed74, 2021-05-24)"
    sodipodi:docname="thumbnail_pt.svg"
+   inkscape:export-filename="/home/philippe/Code/Fanaro Engineering/fanaro.io/articles/scripted_classes_vs_private_lessons/thumbnail_pt.png"
+   inkscape:export-xdpi="96"
+   inkscape:export-ydpi="96"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns="http://www.w3.org/2000/svg"
@@ -26,14 +29,14 @@
      units="px"
      width="1280px"
      inkscape:zoom="1.0897757"
-     inkscape:cx="579.01821"
-     inkscape:cy="376.683"
+     inkscape:cx="596.91182"
+     inkscape:cy="363.83634"
      inkscape:window-width="2554"
      inkscape:window-height="1074"
      inkscape:window-x="0"
      inkscape:window-y="0"
      inkscape:window-maximized="1"
-     inkscape:current-layer="layer1" />
+     inkscape:current-layer="g46528" />
   <defs
      id="defs2" />
   <g
@@ -50,26 +53,68 @@
        inkscape:export-filename="/home/philippe/Code/Fanaro Engineering/fanaro.io/articles/scripted_classes_vs_private_lessons/thumbnail.png"
        inkscape:export-xdpi="96"
        inkscape:export-ydpi="96" />
-    <text
-       xml:space="preserve"
-       style="font-style:normal;font-weight:normal;font-size:28.4794px;line-height:1.25;font-family:sans-serif;text-align:center;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.711985"
-       x="170.42975"
-       y="63.991531"
-       id="text3534"><tspan
-         sodipodi:role="line"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:BetecknaLowerCase;-inkscape-font-specification:BetecknaLowerCase;text-align:center;text-anchor:middle;fill:#14df19;fill-opacity:1;stroke-width:0.711985"
-         x="170.42975"
-         y="63.991531"
-         id="tspan13564">Aulas em Grupo</tspan><tspan
-         sodipodi:role="line"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:BetecknaLowerCase;-inkscape-font-specification:BetecknaLowerCase;text-align:center;text-anchor:middle;fill:#14df19;fill-opacity:1;stroke-width:0.711985"
-         x="170.42975"
-         y="100.73663"
-         id="tspan20876">vs</tspan><tspan
-         sodipodi:role="line"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:BetecknaLowerCase;-inkscape-font-specification:BetecknaLowerCase;text-align:center;text-anchor:middle;fill:#14df19;fill-opacity:1;stroke-width:0.711985"
-         x="170.42975"
-         y="137.48174"
-         id="tspan20878">Aulas Privadas</tspan></text>
+    <g
+       id="g46528"
+       transform="translate(2.5728542,4.2776273)">
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-weight:normal;font-size:28.4794px;line-height:1.25;font-family:sans-serif;text-align:center;text-anchor:middle;fill:#f90808;fill-opacity:1;stroke:none;stroke-width:0.711985"
+         x="169.37143"
+         y="63.462364"
+         id="text3534"><tspan
+           sodipodi:role="line"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:BetecknaLowerCase;-inkscape-font-specification:BetecknaLowerCase;text-align:center;text-anchor:middle;fill:#f90808;fill-opacity:1;stroke-width:0.711985"
+           x="169.37143"
+           y="63.462364"
+           id="tspan20878">Aulas  Típicas</tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-weight:normal;font-size:28.4794px;line-height:1.25;font-family:sans-serif;text-align:center;text-anchor:middle;fill:#ffffff;fill-opacity:0.768881;stroke:none;stroke-width:0.711985"
+         x="171.71841"
+         y="109.74741"
+         id="text3534-2"><tspan
+           sodipodi:role="line"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:BetecknaLowerCase;-inkscape-font-specification:BetecknaLowerCase;text-align:center;text-anchor:middle;fill:#ffffff;fill-opacity:0.768881;stroke-width:0.711985"
+           x="171.71841"
+           y="109.74741"
+           id="tspan20878-3">vs</tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-weight:normal;font-size:28.4794px;line-height:1.25;font-family:sans-serif;text-align:center;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.711985"
+         x="173.00475"
+         y="141.8087"
+         id="text3534-2-7"
+         inkscape:export-filename="/home/philippe/Code/Fanaro Engineering/fanaro.io/articles/scripted_classes_vs_private_lessons/thumbnail_pt.png"
+         inkscape:export-xdpi="96"
+         inkscape:export-ydpi="96"><tspan
+           sodipodi:role="line"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:BetecknaLowerCase;-inkscape-font-specification:BetecknaLowerCase;text-align:center;text-anchor:middle;fill:#14df19;fill-opacity:1;stroke-width:0.711985"
+           x="173.00475"
+           y="141.8087"
+           id="tspan20878-3-5">Aulas  Privadas</tspan></text>
+    </g>
+    <g
+       id="g47110"
+       transform="translate(1.0583333,5.8208337)">
+      <g
+         id="g47894"
+         transform="translate(5.291667)">
+        <g
+           id="g24128"
+           transform="translate(0,-0.52916672)">
+          <path
+             style="fill:none;stroke:#f72222;stroke-width:4.69371;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+             d="m 148.70719,28.548581 42.89486,49.505335"
+             id="path46752" />
+          <ellipse
+             style="font-variation-settings:normal;opacity:0.998;fill:none;fill-opacity:1;fill-rule:evenodd;stroke:#e21212;stroke-width:4.36615;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;stop-color:#000000;stop-opacity:1"
+             id="path46982"
+             cx="169.40079"
+             cy="53.695587"
+             rx="31.756084"
+             ry="31.756088" />
+        </g>
+      </g>
+    </g>
   </g>
 </svg>
