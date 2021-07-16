@@ -116,11 +116,20 @@ export const pagesMetadata: Article[] = [
 
 export const articlesMetadata: Article[] = [
   {
+    title: "Aula de Go com Eren Sangueve | Convidado Internacional da Angola",
+    link: "/articles/aula_eren/aula_eren.html",
+    date: Date.UTC(2021, 6, 21),
+    languages: [Language.portuguese],
+    mainTopic: Topic.go,
+    otherTopics: [Topic.review],
+    draft: true,
+  },
+  {
     title: "Scripted Classes vs Consulting or Private Lessons",
     link:
       "/articles/scripted_classes_vs_private_lessons/scripted_classes_vs_private_lessons.html",
-    date: Date.UTC(2021, 6, 15),
-    languages: [Language.english],
+    date: Date.UTC(2021, 6, 18),
+    languages: [Language.english, Language.portuguese],
     mainTopic: Topic.education,
     otherTopics: [Topic.meta],
     draft: true,
