@@ -116,6 +116,15 @@ export const pagesMetadata: Article[] = [
 
 export const articlesMetadata: Article[] = [
   {
+    title: "O Mestre de Go, por Yasunari Kawabata | Leitura de Livro",
+    link: "/articles/mestre_de_go/mestre_de_go.html",
+    date: Date.UTC(2021, 6, 26),
+    languages: [Language.portuguese],
+    mainTopic: Topic.go,
+    otherTopics: [Topic.books],
+    draft: true,
+  },
+  {
     title: "Aula de Go com Eren Sangueve | Convidado Internacional da Angola",
     link: "/articles/aula_eren/aula_eren.html",
     date: Date.UTC(2021, 6, 21),
