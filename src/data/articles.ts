@@ -141,7 +141,6 @@ export const articlesMetadata: Article[] = [
     languages: [Language.english, Language.portuguese],
     mainTopic: Topic.education,
     otherTopics: [Topic.meta],
-    draft: true,
   },
   {
     title: "Aula de Problemas de Meio de Jogo",
