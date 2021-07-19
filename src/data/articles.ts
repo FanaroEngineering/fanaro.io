@@ -131,7 +131,6 @@ export const articlesMetadata: Article[] = [
     languages: [Language.portuguese],
     mainTopic: Topic.go,
     otherTopics: [Topic.review],
-    draft: true,
   },
   {
     title: "Scripted Classes vs Consulting or Private Lessons",
