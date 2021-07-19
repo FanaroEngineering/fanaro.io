@@ -116,6 +116,15 @@ export const pagesMetadata: Article[] = [
 
 export const articlesMetadata: Article[] = [
   {
+    title: "The Canonical Trick Play",
+    link: "/articles/canonical_trick_play/canonical_trick_play.html",
+    date: Date.UTC(2021, 6, 26),
+    languages: [Language.english, Language.portuguese],
+    mainTopic: Topic.go,
+    otherTopics: [Topic.joseki],
+    draft: true,
+  },
+  {
     title: "O Mestre de Go, por Yasunari Kawabata | Leitura de Livro",
     link: "/articles/mestre_de_go/mestre_de_go.html",
     date: Date.UTC(2021, 6, 26),
