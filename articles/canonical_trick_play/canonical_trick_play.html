@@ -66,75 +66,279 @@
       <blockquote>
         <!-- TODO: Zip all the SGFs into a link below when everything has been
                    properly edited. -->
-        You can download all of the SGFs used in this post <a href="">here</a>.
-        I use <a href="https://sabaki.yichuanshen.de/">Sabaki</a> as my editor,
-        which features some extra bling on the game tree. So, in order to
-        extract the most from my SGFs, I advise you to use it too. Don't forget
-        to donate to the project too!
+        You can download all of the SGFs used in this post
+        <a href="canonical_trick_play.sgf">here</a>. I use
+        <a href="https://sabaki.yichuanshen.de/">Sabaki</a> as my editor, which
+        features some extra bling on the game tree. So, in order to extract the
+        most from my SGFs, I advise you to use it too. Don't forget to donate to
+        the project too!
       </blockquote>
 
-      <p>
-        The closest I got to finding a successful professional use of this trick
-        play is a game between Kang Dongyun and Lee Jaeung, back in 2007, when
-        they were both 5p. Kang Dongyun 9p uses this pattern to both enclose the
-        corner and switch to developing the left side, something which wouldn't
-        have been possible with the standard joseki in this case.
-      </p>
+      <section>
+        <custom-h2 text="Introduction and Motivation"></custom-h2>
 
-      <div
-        data-wgo="Kang Dongyun - Lee Jaeung.sgf"
-        data-wgo-board="stoneHandler: WGo.Board.drawHandlers.NORMAL,
-                        background: '../../assets/wgo/textures/wood2.jpg'"
-        class="SGF"
-      >
         <p>
-          Your browser doesn't support the WGo.js Player. Please use a more
-          modern browser, like Brave, Chrome, Firefox or Edge.
+          This wasn't supposed to be that long. I wanted it to be a simple post
+          with a short English version of a tiny video a I was going to post in
+          Portuguese for
+          <local-link
+            text="my YouTube channel"
+            link="https://youtube.com/c/PhilippeFanaro"
+          ></local-link
+          >. However, before creating the short post I decided to ask Reddit (<a
+            href="https://www.reddit.com/r/baduk/"
+            >r/baduk</a
+          >) if anyone had anything to say about the this typical
+          trick-punishment pattern (see <em>Diagram 2</em>). It turns out
+          <a href="https://www.reddit.com/user/Uberdude85/">Uberdude85</a> knew
+          of something quite substantial that I didn't:
+          <a
+            href="https://www.reddit.com/r/baduk/comments/iz5388/does_anyone_have_a_link_to_an_article_of_a_pro/"
+            >the typical punishment is suboptimal/wrong</a
+          >. His rebuttal has been corroborated by a fair number of pros and
+          strong amateurs recently as well.
         </p>
-      </div>
 
-      <p>
-        Apparently, one of the pros, namely Tono Hiroaki 9p, in 1991, fell for
-        the trap and got a smaller territory than he should. His opponent was
-        Cho Chikun 9p, and this sequence was likely a favorite of his, because
-        he played it at least 3 times:
-      </p>
-
-      <div
-        data-wgo="Tono Hiroaki - Cho Chikun.sgf"
-        data-wgo-board="stoneHandler: WGo.Board.drawHandlers.NORMAL,
-                        background: '../../assets/wgo/textures/wood2.jpg'"
-        class="SGF"
-      >
         <p>
-          Your browser doesn't support the WGo.js Player. Please use a more
-          modern browser, like Brave, Chrome, Firefox or Edge.
+          In the next section, I'll expose the digested version of all the
+          sequences, but all of them are in
+          <a href="canonical_trick_play.sgf">the SGF accompanying this post</a>.
+          You can also dive deep into the rabbit hole, if you wish, by going
+          through all of the collected references in the last section.
         </p>
-      </div>
 
-      <p>
-        Another worthwhile game to mention is
-        <a
-          href="https://www.lifein19x19.com/forum/viewtopic.php?p=102052#p102052"
-          >Shusaku's against Wada Kintaro</a
-        >, in 1848. Shusaku does apparently subscribe to the hane<foot-note
-          text="Black, Wada Kintaro, wins the game actually, even though it's a
+        <p>
+          I do appreciate feedback even though there's no comment section on my
+          website. All you need to do is either message me on one of the
+          plethora of social networks I'm a part of, or simply offer a comment
+          or contribution on
+          <local-link
+            text="this project's Github repo"
+            link="https://github.com/FanaroEngineering/fanaro.io"
+          ></local-link
+          >.
+        </p>
+      </section>
+
+      <section>
+        <custom-h2
+          text="A Walkthrough the Trick Play and Its Punishment"
+        ></custom-h2>
+
+        <p>
+          The trick play in question comes from one of the first josekis most
+          people learn, shown in <em>Diagram 1</em>.
+        </p>
+
+        <figure>
+          <img src="img/Usual Joseki.png" alt="Usual Joseki" />
+          <figcaption>
+            <em>Diagram 1</em>: One of the most basic josekis.
+          </figcaption>
+        </figure>
+
+        <p>
+          Interestingly enough, what I'm calling a trick play is actually called
+          a mistake by most &mdash; slightly more experienced &mdash; players,
+          the hane at <code>A</code>, in <em>Diagram 2</em>.
+        </p>
+
+        <figure>
+          <img src="img/The Trick Play.png" alt="The Trick Play" />
+          <figcaption>
+            <em>Diagram 2</em>: the trick play, or, maybe a simple mistake?
+          </figcaption>
+        </figure>
+
+        <p>
+          There are many options on how to react for White, mostly ranging from
+          <code>B</code> to <code>E</code>; tenuking is usually not one of them,
+          since taking the corner or having the either <code>B</code> or
+          <code>E</code> is quite big.
+        </p>
+
+        <p>
+          <code>B</code> would evolve into a typical 3-3 invasion, as seen in
+          <em>Diagram 3</em>. This would clearly be inferior to the joseki shown
+          previously, in <em>Diagram 1</em> &mdash; it's worth mentioning that
+          this type of loss is not the end of the world, most mistakes are
+          actually made during the middle game anyway<foot-note
+            text="Bear with me... I know this joseki could be played during the
+            middle game too..."
+          ></foot-note
+          >.
+        </p>
+
+        <figure>
+          <!-- TODO: B to 3-3 Invasion -->
+          <img src="" alt="3-3 Invasion" />
+          <figcaption>
+            <em>Diagram 3</em>: the trick play ends up working: the joseki
+            evolves into a 3-3 invasion.
+          </figcaption>
+        </figure>
+
+        <p>
+          <code>E</code> seems to be not so unlikely due to White's stone on the
+          left, but Black's shape after <code>C</code> is very good. White will
+          probably crawl on the second line in order to live, as in
+          <em>Diagram 4</em>.
+        </p>
+
+        <figure>
+          <!-- TODO: E to crawling on the second line -->
+          <img src="" alt="E into White crawling on the second line" />
+          <figcaption>
+            <em>Diagram 4</em>: Black's hane at <code>C</code> is just too good
+            a shape. White ends up crawling on the second line.
+          </figcaption>
+        </figure>
+
+        <p>
+          All that's left for White now is, then, to either <code>C</code> or
+          <code>D</code>, in <em>Diagram 2</em>.
+        </p>
+
+        <p>
+          <code>C</code> is what basically everyone learns as a DDK or high SDK,
+          despite it being quite the weird shape. It does work, but the question
+          is: is it the best White can do? Or: is this all even a trick-punish
+          ordeal or a (more or less) new joseki?
+        </p>
+      </section>
+
+      <section>
+        <custom-h2 text="Pro Games and Other Notable Examples"></custom-h2>
+        <p>
+          The closest I got to finding a successful professional use of this
+          trick play is a game between Kang Dongyun and Lee Jaeung, back in
+          2007, when they were both 5p. Kang Dongyun 9p uses this pattern to
+          both enclose the corner and switch to developing the left side,
+          something which wouldn't have been possible with the standard joseki
+          in this case.
+        </p>
+
+        <div
+          data-wgo="Kang Dongyun - Lee Jaeung.sgf"
+          data-wgo-board="stoneHandler: WGo.Board.drawHandlers.NORMAL,
+                        background: '../../assets/wgo/textures/wood2.jpg'"
+          class="SGF"
+        >
+          <p>
+            Your browser doesn't support the WGo.js Player. Please use a more
+            modern browser, like Brave, Chrome, Firefox or Edge.
+          </p>
+        </div>
+
+        <p>
+          Apparently, one of the pros, namely Tono Hiroaki 9p, in 1991, fell for
+          the trap and got a smaller territory than he should. His opponent was
+          Cho Chikun 9p, and this sequence was likely a favorite of his, because
+          he played it at least 3 times:
+        </p>
+
+        <div
+          data-wgo="Tono Hiroaki - Cho Chikun.sgf"
+          data-wgo-board="stoneHandler: WGo.Board.drawHandlers.NORMAL,
+                        background: '../../assets/wgo/textures/wood2.jpg'"
+          class="SGF"
+        >
+          <p>
+            Your browser doesn't support the WGo.js Player. Please use a more
+            modern browser, like Brave, Chrome, Firefox or Edge.
+          </p>
+        </div>
+
+        <p>
+          Another worthwhile game to mention is
+          <a
+            href="https://www.lifein19x19.com/forum/viewtopic.php?p=102052#p102052"
+            >Shusaku's against Wada Kintaro</a
+          >, in 1848. Shusaku does apparently subscribe to the hane<foot-note
+            text="Black, Wada Kintaro, wins the game actually, even though it's a
           3-stone handicap anyway."
-        ></foot-note
-        >, not the descent:
-      </p>
-
-      <div
-        data-wgo="Kuwahara Shusaku - Wada Kintaro (1848).sgf"
-        data-wgo-board="stoneHandler: WGo.Board.drawHandlers.NORMAL,
-                        background: '../../assets/wgo/textures/wood2.jpg'"
-        class="SGF"
-      >
-        <p>
-          Your browser doesn't support the WGo.js Player. Please use a more
-          modern browser, like Brave, Chrome, Firefox or Edge.
+          ></foot-note
+          >, not the descent:
         </p>
-      </div>
+
+        <div
+          data-wgo="Kuwahara Shusaku - Wada Kintaro (1848).sgf"
+          data-wgo-board="stoneHandler: WGo.Board.drawHandlers.NORMAL,
+                        background: '../../assets/wgo/textures/wood2.jpg'"
+          class="SGF"
+        >
+          <p>
+            Your browser doesn't support the WGo.js Player. Please use a more
+            modern browser, like Brave, Chrome, Firefox or Edge.
+          </p>
+        </div>
+      </section>
+
+      <section>
+        <custom-h2 text="References"></custom-h2>
+
+        <p>
+          As previously said, I welcome criticism and feedback, so, if you have
+          a new reference for me to add, just contact me.
+        </p>
+
+        <p>Here is a curated list of the relevant references:</p>
+
+        <ul>
+          <li>
+            <a
+              href="https://fanaro.io/articles/canonical_trick_play/canonical_trick_play.html"
+              >The original post this SGF comes from</a
+            >
+          </li>
+          <li>
+            <a
+              href="https://www.reddit.com/r/baduk/comments/iz5388/does_anyone_have_a_link_to_an_article_of_a_pro/"
+              >Reddit - Does anyone have a link to an article of a pro
+              commenting on this &quot;trick&quot; play?</a
+            >
+          </li>
+          <li>
+            <a href="https://www.lifein19x19.com/viewtopic.php?p=161730#p161730"
+              >Uberdude85&#39;s response on Life in 19x19</a
+            >
+          </li>
+          <li>
+            <a href="http://ps.waltheri.net/448510/"
+              >Waltheri&#39;s Pattern Search</a
+            >
+          </li>
+          <li>
+            <a
+              href="https://www.lifein19x19.com/forum/viewtopic.php?p=101935#p101935"
+              >tchan001&#39;s Post on Life in 19x19</a
+            >
+          </li>
+          <li>
+            <a href="https://www.lifein19x19.com/forum/viewtopic.php?t=10053"
+              >TheBlackStone&#39;s Post on Life in 19x19</a
+            >
+          </li>
+          <li>
+            <a
+              href="https://senseis.xmp.net/?44PointOneSpaceLowPincerInvasionInterception"
+              >Sensei&#39;s Library Page on the Joseki this comes from</a
+            >
+          </li>
+          <li>
+            <a
+              href="https://www.lifein19x19.com/forum/viewtopic.php?f=15&amp;t=6155"
+              >Yukigami&#39;s Post on this Trick Play</a
+            >
+          </li>
+          <li>
+            <a
+              href="https://www.lifein19x19.com/forum/viewtopic.php?p=102052#p102052"
+              >Shusaku&#39;s Game with this Trick Play (tchann001&#39;s find)</a
+            >
+          </li>
+        </ul>
+      </section>
     </article>
   </body>
 </html>
