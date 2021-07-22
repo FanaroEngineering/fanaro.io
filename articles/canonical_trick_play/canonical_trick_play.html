@@ -368,12 +368,12 @@
           </figcaption>
         </figure>
 
-        <custom-h3 text="The Hane"></custom-h3>
-
         <p>
           Now, I hope we can move on to move <code>D</code>, the hane, from
           <em>Diagram 2</em>.
         </p>
+
+        <custom-h3 text="The Hane"></custom-h3>
 
         <p>
           The most important sequence which differentiates the descent from the
@@ -395,15 +395,163 @@
           </figcaption>
         </figure>
 
-        <p></p>
+        <p>
+          Black can try to resist, but the end result won't look nice, as seen
+          in <em>Diagram 13</em>, the <code>A</code> stone is severely damaged,
+          Black has poor shape and hasn't even captured the White stones to the
+          right.
+        </p>
 
-        <custom-h3 text="Appendix: A Weird Cut"></custom-h3>
+        <figure>
+          <img
+            src="img/Proper Hane - White Damages while Penetrating Black.png"
+            alt="White Gets Thicker Shape"
+          />
+          <figcaption>
+            <em>Diagram 13</em>: Black's stubborness will get him almost killed.
+            I'll let you decide if you'd rather have Black stones be killed
+            instead.
+          </figcaption>
+        </figure>
+
+        <p>
+          In terms of resistance, the best Black can hope for is using his
+          stones to force White's enclosure &mdash; which is seen in 2 pro games
+          in the next section &mdash;, as in <em>Diagram 14</em>. Black can and
+          should probably fix its wall with a tiger's mouth, to protect
+          <code>B</code> and <code>C</code> at the same time, and White will
+          have sente to diminish the effect of the wall. White's corner is
+          bigger than usual, and so is Black's thickness; the final result is
+          much more even than expected in my opinion, even though the wall is in
+          an unexpected direction, given the initial position.
+        </p>
+
+        <!-- TODO: This is not ok. This diagram is not consistent with the rest
+                   of the argument. -->
+
+        <blockquote>
+          This weird direction of play from Black isn't really all that weird
+          after witnessing some recent AI josekis, though, is it?
+        </blockquote>
+
+        <figure>
+          <img
+            src="img/Proper Hane - White is Enclosed from.png"
+            alt="White is Enclosed"
+          />
+          <figcaption>
+            <em>Diagram 14</em>: Black encloses White with astounding thickness;
+            White has a big corner and sente; Black's wall is in a weird
+            direction, given the initial position.
+          </figcaption>
+        </figure>
+
+        <p>
+          Black could offer a lot of resistance if there's a little bit of
+          reinforcement in the area. <em>Diagrams 15</em> shows how a single
+          stone can change the outcome completely.
+        </p>
+
+        <figure>
+          <img
+            src="img/Proper Hane - No Punishment if Black Stones on the Side.png"
+            alt="No Punishment if Black Stones on the Side"
+          />
+          <figcaption>
+            <em>Diagram 15</em>: At the right place, at the right time.
+          </figcaption>
+        </figure>
+
+        <p>
+          If Black has a stone to the side, as in <em>Diagram 15</em>, it is
+          wiser to revert back to a 3-3 invasion, like <em>Diagram 16</em>. In
+          fact, it's likely the optimal choice, since it makes Black's original
+          stone on the side way less efficient than desired. Curiously, this is
+          what Tono Hiroaki 9p played against Cho Chikun 9p in 1991, mentioned
+          in the next section.
+        </p>
+
+        <figure>
+          <img
+            src="img/Proper Hane - 3-3 variation might not be so inefficient (Mention Cho Chikun_s Game).png"
+            alt="3-3 variation might not be so inefficient"
+          />
+          <figcaption>
+            <em>Diagram 16</em>: Black's stone to the side makes the 3-3
+            invasion efficient.
+          </figcaption>
+        </figure>
+
+        <p>
+          The discussion on the hane actually doesn't end optimally with
+          <em>Diagram 14</em>. Most references point the hane plus clamp as the
+          most likely optimal play for both sides, as in <em>Diagram 17</em>.
+          <code>A</code> for <code>B</code> is <em>aji-keshi</em>, a bad
+          exchange for Black. Pros seem to think this is enough of a punishment,
+          but I'll let you decide: isn't this discussion the epitome of the road
+          being more important than the destination: all this to end up with a
+          "minimal" <em>aji-keshi</em> solution?!
+        </p>
+
+        <figure>
+          <img
+            src="img/Proper Hane - Optimal with Aji-Keshi.png"
+            alt="Optimal Solution, Aji-Keshi"
+          />
+          <figcaption>
+            <em>Diagram 17</em>: The <em>aji-keshi</em> exchange of
+            <code>A</code> for <code>B</code> is supposedly good enough
+            punishment.
+          </figcaption>
+        </figure>
+
+        <custom-h3 text="Appendix: A Weird Cut to a Weird Kosumi"></custom-h3>
 
         <blockquote>
           This is a cut I'm analyzing on my own, using Leela as a crutch and
           confirmation tool. I think the overall results make sense, but, as
           always, I'm open to feedback.
         </blockquote>
+
+        <p>
+          One final variation that bugged me out quite a bit is the cut after a
+          kosumi in the descent variations, which is shown below, in
+          <em>Diagram 18</em>.
+        </p>
+
+        <figure>
+          <img
+            src="img/Weird Kosumi-Cut - Beginning.png"
+            alt="No Punishment if Black Stones on the Side"
+          />
+          <figcaption>
+            <em>Diagram 18</em>: The weird case of the kosumi-cut.
+          </figcaption>
+        </figure>
+
+        <p>
+          Black could have reverted the course to more normal variations by
+          plaing <code>14</code> at <code>15</code>, but, after White
+          <code>13</code>, Leela also sees Black <code>14</code> as the only
+          option.
+        </p>
+
+        <p>
+          Black is still worse here. My first intuition was to give Black the
+          corner while squashing from the outside, and that's exactly what Leela
+          thought as optimal, which is shown in <em>Diagram 19</em>.
+        </p>
+
+        <figure>
+          <img
+            src="img/Weird Kosumi-Cut - Leela.png"
+            alt="Leela's Optimal Solution to the Kosumi-Cut"
+          />
+          <figcaption>
+            <em>Diagram 19</em>: Black kills the corner while White squashes
+            Black from the outside.
+          </figcaption>
+        </figure>
       </section>
 
       <section>
@@ -431,8 +579,10 @@
 
         <p>
           Apparently, one of the pros, namely Tono Hiroaki 9p, in 1991, fell for
-          the trap and got a smaller territory than he should. His opponent was
-          Cho Chikun 9p, and this sequence was likely a favorite of his, because
+          the trap and got a smaller territory than he should. Or did he?
+          White's stone on the side makes the 3-3 invasion more efficient than
+          expected, as discussed in the previous section. His opponent was Cho
+          Chikun 9p, and this "trick play" was likely a favorite of his, because
           he played it at least 3 times:
         </p>
 
