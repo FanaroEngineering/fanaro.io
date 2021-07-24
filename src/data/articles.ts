@@ -116,6 +116,15 @@ export const pagesMetadata: Article[] = [
 
 export const articlesMetadata: Article[] = [
   {
+    title: "Aula de Go com Alexandre Amaro 5d",
+    link: "/articles/aula_alexandre_amaro_1/aula_alexandre_amaro_1.html",
+    date: Date.UTC(2021, 7, 2),
+    languages: [Language.portuguese],
+    mainTopic: Topic.go,
+    otherTopics: [Topic.review],
+    draft: true,
+  },
+  {
     title: "The Canonical Trick Play & Its Punishment",
     link: "/articles/canonical_trick_play/canonical_trick_play.html",
     date: Date.UTC(2021, 6, 26),
