@@ -131,7 +131,6 @@ export const articlesMetadata: Article[] = [
     languages: [Language.english, Language.portuguese],
     mainTopic: Topic.go,
     otherTopics: [Topic.joseki],
-    draft: true,
   },
   {
     title: "O Mestre de Go, por Yasunari Kawabata | Leitura de Livro",
