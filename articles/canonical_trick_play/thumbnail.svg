@@ -36,7 +36,7 @@
      inkscape:window-x="0"
      inkscape:window-y="0"
      inkscape:window-maximized="1"
-     inkscape:current-layer="g2108" />
+     inkscape:current-layer="layer1" />
   <defs
      id="defs2" />
   <g
@@ -55,7 +55,7 @@
        transform="translate(25.922872,1.2059772)" />
     <g
        id="g2108"
-       transform="matrix(1.117869,0,0,1.117869,-42.960235,32.672548)">
+       transform="matrix(1.117869,0,0,1.117869,-44.547736,32.672548)">
       <ellipse
          style="font-variation-settings:normal;opacity:0.998;vector-effect:none;fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1.05671;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;stop-color:#000000;stop-opacity:1"
          id="path894"
@@ -132,17 +132,17 @@
     <text
        xml:space="preserve"
        style="font-style:normal;font-weight:normal;font-size:22.2338px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.555843"
-       x="175.09718"
+       x="172.98055"
        y="31.924702"
        id="text5516"><tspan
          sodipodi:role="line"
          id="tspan5514"
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:BetecknaLowerCase;-inkscape-font-specification:BetecknaLowerCase;text-align:center;text-anchor:middle;fill:#18cd1a;fill-opacity:1;stroke-width:0.555843"
-         x="175.09718"
+         x="172.98055"
          y="31.924702">The Canonical Trick Play </tspan><tspan
          sodipodi:role="line"
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:BetecknaLowerCase;-inkscape-font-specification:BetecknaLowerCase;text-align:center;text-anchor:middle;fill:#18cd1a;fill-opacity:1;stroke-width:0.555843"
-         x="178.99922"
+         x="176.88258"
          y="60.611515"
          id="tspan27692">&amp; Its Punishment </tspan></text>
   </g>
