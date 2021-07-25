@@ -140,7 +140,6 @@ export const articlesMetadata: Article[] = [
     languages: [Language.portuguese],
     mainTopic: Topic.go,
     otherTopics: [Topic.books],
-    draft: true,
   },
   {
     title: "Aula de Go com Eren Sangueve | Convidado Internacional da Angola",
