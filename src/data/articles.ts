@@ -116,6 +116,15 @@ export const pagesMetadata: Article[] = [
 
 export const articlesMetadata: Article[] = [
   {
+    title: "Pyrrhic Victories and Josekis",
+    link: "/articles/pyrrhic_victories/pyrrhic_victories.html",
+    date: Date.UTC(2021, 7, 5),
+    languages: [Language.english, Language.portuguese],
+    mainTopic: Topic.go,
+    otherTopics: [Topic.joseki],
+    draft: true,
+  },
+  {
     title: "Aula de Go com Alexandre Amaro 5d",
     link: "/articles/aula_alexandre_amaro_1/aula_alexandre_amaro_1.html",
     date: Date.UTC(2021, 7, 2),
