@@ -122,7 +122,6 @@ export const articlesMetadata: Article[] = [
     languages: [Language.english, Language.portuguese],
     mainTopic: Topic.go,
     otherTopics: [Topic.joseki],
-    draft: true,
   },
   {
     title: "Aula de Go com Alexandre Amaro 5d",
