@@ -116,7 +116,7 @@ export const pagesMetadata: Article[] = [
 
 export const articlesMetadata: Article[] = [
   {
-    title: "Why Play Go",
+    title: "Why Play Go: A More Thorough Exploration Than Usual",
     link: "/articles/why_play_go/why_play_go.html",
     date: Date.UTC(2021, 7, 16),
     languages: [Language.english, Language.portuguese],
