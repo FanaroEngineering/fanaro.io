@@ -116,12 +116,22 @@ export const pagesMetadata: Article[] = [
 
 export const articlesMetadata: Article[] = [
   {
+    title: "Aula de Go com Luís Sato 1k OGS",
+    link: "/articles/aula_sato/aula_sato.html",
+    date: Date.UTC(2021, 7, 15),
+    languages: [Language.portuguese],
+    mainTopic: Topic.go,
+    otherTopics: [Topic.review, Topic.philosophy, Topic.psychology],
+    draft: true,
+  },
+  {
     title: "Aula de Go com Wang S, Feng 5d",
     link: "/articles/aula_wang/aula_wang.html",
     date: Date.UTC(2021, 7, 8),
     languages: [Language.portuguese],
     mainTopic: Topic.go,
     otherTopics: [Topic.review, Topic.philosophy, Topic.psychology],
+    draft: true,
   },
   {
     title: "Pyrrhic Victories and Josekis",
