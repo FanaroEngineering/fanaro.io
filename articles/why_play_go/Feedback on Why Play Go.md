@@ -42,13 +42,12 @@ Other feedback:
     - [The Win-Rate to Have someone always interested](../Quotes%20ced9d1408a374acb8aac0aa7b25384b6/The%20Win-Rate%20to%20Have%20someone%20always%20interested%203155021027a84234a3dd14fb0fa1bab6.md)
     - Go will teach you the power of context.
 
-    [The Importance of BJJ Fundamentals by John Danaher](../Efficiency%20370abc3c7999450fbed9f6b223a635e9/Notes%20686495ea56fb49b9923dd2e1868cdce7/The%20Importance%20of%20BJJ%20Fundamentals%20by%20John%20Danaher%20598e6ef383a94dc08f68b5a9b4a6e723.md)
+    [The Importance of BJJ Fundamentals by John Danaher](https://youtu.be/-zgwLkCoWDw)
 
     - Sports where you can only use your brain instead of brute forcing offer you the ability of having a stronger mind.
     - Believe it or not, you will be able to tap into your truly violent self.
     - If you like martial arts and fighting, you're gonna like Go. It's like mind fighting.
-
-    [What you will get from competing in Jiu Jitsu](../Quotes%20ced9d1408a374acb8aac0aa7b25384b6/What%20you%20will%20get%20from%20competing%20in%20Jiu%20Jitsu%20055f1b6bde1048cb8be23596a57e5ea0.md) 
+    - [What you will get from competing in Jiu Jitsu](../Quotes%20ced9d1408a374acb8aac0aa7b25384b6/What%20you%20will%20get%20from%20competing%20in%20Jiu%20Jitsu%20055f1b6bde1048cb8be23596a57e5ea0.md) 
 
     - The Go community tends to be of a much more intellectual and polite kind, which results and more positive interactions in general.
     - You will often have the opportunity to apply what you've just learned on the next game.
