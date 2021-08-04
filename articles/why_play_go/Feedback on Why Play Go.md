@@ -241,10 +241,13 @@ https://youtu.be/3QWIxElEnc8
 - Maslow's Hierarchy of Needs
 - Rewards narrow our minds to very small sets of possibilities. Whenever we need creativity, it goes awry.
 - Dan Pink:
-    - Autonomy
-    - Mastery
-    - Purpose
+  - Autonomy
+  - Mastery
+  - Purpose
 - Praising effort instead of ability makes people want to go for harder problems.
+  - Going for effort also means more resilience to failure.
+  - Praise for effort: focus on learning; praise for ability: focus on success.
+  - This can become a mindset later on, if consistently applied.
 
 ---
 
@@ -256,10 +259,10 @@ https://youtu.be/3QWIxElEnc8
 
 - Motivation is within the mind, it is not behavior.
 - Motivation is the ability of holding a thought within your mind.
-    - Suicide takes a huge amount of motivation.
+  - Suicide takes a huge amount of motivation.
 - Desire is not motivation, it's a sensory stimulus.
 - Anxiety does not come from the thing that's motivating you, but the consequences of doing it or not doing it.
-    - Anxiety is a very powerful thing to bump motivation out of your mind.
+  - Anxiety is a very powerful thing to bump motivation out of your mind.
 - Goals are not what motivates people, it is a means of establishing the tasks that will keep you motivated. Most motivated people are focused on the task at hand.
 - Self-discipline is an emergent property, it is not what keeps you motivated.
 
