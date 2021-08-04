@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+<!--[if lt IE 9]>
+	<script src="https://html5shim.googlecode.com/svn/trunk/html5.js">
+	</script>
+<![endif]-->
+<head>
+<meta charset="UTF-8" />
+<meta http-equiv="x-ua-compatible" content="ie=edge"><script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={licenseKey:"0d4d84695b",applicationID:"12680714"};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var i=e[n]={exports:{}};t[n][0].call(i.exports,function(e){var i=t[n][1][e];return r(i||e)},i,i.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<n.length;i++)r(n[i]);return r}({1:[function(t,e,n){function r(){}function i(t,e,n){return function(){return o(t,[u.now()].concat(f(arguments)),e?null:this,n),e?void 0:this}}var o=t("handle"),a=t(8),f=t(9),c=t("ee").get("tracer"),u=t("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var d=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],p="api-",l=p+"ixn-";a(d,function(t,e){s[e]=i(p+e,!0,"api")}),s.addPageAction=i(p+"addPageAction",!0),s.setCurrentRouteName=i(p+"routeName",!0),e.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(t,e){var n={},r=this,i="function"==typeof e;return o(l+"tracer",[u.now(),t,n],r),function(){if(c.emit((i?"":"no-")+"fn-start",[u.now(),r,i],n),i)try{return e.apply(this,arguments)}catch(t){throw c.emit("fn-err",[arguments,this,t],n),t}finally{c.emit("fn-end",[u.now()],n)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,e){m[e]=i(l+e)}),newrelic.noticeError=function(t,e){"string"==typeof t&&(t=new Error(t)),o("err",[t,u.now(),!1,e])}},{}],2:[function(t,e,n){function r(t){if(NREUM.init){for(var e=NREUM.init,n=t.split("."),r=0;r<n.length-1;r++)if(e=e[n[r]],"object"!=typeof e)return;return e=e[n[n.length-1]]}}e.exports={getConfiguration:r}},{}],3:[function(t,e,n){function r(){return f.exists&&performance.now?Math.round(performance.now()):(o=Math.max((new Date).getTime(),o))-a}function i(){return o}var o=(new Date).getTime(),a=o,f=t(10);e.exports=r,e.exports.offset=a,e.exports.getLastTimestamp=i},{}],4:[function(t,e,n){function r(t){return!(!t||!t.protocol||"file:"===t.protocol)}e.exports=r},{}],5:[function(t,e,n){function r(t,e){var n=t.getEntries();n.forEach(function(t){"first-paint"===t.name?d("timing",["fp",Math.floor(t.startTime)]):"first-contentful-paint"===t.name&&d("timing",["fcp",Math.floor(t.startTime)])})}function i(t,e){var n=t.getEntries();n.length>0&&d("lcp",[n[n.length-1]])}function o(t){t.getEntries().forEach(function(t){t.hadRecentInput||d("cls",[t])})}function a(t){if(t instanceof m&&!g){var e=Math.round(t.timeStamp),n={type:t.type};e<=p.now()?n.fid=p.now()-e:e>p.offset&&e<=Date.now()?(e-=p.offset,n.fid=p.now()-e):e=p.now(),g=!0,d("timing",["fi",e,n])}}function f(t){"hidden"===t&&d("pageHide",[p.now()])}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var c,u,s,d=t("handle"),p=t("loader"),l=t(7),m=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){c=new PerformanceObserver(r);try{c.observe({entryTypes:["paint"]})}catch(v){}u=new PerformanceObserver(i);try{u.observe({entryTypes:["largest-contentful-paint"]})}catch(v){}s=new PerformanceObserver(o);try{s.observe({type:"layout-shift",buffered:!0})}catch(v){}}if("addEventListener"in document){var g=!1,h=["click","keydown","mousedown","pointerdown","touchstart"];h.forEach(function(t){document.addEventListener(t,a,!1)})}l(f)}},{}],6:[function(t,e,n){function r(t,e){if(!i)return!1;if(t!==i)return!1;if(!e)return!0;if(!o)return!1;for(var n=o.split("."),r=e.split("."),a=0;a<r.length;a++)if(r[a]!==n[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var f=navigator.userAgent,c=f.match(a);c&&f.indexOf("Chrome")===-1&&f.indexOf("Chromium")===-1&&(i="Safari",o=c[1])}e.exports={agent:i,version:o,match:r}},{}],7:[function(t,e,n){function r(t){function e(){t(a&&document[a]?document[a]:document[i]?"hidden":"visible")}"addEventListener"in document&&o&&document.addEventListener(o,e,!1)}e.exports=r;var i,o,a;"undefined"!=typeof document.hidden?(i="hidden",o="visibilitychange",a="visibilityState"):"undefined"!=typeof document.msHidden?(i="msHidden",o="msvisibilitychange"):"undefined"!=typeof document.webkitHidden&&(i="webkitHidden",o="webkitvisibilitychange",a="webkitVisibilityState")},{}],8:[function(t,e,n){function r(t,e){var n=[],r="",o=0;for(r in t)i.call(t,r)&&(n[o]=e(r,t[r]),o+=1);return n}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],9:[function(t,e,n){function r(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,i=n-e||0,o=Array(i<0?0:i);++r<i;)o[r]=t[e+r];return o}e.exports=r},{}],10:[function(t,e,n){e.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(t,e,n){function r(){}function i(t){function e(t){return t&&t instanceof r?t:t?u(t,c,a):a()}function n(n,r,i,o,a){if(a!==!1&&(a=!0),!l.aborted||o){t&&a&&t(n,r,i);for(var f=e(i),c=v(n),u=c.length,s=0;s<u;s++)c[s].apply(f,r);var p=d[w[n]];return p&&p.push([b,n,r,f]),f}}function o(t,e){y[t]=v(t).concat(e)}function m(t,e){var n=y[t];if(n)for(var r=0;r<n.length;r++)n[r]===e&&n.splice(r,1)}function v(t){return y[t]||[]}function g(t){return p[t]=p[t]||i(n)}function h(t,e){l.aborted||s(t,function(t,n){e=e||"feature",w[n]=e,e in d||(d[e]=[])})}var y={},w={},b={on:o,addEventListener:o,removeEventListener:m,emit:n,get:g,listeners:v,context:e,buffer:h,abort:f,aborted:!1};return b}function o(t){return u(t,c,a)}function a(){return new r}function f(){(d.api||d.feature)&&(l.aborted=!0,d=l.backlog={})}var c="nr@context",u=t("gos"),s=t(8),d={},p={},l=e.exports=i();e.exports.getOrSetContext=o,l.backlog=d},{}],gos:[function(t,e,n){function r(t,e,n){if(i.call(t,e))return t[e];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return t[e]=r,r}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(t,e,n){function r(t,e,n,r){i.buffer([t],r),i.emit(t,e,n)}var i=t("ee").get("handle");e.exports=r,r.ee=i},{}],id:[function(t,e,n){function r(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:a(t,o,function(){return i++})}var i=1,o="nr@id",a=t("gos");e.exports=r},{}],loader:[function(t,e,n){function r(){if(!R++){var t=M.info=NREUM.info,e=v.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(t&&t.licenseKey&&t.applicationID&&e))return u.abort();c(E,function(e,n){t[e]||(t[e]=n)});var n=a();f("mark",["onload",n+M.offset],null,"api"),f("timing",["load",n]);var r=v.createElement("script");0===t.agent.indexOf("http://")||0===t.agent.indexOf("https://")?r.src=t.agent:r.src=l+"://"+t.agent,e.parentNode.insertBefore(r,e)}}function i(){"complete"===v.readyState&&o()}function o(){f("mark",["domContent",a()+M.offset],null,"api")}var a=t(3),f=t("handle"),c=t(8),u=t("ee"),s=t(6),d=t(4),p=t(2),l=p.getConfiguration("ssl")===!1?"http":"https",m=window,v=m.document,g="addEventListener",h="attachEvent",y=m.XMLHttpRequest,w=y&&y.prototype,b=!d(m.location);NREUM.o={ST:setTimeout,SI:m.setImmediate,CT:clearTimeout,XHR:y,REQ:m.Request,EV:m.Event,PR:m.Promise,MO:m.MutationObserver};var x=""+location,E={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1210.min.js"},O=y&&w&&w[g]&&!/CriOS/.test(navigator.userAgent),M=e.exports={offset:a.getLastTimestamp(),now:a,origin:x,features:{},xhrWrappable:O,userAgent:s,disabled:b};if(!b){t(1),t(5),v[g]?(v[g]("DOMContentLoaded",o,!1),m[g]("load",r,!1)):(v[h]("onreadystatechange",i),m[h]("onload",r)),f("mark",["firstbyte",a.getLastTimestamp()],null,"api");var R=0}},{}],"wrap-function":[function(t,e,n){function r(t,e){function n(e,n,r,c,u){function nrWrapper(){var o,a,s,p;try{a=this,o=d(arguments),s="function"==typeof r?r(o,a):r||{}}catch(l){i([l,"",[o,a,c],s],t)}f(n+"start",[o,a,c],s,u);try{return p=e.apply(a,o)}catch(m){throw f(n+"err",[o,a,m],s,u),m}finally{f(n+"end",[o,a,p],s,u)}}return a(e)?e:(n||(n=""),nrWrapper[p]=e,o(e,nrWrapper,t),nrWrapper)}function r(t,e,r,i,o){r||(r="");var f,c,u,s="-"===r.charAt(0);for(u=0;u<e.length;u++)c=e[u],f=t[c],a(f)||(t[c]=n(f,s?c+r:r,i,c,o))}function f(n,r,o,a){if(!m||e){var f=m;m=!0;try{t.emit(n,r,o,e,a)}catch(c){i([c,n,r,o],t)}m=f}}return t||(t=s),n.inPlace=r,n.flag=p,n}function i(t,e){e||(e=s);try{e.emit("internal-error",t)}catch(n){}}function o(t,e,n){if(Object.defineProperty&&Object.keys)try{var r=Object.keys(t);return r.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(o){i([o],n)}for(var a in t)l.call(t,a)&&(e[a]=t[a]);return e}function a(t){return!(t&&t instanceof Function&&t.apply&&!t[p])}function f(t,e){var n=e(t);return n[p]=t,o(t,n,s),n}function c(t,e,n){var r=t[e];t[e]=f(r,n)}function u(){for(var t=arguments.length,e=new Array(t),n=0;n<t;++n)e[n]=arguments[n];return e}var s=t("ee"),d=t(9),p="nr@original",l=Object.prototype.hasOwnProperty,m=!1;e.exports=r,e.exports.wrapFunction=f,e.exports.wrapInPlace=c,e.exports.argsToArray=u},{}]},{},["loader"]);</script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link rel="shortcut icon" href="https://courses.lumenlearning.com/wmopen-psychology/wp-content/themes/bombadil/favicon.ico" />
+<title>Motivation | Introduction to Psychology</title>
+<link rel="profile" href="http://gmpg.org/xfn/11" />
+<link rel="pingback" href="https://courses.lumenlearning.com/wmopen-psychology/xmlrpc.php" />
+
+
+<link rel='dns-prefetch' href='//courses.lumenlearning.com' />
+<link rel='dns-prefetch' href='//use.typekit.net' />
+<link rel='dns-prefetch' href='//cdnjs.cloudflare.com' />
+<link rel='dns-prefetch' href='//fonts.googleapis.com' />
+<link rel='dns-prefetch' href='//s.w.org' />
+		<script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/11\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/11\/svg\/","svgExt":".svg","source":{"concatemoji":"https:\/\/courses.lumenlearning.com\/wmopen-psychology\/wp-includes\/js\/wp-emoji-release.min.js?ver=4.9.8"}};
+			!function(a,b,c){function d(a,b){var c=String.fromCharCode;l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,a),0,0);var d=k.toDataURL();l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,b),0,0);var e=k.toDataURL();return d===e}function e(a){var b;if(!l||!l.fillText)return!1;switch(l.textBaseline="top",l.font="600 32px Arial",a){case"flag":return!(b=d([55356,56826,55356,56819],[55356,56826,8203,55356,56819]))&&(b=d([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]),!b);case"emoji":return b=d([55358,56760,9792,65039],[55358,56760,8203,9792,65039]),!b}return!1}function f(a){var c=b.createElement("script");c.src=a,c.defer=c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var g,h,i,j,k=b.createElement("canvas"),l=k.getContext&&k.getContext("2d");for(j=Array("flag","emoji"),c.supports={everything:!0,everythingExceptFlag:!0},i=0;i<j.length;i++)c.supports[j[i]]=e(j[i]),c.supports.everything=c.supports.everything&&c.supports[j[i]],"flag"!==j[i]&&(c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&c.supports[j[i]]);c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&!c.supports.flag,c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.everything||(h=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",h,!1),a.addEventListener("load",h,!1)):(a.attachEvent("onload",h),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),g=c.source||{},g.concatemoji?f(g.concatemoji):g.wpemoji&&g.twemoji&&(f(g.twemoji),f(g.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script>
+		<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+<link rel='stylesheet' id='wp-in-post-ads-css'  href='https://courses.lumenlearning.com/wmopen-psychology/wp-content/plugins/mts-wp-in-post-ads/public/css/wp-in-post-ads-public.css?ver=1.2.3' type='text/css' media='all' />
+<link rel='stylesheet' id='pressbooks/structure-css'  href='https://courses.lumenlearning.com/wmopen-psychology/wp-content/themes/pressbooks-book/dist/styles/structure.css?id=73555eac1f448b204588' type='text/css' media='screen, print' />
+<link rel='stylesheet' id='pressbooks/webfonts-css'  href='https://fonts.googleapis.com/css?family=Oswald|Open+Sans+Condensed:300,300italic&#038;subset=latin,cyrillic,greek,cyrillic-ext,greek-ext' type='text/css' media='all' />
+<link rel='stylesheet' id='pressbooks/theme-css'  href='https://courses.lumenlearning.com/wmopen-psychology/wp-content/uploads/sites/1927/pressbooks/css/style.css?ver=1628020617' type='text/css' media='screen, print' />
+<link rel='stylesheet' id='dashicons-css'  href='https://courses.lumenlearning.com/wmopen-psychology/wp-includes/css/dashicons.min.css?ver=4.9.8' type='text/css' media='all' />
+<link rel='stylesheet' id='pressbooks/a11y-css'  href='https://courses.lumenlearning.com/wmopen-psychology/wp-content/themes/pressbooks-book/dist/styles/a11y.css?id=67ce4802af40e4fea4f2' type='text/css' media='screen' />
+<script type='text/javascript' src='https://courses.lumenlearning.com/wmopen-psychology/wp-includes/js/jquery/jquery.js?ver=1.12.4'></script>
+<script async type='text/javascript' src='https://courses.lumenlearning.com/wmopen-psychology/wp-includes/js/jquery/jquery-migrate.min.js?ver=1.4.1'></script>
+<script async type='text/javascript' src='https://courses.lumenlearning.com/wmopen-psychology/wp-content/themes/pressbooks-book/dist/scripts/toc.js?id=41dec06e39b599e9d22d'></script>
+<script async type='text/javascript' src='https://courses.lumenlearning.com/wmopen-psychology/wp-content/themes/pressbooks-book/dist/scripts/a11y.js?id=3faa829da7a4aa2b976a'></script>
+<script type='text/javascript' src='https://courses.lumenlearning.com/wmopen-psychology/wp-content/themes/bombadil/assets/js/iframe-resizer.js?ver=4.9.8'></script>
+<script type='text/javascript' src='https://courses.lumenlearning.com/wmopen-psychology/wp-content/themes/bombadil/assets/js/h5p-resizer.js?ver=4.9.8'></script>
+<script type='text/javascript' src='//use.typekit.net/mje6fya.js?ver=1.0.0'></script>
+<script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js?ver=3.7.3'></script>
+<link rel='https://api.w.org/' href='https://courses.lumenlearning.com/wmopen-psychology/wp-json/' />
+<link rel='prev' title='Explaining Personality: Learning and Humanistic Approaches' href='https://courses.lumenlearning.com/wmopen-psychology/chapter/introduction-explaining-personality/' />
+<link rel='next' title='Hunger and Eating' href='https://courses.lumenlearning.com/wmopen-psychology/chapter/introduction-hunger-and-eating/' />
+<link rel="canonical" href="https://courses.lumenlearning.com/wmopen-psychology/chapter/introduction-motivation/" />
+<link rel='shortlink' href='https://courses.lumenlearning.com/wmopen-psychology/?p=2509' />
+<link rel="alternate" type="application/json+oembed" href="https://courses.lumenlearning.com/wmopen-psychology/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fcourses.lumenlearning.com%2Fwmopen-psychology%2Fchapter%2Fintroduction-motivation%2F" />
+<link rel="alternate" type="text/xml+oembed" href="https://courses.lumenlearning.com/wmopen-psychology/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fcourses.lumenlearning.com%2Fwmopen-psychology%2Fchapter%2Fintroduction-motivation%2F&#038;format=xml" />
+<script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-73352819-1', 'auto');
+ga('send', 'pageview');
+
+</script>
+<meta itemprop='author' content='Lumen Learning' id='author'>
+<meta itemprop='contributor' content='' id='contributor'>
+<meta itemprop='copyrightHolder' content='Lumen Learning' id='copyrightHolder'>
+<meta itemprop='description' content='Comprehensive coverage of core concepts grounded in both classic studies and current and emerging research, including coverage of the DSM-5 in discussions of psychological disorders. Incorporates discussions that reflect the diversity within the discipline, as well as the diversity of cultures and communities across the globe.' id='description'>
+<meta itemprop='editor' content='' id='editor'>
+<meta itemprop='image' content='https://courses.lumenlearning.com/wmopen-psychology/wp-content/uploads/sites/1927/2017/11/IntrotoPsychology_Cover.jpg' id='image'>
+<meta itemprop='inLanguage' content='en' id='inLanguage'>
+<script>try{Typekit.load();}catch(e){}</script><style type="text/css">
+/* <![CDATA[ */
+img.latex { vertical-align: middle; border: none; background: none; }
+/* ]]> */
+</style>
+
+</head>
+<body class="singular chapter-template-default single single-chapter postid-2509" id="motivation" itemscope itemtype="http://schema.org/WebPage" itemref="about copyrightHolder copyrightYear inLanguage publisher" >
+
+		
+		<!-- table of contents -->
+		
+			<div class="nav-container">
+
+				<!-- skip to content -->
+				<div class="skip-to-content">
+					<a href="#content">Skip to main content</a>
+				</div>
+
+									<!-- nav bar -->
+					<nav role="navigation"  style="background-color: 0">
+						<!-- logo / branding -->
+						<div class="book-title-wrapper">
+							<div class="bombadil-logo"><a href="https://courses.lumenlearning.com/"><img src="https://courses.lumenlearning.com/wmopen-psychology/wp-content/themes/bombadil/assets/images/LumenOnDark-150x69.png" alt="Lumen" /></a></div>
+						<!-- Book Title -->
+							<h1 class="book-title">
+																	<a href="https://courses.lumenlearning.com/wmopen-psychology/" title="Introduction to Psychology" rel="home">Introduction to Psychology</a>
+															</h1>
+						</div>
+					</nav>
+
+											<div class="sub-nav">
+							<div class="sub-nav-wrapper">
+								<!-- page title -->
+																	<div class="author-wrap">
+										<h3>Module 12: Emotion and Motivation</h3>
+									</div> <!-- end .author-name -->
+								
+								<!-- search bar -->
+								<form role="search" method="get" id="searchform" class="searchform" action="https://courses.lumenlearning.com/wmopen-psychology/">
+				<div>
+					<label class="screen-reader-text" for="s">Search for:</label>
+					<input type="text" value="" name="s" id="s" />
+					<input type="submit" id="searchsubmit" value="Search" />
+				</div>
+			</form>							</div>
+						</div><!-- end sub-nav -->
+					
+							</div> <!-- end .nav-container -->
+
+	<div class="wrapper"><!-- for sitting footer at the bottom of the page -->
+			<div id="wrap">
+				<div id="content" role="main">
+
+		
+				<h2 class="entry-title">Motivation</h2>
+
+				<div id="post-2509" class="standard post-2509 chapter type-chapter status-publish hentry">
+
+					<div class="entry-content">
+											
+					<h2>What you&#8217;ll learn to do: explain motivation, how it is influenced, and major theories about motivation</h2>
+<div class="wp-nocaption aligncenter wp-image-4017"><a href="https://s3-us-west-2.amazonaws.com/courses-images/wp-content/uploads/sites/855/2017/03/23040003/pexels-photo-209209.jpeg"><img class="aligncenter wp-image-4017" src="https://s3-us-west-2.amazonaws.com/courses-images/wp-content/uploads/sites/855/2017/03/23040003/pexels-photo-209209.jpeg" alt="Photo of a man rappeling down a cliff-face while someone belays for him, holding the rope down on the ground. " width="529" height="812" srcset="https://s3-us-west-2.amazonaws.com/courses-images/wp-content/uploads/sites/855/2017/03/23040003/pexels-photo-209209.jpeg 1251w, https://s3-us-west-2.amazonaws.com/courses-images/wp-content/uploads/sites/855/2017/03/23040003/pexels-photo-209209-195x300.jpeg 195w, https://s3-us-west-2.amazonaws.com/courses-images/wp-content/uploads/sites/855/2017/03/23040003/pexels-photo-209209-768x1179.jpeg 768w, https://s3-us-west-2.amazonaws.com/courses-images/wp-content/uploads/sites/855/2017/03/23040003/pexels-photo-209209-667x1024.jpeg 667w, https://s3-us-west-2.amazonaws.com/courses-images/wp-content/uploads/sites/855/2017/03/23040003/pexels-photo-209209-65x100.jpeg 65w, https://s3-us-west-2.amazonaws.com/courses-images/wp-content/uploads/sites/855/2017/03/23040003/pexels-photo-209209-225x345.jpeg 225w, https://s3-us-west-2.amazonaws.com/courses-images/wp-content/uploads/sites/855/2017/03/23040003/pexels-photo-209209-350x537.jpeg 350w" sizes="(max-width: 529px) 100vw, 529px" /></a></div>
+<p>Motivation to engage in a given behavior can come from internal and/or external factors. There are multiple theories have been put forward regarding motivation—biologically oriented theories that say the need to maintain bodily homeostasis motivates behavior, Bandura&#8217;s idea that our sense of self-efficacy motivates behavior, and others that focus on social aspects of motivation. In this section, you&#8217;ll learn about these theories as well as the famous work of Abraham Maslow and his hierarchy of needs.</p>
+<div class="textbox learning-objectives">
+<h3>Learning Objectives</h3>
+<ul>
+<li>Illustrate intrinsic and extrinsic motivation</li>
+<li>Describe basic theories of motivation, including concepts such as instincts, drive reduction, and self-efficacy</li>
+<li>Explain the basic concepts associated with Maslow’s hierarchy of needs</li>
+<li>Explain how different praise and mindsets can lead to different levels of performance</li>
+</ul>
+</div>
+<div>
+<p>Why do we do the things we do? What motivations underlie our behaviors? <strong>Motivation</strong> describes the wants or needs that direct behavior toward a goal. In addition to biological motives, motivations can be <strong>intrinsic</strong> (arising from internal factors) or <strong>extrinsic</strong> (arising from external factors) (Figure 1). Intrinsically motivated behaviors are performed because of the sense of personal satisfaction that they bring, while extrinsically motivated behaviors are performed in order to receive something from others.</p>
+</div>
+<figure>
+<div style="width: 435px" class="wp-caption aligncenter"><img class="" src="https://s3-us-west-2.amazonaws.com/courses-images-archive-read-only/wp-content/uploads/sites/902/2015/02/23224925/CNX_Psych_10_01_Motivation_n.jpg" alt="An illustration shows a person’s upper torso. An arrow on the left begins at the person’s chest and curves around to point inside the head; inside the curve of the arrow are the words “intrinsic motivation (from within)” and three bullet points: “autonomy,” “mastery,” “purpose.” An arrow on the right begins in empty space and curves to a point inside the head. Above the arrow are the words “extrinsic motivation (from outside)” and three bullet points: “compensation,” “punishment,” and “reward.”" width="425" height="227" data-media-type="image/jpeg" /></p>
+<p class="wp-caption-text"><strong>Figure 1</strong>. Intrinsic motivation comes from within the individual, while extrinsic motivation comes from outside the individual.</p>
+</div>
+</figure>
+<p>Think about why you are currently in college. Are you here because you enjoy learning and want to pursue an education to make yourself a more well-rounded individual? If so, then you are intrinsically motivated. However, if you are here because you want to get a college degree to make yourself more marketable for a high-paying career or to satisfy the demands of your parents, then your motivation is more extrinsic in nature.</p>
+<div class="textbox tryit">
+<h3>Try It</h3>
+<p>	<iframe
+		id="lumen_assessment_4626"
+		class="resizable"
+		src="https://assessments.lumenlearning.com/assessments/load?assessment_id=4626&#038;embed=1&#038;external_user_id=&#038;external_context_id=&#038;iframe_resize_id=lumen_assessment_4626"
+		frameborder="0"
+		style="border:none;width:100%;height:100%;min-height:400px;"><br />
+	</iframe></p>
+</div>
+<p>In reality, our motivations are often a mix of both intrinsic and extrinsic factors, but the nature of the mix of these factors might change over time (often in ways that seem counter-intuitive). There is an old adage: “Choose a job that you love, and you will never have to work a day in your life,” meaning that if you enjoy your occupation, work doesn’t seem like . . . well, work. Some research suggests that this isn’t necessarily the case (Daniel &amp; Esser, 1980; Deci, 1972; Deci, Koestner, &amp; Ryan, 1999). According to this research, receiving some sort of extrinsic reinforcement (i.e., getting paid) for engaging in behaviors that we enjoy leads to those behaviors being thought of as work no longer providing that same enjoyment. As a result, we might spend less time engaging in these reclassified behaviors in the absence of any extrinsic reinforcement. For example, Odessa loves baking, so in her free time, she bakes for fun. Oftentimes, after stocking shelves at her grocery store job, she often whips up pastries in the evenings because she enjoys baking. When a coworker in the store’s bakery department leaves his job, Odessa applies for his position and gets transferred to the bakery department. Although she enjoys what she does in her new job, after a few months, she no longer has much desire to concoct tasty treats in her free time. Baking has become work in a way that changes her motivation to do it (Figure 2). What Odessa has experienced is called the overjustification effect—intrinsic motivation is diminished when extrinsic motivation is given. This can lead to extinguishing the intrinsic motivation and creating a dependence on extrinsic rewards for continued performance (Deci et al., 1999).</p>
+<figure>
+<div style="width: 335px" class="wp-caption alignright"><img src="https://s3-us-west-2.amazonaws.com/courses-images-archive-read-only/wp-content/uploads/sites/902/2015/02/23224926/CNX_Psych_10_01_Bakery.jpg" alt="A photograph shows several chefs preparing food together in a kitchen." width="325" height="218" data-media-type="image/jpeg" /></p>
+<p class="wp-caption-text"><strong>Figure 2</strong>. Research suggests that when something we love to do, like icing cakes, becomes our job, our intrinsic and extrinsic motivations to do it may change. (credit: Agustín Ruiz)</p>
+</div>
+</figure>
+<p>Other studies suggest that intrinsic motivation may not be so vulnerable to the effects of extrinsic reinforcements, and in fact, reinforcements such as verbal praise might actually increase intrinsic motivation (Arnold, 1976; Cameron &amp; Pierce, 1994). In that case, Odessa’s motivation to bake in her free time might remain high if, for example, customers regularly compliment her baking or cake decorating skills.</p>
+<p>These apparent discrepancies in the researchers’ findings may be understood by considering several factors. For one, physical reinforcement (such as money) and verbal reinforcement (such as praise) may affect an individual in very different ways. In fact, tangible rewards (i.e., money) tend to have more negative effects on intrinsic motivation than do intangible rewards (i.e., praise). Furthermore, the expectation of the extrinsic motivator by an individual is crucial: If the person expects to receive an extrinsic reward, then intrinsic motivation for the task tends to be reduced. If, however, there is no such expectation, and the extrinsic motivation is presented as a surprise, then intrinsic motivation for the task tends to persist (Deci et al., 1999).</p>
+<p>In educational settings, students are more likely to experience intrinsic motivation to learn when they feel a sense of belonging and respect in the classroom. This internalization can be enhanced if the evaluative aspects of the classroom are de-emphasized and if students feel that they exercise some control over the learning environment. Furthermore, providing students with activities that are challenging, yet doable, along with a rationale for engaging in various learning activities can enhance intrinsic motivation for those tasks (Niemiec &amp; Ryan, 2009). Consider Hakim, a first-year law student with two courses this semester: Family Law and Criminal Law. The Family Law professor has a rather intimidating classroom: He likes to put students on the spot with tough questions, which often leaves students feeling belittled or embarrassed. Grades are based exclusively on quizzes and exams, and the instructor posts results of each test on the classroom door. In contrast, the Criminal Law professor facilitates classroom discussions and respectful debates in small groups. The majority of the course grade is not exam-based, but centers on a student-designed research project on a crime issue of the student’s choice. Research suggests that Hakim will be less intrinsically motivated in his Family Law course, where students are intimidated in the classroom setting, and there is an emphasis on teacher-driven evaluations. Hakim is likely to experience a higher level of intrinsic motivation in his Criminal Law course, where the class setting encourages inclusive collaboration and a respect for ideas, and where students have more influence over their learning activities.</p>
+<div class="textbox tryit">
+<h3>Try It</h3>
+<p>	<iframe
+		id="lumen_assessment_4627"
+		class="resizable"
+		src="https://assessments.lumenlearning.com/assessments/load?assessment_id=4627&#038;embed=1&#038;external_user_id=&#038;external_context_id=&#038;iframe_resize_id=lumen_assessment_4627"
+		frameborder="0"
+		style="border:none;width:100%;height:100%;min-height:400px;"><br />
+	</iframe></p>
+<p>	<iframe
+		id="lumen_assessment_4628"
+		class="resizable"
+		src="https://assessments.lumenlearning.com/assessments/load?assessment_id=4628&#038;embed=1&#038;external_user_id=&#038;external_context_id=&#038;iframe_resize_id=lumen_assessment_4628"
+		frameborder="0"
+		style="border:none;width:100%;height:100%;min-height:400px;"><br />
+	</iframe></p>
+</div>
+<section data-depth="1">
+<section>
+<h1 data-type="definition">Theories about Motivation</h1>
+<section data-depth="1">William James (1842–1910) was an important contributor to early research into motivation, and he is often referred to as the father of psychology in the United States. James theorized that behavior was driven by a number of instincts, which aid survival (Figure 3). From a biological perspective, an <strong>instinct</strong> is a species-specific pattern of behavior that is not learned. There was, however, considerable controversy among James and his contemporaries over the exact definition of instinct. James proposed several dozen special human instincts, but many of his contemporaries had their own lists that differed. A mother’s protection of her baby, the urge to lick sugar, and hunting prey were among the human behaviors proposed as true instincts during James’s era. This view—that human behavior is driven by instincts—received a fair amount of criticism because of the undeniable role of learning in shaping all sorts of human behavior. In fact, as early as the 1900s, some instinctive behaviors were experimentally demonstrated to result from associative learning (recall when you learned about Watson’s conditioning of fear response in “Little Albert”) (Faris, 1921).</p>
+<figure>
+<div style="width: 456px" class="wp-caption alignright"><img class="" src="https://s3-us-west-2.amazonaws.com/courses-images-archive-read-only/wp-content/uploads/sites/902/2015/02/23224928/CNX_Psych_10_01_WilliamJ.jpg" alt="Photograph A shows William James. Photograph B shows a person breastfeeding a baby." width="446" height="265" data-media-type="image/jpeg" /></p>
+<p class="wp-caption-text"><strong>Figure 3</strong>. (a) William James proposed the instinct theory of motivation, asserting that behavior is driven by instincts. (b) In humans, instincts may include behaviors such as an infant’s rooting for a nipple and sucking. (credit b: modification of work by &#8220;Mothering Touch&#8221;/Flickr)</p>
+</div>
+</figure>
+<p>Another early theory of motivation proposed that the maintenance of homeostasis is particularly important in directing behavior. You may recall from your earlier reading that homeostasis is the tendency to maintain a balance, or optimal level, within a biological system. In a body system, a control center (which is often part of the brain) receives input from receptors (which are often complexes of neurons). The control center directs effectors (which may be other neurons) to correct any imbalance detected by the control center.</p>
+<p>According to the <strong>drive theory</strong> of motivation, deviations from homeostasis create physiological needs. These needs result in psychological drive states that direct behavior to meet the need and, ultimately, bring the system back to homeostasis. For example, if it’s been a while since you ate, your blood sugar levels will drop below normal. This low blood sugar will induce a physiological need and a corresponding drive state (i.e., hunger) that will direct you to seek out and consume food (Figure 4). Eating will eliminate the hunger, and, ultimately, your blood sugar levels will return to normal. Interestingly, drive theory also emphasizes the role that habits play in the type of behavioral response in which we engage. A <strong>habit</strong> is a pattern of behavior in which we regularly engage. Once we have engaged in a behavior that successfully reduces a drive, we are more likely to engage in that behavior whenever faced with that drive in the future (Graham &amp; Weiner, 1996).</p>
+<figure>
+<div style="width: 713px" class="wp-caption aligncenter"><img class="" src="https://s3-us-west-2.amazonaws.com/courses-images-archive-read-only/wp-content/uploads/sites/902/2015/02/23224929/CNX_Psych_10_01_Eating.jpg" alt="Photograph “left” shows a child eating watermelon. Photograph “center” shows a young person eating sushi. Photograph “right” shows an elderly person eating food." width="703" height="192" data-media-type="image/jpeg" /></p>
+<p class="wp-caption-text"><strong>Figure 4</strong>. Hunger and subsequent eating are the result of complex physiological processes that maintain homeostasis. (credit &#8220;left&#8221;: modification of work by &#8220;Gracie and Viv&#8221;/Flickr; credit &#8220;center&#8221;: modification of work by Steven Depolo; credit &#8220;right&#8221;: modification of work by Monica Renata)</p>
+</div>
+</figure>
+<p>Extensions of drive theory take into account levels of arousal as potential motivators. Just as drive theory aims to return the body to homeostasis, arousal theory aims to find the optimal level of arousal. If we are underaroused, we become bored and will seek out some sort of stimulation. On the other hand, if we are overaroused, we will engage in behaviors to reduce our arousal (Berlyne, 1960). Most students have experienced this need to maintain optimal levels of arousal over the course of their academic career. Think about how much stress students experience toward the end of spring semester. They feel overwhelmed with seemingly endless exams, papers, and major assignments that must be completed on time. They probably yearn for the rest and relaxation that awaits them over the extended summer break. However, once they finish the semester, it doesn’t take too long before they begin to feel bored. Generally, by the time the next semester is beginning in the fall, many students are quite happy to return to school. This is an example of how arousal theory works.</p>
+<figure>
+<div style="width: 537px" class="wp-caption aligncenter"><img class="" src="https://s3-us-west-2.amazonaws.com/courses-images-archive-read-only/wp-content/uploads/sites/902/2015/02/23224931/CNX_Psych_10_01_Arousal.jpg" alt="A line graph has an x-axis labeled “arousal level” with an arrow indicating “low” to “high” and a y-axis labeled “performance quality” with an arrow indicating “low” to “high.” A curve charts optimal arousal. Where arousal level and performance quality are both “low,” the curve is low and labeled “boredom or apathy.” Where arousal level is “medium” and “performance quality is “medium,” the curve peaks and is labeled “optimal level.” Where the arousal level is “high” and the performance quality is “low,” the curve is low and is labeled “high anxiety.”" width="527" height="341" data-media-type="image/jpeg" /></p>
+<p class="wp-caption-text"><strong>Figure 5</strong>. The concept of optimal arousal in relation to performance on a task is depicted here. Performance is maximized at the optimal level of arousal, and it tapers off during under- and overarousal.</p>
+</div>
+</figure>
+<p>So what is the optimal level of arousal? What level leads to the best performance? Research shows that moderate arousal is generally best; when arousal is very high or very low, performance tends to suffer (Yerkes &amp; Dodson, 1908). Think of your arousal level regarding taking an exam for this class. If your level is very low, such as boredom and apathy, your performance will likely suffer. Similarly, a very high level, such as extreme anxiety, can be paralyzing and hinder performance. Consider the example of a softball team facing a tournament. They are favored to win their first game by a large margin, so they go into the game with a lower level of arousal and get beat by a less skilled team.</p>
+<p>But optimal arousal level is more complex than a simple answer that the middle level is always best. Researchers Robert Yerkes (pronounced “Yerk-EES”) and John Dodson discovered that the optimal arousal level depends on the complexity and difficulty of the task to be performed (Figure 6). This relationship is known as <strong>Yerkes-Dodson law</strong>, which holds that a simple task is performed best when arousal levels are relatively high and complex tasks are best performed when arousal levels are lower.</p>
+<figure>
+<div style="width: 625px" class="wp-caption aligncenter"><img class="" src="https://s3-us-west-2.amazonaws.com/courses-images-archive-read-only/wp-content/uploads/sites/902/2015/02/23224933/CNX_Psych_10_01_YerkesDod.jpg" alt="A line graph has an x-axis labeled “arousal level” with an arrow indicating “low” to “high” and a y-axis labeled “performance quality” with an arrow indicating “low” to “high.” Two curves charts optimal arousal, one for difficult tasks and the other for easy tasks. The optimal level for easy tasks is reached with slightly higher arousal levels than for difficult tasks." width="615" height="398" data-media-type="image/jpeg" /></p>
+<p class="wp-caption-text"><strong>Figure 6</strong>. Task performance is best when arousal levels are in a middle range, with difficult tasks best performed under lower levels of arousal and simple tasks best performed under higher levels of arousal.</p>
+</div>
+</figure>
+<div class="textbox tryit">
+<h3>Try It</h3>
+<p>	<iframe
+		id="lumen_assessment_4630"
+		class="resizable"
+		src="https://assessments.lumenlearning.com/assessments/load?assessment_id=4630&#038;embed=1&#038;external_user_id=&#038;external_context_id=&#038;iframe_resize_id=lumen_assessment_4630"
+		frameborder="0"
+		style="border:none;width:100%;height:100%;min-height:400px;"><br />
+	</iframe></p>
+</div>
+<section data-depth="2">
+<h2 data-type="title">Self-efficacy and Social Motives</h2>
+<p><strong>Self-efficacy</strong> is an individual’s belief in her own capability to complete a task, which may include a previous successful completion of the exact task or a similar task. Albert Bandura (1994) theorized that an individual’s sense of self-efficacy plays a pivotal role in motivating behavior. Bandura argues that motivation derives from expectations that we have about the consequences of our behaviors, and ultimately, it is the appreciation of our capacity to engage in a given behavior that will determine what we do and the future goals that we set for ourselves. For example, if you have a sincere belief in your ability to achieve at the highest level, you are more likely to take on challenging tasks and to not let setbacks dissuade you from seeing the task through to the end.</p>
+<p>A number of theorists have focused their research on understanding social motives (McAdams &amp; Constantian, 1983; McClelland &amp; Liberman, 1949; Murray et al., 1938). Among the motives they describe are needs for achievement, affiliation, and intimacy. It is the need for achievement that drives accomplishment and performance. The need for affiliation encourages positive interactions with others, and the need for intimacy causes us to seek deep, meaningful relationships. Henry Murray et al. (1938) categorized these needs into domains. For example, the need for achievement and recognition falls under the domain of ambition. Dominance and aggression were recognized as needs under the domain of human power, and play was a recognized need in the domain of interpersonal affection.</p>
+<div class="textbox examples">
+<h3>WAtch It</h3>
+<p>Watch this video from Dan Pink&#8217;s Ted talk on &#8220;The surprising truth about what motivates us.&#8221; Think about what things motivate <em>you</em>, and how you anticipate that you might respond to the types of incentives explained in the talk.</p>
+<p><iframe src="https://www.youtube.com/embed/u6XAPnuFjJc" width="853" height="480" frameborder="0" allowfullscreen="allowfullscreen"></iframe></p>
+</div>
+</section>
+<section data-depth="2">
+<div data-type="note" data-label="Link to Learning">
+<div class="textbox tryit">
+<h3>Try It</h3>
+<p>	<iframe
+		id="lumen_assessment_4629"
+		class="resizable"
+		src="https://assessments.lumenlearning.com/assessments/load?assessment_id=4629&#038;embed=1&#038;external_user_id=&#038;external_context_id=&#038;iframe_resize_id=lumen_assessment_4629"
+		frameborder="0"
+		style="border:none;width:100%;height:100%;min-height:400px;"><br />
+	</iframe></p>
+</div>
+</div>
+</section>
+</section>
+</section>
+</section>
+<section data-depth="1">
+<section data-depth="2"></section>
+<section data-depth="2">
+<h1 data-type="title">Maslow’s Hierarchy of Needs</h1>
+<p data-type="title">While the theories of motivation described earlier relate to basic biological drives, individual characteristics, or social contexts, Abraham Maslow (1943) proposed a hierarchy of needs that spans the spectrum of motives ranging from the biological to the individual to the social. These needs are often depicted as a pyramid (Figure 7).</p>
+<figure>
+<div style="width: 435px" class="wp-caption alignright"><img class="" src="https://s3-us-west-2.amazonaws.com/courses-images-archive-read-only/wp-content/uploads/sites/902/2015/02/23224934/CNX_Psych_10_01_Maslow.jpg" alt="A triangle is divided vertically into five sections with corresponding labels inside and outside of the triangle for each section. From top to bottom, the triangle's sections are labeled: “self-actualization” corresponds to “Inner fulfillment” “esteem” corresponds to “Self-worth, accomplishment, confidence”; “social” corresponds to “Family, friendship, intimacy, belonging”’ “security” corresponds to “Safety, employment, assets”; ““physiological” corresponds to “Food, water, shelter, warmth.”" width="425" height="485" data-media-type="image/jpeg" /></p>
+<p class="wp-caption-text"><strong>Figure 7</strong>. Maslow’s hierarchy of needs is illustrated here. In some versions of the pyramid, cognitive and aesthetic needs are also included between esteem and self-actualization. Others include another tier at the top of the pyramid for self-transcendence.</p>
+</div>
+</figure>
+<p>At the base of the pyramid are all of the physiological needs that are necessary for survival. These are followed by basic needs for security and safety, the need to be loved and to have a sense of belonging, and the need to have self-worth and confidence. The top tier of the pyramid is self-actualization, which is a need that essentially equates to achieving one’s full potential, and it can only be realized when needs lower on the pyramid have been met. To Maslow and humanistic theorists, self-actualization reflects the humanistic emphasis on positive aspects of human nature. Maslow suggested that this is an ongoing, life-long process and that only a small percentage of people actually achieve a self-actualized state (Francis &amp; Kritsonis, 2006; Maslow, 1943).</p>
+<p>According to Maslow (1943), one must satisfy lower-level needs before addressing those needs that occur higher in the pyramid. So, for example, if someone is struggling to find enough food to meet his nutritional requirements, it is quite unlikely that he would spend an inordinate amount of time thinking about whether others viewed him as a good person or not. Instead, all of his energies would be geared toward finding something to eat. However, it should be pointed out that Maslow’s theory has been criticized for its subjective nature and its inability to account for phenomena that occur in the real world (Leonard, 1982). Other research has more recently addressed that late in life, Maslow proposed a self-transcendence level above self-actualization—to represent striving for meaning and purpose beyond the concerns of oneself (Koltko-Rivera, 2006). For example, people sometimes make self-sacrifices in order to make a political statement or in an attempt to improve the conditions of others. Mohandas K. Gandhi, a world-renowned advocate for independence through nonviolent protest, on several occasions went on hunger strikes to protest a particular situation. People may starve themselves or otherwise put themselves in danger displaying higher-level motives beyond their own needs.</p>
+<div data-type="note" data-label="Link to Learning">
+<div class="textbox examples">
+<h3>Link to Learning</h3>
+<p>Check out this <a href="https://www.wisc-online.com/learn/social-science/psychology/i2p401/maslows-hierarchy-of-needs-exercise" target="_blank" rel="noopener noreferrer">interactive exercise</a> that illustrates some of the important concepts in Maslow’s hierarchy of needs.</p>
+<p>Review Maslow&#8217;s hierarchy of needs as well as the other theories of motivation in <a href="https://youtu.be/9hdSLiHaJz8?list=PL8dPuuaLjXtOPRKzVLY0jJY-uHOH9KVU6" target="_blank" rel="noopener noreferrer">this Crash Course video</a>.</p>
+</div>
+<div class="textbox tryit">
+<h3>Try It</h3>
+<p>	<iframe
+		id="lumen_assessment_4631"
+		class="resizable"
+		src="https://assessments.lumenlearning.com/assessments/load?assessment_id=4631&#038;embed=1&#038;external_user_id=&#038;external_context_id=&#038;iframe_resize_id=lumen_assessment_4631"
+		frameborder="0"
+		style="border:none;width:100%;height:100%;min-height:400px;"><br />
+	</iframe></p>
+<p>	<iframe
+		id="lumen_assessment_4632"
+		class="resizable"
+		src="https://assessments.lumenlearning.com/assessments/load?assessment_id=4632&#038;embed=1&#038;external_user_id=&#038;external_context_id=&#038;iframe_resize_id=lumen_assessment_4632"
+		frameborder="0"
+		style="border:none;width:100%;height:100%;min-height:400px;"><br />
+	</iframe></p>
+</div>
+<div class="textbox learning-objectives">
+<h3>Think It Over</h3>
+<section data-depth="1">
+<div data-type="exercise">
+<div data-type="problem">
+<ul>
+<li>Can you think of recent examples of how Maslow’s hierarchy of needs might have affected your behavior in some way?</li>
+</ul>
+</div>
+</div>
+</section>
+</div>
+</div>
+</section>
+</section>
+<section data-depth="1">
+<section></section>
+</section>
+<h2>How Mindset Influences Performance</h2>
+<p>Imagine that you are a parent and your child has just brought home a report card from 4th grade that is really good. You look it over and feel proud of your son or daughter.  With a wide grin on your face, you turn to your child and say:</p>
+<p>“I’m so proud of you! This report card is great! You __________”</p>
+<ul style="list-style-type: none;">
+<li><input name="group1" type="radio" />   are so smart!</li>
+<li><input name="group1" type="radio" />   must have worked so hard!</li>
+<li><input name="group1" type="radio" />   have some jelly on your nose!</li>
+</ul>
+<p>We hope you didn’t choose the jelly statement. Between the other two options, which one would you be more likely to blurt out?</p>
+<p>It turns out that your choice could matter.</p>
+<p>Carol Dweck, who is now a Professor of Psychology at Stanford University, has been studying factors that promote or interfere with achievement since the 1970s. Over this time, and especially since the mid-1990s, she came to realize that our ways of dealing with the world and particularly our behaviors in trying to achieve our own goals are influenced by what she calls “self-theories”: beliefs we have about our own abilities, strengths and weaknesses, and potential. These self-theories affect decisions we make about what is possible or sensible or reasonable to do in order to achieve our goals.</p>
+<p>Before we discuss Carol Dweck’s work, please answer a few questions about your own beliefs. Try to answer based on your real ways of thinking. The questions are a bit repetitive, but answer each one without regard to your previous answers.</p>
+<p style="text-align: center;"><a href="https://www.proprofs.com/quiz-school/personality/quizshow.php?title=mindset-quiz_3YA&amp;q=1" target="_blank" rel="noopener">Take the  8-question Mindset Quiz here</a> or <a href="http://community.mindsetworks.com/what-s-my-mindset?view=quiz" target="_blank" rel="noopener">here</a></p>
+<div id="attachment_4763" style="width: 310px" class="wp-caption alignright"><a href="https://s3-us-west-2.amazonaws.com/courses-images/wp-content/uploads/sites/855/2017/05/04024500/13584535514_db32745625_k.jpg"><img class="wp-image-4763 size-medium" src="https://s3-us-west-2.amazonaws.com/courses-images/wp-content/uploads/sites/855/2017/05/04024500/13584535514_db32745625_k-300x200.jpg" alt="Teacher looks on as two fourth-grade students work on assignments." width="300" height="200" /></a></p>
+<p class="wp-caption-text">Figure 1. Those with a growth mindset are optimistic about how the environment, experiences, and attitudes can influence intelligence.</p>
+</div>
+<p>Dr. Dweck and her colleagues have used questions like the ones you just answered to sort people into groups based on their beliefs about intelligence (and other abilities and skills). She has found that people tend to adopt one of two general set of beliefs about intelligence. People with a <strong>fixed mindset</strong> tend to think of intelligence as an “entity”—something that is part of a person’s essential self. According to people with this belief, intelligence does not change much regardless of what we do or what we experience. Other people have a <strong>growth mindset</strong>, and they tend to think of intelligence as being “incremental”—a quality that can change for better or worse depending on what we do and on the experiences we have. Some people are strongly committed to one or the other end of the fixed vs. growth mindset scale, while others fall in-between to varying degrees.</p>
+<h1>Study 1:  Mueller &amp; Dweck (1998)</h1>
+<p>If Prof. Dweck is right, our mindset has a big impact on how well we achieve our potential—in school and in many other areas of our lives (for example, in sports, music, and business). But where do these different mindsets come from?</p>
+<p>There can be many reasons that a person comes to believe that intelligence is fixed or changeable, but one obvious influence on our way of thinking about ourselves is the messages we hear from adults as we grow up. Dweck and her then-graduate student Claudia Mueller wanted to see if they could influence the mindset of children, if only for a brief period of time, by giving different kinds of praise to the children. Their starting point was the unsurprising and well-established idea that praise is motivating. When we do something and receive praise, we are more likely to want to do that same thing again. But Mueller and Dweck wondered if all praise is equal. In particular, is it possible that certain types of praise that well-meaning parents and teachers often use could actually reduce a child’s motivation to learn and that child’s resiliency when he or she encounters challenges?</p>
+<p>The researchers recruited 128 fifth graders (70 girls and 58 boys ranging in age from 10 to 12) to participate in their study. Before we go into the details of the first experiment, please get a feel for the task that the children had to perform.</p>
+<p>You will have one minute to solve as many of the problems below as you can.<a class="footnote" title="Questions used with permission from http://www.smart-kit.com/scategory/brain-teasers/iq-test-questions/" id="return-footnote-2509-1" href="#footnote-2509-1"><sup class="footnote">[1]</sup></a> For each problem, you will see a set of patterns arranged in a 3&#215;3 matrix. Each matrix has one item missing, and your task is to figure out what the missing item is based on the changing patterns in the rows, columns, and diagonals.</p>
+<div class="textbox tryit">
+<h3>Try It</h3>
+<p>Before we start, here is one practice item. The 3&#215;3 matrix is at the top and the pattern on the lower right is missing. Figure out which one of the eight patterns on the bottom, labeled 1 to 8, is the missing pattern.</p>
+<div class="wp-nocaption aligncenter size-full wp-image-4545"><a href="https://s3-us-west-2.amazonaws.com/courses-images/wp-content/uploads/sites/855/2017/05/11144140/practiceq.png"><img class="aligncenter size-full wp-image-4545" src="https://s3-us-west-2.amazonaws.com/courses-images/wp-content/uploads/sites/855/2017/05/11144140/practiceq.png" alt="" width="472" height="524" srcset="https://s3-us-west-2.amazonaws.com/courses-images/wp-content/uploads/sites/855/2017/05/11144140/practiceq.png 472w, https://s3-us-west-2.amazonaws.com/courses-images/wp-content/uploads/sites/855/2017/05/11144140/practiceq-270x300.png 270w, https://s3-us-west-2.amazonaws.com/courses-images/wp-content/uploads/sites/855/2017/05/11144140/practiceq-65x72.png 65w, https://s3-us-west-2.amazonaws.com/courses-images/wp-content/uploads/sites/855/2017/05/11144140/practiceq-225x250.png 225w, https://s3-us-west-2.amazonaws.com/courses-images/wp-content/uploads/sites/855/2017/05/11144140/practiceq-350x389.png 350w" sizes="(max-width: 472px) 100vw, 472px" /></a></div>
+<div class="qa-wrapper" style="display: block"><span class="show-answer collapsed" style="cursor: pointer" data-target="q491551">Show Answer</span></p>
+<div id="q491551" class="hidden-answer" style="display: none">The correct answer is pattern #7. The pattern on the right in each row combines the dots from the other two patterns in that row.</div>
+</div>
+</div>
+<div class="textbox tryit">
+<h3>Try It</h3>
+<p>Now you will have ONE MINUTE to solve as many of the problems below as possible.</p>
+<p><center><iframe id="twine" src="https://s3-us-west-2.amazonaws.com/oerfiles/Psychology/interactives/mindset/test/mindset_test.html" width="100%" height="500px" scrolling="no" data-mce-fragment="1"></iframe></center>Now that you&#8217;ve taken the test, how much would you like to try some more of these questions?</p>
+<ul style="list-style-type: none;">
+<li><input name="group2" type="radio" />   Not at all</li>
+<li><input name="group2" type="radio" />   1</li>
+<li><input name="group2" type="radio" />   2</li>
+<li><input name="group2" type="radio" />   3</li>
+<li><input name="group2" type="radio" />   4</li>
+<li><input name="group2" type="radio" />   5</li>
+<li><input name="group2" type="radio" />   Very much</li>
+</ul>
+<p>How much did you enjoy working on these problems?</p>
+<ul style="list-style-type: none;">
+<li><input name="group3" type="radio" />   Not at all</li>
+<li><input name="group3" type="radio" />   1</li>
+<li><input name="group3" type="radio" />   2</li>
+<li><input name="group3" type="radio" />   3</li>
+<li><input name="group3" type="radio" />   4</li>
+<li><input name="group3" type="radio" />   5</li>
+<li><input name="group3" type="radio" />   Very much</li>
+</ul>
+<p>How well do you think you did on these problems overall?</p>
+<ul style="list-style-type: none;">
+<li><input name="group4" type="radio" />   Not very well</li>
+<li><input name="group4" type="radio" />   1</li>
+<li><input name="group4" type="radio" />   2</li>
+<li><input name="group4" type="radio" />   3</li>
+<li><input name="group4" type="radio" />   4</li>
+<li><input name="group4" type="radio" />   5</li>
+<li><input name="group4" type="radio" />   Very well</li>
+</ul>
+<p>If we gave you some more problems, would you prefer some more like the easier practice problem or some more like the hardest test problem you tried?</p>
+<ul style="list-style-type: none;">
+<li><input name="group5" type="radio" />   Like the easier practice problem</li>
+<li><input name="group5" type="radio" />   Like the hardest test problem</li>
+</ul>
+</div>
+<p>The problem-solving task you just tried out is based on a widely used psychological test called the Raven’s Progressive Matrices. Most people find the test to be challenging, requiring close attention to detail and careful logical thinking. Mueller and Dweck chose this task because it could be adapted to be relatively easy or extremely difficult by changing the complexity of the patterns required for solution.</p>
+<p>The experiment had three stages, each based around a different set of matrix problems like the ones you worked on. Each child was tested one-on-one in an otherwise empty classroom by a research assistant.</p>
+<h2>Stage 1: Pretest, Treatment, and Assessment of Motivation</h2>
+<h4>PRETEST</h4>
+<p>The children were given instructions and 10 problems of that were fairly easy to solve. At the end of 4 minutes, they were stopped and the research assistant scored their answers. On average, the children attempted to answer 7.9 out of the 10 problems, and the mean number correct was 5.2.</p>
+<h4>TREATMENT</h4>
+<p>When you do something to manipulate an independent variable, that something you do (administer a pill, tell the participant something that might affect performance, etc.) is called a “treatment.” In this case, the treatment was the feedback the child received about his or her performance on the progressive matrices task. This treatment involved a bit of deception, because children received randomly assigned feedback. In other words, regardless of real performance, the children heard one of three statements depending on random assignment to a treatment condition.</p>
+<ul>
+<li style="font-weight: 400;">First, every child was told: “Wow, you did very well on these problems. You got _____ right. That’s a really high score.” The minimum number right that a child heard was 80%, which is obviously well above the actual average of 51%. If a child got more than 80% correct, the actual number correct was used.</li>
+<li style="font-weight: 400;">The next step was based on the treatment condition the child had been assigned to:
+<ul>
+<li style="font-weight: 400;">Some of the children were praised for their ABILITY: “You must be smart at these problems.”</li>
+<li style="font-weight: 400;">Other children were praised for their EFFORT: “You must have worked hard at these problems.”</li>
+<li style="font-weight: 400;">The remaining children were in the CONTROL condition. They did not receive any additional feedback, aside from the general praise shown above.</li>
+</ul>
+</li>
+</ul>
+<h4>ASSESSMENT</h4>
+<p>After receiving feedback and, for children in two of the conditions, additional praise, the children were asked a series of questions. The experimenters wanted to know if the success the children experienced in the first set of problems, along with the type of praise, influenced their choice of additional problems. They were told that they might get some more problems to solve and they were asked to choose the difficulty of those problems. There were several options, but the choice came down to this:</p>
+<ul>
+<li style="list-style-type: none;">
+<ul>
+<li style="font-weight: 400;">Give me easy problems: “Problems that I’m pretty good at, so I can show that I’m smart.”</li>
+<li style="font-weight: 400;">Give me challenging problems: “Problems that I’ll learn a lot from, even if I won’t look so smart.”</li>
+</ul>
+</li>
+</ul>
+<p>The children were then told that there might be some time at the end of the session to work on these problems they had chosen, but that the next problems they would work on had been determined before the experiment started. They were told this so they would not interpret the next problem set as being “easy” or “challenging” based on their selection.</p>
+<p>The results showed that the children were genuinely influenced by the praise they had received. The figure below shows the percentage of children choosing EASY problems, broken down by treatment condition. The children who were praised for how smart they were (ability) were far more likely to choose easy problems than were the children praise for working hard (effort). The control condition, children who were told they did well, but received no additional praise, were in the middle.</p>
+<div id="attachment_4551" style="width: 378px" class="wp-caption aligncenter"><a href="https://s3-us-west-2.amazonaws.com/courses-images/wp-content/uploads/sites/855/2017/05/11144717/typeofpraisegraph.png"><img class="wp-image-4551 size-full" src="https://s3-us-west-2.amazonaws.com/courses-images/wp-content/uploads/sites/855/2017/05/11144717/typeofpraisegraph.png" alt="Bar graph showing the percentage of students choosing easy problems. Of those who were praised on ability nearly 70% chose easy problems, 50% of the control condition chose easy problems, and less than 10% of those who were praised for effort chose the easy problems." width="368" height="267" srcset="https://s3-us-west-2.amazonaws.com/courses-images/wp-content/uploads/sites/855/2017/05/11144717/typeofpraisegraph.png 368w, https://s3-us-west-2.amazonaws.com/courses-images/wp-content/uploads/sites/855/2017/05/11144717/typeofpraisegraph-300x218.png 300w, https://s3-us-west-2.amazonaws.com/courses-images/wp-content/uploads/sites/855/2017/05/11144717/typeofpraisegraph-65x47.png 65w, https://s3-us-west-2.amazonaws.com/courses-images/wp-content/uploads/sites/855/2017/05/11144717/typeofpraisegraph-225x163.png 225w, https://s3-us-west-2.amazonaws.com/courses-images/wp-content/uploads/sites/855/2017/05/11144717/typeofpraisegraph-350x254.png 350w" sizes="(max-width: 368px) 100vw, 368px" /></a></p>
+<p class="wp-caption-text">Figure 2. The type of praise given influenced the types of problems students wanted to tackle. This graph shows the number of students choosing easy problems after given praise.</p>
+</div>
+<div class="textbox tryit">
+<h3>Try It</h3>
+<p>	<iframe
+		id="lumen_assessment_13610"
+		class="resizable"
+		src="https://assessments.lumenlearning.com/assessments/load?assessment_id=13610&#038;embed=1&#038;external_user_id=&#038;external_context_id=&#038;iframe_resize_id=lumen_assessment_13610"
+		frameborder="0"
+		style="border:none;width:100%;height:100%;min-height:400px;"><br />
+	</iframe></p>
+</div>
+<h2>Stage 2: Failure, Negative Feedback, and Consequences</h2>
+<h4>FAILURE</h4>
+<p>Next, the children tried to solve a new set of 10 matrix problems and again they had 4 minutes. On the surface, these problems looked about the same as the first set, but they were considerably more difficult. After the 4-minute test period, the researchers scored the answers and, regardless of actual performance, they told the children that they had done poorly (“a lot worse”). No one was told that he or she had solved more than 50% correctly. In fact, this feedback was accurate. The results showed that the children found the problems difficult. On average, they attempted 5.8 of the 10 problems and correctly solved only 1.8 of them. There was no significant difference in number of problems solved for the three groups (ability feedback, effort feedback, and no-feedback control).</p>
+<h4>CONSEQUENCES</h4>
+<p>Now the experimenters wanted to know about the effect of “failure” on the children’s motivation (though the term “failure” was never used with the children).</p>
+<p>Immediately after receiving feedback, the children were asked a series of questions:</p>
+<ul>
+<li style="font-weight: 400;">“How much would you like to take these problems home to work on?” [This was a measure of “task persistence”]</li>
+<li style="font-weight: 400;">“How much did you like working on the first set of problems? How much did you enjoy working on the second set? How much fun were the problems? [These measured “task enjoyment”]</li>
+<li style="font-weight: 400;">Using a somewhat complicated measure, the children were also asked to explain their difficulties with the second problem set by attributing failure to lack of ability or lack of effort. This was done in a way that they could explain their problems on the second set as partially due to low ability and partially to low effort.</li>
+</ul>
+<h4>RESULTS</h4>
+<ul>
+<li style="font-weight: 400;">“How much would you like to take these problems home?” The children answered on a 1-to-6 scale, where higher numbers means more interest in taking the problems home to practice.</li>
+</ul>
+<div id="attachment_4552" style="width: 318px" class="wp-caption aligncenter"><a href="https://s3-us-west-2.amazonaws.com/courses-images/wp-content/uploads/sites/855/2017/05/11145106/praisegivenforhome.png"><img class="wp-image-4552 size-full" src="https://s3-us-west-2.amazonaws.com/courses-images/wp-content/uploads/sites/855/2017/05/11145106/praisegivenforhome.png" alt="Bar graph showing the type of praise given and the feelings of the participants about how much they would like to take the problems home. Those praised for ability scored it just over a 3, while those in the control just over a 4, and those who were praised for effort, just under a 5." width="308" height="264" srcset="https://s3-us-west-2.amazonaws.com/courses-images/wp-content/uploads/sites/855/2017/05/11145106/praisegivenforhome.png 308w, https://s3-us-west-2.amazonaws.com/courses-images/wp-content/uploads/sites/855/2017/05/11145106/praisegivenforhome-300x257.png 300w, https://s3-us-west-2.amazonaws.com/courses-images/wp-content/uploads/sites/855/2017/05/11145106/praisegivenforhome-65x56.png 65w, https://s3-us-west-2.amazonaws.com/courses-images/wp-content/uploads/sites/855/2017/05/11145106/praisegivenforhome-225x193.png 225w" sizes="(max-width: 308px) 100vw, 308px" /></a></p>
+<p class="wp-caption-text">Figure 3. How praise influenced students&#8217; desires to take the problems home. Statistical note: the Ability group was significantly lower than the other two. There was no significant difference between the Control and Effort groups.</p>
+</div>
+<ul>
+<li style="font-weight: 400;">“How much fun were the problems?” The children answered on a 1-to-6 scale, where higher numbers means more enjoyment of the problems.</li>
+</ul>
+<div id="attachment_4553" style="width: 346px" class="wp-caption aligncenter"><a href="https://s3-us-west-2.amazonaws.com/courses-images/wp-content/uploads/sites/855/2017/05/11145455/praiseandfun.png"><img class="wp-image-4553 size-full" src="https://s3-us-west-2.amazonaws.com/courses-images/wp-content/uploads/sites/855/2017/05/11145455/praiseandfun.png" alt="On a scale of 1-6, students who were praised for ability rated the problems as a 4 for &quot;fun&quot;, while students in the control rated them at a 4.5, and students who were praised for effort rated them at a 5." width="336" height="306" srcset="https://s3-us-west-2.amazonaws.com/courses-images/wp-content/uploads/sites/855/2017/05/11145455/praiseandfun.png 336w, https://s3-us-west-2.amazonaws.com/courses-images/wp-content/uploads/sites/855/2017/05/11145455/praiseandfun-300x273.png 300w, https://s3-us-west-2.amazonaws.com/courses-images/wp-content/uploads/sites/855/2017/05/11145455/praiseandfun-65x59.png 65w, https://s3-us-west-2.amazonaws.com/courses-images/wp-content/uploads/sites/855/2017/05/11145455/praiseandfun-225x205.png 225w" sizes="(max-width: 336px) 100vw, 336px" /></a></p>
+<p class="wp-caption-text">Figure 4. Tye type of praise given had a small, but noticeable, impact on how much students enjoyed the problems. Statistical note: all three groups were significantly different from each other.</p>
+</div>
+<ul>
+<li style="font-weight: 400;">Why did you perform poorly on this second set of problems? The children expressed their own explanation for their poor performance using a somewhat complicated procedure. It was not a simple ability vs. effort choice and they could apportion their failure partially to either cause (reference the original study for more details).</li>
+</ul>
+<div id="attachment_5055" style="width: 674px" class="wp-caption aligncenter"><a href="https://s3-us-west-2.amazonaws.com/courses-images/wp-content/uploads/sites/855/2017/05/29150742/Screen-Shot-2018-10-26-at-1.55.05-PM1.png"><img class="wp-image-5055" src="https://s3-us-west-2.amazonaws.com/courses-images/wp-content/uploads/sites/855/2017/05/29150742/Screen-Shot-2018-10-26-at-1.55.05-PM1.png" alt="Two bar graphs. The first shows responses to the question &quot;How much was your failure due to low ability?&quot; The group that had been praised for ability answered high to this at 16, while the control group answered at 14 and the effort group responded at 10. The second shows responses to &quot;How much was your failure due to low effort? The ability group answer low (5), the control group at 11 and the effort group at 12." width="664" height="253" /></a></p>
+<p class="wp-caption-text">Figure 5. When asked how much of their &#8220;failure&#8221; was due to low ability, those praised for ability were more likely to blame their own inability. When asked how much of their failure was due to low effort, those who were praised for ability did not blame their effort, rather their ability.</p>
+</div>
+<h4>STAGE 3: POSTTEST</h4>
+<p>For the last stage of the experiment, the children were given a new set of problems that was similar in difficulty to the first set. The problems were moderately difficult, and the children had 4 minutes to solve as many as possible. The figure below shows the change in the average number of problems between the pretest (Stage 1) and the posttest (Stage 3).</p>
+<div class="textbox tryit">
+<h3>Try It</h3>
+<p><strong>Instructions:</strong> Click and drag the circles on the right (Posttest) to where you think they should be to reflect the results of the experiment. When you&#8217;re done, click the link below to see the actual results.</p>
+<p><center><iframe src="https://s3-us-west-2.amazonaws.com/oerfiles/Psychology/interactives/mindset/linegraph2.html" width="680" height="450" data-mce-fragment="1"></iframe></center></p>
+<div class="qa-wrapper" style="display: block"><span class="show-answer collapsed" style="cursor: pointer" data-target="q47435">Click here to see the results.</span></p>
+<div id="q47435" class="hidden-answer" style="display: none">
+<div id="attachment_4555" style="width: 416px" class="wp-caption aligncenter"><a href="https://s3-us-west-2.amazonaws.com/courses-images/wp-content/uploads/sites/855/2017/05/11150500/changes.png"><img class="wp-image-4555 size-full" src="https://s3-us-west-2.amazonaws.com/courses-images/wp-content/uploads/sites/855/2017/05/11150500/changes.png" alt="Line graph shows the number of problems solved in the pretest as compared with the number of problems solved in the posttest. The control group solved about the same amount of problems, roughly 5.25. The group praised for effort solved about 5 in the pretest, but nearly 6.5 in the posttest, while those praised for ability solved about 5.5 in the pretest and only 4.5 in the posttest." width="406" height="259" srcset="https://s3-us-west-2.amazonaws.com/courses-images/wp-content/uploads/sites/855/2017/05/11150500/changes.png 406w, https://s3-us-west-2.amazonaws.com/courses-images/wp-content/uploads/sites/855/2017/05/11150500/changes-300x191.png 300w, https://s3-us-west-2.amazonaws.com/courses-images/wp-content/uploads/sites/855/2017/05/11150500/changes-65x41.png 65w, https://s3-us-west-2.amazonaws.com/courses-images/wp-content/uploads/sites/855/2017/05/11150500/changes-225x144.png 225w, https://s3-us-west-2.amazonaws.com/courses-images/wp-content/uploads/sites/855/2017/05/11150500/changes-350x223.png 350w" sizes="(max-width: 406px) 100vw, 406px" /></a></p>
+<p class="wp-caption-text">Figure 5. The difference between the number of problems solved on the pre-test as compared with the post-test.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="textbox tryit">
+<h3>Try It</h3>
+<p>	<iframe
+		id="lumen_assessment_13611"
+		class="resizable"
+		src="https://assessments.lumenlearning.com/assessments/load?assessment_id=13611&#038;embed=1&#038;external_user_id=&#038;external_context_id=&#038;iframe_resize_id=lumen_assessment_13611"
+		frameborder="0"
+		style="border:none;width:100%;height:100%;min-height:400px;"><br />
+	</iframe><br />
+	<iframe
+		id="lumen_assessment_13612"
+		class="resizable"
+		src="https://assessments.lumenlearning.com/assessments/load?assessment_id=13612&#038;embed=1&#038;external_user_id=&#038;external_context_id=&#038;iframe_resize_id=lumen_assessment_13612"
+		frameborder="0"
+		style="border:none;width:100%;height:100%;min-height:400px;"><br />
+	</iframe></p>
+</div>
+<p>The Mueller and Dweck experiment shows how a single comment to a child can have at least a temporary effect. It is unlikely that these children were still influenced by that one comment (“You’re smart!” or “You worked hard!”) a day later or even an hour later. But at least for a short time in a controlled setting, the children were apparently affected by what the adult researcher said to them. Why would this matter? If a child repeatedly and consistently hears one sort of encouragement or the other, the child can internalize that way of thinking. Later, as an adolescent and then an adult, the individual’s “mindset” can determine how that person approaches new opportunities to learn and to grow intellectually.</p>
+<p>Before you go on, we’d like you to create a psychological theory. This may sound like a strange thing to do, because theories are often presented to you in textbooks as being the final summary of some research. Sometimes that is true, but the primary use of theories in real scientific research is as a temporary and changeable summary of a researcher’s ideas.</p>
+<div class="textbox tryit">
+<h3>Try It</h3>
+<p>Using the figure below, which shows a sequence of influences beginning with either praise for effort or praise for ability, build a psychological theory.</p>
+<p><iframe src="https://lumenlearning.h5p.com/content/1290549119774223068/embed" width="605" height="601" frameborder="0" allowfullscreen="allowfullscreen"></iframe><script src="https://lumenlearning.h5p.com/js/h5p-resizer.js" charset="UTF-8"></script></p>
+<p>This is the psychological theory based on Dr. Dweck’s ideas, showing how the two different mindsets lead to different outcome.<a class="footnote" title="This particular version of her theory did not come directly from her papers. We have put them together in this form to illustrate how experience can influence thinking which then influences behavior." id="return-footnote-2509-2" href="#footnote-2509-2"><sup class="footnote">[2]</sup></a></p>
+<p>What this theory says is that different kinds of praise encourage the child to focus on different goals. Praise for effort tells the child that the process of learning is important and reward comes from trying hard. Praise for ability tells the child that performance comes from something mysterious inside of you (“intelligence” or “talent”) rather than from what you do.</p>
+<p>According to the theory (and supported by the results), children who had been praised for effort could focus on the process of learning, so failure at hard problems could be seen as a challenge—even something fun—and failure could motivate them. The children who were praised for their intelligence, which effort cannot change, felt smart when they had easy problems, but the hard problems led to a disturbing realization: maybe I don’t have that magical ability.</p>
+<p>At stage 3 in the experiment, children who were energized by the difficult problems tackled the final set of problems, which were fairly easy, with enthusiasm that led to success. The children who were discouraged by failure handicapped themselves on the last set of problems, doing worse than they had at the beginning of the study.</p>
+</div>
+<p>Next, let&#8217;s read about a second study by Dweck’s research team, though this one is described more briefly and with less detail. Study 2 is not an experiment because there are no manipulated variables. It is a longitudinal study, which means that the same participants (in this case, children) are tested repeatedly across a long period of time.</p>
+<h1>Study 2: Blackwell, Trzesniewski, and Dweck (2007)</h1>
+<p>In this study<a class="footnote" title="Lisa S. Blackwell, Kali H. Trzesniewski, and Carol S. Dweck (2007). Implicit theories of intelligence predict achievement across and adolescent transition: A longitudinal study and an intervention. Child Development, January/February 2007, Volume 78, Number 1, Pages 246 – 263." id="return-footnote-2509-3" href="#footnote-2509-3"><sup class="footnote">[3]</sup></a>, Dweck and her colleagues administered a questionnaire about beliefs and attitudes to some 7th graders in public schools, and then they tracked 373 of the students from the beginning of the 7th grade to the end of 8th grade. This period, which marked the transition from elementary school to junior high school, was considered a particularly interesting time because it was a challenging, even stressful, time for the students and the children’s learning styles and attitudes could now have a substantial impact on their academic achievement.</p>
+<div id="attachment_4764" style="width: 310px" class="wp-caption alignleft"><a href="https://s3-us-west-2.amazonaws.com/courses-images/wp-content/uploads/sites/855/2017/05/04031723/math.jpg"><img class="wp-image-4764 size-medium" src="https://s3-us-west-2.amazonaws.com/courses-images/wp-content/uploads/sites/855/2017/05/04031723/math-300x199.jpg" alt="Eight grade student Caribe Polk gets some assistance from Chris Shumway, math teacher, at Feagin Mill Middle School Nov. 7. " width="300" height="199" /></a></p>
+<p class="wp-caption-text">Figure 6. Students with a growth mindset demonstrated behaviors that led to better math performance.</p>
+</div>
+<p>At the beginning of their 7th grade school year, the children were tested on their mindset (various levels of commitment to fixed or growth mindset), learning goals (preference for easy or challenging work), beliefs about effort (whether it tends to lead to improvement or not), and attitudes about failure (whether it is motivating or discouraging).</p>
+<p>The researchers focused on the students’ mathematics grades across the two years of the study. They chose mathematics because students tend to have strong beliefs about their skills (“I’m good at math” or “I’m not a math person”), which is influenced by their mindset and because math proficiency can be tested and graded fairly objectively. Although the study focused on math, the researchers were interested in any area of study or skill, not just math.</p>
+<p>The figure below shows the average grades<a class="footnote" title="More accurately, predicted grades from growth curves based on data and using a technique called hierarchical linear modeling." id="return-footnote-2509-4" href="#footnote-2509-4"><sup class="footnote">[4]</sup></a> of the students with strong fixed and strong growth mindsets based on the initial test. Students with mixed mindsets are not included in this graph. At the end of the first semester, there was a very modest difference of less than two points in math grades. The trends for the two lines are obviously different. The students with the fixed mindset (red line) showed a slight decline in average grades across the two years of the study. Students with the growth mindset (green line) show steady improvement across the two years, with their average grade increasing by nearly 3-points.</p>
+<div id="attachment_4558" style="width: 534px" class="wp-caption aligncenter"><a href="https://s3-us-west-2.amazonaws.com/courses-images/wp-content/uploads/sites/855/2017/05/11151210/mindsets.png"><img class="wp-image-4558 size-full" src="https://s3-us-west-2.amazonaws.com/courses-images/wp-content/uploads/sites/855/2017/05/11151210/mindsets.png" alt="" width="524" height="316" srcset="https://s3-us-west-2.amazonaws.com/courses-images/wp-content/uploads/sites/855/2017/05/11151210/mindsets.png 524w, https://s3-us-west-2.amazonaws.com/courses-images/wp-content/uploads/sites/855/2017/05/11151210/mindsets-300x181.png 300w, https://s3-us-west-2.amazonaws.com/courses-images/wp-content/uploads/sites/855/2017/05/11151210/mindsets-65x39.png 65w, https://s3-us-west-2.amazonaws.com/courses-images/wp-content/uploads/sites/855/2017/05/11151210/mindsets-225x136.png 225w, https://s3-us-west-2.amazonaws.com/courses-images/wp-content/uploads/sites/855/2017/05/11151210/mindsets-350x211.png 350w" sizes="(max-width: 524px) 100vw, 524px" /></a></p>
+<p class="wp-caption-text">Figure 7. Differences in math grades between those with growth and fixed mindsets.</p>
+</div>
+<p>At the beginning of the study, the students—then just starting the first term of the 7th grade—filled out a questionnaire about their attitudes and beliefs about learning. The table below summarizes these differences.<a class="footnote" title="This table is not in the research paper. It is based on correlations between answers to the mindset question and answers to questions about these other issues. See Table 1 of the published study." id="return-footnote-2509-5" href="#footnote-2509-5"><sup class="footnote">[5]</sup></a> The reason for these questions is an important part of the psychology of learning. Mindset itself (fixed vs. growth) doesn’t cause better or worse performance. Mindset leads to behaviors (types of studying, reactions to setbacks) that in turn affects the quality of learning.</p>
+<p>The researchers found that children with growth mindset (related to EFFORT praise in the first study) had different attitudes than children with fixed mindsets (related to ABILITY praise in the first study). The table below summarizes their findings.</p>
+<table style="height: 60px;">
+<tbody>
+<tr style="height: 15px;">
+<td style="height: 15px;"></td>
+<td style="height: 15px;"><strong><span style="color: #333333;">Fixed Mindset</span></strong></td>
+<td style="height: 15px;"><strong><span style="color: #333333;">Growth Mindset</span></strong></td>
+</tr>
+<tr style="height: 15px;">
+<td style="height: 15px;">Preferred difficulty of work</td>
+<td style="height: 15px;"><span style="color: #333333;">Eas</span><span style="color: #333333;">y success</span></td>
+<td style="height: 15px;"><span style="color: #333333;">Challenging</span></td>
+</tr>
+<tr style="height: 15px;">
+<td style="height: 15px;">Belief about value of effort</td>
+<td style="height: 15px;"><span style="color: #333333;">Doesn&#8217;t lead to improvement</span></td>
+<td style="height: 15px;"><span style="color: #333333;">Leads to improvement</span></td>
+</tr>
+<tr style="height: 15px;">
+<td style="height: 15px;">Attitude about failure</td>
+<td style="height: 15px;"><span style="color: #333333;">Discouraging</span></td>
+<td style="height: 15px;"><span style="color: #333333;">Motivating </span></td>
+</tr>
+</tbody>
+</table>
+<p>The table indicates that children with different mindsets sought out different kinds of experience, with growth mindset children preferring challenging experiences, while those with a fixed mindset preferred easier learning experiences that led to easy success. The growth mindset students believed that working hard—effort—leads to improvement, while those with fixed mindsets tended to undervalue effort, believing that hard work is frustrating because we can’t do better than our “talents” or “innate abilities” allow us to do. Finally, the growth mindset children found difficult work and even failure to be a source of inspiration. They wanted to prove to themselves and others that they could do what was needed to succeed. The fixed mindset children tended to respond to difficulty and failure with discouragement, believing that it simply reaffirmed their own limitations.</p>
+<h2>Takeaways</h2>
+<p>The two studies we have discussed are just two of dozens of research projects by Dweck and others that show how mindset is related to differences in achievement. In another study, Grant and Dweck (2003) followed several hundred college students taking a pre-med organic chemistry course, as this is one of the most important and challenging courses for pre-med students at most universities. Students with a growth mindset outperformed students with a fixed mindset, and the two groups reported differences in attitudes and beliefs similar to those shown in the table above.</p>
+<p>Mindset is just one factor that influences how we learn and how we respond to challenges. Whether you have a growth mindset or a fixed mindset, you can study hard and do well in school and in other areas. Here is a summary point from Carol Dweck: “It should be noted that in these studies&#8230;students who have a fixed mindset but who are well prepared and do not encounter difficulties can do just fine. However, when they encounter challenges or obstacles they may then be at a disadvantage.”</p>
+<p>One last thing to remember is this: <strong>you can change your mindset</strong>. If you regularly handicap yourself by your beliefs (I just don’t have the talent for this) and attitudes about learning (I can’t learn this), you can change those beliefs and attitudes. That change in mindset can be the difference between an effective response to challenges or an avoidance of those challenges. Keep in mind that your beliefs and attitudes are the result of many years of experience, so you won’t change your mindset overnight by simply deciding to be different. You may have to work at it. In particular, when you encounter difficulty—a poor grade on a test, a paper that has some negative comments from your professor, or a reading assignment that leaves you confused—that is the time that your mindset can have a huge impact on what you do next. Don&#8217;t let your mindset prevent you from realizing your abilities or reaching your potential!</p>
+<div class="textbox key-takeaways">
+<h3>Glossary</h3>
+<div data-type="definition"><strong>drive theory: </strong>deviations from homeostasis create physiological needs that result in psychological drive states that direct behavior to meet the need and ultimately bring the system back to homeostasis</div>
+<div data-type="definition">
+<div data-type="definition"><strong>extrinsic motivation: </strong>motivation that arises from external factors or rewards</div>
+<div data-type="definition"><strong>intrinsic motivation: </strong>motivation based on internal feelings rather than external rewards</div>
+</div>
+<div data-type="definition"><strong>habit: </strong>pattern of behavior in which we regularly engage</div>
+<div data-type="definition"><strong>hierarchy of needs: </strong>spectrum of needs ranging from basic biological needs to social needs to self-actualization</div>
+<div data-type="definition"><strong>instinct: </strong>species-specific pattern of behavior that is unlearned</div>
+<div data-type="definition"><strong>motivation: </strong>wants or needs that direct behavior toward some goal</div>
+<div data-type="definition"><strong>self-efficacy</strong>: individual’s belief in his own capabilities or capacities to complete a task</div>
+<div data-type="definition"><strong>Yerkes-Dodson law: </strong>simple tasks are performed best when arousal levels are relatively high, while complex tasks are best performed when arousal is lower</div>
+</div>
+<p>	<iframe
+		id="lumen_assessment_4861"
+		class="resizable"
+		src="https://assessments.lumenlearning.com/assessments/load?assessment_id=4861&#038;embed=1&#038;external_user_id=&#038;external_context_id=&#038;iframe_resize_id=lumen_assessment_4861"
+		frameborder="0"
+		style="border:none;width:100%;height:100%;min-height:400px;"><br />
+	</iframe></p>
+<hr /><div class="footnotes"><ol><li id="footnote-2509-1">Questions used with permission from <a href="http://www.smart-kit.com/scategory/brain-teasers/iq-test-questions/" rel="nofollow">http://www.smart-kit.com/scategory/brain-teasers/iq-test-questions/</a> <a href="#return-footnote-2509-1" class="return-footnote">&crarr;</a></li><li id="footnote-2509-2">This particular version of her theory did not come directly from her papers. We have put them together in this form to illustrate how experience can influence thinking which then influences behavior. <a href="#return-footnote-2509-2" class="return-footnote">&crarr;</a></li><li id="footnote-2509-3">Lisa S. Blackwell, Kali H. Trzesniewski, and Carol S. Dweck (2007). Implicit theories of intelligence predict achievement across and adolescent transition: A longitudinal study and an intervention. Child Development, January/February 2007, Volume 78, Number 1, Pages 246 – 263. <a href="#return-footnote-2509-3" class="return-footnote">&crarr;</a></li><li id="footnote-2509-4">More accurately, predicted grades from growth curves based on data and using a technique called hierarchical linear modeling. <a href="#return-footnote-2509-4" class="return-footnote">&crarr;</a></li><li id="footnote-2509-5">This table is not in the research paper. It is based on correlations between answers to the mindset question and answers to questions about these other issues. See Table 1 of the published study. <a href="#return-footnote-2509-5" class="return-footnote">&crarr;</a></li></ol></div>
+					</div><!-- .entry-content -->
+				</div><!-- #post-## -->
+
+                  <!-- CITATIONS AND ATTRIBUTIONS -->
+          <section class="citations-section" role="contentinfo">
+            <div class="post-citations sidebar">
+              <div role="button" aria-pressed="false" id="citation-header-2509" class="collapsed license-attribution-dropdown">Licenses and Attributions</div>
+              <div id="citation-list-2509" style="display:none;">
+                <div class="licensing"><div class="license-attribution-dropdown-subheading">CC licensed content, Original</div><ul class="citation-list"><li>Modification, adaptation, and original content. <strong>Provided by</strong>: Lumen Learning. <strong>License</strong>: <em><a target="_blank" rel="license" href="https://creativecommons.org/licenses/by/4.0/">CC BY: Attribution</a></em></li><li>Psychology in Real Life: Growth Mindsets. <strong>Authored by</strong>: Patrick Carroll for Lumen Learning. <strong>License</strong>: <em><a target="_blank" rel="license" href="https://creativecommons.org/licenses/by/4.0/">CC BY: Attribution</a></em></li></ul><div class="license-attribution-dropdown-subheading">CC licensed content, Shared previously</div><ul class="citation-list"><li>Motivation. <strong>Authored by</strong>: OpenStax College. <strong>Located at</strong>: <a target="_blank" href="http://cnx.org/contents/Sr8Ev5Og@5.52:MLADqXMi@5/Motivation">http://cnx.org/contents/Sr8Ev5Og@5.52:MLADqXMi@5/Motivation</a>. <strong>License</strong>: <em><a target="_blank" rel="license" href="https://creativecommons.org/licenses/by/4.0/">CC BY: Attribution</a></em>. <strong>License Terms</strong>: Download for free at http://cnx.org/contents/4abf04bf-93a0-45c3-9cbc-2cefd46e68cc@5.48</li><li>climbing picture. <strong>Provided by</strong>: Pixabay. <strong>Located at</strong>: <a target="_blank" href="https://www.pexels.com/photo/achievement-action-adventure-backlit-209209/">https://www.pexels.com/photo/achievement-action-adventure-backlit-209209/</a>. <strong>License</strong>: <em><a target="_blank" rel="license" href="https://creativecommons.org/about/cc0">CC0: No Rights Reserved</a></em></li><li>picture of teacher with students. <strong>Authored by</strong>: Army Medicine. <strong>Provided by</strong>: Flickr. <strong>Located at</strong>: <a target="_blank" href="https://www.flickr.com/photos/armymedicine/13584535514">https://www.flickr.com/photos/armymedicine/13584535514</a>. <strong>License</strong>: <em><a target="_blank" rel="license" href="https://creativecommons.org/licenses/by/4.0/">CC BY: Attribution</a></em></li></ul><div class="license-attribution-dropdown-subheading">All rights reserved content</div><ul class="citation-list"><li>RSA ANIMATE: Drive: The surprising truth about what motivates us. <strong>Authored by</strong>: Dan Pink. <strong>Located at</strong>: <a target="_blank" href="https://www.youtube.com/watch?v=u6XAPnuFjJc">https://www.youtube.com/watch?v=u6XAPnuFjJc</a>. <strong>License</strong>: <em>Other</em>. <strong>License Terms</strong>: Standard YouTube License</li></ul><div class="license-attribution-dropdown-subheading">Public domain content</div><ul class="citation-list"><li>Math student gets help from teacher. <strong>Authored by</strong>: Sue Sapp. <strong>Provided by</strong>: U.S. Air Force. <strong>Located at</strong>: <a target="_blank" href="http://www.robins.af.mil/News/Photos/igphoto/2000659561/">http://www.robins.af.mil/News/Photos/igphoto/2000659561/</a>. <strong>License</strong>: <em><a target="_blank" rel="license" href="https://creativecommons.org/about/pdm">Public Domain: No Known Copyright</a></em></li></ul></div>              </div>
+            </div>
+          </section>
+        
+
+									<!-- edit page button -->
+									
+				<!-- page nav buttons -->
+				<nav class="bottom-nav-buttons" role="navigation">
+					<a class="post-nav-button" id="prev" href="https://courses.lumenlearning.com/wmopen-psychology/chapter/introduction-7/">
+				Previous			</a>
+		
+					<a class="post-nav-button" id="next" href="https://courses.lumenlearning.com/wmopen-psychology/chapter/introduction-hunger-and-eating/">
+				Next			</a>
+			</nav>
+			</div><!-- #content -->
+
+			
+	<!-- This does nothing and exists only to block sidebar.php of the Luther theme from rendering. -->
+
+	</div><!-- #wrap -->
+	<div class="push"></div>
+
+	</div><!-- .wrapper for sitting footer at the bottom of the page -->
+
+<div class="footer">
+	<div class="inner">
+		<!-- logo options -->
+									<img class="lumen-footer-logo" src="https://courses.lumenlearning.com/wmopen-psychology/wp-content/themes/bombadil/assets/images/FooterLumenCandela.png" alt="Footer Logo Lumen Candela" />
+				<p style="margin-top:3.5em;text-align:center;">
+					<a href="https://lumenlearning.com/policies/privacy-policy/" target="_blank" style="color:#959595;">Privacy Policy</a>
+				</p>
+						</div><!-- #inner -->
+</div><!-- #footer -->
+
+<script async type='text/javascript' src='https://courses.lumenlearning.com/wmopen-psychology/wp-content/themes/pressbooks-book/dist/scripts/keyboard-nav.js?id=5530f96084c639f108ac'></script>
+<script type='text/javascript' src='https://courses.lumenlearning.com/wmopen-psychology/wp-content/themes/bombadil/assets/js/audio-behavior.js?ver=4.9.8'></script>
+<script type='text/javascript' src='https://courses.lumenlearning.com/wmopen-psychology/wp-content/themes/bombadil/assets/js/hide-answer.js?ver=4.9.8'></script>
+<script type='text/javascript' src='https://courses.lumenlearning.com/wmopen-psychology/wp-content/themes/bombadil/assets/js/lti-buttons.js?ver=4.9.8'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var wpipaViews = {"url":"https:\/\/courses.lumenlearning.com\/wmopen-psychology\/wp-admin\/admin-ajax.php"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://courses.lumenlearning.com/wmopen-psychology/wp-content/plugins/mts-wp-in-post-ads/public/js/wp-in-post-ads-views.js?ver=1.2.3'></script>
+<script type='text/javascript' src='https://courses.lumenlearning.com/wmopen-psychology/wp-includes/js/wp-embed.min.js?ver=4.9.8'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var thePost = {"id":"2509"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://courses.lumenlearning.com/wmopen-psychology/wp-content/themes/bombadil/assets/js/attributions.js?ver=4.9.8'></script>
+<script>if (typeof sendIframeResize === "function") { sendIframeResize(); }</script>
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam-cell.nr-data.net","licenseKey":"0d4d84695b","applicationID":"12680714","transactionName":"ZQBaNkRZXEdZBkcLWlxKeQFCUV1aFxZaDFJeAA==","queueTime":0,"applicationTime":246,"atts":"SUdZQAxDT0k=","errorBeacon":"bam-cell.nr-data.net","agent":""}</script></body>
+</html>

@@ -231,3 +231,45 @@ https://youtu.be/3QWIxElEnc8
 - According to the drive theory of motivation, deviations from homeostasis create physiological needs. These needs result in psychological drive states that direct behavior to meet the need and, ultimately, bring the system back to homeostasis.
 - If we are underaroused, we become bored and will seek out some sort of stimulation. On the other hand, if we are overaroused, we will engage in behaviors to reduce our arousal (Berlyne, 1960).
 - If we are underaroused, we become bored and will seek out some sort of stimulation. On the other hand, if we are overaroused, we will engage in behaviors to reduce our arousal (Berlyne, 1960).
+- Self-efficacy is an individual’s belief in her own capability to complete a task, which may include a previous successful completion of the exact task or a similar task.
+- A number of theorists have focused their research on understanding social motives (McAdams & Constantian, 1983; McClelland & Liberman, 1949; Murray et al., 1938). Among the motives they describe are needs for achievement, affiliation, and intimacy. It is the need for achievement that drives accomplishment and performance. (...)
+- [RSA ANIMATE: Drive: The surprising truth about what motivates us - YouTube](https://www.youtube.com/watch?v=u6XAPnuFjJc)
+  - Interestingly, in the video, the people who were offered the highest reward were the ones who performed the poorest.
+  - Use money to be enough reward to eliminate the problem of money of the table.
+  - We are purpose maximizers, not profit maximizers.
+  - Me: The higher the reward, the higher the risk of losing it, so people will play it safe.
+- Maslow's Hierarchy of Needs
+- Rewards narrow our minds to very small sets of possibilities. Whenever we need creativity, it goes awry.
+- Dan Pink:
+    - Autonomy
+    - Mastery
+    - Purpose
+- Praising effort instead of ability makes people want to go for harder problems.
+
+---
+
+## Dr. K on Motivation
+
+Tags: Psychology, Philosophy
+
+https://youtu.be/3QWIxElEnc8
+
+- Motivation is within the mind, it is not behavior.
+- Motivation is the ability of holding a thought within your mind.
+    - Suicide takes a huge amount of motivation.
+- Desire is not motivation, it's a sensory stimulus.
+- Anxiety does not come from the thing that's motivating you, but the consequences of doing it or not doing it.
+    - Anxiety is a very powerful thing to bump motivation out of your mind.
+- Goals are not what motivates people, it is a means of establishing the tasks that will keep you motivated. Most motivated people are focused on the task at hand.
+- Self-discipline is an emergent property, it is not what keeps you motivated.
+
+---
+
+## Don't go to hospitals in the afternoon
+
+Tags: Psychology, Heatlh
+
+[When: The Scientific Secrets of Perfect Timing | Daniel H. Pink | Talks at Google](https://www.youtube.com/watch?v=zUhnzxrNpCc&list=WL&index=1)
+
+- Also, students who do math in the morning have better GPAs than those who do it in the afternoon.
+- People are much more likely to overcome defaults earlier in the day and after breaks.
