@@ -251,23 +251,6 @@ https://youtu.be/3QWIxElEnc8
 
 ---
 
-## Dr. K on Motivation
-
-Tags: Psychology, Philosophy
-
-https://youtu.be/3QWIxElEnc8
-
-- Motivation is within the mind, it is not behavior.
-- Motivation is the ability of holding a thought within your mind.
-  - Suicide takes a huge amount of motivation.
-- Desire is not motivation, it's a sensory stimulus.
-- Anxiety does not come from the thing that's motivating you, but the consequences of doing it or not doing it.
-  - Anxiety is a very powerful thing to bump motivation out of your mind.
-- Goals are not what motivates people, it is a means of establishing the tasks that will keep you motivated. Most motivated people are focused on the task at hand.
-- Self-discipline is an emergent property, it is not what keeps you motivated.
-
----
-
 ## Don't go to hospitals in the afternoon
 
 Tags: Psychology, Heatlh
