@@ -15,7 +15,7 @@ The Posts:
 
 ---
 
-Make the disclaimer that you're not a philosopher or a psychologist, so we won't be able to go as deep into this as ideally we should.
+Make the disclaimer that you're not a philosopher nor a psychologist, so we won't be able to go as deep into this as ideally we should.
 
 But maybe I could post on StackExchange about it...
 
