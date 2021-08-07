@@ -140,7 +140,6 @@ export const articlesMetadata: Article[] = [
     languages: [Language.portuguese],
     mainTopic: Topic.go,
     otherTopics: [Topic.review, Topic.philosophy, Topic.psychology],
-    draft: true,
   },
   {
     title: "Pyrrhic Victories and Josekis",
