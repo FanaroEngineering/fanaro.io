@@ -36,7 +36,7 @@
      inkscape:window-x="0"
      inkscape:window-y="0"
      inkscape:window-maximized="1"
-     inkscape:current-layer="layer1" />
+     inkscape:current-layer="g23115" />
   <defs
      id="defs2" />
   <g
@@ -51,27 +51,51 @@
        x="1.110223e-16"
        y="-190.5"
        transform="scale(1,-1)" />
-    <text
-       xml:space="preserve"
-       style="font-style:normal;font-weight:normal;font-size:49.4313px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1.23579"
-       x="168.91318"
-       y="49.378685"
-       id="text4243"><tspan
-         sodipodi:role="line"
-         id="tspan4241"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:BetecknaLowerCase;-inkscape-font-specification:BetecknaLowerCase;text-align:center;text-anchor:middle;fill:#34ae23;fill-opacity:1;stroke-width:1.23579"
-         x="168.91318"
-         y="49.378685">Why</tspan><tspan
-         sodipodi:role="line"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:BetecknaLowerCase;-inkscape-font-specification:BetecknaLowerCase;text-align:center;text-anchor:middle;fill:#34ae23;fill-opacity:1;stroke-width:1.23579"
-         x="168.91318"
-         y="113.15665"
-         id="tspan4245">Play</tspan><tspan
-         sodipodi:role="line"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:BetecknaLowerCase;-inkscape-font-specification:BetecknaLowerCase;text-align:center;text-anchor:middle;fill:#34ae23;fill-opacity:1;stroke-width:1.23579"
-         x="168.91318"
-         y="176.93462"
-         id="tspan4247">Go</tspan></text>
+    <g
+       id="g23107"
+       transform="translate(-0.52916672,3.1750002)">
+      <g
+         id="g23115"
+         transform="translate(0,1.7724083)">
+        <g
+           id="g23149"
+           transform="translate(0,-1.5875001)">
+          <text
+             xml:space="preserve"
+             style="font-style:normal;font-weight:normal;font-size:49.4313px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1.23579"
+             x="168.58121"
+             y="55.795799"
+             id="text4243-2"><tspan
+               sodipodi:role="line"
+               style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:BetecknaLowerCase;-inkscape-font-specification:BetecknaLowerCase;text-align:center;text-anchor:middle;fill:#34ae23;fill-opacity:1;stroke-width:1.23579"
+               x="168.58121"
+               y="55.795799"
+               id="tspan4247-5">Why</tspan></text>
+          <text
+             xml:space="preserve"
+             style="font-style:normal;font-weight:normal;font-size:49.4313px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1.23579"
+             x="168.29529"
+             y="109.63451"
+             id="text4243-2-9"><tspan
+               sodipodi:role="line"
+               style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:BetecknaLowerCase;-inkscape-font-specification:BetecknaLowerCase;text-align:center;text-anchor:middle;fill:#34ae23;fill-opacity:1;stroke-width:1.23579"
+               x="168.29529"
+               y="109.63451"
+               id="tspan4247-5-2">Play</tspan></text>
+          <text
+             xml:space="preserve"
+             style="font-style:normal;font-weight:normal;font-size:49.4313px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1.23579"
+             x="165.59186"
+             y="161.68102"
+             id="text4243-2-9-2"><tspan
+               sodipodi:role="line"
+               style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:BetecknaLowerCase;-inkscape-font-specification:BetecknaLowerCase;text-align:center;text-anchor:middle;fill:#34ae23;fill-opacity:1;stroke-width:1.23579"
+               x="165.59186"
+               y="161.68102"
+               id="tspan4247-5-2-8">Go</tspan></text>
+        </g>
+      </g>
+    </g>
     <text
        xml:space="preserve"
        style="font-style:normal;font-weight:normal;font-size:23.0526px;line-height:1.25;font-family:sans-serif;fill:#e6e6e6;fill-opacity:1;stroke:none;stroke-width:0.576318"
