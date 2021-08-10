@@ -118,11 +118,10 @@ export const articlesMetadata: Article[] = [
   {
     title: "Why Play Go: A More Thorough Exploration Than Usual",
     link: "/articles/why_play_go/why_play_go.html",
-    date: Date.UTC(2021, 7, 16),
+    date: Date.UTC(2021, 7, 11),
     languages: [Language.english, Language.portuguese],
     mainTopic: Topic.go,
     otherTopics: [Topic.philosophy, Topic.psychology, Topic.books],
-    draft: true,
   },
   {
     title: "Aula de Go com Luís Sato 1k OGS",
