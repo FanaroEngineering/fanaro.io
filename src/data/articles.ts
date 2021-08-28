@@ -45,6 +45,7 @@ export enum Topic {
   social = "Social",
   sports = "Sports",
   statistics = "Statistics",
+  teaching = "Teaching",
   tech = "Tech",
   trips = "Trips",
   tsumego = "Tsumego",
@@ -115,6 +116,14 @@ export const pagesMetadata: Article[] = [
 ];
 
 export const articlesMetadata: Article[] = [
+  {
+    title: "Aula de Go com Beatriz Bouchiglioni Neves 25k",
+    link: "/articles/aula_beatriz/aula_beatriz.html",
+    date: Date.UTC(2021, 8, 10),
+    languages: [Language.portuguese],
+    mainTopic: Topic.go,
+    otherTopics: [Topic.review],
+  },
   {
     title: "Aula de Go com Luís Sato 1k OGS",
     link: "/articles/aula_sato/aula_sato.html",
