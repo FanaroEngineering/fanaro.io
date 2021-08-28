@@ -116,20 +116,20 @@ export const pagesMetadata: Article[] = [
 
 export const articlesMetadata: Article[] = [
   {
+    title: "Aula de Go com Luís Sato 1k OGS",
+    link: "/articles/aula_sato/aula_sato.html",
+    date: Date.UTC(2021, 7, 29),
+    languages: [Language.portuguese],
+    mainTopic: Topic.go,
+    otherTopics: [Topic.review, Topic.philosophy, Topic.psychology],
+  },
+  {
     title: "Why Play Go: A More Thorough Exploration Than Usual",
     link: "/articles/why_play_go/why_play_go.html",
     date: Date.UTC(2021, 7, 11),
     languages: [Language.english, Language.portuguese],
     mainTopic: Topic.go,
     otherTopics: [Topic.philosophy, Topic.psychology, Topic.books],
-  },
-  {
-    title: "Aula de Go com Luís Sato 1k OGS",
-    link: "/articles/aula_sato/aula_sato.html",
-    date: Date.UTC(2021, 7, 15),
-    languages: [Language.portuguese],
-    mainTopic: Topic.go,
-    otherTopics: [Topic.review, Topic.philosophy, Topic.psychology],
   },
   {
     title: "Aula de Go com Wang S, Feng 5d",
