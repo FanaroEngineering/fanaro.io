@@ -130,7 +130,6 @@ export const articlesMetadata: Article[] = [
     languages: [Language.portuguese],
     mainTopic: Topic.go,
     otherTopics: [Topic.review, Topic.philosophy, Topic.psychology],
-    draft: true,
   },
   {
     title: "Aula de Go com Wang S, Feng 5d",
