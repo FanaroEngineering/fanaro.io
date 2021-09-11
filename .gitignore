@@ -1,3 +1,6 @@
 dev/
 node_modules/
 .log/
+
+# Mac Idiciocy
+**/.DS_Store
