@@ -121,12 +121,20 @@ figcaption {
   padding-right: 32px;
 }
 
-#right-media, #right-donations {
+#right-channels,
+#right-media,
+#right-donations {
+  margin-top: 40px;
   vertical-align: middle;
 }
 
+#right-media,
 #right-donations {
   margin-left: 15px;
+}
+
+#right-channels {
+  margin-right: 15px;
 }
 
 svg,
