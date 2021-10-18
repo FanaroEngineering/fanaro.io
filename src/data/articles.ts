@@ -31,6 +31,7 @@ export enum Topic {
   literature = "Literature",
   logic = "Logic",
   math = "Math",
+  memes = "Memes",
   meta = "Meta",
   myYouTubeChannel = "My YouTube Channel",
   philosophy = "Philosophy",
@@ -117,6 +118,14 @@ export const pagesMetadata: Article[] = [
 
 export const articlesMetadata: Article[] = [
   {
+    title: "Whatsapp Go Stickers",
+    link: "/articles/go_stickers/go_stickers.html",
+    date: Date.UTC(2021, 9, 21),
+    languages: [Language.english],
+    mainTopic: Topic.go,
+    otherTopics: [Topic.comedy, Topic.memes, Topic.meta],
+  },
+  {
     title: "Aula de Go com Beatriz Bouchiglioni Neves 25k",
     link: "/articles/aula_beatriz/aula_beatriz.html",
     date: Date.UTC(2021, 8, 10),
@@ -190,8 +199,7 @@ export const articlesMetadata: Article[] = [
   },
   {
     title: "Scripted Classes vs Consulting or Private Lessons",
-    link:
-      "/articles/scripted_classes_vs_private_lessons/scripted_classes_vs_private_lessons.html",
+    link: "/articles/scripted_classes_vs_private_lessons/scripted_classes_vs_private_lessons.html",
     date: Date.UTC(2021, 6, 18),
     languages: [Language.english, Language.portuguese],
     mainTopic: Topic.education,
@@ -199,8 +207,7 @@ export const articlesMetadata: Article[] = [
   },
   {
     title: "Aula de Problemas de Meio de Jogo",
-    link:
-      "/articles/aula_problemas_meio_de_jogo/aula_problemas_meio_de_jogo.html",
+    link: "/articles/aula_problemas_meio_de_jogo/aula_problemas_meio_de_jogo.html",
     date: Date.UTC(2021, 6, 11),
     languages: [Language.portuguese],
     mainTopic: Topic.go,
@@ -224,8 +231,7 @@ export const articlesMetadata: Article[] = [
   },
   {
     title: "Fanaro's Sabaki Theme Collection",
-    link:
-      "/articles/fanaro_sabaki_theme_collection/fanaro_sabaki_theme_collection.html",
+    link: "/articles/fanaro_sabaki_theme_collection/fanaro_sabaki_theme_collection.html",
     date: Date.UTC(2021, 5, 28),
     languages: [Language.english],
     mainTopic: Topic.go,
@@ -281,8 +287,7 @@ export const articlesMetadata: Article[] = [
   },
   {
     title: "Laziness vs Eagerness in Dart",
-    link:
-      "/articles/laziness_vs_eagerness_dart/laziness_vs_eagerness_dart.html",
+    link: "/articles/laziness_vs_eagerness_dart/laziness_vs_eagerness_dart.html",
     date: Date.UTC(2021, 2, 11),
     languages: [Language.english],
     mainTopic: Topic.programming,
@@ -514,8 +519,7 @@ export const articlesMetadata: Article[] = [
   },
   {
     title: "Universal Principles of Design",
-    link:
-      "/articles/universal_principles_design/universal_principles_design.html",
+    link: "/articles/universal_principles_design/universal_principles_design.html",
     date: Date.UTC(2019, 11, 2),
     languages: [Language.english],
     mainTopic: Topic.design,
@@ -561,8 +565,7 @@ export const articlesMetadata: Article[] = [
   },
   {
     title: "Simão Gonçalves [4-5d EGF] vs Philippe Fanaro [2k-2d KGS]",
-    link:
-      "/articles/simao_goncalves_vs_philippe_fanaro/simao_goncalves_vs_philippe_fanaro.html",
+    link: "/articles/simao_goncalves_vs_philippe_fanaro/simao_goncalves_vs_philippe_fanaro.html",
     date: Date.UTC(2019, 8, 1),
     languages: [Language.portuguese],
     mainTopic: Topic.go,
@@ -1165,8 +1168,7 @@ export const articlesMetadata: Article[] = [
   },
   {
     title: "Um vídeo antigo sobre o livro Os Grandes Debates de Josekis",
-    link:
-      "/articles/sinji_great_joseki_debates/sinji_great_joseki_debates.html",
+    link: "/articles/sinji_great_joseki_debates/sinji_great_joseki_debates.html",
     date: Date.UTC(2018, 4, 19),
     languages: [Language.portuguese],
     mainTopic: Topic.go,
