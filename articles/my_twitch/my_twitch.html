@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Meu Twitch | My Twitch | Mon Twitch</title>
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+
+    <meta name="author" content="Philippe Fanaro" />
+    <meta name="description" content="Meu Twitch | My Twitch | Mon Twitch" />
+
+    <meta property="og:image" content="thumbnail.png" />
+    <meta
+      property="og:description"
+      content="Meu Twitch | My Twitch | Mon Twitch"
+    />
+    <meta property="og:title" content="Meu Twitch | My Twitch | Mon Twitch" />
+    <meta property="og:site_name" content="fanaro.io" />
+    <meta property="og:type" content="blog" />
+
+    <script src="../../index.js"></script>
+
+    <link rel="stylesheet" href="../../index.css" />
+    <link rel="icon" type="image/svg+xml" href="../../assets/favicon.svg" />
+  </head>
+  <body>
+    <article>
+      <img width="300px" src="tewari_scream_squared.png" alt="Thumbnail" />
+
+      <h1>Meu Twitch | My Twitch | Mon Twitch</h1>
+
+      <p>
+        Estou passando a transmitir Go ao vivo no Twitch também,
+        <local-link
+          link="https://twitch.tv/fanaro009"
+          text="aqui está o meu canal"
+        ></local-link
+        >. Será uma maneira de também gerar conteúdo mais interativamente e
+        fazer aulas mais interativas. Os melhores momentos serão postados no
+        <local-link
+          text="meu canal de YouTube"
+          link="https://youtube.com/c/PhilippeFanaro"
+        ></local-link>
+        de qualquer maneira, editados, claro.
+      </p>
+
+      <p>
+        Até aqui, só transmiti em português, mas pretendo em breve fazer algumas
+        transmissões em inglês ou, talvez, até mesmo francês.
+      </p>
+
+      <p>Seguem abaixo alguns dos melhores momentos até agora:</p>
+
+      <!--Twitch Embed-->
+
+      <!-- Add a placeholder for the Twitch embed -->
+      <div id="twitch-embed"></div>
+
+      <!-- Load the Twitch embed script -->
+      <script src="https://player.twitch.tv/js/embed/v1.js"></script>
+
+      <!-- Create a Twitch.Player object. This will render within the placeholder div -->
+      <script type="text/javascript">
+        new Twitch.Player("twitch-embed", {
+          video: "1147551932",
+        });
+      </script>
+
+      <!--Twitch Embed-->
+
+      <br />
+      <br />
+
+      <iframe
+        src="https://www.youtube.com/embed/1kQYfkRT2gw"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen
+      ></iframe>
+
+      <br />
+      <br />
+
+      <iframe
+        src="https://www.youtube.com/embed/Natt68ZvY9c"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen
+      ></iframe>
+
+      <br />
+      <br />
+
+      <iframe
+        src="https://www.youtube.com/embed/bPgm6gWU6RY"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen
+      ></iframe>
+    </article>
+  </body>
+</html>

@@ -118,6 +118,15 @@ export const pagesMetadata: Article[] = [
 
 export const articlesMetadata: Article[] = [
   {
+    title: "Meu Twitch | My Twitch | Mon Twitch",
+    link: "/articles/my_twitch/my_twitch.html",
+    date: Date.UTC(2021, 9, 25),
+    languages: [Language.portuguese, Language.english, Language.french],
+    mainTopic: Topic.meta,
+    otherTopics: [Topic.go],
+    draft: true,
+  },
+  {
     title: "Whatsapp Go Stickers",
     link: "/articles/go_stickers/go_stickers.html",
     date: Date.UTC(2021, 9, 21),
