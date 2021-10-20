@@ -124,7 +124,6 @@ export const articlesMetadata: Article[] = [
     languages: [Language.portuguese, Language.english, Language.french],
     mainTopic: Topic.meta,
     otherTopics: [Topic.go],
-    draft: true,
   },
   {
     title: "Whatsapp Go Stickers",
@@ -133,7 +132,6 @@ export const articlesMetadata: Article[] = [
     languages: [Language.english],
     mainTopic: Topic.go,
     otherTopics: [Topic.comedy, Topic.memes, Topic.meta],
-    draft: true,
   },
   {
     title: "Aula de Go com Beatriz Bouchiglioni Neves 25k",
