@@ -118,6 +118,14 @@ export const pagesMetadata: Article[] = [
 
 export const articlesMetadata: Article[] = [
   {
+    title: "DOGemP &mdash; Dojo Online de Go em Português",
+    link: "/articles/dogemp/dogemp.html",
+    date: Date.UTC(2021, 11, 13),
+    languages: [Language.portuguese],
+    mainTopic: Topic.go,
+    otherTopics: [],
+  },
+  {
     title: "Meu Twitch | My Twitch | Mon Twitch",
     link: "/articles/my_twitch/my_twitch.html",
     date: Date.UTC(2021, 9, 25),
