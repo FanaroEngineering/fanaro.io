@@ -118,9 +118,17 @@ export const pagesMetadata: Article[] = [
 
 export const articlesMetadata: Article[] = [
   {
+    title: "Go e Matemática",
+    link: "/articles/go_e_matematica/go_e_matematica.html",
+    date: Date.UTC(2021, 10, 15),
+    languages: [Language.portuguese],
+    mainTopic: Topic.go,
+    otherTopics: [Topic.math, Topic.philosophy],
+  },
+  {
     title: "DOGemP &mdash; Dojo Online de Go em Português",
     link: "/articles/dogemp/dogemp.html",
-    date: Date.UTC(2021, 11, 13),
+    date: Date.UTC(2021, 10, 13),
     languages: [Language.portuguese],
     mainTopic: Topic.go,
     otherTopics: [],
