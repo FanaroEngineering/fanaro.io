@@ -398,7 +398,7 @@ export const articlesMetadata: Article[] = [
     otherTopics: [Topic.browserExtension, Topic.myYouTubeChannel],
   },
   {
-    title: "Recursion: Fibonacci in Go",
+    title: "Recursion: Fibonacci in Go?",
     link: "/articles/recursion_fibonacci_in_go/recursion_fibonacci_in_go.html",
     date: Date.UTC(2020, 7, 17),
     languages: [Language.english, Language.portuguese],
