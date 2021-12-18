@@ -118,6 +118,14 @@ export const pagesMetadata: Article[] = [
 
 export const articlesMetadata: Article[] = [
   {
+    title: "Tradução de Como Jogar Go",
+    link: "/articles/traducao_como_jogar_go/traducao_como_jogar_go.html",
+    date: Date.UTC(2021, 11, 17),
+    languages: [Language.portuguese],
+    mainTopic: Topic.go,
+    otherTopics: [Topic.books],
+  },
+  {
     title: "Go e Matemática",
     link: "/articles/go_e_matematica/go_e_matematica.html",
     date: Date.UTC(2021, 10, 15),
