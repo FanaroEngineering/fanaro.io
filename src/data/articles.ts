@@ -5,6 +5,7 @@ export enum Language {
 }
 
 export enum Topic {
+  ai = "AI",
   books = "Books",
   browserExtension = "Browser Extension",
   chuban = "Chuban",
@@ -117,6 +118,15 @@ export const pagesMetadata: Article[] = [
 ];
 
 export const articlesMetadata: Article[] = [
+  {
+    title: "Standard Go Positions Evaluations with AI",
+    link: "/articles/standard_go_positions_with_ai/standard_go_positions_with_ai.html",
+    date: Date.UTC(2021, 11, 28),
+    languages: [Language.english],
+    mainTopic: Topic.go,
+    otherTopics: [Topic.ai],
+    draft: true,
+  },
   {
     title: "Tradução de Como Jogar Go",
     link: "/articles/traducao_como_jogar_go/traducao_como_jogar_go.html",
