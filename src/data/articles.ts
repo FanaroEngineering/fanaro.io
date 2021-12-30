@@ -993,7 +993,7 @@ export const articlesMetadata: Article[] = [
     title: "Sunjang Baduk",
     link: "/articles/sunjang/sunjang.html",
     date: Date.UTC(2018, 7, 2),
-    languages: [Language.english],
+    languages: [Language.portuguese],
     mainTopic: Topic.go,
     otherTopics: [Topic.goVariants],
   },
