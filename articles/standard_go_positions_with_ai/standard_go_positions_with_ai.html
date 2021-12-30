@@ -86,6 +86,17 @@
           under Japanese rules.
         </p>
 
+        <p>
+          An important disclaimer is that the AI's values with and without komi
+          are the same as adding or subtracting the value of komi. That's
+          because AI also takes sureness of win or variance into account, i.e.,
+          a bigger lead will enable it to play safer moves, it doesn't care at
+          all if the point-wise lead is big. However, I did run most of the
+          positions below with and without komi to check if there are any
+          notable discrepancies, and so far they seem pretty close. If you spot
+          anything relevant though, please let me know.
+        </p>
+
         <custom-h3 text="Handicap"></custom-h3>
 
         <table>
@@ -479,9 +490,6 @@
           </tbody>
         </table>
 
-        <br />
-        <br />
-
         <p>
           As we can see, by playing reasonable moves, it's very unlikely you're
           gonna be behind, or at least not too far behind. Nothing new there.
@@ -642,13 +650,15 @@
           </tbody>
         </table>
 
-        <br />
-        <br />
-
         <p>
           So, apparently, 6.5 is indeed the appropriate komi for the 13x13
           board, and White gets basically the same advantage as on the 19x19
           board.
+        </p>
+
+        <p>
+          This time, handicap does not progress linearly at all, with some jumps
+          being near double others.
         </p>
 
         <p>
@@ -747,15 +757,22 @@
           </tbody>
         </table>
 
-        <br />
-        <br />
-
         <p>
           I've always thought komi should be smaller than 6.5 in the 9x9 board,
           since it is so difficult to combat it as Black, it's much easier to
           live than to kill in Go after all. And I've heard stories that
           Japanese pros were of the same accord. However, it seems as though the
           AI thinks 6.5 is best.
+        </p>
+
+        <p>
+          Similarly to the 13x13 board, handicap again does not progress
+          linearly at all. It seems more and more likely that the 19x19 board is
+          a special size, or perhaps an inflection point for linearity? From
+          some brief attempts with other board sizes, the 13x13 is actually
+          closer to the inflection point of linearity, in my opinion. For
+          example, the 15x15 board seems to be close to linear already, with
+          respect to Japanese handicap.
         </p>
 
         <p>
@@ -766,19 +783,169 @@
         </p>
 
         <p>
-          Again, the winning percentage grows sharply towards 100%, only 2
-          stones is enough to almost guarantee a win. Nevertheless, to my
-          surprise, a 5-stone handicap is deemed as not enough to kill White
-          wherever, I believe the AI thinks White can find a ko somehow.
-          Point-wise, it's still a gargantuan advantage, 64/89 = 72% of the
-          points available on the board.
+          Again, the winning percentage grows sharply towards 100% in handicap
+          games, only 2 stones is enough to nearly guarantee a win.
+          Nevertheless, to my surprise, a 5-stone handicap is deemed as not
+          enough to kill White wherever, I believe the AI thinks White can find
+          a ko somehow. Point-wise, it's still a gargantuan advantage, 64/89 =
+          72% of the points available on the board.
         </p>
       </section>
 
       <section>
         <custom-h2 text="Trying to Compare Handicaps Across Boards"></custom-h2>
 
-        <!--TODO-->
+        <p>
+          The table is below is just a little bit beyond a curiosity, not much
+          more. It's nice to see all the numbers side to side, though.
+        </p>
+
+        <p>
+          The term <em>% of initial points on the board</em> is basically the
+          estimated score by the AI divided by the "size" of the board which
+          are, for the 9x9, 13x13, and 19x19 respectively: 81, 169, 361.
+        </p>
+
+        <table style="font-size: 0.8rem">
+          <colgroup span="2"></colgroup>
+          <colgroup span="2"></colgroup>
+          <colgroup span="2"></colgroup>
+          <colgroup span="2"></colgroup>
+          <thead>
+            <caption>
+              Handicap Comparison across Different Board Sizes (6.5 komi)
+            </caption>
+          </thead>
+          <tbody>
+            <tr>
+              <th rowspan="2" scope="colgroup">Handicap</th>
+              <th colspan="3" scope="colgroup">Points</th>
+              <th colspan="3" scope="colgroup">% (Winning Rate)</th>
+              <th colspan="3" scope="colgroup">
+                % of Initial Points on the Board
+              </th>
+            </tr>
+            <tr>
+              <th scope="colgroup">9x9</th>
+              <th scope="colgroup">13x13</th>
+              <th scope="colgroup">19x19</th>
+              <th scope="colgroup">9x9</th>
+              <th scope="colgroup">13x13</th>
+              <th scope="colgroup">19x19</th>
+              <th scope="colgroup">9x9</th>
+              <th scope="colgroup">13x13</th>
+              <th scope="colgroup">19x19</th>
+            </tr>
+            <tr>
+              <th>Even</th>
+              <td>W+0.3</td>
+              <td>W+0.4</td>
+              <td>W+0.2</td>
+              <td>W+58%</td>
+              <td>W+53.6%</td>
+              <td>W+51%</td>
+              <td>W+0.37%</td>
+              <td>W+0.23%</td>
+              <td>W+0.06%</td>
+            </tr>
+            <tr>
+              <th>2</th>
+              <td>B+9.2</td>
+              <td>B+12.7</td>
+              <td>B+12.4</td>
+              <td>B+99.2%</td>
+              <td>B+99.1%</td>
+              <td>B+95.3%</td>
+              <td>B+11.3%</td>
+              <td>B+7.5%</td>
+              <td>B+3.4%</td>
+            </tr>
+            <tr>
+              <th>3</th>
+              <td>B+20.9</td>
+              <td>B+24.7</td>
+              <td>B+24.9</td>
+              <td>B+99.8%</td>
+              <td>B+99.9%</td>
+              <td>B+99.3%</td>
+              <td>B+25.8%</td>
+              <td>B+14.6%</td>
+              <td>B+6.9%</td>
+            </tr>
+            <tr>
+              <th>4</th>
+              <td>B+43.4</td>
+              <td>B+40.5</td>
+              <td>B+40.3</td>
+              <td>B+99.4%</td>
+              <td>B+100%</td>
+              <td>B+99.8%</td>
+              <td>B+53.5%</td>
+              <td>B+24%</td>
+              <td>B+11.1%</td>
+            </tr>
+            <tr>
+              <th>5</th>
+              <td>B+64.1</td>
+              <td>B+49.8</td>
+              <td>B+53.8</td>
+              <td>B+99.3%</td>
+              <td>B+100%</td>
+              <td>B+99.9%</td>
+              <td>B+79.1%</td>
+              <td>B+29.5%</td>
+              <td>B+14.9%</td>
+            </tr>
+            <tr>
+              <th>6</th>
+              <td align="center">&mdash;</td>
+              <td>B+65.2</td>
+              <td>B+67.7</td>
+              <td align="center">&mdash;</td>
+              <td>B+100%</td>
+              <td>B+100%</td>
+              <td align="center">&mdash;</td>
+              <td>B+38.6%</td>
+              <td>B+18.8%</td>
+            </tr>
+            <tr>
+              <th>7</th>
+              <td align="center">&mdash;</td>
+              <td>B+73.9</td>
+              <td>B+80.4</td>
+              <td align="center">&mdash;</td>
+              <td>B+100%</td>
+              <td>B+100%</td>
+              <td align="center">&mdash;</td>
+              <td>B+43.7%</td>
+              <td>B+22.3%</td>
+            </tr>
+            <tr>
+              <th>8</th>
+              <td align="center">&mdash;</td>
+              <td>B+88.3</td>
+              <td>B+93.2</td>
+              <td align="center">&mdash;</td>
+              <td>B+100%</td>
+              <td>B+100%</td>
+              <td align="center">&mdash;</td>
+              <td>B+52.2%</td>
+              <td>B+25.8%</td>
+            </tr>
+            <tr>
+              <th>9</th>
+              <td align="center">&mdash;</td>
+              <td>B+94</td>
+              <td>B+105.3</td>
+              <td align="center">&mdash;</td>
+              <td>B+100%</td>
+              <td>B+100%</td>
+              <td align="center">&mdash;</td>
+              <td>B+55.6%</td>
+              <td>B+29.1%</td>
+            </tr>
+          </tbody>
+        </table>
       </section>
     </article>
   </body>
