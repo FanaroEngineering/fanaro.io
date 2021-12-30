@@ -35,741 +35,751 @@
 
       <h1>Standard Go Positions Evaluations with AI</h1>
 
-      <p>
-        Since KataGo is now able to evaluate board positions with points, we can
-        now finally compare many positions we could only get an idea about with
-        professional guess work. For example, one question I always had in mind
-        was if standard Japanese handicap positions grow <em>linearly</em>, do
-        they? Take a look at the tables below for more info...
-      </p>
+      <section>
+        <custom-h2 text="Introduction and Context"></custom-h2>
 
-      <blockquote>
         <p>
-          I have a pretty beefy PC setup here, but these evaluations will surely
-          not be the end-all-be-all. They are bound to change, specially given
-          that AI is still evolving. However, current evaluation is already
-          leaps ahead what any human can offer.
+          Since KataGo is now able to evaluate board positions with points, we
+          can now finally compare many positions we could only get an idea about
+          with professional guess work. For example, one question I always had
+          in mind was if standard Japanese handicap positions grow
+          <em>linearly</em>, do they? Take a look at the tables below for more
+          info...
+        </p>
+
+        <blockquote>
+          <p>
+            I have a pretty beefy PC setup here, but these evaluations will
+            surely not be the end-all-be-all. They are bound to change,
+            specially given that AI is still evolving. However, current
+            evaluation is already leaps ahead what any human can offer.
+          </p>
+
+          <p>
+            All in all, I believe the difference between the positions or the
+            ordering will be more reliable in the long-term than their numerical
+            values, of course.
+          </p>
+
+          <p>
+            I'll try to keep the tables below updated, if anything relevant
+            happens and the evaluations change.
+          </p>
+        </blockquote>
+
+        <blockquote>
+          All of the mentioned positions can be found in
+          <local-link
+            link="./standard_go_positions_with_ai.zip"
+            text="this SGF pack"
+          ></local-link>
+          for reference.
+        </blockquote>
+      </section>
+
+      <section>
+        <custom-h2 text="19x19"></custom-h2>
+
+        <p>
+          Note that the initial assessment in a 19x19 board is:
+          <strong>W+0.2</strong> or <strong>W+51.4%</strong>, with a 6.5 komi
+          under Japanese rules.
+        </p>
+
+        <custom-h3 text="Handicap"></custom-h3>
+
+        <table>
+          <caption>
+            Handicap (6.5 komi)
+          </caption>
+          <th>Stones</th>
+          <th>Points</th>
+          <th>%</th>
+          <tbody>
+            <tr>
+              <td>1</td>
+              <td>W+0.2</td>
+              <td>W+51%</td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td>B+12.4</td>
+              <td>B+95.3%</td>
+            </tr>
+            <tr>
+              <td>3</td>
+              <td>B+24.9</td>
+              <td>B+99.3%</td>
+            </tr>
+            <tr>
+              <td>4</td>
+              <td>B+40.3</td>
+              <td>B+99.8%</td>
+            </tr>
+            <tr>
+              <td>5</td>
+              <td>B+53.8</td>
+              <td>B+99.9%</td>
+            </tr>
+            <tr>
+              <td>6</td>
+              <td>B+67.7</td>
+              <td>B+100%</td>
+            </tr>
+            <tr>
+              <td>7</td>
+              <td>B+80.4</td>
+              <td>B+100%</td>
+            </tr>
+            <tr>
+              <td>8</td>
+              <td>B+93.2</td>
+              <td>B+100%</td>
+            </tr>
+            <tr>
+              <td>9</td>
+              <td>B+105.3</td>
+              <td>B+100%</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <p>
+          Now you know how many points in reverse komi each handicap is worth!
+          Maybe this is ruining some bets?
         </p>
 
         <p>
-          All in all, I believe the difference between the positions or the
-          ordering will be more reliable in the long-term than their numerical
-          values, of course.
+          From the table above, we can see that growth is indeed more or less
+          linear, which is suprising at least to me, since I've always thought
+          that some handicap transitions were much harder than others. However,
+          some jumps are larger than others. Most notably, in my opinion, is the
+          jump from 3 to 4 stones, where we get more than 15 points, which is
+          likely due to the fact that there are no available corners left when
+          with 4 stones.
+        </p>
+
+        <custom-h3 text="Other Initial Positions"></custom-h3>
+
+        <table>
+          <caption>
+            Other Initial Positions
+          </caption>
+          <th>Stones</th>
+          <th>Points</th>
+          <th>%</th>
+          <tbody>
+            <tr>
+              <td>Sunjang Baduk</td>
+              <td>W+0.6</td>
+              <td>W+53.1%</td>
+            </tr>
+            <tr>
+              <td>Cross Hoshis</td>
+              <td>W+0.3</td>
+              <td>W+51.7%</td>
+            </tr>
+            <tr>
+              <td>Parallel Hoshis</td>
+              <td>W+0.2</td>
+              <td>W+50.8%</td>
+            </tr>
+            <tr>
+              <td>Tengen</td>
+              <td>W+1.2</td>
+              <td>W+56.9%</td>
+            </tr>
+            <tr>
+              <td>Black 4-4 + White Tengen</td>
+              <td>B+1.6</td>
+              <td>B+59.8%</td>
+            </tr>
+            <tr>
+              <td>Ponnuki in the Center</td>
+              <td>W+21.2</td>
+              <td>W+98.6%</td>
+            </tr>
+            <tr>
+              <td>Ponnuki Around the Corner Hoshi</td>
+              <td>W+13.8</td>
+              <td>W+96.4%</td>
+            </tr>
+            <tr>
+              <td>Empty Triangle in One Corner</td>
+              <td>W+10.5</td>
+              <td>W+91.7%</td>
+            </tr>
+            <tr>
+              <td>B2-Bomber in One Corner</td>
+              <td>W+32.5</td>
+              <td>W+99.7%</td>
+            </tr>
+            <tr>
+              <td>Side Hoshi</td>
+              <td>W+0.9</td>
+              <td>W+55.4%</td>
+            </tr>
+            <tr>
+              <td>Center of 4 Hoshis</td>
+              <td>W+1.2</td>
+              <td>W+57%</td>
+            </tr>
+            <tr>
+              <td>1-1</td>
+              <td>W+13.7</td>
+              <td>W+95.2%</td>
+            </tr>
+            <tr>
+              <td>2-2</td>
+              <td>W+5</td>
+              <td>W+74.5%</td>
+            </tr>
+            <tr>
+              <td>6-4</td>
+              <td>W+0.8</td>
+              <td>W+54.9%</td>
+            </tr>
+            <tr>
+              <td>6-3</td>
+              <td>W+0.7</td>
+              <td>W+54.4%</td>
+            </tr>
+            <tr>
+              <td>5-5</td>
+              <td>W+0.9</td>
+              <td>W+55.6%</td>
+            </tr>
+            <tr>
+              <td>5-4</td>
+              <td>W+0.3</td>
+              <td>W+52.1%</td>
+            </tr>
+            <tr>
+              <td>5-3</td>
+              <td>W+0.4</td>
+              <td>W+52.4%</td>
+            </tr>
+            <tr>
+              <td>3-3</td>
+              <td>W+0.4</td>
+              <td>W+52.5%</td>
+            </tr>
+            <tr>
+              <td>4-4</td>
+              <td>W+0.1</td>
+              <td>W+51%</td>
+            </tr>
+            <tr>
+              <td>3-4</td>
+              <td>W+0.1</td>
+              <td>W+50.9%</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <p>
+          <local-link
+            text="Sunjang Baduk"
+            link="https://fanaro.io/articles/sunjang/sunjang.html"
+          ></local-link>
+          was a big surprise to me, I remember being under the impression that
+          White would have a reasonably easier position than Black, since
+          Black's final tengen move seemed kind of not influencing any fight
+          very well, sort of slack.
         </p>
 
         <p>
-          I'll try to keep the tables below updated, if anything relevant
-          happens and the evaluations change.
+          I think the every player should thank the stars for tengen being only
+          a 1-point loss, otherwise we would see a gigantic surge in mirror Go.
+          On the other hand, White's tengen, which we sometimes see when one of
+          the players decides to make a statement, is considerably worse, being
+          almost a 2-point loss for White. It's also worth noting that the AI
+          tends to not use tengen for building moyos but rather to attack and
+          invade more easily, so I believe studying with an AI would be pretty
+          much essential to make it work in higher levels.
         </p>
-      </blockquote>
 
-      <blockquote>
-        All of the mentioned positions can be found in
-        <local-link
-          link="./standard_go_positions_with_ai.zip"
-          text="this SGF pack"
-        ></local-link>
-        for reference.
-      </blockquote>
-
-      <br />
-
-      <p>
-        Note that the initial assessment in a 19x19 board is:
-        <strong>W+0.2</strong> or <strong>W+51.4%</strong>, with a 6.5 komi
-        under Japanese rules.
-      </p>
-
-      <br />
-      <br />
-
-      <table>
-        <caption>
-          Handicap (6.5 komi)
-        </caption>
-        <th>Stones</th>
-        <th>Points</th>
-        <th>%</th>
-        <tbody>
-          <tr>
-            <td>1</td>
-            <td>W+0.2</td>
-            <td>W+51%</td>
-          </tr>
-          <tr>
-            <td>2</td>
-            <td>B+12.4</td>
-            <td>B+95.3%</td>
-          </tr>
-          <tr>
-            <td>3</td>
-            <td>B+24.9</td>
-            <td>B+99.3%</td>
-          </tr>
-          <tr>
-            <td>4</td>
-            <td>B+40.3</td>
-            <td>B+99.8%</td>
-          </tr>
-          <tr>
-            <td>5</td>
-            <td>B+53.8</td>
-            <td>B+99.9%</td>
-          </tr>
-          <tr>
-            <td>6</td>
-            <td>B+67.7</td>
-            <td>B+100%</td>
-          </tr>
-          <tr>
-            <td>7</td>
-            <td>B+80.4</td>
-            <td>B+100%</td>
-          </tr>
-          <tr>
-            <td>8</td>
-            <td>B+93.2</td>
-            <td>B+100%</td>
-          </tr>
-          <tr>
-            <td>9</td>
-            <td>B+105.3</td>
-            <td>B+100%</td>
-          </tr>
-        </tbody>
-      </table>
-
-      <br />
-      <br />
-
-      <p>
-        Now you know how many points in reverse komi each handicap is worth!
-        Maybe this is ruining some bets?
-      </p>
-
-      <p>
-        From the table above, we can see that growth is indeed more or less
-        linear, which is suprising at least to me, since I've always thought
-        that some handicap transitions were much harder than others. However,
-        some jumps are larger than others. Most notably, in my opinion, is the
-        jump from 3 to 4 stones, where we get more than 15 points, which is
-        likely due to the fact that there are no available corners left when
-        with 4 stones.
-      </p>
-
-      <br />
-      <br />
-
-      <table>
-        <caption>
-          Other Initial Positions
-        </caption>
-        <th>Stones</th>
-        <th>Points</th>
-        <th>%</th>
-        <tbody>
-          <tr>
-            <td>Sunjang Baduk</td>
-            <td>W+0.6</td>
-            <td>W+53.1%</td>
-          </tr>
-          <tr>
-            <td>Cross Hoshis</td>
-            <td>W+0.3</td>
-            <td>W+51.7%</td>
-          </tr>
-          <tr>
-            <td>Parallel Hoshis</td>
-            <td>W+0.2</td>
-            <td>W+50.8%</td>
-          </tr>
-          <tr>
-            <td>Tengen</td>
-            <td>W+1.2</td>
-            <td>W+56.9%</td>
-          </tr>
-          <tr>
-            <td>Black 4-4 + White Tengen</td>
-            <td>B+1.6</td>
-            <td>B+59.8%</td>
-          </tr>
-          <tr>
-            <td>Ponnuki in the Center</td>
-            <td>W+21.2</td>
-            <td>W+98.6%</td>
-          </tr>
-          <tr>
-            <td>Ponnuki Around the Corner Hoshi</td>
-            <td>W+13.8</td>
-            <td>W+96.4%</td>
-          </tr>
-          <tr>
-            <td>Empty Triangle in One Corner</td>
-            <td>W+10.5</td>
-            <td>W+91.7%</td>
-          </tr>
-          <tr>
-            <td>B2-Bomber in One Corner</td>
-            <td>W+32.5</td>
-            <td>W+99.7%</td>
-          </tr>
-          <tr>
-            <td>Side Hoshi</td>
-            <td>W+0.9</td>
-            <td>W+55.4%</td>
-          </tr>
-          <tr>
-            <td>Center of 4 Hoshis</td>
-            <td>W+1.2</td>
-            <td>W+57%</td>
-          </tr>
-          <tr>
-            <td>1-1</td>
-            <td>W+13.7</td>
-            <td>W+95.2%</td>
-          </tr>
-          <tr>
-            <td>2-2</td>
-            <td>W+5</td>
-            <td>W+74.5%</td>
-          </tr>
-          <tr>
-            <td>6-4</td>
-            <td>W+0.8</td>
-            <td>W+54.9%</td>
-          </tr>
-          <tr>
-            <td>6-3</td>
-            <td>W+0.7</td>
-            <td>W+54.4%</td>
-          </tr>
-          <tr>
-            <td>5-5</td>
-            <td>W+0.9</td>
-            <td>W+55.6%</td>
-          </tr>
-          <tr>
-            <td>5-4</td>
-            <td>W+0.3</td>
-            <td>W+52.1%</td>
-          </tr>
-          <tr>
-            <td>5-3</td>
-            <td>W+0.4</td>
-            <td>W+52.4%</td>
-          </tr>
-          <tr>
-            <td>3-3</td>
-            <td>W+0.4</td>
-            <td>W+52.5%</td>
-          </tr>
-          <tr>
-            <td>4-4</td>
-            <td>W+0.1</td>
-            <td>W+51%</td>
-          </tr>
-          <tr>
-            <td>3-4</td>
-            <td>W+0.1</td>
-            <td>W+50.9%</td>
-          </tr>
-        </tbody>
-      </table>
-
-      <br />
-      <br />
-
-      <p>
-        <local-link
-          text="Sunjang Baduk"
-          link="https://fanaro.io/articles/sunjang/sunjang.html"
-        ></local-link>
-        was a big surprise to me, I remember being under the impression that
-        White would have a reasonably easier position than Black, since Black's
-        final tengen move seemed kind of not influencing any fight very well,
-        sort of slack.
-      </p>
-
-      <p>
-        I think the every player should thank the stars for tengen being only a
-        1-point loss, otherwise we would see a gigantic surge in mirror Go. On
-        the other hand, White's tengen, which we sometimes see when one of the
-        players decides to make a statement, is considerably worse, being almost
-        a 2-point loss for White. It's also worth noting that the AI tends to
-        not use tengen for building moyos but rather to attack and invade more
-        easily, so I believe studying with an AI would be pretty much essential
-        to make it work in higher levels.
-      </p>
-
-      <p>
-        Years ago, I played a game where I exchanged a 4-stone handicap for a
-        ponnuki in the center. After the game, I felt duped<foot-note
-          text="Not to mention that the stronger player thought it funny and
+        <p>
+          Years ago, I played a game where I exchanged a 4-stone handicap for a
+          ponnuki in the center. After the game, I felt duped<foot-note
+            text="Not to mention that the stronger player thought it funny and
           lame that I ended up sacrificing the ponnuki in order to try to attack
           one of his groups. However, the AI tends to do it as well in some
           games I simulated with it."
-        ></foot-note
-        >, I would much rather have my 4 initial stones better distributed
-        around the board. The AI seems to agree with this assessment, a 4-stone
-        handicap is almost 20 points better than a ponnuki in the center.
-      </p>
+          ></foot-note
+          >, I would much rather have my 4 initial stones better distributed
+          around the board. The AI seems to agree with this assessment, a
+          4-stone handicap is almost 20 points better than a ponnuki in the
+          center.
+        </p>
 
-      <p>
-        And how about a favorite triad of artificial handicap in:
-        <em>empty triangle in one corner</em>; <em>side hoshi</em>; and
-        <em>center of 4 hoshis</em>? I've seen many games where the stronger one
-        plays one of these as an opener more or less as a statement. The
-        statement is not strong at all, is it though? The
-        <em>B2-Bomber in one corner</em> is a whole other story, since there way
-        more pass-like moves in it, it's almost as bad as
-        <a href="https://senseis.xmp.net/?B2BomberJosekis"
-          >its article on Sensei's Library is funny</a
-        >.
-      </p>
+        <p>
+          And how about a favorite triad of artificial handicap in:
+          <em>empty triangle in one corner</em>; <em>side hoshi</em>; and
+          <em>center of 4 hoshis</em>? I've seen many games where the stronger
+          one plays one of these as an opener more or less as a statement. The
+          statement is not strong at all, is it though? The
+          <em>B2-Bomber in one corner</em> is a whole other story, since there
+          way more pass-like moves in it, it's almost as bad as
+          <a href="https://senseis.xmp.net/?B2BomberJosekis"
+            >its article on Sensei's Library is funny</a
+          >.
+        </p>
 
-      <br />
-      <br />
+        <custom-h3 text="Openings | Fusekis"></custom-h3>
 
-      <table>
-        <caption>
-          Openings | Fusekis
-        </caption>
-        <th>Stones</th>
-        <th>Points</th>
-        <th>%</th>
-        <tbody>
-          <tr>
-            <td>Sanrensei</td>
-            <td>W+0.5</td>
-            <td>W+53.6%</td>
-          </tr>
-          <tr>
-            <td>Kobayashi</td>
-            <td>W+0.5</td>
-            <td>W+53.2%</td>
-          </tr>
-          <tr>
-            <td>Chinese</td>
-            <td>W+0.5</td>
-            <td>W+53%</td>
-          </tr>
-          <tr>
-            <td>High Chinese</td>
-            <td>W+0.6</td>
-            <td>W+53.7%</td>
-          </tr>
-          <tr>
-            <td>Mini Chinese</td>
-            <td>W+0.5</td>
-            <td>W+53%</td>
-          </tr>
-          <tr>
-            <td>Micro Chinese</td>
-            <td>W+0.4</td>
-            <td>W+52.1%</td>
-          </tr>
-          <tr>
-            <td>Double 5-5s</td>
-            <td>W+2.4</td>
-            <td>W+63.9%</td>
-          </tr>
-          <tr>
-            <td>Double-Alternated 5-3s</td>
-            <td>W+1.1</td>
-            <td>W+56.8%</td>
-          </tr>
-          <tr>
-            <td>Double-Parallel 5-3s</td>
-            <td>W+1.1</td>
-            <td>W+57%</td>
-          </tr>
-          <tr>
-            <td>Double-Alternated 5-4s</td>
-            <td>W+0.7</td>
-            <td>W+54.7%</td>
-          </tr>
-          <tr>
-            <td>Double-Parallel 5-4s</td>
-            <td>W+1.3</td>
-            <td>W+57.9%</td>
-          </tr>
-          <tr>
-            <td>Double-Alternated 6-4s</td>
-            <td>W+1.3</td>
-            <td>W+57.7%</td>
-          </tr>
-          <tr>
-            <td>Double-Parallel 6-4s</td>
-            <td>W+1.3</td>
-            <td>W+57.7%</td>
-          </tr>
-          <tr>
-            <td>Double-Alternated 6-3s</td>
-            <td>W+1.5</td>
-            <td>W+59%</td>
-          </tr>
-          <tr>
-            <td>Double-Parallel 6-3s</td>
-            <td>W+1.5</td>
-            <td>W+58.7%</td>
-          </tr>
-          <tr>
-            <td>Black Hole</td>
-            <td>W+7.1</td>
-            <td>W+81.8%</td>
-          </tr>
-          <tr>
-            <td>Great Wall</td>
-            <td>W+10.1</td>
-            <td>W+92.1%</td>
-          </tr>
-          <tr>
-            <td>Magic Box</td>
-            <td>W+7.8</td>
-            <td>W+85.2%</td>
-          </tr>
-          <tr>
-            <td>Tengen + All Side Hoshis</td>
-            <td>W+8</td>
-            <td>W+88.5%</td>
-          </tr>
-          <tr>
-            <td>Alternated Hoshis to Tengen</td>
-            <td>W+1.3</td>
-            <td>W+57.4%</td>
-          </tr>
-          <tr>
-            <td>Go Seigen's Tengen + 3-3 + 4-4</td>
-            <td>W+1.4</td>
-            <td>W+58.6%</td>
-          </tr>
-          <tr>
-            <td>AlphaGo's Black 2-Space High Shimari + 4-4</td>
-            <td>W+0.1</td>
-            <td>W+50.6%</td>
-          </tr>
-          <tr>
-            <td>Standard 3-4 Shimari + 4-4</td>
-            <td>W+0.2</td>
-            <td>W+57.1%</td>
-          </tr>
-          <tr>
-            <td>Standard 3-4 Shimari + 3-4</td>
-            <td>W+0.2</td>
-            <td>W+51.7%</td>
-          </tr>
-          <tr>
-            <td>4-4 + White 3-3 Direct Invasion</td>
-            <td>B+0.5</td>
-            <td>B+53.4%</td>
-          </tr>
-          <tr>
-            <td>Parallel & Alternated 3-4s</td>
-            <td>W+0.2</td>
-            <td>W+51.3%</td>
-          </tr>
-          <tr>
-            <td>Parallel & Facing 3-4s</td>
-            <td>W+0.1</td>
-            <td>W+50.9%</td>
-          </tr>
-          <tr>
-            <td>White's Parallel and Facing 3-4s</td>
-            <td>W+0.1</td>
-            <td>W+50.7%</td>
-          </tr>
-        </tbody>
-      </table>
+        <table>
+          <caption>
+            Openings | Fusekis
+          </caption>
+          <th>Stones</th>
+          <th>Points</th>
+          <th>%</th>
+          <tbody>
+            <tr>
+              <td>Sanrensei</td>
+              <td>W+0.5</td>
+              <td>W+53.6%</td>
+            </tr>
+            <tr>
+              <td>Kobayashi</td>
+              <td>W+0.5</td>
+              <td>W+53.2%</td>
+            </tr>
+            <tr>
+              <td>Chinese</td>
+              <td>W+0.5</td>
+              <td>W+53%</td>
+            </tr>
+            <tr>
+              <td>High Chinese</td>
+              <td>W+0.6</td>
+              <td>W+53.7%</td>
+            </tr>
+            <tr>
+              <td>Mini Chinese</td>
+              <td>W+0.5</td>
+              <td>W+53%</td>
+            </tr>
+            <tr>
+              <td>Micro Chinese</td>
+              <td>W+0.4</td>
+              <td>W+52.1%</td>
+            </tr>
+            <tr>
+              <td>Double 5-5s</td>
+              <td>W+2.4</td>
+              <td>W+63.9%</td>
+            </tr>
+            <tr>
+              <td>Double-Alternated 5-3s</td>
+              <td>W+1.1</td>
+              <td>W+56.8%</td>
+            </tr>
+            <tr>
+              <td>Double-Parallel 5-3s</td>
+              <td>W+1.1</td>
+              <td>W+57%</td>
+            </tr>
+            <tr>
+              <td>Double-Alternated 5-4s</td>
+              <td>W+0.7</td>
+              <td>W+54.7%</td>
+            </tr>
+            <tr>
+              <td>Double-Parallel 5-4s</td>
+              <td>W+1.3</td>
+              <td>W+57.9%</td>
+            </tr>
+            <tr>
+              <td>Double-Alternated 6-4s</td>
+              <td>W+1.3</td>
+              <td>W+57.7%</td>
+            </tr>
+            <tr>
+              <td>Double-Parallel 6-4s</td>
+              <td>W+1.3</td>
+              <td>W+57.7%</td>
+            </tr>
+            <tr>
+              <td>Double-Alternated 6-3s</td>
+              <td>W+1.5</td>
+              <td>W+59%</td>
+            </tr>
+            <tr>
+              <td>Double-Parallel 6-3s</td>
+              <td>W+1.5</td>
+              <td>W+58.7%</td>
+            </tr>
+            <tr>
+              <td>Black Hole</td>
+              <td>W+7.1</td>
+              <td>W+81.8%</td>
+            </tr>
+            <tr>
+              <td>Great Wall</td>
+              <td>W+10.1</td>
+              <td>W+92.1%</td>
+            </tr>
+            <tr>
+              <td>Magic Box</td>
+              <td>W+7.8</td>
+              <td>W+85.2%</td>
+            </tr>
+            <tr>
+              <td>Tengen + All Side Hoshis</td>
+              <td>W+8</td>
+              <td>W+88.5%</td>
+            </tr>
+            <tr>
+              <td>Alternated Hoshis to Tengen</td>
+              <td>W+1.3</td>
+              <td>W+57.4%</td>
+            </tr>
+            <tr>
+              <td>Go Seigen's Tengen + 3-3 + 4-4</td>
+              <td>W+1.4</td>
+              <td>W+58.6%</td>
+            </tr>
+            <tr>
+              <td>AlphaGo's Black 2-Space High Shimari + 4-4</td>
+              <td>W+0.1</td>
+              <td>W+50.6%</td>
+            </tr>
+            <tr>
+              <td>Standard 3-4 Shimari + 4-4</td>
+              <td>W+0.2</td>
+              <td>W+57.1%</td>
+            </tr>
+            <tr>
+              <td>Standard 3-4 Shimari + 3-4</td>
+              <td>W+0.2</td>
+              <td>W+51.7%</td>
+            </tr>
+            <tr>
+              <td>4-4 + White 3-3 Direct Invasion</td>
+              <td>B+0.5</td>
+              <td>B+53.4%</td>
+            </tr>
+            <tr>
+              <td>Parallel & Alternated 3-4s</td>
+              <td>W+0.2</td>
+              <td>W+51.3%</td>
+            </tr>
+            <tr>
+              <td>Parallel & Facing 3-4s</td>
+              <td>W+0.1</td>
+              <td>W+50.9%</td>
+            </tr>
+            <tr>
+              <td>White's Parallel and Facing 3-4s</td>
+              <td>W+0.1</td>
+              <td>W+50.7%</td>
+            </tr>
+          </tbody>
+        </table>
 
-      <br />
-      <br />
+        <br />
+        <br />
 
-      <p>
-        As we can see, by playing reasonable moves, it's very unlikely you're
-        gonna be behind, or at least not too far behind. Nothing new there.
-      </p>
+        <p>
+          As we can see, by playing reasonable moves, it's very unlikely you're
+          gonna be behind, or at least not too far behind. Nothing new there.
+        </p>
 
-      <p>
-        Nonetheless, there are some surprises in this last table. For instance,
-        double 5-3 or 5-4 are basically the same as double 6-3 or 6-4. And
-        having them parallel or alternated is essentially the same thing.
-      </p>
+        <p>
+          Nonetheless, there are some surprises in this last table. For
+          instance, double 5-3 or 5-4 are basically the same as double 6-3 or
+          6-4. And having them parallel or alternated is essentially the same
+          thing.
+        </p>
 
-      <p>
-        Some of the very weird openings like the
-        <a href="https://rfg.jeudego.org/item/135-fuseki-trou-noir"
-          ><em>black hole</em></a
-        >, the
-        <a href="https://senseis.xmp.net/?GreatWall"><em>great wall</em></a
-        >, and the
-        <a
-          href="https://senseis.xmp.net/diagrams/37/64f32324afac05a4158a15bf71bb3d23.sgf"
-          ><em>magic box</em></a
-        >
-        are, as expected, bad. But that didn't stop Cho U 9p and So Yokoku 9p
-        from winning against other strong pros with gargantuan holes in the
-        process.
-      </p>
+        <p>
+          Some of the very weird openings like the
+          <a href="https://rfg.jeudego.org/item/135-fuseki-trou-noir"
+            ><em>black hole</em></a
+          >, the
+          <a href="https://senseis.xmp.net/?GreatWall"><em>great wall</em></a
+          >, and the
+          <a
+            href="https://senseis.xmp.net/diagrams/37/64f32324afac05a4158a15bf71bb3d23.sgf"
+            ><em>magic box</em></a
+          >
+          are, as expected, bad. But that didn't stop Cho U 9p and So Yokoku 9p
+          from winning against other strong pros with gargantuan holes in the
+          process.
+        </p>
 
-      <p>
-        Three other relevant mentions are
-        <em>Go Seigen's Tengen + 3-3 + 4-4</em>;
-        <em>Alternated Hoshis to Tengen</em>; and
-        <em>4-4 + White 3-3 Direct Invasion</em>.
-        <em>Go Seigen's Tengen + 3-3 + 4-4</em> is really tight in terms of
-        points, a 1-point loss basically. <em>Alternated Hoshis to Tengen</em>,
-        which resembles mirror Go, is also very similar to tengen itself, only a
-        1-point loss &mdash; instead of tengen for the final hoshi, Black should
-        invade the 3-3 in the diagonal, and the game would remain as even as it
-        could be. And perhaps the only surprise is the
-        <em>4-4 + White 3-3 Direct Invasion</em>, which I thought would be
-        pretty much even, but is a little bit more than a 1-point loss for
-        White.
-      </p>
+        <p>
+          Three other relevant mentions are
+          <em>Go Seigen's Tengen + 3-3 + 4-4</em>;
+          <em>Alternated Hoshis to Tengen</em>; and
+          <em>4-4 + White 3-3 Direct Invasion</em>.
+          <em>Go Seigen's Tengen + 3-3 + 4-4</em> is really tight in terms of
+          points, a 1-point loss basically.
+          <em>Alternated Hoshis to Tengen</em>, which resembles mirror Go, is
+          also very similar to tengen itself, only a 1-point loss &mdash;
+          instead of tengen for the final hoshi, Black should invade the 3-3 in
+          the diagonal, and the game would remain as even as it could be. And
+          perhaps the only surprise is the
+          <em>4-4 + White 3-3 Direct Invasion</em>, which I thought would be
+          pretty much even, but is a little bit more than a 1-point loss for
+          White.
+        </p>
+      </section>
 
-      <br />
-      <br />
+      <section>
+        <custom-h2 text="13x13"></custom-h2>
 
-      <table>
-        <caption>
-          13x13 (6.5 komi)
-        </caption>
-        <th>Stones</th>
-        <th>Points</th>
-        <th>%</th>
-        <tbody>
-          <tr>
-            <td>Initial Position</td>
-            <td>W+0.4</td>
-            <td>W+53.6%</td>
-          </tr>
-          <tr>
-            <td>Tengen</td>
-            <td>W+1.5</td>
-            <td>W+65.7%</td>
-          </tr>
-          <tr>
-            <td>3-3</td>
-            <td>W+0.8</td>
-            <td>W+58.5%</td>
-          </tr>
-          <tr>
-            <td>3-4</td>
-            <td>W+0.4</td>
-            <td>W+55%</td>
-          </tr>
-          <tr>
-            <td>4-4</td>
-            <td>W+0.4</td>
-            <td>W+54.5%</td>
-          </tr>
-          <tr>
-            <td>5-4</td>
-            <td>W+0.7</td>
-            <td>W+58.4%</td>
-          </tr>
-          <tr>
-            <td>5-3</td>
-            <td>W+0.7</td>
-            <td>W+58.3%</td>
-          </tr>
-          <tr>
-            <td>6-3</td>
-            <td>W+0.8</td>
-            <td>W+58.6%</td>
-          </tr>
-          <tr>
-            <td>6-4</td>
-            <td>W+0.9</td>
-            <td>W+59.9%</td>
-          </tr>
-          <tr>
-            <td>5-5</td>
-            <td>W+1.2</td>
-            <td>W+63%</td>
-          </tr>
-          <tr>
-            <td>2-2</td>
-            <td>W+5.3</td>
-            <td>W+88.7%</td>
-          </tr>
-          <tr>
-            <td>Side Hoshi</td>
-            <td>W+1.1</td>
-            <td>W+61.8%</td>
-          </tr>
-          <tr>
-            <td>2-Stone Handicap</td>
-            <td>B+12.7</td>
-            <td>B+99.1%</td>
-          </tr>
-          <tr>
-            <td>3-Stone Handicap</td>
-            <td>B+24.7</td>
-            <td>B+99.9%</td>
-          </tr>
-          <tr>
-            <td>4-Stone Handicap</td>
-            <td>B+40.5</td>
-            <td>B+100%</td>
-          </tr>
-          <tr>
-            <td>5-Stone Handicap</td>
-            <td>B+49.8</td>
-            <td>B+100%</td>
-          </tr>
-          <tr>
-            <td>6-Stone Handicap</td>
-            <td>B+65.2</td>
-            <td>B+100%</td>
-          </tr>
-          <tr>
-            <td>7-Stone Handicap</td>
-            <td>B+73.9</td>
-            <td>B+100%</td>
-          </tr>
-          <tr>
-            <td>8-Stone Handicap</td>
-            <td>B+88.3</td>
-            <td>B+100%</td>
-          </tr>
-          <tr>
-            <td>9-Stone Handicap</td>
-            <td>B+94</td>
-            <td>B+100%</td>
-          </tr>
-        </tbody>
-      </table>
+        <table>
+          <caption>
+            13x13 (6.5 komi)
+          </caption>
+          <th>Stones</th>
+          <th>Points</th>
+          <th>%</th>
+          <tbody>
+            <tr>
+              <td>Initial Position</td>
+              <td>W+0.4</td>
+              <td>W+53.6%</td>
+            </tr>
+            <tr>
+              <td>Tengen</td>
+              <td>W+1.5</td>
+              <td>W+65.7%</td>
+            </tr>
+            <tr>
+              <td>3-3</td>
+              <td>W+0.8</td>
+              <td>W+58.5%</td>
+            </tr>
+            <tr>
+              <td>3-4</td>
+              <td>W+0.4</td>
+              <td>W+55%</td>
+            </tr>
+            <tr>
+              <td>4-4</td>
+              <td>W+0.4</td>
+              <td>W+54.5%</td>
+            </tr>
+            <tr>
+              <td>5-4</td>
+              <td>W+0.7</td>
+              <td>W+58.4%</td>
+            </tr>
+            <tr>
+              <td>5-3</td>
+              <td>W+0.7</td>
+              <td>W+58.3%</td>
+            </tr>
+            <tr>
+              <td>6-3</td>
+              <td>W+0.8</td>
+              <td>W+58.6%</td>
+            </tr>
+            <tr>
+              <td>6-4</td>
+              <td>W+0.9</td>
+              <td>W+59.9%</td>
+            </tr>
+            <tr>
+              <td>5-5</td>
+              <td>W+1.2</td>
+              <td>W+63%</td>
+            </tr>
+            <tr>
+              <td>2-2</td>
+              <td>W+5.3</td>
+              <td>W+88.7%</td>
+            </tr>
+            <tr>
+              <td>Side Hoshi</td>
+              <td>W+1.1</td>
+              <td>W+61.8%</td>
+            </tr>
+            <tr>
+              <td>2-Stone Handicap</td>
+              <td>B+12.7</td>
+              <td>B+99.1%</td>
+            </tr>
+            <tr>
+              <td>3-Stone Handicap</td>
+              <td>B+24.7</td>
+              <td>B+99.9%</td>
+            </tr>
+            <tr>
+              <td>4-Stone Handicap</td>
+              <td>B+40.5</td>
+              <td>B+100%</td>
+            </tr>
+            <tr>
+              <td>5-Stone Handicap</td>
+              <td>B+49.8</td>
+              <td>B+100%</td>
+            </tr>
+            <tr>
+              <td>6-Stone Handicap</td>
+              <td>B+65.2</td>
+              <td>B+100%</td>
+            </tr>
+            <tr>
+              <td>7-Stone Handicap</td>
+              <td>B+73.9</td>
+              <td>B+100%</td>
+            </tr>
+            <tr>
+              <td>8-Stone Handicap</td>
+              <td>B+88.3</td>
+              <td>B+100%</td>
+            </tr>
+            <tr>
+              <td>9-Stone Handicap</td>
+              <td>B+94</td>
+              <td>B+100%</td>
+            </tr>
+          </tbody>
+        </table>
 
-      <br />
-      <br />
+        <br />
+        <br />
 
-      <p>
-        So, apparently, 6.5 is indeed the appropriate komi for the 13x13 board,
-        and White gets basically the same advantage as on the 19x19 board.
-      </p>
+        <p>
+          So, apparently, 6.5 is indeed the appropriate komi for the 13x13
+          board, and White gets basically the same advantage as on the 19x19
+          board.
+        </p>
 
-      <p>
-        Tengen is again only a 1-point loss. And, again, AIs tend to use tengen
-        for invading and attacking directly, not to build moyos, specially on
-        the 13x13 board, where there isn't much space or time to build moyos
-        anyway.
-      </p>
+        <p>
+          Tengen is again only a 1-point loss. And, again, AIs tend to use
+          tengen for invading and attacking directly, not to build moyos,
+          specially on the 13x13 board, where there isn't much space or time to
+          build moyos anyway.
+        </p>
 
-      <p>
-        Most initial moves are valued pretty similarly to the 19x19 board, but
-        the loss is generally slightly bigger.
-      </p>
+        <p>
+          Most initial moves are valued pretty similarly to the 19x19 board, but
+          the loss is generally slightly bigger.
+        </p>
 
-      <p>
-        In handicap games, as expected, the winning percentages grow rapidly to
-        100%, in fact, we only need a 2-stone handicap in order to get to 99%.
-        Interestingly, a 9-stone handicap is not enough to get us to killing the
-        whole board, probably because there are still four 3-3 invasions. Still,
-        B+94 is 55% of the available 169 points, when compared to the 105/361 =
-        29% in the 19x19 board.
-      </p>
+        <p>
+          In handicap games, as expected, the winning percentages grow rapidly
+          to 100%, in fact, we only need a 2-stone handicap in order to get to
+          99%. Interestingly, a 9-stone handicap is not enough to get us to
+          killing the whole board, probably because there are still four 3-3
+          invasions. Still, B+94 is 55% of the available 169 points, when
+          compared to the 105/361 = 29% in the 19x19 board.
+        </p>
+      </section>
 
-      <br />
-      <br />
+      <section>
+        <custom-h2 text="9x9"></custom-h2>
 
-      <table>
-        <caption>
-          9x9 (6.5 komi)
-        </caption>
-        <th>Stones</th>
-        <th>Points</th>
-        <th>%</th>
-        <tbody>
-          <tr>
-            <td>Initial Position</td>
-            <td>W+0.3</td>
-            <td>W+58%</td>
-          </tr>
-          <tr>
-            <td>Tengen</td>
-            <td>W+0.3</td>
-            <td>W+56.3%</td>
-          </tr>
-          <tr>
-            <td>3-3</td>
-            <td>W+1.4</td>
-            <td>W+75.9%</td>
-          </tr>
-          <tr>
-            <td>3-4</td>
-            <td>W+0.5</td>
-            <td>W+60.5%</td>
-          </tr>
-          <tr>
-            <td>4-4</td>
-            <td>W+0.2</td>
-            <td>W+56.2%</td>
-          </tr>
-          <tr>
-            <td>5-4</td>
-            <td>W+0.2</td>
-            <td>W+54%</td>
-          </tr>
-          <tr>
-            <td>5-3 (Side Hoshi)</td>
-            <td>W+0.2</td>
-            <td>W+55.1%</td>
-          </tr>
-          <tr>
-            <td>2-2</td>
-            <td>W+6.3</td>
-            <td>W+98%</td>
-          </tr>
-          <tr>
-            <td>2-Stone Handicap</td>
-            <td>B+9.2</td>
-            <td>B+99.2%</td>
-          </tr>
-          <tr>
-            <td>3-Stone Handicap</td>
-            <td>B+20.9</td>
-            <td>B+99.8%</td>
-          </tr>
-          <tr>
-            <td>4-Stone Handicap</td>
-            <td>B+43.4</td>
-            <td>B+99.4%</td>
-          </tr>
-          <tr>
-            <td>5-Stone Handicap</td>
-            <td>B+64.1</td>
-            <td>B+99.3%</td>
-          </tr>
-        </tbody>
-      </table>
+        <table>
+          <caption>
+            9x9 (6.5 komi)
+          </caption>
+          <th>Stones</th>
+          <th>Points</th>
+          <th>%</th>
+          <tbody>
+            <tr>
+              <td>Initial Position</td>
+              <td>W+0.3</td>
+              <td>W+58%</td>
+            </tr>
+            <tr>
+              <td>Tengen</td>
+              <td>W+0.3</td>
+              <td>W+56.3%</td>
+            </tr>
+            <tr>
+              <td>3-3</td>
+              <td>W+1.4</td>
+              <td>W+75.9%</td>
+            </tr>
+            <tr>
+              <td>3-4</td>
+              <td>W+0.5</td>
+              <td>W+60.5%</td>
+            </tr>
+            <tr>
+              <td>4-4</td>
+              <td>W+0.2</td>
+              <td>W+56.2%</td>
+            </tr>
+            <tr>
+              <td>5-4</td>
+              <td>W+0.2</td>
+              <td>W+54%</td>
+            </tr>
+            <tr>
+              <td>5-3 (Side Hoshi)</td>
+              <td>W+0.2</td>
+              <td>W+55.1%</td>
+            </tr>
+            <tr>
+              <td>2-2</td>
+              <td>W+6.3</td>
+              <td>W+98%</td>
+            </tr>
+            <tr>
+              <td>2-Stone Handicap</td>
+              <td>B+9.2</td>
+              <td>B+99.2%</td>
+            </tr>
+            <tr>
+              <td>3-Stone Handicap</td>
+              <td>B+20.9</td>
+              <td>B+99.8%</td>
+            </tr>
+            <tr>
+              <td>4-Stone Handicap</td>
+              <td>B+43.4</td>
+              <td>B+99.4%</td>
+            </tr>
+            <tr>
+              <td>5-Stone Handicap</td>
+              <td>B+64.1</td>
+              <td>B+99.3%</td>
+            </tr>
+          </tbody>
+        </table>
 
-      <br />
-      <br />
+        <br />
+        <br />
 
-      <p>
-        I've always thought komi should be smaller than 6.5 in the 9x9 board,
-        since it is so difficult to combat it as Black, it's much easier to live
-        than to kill in Go after all. And I've heard stories that Japanese pros
-        were of the same accord. However, it seems as though the AI thinks 6.5
-        is best.
-      </p>
+        <p>
+          I've always thought komi should be smaller than 6.5 in the 9x9 board,
+          since it is so difficult to combat it as Black, it's much easier to
+          live than to kill in Go after all. And I've heard stories that
+          Japanese pros were of the same accord. However, it seems as though the
+          AI thinks 6.5 is best.
+        </p>
 
-      <p>
-        For those inexperienced with the 9x9 at higher levels, it's worth noting
-        that the 3-3 and the 3-4 are not enough for Black. Better play demands
-        either 4-4 or tengen, but the 5-3 is also pretty sharp as well,
-        according to the AI.
-      </p>
+        <p>
+          For those inexperienced with the 9x9 at higher levels, it's worth
+          noting that the 3-3 and the 3-4 are not enough for Black. Better play
+          demands either 4-4 or tengen, but the 5-3 is also pretty sharp as
+          well, according to the AI.
+        </p>
 
-      <p>
-        Again, the winning percentage grows sharply towards 100%, only 2 stones
-        is enough to almost guarantee a win. Nevertheless, to my surprise, a
-        5-stone handicap is deemed as not enough to kill White wherever, I
-        believe the AI thinks White can find a ko somehow. Point-wise, it's
-        still a gargantuan advantage, 64/89 = 72% of the points available on the
-        board.
-      </p>
+        <p>
+          Again, the winning percentage grows sharply towards 100%, only 2
+          stones is enough to almost guarantee a win. Nevertheless, to my
+          surprise, a 5-stone handicap is deemed as not enough to kill White
+          wherever, I believe the AI thinks White can find a ko somehow.
+          Point-wise, it's still a gargantuan advantage, 64/89 = 72% of the
+          points available on the board.
+        </p>
+      </section>
+
+      <section>
+        <custom-h2 text="Trying to Compare Handicaps Across Boards"></custom-h2>
+
+        <!--TODO-->
+      </section>
     </article>
   </body>
 </html>
