@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Standard Go Positions Evaluations with AI</title>
+    <title>Standard Go Positions with AI Evaluations</title>
 
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
@@ -9,17 +9,17 @@
     <meta name="author" content="Philippe Fanaro" />
     <meta
       name="description"
-      content="Standard Go Positions Evaluations with AI"
+      content="Standard Go Positions with AI Evaluations"
     />
 
     <meta property="og:image" content="thumbnail.png" />
     <meta
       property="og:description"
-      content="Standard Go Positions Evaluations with AI"
+      content="Standard Go Positions with AI Evaluations"
     />
     <meta
       property="og:title"
-      content="Standard Go Positions Evaluations with AI"
+      content="Standard Go Positions with AI Evaluations"
     />
     <meta property="og:site_name" content="fanaro.io" />
     <meta property="og:type" content="blog" />
@@ -33,18 +33,23 @@
     <article>
       <img src="thumbnail.png" alt="Thumbnail" />
 
-      <h1>Standard Go Positions Evaluations with AI</h1>
+      <h1>Standard Go Positions with AI Evaluations</h1>
 
       <section>
         <custom-h2 text="Introduction and Context"></custom-h2>
 
         <p>
-          Since KataGo is now able to evaluate board positions with points, we
-          can now finally compare many positions we could only get an idea about
-          with professional guess work. For example, one question I always had
-          in mind was if standard Japanese handicap positions grow
-          <em>linearly</em>, do they? Take a look at the tables below for more
-          info...
+          Since KataGo is now able to evaluate board positions with points, not
+          only winning percentages, we can now finally compare many positions
+          about which we could only get an idea with professional guess work not
+          too long ago.
+        </p>
+
+        <p>
+          For example, one question I always had in mind was if standard
+          Japanese handicap positions grew
+          <em>linearly</em>, does it? Take a look at the tables below and you'll
+          get the answer...
         </p>
 
         <blockquote>
@@ -52,7 +57,7 @@
             I have a pretty beefy PC setup here, but these evaluations will
             surely not be the end-all-be-all. They are bound to change,
             specially given that AI is still evolving. However, current
-            evaluation is already leaps ahead what any human can offer.
+            evaluation is already leaps ahead what any human is able to offer.
           </p>
 
           <p>
@@ -68,12 +73,12 @@
         </blockquote>
 
         <blockquote>
-          All of the mentioned positions can be found in
+          For reference, all of the mentioned positions can be found in
           <local-link
             link="./standard_go_positions_with_ai.zip"
             text="this SGF pack"
-          ></local-link>
-          for reference.
+          ></local-link
+          >.
         </blockquote>
       </section>
 
@@ -88,13 +93,15 @@
 
         <p>
           An important disclaimer is that the AI's values with and without komi
-          are the same as adding or subtracting the value of komi. That's
-          because AI also takes sureness of win or variance into account, i.e.,
-          a bigger lead will enable it to play safer moves, it doesn't care at
-          all if the point-wise lead is big. However, I did run most of the
-          positions below with and without komi to check if there are any
-          notable discrepancies, and so far they seem pretty close. If you spot
-          anything relevant though, please let me know.
+          are not necessarily the same as adding or subtracting the value of
+          komi. That's because AI also takes certainty of victory or variance
+          into account, i.e., a bigger lead will enable it to play safer moves,
+          it doesn't care at all if the point-wise lead is big. However, I did
+          run most of the positions below with and without komi to check if
+          there are any notable discrepancies, and so far they seem pretty close
+          &mdash; not to mention that the hierarchy and relative difference are
+          more important than the numerical values. If you spot anything
+          relevant, though, please let me know.
         </p>
 
         <custom-h3 text="Handicap"></custom-h3>
@@ -108,9 +115,13 @@
           <th>%</th>
           <tbody>
             <tr>
-              <td>1</td>
+              <td>
+                Even<foot-note
+                  text="Without komi, we get B+4.8 or B+76.3%."
+                ></foot-note>
+              </td>
               <td>W+0.2</td>
-              <td>W+51%</td>
+              <td>W+51.4%</td>
             </tr>
             <tr>
               <td>2</td>
@@ -163,11 +174,11 @@
         <p>
           From the table above, we can see that growth is indeed more or less
           linear, which is suprising at least to me, since I've always thought
-          that some handicap transitions were much harder than others. However,
-          some jumps are larger than others. Most notably, in my opinion, is the
-          jump from 3 to 4 stones, where we get more than 15 points, which is
-          likely due to the fact that there are no available corners left when
-          with 4 stones.
+          that some handicap transitions were much steeper than others. Which is
+          actually true, but not by that much. Most notably, in my opinion, is
+          the jump from 3 to 4 stones, where we get more than 15 points, which
+          is likely due to the fact that there are no available corners left
+          when past 4 stones.
         </p>
 
         <custom-h3 text="Other Initial Positions"></custom-h3>
@@ -296,18 +307,23 @@
           was a big surprise to me, I remember being under the impression that
           White would have a reasonably easier position than Black, since
           Black's final tengen move seemed kind of not influencing any fight
-          very well, sort of slack.
+          very well, sort of a slack move?
         </p>
 
         <p>
-          I think the every player should thank the stars for tengen being only
-          a 1-point loss, otherwise we would see a gigantic surge in mirror Go.
-          On the other hand, White's tengen, which we sometimes see when one of
-          the players decides to make a statement, is considerably worse, being
-          almost a 2-point loss for White. It's also worth noting that the AI
+          I think every player should thank the stars for tengen being only a
+          1-point loss, otherwise we would see a gigantic surge in Mirror
+          Go<foot-note
+            text="Mirror Go is still the most feasible and only likely way of
+            beating the AI in even games."
+          ></foot-note
+          >. On the other hand, White's tengen, which we sometimes see when one
+          of the players decides to make a statement, is considerably worse,
+          being almost a 2-point loss for White. It's also worth noting that AI
           tends to not use tengen for building moyos but rather to attack and
-          invade more easily, so I believe studying with an AI would be pretty
-          much essential to make it work in higher levels.
+          invade more easily and almost immediately, so I believe studying with
+          an AI would be pretty much essential to make this sort of strategy
+          work at higher levels.
         </p>
 
         <p>
@@ -315,23 +331,23 @@
           ponnuki in the center. After the game, I felt duped<foot-note
             text="Not to mention that the stronger player thought it funny and
           lame that I ended up sacrificing the ponnuki in order to try to attack
-          one of his groups. However, the AI tends to do it as well in some
+          one of his groups. However, the AI tends to do it as well, in some
           games I simulated with it."
           ></foot-note
-          >, I would much rather have my 4 initial stones better distributed
+          >: I would much rather have my 4 initial stones better distributed
           around the board. The AI seems to agree with this assessment, a
           4-stone handicap is almost 20 points better than a ponnuki in the
           center.
         </p>
 
         <p>
-          And how about a favorite triad of artificial handicap in:
+          And how about an infamous triad of artificial handicap in:
           <em>empty triangle in one corner</em>; <em>side hoshi</em>; and
           <em>center of 4 hoshis</em>? I've seen many games where the stronger
-          one plays one of these as an opener more or less as a statement. The
-          statement is not strong at all, is it though? The
+          player plays one of these as an opener more or less as a statement.
+          The statement is not strong at all, is it though? The
           <em>B2-Bomber in one corner</em> is a whole other story, since there
-          way more pass-like moves in it, it's almost as bad as
+          are way more pass-like moves in it, in the end it's almost as bad as
           <a href="https://senseis.xmp.net/?B2BomberJosekis"
             >its article on Sensei's Library is funny</a
           >.
@@ -505,17 +521,19 @@
         <p>
           Some of the very weird openings like the
           <a href="https://rfg.jeudego.org/item/135-fuseki-trou-noir"
-            ><em>black hole</em></a
+            ><em>Black Hole</em></a
           >, the
-          <a href="https://senseis.xmp.net/?GreatWall"><em>great wall</em></a
+          <a href="https://senseis.xmp.net/?GreatWall"><em>Great Wall</em></a
           >, and the
           <a
             href="https://senseis.xmp.net/diagrams/37/64f32324afac05a4158a15bf71bb3d23.sgf"
-            ><em>magic box</em></a
+            ><em>Magic Box</em></a
           >
-          are, as expected, bad. But that didn't stop Cho U 9p and So Yokoku 9p
-          from winning against other strong pros with gargantuan holes in the
-          process.
+          are, as expected, bad. But that didn't stop
+          <a href="https://rfg.jeudego.org/item/135-fuseki-trou-noir"
+            >Cho U 9p and So Yokoku 9p from winning against other strong pros
+            with gargantuan holes in the process</a
+          >.
         </p>
 
         <p>
@@ -525,10 +543,10 @@
           <em>4-4 + White 3-3 Direct Invasion</em>.
           <em>Go Seigen's Tengen + 3-3 + 4-4</em> is really tight in terms of
           points, a 1-point loss basically.
-          <em>Alternated Hoshis to Tengen</em>, which resembles mirror Go, is
+          <em>Alternated Hoshis to Tengen</em>, which resembles Mirror Go, is
           also very similar to tengen itself, only a 1-point loss &mdash;
-          instead of tengen for the final hoshi, Black should invade the 3-3 in
-          the diagonal, and the game would remain as even as it could be. And
+          instead of tengen for the final hoshi, Black should invade the
+          diagonal 3-3, and the game should remain as even as it could be. And
           perhaps the only surprise is the
           <em>4-4 + White 3-3 Direct Invasion</em>, which I thought would be
           pretty much even, but is a little bit more than a 1-point loss for
@@ -548,7 +566,11 @@
           <th>%</th>
           <tbody>
             <tr>
-              <td>Initial Position</td>
+              <td>
+                Initial Position<foot-note
+                  text="Without komi, we get B+5.4 or B+90.9%."
+                ></foot-note>
+              </td>
               <td>W+0.4</td>
               <td>W+53.6%</td>
             </tr>
@@ -679,7 +701,7 @@
           99%. Interestingly, a 9-stone handicap is not enough to get us to
           killing the whole board, probably because there are still four 3-3
           invasions. Still, B+94 is 55% of the available 169 points, when
-          compared to the 105/361 = 29% in the 19x19 board.
+          compared to the 105/361 = 29% in the 19x19 board's 9-stone handicap.
         </p>
       </section>
 
@@ -695,7 +717,11 @@
           <th>%</th>
           <tbody>
             <tr>
-              <td>Initial Position</td>
+              <td>
+                Initial Position<foot-note
+                  text="Without komi, we get B+5.1 or B+97.9%."
+                ></foot-note>
+              </td>
               <td>W+0.3</td>
               <td>W+58%</td>
             </tr>
@@ -706,13 +732,13 @@
             </tr>
             <tr>
               <td>3-3</td>
-              <td>W+1.4</td>
-              <td>W+75.9%</td>
+              <td>W+1.7</td>
+              <td>W+79.8%</td>
             </tr>
             <tr>
               <td>3-4</td>
-              <td>W+0.5</td>
-              <td>W+60.5%</td>
+              <td>W+0.6</td>
+              <td>W+63.3%</td>
             </tr>
             <tr>
               <td>4-4</td>
@@ -761,8 +787,8 @@
           I've always thought komi should be smaller than 6.5 in the 9x9 board,
           since it is so difficult to combat it as Black, it's much easier to
           live than to kill in Go after all. And I've heard stories that
-          Japanese pros were of the same accord. However, it seems as though the
-          AI thinks 6.5 is best.
+          Japanese pros were of the same accord. However, it seems as though AI
+          thinks 6.5 is best.
         </p>
 
         <p>
@@ -771,24 +797,29 @@
           a special size, or perhaps an inflection point for linearity? From
           some brief attempts with other board sizes, the 13x13 is actually
           closer to the inflection point of linearity, in my opinion. For
-          example, the 15x15 board seems to be close to linear already, with
-          respect to Japanese handicap.
+          example, the 15x15<foot-note
+            text="I'm a huge advocate of 15x15 instead of 13x13. I think it's 
+            much richer in strategies in comparison to the 13x13, and it's much 
+            less time-consuming than the 19x19 board."
+          ></foot-note>
+          board seems to be close to linear already, with respect to Japanese
+          handicap.
         </p>
 
         <p>
           For those inexperienced with the 9x9 at higher levels, it's worth
           noting that the 3-3 and the 3-4 are not enough for Black. Better play
           demands either 4-4 or tengen, but the 5-3 is also pretty sharp as
-          well, according to the AI.
+          well, according to AI.
         </p>
 
         <p>
           Again, the winning percentage grows sharply towards 100% in handicap
           games, only 2 stones is enough to nearly guarantee a win.
           Nevertheless, to my surprise, a 5-stone handicap is deemed as not
-          enough to kill White wherever, I believe the AI thinks White can find
-          a ko somehow. Point-wise, it's still a gargantuan advantage, 64/89 =
-          72% of the points available on the board.
+          enough to kill White wherever. I believe the AI thinks White can find
+          a ko somehow. Point-wise, it's still a humongous advantage, 64/89 =
+          72% of the points initially available on the board.
         </p>
       </section>
 
@@ -803,7 +834,7 @@
         <p>
           The term <em>% of initial points on the board</em> is basically the
           estimated score by the AI divided by the "size" of the board which
-          are, for the 9x9, 13x13, and 19x19 respectively: 81, 169, 361.
+          are, for the 9x9, 13x13, and 19x19 respectively: 81, 169, and 361.
         </p>
 
         <table style="font-size: 0.8rem">
@@ -843,7 +874,7 @@
               <td>W+0.2</td>
               <td>W+58%</td>
               <td>W+53.6%</td>
-              <td>W+51%</td>
+              <td>W+51.4%</td>
               <td>W+0.37%</td>
               <td>W+0.23%</td>
               <td>W+0.06%</td>

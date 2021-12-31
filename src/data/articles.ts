@@ -119,7 +119,7 @@ export const pagesMetadata: Article[] = [
 
 export const articlesMetadata: Article[] = [
   {
-    title: "Standard Go Positions Evaluations with AI",
+    title: "Standard Go Positions with AI Evaluations",
     link: "/articles/standard_go_positions_with_ai/standard_go_positions_with_ai.html",
     date: Date.UTC(2021, 11, 28),
     languages: [Language.english],
