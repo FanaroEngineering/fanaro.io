@@ -125,7 +125,6 @@ export const articlesMetadata: Article[] = [
     languages: [Language.english],
     mainTopic: Topic.go,
     otherTopics: [Topic.ai],
-    draft: true,
   },
   {
     title: "Tradução de Como Jogar Go",
