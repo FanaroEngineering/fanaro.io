@@ -87,22 +87,19 @@
         <custom-h2 text="19x19"></custom-h2>
 
         <p>
-          Note that the initial assessment in a 19x19 board is:
-          <strong>W+0.2</strong> or <strong>W+51.4%</strong>, with a 6.5 komi
-          under Japanese rules.
+          An important point to take note of is that the AI's values with and
+          without komi are not necessarily the same as adding or subtracting the
+          value of komi. That's because AI also takes certainty of victory or
+          variance into account, i.e., a bigger lead will enable it to play
+          safer moves, it doesn't care at all if the point-wise lead is big.
         </p>
 
         <p>
-          An important disclaimer is that the AI's values with and without komi
-          are not necessarily the same as adding or subtracting the value of
-          komi. That's because AI also takes certainty of victory or variance
-          into account, i.e., a bigger lead will enable it to play safer moves,
-          it doesn't care at all if the point-wise lead is big. However, I did
-          run most of the positions below with and without komi to check if
-          there are any notable discrepancies, and so far they seem pretty close
-          &mdash; not to mention that the hierarchy and relative difference are
-          more important than the numerical values. If you spot anything
-          relevant, though, please let me know.
+          However, I did run most of the positions below with and without komi
+          in order to check if there are any notable discrepancies, and so far
+          they seem pretty close &mdash; not to mention that the hierarchy and
+          relative difference are more important than the numerical values. If
+          you spot anything relevant, though, please let me know.
         </p>
 
         <custom-h3 text="Handicap"></custom-h3>
@@ -204,9 +201,21 @@
           linear, which is suprising at least to me, since I've always thought
           that some handicap transitions were much steeper than others. Which is
           actually true, but not by that much. Most notably, in my opinion, is
-          the jump from 3 to 4 stones, where we get more than 15 points, which
-          is likely due to the fact that there are no available corners left
-          when past 4 stones.
+          the jump from 3 to 4 stones, where we get more than 15 points &mdash;
+          with or without komi &mdash;, which is likely due to the fact that
+          there are no available corners left when past 4 stones. Also do note
+          that some positions with and without komi have scores within 2-3
+          points of each other, much less than komi.
+        </p>
+
+        <p>
+          It is also important to note that no komi brings the winning
+          percentage close to a 3:1 proportion, so perhaps we could say that's
+          the minimum necessary proportion to distinguish one player from
+          another? And, more importantly, having a 2-stone handicap with komi
+          represents bigger value for Black than having an even game without
+          komi, which does not coincide with what I've heard for years from
+          strong players.
         </p>
 
         <custom-h3 text="Other Initial Positions"></custom-h3>
@@ -397,7 +406,7 @@
           was a big surprise to me, I remember being under the impression that
           White would have a reasonably easier position than Black, since
           Black's final tengen move seemed kind of not influencing any fight
-          very well, sort of a slack move?
+          very well, sort of a slightly slack move?
         </p>
 
         <p>
@@ -405,29 +414,29 @@
           1-point loss, otherwise we would see a gigantic surge in Mirror
           Go<foot-note
             text="Mirror Go is still the most feasible and only likely way of
-            beating the AI in even games."
+            beating AI in even games."
           ></foot-note
           >. On the other hand, White's tengen, which we sometimes see when one
           of the players decides to make a statement, is considerably worse,
-          being almost a 2-point loss for White. It's also worth noting that AI
-          tends to not use tengen for building moyos but rather to attack and
-          invade more easily and almost immediately, so I believe studying with
-          an AI would be pretty much essential to make this sort of strategy
-          work at higher levels.
+          being almost a 2-to-4-point loss for White. It's also worth noting
+          that AI tends to not use tengen for building moyos, but rather to
+          attack and invade more easily and almost immediately, so I believe
+          studying with an AI would be pretty much essential to make this sort
+          of strategy work at higher levels.
         </p>
 
         <p>
           Years ago, I played a game where I exchanged a 4-stone handicap for a
-          ponnuki in the center. After the game, I felt duped<foot-note
+          ponnuki in the center, just for the fun and curiosity. After the game,
+          I felt duped<foot-note
             text="Not to mention that the stronger player thought it funny and
           lame that I ended up sacrificing the ponnuki in order to try to attack
-          one of his groups. However, the AI tends to do it as well, in some
+          one of his groups. However, AI tends to do it as well, in some
           games I simulated with it."
           ></foot-note
           >: I would much rather have my 4 initial stones better distributed
-          around the board. The AI seems to agree with this assessment, a
-          4-stone handicap is almost 20 points better than a ponnuki in the
-          center.
+          around the board. AI seems to agree with my assessment, a 4-stone
+          handicap is essentially 20 points better than a ponnuki in the center.
         </p>
 
         <p>
@@ -674,7 +683,7 @@
           Nonetheless, there are some surprises in this last table. For
           instance, double 5-3 or 5-4 are basically the same as double 6-3 or
           6-4. And having them parallel or alternated is essentially the same
-          thing.
+          thing, which defies classic wave-like arguments.
         </p>
 
         <p>
@@ -921,9 +930,10 @@
           In handicap games, as expected, the winning percentages grow rapidly
           to 100%, in fact, we only need a 2-stone handicap in order to get to
           99%. Interestingly, a 9-stone handicap is not enough to get us to
-          killing the whole board, probably because there are still four 3-3
-          invasions. Still, B+94 is 55% of the available 169 points, when
-          compared to the 105/361 = 29% in the 19x19 board's 9-stone handicap.
+          killing the whole board or something close to it, probably because
+          there are still four 3-3 invasions. Still, B+94 is 55% of the
+          available 169 points, when compared to the 105/361 = 29% in the 19x19
+          board's 9-stone handicap.
         </p>
       </section>
 
@@ -1064,9 +1074,9 @@
           Similarly to the 13x13 board, handicap again does not progress
           linearly at all. It seems more and more likely that the 19x19 board is
           a special size, or perhaps an inflection point for linearity? From
-          some brief attempts with other board sizes, the 13x13 is actually
-          closer to the inflection point of linearity, in my opinion. For
-          example, the 15x15<foot-note
+          some brief attempts with other board sizes, the 13x13 seems to be
+          actually closer to the inflection point of linearity, in my opinion.
+          For example, the 15x15<foot-note
             text="I'm a huge advocate of 15x15 instead of 13x13. I think it's 
             much richer in strategies in comparison to the 13x13, and it's much 
             less time-consuming than the 19x19 board."
@@ -1096,14 +1106,14 @@
         <custom-h2 text="Trying to Compare Handicaps Across Boards"></custom-h2>
 
         <p>
-          The table is below is just a little bit beyond a curiosity, not much
+          The tables below are just a little bit beyond a curiosity, not much
           more. It's nice to see all the numbers side to side, though.
         </p>
 
         <p>
           The term <em>% of initial points on the board</em> is basically the
           estimated score by the AI divided by the "size" of the board which
-          are, for the 9x9, 13x13, and 19x19 respectively: 81, 169, and 361.
+          are, for the 9x9, 13x13, and 19x19, respectively: 81, 169, and 361.
         </p>
 
         <table style="font-size: 0.8rem">
