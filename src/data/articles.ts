@@ -119,6 +119,15 @@ export const pagesMetadata: Article[] = [
 
 export const articlesMetadata: Article[] = [
   {
+    title: "How to Watch the NHK Cup Live",
+    link: "/articles/watch_nhk_cup/watch_nhk_cup.html",
+    date: Date.UTC(2022, 6, 30),
+    languages: [Language.english],
+    mainTopic: Topic.go,
+    otherTopics: [],
+    draft: true,
+  },
+  {
     title: "Standard Go Positions with AI Evaluations",
     link: "/articles/standard_go_positions_with_ai/standard_go_positions_with_ai.html",
     date: Date.UTC(2021, 11, 28),
