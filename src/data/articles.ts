@@ -119,6 +119,15 @@ export const pagesMetadata: Article[] = [
 
 export const articlesMetadata: Article[] = [
   {
+    title: "EPUB Tsumego Template",
+    link: "/articles/epub_tsumego_template/epub_tsumego_template.html",
+    date: Date.UTC(2022, 6, 30),
+    languages: [Language.english],
+    mainTopic: Topic.go,
+    otherTopics: [Topic.books, Topic.meta, Topic.writing],
+    draft: true,
+  },
+  {
     title: "How to Watch the NHK Cup Live",
     link: "/articles/watch_nhk_cup/watch_nhk_cup.html",
     date: Date.UTC(2022, 6, 30),
