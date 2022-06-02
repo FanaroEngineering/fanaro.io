@@ -20113,22 +20113,25 @@ tJzD72by/wA7CGkWWbiSowAAAABJRU5ErkJggg==
 "
        id="image832" />
     <rect
-       style="fill:#000000;stroke:#ffffff;stroke-width:6.856;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-linecap:round"
+       style="fill:#000000;stroke:#ffffff;stroke-width:6.856;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none"
        id="rect936"
        width="965.39111"
        height="94.972084"
        x="214.56732"
-       y="5.2034144" />
+       y="3.2034144" />
     <text
        xml:space="preserve"
        style="font-size:64px;line-height:1.25;font-family:'Helvetica World';-inkscape-font-specification:'Helvetica World'"
        x="236.77165"
-       y="74.002647"
-       id="text2084"><tspan
+       y="72.002647"
+       id="text2084"
+       inkscape:export-filename="C:\Users\phili\Code\fanaro.io\articles\watch_nhk_cup\text2084.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96"><tspan
          sodipodi:role="line"
          id="tspan2082"
          x="236.77165"
-         y="74.002647"
+         y="72.002647"
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Helvetica LT Std';-inkscape-font-specification:'Helvetica LT Std';fill:#f2f2f2">How to Watch the NHK Cup Live</tspan></text>
   </g>
 </svg>
