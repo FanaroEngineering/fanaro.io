@@ -134,7 +134,6 @@ export const articlesMetadata: Article[] = [
     languages: [Language.english],
     mainTopic: Topic.go,
     otherTopics: [],
-    draft: true,
   },
   {
     title: "Standard Go Positions with AI Evaluations",
