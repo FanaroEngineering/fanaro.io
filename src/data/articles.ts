@@ -125,7 +125,6 @@ export const articlesMetadata: Article[] = [
     languages: [Language.english],
     mainTopic: Topic.go,
     otherTopics: [Topic.books, Topic.meta, Topic.writing],
-    draft: true,
   },
   {
     title: "How to Watch the NHK Cup Live",
