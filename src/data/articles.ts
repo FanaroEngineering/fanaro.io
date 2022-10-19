@@ -119,6 +119,14 @@ export const pagesMetadata: Article[] = [
 
 export const articlesMetadata: Article[] = [
   {
+    title: "Ranking Brasileiro de Go",
+    link: "/articles/rbgo/rbgo.html",
+    date: Date.UTC(2022, 9, 20),
+    languages: [Language.portuguese],
+    mainTopic: Topic.go,
+    otherTopics: [Topic.programming],
+  },
+  {
     title: "EPUB Tsumego Template",
     link: "/articles/epub_tsumego_template/epub_tsumego_template.html",
     date: Date.UTC(2022, 6, 30),
